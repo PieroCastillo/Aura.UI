@@ -8,7 +8,7 @@ Aura.UI
 # Overview
 
 * Controls Availables
-  *  AuraTabItem : A Closable TabItem and have and extras features.
+  *  AuraTabItem : A Closable TabItem what has extra features.
   *  TitleBar : Similar to GroupBox, but has 2 buttons and is easy-to-custom.
   *  ColorPickerButton : A Toggle Button when you click it, shows a ColorPicker on a Window.
 
@@ -38,7 +38,7 @@ Aura.UI
    * TemplatedControlExtensions:
    ```c#
     GetControl<T>(this TemplatedControl templatedControl ,TemplateAppliedEventArgs e, string name) where T : AvaloniaObject
-    //Return a AvaloniaObject from Template
+    //Return an AvaloniaObject from Template
    ```
 
 # Preparation
@@ -56,6 +56,9 @@ Add Styles to App.xaml
     </Application.Styles>
   </Application>
 ```
+<<<<<<< HEAD
 # Install
 
 Now the library can only be installed by adding the project, but in the future it will be possible using nuget packages. 
+=======
+>>>>>>> 77f77e7b7b54727911608ada2bf80039507f16bb
