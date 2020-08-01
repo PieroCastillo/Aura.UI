@@ -5,7 +5,7 @@ Aura.UI
 </h1>
 <h2 align="center">Control's Library for Avalonia</h2>
 
-# OverView
+# Overview
 
 * Controls Availables
   *  AuraTabItem : A Closable TabItem and have and extras features.
@@ -56,3 +56,6 @@ Add Styles to App.xaml
     </Application.Styles>
   </Application>
 ```
+# Install
+
+Now the library can only be installed by adding the project, but in the future it will be possible using nuget packages. 
