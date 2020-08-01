@@ -1,0 +1,13 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:cp="clr-namespace:ThemeEditor.Controls.ColorPicker;assembly=ThemeEditor.Controls.ColorPicker"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+		WindowState="Normal" CanResize="False"
+		Width="350" Height="250"
+        x:Class="Aura.UI.Windows.ColorWindowSmall"
+        Title="Seleccionar Color">
+	<cp:ColorPicker Width="350" Height="250"
+					Name="cp_picker"></cp:ColorPicker>
+</Window>

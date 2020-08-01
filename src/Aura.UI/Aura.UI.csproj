@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <AssemblyVersion>0.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
+  </PropertyGroup>
+   <ItemGroup>
+    <Compile Update="**\*.xaml.cs">
+      <DependentUpon>%(Filename)</DependentUpon>
+    </Compile>
+	<Compile Update="**\*.axaml.cs">
+	   <DependentUpon>%(Filename)</DependentUpon>
+	</Compile>
+    <AvaloniaResource Include="**\*.xaml">
+      <SubType>Designer</SubType>
+    </AvaloniaResource>
+  </ItemGroup>
+   <ItemGroup>
+     <None Remove="Resources\TransparentBackground.png" />
+   </ItemGroup>
+   <ItemGroup>
+     <EmbeddedResource Include="Resources\TransparentBackground.png">
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </EmbeddedResource>
+   </ItemGroup>
+   <ItemGroup>
+     <PackageReference Include="ThemeEditor.Controls.ColorPicker" Version="0.9.4" />
+     <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
+	 <PackageReference Include="Avalonia" Version="0.9.12" />
+   </ItemGroup>
+</Project>

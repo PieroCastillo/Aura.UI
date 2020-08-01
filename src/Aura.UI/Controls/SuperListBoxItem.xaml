@@ -1,0 +1,28 @@
+﻿<ListBoxItem xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"  Height="100" Width="200"
+        x:Class="Aura.UI.Controls.SuperListBoxItem">
+  <ListBoxItem.Content>
+    <Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="5"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="5"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="5"></ColumnDefinition>
+      </Grid.ColumnDefinitions>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="5"></RowDefinition>
+        <RowDefinition Height="*"></RowDefinition>
+        <RowDefinition Height="5"></RowDefinition>
+      </Grid.RowDefinitions>
+      <Button  Name="ImageContent" Grid.Column="1" Grid.Row="1"></Button>
+      <TextBlock Name="PrincipalText" FontSize="15" Grid.Column="3" Grid.Row="1"
+                 VerticalAlignment="Top"></TextBlock>
+      <TextBlock Name="SecondaryText" FontSize="11" FontWeight="Thin" Grid.Column="3" Grid.Row="1"
+                 VerticalAlignment="Bottom"></TextBlock>
+    </Grid>
+  </ListBoxItem.Content>
+</ListBoxItem>

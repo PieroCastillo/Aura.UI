@@ -1,0 +1,40 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:m="clr-namespace:Avalonia.Media.Imaging;assembly=Avalonia.Visuals"
+             mc:Ignorable="d" 
+             x:Class="Aura.UI.Controls.GradientBrushPicker">
+	<Grid>
+		<Grid.ColumnDefinitions>
+		 	<ColumnDefinition Width="30"></ColumnDefinition>
+		    <ColumnDefinition Width="*"></ColumnDefinition>
+		    <ColumnDefinition Width="10"></ColumnDefinition>
+		    <ColumnDefinition Width="*"></ColumnDefinition>
+		    <ColumnDefinition Width="30"></ColumnDefinition>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="20"></RowDefinition>
+		    <RowDefinition Height="*"></RowDefinition>
+		    <RowDefinition Height="20"></RowDefinition>
+		</Grid.RowDefinitions>
+		<Grid Grid.Column="1" Grid.Row="1">
+		    <Grid>
+				<Rectangle Width="200" Height="60" Name="rect_bg_">
+					<Rectangle.Fill>
+						<VisualBrush Stretch="UniformToFill" TileMode="Tile">
+							<VisualBrush.Visual>
+								<Image Source="resm:Aura.UI.Resources.TransparentBackground.png?assembly=Aura.UI"></Image>
+							</VisualBrush.Visual>
+						</VisualBrush>
+					</Rectangle.Fill>
+				</Rectangle>
+			    <StackPanel VerticalAlignment="Center">
+			       <Rectangle Width="200" Height="30" Name="rect_1_bg_"></Rectangle>
+		           <Rectangle Width="200" Height="30" Name="rect_2_bg_"></Rectangle>
+	            </StackPanel>  
+		   </Grid>
+		</Grid>
+		
+	</Grid>
+</UserControl>

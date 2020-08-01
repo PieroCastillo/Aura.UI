@@ -1,0 +1,78 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Padding="200">
+			<ColorPickerButton Width="20" Height="20"></ColorPickerButton>
+		</Border>
+	</Design.PreviewWith>
+	<Style Selector="ColorPickerButton">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderLowBrush}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource ThemeBorderThickness}"/>
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
+		<Setter Property="Padding" Value="4"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ColorPickerButton">
+					<Border Padding="1" BorderThickness="2" BorderBrush="{DynamicResource ThemeBorderHighBrush}"
+							Background="{DynamicResource ThemeControlMidBrush}">
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+					  Background="{TemplateBinding Background}"
+					  BorderBrush="{TemplateBinding BorderBrush}"
+					  ContentTemplate="{TemplateBinding ContentTemplate}"
+					  Content="{TemplateBinding Content}"
+					  Padding="{TemplateBinding Padding}"
+					  TextBlock.Foreground="{TemplateBinding Foreground}"
+					  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+					  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"></ContentPresenter>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style Selector="ColorPickerButton:pressed">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlHighBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderLowBrush}"/>
+		<Setter Property="BorderThickness" Value="{DynamicResource ThemeBorderThickness}"/>
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
+		<Setter Property="Padding" Value="4"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="ColorPickerButton">
+					<Border Padding="1" BorderThickness="2" BorderBrush="{DynamicResource ThemeBorderHighBrush}"
+							Background="{DynamicResource ThemeControlMidBrush}">
+						<ContentPresenter
+							Name="PART_ContentPresenter"
+					  Background="{TemplateBinding Background}"
+					  BorderBrush="{TemplateBinding BorderBrush}"
+					  ContentTemplate="{TemplateBinding ContentTemplate}"
+					  Content="{TemplateBinding Content}"
+					  Padding="{TemplateBinding Padding}"
+					  TextBlock.Foreground="{TemplateBinding Foreground}"
+					  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+					  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"></ContentPresenter>
+					</Border>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<!--
+	<Style Selector="ColorPickerButton:checked /template/ ContentPresenter">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlHighBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}"/>
+	</Style>
+	<Style Selector="ColorPickerButton:pointerover /template/ ContentPresenter">
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}"/>
+	</Style>
+	<Style Selector="ColorPickerButton:pressed  /template/ ContentPresenter">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlHighBrush}"/>
+	</Style>
+	<Style Selector="ColorPickerButton:disabled">
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
+	</Style> -->
+</Styles>

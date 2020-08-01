@@ -1,0 +1,90 @@
+﻿<Styles  xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="AuraTabItem">
+		<Setter Property="HorizontalContentAlignment" Value="Left"/>
+		<Setter Property="FontSize" Value="12"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush2}"/>
+		<Setter Property="Foreground" Value="{DynamicResource HighlightForegroundBrush}"/>
+		<Setter Property="Margin" Value="0 0 0 0"/>
+		<Setter Property="Padding" Value="10 0"/>
+		<Setter Property="BorderBrush" Value="Transparent"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Height" Value="40"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Name="PART_Container" BorderThickness="0 0 0 2">
+					<Grid Background="Transparent">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="20"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<ContentPresenter Grid.Column="0"
+						Name="PART_ContentPresenter"
+						Background="Transparent"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						ContentTemplate="{TemplateBinding HeaderTemplate}"
+						Content="{TemplateBinding Header}"
+						HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+						VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+						Margin="{TemplateBinding Margin}"
+						Padding="{TemplateBinding Padding}"/>
+						<Button Name="PART_CloseButton" Width="15" Height="20"
+								Grid.Column="1" Background="Transparent"
+							    Padding="0" BorderThickness="0"
+								Foreground="White">
+							<Path Fill="White" Name="PART_Path"
+								Data="M12 2 L8 6 L4 2 L2 4 L6 8 L2 12 L4 14 L8 10 L12 14 L14 12 L10 8 L14 4 Z"></Path>
+						</Button>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="AuraTabItem:disabled">
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
+	</Style>
+	<Style Selector="AuraTabItem:pointerover /template/ Border#PART_Container">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlHighlightMidBrush}"/>
+	</Style>
+	<Style Selector="AuraTabItem:pointerover /template/ Path#PART_Path">
+		<Setter Property="Fill" Value="Black"/>
+	</Style>
+	<Style Selector="AuraTabItem:selected">
+		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush4}"/>
+	</Style>
+	<Style Selector="AuraTabItem:selected:focus">
+		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush3}"/>
+	</Style>
+	<Style Selector="AuraTabItem:selected:pointerover">
+		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush3}"/>
+	</Style>
+	<Style Selector="AuraTabItem:selected:focus:pointerover">
+		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush2}"/>
+	</Style>
+	<Style Selector="AuraTabItem[TabStripPlacement=Right]">
+		<Setter Property="HorizontalContentAlignment" Value="Right"/>
+	</Style>
+	<Style Selector="AuraTabItem:selected /template/ Border#PART_Container">
+		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush2}"/>
+	</Style>
+	<Style Selector="AuraTabItem:selected:pointerover /template/ Border#PART_Container">
+		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush4}"/>
+	</Style>
+	<Style Selector="AuraTabItem:selected /template/ Border#PART_Container">
+		<Setter Property="BorderBrush" Value="{DynamicResource HighlightForegroundBrush}"/>
+	</Style>
+
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<TabControl Width="300" Height="200">
+				<AuraTabItem Header="UwU" >
+				</AuraTabItem>
+				<AuraTabItem Header="UwU" >
+					<TextBlock>test2</TextBlock>
+				</AuraTabItem>
+			</TabControl>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

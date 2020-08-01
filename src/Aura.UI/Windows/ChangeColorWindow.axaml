@@ -1,0 +1,36 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:cp="clr-namespace:ThemeEditor.Controls.ColorPicker;assembly=ThemeEditor.Controls.ColorPicker"
+		mc:Ignorable="d" Width="400" 
+        x:Class="Aura.UI.Windows.ChangeColorWindow"
+		WindowStartupLocation="CenterScreen" 
+        Title="ChangeColorWindow">
+	<StackPanel>
+		<TabControl>
+			<TabItem Header="Color Sólido">
+				<cp:ColorPicker Name="colorPick_"></cp:ColorPicker>
+			</TabItem>
+			<TabItem Header="Degradado">
+				<Rectangle Height="200" Width="300" Name="rect_">
+					<Rectangle.Fill>
+						<LinearGradientBrush StartPoint="0%,50%" EndPoint="100%,50%">
+							<LinearGradientBrush.GradientStops>
+								<GradientStop Color="Blue" Offset="0" />
+								<GradientStop Color="Orange" Offset="0.25" />
+								<GradientStop Color="Yellow" Offset="0.50" />
+								<GradientStop Color="Green" Offset="0.75" />
+								<GradientStop Color="Red" Offset="1" />
+							</LinearGradientBrush.GradientStops>
+						</LinearGradientBrush>
+					</Rectangle.Fill>
+				</Rectangle>
+			</TabItem>
+		</TabControl>
+		<WrapPanel HorizontalAlignment="Right">
+			<Button Padding="5,5,5,5" Name="agree_btn">Aceptar</Button>
+			<Button Padding="5,5,5,5" Name="cancel_btn">Cancelar</Button>
+		</WrapPanel>
+	</StackPanel>
+</Window>
