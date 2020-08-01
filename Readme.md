@@ -38,7 +38,7 @@ Aura.UI
    * TemplatedControlExtensions:
    ```c#
     GetControl<T>(this TemplatedControl templatedControl ,TemplateAppliedEventArgs e, string name) where T : AvaloniaObject
-    //Return a AvaloniaObject from Template
+    //Return an AvaloniaObject from Template
    ```
 
 # Preparation
