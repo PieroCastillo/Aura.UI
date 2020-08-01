@@ -8,7 +8,7 @@ Aura.UI
 # OverView
 
 * Controls Availables
-  *  AuraTabItem : A Closable TabItem and have and extras features.
+  *  AuraTabItem : A Closable TabItem what has extra features.
   *  TitleBar : Similar to GroupBox, but has 2 buttons and is easy-to-custom.
   *  ColorPickerButton : A Toggle Button when you click it, shows a ColorPicker on a Window.
 
