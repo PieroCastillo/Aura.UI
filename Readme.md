@@ -56,9 +56,6 @@ Add Styles to App.xaml
     </Application.Styles>
   </Application>
 ```
-<<<<<<< HEAD
 # Install
 
-Now the library can only be installed by adding the project, but in the future it will be possible using nuget packages. 
-=======
->>>>>>> 77f77e7b7b54727911608ada2bf80039507f16bb
+Now the library can only be installed by adding the project, but in the future it will be possible using nuget packages.
