@@ -1,0 +1,28 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="ColorPickerButtonCollection">
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<WrapPanel Name="items_panel"></WrapPanel>
+			</ItemsPanelTemplate>
+		</Setter>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ColorPickerButtonCollection">
+				<Border>
+					<ItemsPresenter Items="{TemplateBinding Items}"
+					ItemsPanel="{TemplateBinding ItemsPanel}"></ItemsPresenter>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<ColorPickerButtonCollection Height="15" Width="100"> 
+				<ColorPickerButton></ColorPickerButton>
+				<ColorPickerButton></ColorPickerButton>
+				<ColorPickerButton></ColorPickerButton>
+				<ColorPickerButton></ColorPickerButton>
+			</ColorPickerButtonCollection>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

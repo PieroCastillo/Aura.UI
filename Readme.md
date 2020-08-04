@@ -64,7 +64,7 @@ Aura.UI.
 
 Open the terminal on the root folder of your project and write <br/>
 
-#### dotnet add package Aura.UI 
+#### dotnet add package Aura.UI --version 0.1.0
 
  Do it like this:
 
