@@ -6,6 +6,8 @@ using Aura.UI.UIExtensions;
 using Avalonia.Markup.Xaml;
 using Avalonia.VisualTree;
 using Avalonia.Controls.Primitives;
+using Avalonia.LogicalTree;
+using System.Drawing.Printing;
 
 namespace Aura.UI.Controls
 {

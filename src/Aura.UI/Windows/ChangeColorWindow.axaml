@@ -7,30 +7,30 @@
         x:Class="Aura.UI.Windows.ChangeColorWindow"
 		WindowStartupLocation="CenterScreen" 
         Title="ChangeColorWindow">
-	<StackPanel>
-		<TabControl>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+			<RowDefinition Height="60"></RowDefinition>
+		</Grid.RowDefinitions>
+		<TabControl Grid.Row="0">
 			<TabItem Header="Color Sólido">
 				<cp:ColorPicker Name="colorPick_"></cp:ColorPicker>
 			</TabItem>
 			<TabItem Header="Degradado">
-				<Rectangle Height="200" Width="300" Name="rect_">
-					<Rectangle.Fill>
-						<LinearGradientBrush StartPoint="0%,50%" EndPoint="100%,50%">
-							<LinearGradientBrush.GradientStops>
-								<GradientStop Color="Blue" Offset="0" />
-								<GradientStop Color="Orange" Offset="0.25" />
-								<GradientStop Color="Yellow" Offset="0.50" />
-								<GradientStop Color="Green" Offset="0.75" />
-								<GradientStop Color="Red" Offset="1" />
-							</LinearGradientBrush.GradientStops>
-						</LinearGradientBrush>
-					</Rectangle.Fill>
-				</Rectangle>
+				<GradientBrushPicker Name="gradient_p_"></GradientBrushPicker>
 			</TabItem>
 		</TabControl>
-		<WrapPanel HorizontalAlignment="Right">
-			<Button Padding="5,5,5,5" Name="agree_btn">Aceptar</Button>
-			<Button Padding="5,5,5,5" Name="cancel_btn">Cancelar</Button>
-		</WrapPanel>
-	</StackPanel>
+		<Grid Grid.Row="1" Background="{DynamicResource ThemeDisabledOpacity}">
+			<Grid.Styles>
+				<Style Selector="Button">
+					<Setter Property="Width" Value="100"></Setter>
+					<Setter Property="Height" Value="40"></Setter>
+				</Style>
+			</Grid.Styles>
+			<Button Padding="5,5,5,5" Margin="50,0,0,0"
+					Name="agree_btn">Aceptar</Button>
+			<Button Padding="5,5,5,5" Margin="270,0,0,0"
+					Name="cancel_btn">Cancelar</Button>
+		</Grid>
+	</Grid>
 </Window>

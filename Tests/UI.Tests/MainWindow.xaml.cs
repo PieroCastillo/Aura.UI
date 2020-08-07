@@ -6,6 +6,8 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using Avalonia.VisualTree;
 using Avalonia.Layout;
+using Avalonia.Controls.Notifications;
+using Aura.CommonCore.IO;
 
 namespace UI.Tests
 {
@@ -13,7 +15,8 @@ namespace UI.Tests
     {
         TabControl tabc;
         Button addbtn;
-        Button cbtn; 
+        Button cbtn;
+        WindowNotificationManager notificationManager;
         public MainWindow()
         {
             InitializeComponent();
@@ -24,18 +27,24 @@ namespace UI.Tests
                addbtn = this.Find<Button>("btn");
                cbtn = this.Find<Button>("cbtn");
                addbtn.Click += Addbtn_Click;
-               cbtn.Click += Cbtn_Click; 
+               cbtn.Click += Cbtn_Click;
 
+            notificationManager = new WindowNotificationManager(this) { Position = NotificationPosition.BottomRight, MaxItems = 3 };
+            
         }
+
 
         private void Cbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             tabc.CloseTab(tabc.ItemCount);
+            tabc.VisualToPDF("test");
         }
 
         private void Addbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             tabc.AddTab(new AuraTabItem() { Header = "WOW!" , Content = new ColorPickerButton() { Height = 20 , Width = 20 } },true);
+
+             notificationManager.Show(new Notification("Notification", "That Tab has been added", NotificationType.Information));
         } 
 
         private void InitializeComponent()

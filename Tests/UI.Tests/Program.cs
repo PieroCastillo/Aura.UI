@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Dialogs;
 using Avalonia.Logging.Serilog;
 
 namespace UI.Tests
@@ -15,6 +16,8 @@ namespace UI.Tests
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
+                .UseManagedSystemDialogs()
+                .With(new Win32PlatformOptions() { EnableMultitouch = true })
                 .LogToDebug();
     }
 }

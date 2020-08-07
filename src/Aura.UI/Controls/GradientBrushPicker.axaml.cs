@@ -9,6 +9,8 @@ using Avalonia.Visuals.Media.Imaging;
 
 namespace Aura.UI.Controls
 {
+    //In Developing, it's really harder than I thought
+    [System.Obsolete]
     public class GradientBrushPicker : UserControl
     {
         Rectangle rect_fill_;
@@ -30,8 +32,15 @@ namespace Aura.UI.Controls
             rect_fill_.Fill = gb; */
             rect_1_bg_.Fill = new SolidColorBrush(Colors.SkyBlue);
             rect_2_bg_.Fill = new SolidColorBrush(Colors.SkyBlue,0.2);
-
         }
+
+        public IGradientBrush SelectedGradient
+        {
+            get { return GetValue(SelectedGradientProperty); }
+            set { SetValue(SelectedGradientProperty, value); }
+        }
+        public static readonly StyledProperty<IGradientBrush> SelectedGradientProperty =
+            AvaloniaProperty.Register<GradientBrushPicker, IGradientBrush>(nameof(SelectedGradient));
 
         private void InitializeComponent()
         {

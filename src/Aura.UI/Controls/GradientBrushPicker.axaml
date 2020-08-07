@@ -34,7 +34,10 @@
 						<Rectangle Width="200" Height="30" Name="rect_2_bg_"></Rectangle>
 					</StackPanel>
 				</Grid>
-			   
+				<ColorPickerButtonCollection>
+					<ColorPickerButton></ColorPickerButton>
+					<ColorPickerButton></ColorPickerButton>
+				</ColorPickerButtonCollection>
 		   </StackPanel>
 		</Grid>
 	</Grid>

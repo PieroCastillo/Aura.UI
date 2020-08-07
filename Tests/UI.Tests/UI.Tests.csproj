@@ -15,6 +15,7 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\AuraDraw\src\Aura.CommonCore\Aura.CommonCore.csproj" />
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
   </ItemGroup>
 </Project>
