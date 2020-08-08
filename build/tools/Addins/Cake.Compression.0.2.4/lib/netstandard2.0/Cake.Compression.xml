@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Cake.Compression</name>
+    </assembly>
+    <members>
+        <member name="T:Cake.Compression.Classes.BZip2">
+            <summary>
+            Provides a <see cref="T:Cake.Compression.Classes.BZip2"/> class.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.Classes.BZip2.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.Diagnostics.ICakeLog)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Compression.Classes.BZip2"/> class.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.Classes.BZip2.Compress(Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},System.Int32)">
+            <summary>
+            Create a BZip2 Tar archive of the specified files.
+            </summary>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+        </member>
+        <member name="M:Cake.Compression.Classes.BZip2.Uncompress(Cake.Core.IO.FilePath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Uncompress the specified BZip2 Tar file.
+            </summary>
+            <param name="filePath">BZip2 file to uncompress.</param>
+            <param name="outputPath">Output path to uncompress into.</param>
+        </member>
+        <member name="T:Cake.Compression.Classes.CompressionBase">
+            <summary>
+            Provides a <see cref="T:Cake.Compression.Classes.CompressionBase"/> class.
+            </summary>
+        </member>
+        <member name="F:Cake.Compression.Classes.CompressionBase.fileSystem">
+            <summary>
+            Gets the file system.
+            </summary>
+        </member>
+        <member name="F:Cake.Compression.Classes.CompressionBase.environment">
+            <summary>
+            Gets the environment.
+            </summary>
+        </member>
+        <member name="F:Cake.Compression.Classes.CompressionBase.log">
+            <summary>
+            Gets the log.
+            </summary>
+        </member>
+        <member name="F:Cake.Compression.Classes.CompressionBase.comparison">
+            <summary>
+            Gets the string comparison.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.Classes.CompressionBase.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.Diagnostics.ICakeLog)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Compression.Classes.CompressionBase"/> class.
+            </summary>
+            <param name="fileSystem">The file system.</param>
+            <param name="environment">The environment.</param>
+            <param name="log">The log.</param>
+        </member>
+        <member name="M:Cake.Compression.Classes.CompressionBase.Compress(Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},System.Int32)">
+            <summary>
+            Create a archive of the specified files.
+            </summary>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+        </member>
+        <member name="M:Cake.Compression.Classes.CompressionBase.Uncompress(Cake.Core.IO.FilePath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Uncompress the specified archive.
+            </summary>
+            <param name="filePath">Archive to uncompress.</param>
+            <param name="outputPath">Output path to uncompress into.</param>
+        </member>
+        <member name="M:Cake.Compression.Classes.CompressionBase.GetRelativeFilePath(Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath)">
+            <summary>
+            Gets a relative file path.
+            </summary>
+            <param name="root">A directory path.</param>
+            <param name="file">A file path.</param>
+            <returns>Returns a relative file path.</returns>
+        </member>
+        <member name="T:Cake.Compression.Classes.GZip">
+            <summary>
+            Provides a <see cref="T:Cake.Compression.Classes.GZip"/> class.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.Classes.GZip.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.Diagnostics.ICakeLog)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Compression.Classes.GZip"/> class.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.Classes.GZip.Compress(Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},System.Int32)">
+            <summary>
+            Create a GZip Tar archive of the specified files.
+            </summary>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+        </member>
+        <member name="M:Cake.Compression.Classes.GZip.Uncompress(Cake.Core.IO.FilePath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Uncompress the specified GZip Tar file.
+            </summary>
+            <param name="filePath">GZip file to uncompress.</param>
+            <param name="outputPath">Output path to uncompress into.</param>
+        </member>
+        <member name="T:Cake.Compression.Classes.Zip">
+            <summary>
+            Provides a <see cref="T:Cake.Compression.Classes.Zip"/> class.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.Classes.Zip.#ctor(Cake.Core.IO.IFileSystem,Cake.Core.ICakeEnvironment,Cake.Core.Diagnostics.ICakeLog)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Cake.Compression.Classes.Zip"/> class.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.Classes.Zip.Compress(Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},System.Int32)">
+            <summary>
+            Create a Zip archive of the specified files.
+            </summary>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+        </member>
+        <member name="M:Cake.Compression.Classes.Zip.Uncompress(Cake.Core.IO.FilePath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Uncompress the specified Zip file.
+            </summary>
+            <param name="filePath">Zip file to uncompress.</param>
+            <param name="outputPath">Output path to uncompress into.</param>
+        </member>
+        <member name="T:Cake.Compression.CompressionAliases">
+            <summary>
+            Contains functionality related to compress files.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Compress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath)">
+            <summary>
+            Create a BZip2 Tar archive of the specified directory.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <example>
+            <code>
+            BZip2Compress("./publish", "publish.tar.bz2");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Compress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Int32)">
+            <summary>
+            Create a BZip2 Tar archive of the specified directory.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            BZip2Compress("./publish", "publish.tar.bz2", 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Compress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.String)">
+            <summary>
+            Create a BZip2 Tar archive of the files matching the specified pattern.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="pattern">The pattern.</param>
+            <example>
+            <code>
+            BZip2Compress("./", "xmlfiles.tar.bz2", "./*.xml");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Compress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.String,System.Int32)">
+            <summary>
+            Create a BZip2 Tar archive of the files matching the specified pattern.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="pattern">The pattern.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            BZip2Compress("./", "xmlfiles.tar.bz2", "./*.xml", 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Compress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath})">
+            <summary>
+            Create a BZip2 Tar archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <example>
+            <code>
+            var files = GetFiles("./**/Cake.*.dll");
+            BZip2Compress("./", "cakeassemblies.tar.bz2", files);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Compress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},System.Int32)">
+            <summary>
+            Create a BZip2 Tar archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            var files = GetFiles("./**/Cake.*.dll");
+            BZip2Compress("./", "cakeassemblies.tar.bz2", files, 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Compress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Create a BZip2 Tar archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <example>
+            <code>
+            var files = new [] {
+                "./src/Cake/bin/Debug/Autofac.dll",
+                "./src/Cake/bin/Debug/Cake.Common.dll",
+                "./src/Cake/bin/Debug/Cake.Core.dll",
+                "./src/Cake/bin/Debug/Cake.exe"
+            };
+            BZip2Compress("./", "cakebinaries.tar.bz2", files);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Compress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <summary>
+            Create a BZip2 Tar archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            var files = new [] {
+                "./src/Cake/bin/Debug/Autofac.dll",
+                "./src/Cake/bin/Debug/Cake.Common.dll",
+                "./src/Cake/bin/Debug/Cake.Core.dll",
+                "./src/Cake/bin/Debug/Cake.exe"
+            };
+            BZip2Compress("./", "cakebinaries.tar.bz2", files, 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.BZip2Uncompress(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Uncompress the specified BZip2 Tar file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="filePath">BZip2 file to uncompress.</param>
+            <param name="outputPath">Output path to uncompress into.</param>
+            <example>
+            <code>
+            BZip2Uncompress("Cake.tar.bz2", "./cake");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath)">
+            <summary>
+            Create a GZip Tar archive of the specified directory.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <example>
+            <code>
+            GZipCompress("./publish", "publish.tar.gz");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Int32)">
+            <summary>
+            Create a GZip Tar archive of the specified directory.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            GZipCompress("./publish", "publish.tar.gz", 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.String)">
+            <summary>
+            Create a GZip Tar archive of the files matching the specified pattern.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="pattern">The pattern.</param>
+            <example>
+            <code>
+            GZipCompress("./", "xmlfiles.tar.gz", "./*.xml");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.String,System.Int32)">
+            <summary>
+            Create a GZip Tar archive of the files matching the specified pattern.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="pattern">The pattern.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            GZipCompress("./", "xmlfiles.tar.gz", "./*.xml", 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath})">
+            <summary>
+            Create a GZip Tar archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <example>
+            <code>
+            var files = GetFiles("./**/Cake.*.dll");
+            GZipCompress("./", "cakeassemblies.tar.gz", files);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},System.Int32)">
+            <summary>
+            Create a GZip Tar archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            var files = GetFiles("./**/Cake.*.dll");
+            GZipCompress("./", "cakeassemblies.tar.gz", files, 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Create a GZip Tar archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <example>
+            <code>
+            var files = new [] {
+                "./src/Cake/bin/Debug/Autofac.dll",
+                "./src/Cake/bin/Debug/Cake.Common.dll",
+                "./src/Cake/bin/Debug/Cake.Core.dll",
+                "./src/Cake/bin/Debug/Cake.exe"
+            };
+            GZipCompress("./", "cakebinaries.tar.gz", files);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <summary>
+            Create a GZip Tar archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            var files = new [] {
+                "./src/Cake/bin/Debug/Autofac.dll",
+                "./src/Cake/bin/Debug/Cake.Common.dll",
+                "./src/Cake/bin/Debug/Cake.Core.dll",
+                "./src/Cake/bin/Debug/Cake.exe"
+            };
+            GZipCompress("./", "cakebinaries.tar.gz", files, 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.GZipUncompress(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Uncompress the specified GZip Tar file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="filePath">GZip file to uncompress.</param>
+            <param name="outputPath">Output path to uncompress into.</param>
+            <example>
+            <code>
+            GZipUncompress("Cake.tar.gz", "./cake");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath)">
+            <summary>
+            Create a Zip archive of the specified directory.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <example>
+            <code>
+            ZipCompress("./publish", "publish.zip");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Int32)">
+            <summary>
+            Create a Zip archive of the specified directory.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            ZipCompress("./publish", "publish.zip", 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.String)">
+            <summary>
+            Create a Zip archive of the files matching the specified pattern.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="pattern">The pattern.</param>
+            <example>
+            <code>
+            ZipCompress("./", "xmlfiles.zip", "./*.xml");
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.String,System.Int32)">
+            <summary>
+            Create a Zip archive of the files matching the specified pattern.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="pattern">The pattern.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            ZipCompress("./", "xmlfiles.zip", "./*.xml", 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath})">
+            <summary>
+            Create a Zip archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <example>
+            <code>
+            var files = GetFiles("./**/Cake.*.dll");
+            ZipCompress("./", "cakeassemblies.zip", files);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{Cake.Core.IO.FilePath},System.Int32)">
+            <summary>
+            Create a Zip archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            var files = GetFiles("./**/Cake.*.dll");
+            ZipCompress("./", "cakeassemblies.zip", files, 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Create a Zip archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <example>
+            <code>
+            var files = new [] {
+                "./src/Cake/bin/Debug/Autofac.dll",
+                "./src/Cake/bin/Debug/Cake.Common.dll",
+                "./src/Cake/bin/Debug/Cake.Core.dll",
+                "./src/Cake/bin/Debug/Cake.exe"
+            };
+            ZipCompress("./", "cakebinaries.zip", files);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipCompress(Cake.Core.ICakeContext,Cake.Core.IO.DirectoryPath,Cake.Core.IO.FilePath,System.Collections.Generic.IEnumerable{System.String},System.Int32)">
+            <summary>
+            Create a Zip archive of the specified files.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="rootPath">The root path.</param>
+            <param name="outputPath">The output path.</param>
+            <param name="filePaths">The file paths.</param>
+            <param name="level">The compression level (1-9).</param>
+            <example>
+            <code>
+            var files = new [] {
+                "./src/Cake/bin/Debug/Autofac.dll",
+                "./src/Cake/bin/Debug/Cake.Common.dll",
+                "./src/Cake/bin/Debug/Cake.Core.dll",
+                "./src/Cake/bin/Debug/Cake.exe"
+            };
+            ZipCompress("./", "cakebinaries.zip", files, 6);
+            </code>
+            </example>
+        </member>
+        <member name="M:Cake.Compression.CompressionAliases.ZipUncompress(Cake.Core.ICakeContext,Cake.Core.IO.FilePath,Cake.Core.IO.DirectoryPath)">
+            <summary>
+            Uncompress the specified Zip Tar file.
+            </summary>
+            <param name="context">The context.</param>
+            <param name="filePath">Zip file to uncompress.</param>
+            <param name="outputPath">Output path to uncompress into.</param>
+            <example>
+            <code>
+            ZipUncompress("Cake.zip", "./cake");
+            </code>
+            </example>
+        </member>
+        <member name="T:Cake.Compression.Precondition">
+            <summary>
+            Provides static methods that help a constructor or method to verify correct arguments and
+            state.
+            </summary>
+        </member>
+        <member name="M:Cake.Compression.Precondition.IsBetween(System.IComparable,System.IComparable,System.IComparable,System.String)">
+            <summary>
+            Checks whether the value is between a minimum and maximum value.
+            </summary>
+            <param name="value">The value to test.</param>
+            <param name="min">The minimum value to test.</param>
+            <param name="max">The maximum value to test.</param>
+            <param name="paramName">The name of the parameter that caused the exception.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException"><em>value</em> is out of
+            range.</exception>
+        </member>
+        <member name="M:Cake.Compression.Precondition.IsNotNull(System.Object,System.String)">
+            <summary>
+            Checks whether the specified object is not <strong>null</strong>.
+            </summary>
+            <param name="obj">The object to test.</param>
+            <param name="paramName">The name of the parameter that caused the exception.</param>
+            <exception cref="T:System.ArgumentNullException"><em>obj</em> is
+            <strong>null</strong>.</exception>
+        </member>
+        <member name="M:Cake.Compression.Precondition.IsNotNullOrEmpty(System.String,System.String)">
+            <summary>
+            Checks whether the specified string is not <strong>null</strong> or an empty string.
+            </summary>
+            <param name="str">The string to test.</param>
+            <param name="paramName">The name of the parameter that caused the exception.</param>
+            <exception cref="T:System.ArgumentNullException"><em>str</em> is
+            <strong>null</strong>.</exception>
+            <exception cref="T:System.ArgumentException"><em>str</em> is <strong>empty</strong>.</exception>
+        </member>
+    </members>
+</doc>

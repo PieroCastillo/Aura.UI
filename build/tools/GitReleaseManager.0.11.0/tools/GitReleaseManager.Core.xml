@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GitReleaseManager.Core</name>
+    </assembly>
+    <members>
+        <member name="T:GitReleaseManager.Core.Configuration.CloseConfig">
+            <summary>
+            Class for holding configuration values used during milestone closing. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:GitReleaseManager.Core.Configuration.CloseConfig.IssueComments">
+            <summary>
+            Gets or sets a value indicating whether adding issue comments is enabled or not.
+            </summary>
+        </member>
+        <member name="P:GitReleaseManager.Core.Configuration.CloseConfig.IssueCommentFormat">
+            <summary>
+            Gets or sets the issue comment format to use when commenting on issues.
+            </summary>
+        </member>
+        <member name="P:GitReleaseManager.Core.Configuration.Config.Close">
+            <summary>
+            Gets or sets the close configuration values.
+            </summary>
+        </member>
+    </members>
+</doc>

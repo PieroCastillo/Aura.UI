@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>GitReleaseManager</id>
+    <version>0.11.0</version>
+    <title>GitReleaseManager</title>
+    <authors>GitTools Contributors</authors>
+    <owners>gep13</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <icon>package_icon.png</icon>
+    <projectUrl>https://github.com/GitTools/GitReleaseManager</projectUrl>
+    <description>Tool for creating and exporting releases for software applications from online Version Control Systems</description>
+    <summary>Tool for creating and exporting releases for software applications</summary>
+    <copyright>Copyright (c) 2015 - Present - GitTools Contributors</copyright>
+    <language>en-GB</language>
+    <tags>github release notes create export</tags>
+    <repository type="git" url="https://github.com/GitTools/GitReleaseManager.git" />
+  </metadata>
+</package>

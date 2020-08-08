@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SharpZipLib</id>
+    <version>1.2.0</version>
+    <authors>ICSharpCode</authors>
+    <owners>ICSharpCode</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/icsharpcode/SharpZipLib</projectUrl>
+    <iconUrl>http://icsharpcode.github.io/SharpZipLib/assets/sharpziplib-nuget-256x256.png</iconUrl>
+    <description>SharpZipLib (#ziplib, formerly NZipLib) is a compression library for Zip, GZip, BZip2, and Tar written entirely in C# for .NET. It is implemented as an assembly (installable in the GAC), and thus can easily be incorporated into other projects (in any .NET language)</description>
+    <releaseNotes>Please see https://github.com/icsharpcode/SharpZipLib/wiki/Release-1.2 for more information.</releaseNotes>
+    <copyright>Copyright © 2000-2019 SharpZipLib Contributors</copyright>
+    <tags>Compression Library Zip GZip BZip2 LZW Tar</tags>
+    <repository type="git" url="https://github.com/icsharpcode/SharpZipLib" commit="56cbe991dfbc629a155c6739501a658cf2f75cff" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5" />
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

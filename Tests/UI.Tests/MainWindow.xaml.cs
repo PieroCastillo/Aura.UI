@@ -27,12 +27,10 @@ namespace UI.Tests
                addbtn = this.Find<Button>("btn");
                cbtn = this.Find<Button>("cbtn");
                addbtn.Click += Addbtn_Click;
-               cbtn.Click += Cbtn_Click;
 
             notificationManager = new WindowNotificationManager(this) { Position = NotificationPosition.BottomRight, MaxItems = 3 };
             
         }
-
 
         private void Cbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
@@ -42,9 +40,8 @@ namespace UI.Tests
 
         private void Addbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            tabc.AddTab(new AuraTabItem() { Header = "WOW!" , Content = new ColorPickerButton() { Height = 20 , Width = 20 } },true);
-
-             notificationManager.Show(new Notification("Notification", "That Tab has been added", NotificationType.Information));
+            var a_C = "This Tab is Closable";
+            tabc.AddTab(new AuraTabItem() { Header = "AuraTabItem", Content = a_C },true);
         } 
 
         private void InitializeComponent()

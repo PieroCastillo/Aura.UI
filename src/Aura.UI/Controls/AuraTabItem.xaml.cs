@@ -7,7 +7,9 @@ using Avalonia.Markup.Xaml;
 using Avalonia.VisualTree;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
+using Avalonia.Input;
 using System.Drawing.Printing;
+using Aura.UI.Events;
 
 namespace Aura.UI.Controls
 {
@@ -17,8 +19,23 @@ namespace Aura.UI.Controls
         public AuraTabItem()
         {
             this.InitializeComponent();
-            
+            var data_DStd = new DragStartedEventArgs();
+            try
+            {
+               
+                data_DStd.IsCompleted = true;
+                data_DStd.IsToOut = true;
+                OnDragStarted(data_DStd);
+            }
+            catch
+            {
+                data_DStd.IsCompleted = false;
+                data_DStd.IsToOut = true;
+                OnDragStarted(data_DStd);
+            }
         }
+
+        public event EventHandler<DragStartedEventArgs> DragStarted;
 
         private void InitializeComponent()
         {
@@ -56,6 +73,11 @@ namespace Aura.UI.Controls
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        protected virtual void OnDragStarted(DragStartedEventArgs e)
+        {
+            DragStarted?.Invoke(this, e);
         }
     }
 }

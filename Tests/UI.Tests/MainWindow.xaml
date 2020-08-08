@@ -5,16 +5,23 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="UI.Tests.MainWindow" Height="500" Width="600"
         Title="UI.Tests">
-  <Grid>
-    <TabControl Name="tabview" >
-		<AuraTabItem Header="TestingPicker">
-			<GradientBrushPicker></GradientBrushPicker>
-		</AuraTabItem>
-    </TabControl>
-    <Button VerticalAlignment="Top"
-            HorizontalAlignment="Right" Name="btn">AddTab</Button>
-    <Button VerticalAlignment="Center"
-            HorizontalAlignment="Right" Name="cbtn">DeleteTab</Button>
-  </Grid> 
-	
+	<TabControl TabStripPlacement="Left">
+		<TabItem Header="AuraTabItem">
+			<Grid>
+				<TabControl Name="tabview">
+				</TabControl>
+				<Button VerticalAlignment="Top"
+						HorizontalAlignment="Right" Name="btn">AddTab</Button>
+				<Button VerticalAlignment="Center"
+						HorizontalAlignment="Right" Name="cbtn">DeleteTab</Button>
+			</Grid>
+
+		</TabItem>
+		<TabItem Header="TitleBar">
+			<TitleBar Header="TitleBar"
+					  BorderBrush="YellowGreen" BorderThickness="3">
+			
+			</TitleBar>
+		</TabItem>
+	</TabControl>	
 </Window>

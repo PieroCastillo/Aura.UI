@@ -1,4 +1,5 @@
 ﻿<Styles  xmlns="https://github.com/avaloniaui"
+		 xmlns:t="clr-namespace:Aura.UI.Animate;assembly=Aura.UI"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="AuraTabItem">
 		<Setter Property="HorizontalContentAlignment" Value="Left"/>
@@ -47,6 +48,14 @@
 	</Style>
 	<Style Selector="AuraTabItem:pointerover /template/ Border#PART_Container">
 		<Setter Property="Background" Value="{DynamicResource ThemeControlHighlightMidBrush}"/>
+		<!-- <Setter Property="Transitions">
+			<Transitions> 
+				<t:BrushTransition Property="Background" Duration="0:0:5"/>
+			</Transitions>
+		</Setter>  //Give an error when it's compiled -->
+	</Style>
+	<Style Selector="AuraTabItem /template/ Border#PART_Container">
+		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
 	</Style>
 	<Style Selector="AuraTabItem:pointerover /template/ Path#PART_Path">
 		<Setter Property="Fill" Value="Black"/>
@@ -86,5 +95,5 @@
 				</AuraTabItem>
 			</TabControl>
 		</Border>
-	</Design.PreviewWith>
+	</Design.PreviewWith> 
 </Styles>
