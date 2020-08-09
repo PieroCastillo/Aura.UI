@@ -7,6 +7,8 @@ Aura.UI
 
 # Overview
 
+[![Join the chat at https://gitter.im/AuraDevCommunity/Aura-UI](https://badges.gitter.im/AuraDevCommunity/Aura-UI.svg)](https://gitter.im/AuraDevCommunity/Aura-UI?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 * Controls Availables
   *  AuraTabItem : A Closable TabItem what has extra features.
   *  TitleBar : Similar to GroupBox, but has 2 buttons and is easy-to-custom.
