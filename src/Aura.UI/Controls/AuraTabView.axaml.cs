@@ -1,6 +1,8 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Input;
+using Avalonia.Interactivity;
 
 namespace Aura.UI.Controls
 {
@@ -15,5 +17,6 @@ namespace Aura.UI.Controls
         {
             AvaloniaXamlLoader.Load(this);
         }
+
     }
 }

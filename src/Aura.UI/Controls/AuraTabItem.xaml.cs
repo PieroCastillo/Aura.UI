@@ -1,41 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia;
 using Avalonia.Controls;
-using Aura.UI.UIExtensions;
 using Avalonia.Markup.Xaml;
 using Avalonia.VisualTree;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using Avalonia.Input;
-using System.Drawing.Printing;
+using Avalonia.Interactivity;
 using Aura.UI.Events;
+using Aura.UI.UIExtensions;
+using Aura.UI.Controls.Primitives;
 
 namespace Aura.UI.Controls
 {
-    public class AuraTabItem : TabItem
+    public class AuraTabItem : TabItem, IDraggable
     {
         Button CloseButton;
         public AuraTabItem()
         {
             this.InitializeComponent();
-            var data_DStd = new DragStartedEventArgs();
-            try
-            {
-               
-                data_DStd.IsCompleted = true;
-                data_DStd.IsToOut = true;
-                OnDragStarted(data_DStd);
-            }
-            catch
-            {
-                data_DStd.IsCompleted = false;
-                data_DStd.IsToOut = true;
-                OnDragStarted(data_DStd);
-            }
+            this.Closing += new EventHandler<RoutedEventArgs>(OnClosing);
         }
 
-        public event EventHandler<DragStartedEventArgs> DragStarted;
 
         private void InitializeComponent()
         {
@@ -53,13 +41,20 @@ namespace Aura.UI.Controls
 
         public void Close()
         {
-            this.OnClosing();
+             var e = new RoutedEventArgs(ClosingEvent);
+            e.Handled = true;
+            RaiseEvent(e);
             this.Close(null);
         }
-
-        public virtual void OnClosing()
+        public void DragTo(IDraggableHost host)
         {
-
+            var e_start = new DraggingStartedEventArgs(this);
+            RaiseEvent(e_start);
+            
+        }
+        protected virtual void OnClosing(object sender, RoutedEventArgs e)
+        {
+            
         }
 
         protected override void OnTemplateApplied(TemplateAppliedEventArgs e)
@@ -69,16 +64,33 @@ namespace Aura.UI.Controls
             CloseButton = this.GetControl<Button>(e, "PART_CloseButton");
             CloseButton.Click += CloseButton_Click; 
         }
-
+        protected void OnDraggingStarted(object DraggedObject, DraggingStartedEventArgs draggingStartedEventArgs) { }
+        protected void OnDraggingEnded(object DraggedObject, DraggingEndedEventArgs draggingEndedEventArgs) { }
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             this.Close();
         }
 
-        protected virtual void OnDragStarted(DragStartedEventArgs e)
+        #region Events
+        public event EventHandler<RoutedEventArgs> Closing
         {
-            DragStarted?.Invoke(this, e);
+            add { AddHandler(ClosingEvent, value); }
+            remove { RemoveHandler(ClosingEvent, value); }
         }
+        public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
+            RoutedEvent.Register<AuraTabItem, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
+
+        public event EventHandler<DraggingStartedEventArgs> DraggingStarted
+        {
+            add { AddHandler(DraggingStartedEvent, value); }
+            remove { RemoveHandler(DraggingEndedEvent, value); }
+        }
+        public static readonly RoutedEvent<DraggingStartedEventArgs> DraggingStartedEvent;
+        public event EventHandler<DraggingEndedEventArgs> DraggingEnded;
+        public static readonly RoutedEvent<DraggingEndedEventArgs> DraggingEndedEvent; 
+        #endregion
+
+
     }
 }
 

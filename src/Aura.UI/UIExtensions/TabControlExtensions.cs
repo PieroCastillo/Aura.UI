@@ -1,6 +1,7 @@
 ﻿using Avalonia.Controls;
 using System;
 using System.Collections;
+using Aura.UI.Controls;
 
 namespace Aura.UI.UIExtensions
 {

@@ -27,7 +27,7 @@ namespace UI.Tests
                addbtn = this.Find<Button>("btn");
                cbtn = this.Find<Button>("cbtn");
                addbtn.Click += Addbtn_Click;
-
+            cbtn.Click += Cbtn_Click;
             notificationManager = new WindowNotificationManager(this) { Position = NotificationPosition.BottomRight, MaxItems = 3 };
             
         }
@@ -35,7 +35,6 @@ namespace UI.Tests
         private void Cbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             tabc.CloseTab(tabc.ItemCount);
-            tabc.VisualToPDF("test");
         }
 
         private void Addbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
