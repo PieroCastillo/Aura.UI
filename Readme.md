@@ -103,3 +103,10 @@ using Aura.UI.Windows;
 # About Aura.UI
 
 This library is open source and free, in a few months come out the first stable version,for now, Aura.UI is a beta. 
+
+# How To Collaborate
+
+If you want to collaborate with this proyect, contact me with the next links:
+* [![Whatsapp](https://img.shields.io/badge/Whatsapp-Text%20me!-brightgreen)](https://wa.me/51902446088)
+* [![Messenger](https://img.shields.io/badge/Messenger-Text%20me!-blue)](https://www.messenger.com/t/piero.idk.2000)
+* [![Gitter](https://img.shields.io/badge/Gitter-Text%20me!-red)](https://gitter.im/PieroCastillo)
