@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
 	<Style Selector="TitleBar">
-		<Setter Property="BorderBrush" Value="{DynamicResource ThemeControlHighBrush}"></Setter>
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush4}"></Setter>
 		<Setter Property="BorderThickness" Value="5"></Setter>
 		<Setter Property="Button1Active" Value="false"></Setter>
 		<Setter Property="Button2Active" Value="false"></Setter>

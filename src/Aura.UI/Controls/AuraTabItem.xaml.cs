@@ -48,8 +48,6 @@ namespace Aura.UI.Controls
         }
         public void DragTo(IDraggableHost host)
         {
-            var e_start = new DraggingStartedEventArgs(this);
-            RaiseEvent(e_start);
             
         }
         protected virtual void OnClosing(object sender, RoutedEventArgs e)
@@ -86,8 +84,14 @@ namespace Aura.UI.Controls
             remove { RemoveHandler(DraggingEndedEvent, value); }
         }
         public static readonly RoutedEvent<DraggingStartedEventArgs> DraggingStartedEvent;
-        public event EventHandler<DraggingEndedEventArgs> DraggingEnded;
-        public static readonly RoutedEvent<DraggingEndedEventArgs> DraggingEndedEvent; 
+
+        public event EventHandler<DraggingEndedEventArgs> DraggingEnded
+        {
+            add { AddHandler(DraggingEndedEvent, value); }
+            remove { RemoveHandler(DraggingEndedEvent, value); }
+        }
+        public static readonly RoutedEvent<DraggingEndedEventArgs> DraggingEndedEvent =
+            RoutedEvent.Register<AuraTabItem, DraggingEndedEventArgs>(nameof(DraggingEnded), RoutingStrategies.Bubble);
         #endregion
 
 

@@ -3,6 +3,7 @@
 	<StyleInclude Source="/TabControlStyles.xaml"/>
 	<StyleInclude Source="/ColorPickerButtonCollectionStyles.xaml"/>
 	<StyleInclude Source="/TitleBarStyles.xaml"/>
+	<StyleInclude Source="/TitleBarWindowStyles.xaml"/>
 	<StyleInclude Source="/ColorPickerButtonStyles.xaml"/>
     <StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.xaml"/>
 </Styles>

@@ -1,0 +1,65 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="TitleBarWindow">
+		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderMidBrush}" />
+		<Setter Property="BorderThickness" Value="{DynamicResource ThemeBorderThickness}" />
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+		<Setter Property="FontSize" Value="{DynamicResource FontSizeNormal}" />
+		<Setter Property="HasSystemDecorations" Value="False" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="{x:Type TitleBarWindow}">
+				<Border Background="{TemplateBinding Background}">
+					<DockPanel>
+						<Grid DockPanel.Dock="Top" Height="30">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="5"></ColumnDefinition>
+								<ColumnDefinition Width="*"></ColumnDefinition>
+								<ColumnDefinition Width="*"></ColumnDefinition>
+								<ColumnDefinition Width="100" ></ColumnDefinition>
+							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="0"></RowDefinition>
+								<RowDefinition Height="*"></RowDefinition>
+								<RowDefinition Height="0"></RowDefinition>
+							</Grid.RowDefinitions>
+							<Grid.Styles>
+								<Style Selector="Button">
+									<Setter Property="BorderThickness" Value="0"></Setter>
+									<Setter Property="Margin" Value="0"></Setter>
+								</Style>
+							</Grid.Styles>
+					 		<Image Grid.Column="1" Grid.Row="1"
+				              Name="WindowIcon_img" Height="16" Stretch="Uniform"
+								   HorizontalAlignment="Left"/>
+							<Grid Grid.Column="2" Grid.Row="1"
+								  Name="HeaderContainer_grid">
+								<TextBlock VerticalAlignment="Center">MainWindow</TextBlock>
+							</Grid>
+							<Grid Grid.Column="3" Grid.Row="1"
+					              Name="SystemButtonsContainer">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"></ColumnDefinition>
+									<ColumnDefinition Width="*"></ColumnDefinition>
+									<ColumnDefinition Width="*"></ColumnDefinition>
+								</Grid.ColumnDefinitions>
+								<Button Grid.Column="0" Name="minimize_btn">m</Button>
+								<Button Grid.Column="1" Name="rest_btn">M</Button>
+								<Button Grid.Column="2" Name="close_btn">X</Button>
+							</Grid>
+						</Grid>
+						<ContentPresenter
+						  DockPanel.Dock="Bottom"	
+						  Content="{TemplateBinding Content}"
+        				  ContentTemplate="{TemplateBinding ContentTemplate}"></ContentPresenter>
+					</DockPanel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<TitleBarWindow Content="fuck"/>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

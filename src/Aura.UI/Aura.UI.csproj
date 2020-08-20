@@ -50,6 +50,12 @@
      <AvaloniaResource Update="ColorPickerButtonCollectionStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
+     <AvaloniaResource Update="Languages\SpanishLanguage.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="TitleBarWindowStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
    </ItemGroup>
    <ItemGroup>
      <None Update="ColorPickerButtonCollectionStyles.xaml">

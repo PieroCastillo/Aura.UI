@@ -1,0 +1,49 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" Width="500" Height="300"
+             x:Class="Aura.UI.Controls.TitleBarWindow">
+    <DockPanel>
+	    <Grid DockPanel.Dock="Top" Height="30" >
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="5"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="100" ></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="0"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+				<RowDefinition Height="0"></RowDefinition>
+			</Grid.RowDefinitions>
+				<Grid.Styles> 
+			      	<Style Selector="Button">
+						<Setter Property="BorderThickness" Value="0"></Setter> 
+						<Setter Property="Margin" Value="0"></Setter>
+ 				    </Style>
+				</Grid.Styles>
+			<Image Grid.Column="1" Grid.Row="1"
+				   Name="WindowIcon_img" Height="16" Stretch="Uniform" HorizontalAlignment="Left"
+				   Source="resm:Aura.UI.Resources.TransparentBackground.png"/>
+      			<Grid Grid.Column="2" Grid.Row="1"
+					  Name="HeaderContainer_grid">
+					<TextBlock VerticalAlignment="Center">MainWindow</TextBlock>
+				</Grid>
+				<Grid Grid.Column="3" Grid.Row="1"
+					  Name="SystemButtonsContainer">
+				    <Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"></ColumnDefinition>
+     					<ColumnDefinition Width="*"></ColumnDefinition>
+						<ColumnDefinition Width="*"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Button Grid.Column="0" Name="minimize_btn">m</Button>
+					<Button Grid.Column="1" Name="rest_btn">M</Button>
+					<Button Grid.Column="2" Name="close_btn">X</Button>
+				</Grid>
+			</Grid>
+		<Button>
+			xd
+		</Button>
+	</DockPanel>
+</Window>

@@ -8,10 +8,11 @@ using Avalonia.VisualTree;
 using Avalonia.Layout;
 using Avalonia.Controls.Notifications;
 using Aura.CommonCore.IO;
+using Aura.UI.Windows;
 
 namespace UI.Tests
 {
-    public class MainWindow : Window
+    public class MainWindow : TitleBarWindow
     {
         TabControl tabc;
         Button addbtn;
