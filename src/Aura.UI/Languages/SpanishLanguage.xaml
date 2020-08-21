@@ -10,11 +10,11 @@
 			<ms:String x:Key="StartText">Inicio</ms:String>
 			<ms:String x:Key="ColorPalleteText">Paleta de Colores</ms:String>
 			<ms:String x:Key="DocumentText">Documento</ms:String>
-			<ms:String x:Key="PropertiesText">Properties</ms:String>
+			<ms:String x:Key="PropertiesText">Propiedades</ms:String>
 			<ms:String x:Key="WindowText">Ventana</ms:String>
 			<ms:String x:Key="ViewText">Vista</ms:String>
 			<ms:String x:Key="FileText">Archivo</ms:String>
-			<ms:String x:Key="EditText">Edición</ms:String>
+			<ms:String x:Key="EditionText">Edición</ms:String>
 			<ms:String x:Key="GoodMorningText">Buenos Días</ms:String>
 			<ms:String x:Key="GoodAfternoonText">Buenas Tardes</ms:String>
 			<ms:String x:Key="GoodNightText">Buenas Noches</ms:String>
@@ -25,7 +25,7 @@
 			<ms:String x:Key="WidthText">Ancho</ms:String>
 			<ms:String x:Key="HeightText">Alto</ms:String>
 			<ms:String x:Key="NameText">Nombre</ms:String>
-			<ms:String x:Key="PixelText">Píxeles</ms:String>
+			<ms:String x:Key="PixelsText">Píxeles</ms:String>
 			<ms:String x:Key="CentimetersText">Centímetros</ms:String>
 			<ms:String x:Key="InchesText">Pulgadas</ms:String>
 			<ms:String x:Key="HorizontalText">Horizontal</ms:String>
@@ -34,11 +34,17 @@
 			<ms:String x:Key="MeasureUnitText">Unidad de Medida</ms:String>
 			<ms:String x:Key="Whatwouldyouliketodo_questionText">Qué desea hacer?</ms:String>
 			<ms:String x:Key="HomePageText">Página de Inicio</ms:String>
-			<ms:String x:Key="ObjectsViewText">Vista de Objetos</ms:String>
 			<ms:String x:Key="FillText">Relleno</ms:String>
 			<ms:String x:Key="ThicknessText">Grosor</ms:String>
 			<ms:String x:Key="BrushText">Brocha</ms:String>
-			
+			<ms:String x:Key="SettingsText">Ajustes</ms:String>
+			<ms:String x:Key="ConfigurationText">Configuración</ms:String>
+			<ms:String x:Key="ZoomText">Zoom</ms:String>
+			<ms:String x:Key="LayoutText">Capa</ms:String>
+			<ms:String x:Key="FullscreenText">Pantalla completa</ms:String>
+			<ms:String x:Key="ObjectsViewText">Vista de Objetos</ms:String>
+			<ms:String x:Key="ObjectsBoxText">Cuadro de Objetos</ms:String>
+
 			<!--En inglés muchas palabras son verbos y a la vez-->
 			<!--sustantivos, por ello está los recursos "To{Verb}"-->
 			<!--y así también facilitar el uso de la librería para hispanohablantes-->
@@ -52,12 +58,51 @@
 			<ms:String x:Key="ToNameText">Nombrar</ms:String>
 			<ms:String x:Key="ToOrientateText">Orientar</ms:String>
 			<ms:String x:Key="ToAgreeText">Aceptar</ms:String>
-			<ms:String x:Key="ToFillViewText">Rellenar</ms:String>
+			<ms:String x:Key="ToReDoText">Rehacer</ms:String>
+			<ms:String x:Key="ToUnDoText">Deshacer</ms:String>
+			<ms:String x:Key="ToOpenText">Abrir</ms:String>
+			<ms:String x:Key="ToSelectText">Seleccionar</ms:String>
+			<ms:String x:Key="ToDuplicateText">Duplicar</ms:String>
+			<ms:String x:Key="ToDeleteText">Eliminar</ms:String>
+			<ms:String x:Key="ToCopyText">Copiar</ms:String>
+			<ms:String x:Key="ToPasteText">Pegar</ms:String>
+			<ms:String x:Key="ToViewText">Ver</ms:String>
+			<ms:String x:Key="ToGroupText">Agrupar</ms:String>
+			<ms:String x:Key="ToUnGroupText">Desagrupar</ms:String>
+            <ms:String x:Key="ToMoveUpText">Elevar</ms:String>
+			<ms:String x:Key="ToMoveDownText">Bajar</ms:String>
+			
+			<!--Verbos con Objetos directos-->
+			<ms:String x:Key="ToInsertTextText">Insertar Texto</ms:String>
+			<ms:String x:Key="ToOpenHomePageText">Abrir Página de Inicio</ms:String>
+			<ms:String x:Key="ToInvertSelectionText">Invertir Selección</ms:String>
+			<ms:String x:Key="ToSelectAllText">Seleccionar Todo</ms:String>
+			<ms:String x:Key="ToDeleteSelectionText">Eliminar Selección</ms:String>
+			<ms:String x:Key="ToOpenADocumentText">Abrir un Documento</ms:String>
+			<ms:String x:Key="ToCreateADocumentText">Crear un Documento</ms:String>
+			<ms:String x:Key="ToOpenDocumentText">Abrir Documento</ms:String>
+			<ms:String x:Key="ToCreateDocumentText">Crear Documento</ms:String>
+			<ms:String x:Key="ToContinueWithOutAnyDocumentText">Continuar sin ningún Documento</ms:String>
+			<ms:String x:Key="ToDeleteLayerText">Eliminar Capa</ms:String>
+			<ms:String x:Key="ToAddLayerText">Añadir Capa</ms:String>
+			<ms:String x:Key="ToBringLayerForwardText">Llevar Capa hacia adelante"</ms:String>
+			<ms:String x:Key="ToBringLayerBackwardText">Llevar Capa hacia atrás</ms:String>
+			<ms:String x:Key="ToBringForwardText">Llevar hacia adelante"</ms:String>
+			<ms:String x:Key="ToBringBackwardText">Llevar hacia atrás</ms:String>
+			<ms:String x:Key="ToMoveToTopText">Traer al inicio</ms:String>
+			<ms:String x:Key="ToMoveToBottomText">Traer hasta el final</ms:String>
+			<ms:String x:Key="ToLockLayerText">Bloquear Capa</ms:String>
+			<ms:String x:Key="ToHideLayerText">Ocultar Capa</ms:String>
+			<ms:String x:Key="ToShowLayerText">MostrarCapa</ms:String>
+			<ms:String x:Key="ToRenameLayerText">Renombrar Capa</ms:String>
+			<ms:String x:Key="ToNewLayerText">Nueva Capa</ms:String>			
+			<ms:String x:Key="ToRotate90DegreesToRightText">Rotar 90 grados hacia la derecha</ms:String>
+			<ms:String x:Key="ToRotate90DegreesToLeftText">Rotar 90 grados hacia la izquierda</ms:String>
 		</Style.Resources>
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="20">
-			<TextBlock Text="{DynamicResource HelpText}"></TextBlock>
+			<TextBlock Text="{DynamicResource ToMoveDownText}"></TextBlock>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

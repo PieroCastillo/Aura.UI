@@ -1,0 +1,108 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ms="clr-namespace:System;assembly=netstandard">
+	<Style Selector="Control">
+		<Style.Resources>
+			<ms:String x:Key="HelpText">Help</ms:String>
+			<ms:String x:Key="AboutText">About</ms:String>
+			<ms:String x:Key="ToolsText">Tools</ms:String>
+			<ms:String x:Key="SelectionText">Selection</ms:String>
+			<ms:String x:Key="StartText">Start</ms:String>
+			<ms:String x:Key="ColorPalleteText">Colors Palette</ms:String>
+			<ms:String x:Key="DocumentText">Document</ms:String>
+			<ms:String x:Key="PropertiesText">Properties</ms:String>
+			<ms:String x:Key="WindowText">Window</ms:String>
+			<ms:String x:Key="ViewText">View</ms:String>
+			<ms:String x:Key="FileText">File</ms:String>
+			<ms:String x:Key="EditionText">Edition</ms:String>
+			<ms:String x:Key="GoodMorningText">Good Morning</ms:String>
+			<ms:String x:Key="GoodAfternoonText">Good Afternoon</ms:String>
+			<ms:String x:Key="GoodNightText">Good Night</ms:String>
+			<ms:String x:Key="NewDocumentText">New Document</ms:String>
+			<ms:String x:Key="NewText">New</ms:String>
+			<ms:String x:Key="DetailsText">Details</ms:String>
+			<ms:String x:Key="TitleText">Title</ms:String>
+			<ms:String x:Key="WidthText">Width</ms:String>
+			<ms:String x:Key="HeightText">Height</ms:String>
+			<ms:String x:Key="NameText">Name</ms:String>
+			<ms:String x:Key="PixelsText">Pixels</ms:String>
+			<ms:String x:Key="CentimetersText">Centimeters</ms:String>
+			<ms:String x:Key="InchesText">Inches</ms:String>
+			<ms:String x:Key="HorizontalText">Horizontal</ms:String>
+			<ms:String x:Key="VerticalText">Vertical</ms:String>
+			<ms:String x:Key="VersionText">Version</ms:String>
+			<ms:String x:Key="MeasureUnitText">Measure Unit</ms:String>
+			<ms:String x:Key="Whatwouldyouliketodo_questionText">What would you like to do?</ms:String>
+			<ms:String x:Key="HomePageText">Home Page</ms:String>
+			<ms:String x:Key="FillText">Fill</ms:String>
+			<ms:String x:Key="ThicknessText">Thickness</ms:String>
+			<ms:String x:Key="BrushText">Brush</ms:String>
+			<ms:String x:Key="SettingsText">Settings</ms:String>
+			<ms:String x:Key="ConfigurationText">Configuration</ms:String>
+			<ms:String x:Key="ZoomText">Zoom</ms:String>
+			<ms:String x:Key="LayoutText">Layer</ms:String>
+			<ms:String x:Key="FullscreenText">Fullscreen</ms:String>
+			<ms:String x:Key="ObjectsViewText">Objects View</ms:String>
+			<ms:String x:Key="ObjectsBoxText">Objects Box</ms:String>
+
+			<!--En inglés muchas palabras son verbos y a la vez-->
+			<!--sustantivos, por ello está los recursos "To{Verb}"-->
+			<!--y así también facilitar el uso de la librería para hispanohablantes-->
+			<ms:String x:Key="ToStartText">Start</ms:String>
+			<ms:String x:Key="ToEditText">Edit</ms:String>
+			<ms:String x:Key="ToAnalizeText">Analyze</ms:String>
+			<ms:String x:Key="ToMinimizeText">Minimize</ms:String>
+			<ms:String x:Key="ToMaximizeText">Maximize</ms:String>
+			<ms:String x:Key="ToRestoreText">Restore</ms:String>
+			<ms:String x:Key="ToCloseText">Close</ms:String>
+			<ms:String x:Key="ToNameText">Name</ms:String>
+			<ms:String x:Key="ToOrientateText">Orientate</ms:String>
+			<ms:String x:Key="ToAgreeText">Agree</ms:String>
+			<ms:String x:Key="ToReDoText">Redo</ms:String>
+			<ms:String x:Key="ToUnDoText">Undo</ms:String>
+			<ms:String x:Key="ToOpenText">Open</ms:String>
+			<ms:String x:Key="ToSelectText">Select</ms:String>
+			<ms:String x:Key="ToDuplicateText">Duplicate</ms:String>
+			<ms:String x:Key="ToDeleteText">Delete</ms:String>
+			<ms:String x:Key="ToCopyText">Copy</ms:String>
+			<ms:String x:Key="ToPasteText">Paste</ms:String>
+			<ms:String x:Key="ToViewText">View</ms:String>
+			<ms:String x:Key="ToGroupText">Group</ms:String>
+			<ms:String x:Key="ToUnGroupText">Ungroup</ms:String>
+
+			<!--Verbs with Direct Objects-->
+			<ms:String x:Key="ToInsertTextText">Insert Text</ms:String>
+			<ms:String x:Key="ToOpenHomePageText">Open Home Page</ms:String>
+			<ms:String x:Key="ToInvertSelectionText">Invert Selection</ms:String>
+			<ms:String x:Key="ToSelectAllText">Select All</ms:String>
+			<ms:String x:Key="ToDeleteSelectionText">Delete Selection</ms:String>
+			<ms:String x:Key="ToOpenADocumentText">Open a Document</ms:String>
+			<ms:String x:Key="ToCreateADocumentText">Create a Document</ms:String>
+			<ms:String x:Key="ToOpenDocumentText">Open Document</ms:String>
+			<ms:String x:Key="ToCreateDocumentText">Create Document</ms:String>
+			<ms:String x:Key="ToContinueWithOutAnyDocumentText">Continue without any Document</ms:String>
+			<ms:String x:Key="ToDeleteLayerText">Delete Layer</ms:String>
+			<ms:String x:Key="ToAddLayerText">Add Layer</ms:String>
+			<ms:String x:Key="ToBringLayerForwardText">Bring Layer Forward</ms:String>
+			<ms:String x:Key="ToBringLayerBackwardText">Bring Layer Backward</ms:String>
+			<ms:String x:Key="ToBringForwardText">Bring Forward</ms:String>
+			<ms:String x:Key="ToBringBackwardText">Bring Backward</ms:String>
+			<ms:String x:Key="ToMoveToTopText">Move To Top</ms:String>
+			<ms:String x:Key="ToMoveToBottomText">Move To Bottom</ms:String>
+			<ms:String x:Key="ToLockLayerText">Lock Layer</ms:String>
+			<ms:String x:Key="ToHideLayerText">Hide Layer</ms:String>
+			<ms:String x:Key="ToShowLayerText">Show Layer</ms:String>
+			<ms:String x:Key="ToRenameLayerText">Rename Layer</ms:String>
+			<ms:String x:Key="ToNewLayerText">New Layer</ms:String>
+			<ms:String x:Key="ToMoveUpText">Move Up</ms:String>
+			<ms:String x:Key="ToMoveDownText">Move Down</ms:String>
+			<ms:String x:Key="ToRotate90DegreesToRightText">Rotate 90 degrees to the right</ms:String>
+			<ms:String x:Key="ToRotate90DegreesToLeftText">Rotate 90 degrees to the left</ms:String>
+		</Style.Resources>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<TextBlock Text="{DynamicResource ToAddLayerText}"></TextBlock> 
+		</Border>
+	</Design.PreviewWith>
+</Styles>

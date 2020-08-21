@@ -9,6 +9,7 @@ using Avalonia.Layout;
 using Avalonia.Controls.Notifications;
 using Aura.CommonCore.IO;
 using Aura.UI.Windows;
+using Avalonia.Controls.Primitives;
 
 namespace UI.Tests
 {
@@ -18,19 +19,20 @@ namespace UI.Tests
         Button addbtn;
         Button cbtn;
         WindowNotificationManager notificationManager;
+        ToggleButton toggle_language;
         public MainWindow()
         {
             InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
-#endif
-               tabc = this.Find<TabControl>("tabview");
-               addbtn = this.Find<Button>("btn");
-               cbtn = this.Find<Button>("cbtn");
-               addbtn.Click += Addbtn_Click;
+#endif 
+            App.Selector?.EnableThemes(this);
+            tabc = this.Find<TabControl>("tabview");
+            addbtn = this.Find<Button>("btn");
+            cbtn = this.Find<Button>("cbtn");
+            addbtn.Click += Addbtn_Click;
             cbtn.Click += Cbtn_Click;
             notificationManager = new WindowNotificationManager(this) { Position = NotificationPosition.BottomRight, MaxItems = 3 };
-            
         }
 
         private void Cbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)

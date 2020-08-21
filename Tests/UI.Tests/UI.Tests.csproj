@@ -13,6 +13,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
+    <PackageReference Include="Avalonia.ThemeManager" Version="0.9.4" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\AuraDraw\src\Aura.CommonCore\Aura.CommonCore.csproj" />

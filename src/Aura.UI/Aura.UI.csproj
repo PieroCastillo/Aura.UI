@@ -50,6 +50,9 @@
      <AvaloniaResource Update="ColorPickerButtonCollectionStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
+     <AvaloniaResource Update="Languages\EnglishLanguage.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
      <AvaloniaResource Update="Languages\SpanishLanguage.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
@@ -59,6 +62,9 @@
    </ItemGroup>
    <ItemGroup>
      <None Update="ColorPickerButtonCollectionStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
+     <None Update="Languages\EnglishLanguage.xaml">
        <Generator>MSBuild:Compile</Generator>
      </None>
    </ItemGroup>

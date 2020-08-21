@@ -1,11 +1,13 @@
 ﻿using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.ThemeManager;
 
 namespace UI.Tests
 {
     public class App : Application
     {
+        public static IThemeSelector? Selector { get; set; }
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
@@ -15,7 +17,13 @@ namespace UI.Tests
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow();
+                Selector = ThemeSelector.Create("Themes");
+                Selector.LoadSelectedTheme("Tests.theme");
+                desktop.MainWindow = new MainWindow()
+                {
+                    DataContext = Selector
+                };
+                desktop.Exit += (sennder, e) => Selector.SaveSelectedTheme("Tests.theme");
             }
 
             base.OnFrameworkInitializationCompleted();

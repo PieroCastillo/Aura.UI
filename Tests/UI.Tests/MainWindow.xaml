@@ -2,9 +2,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	    xmlns:app="clr-namespace:UITests;assembly=UITests"
+		xmlns:manager="clr-namespace:Avalonia.ThemeManager;assembly=Avalonia.ThemeManager"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="UI.Tests.MainWindow" Height="500" Width="600"
         Title="UI.Tests">
+	<TitleBarWindow.Resources>
+		 <manager:ObjectEqualityMultiConverter x:Key="ObjectEqualityMultiConverter"/>
+	</TitleBarWindow.Resources>
 	<TabControl TabStripPlacement="Left">
 		<TabItem Header="AuraTabItem">
 			<Grid>
@@ -15,13 +20,15 @@
 				<Button VerticalAlignment="Center"
 						HorizontalAlignment="Right" Name="cbtn">DeleteTab</Button>
 			</Grid>
-
 		</TabItem>
 		<TabItem Header="TitleBar">
-			<TitleBar Header="TitleBar"
+			<TitleBar Header="title"
 					  BorderThickness="3">
 			
 			</TitleBar>
+		</TabItem>
+		<TabItem Header="Language">
+			<ToggleButton Name="languagetoggle" Width="100" Height="50"></ToggleButton>
 		</TabItem>
 	</TabControl>	
 </TitleBarWindow>

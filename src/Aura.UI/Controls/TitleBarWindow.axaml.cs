@@ -42,7 +42,6 @@ namespace Aura.UI.Controls
         {
             base.OnTemplateApplied(e);
 
-
         }
         void SetupSide(string name, StandardCursorType cursor, WindowEdge edge)
         {
