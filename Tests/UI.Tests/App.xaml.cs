@@ -8,6 +8,7 @@ namespace UI.Tests
     public class App : Application
     {
         public static IThemeSelector? Selector { get; set; }
+        public static IThemeSelector? Language { get; set; }
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
