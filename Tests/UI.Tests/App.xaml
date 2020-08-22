@@ -5,7 +5,6 @@
         <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
 		<StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.xaml"/>
-		<StyleInclude Source="avares://Aura.UI/Languages/SpanishLanguage.xaml"/>
 		<StyleInclude Source="avares://Aura.UI/AuraUI.xaml"></StyleInclude>
 	</Application.Styles>
 </Application>

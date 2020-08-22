@@ -1,6 +1,8 @@
 ﻿using Avalonia;
 using Avalonia.Dialogs;
 using Avalonia.Logging.Serilog;
+using Avalonia.ReactiveUI;
+using System;
 
 namespace UI.Tests
 {
@@ -9,6 +11,7 @@ namespace UI.Tests
         // Initialization code. Don't use any Avalonia, third-party APIs or any
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
         // yet and stuff might break.
+        [STAThread]
         public static void Main(string[] args) => BuildAvaloniaApp()
             .StartWithClassicDesktopLifetime(args);
 
@@ -17,7 +20,8 @@ namespace UI.Tests
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseManagedSystemDialogs()
-                .With(new Win32PlatformOptions() { EnableMultitouch = true })
+                .UseReactiveUI()
                 .LogToDebug();
+               
     }
 }

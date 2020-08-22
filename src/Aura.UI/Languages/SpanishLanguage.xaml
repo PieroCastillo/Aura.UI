@@ -44,6 +44,8 @@
 			<ms:String x:Key="FullscreenText">Pantalla completa</ms:String>
 			<ms:String x:Key="ObjectsViewText">Vista de Objetos</ms:String>
 			<ms:String x:Key="ObjectsBoxText">Cuadro de Objetos</ms:String>
+			<ms:String x:Key="LangNameText">Spanish</ms:String>
+
 
 			<!--En inglés muchas palabras son verbos y a la vez-->
 			<!--sustantivos, por ello está los recursos "To{Verb}"-->
@@ -102,7 +104,7 @@
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="20">
-			<TextBlock Text="{DynamicResource ToMoveDownText}"></TextBlock>
+			<TextBlock Text="{DynamicResource LangNameText}"></TextBlock>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

@@ -2,14 +2,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-	    xmlns:app="clr-namespace:UITests;assembly=UITests"
-		xmlns:manager="clr-namespace:Avalonia.ThemeManager;assembly=Avalonia.ThemeManager"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" 
         x:Class="UI.Tests.MainWindow" Height="500" Width="600"
         Title="UI.Tests">
-	<TitleBarWindow.Resources>
-		 <manager:ObjectEqualityMultiConverter x:Key="ObjectEqualityMultiConverter"/>
-	</TitleBarWindow.Resources>
 	<TabControl TabStripPlacement="Left">
 		<TabItem Header="AuraTabItem">
 			<Grid>
@@ -28,7 +23,43 @@
 			</TitleBar>
 		</TabItem>
 		<TabItem Header="Language">
-			<ToggleButton Name="languagetoggle" Width="100" Height="50"></ToggleButton>
+		    <Border Padding="20">
+			  <Grid>
+			  <Menu Height="20">
+				<MenuItem Header="Theme">
+				   <MenuItem Header="_Theme" Items="{Binding Themes}">
+                      <MenuItem.Styles>
+                        <Style Selector="MenuItem">
+                            <Setter Property="Header" Value="{Binding Name}"/>
+                            <Setter Property="Command" Value="{Binding ApplyTheme}"/>
+                            <Setter Property="CommandParameter" Value="{Binding}"/>                            
+                        </Style>
+                      </MenuItem.Styles>
+			     	</MenuItem>
+                </MenuItem>
+				<MenuItem Header="Language">
+					<MenuItem Header="_Language" Items="{Binding Languages}">
+                      <MenuItem.Styles>
+                        <Style Selector="MenuItem">
+                            <Setter Property="Header" Value="{Binding Name}"/>
+                            <Setter Property="Command" Value="{Binding ApplyLanguage}"/>
+                            <Setter Property="CommandParameter" Value="{Binding}"/> 
+                        </Style>
+                      </MenuItem.Styles>
+                    </MenuItem>
+				</MenuItem>
+		       </Menu> 
+		      <WrapPanel>
+		    <StackPanel>
+			<Button Content="{DynamicResource HelpText}"></Button>
+		    <Button Content="{DynamicResource PropertiesText}"></Button>
+		    <Button Content="{DynamicResource FullscreenText}"></Button>
+		    <Button Content="{DynamicResource ToRotate90DegreesToRightText}"></Button>
+		    <Button Content="{DynamicResource ToRotate90DegreesToLeftText}"></Button>
+			</StackPanel>
+			</WrapPanel>
+			  </Grid>
+			</Border>
 		</TabItem>
 	</TabControl>	
 </TitleBarWindow>
