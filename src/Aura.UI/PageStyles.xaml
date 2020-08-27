@@ -1,0 +1,21 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style Selector="Page">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Page">
+				<Border BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}">
+					<ContentPresenter Content="{TemplateBinding Content}"
+				    ContentTemplate="{TemplateBinding ContentTemplate}"
+					Height="{TemplateBinding Height}"
+				    Width="{TemplateBinding Width}"></ContentPresenter>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+    <Design.PreviewWith>
+		<Border>
+			<Page>Test</Page>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

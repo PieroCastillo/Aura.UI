@@ -45,6 +45,27 @@
 			<ms:String x:Key="ObjectsViewText">Objects View</ms:String>
 			<ms:String x:Key="ObjectsBoxText">Objects Box</ms:String>
 			<ms:String x:Key="LangNameText">English</ms:String>
+			<ms:String x:Key="GradientText">Gradient</ms:String>
+			<ms:String x:Key="SolidColorText">Solid Color</ms:String>
+			<ms:String x:Key="ColorText">Color</ms:String>
+			<!--Colors Section-->
+			<ms:String x:Key="GreenColorText">Green</ms:String>
+			<ms:String x:Key="BlueColorText">Blue</ms:String>
+			<ms:String x:Key="RedColorText">Red</ms:String>
+			<ms:String x:Key="SkyBlueColorText">SkyBlue</ms:String>
+			<ms:String x:Key="PinkColorText">Pink</ms:String>
+			<ms:String x:Key="WhiteColorText">White</ms:String>
+			<ms:String x:Key="YellowColorText">Yellow</ms:String>
+			<ms:String x:Key="BlackColorText">Black</ms:String>
+			<ms:String x:Key="OrangeColorText">Orange</ms:String>
+			<ms:String x:Key="DarkGreenColorText">DarkGreen</ms:String>
+			<ms:String x:Key="GrayColorText">Gray</ms:String>
+			<ms:String x:Key="PurpleColorText">Purple</ms:String>
+			<ms:String x:Key="CyanColorText">Cyan</ms:String>
+			<ms:String x:Key="DarkGrayColorText">DarkGray</ms:String>
+			<ms:String x:Key="BrownColorText">Brown</ms:String>
+			<ms:String x:Key="GoldColorText">Gold</ms:String>
+			<ms:String x:Key="SilverColorText">Silver</ms:String>
 
 			<!--En inglés muchas palabras son verbos y a la vez-->
 			<!--sustantivos, por ello está los recursos "To{Verb}"-->
@@ -59,6 +80,7 @@
 			<ms:String x:Key="ToNameText">Name</ms:String>
 			<ms:String x:Key="ToOrientateText">Orientate</ms:String>
 			<ms:String x:Key="ToAgreeText">Agree</ms:String>
+			<ms:String x:Key="ToCancelText">Cancel</ms:String>
 			<ms:String x:Key="ToReDoText">Redo</ms:String>
 			<ms:String x:Key="ToUnDoText">Undo</ms:String>
 			<ms:String x:Key="ToOpenText">Open</ms:String>
@@ -70,7 +92,9 @@
 			<ms:String x:Key="ToViewText">View</ms:String>
 			<ms:String x:Key="ToGroupText">Group</ms:String>
 			<ms:String x:Key="ToUnGroupText">Ungroup</ms:String>
-
+			<ms:String x:Key="ToAddText">Add</ms:String>
+			<ms:String x:Key="ToAcceptText">Accept</ms:String>
+            
 			<!--Verbs with Direct Objects-->
 			<ms:String x:Key="ToInsertTextText">Insert Text</ms:String>
 			<ms:String x:Key="ToOpenHomePageText">Open Home Page</ms:String>

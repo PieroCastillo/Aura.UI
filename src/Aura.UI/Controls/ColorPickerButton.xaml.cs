@@ -13,6 +13,7 @@ using Avalonia.VisualTree;
 using Avalonia.Controls.Platform;
 using Avalonia.Layout;
 using Avalonia.Controls.ApplicationLifetimes;
+using Aura.UI.UIExtensions;
 
 namespace Aura.UI.Controls
 {
@@ -51,7 +52,7 @@ namespace Aura.UI.Controls
         protected override void OnClick()
         {
             colorWindow = new ColorWindowSmall();
-            colorWindow.ShowDialog(((ClassicDesktopStyleApplicationLifetime)Application.Current.ApplicationLifetime).MainWindow);
+            colorWindow.ShowDialog(this.GetParentWindowOfLogical());
             
             colorWindow.Closed += ColorWindow_Closed;
         }

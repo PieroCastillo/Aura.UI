@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Dialogs;
 using Avalonia.Logging.Serilog;
-using Avalonia.ReactiveUI;
+using Avalonia.Controls.ApplicationLifetimes;
 using System;
 
 namespace UI.Tests
@@ -20,7 +20,6 @@ namespace UI.Tests
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseManagedSystemDialogs()
-                .UseReactiveUI()
                 .LogToDebug();
                
     }

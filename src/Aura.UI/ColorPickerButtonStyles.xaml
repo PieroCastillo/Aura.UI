@@ -32,7 +32,7 @@
 				</ControlTemplate>
 			</Setter.Value>
 		</Setter>
-	</Style>
+	</Style> 
 	<Style Selector="ColorPickerButton:pressed">
 		<Setter Property="Background" Value="{DynamicResource ThemeControlHighBrush}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderLowBrush}"/>

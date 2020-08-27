@@ -45,6 +45,27 @@
 			<ms:String x:Key="ObjectsViewText">Vista de Objetos</ms:String>
 			<ms:String x:Key="ObjectsBoxText">Cuadro de Objetos</ms:String>
 			<ms:String x:Key="LangNameText">Spanish</ms:String>
+			<ms:String x:Key="GradientText">Degradado</ms:String>
+			<ms:String x:Key="SolidColorText">Color Sólido</ms:String>
+			<ms:String x:Key="ColorText">Color</ms:String>
+			<!--Colors Section-->
+			<ms:String x:Key="GreenColorText">Verde</ms:String>
+			<ms:String x:Key="BlueColorText">Azul</ms:String>
+			<ms:String x:Key="RedColorText">Rojo</ms:String>
+			<ms:String x:Key="SkyBlueColorText">Celeste</ms:String>
+			<ms:String x:Key="PinkColorText">Rosa</ms:String>
+			<ms:String x:Key="WhiteColorText">Blanco</ms:String>
+			<ms:String x:Key="YellowColorText">Amarillo</ms:String>
+			<ms:String x:Key="BlackColorText">Negro</ms:String>
+			<ms:String x:Key="OrangeColorText">Anaranjado</ms:String>
+			<ms:String x:Key="DarkGreenColorText">Verde Oscuro</ms:String>
+			<ms:String x:Key="GrayColorText">Gris</ms:String>
+			<ms:String x:Key="PurpleColorText">Púrpura</ms:String>
+			<ms:String x:Key="CyanColorText">Cian</ms:String>
+			<ms:String x:Key="DarkGrayColorText">Gris Oscuro</ms:String>
+			<ms:String x:Key="BrownColorText">Marrón</ms:String>
+			<ms:String x:Key="GoldColorText">Amarillo</ms:String>
+			<ms:String x:Key="SilverColorText">Plata</ms:String>
 
 
 			<!--En inglés muchas palabras son verbos y a la vez-->
@@ -59,7 +80,8 @@
 			<ms:String x:Key="ToCloseText">Cerrar</ms:String>
 			<ms:String x:Key="ToNameText">Nombrar</ms:String>
 			<ms:String x:Key="ToOrientateText">Orientar</ms:String>
-			<ms:String x:Key="ToAgreeText">Aceptar</ms:String>
+			<ms:String x:Key="ToAgreeText">De acuerdo</ms:String>
+			<ms:String x:Key="ToCancelText">Cancelar</ms:String>
 			<ms:String x:Key="ToReDoText">Rehacer</ms:String>
 			<ms:String x:Key="ToUnDoText">Deshacer</ms:String>
 			<ms:String x:Key="ToOpenText">Abrir</ms:String>
@@ -73,6 +95,8 @@
 			<ms:String x:Key="ToUnGroupText">Desagrupar</ms:String>
             <ms:String x:Key="ToMoveUpText">Elevar</ms:String>
 			<ms:String x:Key="ToMoveDownText">Bajar</ms:String>
+			<ms:String x:Key="ToAddText">Agregar</ms:String>
+			<ms:String x:Key="ToAcceptText">Aceptar</ms:String>
 			
 			<!--Verbos con Objetos directos-->
 			<ms:String x:Key="ToInsertTextText">Insertar Texto</ms:String>

@@ -25,10 +25,10 @@
 								   VerticalAlignment="Center" HorizontalAlignment="Left"
 								   Padding="2.5"></ContentPresenter>
 							<Button Grid.Column="2" Content="{TemplateBinding Button1Content}" Padding="0" Margin="0"
-								Name="B1" IsVisible="{TemplateBinding Button1Active}"
+								Name="PART_B1" IsVisible="{TemplateBinding Button1Active}"
 									VerticalAlignment="Center"></Button>
 							<Button Grid.Column="3" Content="{TemplateBinding Button2Content}" Margin="0" Padding="0"
-								 Name="B2" IsVisible="{TemplateBinding Button2Active}"
+								 Name="PART_B2" IsVisible="{TemplateBinding Button2Active}"
 									VerticalAlignment="Center"></Button>
 
 						</Grid>

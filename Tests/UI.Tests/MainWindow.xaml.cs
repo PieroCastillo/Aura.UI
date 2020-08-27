@@ -7,30 +7,50 @@ using Avalonia.Media;
 using Avalonia.VisualTree;
 using Avalonia.Layout;
 using Avalonia.Controls.Notifications;
-using Aura.CommonCore.IO;
 using Aura.UI.Windows;
 using Avalonia.Controls.Primitives;
 using Aura.UI.Managers;
 
 namespace UI.Tests
 {
-    public class MainWindow : TitleBarWindow
+    public class MainWindow : Window
     {
         TabControl tabc;
         Button addbtn;
         Button cbtn;
+        Button NextPage_btn;
+        Button PreviousPage_btn; 
+        PagesView pagesvw;
         public MainWindow()
         {
             InitializeComponent();
+#if DEBUG
             this.AttachDevTools();
-           // App.Selector?.EnableThemes(this);
+#endif
             tabc = this.Find<TabControl>("tabview");
             addbtn = this.Find<Button>("btn");
             cbtn = this.Find<Button>("cbtn");
-            App.Selector.EnableThemes(this);
-            App.Manager.EnableLanguages(this);
+            PreviousPage_btn = this.Find<Button>("P_pages");
+            NextPage_btn = this.Find<Button>("N_pages");
+            pagesvw = this.Find<PagesView>("PagesVW");
+
             addbtn.Click += Addbtn_Click;
             cbtn.Click += Cbtn_Click;
+
+            PreviousPage_btn.Click += PreviousPage_btn_Click;
+            NextPage_btn.Click += NextPage_btn_Click;
+
+            EnableFeatures();
+        }
+
+        private void NextPage_btn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            pagesvw.Next();
+        }
+
+        private void PreviousPage_btn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            pagesvw.Previous();
         }
 
         private void Cbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -46,7 +66,13 @@ namespace UI.Tests
 
         private void InitializeComponent()
         {
-            AvaloniaXamlLoader.Load(this);
+            AvaloniaXamlLoader.Load(this);          
+        }
+
+        private void EnableFeatures()
+        {
+            App.Manager.EnableLanguages(this);
+            App.Selector.EnableThemes(this);
         }
     }
 }

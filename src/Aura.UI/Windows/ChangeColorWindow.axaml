@@ -13,11 +13,11 @@
 			<RowDefinition Height="60"></RowDefinition>
 		</Grid.RowDefinitions>
 		<TabControl Grid.Row="0">
-			<TabItem Header="Color Sólido">
+			<TabItem Header="{DynamicResource SolidColorText}">
 				<cp:ColorPicker Name="colorPick_"></cp:ColorPicker>
 			</TabItem>
-			<TabItem Header="Degradado">
-				<GradientBrushPicker Name="gradient_p_"></GradientBrushPicker>
+			<TabItem Header="{DynamicResource GradientText}">
+				<GradientEditor></GradientEditor>
 			</TabItem>
 		</TabControl>
 		<Grid Grid.Row="1" Background="{DynamicResource ThemeDisabledOpacity}">
@@ -28,9 +28,9 @@
 				</Style>
 			</Grid.Styles>
 			<Button Padding="5,5,5,5" Margin="50,0,0,0"
-					Name="agree_btn">Aceptar</Button>
+					Name="agree_btn" Content="{DynamicResource ToAgreeText}"></Button>
 			<Button Padding="5,5,5,5" Margin="270,0,0,0"
-					Name="cancel_btn">Cancelar</Button>
+					Name="cancel_btn" Content="{DynamicResource ToCancelText}"></Button>
 		</Grid>
 	</Grid>
 </Window>

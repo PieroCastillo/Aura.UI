@@ -9,13 +9,13 @@ using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using Aura.UI.Events;
 using Aura.UI.UIExtensions;
-using Aura.UI.Controls.Primitives;
+using Aura.UI.Attributes;
 
 namespace Aura.UI.Controls
 {
-    public class AuraTabItem : TabItem, IDraggable
+    [InDevelopingFeatures(Name = "Dragging")]
+    public class AuraTabItem : TabItem
     {
         Button CloseButton;
         public AuraTabItem()
@@ -33,7 +33,7 @@ namespace Aura.UI.Controls
         /// Close now the tab
         /// </summary>
         /// <param name="parameter">Does nothing, only for the requeriments of C# </param>
-        protected void Close(object parameter)
+        internal void Close(object nevermatter) 
         {
             var x = this.Parent as TabControl;
             x.CloseTab(this);
@@ -45,10 +45,6 @@ namespace Aura.UI.Controls
             e.Handled = true;
             RaiseEvent(e);
             this.Close(null);
-        }
-        public void DragTo(IDraggableHost host)
-        {
-            
         }
         protected virtual void OnClosing(object sender, RoutedEventArgs e)
         {
@@ -62,8 +58,6 @@ namespace Aura.UI.Controls
             CloseButton = this.GetControl<Button>(e, "PART_CloseButton");
             CloseButton.Click += CloseButton_Click; 
         }
-        protected void OnDraggingStarted(object DraggedObject, DraggingStartedEventArgs draggingStartedEventArgs) { }
-        protected void OnDraggingEnded(object DraggedObject, DraggingEndedEventArgs draggingEndedEventArgs) { }
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             this.Close();
@@ -77,21 +71,6 @@ namespace Aura.UI.Controls
         }
         public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
             RoutedEvent.Register<AuraTabItem, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
-
-        public event EventHandler<DraggingStartedEventArgs> DraggingStarted
-        {
-            add { AddHandler(DraggingStartedEvent, value); }
-            remove { RemoveHandler(DraggingEndedEvent, value); }
-        }
-        public static readonly RoutedEvent<DraggingStartedEventArgs> DraggingStartedEvent;
-
-        public event EventHandler<DraggingEndedEventArgs> DraggingEnded
-        {
-            add { AddHandler(DraggingEndedEvent, value); }
-            remove { RemoveHandler(DraggingEndedEvent, value); }
-        }
-        public static readonly RoutedEvent<DraggingEndedEventArgs> DraggingEndedEvent =
-            RoutedEvent.Register<AuraTabItem, DraggingEndedEventArgs>(nameof(DraggingEnded), RoutingStrategies.Bubble);
         #endregion
 
 

@@ -100,6 +100,51 @@ using Aura.UI.UIExtensions;
 using Aura.UI.Windows;
 ```
 
+# Language Manager
+
+## What's that?
+
+It's a tool to ease the changes of an application's language .
+
+## How to use
+
+Add the using statements to ```App.xaml.cs``` and ```MainWindow.xaml```
+```c#
+using Aura.UI.Managers;
+```
+On ```App.xaml.cs```
+```c#
+public static ILanguageManager? Manager { get; set; }
+public override void OnFrameworkInitializationCompleted()
+        {
+            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
+            {
+                Manager = LanguageManager.Create("Languages");
+                Manager.LoadSelectedLanguage("Language.theme");
+                desktop.MainWindow = new MainWindow()
+                {
+                    DataContext = Manager
+                };
+                desktop.Exit += (sender , e) =>
+                {
+                    Manager.SaveSelectedLanguage("Language.theme");
+                };
+            }
+            base.OnFrameworkInitializationCompleted();
+        }
+```
+On ```MainWindow.xaml.cs```
+```c#
+public MainWindow(){
+   InitializeComponent();
+   App.Selector.EnableThemes(this);
+}
+```
+Finally, add this using statement to ```Program.cs```
+```c#
+using Avalonia.Controls.ApplicationLifetimes;
+```
+
 # About Aura.UI
 
 This library is open source and free, in a few months come out the first stable version,for now, Aura.UI is a beta. 

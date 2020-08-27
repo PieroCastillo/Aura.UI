@@ -1,8 +1,8 @@
-﻿<TitleBarWindow xmlns="https://github.com/avaloniaui"
+﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" 
+        mc:Ignorable="d"
         x:Class="UI.Tests.MainWindow" Height="500" Width="600"
         Title="UI.Tests">
 	<TabControl TabStripPlacement="Left">
@@ -18,48 +18,87 @@
 		</TabItem>
 		<TabItem Header="TitleBar">
 			<TitleBar Header="title"
-					  BorderThickness="3">
-			
+					  BorderThickness="3">			
 			</TitleBar>
 		</TabItem>
 		<TabItem Header="Language">
-		    <Border Padding="20">
-			  <Grid>
-			  <Menu Height="20">
-				<MenuItem Header="Theme">
-				   <MenuItem Header="_Theme" Items="{Binding Themes}">
-                      <MenuItem.Styles>
-                        <Style Selector="MenuItem">
-                            <Setter Property="Header" Value="{Binding Name}"/>
-                            <Setter Property="Command" Value="{Binding ApplyTheme}"/>
-                            <Setter Property="CommandParameter" Value="{Binding}"/>                            
-                        </Style>
-                      </MenuItem.Styles>
-			     	</MenuItem>
-                </MenuItem>
-				<MenuItem Header="Language">
-					<MenuItem Header="_Language" Items="{Binding Languages}">
-                      <MenuItem.Styles>
-                        <Style Selector="MenuItem">
-                            <Setter Property="Header" Value="{Binding Name}"/>
-                            <Setter Property="Command" Value="{Binding ApplyLanguage}"/>
-                            <Setter Property="CommandParameter" Value="{Binding}"/> 
-                        </Style>
-                      </MenuItem.Styles>
-                    </MenuItem>
-				</MenuItem>
-		       </Menu> 
-		      <WrapPanel>
-		    <StackPanel>
-			<Button Content="{DynamicResource HelpText}"></Button>
-		    <Button Content="{DynamicResource PropertiesText}"></Button>
-		    <Button Content="{DynamicResource FullscreenText}"></Button>
-		    <Button Content="{DynamicResource ToRotate90DegreesToRightText}"></Button>
-		    <Button Content="{DynamicResource ToRotate90DegreesToLeftText}"></Button>
-			</StackPanel>
-			</WrapPanel>
-			  </Grid>
+			<Border Padding="20">
+				<Grid>
+					<Menu Height="20">
+						<MenuItem Header="Theme" DataContext="{Binding Selector}">
+							<MenuItem Header="_Theme" Items="{Binding Themes}">
+								<MenuItem.Styles>
+									<Style Selector="MenuItem">
+										<Setter Property="Header" Value="{Binding Name}"/>
+										<Setter Property="Command" Value="{Binding ApplyTheme}"/>
+										<Setter Property="CommandParameter" Value="{Binding}"/>
+									</Style>
+								</MenuItem.Styles>
+							</MenuItem>
+						</MenuItem>
+						<MenuItem Header="Language" DataContext="{Binding Manager}">
+							<MenuItem Header="_Language" Items="{Binding Languages}">
+								<MenuItem.Styles>
+									<Style Selector="MenuItem">
+										<Setter Property="Header" Value="{Binding Name}"/>
+										<Setter Property="Command" Value="{Binding ApplyLanguage}"/>
+										<Setter Property="CommandParameter" Value="{Binding}"/>
+									</Style>
+								</MenuItem.Styles>
+							</MenuItem>
+						</MenuItem>
+					</Menu>
+					<WrapPanel>
+						<StackPanel>
+							<Button Content="{DynamicResource HelpText}"></Button>
+							<Button Content="{DynamicResource PropertiesText}"></Button>
+							<Button Content="{DynamicResource FullscreenText}"></Button>
+							<Button Content="{DynamicResource ToRotate90DegreesToRightText}"></Button>
+							<Button Content="{DynamicResource ToRotate90DegreesToLeftText}"></Button>
+						</StackPanel>
+					</WrapPanel>
+				</Grid>
 			</Border>
 		</TabItem>
+	    <TabItem Header="PagesView">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"/>
+				    <ColumnDefinition Width="100"/>
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<PagesView Name="PagesVW" Grid.Column="0" Grid.Row="0" SelectedItem="{Binding #SelectedPage_}">
+				<Page Title="Welcome to the Page 1!" IsSelected="True" Name="SelectedPage_">
+					<Border Padding="50">
+						<StackPanel>
+							<TextBlock FontSize="20">This control can change title of the window automatically</TextBlock>
+						    <TextBlock>You can change the pages with the Pages with KeyLeft and KeyRight!</TextBlock>
+						</StackPanel>
+				    </Border>
+				</Page>
+			    <Page Title="Welcome to the Page 2!">
+					<Border Padding="50"><TextBlock>Test2</TextBlock></Border>
+				</Page>
+			    <Page Title="Welcome to the Page 3!">
+					<Border Padding="50"><TextBlock>Test3</TextBlock></Border>
+				</Page>
+			    <Page Title="Welcome to the Page 4!">
+					<Border Padding="50"><TextBlock>Test4</TextBlock></Border>
+				</Page>
+              	<Page Title="Welcome to the Page 5!">
+					<Border Padding="50"><TextBlock>Test5</TextBlock></Border>
+				</Page>
+			    <Page Title="Welcome to the Page 6!">
+					<Border Padding="50"><TextBlock>Isn't it fabulous?</TextBlock></Border>
+				</Page>
+			</PagesView>
+			    <StackPanel Grid.Column="1" Grid.Row="0">
+				  <Button Name="P_pages" Width="100" Height="50">Previous</Button>
+			      <Button Name="N_pages" Width="100" Height="50">Next</Button>
+			    </StackPanel>
+			</Grid>
+		</TabItem>
 	</TabControl>	
-</TitleBarWindow>
+</Window>

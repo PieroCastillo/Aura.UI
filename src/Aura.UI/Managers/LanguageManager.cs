@@ -17,9 +17,11 @@ namespace Aura.UI.Managers
 {
     public sealed class LanguageManager : ReactiveObject, ILanguageManager
     {
+#pragma warning disable CS8632 // La anotación para tipos de referencia que aceptan valores NULL solo debe usarse en el código dentro de un contexto de anotaciones "#nullable".
         private ILanguage? _selectedLanguage;
         private IList<ILanguage>? _languages;
         private IList<Window>? _windows;
+
 
         public ILanguage? SelectedLanguage
         {
@@ -111,7 +113,7 @@ namespace Aura.UI.Managers
                     {
                         if (x != null && x.Style != null)
                         {
-                            window.Styles[0] = x.Style;
+                            window.Styles.Add(x.Style);
                         }
                     });
                 }
@@ -167,5 +169,6 @@ namespace Aura.UI.Managers
             {
             }
         }
+#pragma warning restore CS8632 // La anotación para tipos de referencia que aceptan valores NULL solo debe usarse en el código dentro de un contexto de anotaciones "#nullable".
     }
 }

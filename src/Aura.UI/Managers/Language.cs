@@ -12,6 +12,7 @@ namespace Aura.UI.Managers
 {
     public class Language : ReactiveObject, ILanguage
     {
+#pragma warning disable CS8632 // La anotación para tipos de referencia que aceptan valores NULL solo debe usarse en el código dentro de un contexto de anotaciones "#nullable".
         
         private string _name = string.Empty;
         private IStyle? _style;
@@ -30,7 +31,7 @@ namespace Aura.UI.Managers
         }
 
         public ILanguageManager? Manager
-        {
+       {
             get => _manager;
             set => this.RaiseAndSetIfChanged(ref _manager, value);
         }
@@ -39,6 +40,8 @@ namespace Aura.UI.Managers
         {
             Manager?.ApplyLanguage(this);
         }
+        #pragma warning restore CS8632 // La anotación para tipos de referencia que aceptan valores NULL solo debe usarse en el código dentro de un contexto de anotaciones "#nullable".
+ 
     }
 
     public enum Languages

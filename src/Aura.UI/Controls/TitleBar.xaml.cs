@@ -3,9 +3,12 @@ using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Markup.Xaml;
 using Aura.UI.UIExtensions;
+using Aura.UI.Attributes;
 
 namespace Aura.UI.Controls
 {
+    [TemplatePart(Name = "PART_B1", Type = typeof(Button))]
+    [TemplatePart(Name = "PART_B2", Type = typeof(Button))]
     public class TitleBar : HeaderedContentControl
     {
         Button B1;
@@ -20,8 +23,8 @@ namespace Aura.UI.Controls
         {
             base.OnTemplateApplied(e);
 
-            B1 = this.GetControl<Button>(e, "B1");
-            B2 = this.GetControl<Button>(e, "B2");
+            B1 = this.GetControl<Button>(e, "PART_B1");
+            B2 = this.GetControl<Button>(e, "PART_B2");
             B1.Click += B1_Click;
             B2.Click += B2_Click;
         }

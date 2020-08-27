@@ -1,4 +1,5 @@
 ﻿using Aura.UI.Managers;
+using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -29,7 +30,10 @@ namespace UI.Tests
                 Manager.LoadSelectedLanguage("Language.theme");
                 desktop.MainWindow = new MainWindow()
                 {
-                    DataContext = Manager
+                    DataContext = new
+                    {
+                        Manager, Selector
+                    }
                 };
                 desktop.Exit += (sender , e) =>
                 {
