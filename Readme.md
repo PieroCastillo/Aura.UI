@@ -16,9 +16,10 @@ Aura.UI
   *  AuraTabItem : A Closable TabItem what has extra features.
   *  TitleBar : Similar to GroupBox, but has 2 buttons and is easy-to-custom.
   *  ColorPickerButton : A Toggle Button when you click it, shows a ColorPicker on a Window.
+  *  PagesView : A Pages Collection for simplify the life.
 
 * Controls in Developing
-   * GradientColorPicker : This control creates a GradientBrush to use in other controls.
+   * GradientEditor : This control creates a GradientBrush to use in other controls.
    * SuperListBoxItem : A Powered-ListBoxItem has a Button and two TextBlocks.
 * Windows Availables
    * ColorWindowSmall : This window shows a ColorPicker.
