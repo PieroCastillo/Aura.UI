@@ -1,0 +1,58 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="UI.Tests.Views.PagesTest"
+        Title="PagesTest">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="100"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"></RowDefinition>
+		</Grid.RowDefinitions>
+		<PagesView Name="PagesVW" Grid.Column="0" Grid.Row="0" SelectedItem="{Binding #SelectedPage_}">
+			<Page Title="Welcome to the Page 1!" IsSelected="True" Name="SelectedPage_">
+				<Border Padding="50">
+					<StackPanel>
+						<TextBlock FontSize="20">This control can change title of the window automatically</TextBlock>
+						<TextBlock>You can change the pages with the Pages with KeyLeft and KeyRight!</TextBlock>
+					</StackPanel>
+				</Border>
+			</Page>
+			<Page Title="Welcome to the Page 2!">
+				<Border Padding="50">
+					<TextBlock>Test2</TextBlock>
+				</Border>
+			</Page>
+			<Page Title="Welcome to the Page 3!">
+				<Border Padding="50">
+					<TextBlock>Test3</TextBlock>
+				</Border>
+			</Page>
+			<Page Title="Welcome to the Page 4!">
+				<Border Padding="50">
+					<TextBlock>Test4</TextBlock>
+				</Border>
+			</Page>
+			<Page Title="Welcome to the Page 5!">
+				<Border Padding="50">
+					<TextBlock>Test5</TextBlock>
+				</Border>
+			</Page>
+			<Page Title="Welcome to the Page 6!">
+				<Border Padding="50">
+					<TextBlock>Isn't it fabulous?</TextBlock>
+				</Border>
+			</Page>
+		</PagesView>
+		<StackPanel Grid.Column="1" Grid.Row="0">
+			<Button Name="P_pages" Width="100" Height="50">Previous</Button>
+			<Button Name="N_pages" Width="100" Height="50">Next</Button>
+			<TextBox Name="GotoPage" Width="100" Height="25" Watermark="Go To Index"></TextBox>
+			<Button Name="Goto_btn" Width="100" Height="50">Go To Index :D</Button>
+		</StackPanel>
+	</Grid>
+</Window>

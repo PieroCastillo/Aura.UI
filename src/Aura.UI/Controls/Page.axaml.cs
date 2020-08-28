@@ -1,5 +1,8 @@
-﻿using Avalonia;
+﻿using Aura.UI.UIExtensions;
+using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
+using Avalonia.LogicalTree;
 using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.Controls
@@ -9,12 +12,15 @@ namespace Aura.UI.Controls
         public Page()
         {
             this.InitializeComponent();
+            ViewerParent = this.GetParentTOfLogical<PagesView>();
         }
 
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
         }
+
+        public PagesView ViewerParent { get; set; }
 
         public string Title
         {

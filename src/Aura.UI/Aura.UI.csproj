@@ -46,8 +46,9 @@
      <PackageReference Include="Avalonia.ThemeManager" Version="0.9.4" />
      <PackageReference Include="MessageBox.Avalonia" Version="0.9.6.1" />
      <PackageReference Include="ThemeEditor.Controls.ColorPicker" Version="0.9.4" />
+	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.0" />
      <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
-	 <PackageReference Include="Avalonia" Version="0.9.12" />
+	 <PackageReference Include="Avalonia" Version="0.10.0-preview4" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Update="Languages\EnglishLanguage.xaml">

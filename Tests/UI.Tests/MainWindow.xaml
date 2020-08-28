@@ -61,44 +61,7 @@
 			</Border>
 		</TabItem>
 	    <TabItem Header="PagesView">
-			<Grid>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*"/>
-				    <ColumnDefinition Width="100"/>
-				</Grid.ColumnDefinitions>
-				<Grid.RowDefinitions>
-					<RowDefinition Height="*"></RowDefinition>
-				</Grid.RowDefinitions>
-				<PagesView Name="PagesVW" Grid.Column="0" Grid.Row="0" SelectedItem="{Binding #SelectedPage_}">
-				<Page Title="Welcome to the Page 1!" IsSelected="True" Name="SelectedPage_">
-					<Border Padding="50">
-						<StackPanel>
-							<TextBlock FontSize="20">This control can change title of the window automatically</TextBlock>
-						    <TextBlock>You can change the pages with the Pages with KeyLeft and KeyRight!</TextBlock>
-						</StackPanel>
-				    </Border>
-				</Page>
-			    <Page Title="Welcome to the Page 2!">
-					<Border Padding="50"><TextBlock>Test2</TextBlock></Border>
-				</Page>
-			    <Page Title="Welcome to the Page 3!">
-					<Border Padding="50"><TextBlock>Test3</TextBlock></Border>
-				</Page>
-			    <Page Title="Welcome to the Page 4!">
-					<Border Padding="50"><TextBlock>Test4</TextBlock></Border>
-				</Page>
-              	<Page Title="Welcome to the Page 5!">
-					<Border Padding="50"><TextBlock>Test5</TextBlock></Border>
-				</Page>
-			    <Page Title="Welcome to the Page 6!">
-					<Border Padding="50"><TextBlock>Isn't it fabulous?</TextBlock></Border>
-				</Page>
-			</PagesView>
-			    <StackPanel Grid.Column="1" Grid.Row="0">
-				  <Button Name="P_pages" Width="100" Height="50">Previous</Button>
-			      <Button Name="N_pages" Width="100" Height="50">Next</Button>
-			    </StackPanel>
-			</Grid>
+			<Button Name="open_pages">Open Pages</Button>
 		</TabItem>
 	</TabControl>	
 </Window>
