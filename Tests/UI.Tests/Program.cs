@@ -1,6 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Dialogs;
-using Avalonia.Logging.Serilog;
 using Avalonia.Controls.ApplicationLifetimes;
 using System;
 

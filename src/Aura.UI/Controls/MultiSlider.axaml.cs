@@ -82,9 +82,9 @@ namespace Aura.UI.Controls
             get;
             set;
         }
-        protected override void OnTemplateApplied(TemplateAppliedEventArgs e)
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
-            base.OnTemplateApplied(e);
+            base.OnApplyTemplate(e);
             Root = this.GetControl<Grid>(e, "Root");
         }
         public double MinimumValue 
@@ -121,9 +121,9 @@ namespace Aura.UI.Controls
             AvaloniaXamlLoader.Load(this);
         }
 
-        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs e)
+        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
         {
-            base.OnPropertyChanged(e);
+            base.OnPropertyChanged(change);
 
             ArrangeSliders();
             UpdateValues();

@@ -12,7 +12,7 @@ namespace UI.Tests
 #nullable enable
     public class App : Application
     {
-        public static IThemeSelector? Selector { get; set; }
+        //public static IThemeSelector? Selector { get; set; }
         public static ILanguageManager? Manager { get; set; }
         public override void Initialize()
         {
@@ -23,8 +23,8 @@ namespace UI.Tests
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                Selector = ThemeSelector.Create("Themes");
-                Selector.LoadSelectedTheme("Theme.theme");
+                //Selector = ThemeSelector.Create("Themes");
+                //Selector.LoadSelectedTheme("Theme.theme");
                 
                 Manager = LanguageManager.Create("Languages");
                 Manager.LoadSelectedLanguage("Language.theme");
@@ -32,12 +32,12 @@ namespace UI.Tests
                 {
                     DataContext = new
                     {
-                        Manager, Selector
+                        Manager/*, Selector*/
                     }
                 };
                 desktop.Exit += (sender , e) =>
                 {
-                    Selector.SaveSelectedTheme("Theme.theme");
+                    //Selector.SaveSelectedTheme("Theme.theme");
                     Manager.SaveSelectedLanguage("Language.theme");
                 };
             }

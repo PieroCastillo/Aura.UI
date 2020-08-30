@@ -9,19 +9,19 @@ namespace Aura.UI.Controls
 {
     [TemplatePart(Name = "PART_B1", Type = typeof(Button))]
     [TemplatePart(Name = "PART_B2", Type = typeof(Button))]
-    public class TitleBar : HeaderedContentControl
+    public class TitleBox : HeaderedContentControl
     {
         Button B1;
         Button B2;
-        public TitleBar()
+        public TitleBox()
         {
             this.InitializeComponent();
             
         }
 
-        protected override void OnTemplateApplied(TemplateAppliedEventArgs e)
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
-            base.OnTemplateApplied(e);
+            base.OnApplyTemplate(e);
 
             B1 = this.GetControl<Button>(e, "PART_B1");
             B2 = this.GetControl<Button>(e, "PART_B2");
@@ -52,14 +52,14 @@ namespace Aura.UI.Controls
             set { SetValue(Button1ContentProperty, value); }
         }
         public static readonly StyledProperty<object> Button1ContentProperty =
-            AvaloniaProperty.Register<TitleBar, object>(nameof(Button1Content), "1");
+            AvaloniaProperty.Register<TitleBox, object>(nameof(Button1Content), "1");
         public object Button2Content
         {
             get { return GetValue(Button2ContentProperty); }
             set { SetValue(Button2ContentProperty, value); }
         }
         public static readonly StyledProperty<object> Button2ContentProperty =
-            AvaloniaProperty.Register<TitleBar, object>(nameof(Button2Content), "2");
+            AvaloniaProperty.Register<TitleBox, object>(nameof(Button2Content), "2");
 
        
 
@@ -69,7 +69,7 @@ namespace Aura.UI.Controls
             set { SetValue(Button1ActiveProperty, value); }
         }
         public static readonly StyledProperty<bool> Button1ActiveProperty =
-            AvaloniaProperty.Register<TitleBar, bool>(nameof(Button1Active), true);
+            AvaloniaProperty.Register<TitleBox, bool>(nameof(Button1Active), true);
 
         public bool Button2Active
         {
@@ -77,7 +77,7 @@ namespace Aura.UI.Controls
             set { SetValue(Button2ActiveProperty, value); }
         }
         public static readonly StyledProperty<bool> Button2ActiveProperty =
-            AvaloniaProperty.Register<TitleBar, bool>(nameof(Button2Active), true);
+            AvaloniaProperty.Register<TitleBox, bool>(nameof(Button2Active), true);
         #endregion
 
         public virtual void OnClickInButton1() { }

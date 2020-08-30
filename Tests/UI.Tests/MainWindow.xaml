@@ -1,11 +1,12 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
+﻿<ContentWindow xmlns="https://github.com/avaloniaui" 
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         x:Class="UI.Tests.MainWindow" Height="500" Width="600"
-        Title="UI.Tests">
-	<TabControl TabStripPlacement="Left">
+        Title="UI.Tests"> 
+	<Panel>
+		<TabControl TabStripPlacement="Left" Margin="0, 15, 0 ,20">
 		<TabItem Header="AuraTabItem">
 			<Grid>
 				<TabControl Name="tabview">
@@ -16,16 +17,16 @@
 						HorizontalAlignment="Right" Name="cbtn">DeleteTab</Button>
 			</Grid>
 		</TabItem>
-		<TabItem Header="TitleBar">
-			<TitleBar Header="title"
+		<TabItem Header="TitleBox">
+			<TitleBox Header="title"
 					  BorderThickness="3">			
-			</TitleBar>
+			</TitleBox>
 		</TabItem>
 		<TabItem Header="Language">
 			<Border Padding="20">
 				<Grid>
 					<Menu Height="20">
-						<MenuItem Header="Theme" DataContext="{Binding Selector}">
+						<!--<MenuItem Header="Theme" DataContext="{Binding Selector}">
 							<MenuItem Header="_Theme" Items="{Binding Themes}">
 								<MenuItem.Styles>
 									<Style Selector="MenuItem">
@@ -35,7 +36,7 @@
 									</Style>
 								</MenuItem.Styles>
 							</MenuItem>
-						</MenuItem>
+						</MenuItem>-->
 						<MenuItem Header="Language" DataContext="{Binding Manager}">
 							<MenuItem Header="_Language" Items="{Binding Languages}">
 								<MenuItem.Styles>
@@ -63,5 +64,9 @@
 	    <TabItem Header="PagesView">
 			<Button Name="open_pages">Open Pages</Button>
 		</TabItem>
+		<TabItem Header="TabbedWindow">
+			<Button Name="open_tabbedwin">Open Tabbed Window</Button>
+		</TabItem>
 	</TabControl>	
-</Window>
+	</Panel>
+</ContentWindow>

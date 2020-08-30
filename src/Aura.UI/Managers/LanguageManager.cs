@@ -12,6 +12,9 @@ using Avalonia.Styling;
 using Avalonia.Markup.Xaml;
 using ReactiveUI;
 using System.Reactive.Linq;
+using System.Collections;
+using DynamicData;
+using Aura.UI.UIExtensions;
 
 namespace Aura.UI.Managers
 {
@@ -91,7 +94,7 @@ namespace Aura.UI.Managers
         {
             var name = System.IO.Path.GetFileNameWithoutExtension(file);
             var xaml = System.IO.File.ReadAllText(file);
-            var style = AvaloniaXamlLoader.Parse<IStyle>(xaml);
+            var style = AvaloniaRuntimeXamlLoader.Parse<IStyle>(xaml);
             return new Language() { Name = name, Style = style, Manager = this };
         }
 
@@ -113,7 +116,7 @@ namespace Aura.UI.Managers
                     {
                         if (x != null && x.Style != null)
                         {
-                            window.Styles.Add(x.Style);
+                            window.Styles[0] = x.Style;
                         }
                     });
                 }

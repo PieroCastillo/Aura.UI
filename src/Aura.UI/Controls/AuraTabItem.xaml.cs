@@ -51,17 +51,32 @@ namespace Aura.UI.Controls
             
         }
 
-        protected override void OnTemplateApplied(TemplateAppliedEventArgs e)
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
-            base.OnTemplateApplied(e);
+            base.OnApplyTemplate(e);
 
             CloseButton = this.GetControl<Button>(e, "PART_CloseButton");
-            CloseButton.Click += CloseButton_Click; 
+            if(this.IsClosable != false)
+            {
+                CloseButton.Click += CloseButton_Click;
+            }
+            else
+            {
+                CloseButton.IsVisible = false;
+            }
         }
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             this.Close();
         }
+
+        public bool IsClosable
+        {
+            get { return GetValue(IsClosableProperty); }
+            set { SetValue(IsClosableProperty, value); }
+        }
+        public static readonly StyledProperty<bool> IsClosableProperty =
+            AvaloniaProperty.Register<AuraTabItem, bool>(nameof(IsClosable), true);
 
         #region Events
         public event EventHandler<RoutedEventArgs> Closing
@@ -72,7 +87,6 @@ namespace Aura.UI.Controls
         public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
             RoutedEvent.Register<AuraTabItem, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
         #endregion
-
 
     }
 }

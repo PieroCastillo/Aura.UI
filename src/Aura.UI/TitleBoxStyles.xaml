@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d">
-	<Style Selector="TitleBar">
+	<Style Selector="TitleBox">
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeAccentBrush4}"></Setter>
 		<Setter Property="BorderThickness" Value="5"></Setter>
 		<Setter Property="Button1Active" Value="false"></Setter>

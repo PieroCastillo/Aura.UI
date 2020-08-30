@@ -41,7 +41,7 @@ namespace Aura.UI.Controls
 
         public int ThicknessOfBorder
         {
-            get { return GetValue(ThicknessOfBorderProperty); }
+            get { return (int)GetValue(ThicknessOfBorderProperty); }
             set { SetValue(ThicknessOfBorderProperty, value); }
         }
         public static readonly AvaloniaProperty<int> ThicknessOfBorderProperty =

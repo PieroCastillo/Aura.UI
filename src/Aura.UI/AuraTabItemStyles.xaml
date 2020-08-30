@@ -13,33 +13,42 @@
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Height" Value="40"/>
 		<Setter Property="Template">
-			<ControlTemplate TargetType="AuraTabItem">
-				<Border Name="PART_Container" BorderThickness="0 0 0 0" Background="{TemplateBinding Background}"
-						BorderBrush="{TemplateBinding BorderBrush}">
-					<Grid Background="Transparent">
-						<Grid.ColumnDefinitions>
+			<ControlTemplate TargetType="AuraTabItem"> 
+			 <Border Name="PART_Container" BorderThickness="0 0 0 0" Background="{TemplateBinding Background}"
+					BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="9,9,0,0"
+					Padding="10 5 0 0"> 
+					<Grid Background="Transparent">							
+						<Grid.RowDefinitions>
+						      <RowDefinition Height="*"></RowDefinition>
+						      <RowDefinition Height="3"></RowDefinition> 
+				        </Grid.RowDefinitions>	
+						<Grid Grid.Column="0">
+						<Grid.ColumnDefinitions>							
 							<ColumnDefinition Width="*"></ColumnDefinition>
 							<ColumnDefinition Width="20"></ColumnDefinition>
-						</Grid.ColumnDefinitions>
-						<ContentPresenter Grid.Column="0"
-						Name="PART_ContentPresenter"
-						Background="Transparent"
-						BorderThickness="{TemplateBinding BorderThickness}"
-						ContentTemplate="{TemplateBinding HeaderTemplate}"
-						Content="{TemplateBinding Header}"
-						HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-						VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-						Margin="{TemplateBinding Margin}"
-						Padding="{TemplateBinding Padding}"/>
-						<Button Name="PART_CloseButton" Width="15" Height="20"
+						</Grid.ColumnDefinitions>									
+					      	<ContentPresenter Grid.Column="0" 
+						    Name="PART_ContentPresenter"
+						     Background="Transparent"
+						     BorderThickness="{TemplateBinding BorderThickness}"
+					      	ContentTemplate="{TemplateBinding HeaderTemplate}"
+					     	Content="{TemplateBinding Header}"					    
+					     	HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+					    	VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+					     	Margin="{TemplateBinding Margin}"
+					    	Padding="{TemplateBinding Padding}"/>
+						    <Button Name="PART_CloseButton" Width="15" Height="20"
 								Grid.Column="1" Background="Transparent"
-							    Padding="0" BorderThickness="0"
+							    Padding="0" BorderThickness="0" VerticalAlignment="Center"
+								VerticalContentAlignment="Center"
 								Foreground="{TemplateBinding Foreground}">
 							<Path Fill="{TemplateBinding Foreground}" Name="PART_Path"
 								Data="M12 2 L8 6 L4 2 L2 4 L6 8 L2 12 L4 14 L8 10 L12 14 L14 12 L10 8 L14 4 Z"></Path>
 						</Button>
-					</Grid>
-				</Border>   
+						</Grid>					    
+					    <Border Name="PART_SelectorBorder" Grid.Row="1" BorderThickness="0"></Border>
+				     </Grid>				   				
+			 </Border>    
 			</ControlTemplate>
 		</Setter>
 	</Style>
@@ -60,16 +69,19 @@
 		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>
 	</Style>
+	<Style Selector="AuraTabItem:selected /template/ Border#PART_SelectorBorder">
+		<Setter Property="Background" Value="{DynamicResource ThemeForegroundBrush}"/>
+	</Style>
 	<Style Selector="AuraTabItem[TabStripPlacement=Right]">
 		<Setter Property="HorizontalContentAlignment" Value="Right"/>
 	</Style>
 
 	<Design.PreviewWith>
-		<Border Padding="10">
+		<Border Padding="0"> 
 			<TabControl Width="300" Height="200">
 				<AuraTabItem Header="test" > 
 				</AuraTabItem>
-				<AuraTabItem Header="test2" >
+				<AuraTabItem Header="test2"> 
 					<TextBlock>test2</TextBlock>
 				</AuraTabItem>
 				<AuraTabItem Header="test3" >

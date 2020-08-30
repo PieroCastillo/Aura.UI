@@ -1,7 +1,8 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<StyleInclude Source="/TabControlStyles.xaml"/>
-	<StyleInclude Source="/TitleBarStyles.xaml"/>
+	<StyleInclude Source="/AuraTabItemStyles.xaml"/>
+	<StyleInclude Source="/TitleBoxStyles.xaml"/>
+	<StyleInclude Source="/TabbedWindowStyles.xaml"/>
 	<StyleInclude Source="/ColorPickerButtonStyles.xaml"/>
 	<StyleInclude Source="/PageStyles.xaml"/> 
 	<StyleInclude Source="/PagesViewStyles.xaml"/>

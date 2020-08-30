@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <OutputType>Library</OutputType>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <FileVersion>0.1.0.0</FileVersion>
@@ -42,15 +42,20 @@
      </EmbeddedResource>
    </ItemGroup>
    <ItemGroup>
-     <PackageReference Include="Avalonia.ReactiveUI" Version="0.9.12" />
+     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview4" />
+	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview4" />
      <PackageReference Include="Avalonia.ThemeManager" Version="0.9.4" />
      <PackageReference Include="MessageBox.Avalonia" Version="0.9.6.1" />
+	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview4" />
      <PackageReference Include="ThemeEditor.Controls.ColorPicker" Version="0.9.4" />
 	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.0" />
-     <PackageReference Include="Avalonia.Desktop" Version="0.9.12" />
+     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview4" />
 	 <PackageReference Include="Avalonia" Version="0.10.0-preview4" />
    </ItemGroup>
    <ItemGroup>
+     <AvaloniaResource Update="AuraTabViewStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
      <AvaloniaResource Update="Languages\EnglishLanguage.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
@@ -69,11 +74,16 @@
      <AvaloniaResource Update="PagesViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="TitleBarWindowStyles.xaml">
-       <Generator>MSBuild:Compile</Generator>
-     </AvaloniaResource>
    </ItemGroup>
    <ItemGroup>
+     <Compile Update="Controls\TitleBox.xaml.cs">
+       <DependentUpon>TitleBox.xaml</DependentUpon>
+     </Compile>
+   </ItemGroup>
+   <ItemGroup>
+     <None Update="AuraTabViewStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
      <None Update="PageStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </None>
