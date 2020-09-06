@@ -138,7 +138,7 @@ On ```MainWindow.xaml.cs```
 ```c#
 public MainWindow(){
    InitializeComponent();
-   App.Selector.EnableThemes(this);
+   App.Manager.EnableLanguages(this);
 }
 ```
 Finally, add this using statement to ```Program.cs```
