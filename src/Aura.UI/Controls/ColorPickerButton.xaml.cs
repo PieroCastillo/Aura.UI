@@ -25,7 +25,6 @@ namespace Aura.UI.Controls
             this.InitializeComponent();
 
             this.Background = Brushes.White;
-
             
         }
 

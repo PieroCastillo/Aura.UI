@@ -4,20 +4,20 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using System;
 using System.ComponentModel;
-using ThemeEditor.Controls.ColorPicker;
+using CP = ThemeEditor.Controls.ColorPicker;
 
 namespace Aura.UI.Windows
 {
     public class ColorWindowSmall : Window
     {
-        ColorPicker colorPicker_;
+        CP.ColorPicker colorPicker_;
         public ColorWindowSmall()
         {
             this.InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
 #endif
-            colorPicker_ = this.Find<ColorPicker>("cp_picker");
+            colorPicker_ = this.Find<CP.ColorPicker>("cp_picker");
 
             colorPicker_.PropertyChanged += ColorPicker__PropertyChanged;
         }

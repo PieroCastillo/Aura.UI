@@ -3,19 +3,19 @@ using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Markup.Xaml;
-using ThemeEditor.Controls.ColorPicker;
 using Avalonia.Media;
 using Avalonia.VisualTree;
 using Avalonia.Visuals;
 using Avalonia.LogicalTree;
 using Avalonia.Controls.Shapes;
+using CP = ThemeEditor.Controls.ColorPicker;
 
 namespace Aura.UI.Windows
 {
     public class ChangeColorWindow : Window
     {
         Rectangle rectangle_;
-        ColorPicker colorpicker_;
+        CP.ColorPicker colorpicker_;
         Button agreebtn_;
         Button cancelbtn_;
         public ChangeColorWindow()
@@ -24,7 +24,7 @@ namespace Aura.UI.Windows
 #if DEBUG
             this.AttachDevTools();
 #endif
-            colorpicker_ = this.Find<ColorPicker>("colorPick_");
+            colorpicker_ = this.Find<CP.ColorPicker>("colorPick_");
             agreebtn_ = this.Find<Button>("agree_btn");
             cancelbtn_ = this.Find<Button>("cancel_btn");
             rectangle_ = this.Find<Rectangle>("rect_");

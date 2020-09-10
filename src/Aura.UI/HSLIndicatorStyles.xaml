@@ -1,0 +1,32 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="HSLIndicator">
+		<Setter Property="Padding" Value="10"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="HSLIndicator">
+				<Border Background="{TemplateBinding Background}"
+					 BorderThickness="{TemplateBinding BorderThickness}"
+					 Padding="{TemplateBinding Padding}">
+					<StackPanel Spacing="10" Orientation="Horizontal">
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   >H :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}" 
+								   Name="PART_HText"></TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}">S :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}" 
+								   Name="PART_SText"></TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   >L :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}" 
+								   Name="PART_LText"></TextBlock>
+					</StackPanel>
+				</Border> 
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="0">
+			<HSLIndicator></HSLIndicator>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

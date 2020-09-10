@@ -10,7 +10,6 @@ using System;
 
 namespace Aura.UI.Controls
 {
-    [TemplatePart( Name = "PART_AppTitleBar", Type = typeof(Grid))]
     public class ContentWindow : Window, IStyleable
     {
         Type IStyleable.StyleKey => typeof(Window);
@@ -23,13 +22,6 @@ namespace Aura.UI.Controls
             ExtendClientAreaTitleBarHeightHint = -1;
 
             TransparencyLevelHint = WindowTransparencyLevel.AcrylicBlur;
-
-            this.GetObservable(WindowStateProperty)
-                .Subscribe(x =>
-                {
-                    PseudoClasses.Set(":maximized", x == WindowState.Maximized);
-                    PseudoClasses.Set(":fullscreen", x == WindowState.FullScreen);
-                });
 
             this.GetObservable(IsExtendedIntoWindowDecorationsProperty)
                 .Subscribe(x =>

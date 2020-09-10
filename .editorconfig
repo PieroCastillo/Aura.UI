@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# IDE1006: Estilos de nombres
+dotnet_diagnostic.IDE1006.severity = none

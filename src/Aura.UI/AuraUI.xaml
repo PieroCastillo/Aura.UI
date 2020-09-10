@@ -1,13 +1,24 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<StyleInclude Source="/AuraTabItemStyles.xaml"/>
+	<StyleInclude Source="/AuraTabViewStyles.xaml"/>
 	<StyleInclude Source="/TitleBoxStyles.xaml"/>
-	<StyleInclude Source="/TabbedWindowStyles.xaml"/>
 	<StyleInclude Source="/ColorPickerButtonStyles.xaml"/>
 	<StyleInclude Source="/PageStyles.xaml"/> 
 	<StyleInclude Source="/PagesViewStyles.xaml"/>
 	<StyleInclude Source="/MultiSliderStyles.xaml"/>
 	<StyleInclude Source="/MultiSliderItemStyles.xaml"/>
+	<StyleInclude Source="/HSLIndicatorStyles.xaml"/>
+	<StyleInclude Source="/FilledSliderStyles.xaml"/>
+	<StyleInclude Source="/RGBIndicatorStyles.xaml"/>
+	<StyleInclude Source="/SuperColorPickerStyles.xaml"/>
+	<StyleInclude Source="/ModernSliderStyles.xaml"/>
     <StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.xaml"/> 
 	<StyleInclude Source="avares://Aura.UI/Languages/EnglishLanguage.xaml"/>
-</Styles>
+	<Design.PreviewWith>
+		<Border Padding="0">
+			<Button Content="Wenas">
+			</Button>
+		</Border>
+	</Design.PreviewWith>
+</Styles> 

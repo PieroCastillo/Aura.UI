@@ -1,37 +1,73 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="AuraTabView">
-		<Setter Property="Margin" Value="0" />
+	<Setter Property="Margin" Value="0"/>
     <Setter Property="Padding" Value="{DynamicResource TabItemMargin}" />
     <Setter Property="Background" Value="{DynamicResource TabControlBackground}" />
-    <Setter Property="Template">
-      <ControlTemplate TargetType="TabControl">
-        <Border Margin="{TemplateBinding Margin}"
+	<Setter Property="ItemsPanel">
+		<ItemsPanelTemplate>
+			<UniformGrid Rows="1"></UniformGrid>
+		</ItemsPanelTemplate> 
+	</Setter>
+    <Setter Property="Template">  
+      <ControlTemplate TargetType="AuraTabView"> 
+		  <Border Margin="{TemplateBinding Margin}"
                 BorderBrush="{TemplateBinding BorderBrush}"
                 BorderThickness="{TemplateBinding BorderThickness}"
                 Background="{TemplateBinding Background}"
                 HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
                 VerticalAlignment="{TemplateBinding VerticalAlignment}">
-          <DockPanel>
-            <ItemsPresenter Name="PART_ItemsPresenter"
-                            Items="{TemplateBinding Items}"
-                            ItemsPanel="{TemplateBinding ItemsPanel}"
-                            ItemTemplate="{TemplateBinding ItemTemplate}"
-                            DockPanel.Dock="{TemplateBinding TabStripPlacement}"/>
-            <ContentPresenter Name="PART_SelectedContentHost"
-                              Margin="{TemplateBinding Padding}"
-                              HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                              VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                              Content="{TemplateBinding SelectedContent}"
-                              ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
-          </DockPanel>
-        </Border>
-      </ControlTemplate>
+				<Grid>
+					  <Grid.RowDefinitions>
+						  <RowDefinition Height="35"></RowDefinition> 
+						  <RowDefinition Height="*"></RowDefinition>
+					  </Grid.RowDefinitions>
+					  <Grid Grid.Row="0" HorizontalAlignment="Left" 
+							MaxWidth="{TemplateBinding MaxWidthOfItemsPresenter}">
+						  <Grid.ColumnDefinitions>
+							  <ColumnDefinition Width="*"/>
+							  <ColumnDefinition Width="35"/>
+						  </Grid.ColumnDefinitions>
+						  <!--<ScrollViewer VerticalScrollBarVisibility="Disabled"
+		                     	HorizontalScrollBarVisibility="Visible">-->
+							  <ItemsPresenter Grid.Column="0" Name="PART_ItemsPresenter"
+						       Items="{TemplateBinding Items}"
+						       ItemsPanel="{TemplateBinding ItemsPanel}"
+						       ItemTemplate="{TemplateBinding ItemTemplate}"/>
+						  <!--</ScrollViewer>-->
+						  <Button Grid.Column="1" Name="PART_AdderButton" Padding="10" Background="Transparent">
+							  <Path Fill="{TemplateBinding Foreground}"
+									Stretch="None">
+								  <Path.Data>M 13.660715 6.1607142 H 9.1071429 c -0.1479234 0 -0.2678566 -0.119934 -0.2678566 -0.2678568 V 1.3392857 C 8.8392863 0.59967039 8.2396155 0 7.5000005 0 6.760385 0 6.1607142 0.59967039 6.1607142 1.3392857 v 4.5535717 c 0 0.1479228 -0.119934 0.2678568 -0.2678568 0.2678568 H 1.3392857 C 0.59967039 6.1607142 0 6.760385 0 7.5000005 0 8.2396155 0.59967039 8.8392863 1.3392857 8.8392863 h 4.5535717 c 0.1479228 0 0.2678568 0.1199332 0.2678568 0.2678566 v 4.5535721 c 0 0.739615 0.5996708 1.339286 1.3392863 1.339286 0.739615 0 1.3392858 -0.599671 1.3392858 -1.339286 V 9.1071429 c 0 -0.1479234 0.1199332 -0.2678566 0.2678566 -0.2678566 h 4.5535721 c 0.739615 0 1.339286 -0.5996708 1.339286 -1.3392858 0 -0.7396155 -0.599671 -1.3392863 -1.339286 -1.3392863 z m 0 0</Path.Data>
+							  </Path>
+						  </Button>
+					  </Grid>
+					  <!--Content Host-->					  
+					  <Grid Grid.Row="1" Background="{DynamicResource ThemeControlLowBrush}"
+							Name="PART_GridHost" Width="{TemplateBinding Width}">
+						  <ContentPresenter Name="PART_SelectedContentHost"
+									Margin="{TemplateBinding Padding}"
+									Height="{Binding #PART_GridHost.Height}"
+									Width="{TemplateBinding Width}"
+									HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									Content="{TemplateBinding SelectedContent}"
+									ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
+					  </Grid>
+				  </Grid>
+			  </Border>		  
+	  </ControlTemplate> 
     </Setter>
-	</Style>
-    <Design.PreviewWith>
-		<Border>
-			<AuraTabView></AuraTabView>
+	</Style> 
+    <Design.PreviewWith> 
+		<Border> 
+			<AuraTabView Height="400" Width="600" SelectedItem="{Binding #tab}"
+						 MaxWidthOfItemsPresenter="500"> 
+				<AuraTabItem Header="Settings" IsClosable="False" Name="tab">
+					test 1 
+				</AuraTabItem>
+				<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
+			</AuraTabView>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

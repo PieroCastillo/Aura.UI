@@ -1,18 +1,14 @@
-﻿using Aura.UI.Controls;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace UI.Tests.Views
+namespace Aura.UI.Controls
 {
-    public class TabbedWindowTest : TabbedWindow
+    public class ShadowBorder : ExperimentalAcrylicBorder
     {
-        public TabbedWindowTest()
+        public ShadowBorder()
         {
             this.InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
         }
 
         private void InitializeComponent()

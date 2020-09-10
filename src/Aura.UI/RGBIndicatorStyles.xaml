@@ -1,0 +1,37 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="RGBIndicator">
+		<Setter Property="Padding" Value="10"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="RGBIndicator">
+				<Border Background="{TemplateBinding Background}"
+					 BorderThickness="{TemplateBinding BorderThickness}"
+				     Padding="{TemplateBinding Padding}">
+					<StackPanel Spacing="10" Orientation="Horizontal">
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   >R :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   Name="PART_RText"></TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   >G :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   Name="PART_GText"></TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   >B :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   Name="PART_BText"></TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   >A :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}"
+								   Name="PART_AText"></TextBlock>
+					</StackPanel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style> 
+	<Design.PreviewWith>
+		<Border Padding="0">
+			<RGBIndicator></RGBIndicator>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

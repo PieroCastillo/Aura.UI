@@ -17,6 +17,7 @@ using ThemeEditor.Controls.ColorPicker;
 using Aura.UI.UIExtensions;
 using MessageBox.Avalonia;
 using MessageBox.Avalonia.DTO;
+using CP = ThemeEditor.Controls.ColorPicker;
 
 namespace Aura.UI.Controls
 {
@@ -29,7 +30,7 @@ namespace Aura.UI.Controls
         Button AddStopButton;
         Button DeleteStopButton;
         Slider OffsetSlider;
-        ColorPicker Picker;
+        CP.ColorPicker Picker;
         ComboBox ComboList;
         Grid ParentContainer;
         public GradientEditor()  
@@ -44,7 +45,7 @@ namespace Aura.UI.Controls
             AddStopButton = this.Find<Button>("add_stop_");
             DeleteStopButton = this.Find<Button>("delete_stop_");
             OffsetSlider = this.Find<Slider>("offset_value_");
-            Picker = this.Find<ColorPicker>("cp_");
+            Picker = this.Find<CP.ColorPicker>("cp_");
             ParentContainer = this.Find<Grid>("container");
 
             #endregion

@@ -16,7 +16,8 @@ namespace UI.Tests
         Button addbtn;
         Button cbtn;
         Button open_pages;
-        Button open_tabbed;
+        ColorPickerButton pickerButton;
+        Border border_bg;
         public MainWindow()
         {
             InitializeComponent();
@@ -27,20 +28,16 @@ namespace UI.Tests
             addbtn = this.Find<Button>("btn");
             cbtn = this.Find<Button>("cbtn");
             open_pages = this.Find<Button>("open_pages");
-            open_tabbed = this.Find<Button>("open_tabbedwin");
+            pickerButton = this.Find<ColorPickerButton>("CP_btn");
+            border_bg = this.Find<Border>("border_bg");
 
             addbtn.Click += Addbtn_Click;
             cbtn.Click += Cbtn_Click;
             open_pages.Click += Open_pages_Click;
-            open_tabbed.Click += Open_tabbed_Click;
+
+            border_bg.Background = pickerButton.Background;
 
             EnableFeatures();
-        }
-
-        private void Open_tabbed_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            var tabwin = new TabbedWindowTest();
-            tabwin.ShowDialog(this);
         }
 
         private void Open_pages_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)

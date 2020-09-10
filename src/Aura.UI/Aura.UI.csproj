@@ -30,7 +30,7 @@
     </AvaloniaResource>
   </ItemGroup>
    <ItemGroup>
-     <None Remove="Resources\TransparentBackground.png" />
+     <None Include="..\..\.editorconfig" Link=".editorconfig" />
      <None Include="..\..\DesignSources\auraui-logo.png">
        <Pack>True</Pack>
        <PackagePath></PackagePath>
@@ -42,24 +42,37 @@
      </EmbeddedResource>
    </ItemGroup>
    <ItemGroup>
-     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview4" />
-	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview4" />
+     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview5" />
+	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview5" />
      <PackageReference Include="Avalonia.ThemeManager" Version="0.9.4" />
      <PackageReference Include="MessageBox.Avalonia" Version="0.9.6.1" />
-	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview4" />
-     <PackageReference Include="ThemeEditor.Controls.ColorPicker" Version="0.9.4" />
+	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
+     <PackageReference Include="ThemeEditor.Controls.ColorPicker" Version="0.10.0-preview3" />
 	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.0" />
-     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview4" />
-	 <PackageReference Include="Avalonia" Version="0.10.0-preview4" />
+     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
+	   <PackageReference Include="Avalonia" Version="0.10.0-preview5" />
+	   <PackageReference Include="ThemeEditor.Controls.ColorPicker" Version="0.10.0-preview3" />
+   </ItemGroup>
+   <ItemGroup>
+     <ProjectReference Include="..\..\external\ColorPicker\src\ColorPicker\ColorPicker.csproj" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Update="AuraTabViewStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="FilledSliderStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="HSLIndicatorStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Languages\EnglishLanguage.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Languages\SpanishLanguage.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="ModernSliderStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="MultiSliderItemStyles.xaml">
@@ -74,6 +87,12 @@
      <AvaloniaResource Update="PagesViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
+     <AvaloniaResource Update="RGBIndicatorStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="SuperColorPickerStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
    </ItemGroup>
    <ItemGroup>
      <Compile Update="Controls\TitleBox.xaml.cs">
@@ -84,10 +103,25 @@
      <None Update="AuraTabViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </None>
+     <None Update="FilledSliderStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
+     <None Update="HSLIndicatorStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
+     <None Update="ModernSliderStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
      <None Update="PageStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </None>
      <None Update="PagesViewStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
+     <None Update="RGBIndicatorStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
+     <None Update="SuperColorPickerStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </None>
    </ItemGroup>

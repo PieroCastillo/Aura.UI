@@ -1,0 +1,138 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Styles.Resources>
+		<ExperimentalAcrylicMaterial x:Key="ac_1" TintColor="{DynamicResource ThemeControlHighColor}" MaterialOpacity="0.80" 
+									 TintOpacity="1"/>
+		<ExperimentalAcrylicMaterial x:Key="ac_2"  TintColor="{DynamicResource ThemeControlHighColor}"
+									 MaterialOpacity="0.80"
+									 TintOpacity="1"/>
+		<ExperimentalAcrylicMaterial x:Key="ac_3" TintColor="{DynamicResource ThemeControlHighColor}"
+									 MaterialOpacity="0.80"
+									 TintOpacity="1"/> 
+	</Styles.Resources>
+	<StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseDark.xaml"/>
+	<Style Selector="ModernSlider">
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighBrush}" />
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+		<Setter Property="Maximum" Value="100" />
+		<Setter Property="Minimum" Value="0" />
+		<Setter Property="Value" Value="40"/>
+	</Style>
+	<Style Selector="ModernSlider:horizontal">
+		<Setter Property="Height" Value="30"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ModernSlider" >
+				<Border CornerRadius="20"  
+					    Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+						<Track Name="PART_Track" Grid.Row="1" Value="{TemplateBinding Value}"
+							   Orientation="Horizontal"  >
+							<Track.DecreaseButton>
+								<Button Name="PART_DecreaseButton" Classes="Repeats"
+											  Background="{DynamicResource ThemeAccentBrush}"
+										Content="{TemplateBinding LeftContent}"
+										HorizontalContentAlignment="Left"
+										VerticalContentAlignment="Center"/>
+							</Track.DecreaseButton>
+							<Track.IncreaseButton>
+								<Button Name="PART_IncreaseButton" Classes="Repeats"
+										Content="{TemplateBinding RightContent}"
+										HorizontalContentAlignment="Right"
+										VerticalContentAlignment="Center"/>
+							</Track.IncreaseButton>
+							<Track.Thumb>
+								<Thumb Template="{TemplateBinding ThumbTemplate}"/>
+							</Track.Thumb>
+						</Track>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Setter Property="ThumbTemplate">
+			<ControlTemplate TargetType="Thumb">
+				<Border Height="{TemplateBinding Height}"></Border>  
+			</ControlTemplate> 
+		</Setter>		
+	</Style>
+	<Style Selector="ModernSlider:vertical">
+		<Setter Property="Width" Value="30"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ModernSlider" >
+				<Border CornerRadius="20"
+					    Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Track Name="PART_Track" Grid.Column="1" Value="{TemplateBinding Value}"
+							   Orientation="Vertical"  >
+							<Track.DecreaseButton>
+								<Button Name="PART_DecreaseButton" Classes="Repeats"
+										Content="{TemplateBinding LeftContent}"
+										HorizontalContentAlignment="Center"
+										VerticalContentAlignment="Bottom"/>
+							</Track.DecreaseButton>
+							<Track.IncreaseButton>
+								<Button Name="PART_IncreaseButton" Classes="Repeats"
+										Content="{TemplateBinding RightContent}"
+										HorizontalContentAlignment="Center"
+										VerticalContentAlignment="Top"/>
+							</Track.IncreaseButton>
+							<Track.Thumb>
+								<Thumb Template="{TemplateBinding ThumbTemplate}"/>
+							</Track.Thumb>
+						</Track>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+		<Setter Property="ThumbTemplate">
+			<ControlTemplate TargetType="Thumb"> 
+				<Border Width="{TemplateBinding Width}"></Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="ModernSlider:disabled /template/ Grid#PART_Container">
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
+	</Style>
+	<Style Selector="Button.Repeats">
+		<Setter Property="Focusable" Value="False"/> 	
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Button"> 
+				<Grid Height="{TemplateBinding Height}"
+					  Width="{TemplateBinding Width}" > 
+					<ExperimentalAcrylicBorder Material="{DynamicResource ac_1}">
+					 <ContentPresenter Name="PART_ContentPresenter"
+			  ContentTemplate="{TemplateBinding ContentTemplate}"
+			  Content="{TemplateBinding Content}"
+			  Padding="{TemplateBinding Padding}"
+			  TextBlock.Foreground="{TemplateBinding Foreground}"
+			  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+			  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+					</ExperimentalAcrylicBorder>
+					
+				</Grid>
+			</ControlTemplate> 
+		</Setter> 
+	</Style>
+
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<StackPanel>
+				<ModernSlider Orientation="Horizontal" Width="150"/>
+				<ModernSlider Orientation="Vertical" Height="150" Width="20" />
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

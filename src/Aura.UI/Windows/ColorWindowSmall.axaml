@@ -7,7 +7,7 @@
 		WindowState="Normal" CanResize="False"
 		Width="350" Height="250"
         x:Class="Aura.UI.Windows.ColorWindowSmall"
-        Title="Seleccionar Color">
+        Title="Select Color">
 	<cp:ColorPicker Width="350" Height="250"
 					Name="cp_picker"></cp:ColorPicker>
 </Window>

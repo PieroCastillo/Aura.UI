@@ -64,9 +64,57 @@
 	    <TabItem Header="PagesView">
 			<Button Name="open_pages">Open Pages</Button>
 		</TabItem>
-		<TabItem Header="TabbedWindow">
-			<Button Name="open_tabbedwin">Open Tabbed Window</Button>
+	    <TabItem Header="AuraTabView">
+			<Border>
+				<AuraTabView Name="tabvw_">
+						<AuraTabItem Header="NonClosable" IsClosable="False">
+							xd
+						</AuraTabItem>
+						<AuraTabItem Header="IsClosable = True"></AuraTabItem>
+					</AuraTabView>
+			</Border>
 		</TabItem>
+		<TabItem Header="ColorPickerButton">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+				<ColorPickerButton Grid.Column="0" Name="CP_btn" Height="30" Width="30"></ColorPickerButton>
+				<Border Grid.Column="1" Name="border_bg" Height="100" Width="100" Background="{Binding #CP_btn.Background}"></Border>
+			</Grid>
+		</TabItem>
+			<TabItem Header="SuperColorPicker">
+				<SuperColorPicker></SuperColorPicker>
+			</TabItem>
+			<TabItem Header="FilledSlider">
+				<Grid>
+					<Border Padding="20">
+						<StackPanel Orientation="Horizontal">
+							<FilledSlider Name="sl_1" Orientation="Horizontal" Width="200" Height="20"></FilledSlider>
+							<FilledSlider Name="sl_2" Orientation="Vertical" Width="20" Height="200"></FilledSlider>
+						</StackPanel>
+					</Border>
+					<StackPanel Spacing="10">
+						<Button Content="{Binding #sl_1.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+						<Button Content="{Binding #sl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+					</StackPanel>	
+				</Grid>
+			</TabItem>
+			<TabItem Header="ModernSlider">
+				<Grid>
+					<Border Padding="20">
+						<StackPanel Orientation="Horizontal">
+							<ModernSlider Name="msl_1" Orientation="Horizontal" Width="200" Height="20"></ModernSlider>
+							<ModernSlider Name="msl_2" Orientation="Vertical" Width="20" Height="200"></ModernSlider>
+						</StackPanel>
+					</Border>
+					<StackPanel Spacing="10">
+						<Button Content="{Binding #msl_1.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+						<Button Content="{Binding #msl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+					</StackPanel>
+				</Grid>
+			</TabItem>
 	</TabControl>	
 	</Panel>
 </ContentWindow>

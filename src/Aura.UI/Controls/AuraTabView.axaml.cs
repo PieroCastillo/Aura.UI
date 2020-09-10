@@ -1,6 +1,8 @@
 ﻿using Aura.UI.Attributes;
+using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
@@ -13,12 +15,23 @@ namespace Aura.UI.Controls
         public AuraTabView()
         {
             this.InitializeComponent();
-            AdderButton.Click += OnAdding;
+        }
+        /// <summary>
+        /// You should overwrite this Method for add your custom tabitem
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected virtual void OnAdding(object sender, RoutedEventArgs e)
+        {
+            this.AddTab(new AuraTabItem() { Header = "HeaderTest", Content = "ContentTest" }, true) ;
         }
 
-        protected void OnAdding(object sender, RoutedEventArgs e)
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
-            
+            base.OnApplyTemplate(e);
+
+            AdderButton = this.GetControl<Button>(e, "PART_AdderButton");
+            AdderButton.Click += OnAdding;
         }
 
         private void InitializeComponent()
@@ -26,6 +39,12 @@ namespace Aura.UI.Controls
             AvaloniaXamlLoader.Load(this);
         }
 
-
+        public int MaxWidthOfItemsPresenter
+        {
+            get { return GetValue(MaxWidthOfItemsPresenterProperty); }
+            set { SetValue(MaxWidthOfItemsPresenterProperty, value); }
+        }
+        public readonly static StyledProperty<int> MaxWidthOfItemsPresenterProperty =
+            AvaloniaProperty.Register<AuraTabView, int>(nameof(MaxWidthOfItemsPresenter), int.MaxValue);
     }
 }
