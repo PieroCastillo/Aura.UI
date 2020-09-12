@@ -74,9 +74,9 @@ Aura.UI.
 <h3>Dotnet CLI</h3>
 
 Open the terminal on the root folder of your project and write <br/>
-
-#### dotnet add package Aura.UI --version 0.1.0
-
+``` CLI 
+dotnet add package Aura.UI --version 0.1.3-preview1
+```
  Do it like this:
 
 <img src="Pictures/cli_aura_ui.png"></img>
@@ -93,9 +93,10 @@ Add Styles to App.xaml
     <Application.Styles>
         <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
-       <StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/> <!-- Add this Source -->
-    </Application.Styles>
-  </Application>
+       <StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/> <!-- Add this Source --> 
+       <StyleInclude Source="avares://Aura.UI/AuraAcrylicBase.xaml"/> <!--When you use a controls with IMaterial Interface , you should add this source-->
+    </Application.Styles> 
+   </Application>
 ```
 
 Next add this *using* instructions:
@@ -110,7 +111,7 @@ using Aura.UI.Windows;
 
 ## What's that?
 
-It's a tool to ease the changes of an application's language .
+It's a tool to ease the changes of an application's language.
 <img src="DocumentationGifs/Language_Testing.gif">
 ## How to use
 
@@ -175,6 +176,7 @@ This Slider imitates the Android Slider, but uses the Acrylic Textures!
 ## GroupBox
 This Control has a header and that show it in the top.
 <img src="DocumentationGifs/GroupBox_WO_Material_ReScaling.gif">
+
 # About Aura.UI
 
 This library is open source and free, in a few months come out the first stable version,for now, Aura.UI is a beta. 
