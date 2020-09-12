@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using Aura.UI.Controls;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
@@ -10,21 +11,14 @@ namespace Aura.UI.Windows
 {
     public class ColorWindowSmall : Window
     {
-        CP.ColorPicker colorPicker_;
+        SuperColorPicker colorPicker_;
         public ColorWindowSmall()
         {
             this.InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
 #endif
-            colorPicker_ = this.Find<CP.ColorPicker>("cp_picker");
-
-            colorPicker_.PropertyChanged += ColorPicker__PropertyChanged;
-        }
-
-        private void ColorPicker__PropertyChanged(object sender, AvaloniaPropertyChangedEventArgs e)
-        {
-            SelectedBrush = new SolidColorBrush(colorPicker_.Color);
+            colorPicker_ = this.Find<SuperColorPicker>("cp_picker");
         }
 
         private void InitializeComponent()
@@ -40,21 +34,11 @@ namespace Aura.UI.Windows
         public static readonly StyledProperty<IBrush> SelectedBrushProperty =
             AvaloniaProperty.Register<ColorWindowSmall, IBrush>(nameof(SelectedBrush));
 
-
         protected override void OnClosing(CancelEventArgs e)
         {
             base.OnClosing(e);
 
-            SelectedBrush = new SolidColorBrush(colorPicker_.Color);
-
-            
-        }
-
-        protected override void OnClosed(EventArgs e)
-        {
-            base.OnClosed(e);
-
-            SelectedBrush = new SolidColorBrush(colorPicker_.Color);
+            SelectedBrush = new SolidColorBrush(colorPicker_.SelectedColor);         
         }
     }
 }

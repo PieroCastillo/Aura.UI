@@ -26,6 +26,13 @@ namespace Aura.UI.Controls
             this.AddTab(new AuraTabItem() { Header = "HeaderTest", Content = "ContentTest" }, true) ;
         }
 
+        public bool AdderButtonIsVisible
+        {
+            get { return GetValue(AdderButtonIsVisibleProperty); }
+            set { SetValue(AdderButtonIsVisibleProperty, value); }
+        }
+        public static readonly StyledProperty<bool> AdderButtonIsVisibleProperty =
+            AvaloniaProperty.Register<AuraTabView, bool>(nameof(AdderButtonIsVisible), true);
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);

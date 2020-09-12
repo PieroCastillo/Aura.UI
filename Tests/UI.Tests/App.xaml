@@ -7,5 +7,6 @@
 		<StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.xaml"/>
 		<StyleInclude Source="avares://Aura.UI/AuraUI.xaml"></StyleInclude>
 		<StyleInclude Source="avares://Aura.UI/Languages/EnglishLanguage.xaml"/>
+		<StyleInclude Source="avares://Aura.UI/AuraAcrylicBase.xaml"/>
 	</Application.Styles>
 </Application>

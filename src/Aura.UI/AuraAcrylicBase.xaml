@@ -1,0 +1,58 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Styles.Resources>
+
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrush"  MaterialOpacity="0.85" TintOpacity="1"
+									  TintColor="{DynamicResource ThemeBackgroundColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderLowBrush"   MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeBorderLowColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderMidBrush"		MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeBorderMidColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderHighBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeBorderHighColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlLowBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeControlLowColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlMidBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeControlMidColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlMidHighBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeControlMidHighColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeControlHighColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlVeryHighBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeControlVeryHighColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightLowBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeControlHighlightLowColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightMidBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeControlHighlightMidColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightHighBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeControlHighlightHighColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeForegroundColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundLowBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeForegroundLowColor}"></ExperimentalAcrylicMaterial>
+
+		<ExperimentalAcrylicMaterial x:Key="HighlightAcrylicBrush"	MaterialOpacity="0.85" TintOpacity="1" 
+									 TintColor="{DynamicResource HighlightColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="HighlightForegroundBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource HighlightForegroundColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeAccentColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush2"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeAccentColor2}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush3"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeAccentColor3}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush4"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ThemeAccentColor4}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ErrorColor}"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicLowBrush"	MaterialOpacity="0.85" TintOpacity="1"
+									 TintColor="{DynamicResource ErrorLowColor}"></ExperimentalAcrylicMaterial>
+	</Styles.Resources>
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<MaterialButton Material="{DynamicResource ThemeAcrylicBackgroundBrush}"
+							Foreground="Black"
+							Height="50" Width="100">I'm Fine!</MaterialButton>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

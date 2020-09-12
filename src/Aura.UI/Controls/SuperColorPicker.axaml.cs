@@ -44,6 +44,8 @@ namespace Aura.UI.Controls
             AlphaSL = this.GetControl<Slider>(e, "PART_SliderAlpha");
             DarknessSL = this.GetControl<Slider>(e, "PART_SliderDarkness");
             PreviewBorder = this.GetControl<Border>(e, "PART_Preview");
+
+            color_W.SelectedColor = new ColorPicker.Structures.RGBColor(255,255,255);
          
             color_W.PropertyChanged += SuperColorPicker_PropertyChanged;
             AlphaSL.PropertyChanged += SuperColorPicker_PropertyChanged;

@@ -1,0 +1,45 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="MaterialButton">
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="10"/>
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="CornerRadius" Value="5"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="MaterialButton">
+				<Decorator>
+						<Grid Background="{TemplateBinding Background}">
+							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
+													   CornerRadius="{TemplateBinding CornerRadius}">
+								<ContentPresenter Name="PART_ContentPresenter"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}" 
+							ContentTemplate="{TemplateBinding ContentTemplate}"
+							Content="{TemplateBinding Content}"
+							Padding="{TemplateBinding Padding}"
+							TextBlock.Foreground="{TemplateBinding Foreground}"
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>								
+							</ExperimentalAcrylicBorder>							
+						</Grid>
+				</Decorator> 
+			</ControlTemplate>  
+		</Setter>
+	</Style> 
+	<Style Selector="MaterialButton:pointerover">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>
+	</Style>
+	<Style Selector="MaterialButton:pressed">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="20">
+			<Grid>
+				<MaterialButton>
+					Buenas
+				</MaterialButton> 
+			</Grid>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

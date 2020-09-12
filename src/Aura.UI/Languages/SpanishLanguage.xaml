@@ -48,6 +48,7 @@
 			<ms:String x:Key="GradientText">Degradado</ms:String>
 			<ms:String x:Key="SolidColorText">Color Sólido</ms:String>
 			<ms:String x:Key="ColorText">Color</ms:String>
+			<ms:String x:Key="PreviewText">Previsualización</ms:String>
 			<!--Colors Section-->
 			<ms:String x:Key="GreenColorText">Verde</ms:String>
 			<ms:String x:Key="BlueColorText">Azul</ms:String>

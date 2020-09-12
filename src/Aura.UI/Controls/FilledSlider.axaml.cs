@@ -8,7 +8,6 @@ using Avalonia.Metadata;
 
 namespace Aura.UI.Controls
 {
-    [TemplatePart(Name = "PART_Thumb", Type = typeof(Thumb))]
     public class FilledSlider : Slider
     {
         public FilledSlider()

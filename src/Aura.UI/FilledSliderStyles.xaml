@@ -12,10 +12,7 @@
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighBrush}" />
 		<Setter Property="BorderThickness" Value="0" />
 		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
-		<Setter Property="Maximum" Value="100" /> 
-		<Setter Property="Minimum" Value="0" />
-		<Setter Property="Value" Value="10"/> 
-		<Setter Property="ThumbTemplate"> 
+		<Setter Property="ThumbTemplate">  
 			<ControlTemplate TargetType="Thumb">
 				<Ellipse Fill="{DynamicResource ThemeAccentBrush}" Height="15" Width="15" StrokeThickness="1"
 						 Stroke="{DynamicResource ThemeAccentBrush}" ></Ellipse>
@@ -32,10 +29,10 @@
 						<Grid.RowDefinitions>
 							<RowDefinition Height="*"/>
 							<RowDefinition Height="Auto"/>
-							<RowDefinition Height="*"/>
+							<RowDefinition Height="*"/> 
 						</Grid.RowDefinitions>
 						<Grid Grid.Row="2">
-							<Grid.ColumnDefinitions>
+							<Grid.ColumnDefinitions> 
 								<ColumnDefinition Width="*"/>
 								<ColumnDefinition Width="*"/>
 								<ColumnDefinition Width="*"/> 
@@ -50,7 +47,8 @@
                                 BorderThickness="1" CornerRadius="1"
 								Margin="5,0" VerticalAlignment="Center" Height="4.0" Grid.Row="1" />
 						<Track Name="PART_Track" Grid.Row="1" Value="{TemplateBinding Value}"
-							   Orientation="Horizontal"  >
+							   Orientation="Horizontal" Maximum="{TemplateBinding Maximum}"
+							   Minimum="{TemplateBinding Minimum}">
 							<Track.DecreaseButton>
 								<Button Name="PART_DecreaseButton" Classes="Repeats"  
 											  Background="{DynamicResource ThemeAccentBrush}"/> 
@@ -87,7 +85,8 @@
 								Height="{TemplateBinding Height}" 
 								Margin="5,0" VerticalAlignment="Center" Width="4.0" Grid.Column="1" />
 						<Track Name="PART_Track" Grid.Column="1" Value="{TemplateBinding Value}"
-							   Orientation="Vertical"> 
+							   Orientation="Vertical" Maximum="{TemplateBinding Maximum}"
+							   Minimum="{TemplateBinding Minimum}"> 
 							<Track.DecreaseButton>
 								<Button Name="PART_DecreaseButton" Classes="Repeats"
 									    Background="{DynamicResource ThemeAccentBrush}"/>
@@ -141,11 +140,17 @@
 	<Style Selector="FilledSlider:vertical /template/ Button.Repeats">
 		<Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="VerticalAlignment" Value="Stretch"/>
-		<Setter Property="Width" Value="6"/>
-	</Style>
-	<Style Selector="FilledSlider /template/ Button#PART_IncreaseButton"> 
+		<Setter Property="Width" Value="6"/> 
+	</Style> 
+	<Style Selector="FilledSlider /template/ Button#PART_IncreaseButton">  
 		<Setter Property="Background" Value="{DynamicResource ThemeControlLowBrush}"/>
  	</Style>
+	<Style Selector="FilledSlider /template/ Button#PART_DecreaseButton:pointerover"> 
+ 		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush2}"/>
+	</Style> 
+	<Style Selector="FilledSlider /template/ Button#PART_DecreaseButton:pressed:pointerover"> 
+ 		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush3}"/>
+	</Style> 
 	<Design.PreviewWith>
 		<Border Padding="20"> 
 			<StackPanel> 

@@ -6,19 +6,38 @@
 	<StyleInclude Source="/ColorPickerButtonStyles.xaml"/>
 	<StyleInclude Source="/PageStyles.xaml"/> 
 	<StyleInclude Source="/PagesViewStyles.xaml"/>
-	<StyleInclude Source="/MultiSliderStyles.xaml"/>
-	<StyleInclude Source="/MultiSliderItemStyles.xaml"/>
 	<StyleInclude Source="/HSLIndicatorStyles.xaml"/>
-	<StyleInclude Source="/FilledSliderStyles.xaml"/>
+	<StyleInclude Source="/FilledSliderStyles.xaml"/> 
 	<StyleInclude Source="/RGBIndicatorStyles.xaml"/>
 	<StyleInclude Source="/SuperColorPickerStyles.xaml"/>
 	<StyleInclude Source="/ModernSliderStyles.xaml"/>
+	<StyleInclude Source="/MaterialButtonStyles.xaml"/>
+	<StyleInclude Source="/GroupBoxStyles.xaml"/>
     <StyleInclude Source="avares://ThemeEditor.Controls.ColorPicker/ColorPicker.xaml"/> 
 	<StyleInclude Source="avares://Aura.UI/Languages/EnglishLanguage.xaml"/>
+	<!--I do not the reason of why when I write the ModernSlider Styles in its xaml, that does not compile-->
+	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidHighBrush}"/> 
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_IncreaseButton">  
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_IncreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton#PART_DecreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush4}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_DecreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_DecreaseButton">
+		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush}"/>
+	</Style>
 	<Design.PreviewWith>
-		<Border Padding="0">
-			<Button Content="Wenas">
-			</Button>
+		<Border Padding="20">
+			<ModernSlider Orientation="Horizontal" Height="50"
+						  Width="150"></ModernSlider>
 		</Border>
-	</Design.PreviewWith>
-</Styles> 
+	</Design.PreviewWith>  
+</Styles>  

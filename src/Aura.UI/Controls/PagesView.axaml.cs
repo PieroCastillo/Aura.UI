@@ -42,8 +42,6 @@ namespace Aura.UI.Controls
         #endregion
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            if (!e.Handled)
-            {
                 if (e.Key == Key.Right | e.Key is Key.PageUp)
                 {
                     Next();
@@ -64,8 +62,6 @@ namespace Aura.UI.Controls
                     GoTo((Items as List<object>).Count() - 1);
                     e.Handled = true;
                 }
-            }
-
             base.OnKeyDown(e);
         }
         public void Previous()     

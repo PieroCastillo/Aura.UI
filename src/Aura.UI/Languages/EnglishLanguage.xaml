@@ -48,6 +48,7 @@
 			<ms:String x:Key="GradientText">Gradient</ms:String>
 			<ms:String x:Key="SolidColorText">Solid Color</ms:String>
 			<ms:String x:Key="ColorText">Color</ms:String>
+			<ms:String x:Key="PreviewText">Preview</ms:String>
 			<!--Colors Section-->
 			<ms:String x:Key="GreenColorText">Green</ms:String>
 			<ms:String x:Key="BlueColorText">Blue</ms:String>

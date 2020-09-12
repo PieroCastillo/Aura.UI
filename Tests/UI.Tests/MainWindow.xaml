@@ -3,8 +3,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        x:Class="UI.Tests.MainWindow" Height="500" Width="600"
-        Title="UI.Tests"> 
+        x:Class="UI.Tests.MainWindow" Height="700" Width="800"
+        Title="UI.Tests" WindowStartupLocation="CenterScreen"> 
 	<Panel>
 		<TabControl TabStripPlacement="Left" Margin="0, 15, 0 ,20">
 		<TabItem Header="AuraTabItem">
@@ -26,17 +26,6 @@
 			<Border Padding="20">
 				<Grid>
 					<Menu Height="20">
-						<!--<MenuItem Header="Theme" DataContext="{Binding Selector}">
-							<MenuItem Header="_Theme" Items="{Binding Themes}">
-								<MenuItem.Styles>
-									<Style Selector="MenuItem">
-										<Setter Property="Header" Value="{Binding Name}"/>
-										<Setter Property="Command" Value="{Binding ApplyTheme}"/>
-										<Setter Property="CommandParameter" Value="{Binding}"/>
-									</Style>
-								</MenuItem.Styles>
-							</MenuItem>
-						</MenuItem>-->
 						<MenuItem Header="Language" DataContext="{Binding Manager}">
 							<MenuItem Header="_Language" Items="{Binding Languages}">
 								<MenuItem.Styles>
@@ -85,7 +74,7 @@
 			</Grid>
 		</TabItem>
 			<TabItem Header="SuperColorPicker">
-				<SuperColorPicker></SuperColorPicker>
+				<SuperColorPicker Height="270" Width="500"></SuperColorPicker>
 			</TabItem>
 			<TabItem Header="FilledSlider">
 				<Grid>
@@ -102,18 +91,42 @@
 				</Grid>
 			</TabItem>
 			<TabItem Header="ModernSlider">
-				<Grid>
+				<WrapPanel>
 					<Border Padding="20">
 						<StackPanel Orientation="Horizontal">
-							<ModernSlider Name="msl_1" Orientation="Horizontal" Width="200" Height="20"></ModernSlider>
-							<ModernSlider Name="msl_2" Orientation="Vertical" Width="20" Height="200"></ModernSlider>
+							<ModernSlider Name="msl_1" Orientation="Horizontal" Width="200" Height="60"></ModernSlider>
+							<ModernSlider Name="msl_2" Orientation="Vertical"  Width="60" Height="200"></ModernSlider>
 						</StackPanel>
 					</Border>
 					<StackPanel Spacing="10">
 						<Button Content="{Binding #msl_1.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
 						<Button Content="{Binding #msl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
 					</StackPanel>
+				</WrapPanel>
+			</TabItem>
+			<TabItem Header="GroupBox"> 
+				<Grid>
+					<GroupBox Header="Yes, I'm a Header" MaterialIsVisible="False">
+						<StackPanel Spacing="10">
+							<MaterialButton>Oh, I don't know that!</MaterialButton>
+							<TextBlock Text="MaterialIsVisible=False"/>
+						</StackPanel>
+					</GroupBox>
 				</Grid>
+			</TabItem>	
+			<TabItem Header="AcrylicControls">
+				<StackPanel Spacing="20">
+					<MaterialButton Content="I'm a Button! Come On, Click me!"/>
+					<ModernSlider Orientation="Horizontal" LeftContent="Modern" RightContent="Slider"/>
+					<ModernSlider Orientation="Vertical" Height="200"	Width="70" 
+								  LeftContent="Down" RightContent="Up"/>
+					<GroupBox Header="I'm a Header!" >
+						<StackPanel>
+							<MaterialButton>Oh, Do you know that I'm a GroupBox with Acrylic?</MaterialButton>
+							<TextBlock Text="MaterialIsVisible=True"/>
+						</StackPanel>
+					</GroupBox>
+				</StackPanel>
 			</TabItem>
 	</TabControl>	
 	</Panel>
