@@ -3,6 +3,8 @@ using Aura.UI.Controls;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using Avalonia.Input;
 using Microsoft.Toolkit.Extensions;
 using System;
@@ -24,6 +26,8 @@ namespace UI.Tests
 #if DEBUG
             this.AttachDevTools();
 #endif
+            this.Icon = new WindowIcon(new Bitmap(@"auraui-logo.png"));
+
             tabc = this.Find<TabControl>("tabview");
             addbtn = this.Find<Button>("btn");
             cbtn = this.Find<Button>("cbtn");

@@ -8,15 +8,21 @@
 <br/><br/>
 Aura.UI
 </h1>
+
+
 <h2 align="center">Control's Library for Avalonia</h2>
 
 # Overview
 
 * Controls Availables
-  *  AuraTabItem : A Closable TabItem what has extra features.
-  *  TitleBar : Similar to GroupBox, but has 2 buttons and is easy-to-custom.
-  *  ColorPickerButton : A Toggle Button when you click it, shows a ColorPicker on a Window.
-  *  PagesView : A Pages Collection for simplify the life.
+  *  AuraTabItem 
+  *  AuraTabView
+  *  SuperColorPicker
+  *  ColorPickerButton
+  *  PagesView
+  *  GroupBox
+  *  FilledSlider
+  *  ModernSlider
 
 * Controls in Developing
    * GradientEditor : This control creates a GradientBrush to use in other controls.
@@ -28,7 +34,6 @@ Aura.UI
    * ChangeColorWindow : This window creates a SolidColorBrush or GradientBrush.
 
 * Planned Controls and Windows for future versions:
-   * ModernWindow : A window with TitleProperty like a UWP Window.
    * TabbedWindow : An optimized window to use with AuraTabItems. 
    * NavigationView : A scrollable MenuItems, like UWP NavigationView.
    * StatusBar : This bar shows an status of application, it will use a class for the status.
@@ -106,7 +111,7 @@ using Aura.UI.Windows;
 ## What's that?
 
 It's a tool to ease the changes of an application's language .
-
+<img src="DocumentationGifs/Language_Testing.gif">
 ## How to use
 
 Add the using statements to ```App.xaml.cs``` and ```MainWindow.xaml```
@@ -145,7 +150,31 @@ Finally, add this using statement to ```Program.cs```
 ```c#
 using Avalonia.Controls.ApplicationLifetimes;
 ```
-
+# Controls
+## AuraTabItem 
+ A Closable TabItem what has extra features.
+ <img src="DocumentationGifs/AuraTabItem_Adding_Closing.gif">
+## AuraTabView
+Is similar to TabControl, but this can add new tabs with a built-in button, also its tabs reduce its width when the spacing is little.
+<img src="DocumentationGifs/AuraTabView_Adding_Testing.gif">
+## TitleBox
+Similar to GroupBox, but has 2 buttons and is easy-to-custom.
+<img src="DocumentationGifs/TitleBox_ReScaling.gif">
+## SuperColorPicker
+This color picker can modify the opacity and the color of a SolidColorBrush, and let you see a preview, too.
+<img src="DocumentationGifs/SuperColorPicker_Testing.gif">
+## ColorPickerButton 
+A Toggle Button when you click it, shows a ColorPicker on a Window.
+<img src="DocumentationGifs/ColorPickerButton_Testing.gif">
+## PagesView 
+ A Pages Collection for simplify the life.
+ <img src="DocumentationGifs/PagesView_Testing.gif">
+## ModernSlider
+This Slider imitates the Android Slider, but uses the Acrylic Textures!
+<img src="DocumentationGifs/ModernSlider_Testing.gif">
+## GroupBox
+This Control has a header and that show it in the top.
+<img src="DocumentationGifs/GroupBox_WO_Material_ReScaling.gif">
 # About Aura.UI
 
 This library is open source and free, in a few months come out the first stable version,for now, Aura.UI is a beta. 
