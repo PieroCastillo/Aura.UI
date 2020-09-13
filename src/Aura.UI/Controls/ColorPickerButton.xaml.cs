@@ -3,7 +3,6 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
-using ThemeEditor.Controls.ColorPicker;
 using Avalonia.Collections;
 using Avalonia.Media;
 using Aura.UI.Windows;

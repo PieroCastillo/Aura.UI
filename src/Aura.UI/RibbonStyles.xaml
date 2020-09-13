@@ -1,0 +1,112 @@
+﻿<Styles xmlns="https://github.com/avaloniaui" 
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="Ribbon">
+		<Setter Property="Padding" Value="10"/>
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<UniformGrid Rows="1"/>
+			</ItemsPanelTemplate>
+		</Setter>
+		<Setter Property="Template"> 
+			<ControlTemplate TargetType="Ribbon">
+				<Border>
+					<Border.Resources>
+						<ExperimentalAcrylicMaterial x:Key="nomatter_m" 
+													 TintColor="{DynamicResource ThemeAccentBrush3}"		
+													 TintOpacity="0.0" MaterialOpacity="1"/>
+					</Border.Resources> 
+					<Grid Name="PART_Container">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
+						<UniformGrid>
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="Auto"/>
+								</Grid.ColumnDefinitions>
+								<ContentPresenter Grid.Column="0"
+												Content="{TemplateBinding Header}"
+												  HorizontalAlignment="Center"
+												  VerticalAlignment="Center"
+												  Padding="10"/>
+								<MaterialButton Grid.Column="1"
+												Name="PART_LeftButton"
+												Content="{TemplateBinding LeftContent}"
+												Classes="BorderButtons"
+												CornerRadius="0"
+												Material="{DynamicResource nomatter_m}"/>
+								<UniformGrid Grid.Column="2">
+									<ItemsPresenter 
+												Name="PART_ItemsPresenter"
+												Items="{TemplateBinding Items}"
+												ItemsPanel="{TemplateBinding ItemsPanel}"
+												Classes="BorderButtons"/>
+								</UniformGrid>
+								<MaterialButton Grid.Column="4"
+												CornerRadius="0"
+												Name="PART_RightButton"
+												Content="{TemplateBinding RightContent}"
+												Classes="BorderButtons"
+												HorizontalAlignment="Right"
+												Material="{DynamicResource nomatter_m}"/>
+							</Grid>
+						</UniformGrid>
+							<ExperimentalAcrylicBorder Grid.Row="1"
+								Material="{TemplateBinding Material}">
+								<ContentPresenter Content="{TemplateBinding SelectedContent}"
+											  Padding="{TemplateBinding Padding}"
+											  ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
+
+							</ExperimentalAcrylicBorder>
+						</Grid>
+				</Border> 
+			</ControlTemplate> 
+		</Setter> 
+	</Style>
+	<Style Selector="RibbonItem">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="MaterialIsVisible" Value="False"/>
+		<Setter Property="Padding" Value="9"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="RibbonItem">
+				<Grid>					
+					<Border Background="{TemplateBinding Background}"/>
+					<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
+											   IsVisible="{TemplateBinding MaterialIsVisible}"/>
+					<ContentPresenter Content="{TemplateBinding Header}"
+									  Padding="{TemplateBinding Padding}"
+									  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="RibbonItem:selected">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="MaterialIsVisible" Value="True"/> 
+	</Style>
+	<Style Selector="RibbonItem:pointerover">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="MaterialIsVisible" Value="True"/>
+	</Style>
+	<Style Selector="RibbonItem:disabled /template/ Grid#PART_Container">
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>  
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<Ribbon Header="Aura.UI" Height="200" Width="400">
+				<RibbonItem Header="Start" Content="Content1"/>
+				<RibbonItem Header="Review" Content="Check this!"/>
+				<RibbonItem Header="Modify" Content=":D"/>
+			</Ribbon>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

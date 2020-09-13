@@ -4,7 +4,7 @@
 [![Discord](https://img.shields.io/badge/discord-join%20chat-JY9sDq)]( https://discord.gg/JY9sDq)
 
 <h1 align="center">
-<img src="DesignSources/auraui-logo.png" width="256"/>
+<img src="DesignSources/auraui-logov2.png" width="256"/> 
 <br/><br/>
 Aura.UI
 </h1>

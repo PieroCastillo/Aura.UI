@@ -26,7 +26,7 @@ namespace UI.Tests
 #if DEBUG
             this.AttachDevTools();
 #endif
-            this.Icon = new WindowIcon(new Bitmap(@"auraui-logo.png"));
+            this.Icon = new WindowIcon(new Bitmap(@"auraui-logov2.png"));
 
             tabc = this.Find<TabControl>("tabview");
             addbtn = this.Find<Button>("btn");

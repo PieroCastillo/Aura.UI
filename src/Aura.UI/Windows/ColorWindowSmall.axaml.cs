@@ -5,7 +5,6 @@ using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using System;
 using System.ComponentModel;
-using CP = ThemeEditor.Controls.ColorPicker;
 
 namespace Aura.UI.Windows
 {
