@@ -24,7 +24,7 @@
 								Maximum="1" Value="1" Orientation="Horizontal"/>
 						</StackPanel>
 						<FilledSlider Name="PART_SliderDarkness"  
-								Orientation="Vertical" Value="0.5"
+								Orientation="Vertical" Value="1"
 								Minimum="0" Maximum="1" 
 							    VerticalAlignment="Stretch">
 							<FilledSlider.Background> 

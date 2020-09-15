@@ -17,6 +17,7 @@ namespace Aura.UI.Windows
 #if DEBUG
             this.AttachDevTools();
 #endif
+            Icon = null;
             colorPicker_ = this.Find<SuperColorPicker>("cp_picker");
         }
 

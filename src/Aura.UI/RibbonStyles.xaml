@@ -1,112 +1,177 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ms="clr-namespace:System;assembly=netstandard">
+	<Styles.Resources>
+		<CornerRadius x:Key="ToggleRadius">3</CornerRadius>
+		<ms:Double x:Key="DefaultRibbonContainerHeight">150</ms:Double>
+		<ms:Double x:Key="DefaultRibbonHeight">200</ms:Double>
+	</Styles.Resources>
 	<Style Selector="Ribbon">
+		<Setter Property="ExpansionState" Value="Total"/>
+		<Setter Property="VerticalAlignment" Value="Top"/>
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
-				<UniformGrid Rows="1"/>
+				<StackPanel Orientation="Horizontal" Spacing="1"/>
 			</ItemsPanelTemplate>
 		</Setter>
-		<Setter Property="Template"> 
+		<Setter Property="Template">
 			<ControlTemplate TargetType="Ribbon">
 				<Border>
 					<Border.Resources>
-						<ExperimentalAcrylicMaterial x:Key="nomatter_m" 
-													 TintColor="{DynamicResource ThemeAccentBrush3}"		
-													 TintOpacity="0.0" MaterialOpacity="1"/>
-					</Border.Resources> 
-					<Grid Name="PART_Container">
-							<Grid.RowDefinitions>
-								<RowDefinition Height="Auto"/>
-								<RowDefinition Height="*"/>
-							</Grid.RowDefinitions>
-						<UniformGrid>
-							<Grid>
-								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="Auto"/>
-									<ColumnDefinition Width="Auto"/>
-									<ColumnDefinition Width="Auto"/>
-									<ColumnDefinition Width="*"/>
-									<ColumnDefinition Width="Auto"/>
-								</Grid.ColumnDefinitions>
-								<ContentPresenter Grid.Column="0"
-												Content="{TemplateBinding Header}"
-												  HorizontalAlignment="Center"
-												  VerticalAlignment="Center"
-												  Padding="10"/>
-								<MaterialButton Grid.Column="1"
-												Name="PART_LeftButton"
-												Content="{TemplateBinding LeftContent}"
-												Classes="BorderButtons"
-												CornerRadius="0"
-												Material="{DynamicResource nomatter_m}"/>
-								<UniformGrid Grid.Column="2">
-									<ItemsPresenter 
-												Name="PART_ItemsPresenter"
-												Items="{TemplateBinding Items}"
-												ItemsPanel="{TemplateBinding ItemsPanel}"
-												Classes="BorderButtons"/>
-								</UniformGrid>
-								<MaterialButton Grid.Column="4"
-												CornerRadius="0"
-												Name="PART_RightButton"
-												Content="{TemplateBinding RightContent}"
-												Classes="BorderButtons"
-												HorizontalAlignment="Right"
-												Material="{DynamicResource nomatter_m}"/>
-							</Grid>
-						</UniformGrid>
-							<ExperimentalAcrylicBorder Grid.Row="1"
-								Material="{TemplateBinding Material}">
-								<ContentPresenter Content="{TemplateBinding SelectedContent}"
-											  Padding="{TemplateBinding Padding}"
-											  ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
+						<ExperimentalAcrylicMaterial x:Key="nomatter_m"
+													 TintColor="{DynamicResource ThemeAccentBrush3}"
+													 TintOpacity="0.0" MaterialOpacity="10"/>
+					</Border.Resources>
+					<StackPanel>
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="Auto"/>
+							</Grid.ColumnDefinitions>
+							<ContentPresenter Grid.Column="0"
+											Content="{TemplateBinding Header}"
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Padding="10"/>
+							<MaterialButton Grid.Column="1"
+											Name="PART_LeftButton"
+											Content="{TemplateBinding LeftContent}"
+											Classes="BorderButtons"
+											CornerRadius="0"
+											Material="{DynamicResource nomatter_m}"/>
+							<ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Auto">
+								<ItemsPresenter
+											Name="PART_ItemsPresenter"
+											Items="{TemplateBinding Items}"
+											ItemsPanel="{TemplateBinding ItemsPanel}"
+											Classes="BorderButtons"/>
+							</ScrollViewer>
+							<MaterialButton Grid.Column="3"
+											CornerRadius="0"
+											Name="PART_RightButton"
+											Content="{TemplateBinding RightContent}"
+											Classes="BorderButtons"
+											HorizontalAlignment="Right"
+											Material="{DynamicResource nomatter_m}"/>
 
-							</ExperimentalAcrylicBorder>
+							<ToggleButton Name="PART_Toggle" Grid.Column="4"
+										  IsChecked="True"
+										  Background="Transparent"></ToggleButton>
 						</Grid>
-				</Border> 
-			</ControlTemplate> 
-		</Setter> 
-	</Style>
-	<Style Selector="RibbonItem">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
-		<Setter Property="HorizontalContentAlignment" Value="Center"/>
-		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="MaterialIsVisible" Value="False"/>
-		<Setter Property="Padding" Value="9"/>
-		<Setter Property="Template">
-			<ControlTemplate TargetType="RibbonItem">
-				<Grid>					
-					<Border Background="{TemplateBinding Background}"/>
-					<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
-											   IsVisible="{TemplateBinding MaterialIsVisible}"/>
-					<ContentPresenter Content="{TemplateBinding Header}"
-									  Padding="{TemplateBinding Padding}"
-									  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-									  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-				</Grid>
+						<ExperimentalAcrylicBorder Name="PART_ContentContainer"
+								Material="{TemplateBinding Material}">
+							<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+								<ContentPresenter Name="PART_ContentHost"
+										Content="{TemplateBinding SelectedContent}"
+										Padding="{TemplateBinding Padding}" 
+										ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
+							</ScrollViewer>
+						</ExperimentalAcrylicBorder>
+					</StackPanel>
+				</Border>
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	<Style Selector="RibbonItem:selected">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="True"/> 
+	<Style Selector="Ribbon[ExpansionState=Total] /template/ ExperimentalAcrylicBorder#PART_ContentContainer">
+		<Style.Animations>
+			<Animation Duration="0:0:0.5" Easing="QuarticEaseIn"> 
+				<KeyFrame Cue="0%">
+					<Setter Property="Height" Value="0.5"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+		<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/>
 	</Style>
-	<Style Selector="RibbonItem:pointerover">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="True"/>
+	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ExperimentalAcrylicBorder#PART_ContentContainer">
+		<Style.Animations>
+			<Animation Duration="0:0:0.5" Easing="QuarticEaseIn">
+				<KeyFrame Cue="0%"> 
+					<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/> 
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="Height" Value="0.5"/>
+				</KeyFrame> 
+			</Animation>
+		</Style.Animations>
+		<Setter Property="Height" Value="0"/>
 	</Style>
-	<Style Selector="RibbonItem:disabled /template/ Grid#PART_Container">
-		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>  
+	<Style Selector="Ribbon /template/ ToggleButton#PART_Toggle:checked">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<ExperimentalAcrylicBorder Padding="2"
+					Material="{DynamicResource ThemeAcrylicControlLowBrush}"
+					CornerRadius="{DynamicResource ToggleRadius}">
+					<DrawingPresenter Width="16">
+						<DrawingPresenter.Drawing>
+							<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}"
+								Geometry="F1M256,-341L384,-213 354,-183 256,-281 158,-183 128,-213 256,-341z"   />
+						</DrawingPresenter.Drawing>
+					</DrawingPresenter>
+				</ExperimentalAcrylicBorder>
+			</ControlTemplate>
+		</Setter>
 	</Style>
+	<Style Selector="Ribbon /template/ ToggleButton#PART_Toggle:unchecked">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<ExperimentalAcrylicBorder Padding="2"
+					Material="{DynamicResource ThemeAcrylicControlLowBrush}"
+					CornerRadius="{DynamicResource ToggleRadius}">
+					<DrawingPresenter Width="16">
+						<DrawingPresenter.Drawing>
+							<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}"
+								Geometry="F1M158,-345L256,-247 354,-345 384,-315 256,-187 128,-315 158,-345z"/>
+						</DrawingPresenter.Drawing>
+					</DrawingPresenter>
+				</ExperimentalAcrylicBorder>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<!--<Style Selector="Ribbon /template/ ToggleButton#PART_Toggle:indeterminate">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="ToggleButton">
+				<ExperimentalAcrylicBorder Padding="2" 
+					Material="{DynamicResource ThemeAcrylicControlLowBrush}"
+					CornerRadius="{DynamicResource ToggleRadius}">
+					<DrawingPresenter Width="16">
+						<DrawingPresenter.Drawing>
+							<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}"
+											 Geometry="F1M128,-171L384,-171 384,-128 128,-128 128,-171z M256,-393L384,-265 354,-235 256,-333 158,-235 128,-265 256,-393z"   />
+						</DrawingPresenter.Drawing>
+					</DrawingPresenter>
+				</ExperimentalAcrylicBorder>
+			</ControlTemplate>
+		</Setter>
+	</Style>-->
 	<Design.PreviewWith>
-		<Border Padding="10">
-			<Ribbon Header="Aura.UI" Height="200" Width="400">
-				<RibbonItem Header="Start" Content="Content1"/>
-				<RibbonItem Header="Review" Content="Check this!"/>
-				<RibbonItem Header="Modify" Content=":D"/>
+		<Border Padding="10">  
+			<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
+					ExpansionState="Total">
+				<RibbonItem Header="Start">
+					<RibbonPanel>
+						<RibbonGroup Header=":3" Width="200">
+							<StackPanel>
+								<Button Content="Why?"/>
+								<Button Content="Why? v2"/>
+								<Button Content="Why? v3"/>
+							</StackPanel>
+						</RibbonGroup>
+						<RibbonSeparator/>
+						<RibbonGroup Width="100">
+							<Button Content="Why?"/>
+						</RibbonGroup>
+						<RibbonSeparator></RibbonSeparator>
+						<RibbonGroup></RibbonGroup>
+					</RibbonPanel>
+				</RibbonItem>
 			</Ribbon>
-		</Border>
+		</Border> 
 	</Design.PreviewWith>
 </Styles>

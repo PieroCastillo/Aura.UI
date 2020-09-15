@@ -114,6 +114,41 @@
 					</GroupBox>
 				</Grid>
 			</TabItem>	
+			<TabItem Header="Ribbon">
+				<Grid>
+					<Ribbon LeftContent="I'm Left" RightContent="I'm Right">
+						<Ribbon.Header>
+							<Image Height="20" Source="resm:UI.Tests.auraui-logov2.png" Stretch="Uniform"/>
+						</Ribbon.Header>
+						<RibbonItem Header="Start">
+							<RibbonPanel>
+								<RibbonGroup Header="RibbonGroup Header">
+									This is a RibbonGroup
+								</RibbonGroup>
+								<RibbonSeparator/>
+								<RibbonGroup Header="RibbonGroup Header">
+									This is a RibbonGroup
+								</RibbonGroup>
+								<RibbonSeparator/>
+								<RibbonGroup Header="RibbonGroup Header">
+									This is a RibbonGroup
+								</RibbonGroup>
+							</RibbonPanel>
+						</RibbonItem>
+						<RibbonItem Header="Modify">
+							<RibbonGroup Header="RibbonGroup">
+									You can organize the ribbonitems with the RibbonGroup
+							</RibbonGroup>
+						</RibbonItem>
+						<RibbonItem Header="Let's go!">
+							<RibbonPanel>
+								<RibbonGroup Header="Come on!, Use me in your Avalonia App :D"></RibbonGroup>
+							</RibbonPanel>
+						</RibbonItem>
+						<RibbonItem Header="I'm not enabled :(" IsEnabled="False"/>
+					</Ribbon>
+				</Grid>
+			</TabItem>
 			<TabItem Header="AcrylicControls">
 				<StackPanel Spacing="20">
 					<MaterialButton Content="I'm a Button! Come On, Click me!"/>
@@ -127,28 +162,6 @@
 						</StackPanel>
 					</GroupBox>
 				</StackPanel>
-			</TabItem>
-			<TabItem Header="Ribbon">
-				<Grid>
-					<Ribbon LeftContent="I'm Left" RightContent="I'm Right :3">
-						<Ribbon.Header>
-							<Image Height="30" Source="resm:UI.Tests.auraui-logov2.png" Stretch="Uniform"/>
-						</Ribbon.Header>
-						<RibbonItem Header="Start">
-						   Hi :D	
-						</RibbonItem>
-						<RibbonItem Header="Modify">
-							Are you okay?
-						</RibbonItem>
-						<RibbonItem Header="I'm not enabled :(" IsEnabled="False">
-							
-						</RibbonItem>
-						<RibbonItem Header="Let's go!">
-							Come on!, Use me in your Avalonia App :D
-						</RibbonItem>
-						
-					</Ribbon>
-				</Grid>
 			</TabItem>
 	</TabControl>	
 	</Panel>

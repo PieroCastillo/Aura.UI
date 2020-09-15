@@ -1,0 +1,35 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="RibbonItem">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="MaterialIsVisible" Value="False"/>
+		<Setter Property="Padding" Value="9"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="RibbonItem">
+				<Grid Name="PART_Container">
+					<Border Background="{TemplateBinding Background}"/>
+					<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
+											   IsVisible="{TemplateBinding MaterialIsVisible}"/>
+					<ContentPresenter Content="{TemplateBinding Header}"
+									  Padding="{TemplateBinding Padding}"
+									  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+									  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="RibbonItem:selected">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="MaterialIsVisible" Value="True"/>
+	</Style>
+	<Style Selector="RibbonItem:pointerover">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="MaterialIsVisible" Value="True"/>
+	</Style>
+	<Style Selector="RibbonItem:disabled /template/ Grid#PART_Container">
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
+	</Style>
+</Styles>

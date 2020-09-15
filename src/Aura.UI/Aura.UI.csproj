@@ -88,6 +88,15 @@
      <AvaloniaResource Update="RGBIndicatorStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
+     <AvaloniaResource Update="RibbonGroupStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="RibbonItemStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="RibbonSeparatorStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
      <AvaloniaResource Update="RibbonStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
@@ -99,5 +108,10 @@
      <Compile Update="Controls\TitleBox.xaml.cs">
        <DependentUpon>TitleBox.xaml</DependentUpon>
      </Compile>
+   </ItemGroup>
+   <ItemGroup>
+     <None Update="RibbonItemStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
    </ItemGroup>
 </Project>

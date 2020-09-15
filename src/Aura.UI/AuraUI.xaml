@@ -7,16 +7,19 @@
 	<StyleInclude Source="/PageStyles.xaml"/> 
 	<StyleInclude Source="/PagesViewStyles.xaml"/>
 	<StyleInclude Source="/HSLIndicatorStyles.xaml"/>
-	<StyleInclude Source="/FilledSliderStyles.xaml"/> 
+	<StyleInclude Source="/FilledSliderStyles.xaml"/>  
 	<StyleInclude Source="/RGBIndicatorStyles.xaml"/>
 	<StyleInclude Source="/SuperColorPickerStyles.xaml"/>
 	<StyleInclude Source="/ModernSliderStyles.xaml"/>
 	<StyleInclude Source="/MaterialButtonStyles.xaml"/>
 	<StyleInclude Source="/GroupBoxStyles.xaml"/>
 	<StyleInclude Source="avares://Aura.UI/Languages/EnglishLanguage.xaml"/>
-
+	
 	<!--New Controls to 0.1.3-preview2-->
 	<StyleInclude Source="/RibbonStyles.xaml"/>
+	<StyleInclude Source="/RibbonGroupStyles.xaml"/>
+	<StyleInclude Source="/RibbonSeparatorStyles.xaml"/>
+	<StyleInclude Source="/RibbonItemStyles.xaml"/>
 	<!--I do not the reason of why when I write the ModernSlider Styles in its xaml, that does not compile-->
 	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidHighBrush}"/> 
