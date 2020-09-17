@@ -10,7 +10,7 @@
 		<TabItem Header="AuraTabItem">
 			<Grid>
 				<TabControl Name="tabview">
-				</TabControl>
+				</TabControl> 
 				<Button VerticalAlignment="Top"
 						HorizontalAlignment="Right" Name="btn">AddTab</Button>
 				<Button VerticalAlignment="Center"

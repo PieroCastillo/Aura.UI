@@ -1,35 +1,110 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="RibbonItem">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="Material" Value="{DynamicResource NullBrush}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
-		<Setter Property="VerticalContentAlignment" Value="Center"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="MaterialIsVisible" Value="False"/>
-		<Setter Property="Padding" Value="9"/>
+		<Setter Property="Padding" Value="10"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="RibbonItem">
-				<Grid Name="PART_Container">
-					<Border Background="{TemplateBinding Background}"/>
-					<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
-											   IsVisible="{TemplateBinding MaterialIsVisible}"/>
-					<ContentPresenter Content="{TemplateBinding Header}"
-									  Padding="{TemplateBinding Padding}"
-									  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-									  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+				<Grid Name="PART_Container" Margin="0"
+					  VerticalAlignment="{TemplateBinding VerticalAlignment}"
+					  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+					  Height="{TemplateBinding Height}">
+
+					<Grid Margin="0" Height="{TemplateBinding Height}" VerticalAlignment="Stretch">  
+						<Border Background="{TemplateBinding Background}"/>   
+						<ExperimentalAcrylicBorder Height="{TemplateBinding Height}"
+												   Material="{TemplateBinding Material}"
+												   VerticalAlignment="Stretch"
+												   IsVisible="{TemplateBinding MaterialIsVisible}"/>
+						<Button Name="PART_ButtonContainer" Background="Transparent" Padding="0" Margin="0"
+							Height="{TemplateBinding Height}"
+								  BorderThickness="1" VerticalAlignment="Stretch">
+							<ContentPresenter Height="{TemplateBinding Height}"
+										  Content="{TemplateBinding Header}"
+										  Padding="{TemplateBinding Padding}"
+										  VerticalAlignment="Stretch"
+										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+						</Button>
+					</Grid>		
 				</Grid>
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	<Style Selector="RibbonItem:selected">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+	<Style Selector="RibbonItem /template/ Button#PART_ButtonContainer">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ContentPresenter Content="{TemplateBinding Content}"
+								Margin="{TemplateBinding Margin}"
+								BorderBrush="Transparent" 
+								BorderThickness="0"
+								Padding="0"
+								Height="{TemplateBinding Height}"
+								 VerticalAlignment="Center"/>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="RibbonItem:selected"> 
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
 		<Setter Property="MaterialIsVisible" Value="True"/>
 	</Style>
 	<Style Selector="RibbonItem:pointerover">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
+		<Setter Property="MaterialIsVisible" Value="True"/> 
+	</Style>
+	<Style Selector="RibbonItem:selected:pointerover">
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
 		<Setter Property="MaterialIsVisible" Value="True"/>
 	</Style>
 	<Style Selector="RibbonItem:disabled /template/ Grid#PART_Container">
 		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
 	</Style>
+	<Design.PreviewWith>
+		<Border>
+			<Ribbon LeftContent="File" RightContent="Settings"
+					ExpansionState="Total">
+				<Ribbon.Header>
+					<Button Height="50"></Button>
+				</Ribbon.Header>
+				<RibbonItem Header="Start">
+					<RibbonPanel>
+						<RibbonGroup Header=":3" Width="200">
+							<StackPanel>
+								<Button Content="Why?"/>
+								<Button Content="Why? v2"/>
+								<Button Content="Why? v3"/>
+							</StackPanel>
+						</RibbonGroup>
+						<RibbonSeparator/>
+						<RibbonGroup Width="100">
+							<Button Content="Why?"/>
+						</RibbonGroup>
+						<RibbonSeparator></RibbonSeparator>
+						<RibbonGroup></RibbonGroup>
+					</RibbonPanel>
+				</RibbonItem>
+				<RibbonItem Header="Edit">
+					<RibbonPanel>
+						<RibbonGroup Header=":3" Width="200">
+							<StackPanel>
+								<Button Content="Why?"/>
+								<Button Content="Why? v2"/>
+								<Button Content="Why? v3"/>
+							</StackPanel>
+						</RibbonGroup>
+						<RibbonSeparator/>
+						<RibbonGroup Width="100">
+							<Button Content="Why?"/>
+						</RibbonGroup>
+						<RibbonSeparator></RibbonSeparator>
+						<RibbonGroup></RibbonGroup>
+					</RibbonPanel>
+				</RibbonItem>
+			</Ribbon>
+		</Border>
+	</Design.PreviewWith>
 </Styles>

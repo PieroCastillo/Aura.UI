@@ -4,26 +4,21 @@
 	<Styles.Resources>
 		<CornerRadius x:Key="ToggleRadius">3</CornerRadius>
 		<ms:Double x:Key="DefaultRibbonContainerHeight">150</ms:Double>
-		<ms:Double x:Key="DefaultRibbonHeight">200</ms:Double>
 	</Styles.Resources>
 	<Style Selector="Ribbon">
 		<Setter Property="ExpansionState" Value="Total"/>
 		<Setter Property="VerticalAlignment" Value="Top"/>
 		<Setter Property="Padding" Value="10"/>
-		<Setter Property="ItemsPanel">
+		<Setter Property="ItemsPanel"> 
 			<ItemsPanelTemplate>
-				<StackPanel Orientation="Horizontal" Spacing="1"/>
+				<StackPanel Orientation="Horizontal" Spacing="1" VerticalAlignment="Stretch"/>
 			</ItemsPanelTemplate>
 		</Setter>
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Ribbon">
 				<Border>
-					<Border.Resources>
-						<ExperimentalAcrylicMaterial x:Key="nomatter_m"
-													 TintColor="{DynamicResource ThemeAccentBrush3}"
-													 TintOpacity="0.0" MaterialOpacity="10"/>
-					</Border.Resources>
-					<StackPanel>
+					<StackPanel>  
 						<Grid>
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="Auto"/>
@@ -32,19 +27,24 @@
 								<ColumnDefinition Width="Auto"/>
 								<ColumnDefinition Width="Auto"/>
 							</Grid.ColumnDefinitions>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="*"/>
+							</Grid.RowDefinitions>
 							<ContentPresenter Grid.Column="0"
 											Content="{TemplateBinding Header}"
-											HorizontalAlignment="Center"
+											HorizontalAlignment="Center" 
 											VerticalAlignment="Center"
 											Padding="10"/>
 							<MaterialButton Grid.Column="1"
 											Name="PART_LeftButton"
 											Content="{TemplateBinding LeftContent}"
 											Classes="BorderButtons"
-											CornerRadius="0"
-											Material="{DynamicResource nomatter_m}"/>
-							<ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Auto">
+											CornerRadius="0"/>
+							<ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Auto"
+										  VerticalAlignment="Stretch" BorderThickness="0"
+										  Padding="0" Margin="0">
 								<ItemsPresenter
+											VerticalAlignment="Stretch"
 											Name="PART_ItemsPresenter"
 											Items="{TemplateBinding Items}"
 											ItemsPanel="{TemplateBinding ItemsPanel}"
@@ -55,15 +55,19 @@
 											Name="PART_RightButton"
 											Content="{TemplateBinding RightContent}"
 											Classes="BorderButtons"
-											HorizontalAlignment="Right"
-											Material="{DynamicResource nomatter_m}"/>
-
+											HorizontalAlignment="Right"/>
 							<ToggleButton Name="PART_Toggle" Grid.Column="4"
 										  IsChecked="True"
 										  Background="Transparent"></ToggleButton>
 						</Grid>
 						<ExperimentalAcrylicBorder Name="PART_ContentContainer"
-								Material="{TemplateBinding Material}">
+								Material="{TemplateBinding Material}"
+							Height="{DynamicResource DefaultRibbonContainerHeight}">
+							<ExperimentalAcrylicBorder.Transitions>
+								<Transitions>
+									<DoubleTransition Property="Height" Duration="0:0:0.4"/>
+								</Transitions>
+							</ExperimentalAcrylicBorder.Transitions>
 							<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
 								<ContentPresenter Name="PART_ContentHost"
 										Content="{TemplateBinding SelectedContent}"
@@ -72,37 +76,58 @@
 							</ScrollViewer>
 						</ExperimentalAcrylicBorder>
 					</StackPanel>
-				</Border>
+				</Border> 
 			</ControlTemplate>
-		</Setter>
+		</Setter> 
+	</Style>
+	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="MaterialIsVisible" Value="False"/>
+	</Style>
+	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons:pointerover">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="MaterialIsVisible" Value="True"/>
+	</Style>
+	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons:pressed">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="MaterialIsVisible" Value="True"/>
+	</Style>
+	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons:pressed:pointerover">
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="MaterialIsVisible" Value="True"/>
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
 	</Style>
 	<Style Selector="Ribbon[ExpansionState=Total] /template/ ExperimentalAcrylicBorder#PART_ContentContainer">
 		<Style.Animations>
-			<Animation Duration="0:0:0.5" Easing="QuarticEaseIn"> 
-				<KeyFrame Cue="0%">
-					<Setter Property="Height" Value="0.5"/>
+			<Animation Duration="0:0:0.3" Easing="QuarticEaseOut"
+					   FillMode="Backward"> 
+				<KeyFrame Cue="0%">  
+					<Setter Property="Height" Value="0"/>
 				</KeyFrame>
 				<KeyFrame Cue="100%">
 					<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/>
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
-		<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/>
+		<!--<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/>-->
 	</Style>
 	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ExperimentalAcrylicBorder#PART_ContentContainer">
 		<Style.Animations>
-			<Animation Duration="0:0:0.5" Easing="QuarticEaseIn">
+			<Animation Duration="0:0:0.3" Easing="QuarticEaseOut"
+					   FillMode="Forward"> 
 				<KeyFrame Cue="0%"> 
 					<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/> 
 				</KeyFrame>
 				<KeyFrame Cue="100%">
-					<Setter Property="Height" Value="0.5"/>
+					<Setter Property="Height" Value="0"/>
 				</KeyFrame> 
 			</Animation>
 		</Style.Animations>
-		<Setter Property="Height" Value="0"/>
+		<!--<Setter Property="Height" Value="0"/>-->
 	</Style>
-	<Style Selector="Ribbon /template/ ToggleButton#PART_Toggle:checked">
+	<Style Selector="Ribbon[ExpansionState=Total] /template/ ToggleButton#PART_Toggle"><!--:checked-->
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleButton">
 				<ExperimentalAcrylicBorder Padding="2"
@@ -118,7 +143,7 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	<Style Selector="Ribbon /template/ ToggleButton#PART_Toggle:unchecked">
+	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ToggleButton#PART_Toggle"><!--:unchecked-->
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleButton">
 				<ExperimentalAcrylicBorder Padding="2"
@@ -150,11 +175,30 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>-->
+
+
 	<Design.PreviewWith>
 		<Border Padding="10">  
 			<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
 					ExpansionState="Total">
 				<RibbonItem Header="Start">
+					<RibbonPanel>
+						<RibbonGroup Header=":3" Width="200">
+							<StackPanel>
+								<Button Content="Why?"/>
+								<Button Content="Why? v2"/>
+								<Button Content="Why? v3"/>
+							</StackPanel>
+						</RibbonGroup>
+						<RibbonSeparator/>
+						<RibbonGroup Width="100">
+							<Button Content="Why?"/>
+						</RibbonGroup>
+						<RibbonSeparator></RibbonSeparator>
+						<RibbonGroup></RibbonGroup>
+					</RibbonPanel>
+				</RibbonItem>
+				<RibbonItem Header="Edit">
 					<RibbonPanel>
 						<RibbonGroup Header=":3" Width="200">
 							<StackPanel>

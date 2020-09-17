@@ -10,6 +10,7 @@ using Avalonia.Media;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 
 namespace Aura.UI.Controls.Ribbon
@@ -83,6 +84,13 @@ namespace Aura.UI.Controls.Ribbon
                     this.ExpansionState = ExpansionState.Total;
                     break;
             }
+        }
+
+        protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            base.ItemsCollectionChanged(sender, e);
+
+
         }
 
         #region Properties

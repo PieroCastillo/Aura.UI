@@ -1,4 +1,5 @@
 ﻿using Aura.UI.Exceptions;
+using Aura.UI.Extensions;
 using Avalonia.Media;
 using System;
 using System.Collections.Generic;
@@ -10,65 +11,11 @@ namespace Aura.UI.Helpers
     {
         public HSLStruct(Color color) 
         {
-            double r = color.R / 255;
-            double g = color.G / 255;
-            double b = color.B / 255;
-
-            var max = Math.Max(Math.Max(r, g), b);
-            var min = Math.Min(Math.Min(r, g), b);
-            var c = max - min;
-            var c_p = max + min;
-            double thue = 0;
-            // Calculates the hue
-            if(c == 0)
-            {
-                thue = 0;
-            }
-            else if(max == r)
-            {
-                var segment = (g - b) / c;
-                var shift = 0 / 60;       // R° / (360° / hex sides)
-                if (segment < 0)
-                {          // hue > 180, full rotation
-                    shift = 360 / 60;         // R° / (360° / hex sides)
-                }
-                thue = segment + shift;
-            }
-            else if (max == g)
-            {
-                var segment = (b - r) / c;
-                var shift = 120 / 60;     // G° / (360° / hex sides)
-                thue = segment + shift;
-            }
-            else if(max == b)
-            {
-                var segment = (r - g) / c;
-                var shift = 240 / 60;     // B° / (360° / hex sides)
-                thue = segment + shift;
-            }
-            this.hue = thue * 60;
-
-            // Calculates the lightness
-            this.lightness = (max + min) / 2;
-
-            // Calculates the saturation
-            double sat = 1.0;
-            if(c == 0)
-            {
-                sat = 0;
-            }
-            else
-            {
-                if (this.lightness > 0.5)
-                {
-                    sat = c / c_p;
-                }
-                else if (this.lightness < 0.5)
-                {
-                    sat = c / (2 - c);
-                }
-            }
-            this.saturation = sat;
+            var rgb = new RGBStruct(color);
+            var hsl = rgb.ToHSL();
+            this.hue = hsl.hh;
+            this.saturation = hsl.ss;
+            this.lightness = hsl.ll;
         }
         public double hue { get; private set; }
         public double saturation { get; private set; }

@@ -1,4 +1,6 @@
-﻿using Aura.UI.Controls.Primitives;
+﻿using Aura.UI.Attributes;
+using Aura.UI.Controls.Primitives;
+using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -9,8 +11,33 @@ using System.Text;
 
 namespace Aura.UI.Controls.Ribbon
 {
+    [TemplatePart(Name = "PART_ButtonContainer", Type = typeof(Button))]
     public class RibbonItem : TabItem, IMaterial
     {
+        Button btn_cont;
+
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+        {
+            base.OnApplyTemplate(e);
+
+            btn_cont = this.GetControl<Button>(e, "PART_ButtonContainer");
+            btn_cont.Click += Btn_cont_Click;
+            btn_cont.Click += Btn_cont_Click;
+        }
+
+        private void Btn_cont_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            if(this.IsSelected != false)
+            {
+                this.ToggleRibbonRootState();
+                e.Handled = true;
+            }
+            else
+            {
+                this.IsSelected = true;
+            }
+        }
+
         public ExperimentalAcrylicMaterial Material
         {
             get { return GetValue(MaterialProperty); }

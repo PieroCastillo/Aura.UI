@@ -10,27 +10,27 @@
 		<Setter Property="Padding" Value="10 0"/>
 		<Setter Property="BorderBrush" Value="Transparent"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="HorizontalAlignment" Value="Stretch"/>  
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		<Setter Property="Height" Value="35"/>
 		<Setter Property="Template">
-			<ControlTemplate TargetType="AuraTabItem"> 
-			 <Border Name="PART_Container" BorderThickness="0 0 0 0" Background="{TemplateBinding Background}"
-					BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="7,7,0,0"
-					Padding="10 5 0 0"> 
-					<Grid Background="Transparent">							
+			<ControlTemplate TargetType="AuraTabItem">
+				<Border Name="PART_Container" BorderThickness="0 0 0 0" Background="{TemplateBinding Background}"
+					   BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="7,7,0,0"
+					   Padding="10 5 0 0">
+					<Grid Background="Transparent">
 						<Grid.RowDefinitions>
-						      <RowDefinition Height="*"></RowDefinition>
-						      <RowDefinition Height="3"></RowDefinition> 
-				        </Grid.RowDefinitions>
+							<RowDefinition Height="*"></RowDefinition>
+							<RowDefinition Height="3"></RowDefinition>
+						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*"></ColumnDefinition>
-							<ColumnDefinition Width="1.5"></ColumnDefinition> 
-						</Grid.ColumnDefinitions>  
-						<Grid Grid.Column="0">
-						<Grid.ColumnDefinitions>							
-							<ColumnDefinition Width="*"></ColumnDefinition>
-							<ColumnDefinition Width="20"></ColumnDefinition>
+							<ColumnDefinition Width="1.5"></ColumnDefinition>
 						</Grid.ColumnDefinitions>
+						<Grid Grid.Column="0">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"></ColumnDefinition>
+								<ColumnDefinition Width="20"></ColumnDefinition>
+							</Grid.ColumnDefinitions>
 							<Grid>
 								<ContentPresenter Grid.Column="0"
 						    Name="PART_ContentPresenter"
@@ -48,17 +48,17 @@
 							    Padding="3" BorderThickness="0" VerticalAlignment="Center"
 								VerticalContentAlignment="Center"
 								Foreground="{TemplateBinding Foreground}">
-							<Path Fill="{TemplateBinding Foreground}" Name="PART_Path" Stretch="UniformToFill"
-								Data="m 27.98948 90.95866 33.967068 33.88371 c 1.10342 1.10071 1.105616 2.8878 0.0049 3.99122 l -33.883709 33.96706 c -5.503567 5.51711 -5.492597 14.45254 0.02452 19.95612 5.517115 5.50357 14.452541 5.49259 19.956109 -0.0245 l 33.883712 -33.96707 c 1.100713 -1.10343 2.887796 -1.10561 3.991218 -0.005 l 33.967066 33.88372 c 5.51711 5.50356 14.45255 5.49259 19.95612 -0.0245 5.50357 -5.51712 5.49259 -14.45254 -0.0245 -19.95611 l -33.96707 -33.88371 c -1.10343 -1.10071 -1.10561 -2.8878 -0.005 -3.99122 L 139.7437 90.821366 c 5.50356 -5.517107 5.49259 -14.452533 -0.0245 -19.956108 -5.51712 -5.503575 -14.45254 -5.492591 -19.95611 0.02452 L 85.879357 104.85684 c -1.100714 1.10343 -2.887797 1.10561 -3.991219 0.005 L 47.921071 70.978036 c -5.517107 -5.503568 -14.452533 -5.492598 -19.956108 0.02452 -5.503568 5.517108 -5.49259 14.452541 0.02452 19.956108 z m 0 0"></Path>
-						   </Button>
-						</Grid>					     
-					    <Border Name="PART_SelectorBorder" Grid.Column="0" Grid.Row="1"
+								<Path Fill="{TemplateBinding Foreground}" Name="PART_Path" Stretch="UniformToFill"
+									Data="m 27.98948 90.95866 33.967068 33.88371 c 1.10342 1.10071 1.105616 2.8878 0.0049 3.99122 l -33.883709 33.96706 c -5.503567 5.51711 -5.492597 14.45254 0.02452 19.95612 5.517115 5.50357 14.452541 5.49259 19.956109 -0.0245 l 33.883712 -33.96707 c 1.100713 -1.10343 2.887796 -1.10561 3.991218 -0.005 l 33.967066 33.88372 c 5.51711 5.50356 14.45255 5.49259 19.95612 -0.0245 5.50357 -5.51712 5.49259 -14.45254 -0.0245 -19.95611 l -33.96707 -33.88371 c -1.10343 -1.10071 -1.10561 -2.8878 -0.005 -3.99122 L 139.7437 90.821366 c 5.50356 -5.517107 5.49259 -14.452533 -0.0245 -19.956108 -5.51712 -5.503575 -14.45254 -5.492591 -19.95611 0.02452 L 85.879357 104.85684 c -1.100714 1.10343 -2.887797 1.10561 -3.991219 0.005 L 47.921071 70.978036 c -5.517107 -5.503568 -14.452533 -5.492598 -19.956108 0.02452 -5.503568 5.517108 -5.49259 14.452541 0.02452 19.956108 z m 0 0"></Path>
+							</Button>
+						</Grid>
+						<Border Name="PART_SelectorBorder" Grid.Column="0" Grid.Row="1"
 								BorderThickness="0"></Border>
 						<Border Name="PART_Separator" Opacity="0.6"
 								Grid.Column="1" Grid.Row="0" CornerRadius="5"
 								Background="{DynamicResource ThemeForegroundBrush}"></Border>
-				     </Grid>				   				
-			 </Border>    
+					</Grid>
+				</Border>
 			</ControlTemplate>
 		</Setter>
 	</Style>
@@ -76,7 +76,7 @@
 	</Style>
 	<Style Selector="AuraTabItem:selected /template/ Border#PART_Separator">
 		<Setter Property="IsVisible" Value="false"/>
-	</Style> 
+	</Style>
 	<Style Selector="AuraTabItem:pointerover /template/ Border#PART_Separator">
 		<Setter Property="IsVisible" Value="false"/>
 	</Style>
@@ -85,15 +85,15 @@
 	</Style>
 	<Style Selector="AuraTabItem:pointerover">
 		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
-		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/> 
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
 	</Style>
-	<Style Selector="AuraTabItem:pointerover /template/ Border#PART_Container"> 
-		<Setter Property="Opacity" Value="0.7"/>  
+	<Style Selector="AuraTabItem:pointerover /template/ Border#PART_Container">
+		<Setter Property="Opacity" Value="0.7"/>
 	</Style>
 	<Style Selector="AuraTabItem:selected:pointerover /template/ Border#PART_Container">
 		<Setter Property="Opacity" Value="1"/>
 	</Style>
-	<Style Selector="AuraTabItem:selected"> 
+	<Style Selector="AuraTabItem:selected">
 		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
 		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>
@@ -102,16 +102,16 @@
 		<Setter Property="Background" Value="{DynamicResource ThemeForegroundBrush}"/>
 	</Style>
 	<Style Selector="AuraTabItem[TabStripPlacement=Right]">
-		<Setter Property="HorizontalContentAlignment" Value="Right"/> 
+		<Setter Property="HorizontalContentAlignment" Value="Right"/>
 	</Style>
 
 	<Design.PreviewWith>
-		<Border Padding="0"> 
+		<Border Padding="0">
 			<AuraTabView Width="400" Height="400">
-				<AuraTabItem Header="test" > 
+				<AuraTabItem Header="test" >
 					xd
 				</AuraTabItem>
-				<AuraTabItem Header="test2"> 
+				<AuraTabItem Header="test2">
 					<TextBlock>test2</TextBlock>
 				</AuraTabItem>
 				<AuraTabItem Header="test4" IsClosable="False">
@@ -128,5 +128,5 @@
 				</AuraTabItem>
 			</AuraTabView>
 		</Border>
-	</Design.PreviewWith> 
+	</Design.PreviewWith>
 </Styles>
