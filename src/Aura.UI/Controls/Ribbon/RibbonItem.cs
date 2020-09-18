@@ -22,7 +22,6 @@ namespace Aura.UI.Controls.Ribbon
 
             btn_cont = this.GetControl<Button>(e, "PART_ButtonContainer");
             btn_cont.Click += Btn_cont_Click;
-            btn_cont.Click += Btn_cont_Click;
         }
 
         private void Btn_cont_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -30,7 +29,6 @@ namespace Aura.UI.Controls.Ribbon
             if(this.IsSelected != false)
             {
                 this.ToggleRibbonRootState();
-                e.Handled = true;
             }
             else
             {

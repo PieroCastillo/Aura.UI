@@ -27,11 +27,19 @@ namespace Aura.UI.Controls.Ribbon
         #region Functionalities
         public void CloseRibbonItem(RibbonItem ribbonItemToClose)
         {
-             if(ribbonItemToClose != null)
-             {
-                (Items as IList).Remove(ribbonItemToClose);
-             }
+            try
+            {
+                if (ribbonItemToClose != null)
+                {
+                    (Items as IList).Remove(ribbonItemToClose);
+                }
+            }
+            catch(AuraException<Ribbon> e)
+            {
+                throw new AuraException<Ribbon>("The RibbonItem inserted does not exist", e);
+            }
         }
+
         public void CloseRibbonItem(int index, bool showException = true)
         {
             try
@@ -61,15 +69,15 @@ namespace Aura.UI.Controls.Ribbon
             LeftButton = this.GetControl<MaterialButton>(e, "PART_LeftButton");
             RightButton = this.GetControl<MaterialButton>(e, "PART_RightButton");
             ToggleStateButton = this.GetControl<ToggleButton>(e, "PART_Toggle");
-            ToggleStateButton.Checked += ToggleStateButton_Checked;
-            ToggleStateButton.Unchecked += ToggleStateButton_Checked;
+            ToggleStateButton.Checked += (sender, e) =>
+            {
+                ToggleState();
+            };
+            ToggleStateButton.Unchecked += (sender, e) =>
+            {
+                ToggleState();
+            };
         }
-         
-        private void ToggleStateButton_Checked(object sender, RoutedEventArgs e)
-        {
-            ToggleState();
-        }
-
         protected void ToggleState()
         {
             switch (this.ExpansionState)
@@ -84,13 +92,6 @@ namespace Aura.UI.Controls.Ribbon
                     this.ExpansionState = ExpansionState.Total;
                     break;
             }
-        }
-
-        protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            base.ItemsCollectionChanged(sender, e);
-
-
         }
 
         #region Properties

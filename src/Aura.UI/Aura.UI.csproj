@@ -29,10 +29,11 @@
   </ItemGroup>
    <ItemGroup>
      <None Include="..\..\.editorconfig" Link=".editorconfig" />
-     <None Include="..\..\DesignSources\auraui-logov2.png">
+     <EmbeddedResource Include="..\..\DesignSources\auraui-logov2.png">
        <Pack>True</Pack>
        <PackagePath></PackagePath>
-     </None>
+       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+     </EmbeddedResource>
    </ItemGroup>
    <ItemGroup>
      <EmbeddedResource Include="Resources\TransparentBackground.png">

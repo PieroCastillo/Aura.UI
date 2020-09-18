@@ -20,7 +20,7 @@
 												   Material="{TemplateBinding Material}"
 												   VerticalAlignment="Stretch"
 												   IsVisible="{TemplateBinding MaterialIsVisible}"/>
-						<Button Name="PART_ButtonContainer" Background="Transparent" Padding="0" Margin="0"
+						<Button Name="PART_ButtonContainer" Background="White" Padding="0" Margin="0"
 							Height="{TemplateBinding Height}"
 								  BorderThickness="1" VerticalAlignment="Stretch">
 							<ContentPresenter Height="{TemplateBinding Height}"
@@ -33,7 +33,7 @@
 					</Grid>		
 				</Grid>
 			</ControlTemplate>
-		</Setter>
+		</Setter> 
 	</Style>
 	<Style Selector="RibbonItem /template/ Button#PART_ButtonContainer">
 		<Setter Property="Template">
@@ -44,7 +44,8 @@
 								BorderThickness="0"
 								Padding="0"
 								Height="{TemplateBinding Height}"
-								 VerticalAlignment="Center"/>
+								  VerticalContentAlignment="Center"
+								 VerticalAlignment="Stretch"/> 
 			</ControlTemplate>
 		</Setter>
 	</Style>
