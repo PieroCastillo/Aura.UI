@@ -23,6 +23,7 @@ Aura.UI
   *  GroupBox
   *  FilledSlider
   *  ModernSlider
+  *  Ribbon
 
 * Controls in Developing
    * GradientEditor : This control creates a GradientBrush to use in other controls.
@@ -37,6 +38,7 @@ Aura.UI
    * TabbedWindow : An optimized window to use with AuraTabItems. 
    * NavigationView : A scrollable MenuItems, like UWP NavigationView.
    * StatusBar : This bar shows an status of application, it will use a class for the status.
+   * WritteablePanel : A panel por represent and edit images easily. 
 
 * UI Extensions
    * TabControlExtensions:
@@ -50,6 +52,14 @@ Aura.UI
    ```c#
     GetControl<T>(this TemplatedControl templatedControl ,TemplateAppliedEventArgs e, string name) where T : AvaloniaObject
     //Return an AvaloniaObject from Template
+   ```
+   * LogicalExtensions:
+   ```c#
+   GetParentTOfLogical<T>(this ILogical Logical) where T : class
+   // Return the closest logical parent
+
+   GetParentTOfLogical<T>(this ILogical Logical) where T : class
+   // Return the closest window parent
    ```
 
 # Install
@@ -74,8 +84,8 @@ Aura.UI.
 <h3>Dotnet CLI</h3>
 
 Open the terminal on the root folder of your project and write <br/>
-``` CLI 
-dotnet add package Aura.UI --version 0.1.3-preview1
+```shell
+dotnet add package Aura.UI --version 0.1.3-preview2
 ```
  Do it like this:
 
