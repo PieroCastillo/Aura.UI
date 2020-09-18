@@ -152,30 +152,113 @@ Finally, add this using statement to ```Program.cs```
 using Avalonia.Controls.ApplicationLifetimes;
 ```
 # Controls
+
 ## AuraTabItem 
+
  A Closable TabItem what has extra features.
  <img src="DocumentationGifs/AuraTabItem_Adding_Closing.gif">
+
 ## AuraTabView
+
 Is similar to TabControl, but this can add new tabs with a built-in button, also its tabs reduce its width when the spacing is little.
+
 <img src="DocumentationGifs/AuraTabView_Adding_Testing.gif">
+
 ## TitleBox
+
 Similar to GroupBox, but has 2 buttons and is easy-to-custom.
 <img src="DocumentationGifs/TitleBox_ReScaling.gif">
+
 ## SuperColorPicker
+
 This color picker can modify the opacity and the color of a SolidColorBrush, and let you see a preview, too.
+
 <img src="DocumentationGifs/SuperColorPicker_Testing.gif">
 ## ColorPickerButton 
 A Toggle Button when you click it, shows a ColorPicker on a Window.
+
 <img src="DocumentationGifs/ColorPickerButton_Testing.gif">
+
 ## PagesView 
+
  A Pages Collection for simplify the life.
+
  <img src="DocumentationGifs/PagesView_Testing.gif">
+
 ## ModernSlider
+
 This Slider imitates the Android Slider, but uses the Acrylic Textures!
+
 <img src="DocumentationGifs/ModernSlider_Testing.gif">
+
 ## GroupBox
+
 This Control has a header and that show it in the top.
+
 <img src="DocumentationGifs/GroupBox_WO_Material_ReScaling.gif">
+
+## Ribbon (Preview)
+
+This control shows a Ribbon, and use its own subcontrols.
+
+<img src="DocumentationGifs/RibbonTesting_prev.gif"> 
+
+### Ribbon SubControls:
+
+   * RibbonItem : It's the principal content selector, has a header and the content property.
+   * RibbonPanel : This panel must be into the RibbonItem Content, organizes the RibbonGroups.
+   * RibbonGroup : This HeaderedContentControl organizes the groups of the RibbonItem.
+   * RibbonSeparator : This control separates the RibbonGroups.
+  
+ The default height of the container is ```150```, but if you want to change it, you have to edit the follow resource:
+ ```xml 
+   <ParentWindow xmlns:ms="clr-namespace:System;assembly=netstandard">
+      <ParentWindow.Resources>
+         <ms:Double x:Key="DefaultRibbonContainerHeight">200</ms:Double>
+      </ParentWindow.Resources>
+   </ParentWindow>
+ ``` 
+### Example:
+
+```xml
+   <Border Padding="10">
+      <Border.Resources>
+			<ms:Double x:Key="DefaultRibbonContainerHeight">170</ms:Double>
+      </Border.Resources>
+		<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings" ExpansionState="Total">
+			<RibbonItem Header="Start">
+			   <RibbonPanel>
+					<RibbonGroup Header="Colour">
+						<Border Background="Yellow" Height="90" Width="100"/>
+					</RibbonGroup>
+					<RibbonSeparator/>
+					<RibbonGroup Header="Themes">
+						<StackPanel Orientation="Horizontal">
+							<Border Background="Black" Width="60" Height="90"/>
+							<Border Background="White" Width="60" Height="90"/>
+						</StackPanel>
+					</RibbonGroup>
+				   <RibbonSeparator/>
+					<RibbonGroup Header="Fonts">
+						<StackPanel Spacing="10">
+							<TextBlock FontSize="20">Ribbon</TextBlock>
+							<TextBlock FontSize="14">Ribbon</TextBlock>
+							<TextBlock FontSize="10">Ribbon</TextBlock>
+						</StackPanel>
+					</RibbonGroup>
+				</RibbonPanel>
+			</RibbonItem>
+			<RibbonItem Header="Edit">
+				<RibbonPanel>
+				</RibbonPanel>
+			</RibbonItem>
+		</Ribbon>
+	</Border>
+```
+
+This xaml code produces this result:
+
+<img src="DocumentationGifs/RibbonTesting_prev2.gif">
 
 # About Aura.UI
 
