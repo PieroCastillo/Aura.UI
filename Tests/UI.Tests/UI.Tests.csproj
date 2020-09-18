@@ -13,9 +13,9 @@
     </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="auraui-logov2.png">
+    <AvaloniaResource Include="auraui-logov2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </AvaloniaResource>
     <EmbeddedResource Include="Language.theme">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
