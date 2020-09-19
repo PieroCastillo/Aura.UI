@@ -38,7 +38,7 @@ Aura.UI
    * TabbedWindow : An optimized window to use with AuraTabItems. 
    * NavigationView : A scrollable MenuItems, like UWP NavigationView.
    * StatusBar : This bar shows an status of application, it will use a class for the status.
-   * WritteablePanel : A panel por represent and edit images easily. 
+   * WritteablePanel : A panel that represents and edits images easily. 
 
 * UI Extensions
    * TabControlExtensions:
