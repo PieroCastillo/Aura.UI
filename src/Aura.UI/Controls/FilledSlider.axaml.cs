@@ -8,6 +8,9 @@ using Avalonia.Metadata;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// Easy to custom slider
+    /// </summary>
     public class FilledSlider : Slider
     {
         public FilledSlider()
@@ -19,7 +22,9 @@ namespace Aura.UI.Controls
         {
             AvaloniaXamlLoader.Load(this);
         }
-
+        /// <summary>
+        /// Template for the Thumb of the <see cref="FilledSlider"/>
+        /// </summary>
         public IControlTemplate ThumbTemplate
         {
             get { return GetValue(ThumbTemplateProperty); }
@@ -28,6 +33,9 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<IControlTemplate> ThumbTemplateProperty =
             AvaloniaProperty.Register<FilledSlider, IControlTemplate>(nameof(ThumbTemplate));
 
+        /// <summary>
+        /// Shows a content in the right
+        /// </summary>
         public object RightContent
         {
             get { return GetValue(RightContentProperty); }
@@ -36,6 +44,9 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<object> RightContentProperty =
             AvaloniaProperty.Register<FilledSlider, object>(nameof(RightContent), "Right");
 
+        /// <summary>
+        /// Shows a content in the left
+        /// </summary>
         public object LeftContent
         {
             get { return GetValue(LeftContentProperty); }

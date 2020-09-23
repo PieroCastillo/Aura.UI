@@ -11,6 +11,9 @@ using System.Text;
 
 namespace Aura.UI.Controls.Ribbon
 {
+    /// <summary>
+    /// Defines a Item for the <see cref="Ribbon"/>
+    /// </summary>
     [TemplatePart(Name = "PART_ButtonContainer", Type = typeof(Button))]
     public class RibbonItem : TabItem, IMaterial
     {
@@ -35,7 +38,9 @@ namespace Aura.UI.Controls.Ribbon
                 this.IsSelected = true;
             }
         }
-
+        /// <summary>
+        /// Defines the Material for the AcrylicBorder in the Template
+        /// </summary>
         public ExperimentalAcrylicMaterial Material
         {
             get { return GetValue(MaterialProperty); }
@@ -49,7 +54,9 @@ namespace Aura.UI.Controls.Ribbon
                     MaterialOpacity = 1,
                     TintOpacity = 0.85
                 });
-
+        /// <summary>
+        /// Defines if the Material can be visible
+        /// </summary>
         public bool MaterialIsVisible
         {
             get { return GetValue(MaterialIsVisibleProperty); }

@@ -1,51 +1,63 @@
 ﻿using Aura.UI.Attributes;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
+using Avalonia.Media.Imaging;
 
 namespace Aura.UI.Controls
 {
-    [InDeveloping]
+    /// <summary>
+    /// This item shows a Icon, Maintext and secondarytext for the <see cref="ListBox"/> control
+    /// </summary>
+    [Experimental]
+    [TemplatePart(Name = "PART_PrincipalText", Type = typeof(TextBlock))]
+    [TemplatePart(Name = "PART_SecondaryText", Type = typeof(TextBlock))]
     public class SuperListBoxItem : ListBoxItem
     {
-        Button AnyControlContainer;
-        TextBlock Text1Container;
-        TextBlock Text2Container;
         public SuperListBoxItem()
         {
             this.InitializeComponent();
-            AnyControlContainer = this.Find<Button>("ImageContent");
-            Text1Container = this.Find<TextBlock>("PrincipalText");
-            Text2Container = this.Find<TextBlock>("SecondaryText");
         }
 
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
         }
+
         //Text 1
-        public string Text1
+        /// <summary>
+        /// MainText, it's ubicate in the top
+        /// </summary>
+        public string MainText
         {
-            get { return GetValue(Text1Property); }
-            set { SetValue(Text1Property, value); }
+            get { return GetValue(MainTextProperty); }
+            set { SetValue(MainTextProperty, value); }
         }
-        public static readonly StyledProperty<string> Text1Property =
-            AvaloniaProperty.Register<SuperListBoxItem, string>(nameof(Text1), "NombreDeObjeto");
+        public static readonly StyledProperty<string> MainTextProperty =
+            AvaloniaProperty.Register<SuperListBoxItem, string>(nameof(MainText),"MainText");
         //Text 2
-        public string Text2
+        /// <summary>
+        /// Secondary Text, it's ubicate in the bottom
+        /// </summary>
+        public string SecondaryText
         {
-            get { return GetValue(Text2Property); }
-            set { SetValue(Text2Property, value); }
+            get { return GetValue(SecondaryTextProperty); }
+            set { SetValue(SecondaryTextProperty, value); }
         }
-        public static readonly StyledProperty<string> Text2Property =
-            AvaloniaProperty.Register<SuperListBoxItem, string>(nameof(Text2), "NombreDeUbicación");
-        //Image 
-        public Control AnyControl
+        public static readonly StyledProperty<string> SecondaryTextProperty =
+            AvaloniaProperty.Register<SuperListBoxItem, string>(nameof(SecondaryText), "SecondaryText");
+        /// <summary>
+        /// Icon of the Item, it's recommended that use a <see cref="DrawingImage"/> like an image
+        /// </summary>
+        public IImage Icon
         {
-            get { return GetValue(AnyControlProperty); }
-            set { SetValue(AnyControlProperty, value); }
+            get { return GetValue(IconProperty); }
+            set { SetValue(IconProperty, value); }
         }
-        public static readonly StyledProperty<Control> AnyControlProperty =
-            AvaloniaProperty.Register<SuperListBoxItem, Control>(nameof(AnyControl));
+        public static readonly StyledProperty<IImage> IconProperty =
+            AvaloniaProperty.Register<SuperListBoxItem, IImage>(nameof(Icon));
+
     }
 }

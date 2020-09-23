@@ -1,10 +1,12 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui" 
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:i="clr-namespace:Avalonia.Xaml.Interactivity;assembly=Avalonia.Xaml.Interactivity"
+        xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
 		xmlns:ms="clr-namespace:System;assembly=netstandard">
 	<Styles.Resources>
 		<CornerRadius x:Key="ToggleRadius">3</CornerRadius>
 		<ms:Double x:Key="DefaultRibbonContainerHeight">150</ms:Double>
-	</Styles.Resources>
+ 	</Styles.Resources>
 	<Style Selector="Ribbon">
 		<Setter Property="ExpansionState" Value="Total"/>
 		<Setter Property="VerticalAlignment" Value="Top"/>
@@ -70,15 +72,23 @@
 							<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
 								<ContentPresenter Name="PART_ContentHost"
 										Content="{TemplateBinding SelectedContent}"
-										Padding="{TemplateBinding Padding}" 
-										ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
-							</ScrollViewer>
+										Padding="{TemplateBinding Padding}"
+										ContentTemplate="{TemplateBinding SelectedContentTemplate}">
+									<ContentPresenter.Transitions>
+										<Transitions>
+											<DoubleTransition Property="Opacity" Duration="0:0:0.3"/>
+										</Transitions>
+									</ContentPresenter.Transitions>							
+								</ContentPresenter>
+							</ScrollViewer> 
 						</ExperimentalAcrylicBorder>
+						<ListBox x:Name="list"></ListBox>
 					</StackPanel>
 				</Border> 
 			</ControlTemplate>
 		</Setter> 
 	</Style>
+	<!--ModernButton Styles-->
 	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="MaterialIsVisible" Value="False"/>
@@ -98,6 +108,8 @@
 		<Setter Property="MaterialIsVisible" Value="True"/>
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
 	</Style>
+
+	<!--Container Expansion Animations-->
 	<Style Selector="Ribbon[ExpansionState=Total] /template/ ExperimentalAcrylicBorder#PART_ContentContainer">
 		<Style.Animations>
 			<Animation Duration="0:0:0.4"  Easing="CircularEaseOut"
@@ -126,6 +138,25 @@
 		</Style.Animations>
 		<!--<Setter Property="Height" Value="0"/>-->
 	</Style>
+	
+	
+	<!--<Style Selector="Ribbon[ExpansionState=Total] /template/ ContentPresenter#PART_ContentHost">
+		<Style.Animations>
+			<Animation Duration="0:0:0.4" FillMode="Forward"
+					   Easing="SineEaseOut">
+				<KeyFrame Cue="0%">
+					<Setter Property="TranslateTransform.X" Value="300"/> 
+					<Setter Property="Opacity" Value="0"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="TranslateTransform.X" Value="0"/>
+					<Setter Property="Opacity" Value="1"/> 
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>--> 
+	
+	<!--ToggleButton Icons-->
 	<Style Selector="Ribbon[ExpansionState=Total] /template/ ToggleButton#PART_Toggle"><!--:checked-->
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleButton">
@@ -158,24 +189,8 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	<!--<Style Selector="Ribbon /template/ ToggleButton#PART_Toggle:indeterminate">
-		<Setter Property="Template">
-			<ControlTemplate TargetType="ToggleButton">
-				<ExperimentalAcrylicBorder Padding="2" 
-					Material="{DynamicResource ThemeAcrylicControlLowBrush}"
-					CornerRadius="{DynamicResource ToggleRadius}">
-					<DrawingPresenter Width="16">
-						<DrawingPresenter.Drawing>
-							<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}"
-											 Geometry="F1M128,-171L384,-171 384,-128 128,-128 128,-171z M256,-393L384,-265 354,-235 256,-333 158,-235 128,-265 256,-393z"   />
-						</DrawingPresenter.Drawing>
-					</DrawingPresenter>
-				</ExperimentalAcrylicBorder>
-			</ControlTemplate>
-		</Setter>
-	</Style>-->
 
-
+	<!--Preview-->
 	<Design.PreviewWith>
 		<Border Padding="10">
 			<Border.Resources>

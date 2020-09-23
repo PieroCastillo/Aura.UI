@@ -7,6 +7,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// This control shows a content but has to be whitin <see cref="PagesView"/>
+    /// </summary>
     public class Page : ContentControl, ISelectable
     {
         public Page()
@@ -22,6 +25,9 @@ namespace Aura.UI.Controls
 
         public PagesView ViewerParent { get; set; }
 
+        /// <summary>
+        /// Defines the Title of the Parent Window
+        /// </summary>
         public string Title
         {
             get { return GetValue(TitleProperty); }
@@ -29,6 +35,9 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<string> TitleProperty =
             AvaloniaProperty.Register<Page, string>(nameof(Title), "Page");
+        /// <summary>
+        /// Indicates if the Page is selected
+        /// </summary>
         public bool IsSelected
         {
             get { return GetValue(IsSelectedProperty); }
@@ -36,5 +45,6 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<bool> IsSelectedProperty =
             AvaloniaProperty.Register<Page, bool>(nameof(IsSelected), false);
+
     }
 }

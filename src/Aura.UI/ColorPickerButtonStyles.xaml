@@ -30,7 +30,7 @@
 					  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"></ContentPresenter>
 					</Border>
 				</ControlTemplate>
-			</Setter.Value>
+			</Setter.Value> 
 		</Setter>
 	</Style> 
 	<Style Selector="ColorPickerButton:pressed">

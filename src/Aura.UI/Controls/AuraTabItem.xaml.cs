@@ -14,9 +14,15 @@ using Aura.UI.Attributes;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// This tabitem is closable
+    /// </summary>
     [InDevelopingFeatures(Name = "Dragging")]
     public class AuraTabItem : TabItem
     {
+        /// <summary>
+        /// This button close its AuraTabItem parent
+        /// </summary>
         Button CloseButton;
         public AuraTabItem()
         {
@@ -38,7 +44,9 @@ namespace Aura.UI.Controls
             var x = this.Parent as TabControl;
             x.CloseTab(this);
         }
-
+        /// <summary>
+        /// Close the Tab
+        /// </summary>
         public void Close()
         {
              var e = new RoutedEventArgs(ClosingEvent);
@@ -46,6 +54,11 @@ namespace Aura.UI.Controls
             RaiseEvent(e);
             this.Close(null);
         }
+        /// <summary>
+        /// Is called before <see cref="AuraTabItem.Closing"/> occurs
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected virtual void OnClosing(object sender, RoutedEventArgs e)
         {
             
@@ -70,6 +83,9 @@ namespace Aura.UI.Controls
             this.Close();
         }
 
+        /// <summary>
+        /// This property defines if the AuraTabItem can be closed
+        /// </summary>
         public bool IsClosable
         {
             get { return GetValue(IsClosableProperty); }

@@ -10,6 +10,11 @@ namespace Aura.UI.Extensions
     public static class ColorExtensions
     {
  
+        /// <summary>
+        /// Convert a <see cref="HSLStruct"/> to <see cref="Helpers.RGBStruct"/>
+        /// </summary>
+        /// <param name="HSL">the <see cref="HSLStruct"/> to convert</param>
+        /// <returns>a <see cref="Helpers.RGBStruct"/> converted</returns>
         public static Helpers.RGBStruct ToRGB(this HSLStruct HSL)
             {
                 double h = HSL.hue;
@@ -88,7 +93,11 @@ namespace Aura.UI.Extensions
         // Given a Color (RGB Struct) in range of 0-255
 
         // Return H,S,L in range of 0-1
-
+        /// <summary>
+        /// Convert a <see cref="Helpers.RGBStruct"/> to Hsl in a tuple
+        /// </summary>
+        /// <param name="rgb">the <see cref="Helpers.RGBStruct"/> to convert</param>
+        /// <returns>tuple with h,s,l to build a <see cref="HSLStruct"/></returns>
         public static (double hh, double ss, double ll) ToHSL(this Helpers.RGBStruct rgb)
         {
             double h, s, l;

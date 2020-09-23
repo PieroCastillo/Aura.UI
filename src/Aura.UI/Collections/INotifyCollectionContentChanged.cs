@@ -6,6 +6,7 @@ using System.Text;
 
 namespace Aura.UI.Collections
 {
+    [Obsolete]
     interface INotifyCollectionContentChanged : INotifyCollectionChanged
     {
         event NotifyCollectionContentChangedEventHandler CollectionContentChanged;

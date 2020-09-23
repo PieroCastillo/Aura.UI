@@ -12,6 +12,9 @@ using System.Xml.Linq;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// This control shows a color picker with RGB, HSL and Hex Indicators
+    /// </summary>
     [TemplatePart(Name = "PART_ColorWheel", Type = typeof(ColorWheel))]
     [TemplatePart(Name = "PART_HSL", Type = typeof(HSLIndicator))]
     [TemplatePart(Name = "PART_RGB", Type = typeof(RGBIndicator))]
@@ -68,7 +71,9 @@ namespace Aura.UI.Controls
             PreviewBorder.Background = new SolidColorBrush(color_);
              
         }
-
+        /// <summary>
+        /// Return the Selected Color of the ColorPicker
+        /// </summary>
         public Color SelectedColor
         {
             get { return GetValue(SelectedColorProperty); }

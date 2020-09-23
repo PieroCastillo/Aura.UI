@@ -18,7 +18,9 @@ using System.Windows.Input;
 
 namespace Aura.UI.Controls
 {
-    [Attributes.Experimental]
+    /// <summary>
+    /// Show a collection of <see cref="Page"/>
+    /// </summary>
     public class PagesView : SelectingItemsControl
     {
         public PagesView()
@@ -32,6 +34,9 @@ namespace Aura.UI.Controls
 
         }
         #region Properties
+        /// <summary>
+        /// Defines if the Title of the Selected <see cref="Page"/> can change the Title of the Parent Window
+        /// </summary>
         public bool CanChangeTheWindowTitle
         {
             get { return GetValue(CanChangeTheWindowTitleProperty); }
@@ -64,6 +69,9 @@ namespace Aura.UI.Controls
                 }
             base.OnKeyDown(e);
         }
+        /// <summary>
+        /// Backs to the previous page
+        /// </summary>
         public void Previous()     
         {
             try
@@ -97,6 +105,10 @@ namespace Aura.UI.Controls
 
             }
         }
+        /// <summary>
+        /// Go to the indexed Page
+        /// </summary>
+        /// <param name="index">Index of the page</param>
         public void GoTo(int index)
         { 
             try
@@ -120,6 +132,9 @@ namespace Aura.UI.Controls
 
             }
         }
+        /// <summary>
+        /// Nexts to the next Page
+        /// </summary>
         public void Next()
         {
             try

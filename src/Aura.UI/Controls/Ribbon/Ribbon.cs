@@ -3,10 +3,14 @@ using Aura.UI.Controls.Primitives;
 using Aura.UI.Exceptions;
 using Aura.UI.UIExtensions;
 using Avalonia;
+using Avalonia.Animation;
 using Avalonia.Controls;
+using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Media;
+using Avalonia.Styling;
+using DynamicData.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,16 +19,25 @@ using System.Text;
 
 namespace Aura.UI.Controls.Ribbon
 {
+    /// <summary>
+    /// This control use shows a Ribbon in the Top
+    /// Use a <see cref="RibbonItem"/> to add Headers and Contents
+    /// </summary>
     [TemplatePart(Name = "PART_RightButton", Type = typeof(MaterialButton))]
     [TemplatePart(Name = "PART_LeftButton", Type = typeof(MaterialButton))]
     [TemplatePart(Name = "PART_Toggle", Type = typeof(ToggleButton))]
-    public class Ribbon : TabControl, IMaterial, IHeadered
+    //[TemplatePart(Name= ¨PART_AnimationBox", Type = typeof(AnimationBox))]
+    public class Ribbon : TabViewBase, IMaterial, IHeadered
     {
         public MaterialButton LeftButton;
         public MaterialButton RightButton;
         ToggleButton ToggleStateButton;
-   
+
         #region Functionalities
+        /// <summary>
+        /// Close a RibbonItem
+        /// </summary>
+        /// <param name="ribbonItemToClose">The RibbonItem to close</param>
         public void CloseRibbonItem(RibbonItem ribbonItemToClose)
         {
             try
@@ -34,12 +47,16 @@ namespace Aura.UI.Controls.Ribbon
                     (Items as IList).Remove(ribbonItemToClose);
                 }
             }
-            catch(AuraException<Ribbon> e)
+            catch (AuraException<Ribbon> e)
             {
                 throw new AuraException<Ribbon>("The RibbonItem inserted does not exist", e);
             }
         }
-
+        /// <summary>
+        /// Close a RibbonItem
+        /// </summary>
+        /// <param name="index">The index of the RibbonItem to close</param>
+        /// <param name="showException">Shows a Exception when the indexer point a RibbonItem that it doesn't exist</param>
         public void CloseRibbonItem(int index, bool showException = true)
         {
             try
@@ -47,16 +64,21 @@ namespace Aura.UI.Controls.Ribbon
                 (Items as IList).RemoveAt(index);
             }
             catch (AuraException<Ribbon> e)
-            { 
-                if(showException != false)
+            {
+                if (showException != false)
                 {
                     throw new AuraException<Ribbon>("The RibbonItem indexed does not exist", e);
                 }
             }
-        } 
+        }
+        /// <summary>
+        /// Add a RibbonItem
+        /// </summary>
+        /// <param name="ribbonItemToAdd">The RibbonItem to Add</param>
+        /// <param name="index">The Index of the RibbonItem</param>
         public void AddRibbonItem(RibbonItem ribbonItemToAdd, int index)
-        { 
-             if(ribbonItemToAdd != null)
+        {
+            if (ribbonItemToAdd != null)
             {
                 (Items as IList).Insert(index, ribbonItemToAdd);
             }
@@ -78,6 +100,7 @@ namespace Aura.UI.Controls.Ribbon
                 ToggleState();
             };
         }
+
         protected void ToggleState()
         {
             switch (this.ExpansionState)
@@ -95,6 +118,9 @@ namespace Aura.UI.Controls.Ribbon
         }
 
         #region Properties
+        /// <summary>
+        /// Defines the Material for the AcrylicBorder in the Template
+        /// </summary>
         public ExperimentalAcrylicMaterial Material
         {
             get { return GetValue(MaterialProperty); }
@@ -108,7 +134,9 @@ namespace Aura.UI.Controls.Ribbon
                     MaterialOpacity = 1,
                     TintOpacity = 0.85
                 });
-
+        /// <summary>
+        /// Defines if the Material can be visible
+        /// </summary>
         public bool MaterialIsVisible
         {
             get { return GetValue(MaterialIsVisibleProperty); }
@@ -116,7 +144,9 @@ namespace Aura.UI.Controls.Ribbon
         }
         public static readonly StyledProperty<bool> MaterialIsVisibleProperty =
              AvaloniaProperty.Register<Ribbon, bool>(nameof(MaterialIsVisible), true);
-
+        /// <summary>
+        /// LeftContent of the the Ribbon
+        /// </summary>
         public object LeftContent
         {
             get { return GetValue(LeftContentProperty); }
@@ -124,15 +154,19 @@ namespace Aura.UI.Controls.Ribbon
         }
         public static readonly StyledProperty<object> LeftContentProperty =
              AvaloniaProperty.Register<Ribbon, object>(nameof(LeftContent), "Left");
-
+        /// <summary>
+        /// RightContent of the the Ribbon
+        /// </summary>
         public object RightContent
         {
             get { return GetValue(RightContentProperty); }
             set { SetValue(RightContentProperty, value); }
         }
-         public static readonly StyledProperty<object> RightContentProperty =
-             AvaloniaProperty.Register<Ribbon, object>(nameof(RightContent), "Right");
-
+        public static readonly StyledProperty<object> RightContentProperty =
+            AvaloniaProperty.Register<Ribbon, object>(nameof(RightContent), "Right");
+        /// <summary>
+        /// Header of the the Ribbon
+        /// </summary>
         public object Header
         {
             get { return GetValue(HeaderProperty); }
@@ -140,7 +174,9 @@ namespace Aura.UI.Controls.Ribbon
         }
         public static readonly StyledProperty<object> HeaderProperty =
             AvaloniaProperty.Register<Ribbon, object>(nameof(Header), "Avalonia.App");
-
+        /// <summary>
+        /// Get or set the expansion state of the Ribbon
+        /// </summary>
         public ExpansionState ExpansionState
         {
             get { return GetValue(ExpansionStateProperty); }
@@ -148,6 +184,13 @@ namespace Aura.UI.Controls.Ribbon
         }
         public static readonly StyledProperty<ExpansionState> ExpansionStateProperty =
             AvaloniaProperty.Register<Ribbon, ExpansionState>(nameof(ExpansionState), ExpansionState.Total);
+
+        //public Ribbon Self
+        //{
+        //    get { return this; }
+        //}
+        ////public static readonly StyledProperty<Ribbon> SelfProperty =
+        ////    AvaloniaProperty.Register<Ribbon, Ribbon>(nameof(Header));
         #endregion
     }
     public enum ExpansionState

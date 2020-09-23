@@ -8,24 +8,29 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// A powered-up TabControl
+    /// For add a new Tab by code use the <see cref="AuraTabView.AdderButton"/>
+    /// </summary>
     [TemplatePart(Name = "PART_AdderButton", Type = typeof(Button))]
     public class AuraTabView : TabControl
     {
+        /// <summary>
+        /// This Button add a new TabItem
+        /// </summary>
         public Button AdderButton;
-        public AuraTabView()
-        {
-            this.InitializeComponent();
-        }
         /// <summary>
         /// You should overwrite this Method for add your custom tabitem
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        /// <param name="sender">the sender object</param>
+        /// <param name="e">the information of the event</param>
         protected virtual void OnAdding(object sender, RoutedEventArgs e)
         {
             this.AddTab(new AuraTabItem() { Header = "HeaderTest", Content = "ContentTest" }, true) ;
         }
-
+        /// <summary>
+        /// This property defines if the <see cref="AuraTabView.AdderButton"/> can be visible, the default value is true
+        /// </summary>
         public bool AdderButtonIsVisible
         {
             get { return GetValue(AdderButtonIsVisibleProperty); }
@@ -40,12 +45,9 @@ namespace Aura.UI.Controls
             AdderButton = this.GetControl<Button>(e, "PART_AdderButton");
             AdderButton.Click += OnAdding;
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
-
+        /// <summary>
+        /// This property defines what is the maximum width of the ItemsPresenter
+        /// </summary>
         public int MaxWidthOfItemsPresenter
         {
             get { return GetValue(MaxWidthOfItemsPresenterProperty); }

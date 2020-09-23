@@ -10,6 +10,7 @@ using System.Runtime.Serialization;
 
 namespace Aura.UI.Collections
 {
+    [Obsolete]
     [CollectionDataContract]
     public class ObservableContentCollection<T> : ObservableCollection<T>, INotifyCollectionContentChanged
      where T : INotifyPropertyChanged

@@ -11,6 +11,9 @@ using System;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// A <see cref="FilledSlider"/> with acrylicstyles
+    /// </summary>
     [TemplatePart(Name = "PART_Br_Left", Type = typeof(ExperimentalAcrylicBorder))]
     [TemplatePart(Name = "PART_Br_Right", Type = typeof(ExperimentalAcrylicBorder))]
     public class ModernSlider : FilledSlider, ICustomCornerRadius
@@ -33,7 +36,7 @@ namespace Aura.UI.Controls
 
         private void ModernSlider_PropertyChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-            UpdateBorder();
+                UpdateBorder();
         }
 
         internal void UpdateBorder()
@@ -59,6 +62,10 @@ namespace Aura.UI.Controls
         {
             AvaloniaXamlLoader.Load(this);
         }
+
+        /// <summary>
+        /// Defines the CornerRadius
+        /// </summary>
         public CornerRadius CornerRadius
         {
             get { return GetValue(CornerRadiusProperty); }

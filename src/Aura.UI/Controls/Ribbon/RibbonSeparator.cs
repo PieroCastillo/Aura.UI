@@ -7,8 +7,14 @@ using System.Text;
 
 namespace Aura.UI.Controls.Ribbon
 {
+    /// <summary>
+    /// This control separates the <see cref="RibbonGroup"/> in the <see cref="RibbonPanel"/>
+    /// </summary>
     public class RibbonSeparator : Separator, ICustomCornerRadius
     {
+        /// <summary>
+        /// Defines the CornerRadius
+        /// </summary>
         public CornerRadius CornerRadius
         {
             get { return GetValue(CornerRadiusProperty); }

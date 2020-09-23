@@ -11,6 +11,9 @@ using System.Text;
 
 namespace Aura.UI.Controls.Ribbon
 {
+    /// <summary>
+    /// This control is to organize the Ribbon
+    /// </summary>
     [TemplatePart(Name = "PART_MiniButton", Type = typeof(MaterialButton))]
     public class RibbonGroup : HeaderedContentControl
     {

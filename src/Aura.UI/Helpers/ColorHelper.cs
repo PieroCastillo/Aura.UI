@@ -62,5 +62,15 @@ namespace Aura.UI.Helpers
                 throw new Exception("The lightness is greater than 1 or less than 0", e);
             }
         }
+
+        public int ToARGB32()
+        {
+            return (a << 24) | (r << 16) | (g << 8) | (b << 0);
+        }
+
+        public int ToRGB32()
+        {
+            return (r << 16) | (g << 8) | (b << 0);
+        }
     }
 }

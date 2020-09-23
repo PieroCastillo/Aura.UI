@@ -4,6 +4,10 @@ using System.Text;
 
 namespace Aura.UI.Exceptions
 {
+    /// <summary>
+    /// Shows a exception of a control
+    /// </summary>
+    /// <typeparam name="TControl">Type of control that had the exception</typeparam>
     public class AuraException<TControl> : Exception
     {
         public AuraException()

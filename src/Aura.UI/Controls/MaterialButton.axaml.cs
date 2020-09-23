@@ -9,6 +9,10 @@ using Avalonia.Media;
 
 namespace Aura.UI.Controls
 {
+
+    /// <summary>
+    /// Button with modern styles
+    /// </summary>
     public class MaterialButton : Button, IMaterial, ICustomCornerRadius
     {
 
@@ -17,6 +21,9 @@ namespace Aura.UI.Controls
             this.InitializeComponent();
         }
 
+        /// <summary>
+        /// Defines the CornerRadius
+        /// </summary>
         public CornerRadius CornerRadius
         {
             get { return GetValue(CornerRadiusProperty); }
@@ -24,6 +31,9 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
+        /// <summary>
+        /// Defines the Material for the AcrylicBorder in the Template
+        /// </summary>
         public ExperimentalAcrylicMaterial Material 
         {
             get { return GetValue(MaterialProperty); }
@@ -36,8 +46,10 @@ namespace Aura.UI.Controls
                     TintColor = Colors.White,
                     MaterialOpacity = 0.85,
                     TintOpacity = 0.85
-                });  
-
+                });
+        /// <summary>
+        /// Defines if the Material can be visible
+        /// </summary>
         public bool MaterialIsVisible
         {
             get { return GetValue(MaterialIsVisibleProperty); }

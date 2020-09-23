@@ -16,6 +16,10 @@ using Aura.UI.UIExtensions;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// This control shows a <see cref="SuperColorPicker"/> in a Window when is clicked.
+    /// The selected color is in the Background property.
+    /// </summary>
     public class ColorPickerButton : Button
     {
         ColorWindowSmall colorWindow;
@@ -36,16 +40,6 @@ namespace Aura.UI.Controls
         {
             AvaloniaXamlLoader.Load(this);
         }
-
-        public int ThicknessOfBorder
-        {
-            get { return (int)GetValue(ThicknessOfBorderProperty); }
-            set { SetValue(ThicknessOfBorderProperty, value); }
-        }
-        public static readonly AvaloniaProperty<int> ThicknessOfBorderProperty =
-            AvaloniaProperty.Register<ColorPickerButton, int>(nameof(ThicknessOfBorder),10);
-
-
 
         protected override void OnClick()
         {

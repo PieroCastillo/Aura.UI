@@ -10,6 +10,9 @@ using System;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// This windows has a built-in fluent styles
+    /// </summary>
     public class ContentWindow : Window, IStyleable
     {
         Type IStyleable.StyleKey => typeof(Window);

@@ -1,0 +1,69 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="SuperListBoxItem">
+		<Setter Property="Height" Value="60"/>
+		<Setter Property="Padding" Value="10"/>
+		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="{x:Type SuperListBoxItem}">
+				<Border Name="PART_Container"
+						Padding="{TemplateBinding Padding}"
+						Background="{TemplateBinding Background}">
+					<StackPanel Orientation="Horizontal" Spacing="10">
+						<Border Padding="6">
+							<Image Stretch="UniformToFill" Source="{TemplateBinding Icon}"/>
+						</Border>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition/>
+								<RowDefinition Height="5"/>
+								<RowDefinition/>
+							</Grid.RowDefinitions>
+							<TextBlock Text="{TemplateBinding MainText}" FontSize="16"/>
+							<TextBlock	Grid.Row="2"
+										Text="{TemplateBinding SecondaryText}"
+									   Opacity="{DynamicResource ThemeDisabledOpacity}"/>
+						</Grid>
+					</StackPanel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style> 
+	<Style Selector="SuperListBoxItem:disabled /template/ Border#PART_Container">
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/> 
+	</Style>
+	<Style Selector="SuperListBoxItem:pressed:pointerover /template/ Border#PART_Container">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>
+	</Style>
+	<Style Selector="SuperListBoxItem:pointerover /template/ Border#PART_Container">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlLowBrush}"/>
+	</Style>  
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<Border.Styles>
+				<Style Selector="SuperListBoxItem">
+					<Setter Property="Icon">
+						<DrawingImage>
+							<DrawingGroup>
+								<GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+								<GeometryDrawing Brush="#FFF6F6F6" Geometry="F1M0,0.999700000000001L0,15.9997 10,15.9997 10,14.9997 16,14.9997 16,0.999700000000001z" />
+								<GeometryDrawing Brush="#FF414141" Geometry="F1M1,2L1,6 2,6 2,5 14,5 14,13 10,13 10,14 15,14 15,2z" />
+								<GeometryDrawing Brush="#FF378A33" Geometry="F1M4,13L3,13 3,12 4,12z M7,13L5,13 5,12 7,12z M4,11L3,11 3,10 4,10z M7,11L5,11 5,10 7,10z M8,14L2,14 2,9 8,9z M1,15L9,15 9,7 1,7z" />
+								<GeometryDrawing Brush="#FFF0EFF1" Geometry="F1M2,5L2,6 10,6 10,13 14,13 14,5z" />
+								<GeometryDrawing Brush="#FFF0EFF1" Geometry="F1M7,11L5,11 5,10 7,10z M7,13L5,13 5,12 7,12z M4,11L3,11 3,10 4,10z M4,13L3,13 3,12 4,12z M2,14L8,14 8,9 2,9z" />
+							</DrawingGroup>
+						</DrawingImage>
+					</Setter>
+				</Style>
+			</Border.Styles>
+			<ListBox>
+				<SuperListBoxItem MainText="Solution1" 
+								  SecondaryText="Solution1/src/Solution1.sln"/>
+				<SuperListBoxItem MainText="Solution1"
+								  SecondaryText="Solution1/src/Solution1.sln"/>
+				<SuperListBoxItem MainText="Solution1"
+								  SecondaryText="Solution1/src/Solution1.sln"/>
+			</ListBox>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

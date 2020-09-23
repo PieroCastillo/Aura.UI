@@ -7,6 +7,9 @@ using Aura.UI.Attributes;
 
 namespace Aura.UI.Controls
 {
+    /// <summary>
+    /// It's similar to <see cref="GroupBox"/>, but has a Two button on the TopRight
+    /// </summary>
     [TemplatePart(Name = "PART_B1", Type = typeof(Button))]
     [TemplatePart(Name = "PART_B2", Type = typeof(Button))]
     public class TitleBox : HeaderedContentControl
@@ -38,14 +41,16 @@ namespace Aura.UI.Controls
         {
             this.OnClickInButton1();
         }
-        #region Properties
+ 
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
         }
 
-      
-
+         #region Properties    
+        /// <summary>
+        /// Content of the primary button
+        /// </summary>
         public object Button1Content
         {
             get { return GetValue(Button1ContentProperty); }
@@ -53,6 +58,9 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<object> Button1ContentProperty =
             AvaloniaProperty.Register<TitleBox, object>(nameof(Button1Content), "1");
+        /// <summary>
+        /// Content of the secondary button
+        /// </summary>
         public object Button2Content
         {
             get { return GetValue(Button2ContentProperty); }
@@ -62,7 +70,9 @@ namespace Aura.UI.Controls
             AvaloniaProperty.Register<TitleBox, object>(nameof(Button2Content), "2");
 
        
-
+        /// <summary>
+        /// Defines if the primary button is visible
+        /// </summary>
         public bool Button1Active
         {
             get { return GetValue(Button1ActiveProperty); }
@@ -70,7 +80,9 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<bool> Button1ActiveProperty =
             AvaloniaProperty.Register<TitleBox, bool>(nameof(Button1Active), true);
-
+        /// <summary>
+        /// Defines if the secondary button is visible
+        /// </summary>
         public bool Button2Active
         {
             get { return GetValue(Button2ActiveProperty); }
@@ -80,7 +92,13 @@ namespace Aura.UI.Controls
             AvaloniaProperty.Register<TitleBox, bool>(nameof(Button2Active), true);
         #endregion
 
+        /// <summary>
+        /// Do something when the first button is clicked
+        /// </summary>
         public virtual void OnClickInButton1() { }
+        /// <summary>
+        /// Do something when the second button is clicked
+        /// </summary>
         public virtual void OnClickInButton2() { }
     }
 }

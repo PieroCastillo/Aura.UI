@@ -8,6 +8,9 @@ using System.ComponentModel;
 
 namespace Aura.UI.Windows
 {
+    /// <summary>
+    /// Shows a <see cref="SuperColorPicker"/>
+    /// </summary>
     public class ColorWindowSmall : Window
     {
         SuperColorPicker colorPicker_;
@@ -26,6 +29,9 @@ namespace Aura.UI.Windows
             AvaloniaXamlLoader.Load(this);
         }
 
+        /// <summary>
+        /// Return the selected brush
+        /// </summary>
         public IBrush SelectedBrush
         {
             get { return GetValue(SelectedBrushProperty); }
