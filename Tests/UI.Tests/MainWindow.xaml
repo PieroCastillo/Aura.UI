@@ -5,7 +5,44 @@
 		xmlns:ms="clr-namespace:System;assembly=netstandard"
         mc:Ignorable="d"
         x:Class="UI.Tests.MainWindow" Height="700" Width="800"
-        Title="UI.Tests" WindowStartupLocation="CenterScreen"> 
+        Title="UI.Tests" WindowStartupLocation="CenterScreen">
+	<ContentWindow.Resources>
+		<DrawingImage x:Key="AvaloniaIcons.Logo">
+			<DrawingGroup>
+				<GeometryDrawing Geometry="m 150.66581 0.66454769 c -54.77764 0 -101.0652 38.86360031 -112.62109 90.33008031 a 26.1 26.1 0 0 1 18.92187 25.070312 26.1 26.1 0 0 1 -18.91992 25.08202 c 11.56024 51.46073 57.8456 90.31837 112.61914 90.31837 63.37832 0 115.40039 -52.02207 115.40039 -115.40039 0 -63.378322 -52.02207 -115.40039231 -115.40039 -115.40039231 z m 0 60.00000031 c 30.95192 0 55.40039 24.44847 55.40039 55.400392 0 30.9519 -24.44847 55.40039 -55.40039 55.40039 -30.95191 0 -55.40039 -24.44848 -55.40039 -55.40039 0 -30.951922 24.44848 -55.400392 55.40039 -55.400392 z">
+					<GeometryDrawing.Brush>
+						<LinearGradientBrush StartPoint="61%,20%" EndPoint="0%,100%">
+							<LinearGradientBrush.GradientStops>
+								<GradientStop Color="#8B44AC" Offset="0" />
+								<GradientStop Color="#623079" Offset="0.6784" />
+							</LinearGradientBrush.GradientStops>
+						</LinearGradientBrush>
+					</GeometryDrawing.Brush>
+				</GeometryDrawing>
+				<GeometryDrawing Brush="#5D2F75">
+					<GeometryDrawing.Geometry>
+						<EllipseGeometry Rect="9.6,95.8,40.6,40.6" />
+					</GeometryDrawing.Geometry>
+				</GeometryDrawing>
+				<GeometryDrawing Brush="#8B44AC">
+					<GeometryDrawing.Geometry>
+						<RectangleGeometry Rect="206.06355, 114.56503,59.7,116.2" />
+					</GeometryDrawing.Geometry>
+				</GeometryDrawing>
+			</DrawingGroup>
+		</DrawingImage>
+		<DrawingImage x:Key="VSImageLib.Console_16x">
+			<DrawingGroup   >
+				<GeometryDrawing Brush="#00FFFFFF" Geometry="F1M16,16L0,16 0,0 16,0z" />
+				<GeometryDrawing Brush="#FFF6F6F6" Geometry="F1M0,15L16,15 16,1 0,1z" />
+				<GeometryDrawing Brush="#FFEFEFF0" Geometry="F1M14,4L2,4 2,3 14,3z M5.717,5.979C6.404,5.979,6.779,6.148,6.878,6.2L6.951,6.238 6.748,6.924 6.642,6.873C6.397,6.753 6.076,6.688 5.738,6.688 4.653,6.688 4.006,7.375 4.006,8.524 4.006,9.644 4.643,10.313 5.71,10.313 6.06,10.313 6.422,10.241 6.656,10.127L6.766,10.073 6.942,10.752 6.87,10.788C6.644,10.9 6.187,11.021 5.585,11.021 4.115,11.021 3.165,10.049 3.165,8.545 3.165,7.034 4.214,5.979 5.717,5.979 M8,9L9,9 9,10 8,10z M8,7L9,7 9,8 8,8z M10.933,6L13.019,11 12.095,11 10.008,6z M2,13L14,13 14,5 2,5z" />
+				<GeometryDrawing Brush="#FF424242" Geometry="F1M9,10L8,10 8,9 9,9z M9,8L8,8 8,7 9,7z M3.165,8.545C3.165,7.034 4.214,5.979 5.717,5.979 6.404,5.979 6.779,6.148 6.878,6.2L6.951,6.238 6.748,6.924 6.642,6.873C6.397,6.753 6.076,6.688 5.738,6.688 4.653,6.688 4.006,7.375 4.006,8.524 4.006,9.644 4.643,10.313 5.71,10.313 6.06,10.313 6.422,10.241 6.656,10.127L6.766,10.073 6.942,10.752 6.87,10.788C6.644,10.9 6.187,11.021 5.585,11.021 4.115,11.021 3.165,10.049 3.165,8.545 M12.095,11L10.008,6 10.933,6 13.019,11z M14,4L2,4 2,3 14,3z M14,13L2,13 2,5 14,5z M1,14L15,14 15,2 1,2z" />
+			</DrawingGroup>
+		</DrawingImage>
+		<DrawingImage x:Key="Unicons.Vuejs">
+			<GeometryDrawing  Brush="#FF000000" Geometry="M18.03079,2.44284V2.44278l-.15448.00006-.84552-.00006-.00012.00024-2.64319.00055L12.01321,6.39951,9.62961,2.44357l-2.64594-.001-.00024-.00037H2.2717v.00055L.83231,2.44266,12.029,21.55777,23.16769,2.443ZM12.02505,17.59293,4.322,4.44223H7.14566l4.88562,8.4071,4.8468-8.4071h2.80939Z"   />
+		</DrawingImage>
+	</ContentWindow.Resources>
 	<Panel>
 		<TabControl TabStripPlacement="Left" Margin="0, 15, 0 ,20">
 		<TabItem Header="AuraTabItem">
@@ -121,7 +158,7 @@
 						<Ribbon  LeftContent="File" RightContent="Settings"
 					ExpansionState="Total">
 							<Ribbon.Header>
-								<Image Source="avares://Aura.UI.auraui-logov2.png"></Image>
+								<Image Source="avares://UI.Tests/auraui-logov2.png" Height="15" Stretch="UniformToFill"></Image>
 							</Ribbon.Header>
 							<RibbonItem Header="Start">
 								<RibbonPanel>
@@ -192,6 +229,18 @@
 						</Ribbon>-->
 					</Border>
 				</Grid>
+			</TabItem>
+			<TabItem Header="SuperListBoxItem">
+				<Border Padding="10">
+					<ListBox>
+						<SuperListBoxItem MainText="Avalonia App" SecondaryText="src/AvaloniaApp/AvaloniaApp.csproj"
+										  Icon="{DynamicResource AvaloniaIcons.Logo}"/>
+						<SuperListBoxItem MainText="Console App" SecondaryText="src/HelloWorld/Helloworld.csproj"
+										  Icon="{DynamicResource VSImageLib.Console_16x}"/>
+						<SuperListBoxItem MainText="Vue ASP.Net Core App" SecondaryText="src/VueApp/VueApp.csproj"
+										  Icon="{DynamicResource Unicons.Vuejs}"/>
+					</ListBox>
+				</Border>
 			</TabItem>
 			<TabItem Header="AcrylicControls">
 				<StackPanel Spacing="20">
