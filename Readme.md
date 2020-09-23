@@ -43,7 +43,6 @@ Aura.UI
    * WriteablePanel : A panel por represent and edit images easily. 
 =======
    * WritteablePanel : A panel that represents and edits images easily. 
->>>>>>> 1cf886f59f5f943fbe23604ae60af7cedf69b3ba
 
 * UI Extensions
    * TabControlExtensions:
