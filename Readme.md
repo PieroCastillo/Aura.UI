@@ -24,10 +24,11 @@ Aura.UI
   *  FilledSlider
   *  ModernSlider
   *  Ribbon
-
+  * SuperListBoxItem 
+  
 * Controls in Developing
    * GradientEditor : This control creates a GradientBrush to use in other controls.
-   * SuperListBoxItem : A Powered-ListBoxItem has a Button and two TextBlocks.
+   
 * Windows Availables
    * ColorWindowSmall : This window shows a ColorPicker.
 
@@ -38,7 +39,7 @@ Aura.UI
    * TabbedWindow : An optimized window to use with AuraTabItems. 
    * NavigationView : A scrollable MenuItems, like UWP NavigationView.
    * StatusBar : This bar shows an status of application, it will use a class for the status.
-   * WritteablePanel : A panel por represent and edit images easily. 
+   * WriteablePanel : A panel por represent and edit images easily. 
 
 * UI Extensions
    * TabControlExtensions:
@@ -85,7 +86,7 @@ Aura.UI.
 
 Open the terminal on the root folder of your project and write <br/>
 ```shell
-dotnet add package Aura.UI --version 0.1.3-preview2
+dotnet add package Aura.UI --version 0.1.3-preview3
 ```
  Do it like this:
 
@@ -269,6 +270,13 @@ This control shows a Ribbon, and use its own subcontrols.
 This xaml code produces this result:
 
 <img src="DocumentationGifs/RibbonTesting_prev2.gif">
+
+## SuperListBoxItem
+
+This ListBoxItem has a Icon and styled texts.
+
+<img src="DocumentationGifs/SuperListBoxItem.gif">
+
 
 # About Aura.UI
 
