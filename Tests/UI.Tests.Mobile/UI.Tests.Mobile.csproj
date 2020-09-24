@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.10.0-preview5" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
+    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview5" />
+  </ItemGroup>
+	<ItemGroup>
+		<Compile Update="**\*.xaml.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
+		<Compile Update="**\*.axaml.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
+		<AvaloniaResource Include="**\*.xaml">
+			<SubType>Designer</SubType>
+		</AvaloniaResource>
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Aura.UI.Mobile\Aura.UI.Mobile.csproj" />
+  </ItemGroup>
+
+</Project>

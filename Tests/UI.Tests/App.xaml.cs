@@ -3,7 +3,6 @@ using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Avalonia.ThemeManager;
 using System;
 using System.Collections.Generic;
 

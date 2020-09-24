@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="0.10.0-preview5" />
+		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
+		<PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview5" />
+		<PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="**\*.xaml.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
+		<Compile Update="**\*.axaml.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
+		<AvaloniaResource Include="**\*.xaml">
+			<SubType>Designer</SubType>
+		</AvaloniaResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\UI.Tests.Mobile\UI.Tests.Mobile.csproj" />
+	</ItemGroup>
+</Project>
