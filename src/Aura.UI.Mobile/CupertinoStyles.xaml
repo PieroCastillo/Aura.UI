@@ -1,0 +1,13 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ms="clr-namespace:System;assembly=netstandard">
+	<Styles.Resources>
+		<CornerRadius x:Key="CupertinoRadius">5</CornerRadius>
+	</Styles.Resources>
+	<StyleInclude Source="avares://Ripple/RippleEffect/RippleEffect.xaml"/>
+	<StyleInclude Source="avares://Aura.UI.Mobile/CupertinoAlertDialogStyles.xaml"/>
+	<Style Selector="RippleEffect">
+		<Setter Property="RippleFill" Value="{DynamicResource ThemeForegroundBrush}"/>
+		<Setter Property="RippleOpacity" Value="0.5"/>
+	</Style>
+</Styles>

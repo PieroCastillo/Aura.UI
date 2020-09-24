@@ -1,0 +1,65 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+     <TargetFramework>netstandard2.1</TargetFramework>
+    <OutputType>Library</OutputType>
+    <Version>0.1.3-preview3</Version>
+    <Authors>Piero Castillo</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Mobile Control's Library for Avalonia.</Description>
+    <PackageIcon>auraui-logov2.png</PackageIcon>
+    <PackageReleaseNotes>Aura.UI for Mobile</PackageReleaseNotes>
+    <PackageId>Aura.UI.Mobile</PackageId> 
+    <RepositoryUrl>https://github.com/PieroCastillo/Aura.UI</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>    
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<Compile Update="**\*.xaml.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
+		<Compile Update="**\*.axaml.cs">
+			<DependentUpon>%(Filename)</DependentUpon>
+		</Compile>
+		<AvaloniaResource Include="**\*.xaml">
+			<SubType>Designer</SubType>
+		</AvaloniaResource>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="CupertinoAlertDialogStyles.xaml" />
+	</ItemGroup>
+	
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\DesignSources\auraui-logov2.png">
+      <PackagePath></PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Pack>True</Pack>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="0.10.0-preview5" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
+    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview5" />
+    <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.1" />
+  </ItemGroup>
+	
+	
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\external\Ripple\Ripple.csproj" />
+    <ProjectReference Include="..\Aura.UI\Aura.UI.csproj" />
+  </ItemGroup>
+	
+	
+
+  <ItemGroup>
+    <AvaloniaResource Update="CupertinoAlertDialogStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
+  </ItemGroup>
+
+</Project>
