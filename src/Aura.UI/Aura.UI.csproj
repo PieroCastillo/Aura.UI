@@ -9,13 +9,11 @@
     <PackageIcon>auraui-logov2.png</PackageIcon>
     <PackageReleaseNotes>First stable release is cooming soon</PackageReleaseNotes>
     <PackageId>Aura.UI</PackageId>
-    
-    <RepositoryUrl>https://github.com/PieroCastillo/Aura.UI</RepositoryUrl>
-    
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    
+    <RepositoryUrl>https://github.com/PieroCastillo/Aura.UI</RepositoryUrl>   
+    <PackageLicenseExpression>MIT</PackageLicenseExpression> 
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+	
 <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
   <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 </PropertyGroup>
@@ -52,7 +50,7 @@
 	 <PackageReference Include="Avalonia.Xaml.Interactions" Version="0.10.0-preview5" />
      <PackageReference Include="MessageBox.Avalonia" Version="0.9.6.1" />
 	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
-	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.0" />
+	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.1" />
      <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
 	   <PackageReference Include="Avalonia" Version="0.10.0-preview5" />
    </ItemGroup>
