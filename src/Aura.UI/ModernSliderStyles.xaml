@@ -16,7 +16,8 @@
 		<Setter Property="CornerRadius" Value="10"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ModernSlider" >
-				<Decorator>
+				<Decorator Padding="5">
+					<Border BoxShadow="0 0 3 0 Black" CornerRadius="{TemplateBinding CornerRadius}">
 					<ExperimentalAcrylicBorder Material="{DynamicResource ThemeAcrylicBackgroundBrush}"
 											   CornerRadius="{TemplateBinding CornerRadius}" >
 					<Border>
@@ -32,7 +33,7 @@
 						<ExperimentalAcrylicBorder Name="PART_Br_Left"
 												   Material="{Binding #PART_DecreaseButton.Material}"/>
 					    <Track Name="PART_Track" Grid.Row="0" Grid.Column="1" Value="{TemplateBinding Value}"
-							   Orientation="Horizontal"  Height="{TemplateBinding Height}"
+							   Orientation="Horizontal"
 							    Maximum="{TemplateBinding Maximum}"
 							   Minimum="{TemplateBinding Minimum}"> 
 							<Track.DecreaseButton> 
@@ -57,6 +58,7 @@
 					</Grid>
 					</Border>
 				</ExperimentalAcrylicBorder>			
+					</Border>
 				</Decorator>		
 			</ControlTemplate> 
 		</Setter> 
@@ -66,7 +68,8 @@
 		<Setter Property="CornerRadius" Value="10"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ModernSlider" >
-				<Decorator>
+				<Decorator Padding="5">
+					<Border BoxShadow="0 0 3 0 Black" CornerRadius="{TemplateBinding CornerRadius}">
 					<ExperimentalAcrylicBorder Material="{DynamicResource ThemeAcrylicBackgroundBrush}"
 											   CornerRadius="{TemplateBinding CornerRadius}" >
 					<Border>
@@ -85,7 +88,7 @@
 						<ExperimentalAcrylicBorder Name="PART_Br_Left" Grid.Row="0"
 												   Material="{Binding #PART_IncreaseButton.Material}"/>
 					    <Track Name="PART_Track" Grid.Row="1" Grid.Column="0" Value="{TemplateBinding Value}"
-							   Orientation="Vertical"  Width="{TemplateBinding Width}" Maximum="{TemplateBinding Maximum}"
+							   Orientation="Vertical" Maximum="{TemplateBinding Maximum}"
 							   Minimum="{TemplateBinding Minimum}"> 
 							<Track.DecreaseButton> 
 								<MaterialButton Name="PART_DecreaseButton" Classes="Repeats"
@@ -109,6 +112,7 @@
 					</Grid>
 					</Border>
 				</ExperimentalAcrylicBorder>			
+					</Border>
 				</Decorator>		
 			</ControlTemplate>
 		</Setter>
@@ -126,10 +130,10 @@
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>		 
 	</Style>   
 	<Style Selector="ModernSlider /template/ MaterialButton#PART_DecreaseButton">  
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush4}"/>  
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush}"/> 
 	</Style>  
 	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_DecreaseButton">  
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush}"/>  
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush2}"/>  
 	</Style> 
 	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_DecreaseButton">
 		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush}"/> 		  

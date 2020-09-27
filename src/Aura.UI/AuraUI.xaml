@@ -1,6 +1,9 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		x:Class="Aura.UI.AuraUITheme">
+	<!--<Styles.Resources>
+		<SolidColorBrush x:Key="ThemeBackgroundBrush" Color="#FF111111"/>
+	</Styles.Resources>-->
 	<StyleInclude Source="/AuraTabItemStyles.xaml"/>
 	<StyleInclude Source="/AuraTabViewStyles.xaml"/>
 	<StyleInclude Source="/TitleBoxStyles.xaml"/>
@@ -18,30 +21,34 @@
 	
 	<!--New Controls added to 0.1.3-preview2-->
 	<StyleInclude Source="/RibbonStyles.xaml"/>
-	<StyleInclude Source="/RibbonGroupStyles.xaml"/> 
+	<StyleInclude Source="/RibbonGroupStyles.xaml"/>
 	<StyleInclude Source="/RibbonSeparatorStyles.xaml"/> 
 	<StyleInclude Source="/RibbonItemStyles.xaml"/>
 
 	<!--New Controls added to 0.1.3-preview3-->
 	<StyleInclude Source="/SuperListBoxItemStyles.xaml"/>
+
+	<!--New Controls added to 0.1.3-preview4-->
+	<StyleInclude Source="/ShadowButtonStyles.xaml"/>
+	
 	<!--I do not the reason of why when I write the ModernSlider Styles in its xaml, that does not compile-->
 	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidHighBrush}"/> 
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/> 
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_IncreaseButton">  
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/>
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidHighBrush}"/>
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_IncreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>
-	</Style>
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/> 
+	</Style> 
 	<Style Selector="ModernSlider /template/ MaterialButton#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush4}"/>
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush2}"/> 
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_DecreaseButton">
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush}"/>
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush}"/>
+		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush1}"/>
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="20">

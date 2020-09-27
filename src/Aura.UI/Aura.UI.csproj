@@ -61,6 +61,9 @@
      <AvaloniaResource Update="AuraAcrylicBase.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
+     <AvaloniaResource Update="AuraDark.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
      <AvaloniaResource Update="AuraTabViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
@@ -106,6 +109,9 @@
      <AvaloniaResource Update="RibbonStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
+     <AvaloniaResource Update="ShadowButtonStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
      <AvaloniaResource Update="SuperColorPickerStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
@@ -114,11 +120,8 @@
      </AvaloniaResource>
    </ItemGroup>
    <ItemGroup>
-     <Compile Update="Controls\AuraTabView.axaml.cs">
-       <DependentUpon>AuraTabView.axamhl</DependentUpon>
-     </Compile>
-     <Compile Update="Controls\TitleBox.xaml.cs">
-       <DependentUpon>TitleBox.xaml</DependentUpon>
-     </Compile>
+     <None Update="AuraDark.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </None>
    </ItemGroup>
 </Project>

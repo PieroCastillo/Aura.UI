@@ -14,7 +14,7 @@
 		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
 		<Setter Property="ThumbTemplate">  
 			<ControlTemplate TargetType="Thumb">
-				<Ellipse Fill="{DynamicResource ThemeAccentBrush}" Height="15" Width="15" StrokeThickness="1"
+				<Ellipse Fill="{DynamicResource ThemeAccentBrush}" Height="20" Width="20" StrokeThickness="1"
 						 Stroke="{DynamicResource ThemeAccentBrush}" ></Ellipse>
 			</ControlTemplate>
 		</Setter>		  

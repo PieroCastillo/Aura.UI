@@ -14,7 +14,9 @@
 		<Setter Property="Height" Value="35"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="AuraTabItem">
-				<Border Name="PART_Container" BorderThickness="0 0 0 0" Background="{TemplateBinding Background}"
+				<Decorator Padding="2 2 2  0">
+					<Grid>
+					<Border Name="PART_Container" BorderThickness="0 0 0 0" Background="{TemplateBinding Background}"
 					   BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="7,7,0,0"
 					   Padding="10 5 0 0">
 					<Grid Background="Transparent">
@@ -24,7 +26,7 @@
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*"></ColumnDefinition>
-							<ColumnDefinition Width="1.5"></ColumnDefinition>
+							<ColumnDefinition Width="Auto"></ColumnDefinition>
 						</Grid.ColumnDefinitions>
 						<Grid Grid.Column="0">
 							<Grid.ColumnDefinitions>
@@ -56,11 +58,18 @@
 								BorderThickness="0"></Border>
 						<Border Name="PART_Separator" Opacity="0.6"
 								Grid.Column="1" Grid.Row="0" CornerRadius="5"
+								BoxShadow="0 0 2 0 Gray"
+								Width="1"
 								Background="{DynamicResource ThemeForegroundBrush}"></Border>
 					</Grid>
-				</Border>
+				    </Border>
+					</Grid>
+				</Decorator>
 			</ControlTemplate>
 		</Setter>
+	</Style>
+	<Style Selector="AuraTabItem:selected /template/ Border#PART_Container">
+		<Setter Property="BoxShadow" Value="0 0 5 0 Black"/>
 	</Style>
 	<Style Selector="AuraTabItem /template/ Button#PART_CloseButton">
 		<Setter Property="IsVisible" Value="false"/>
@@ -107,17 +116,8 @@
 
 	<Design.PreviewWith>
 		<Border Padding="0">
-			<AuraTabView Width="400" Height="400">
-				<AuraTabItem Header="test" >
-					xd
-				</AuraTabItem>
+			<AuraTabView Width="400" Height="400" Background="#FF111111">
 				<AuraTabItem Header="test2">
-					<TextBlock>test2</TextBlock>
-				</AuraTabItem>
-				<AuraTabItem Header="test4" IsClosable="False">
-					<TextBlock>test2</TextBlock>
-				</AuraTabItem>
-				<AuraTabItem Header="test4" IsClosable="False">
 					<TextBlock>test2</TextBlock>
 				</AuraTabItem>
 				<AuraTabItem Header="test4" IsClosable="False">

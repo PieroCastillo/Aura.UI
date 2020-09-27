@@ -4,6 +4,7 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Markup.Xaml;
 using Aura.UI.UIExtensions;
 using Aura.UI.Attributes;
+using Aura.UI.Controls.Primitives;
 
 namespace Aura.UI.Controls
 {
@@ -12,15 +13,10 @@ namespace Aura.UI.Controls
     /// </summary>
     [TemplatePart(Name = "PART_B1", Type = typeof(Button))]
     [TemplatePart(Name = "PART_B2", Type = typeof(Button))]
-    public class TitleBox : HeaderedContentControl
+    public class TitleBox : HeaderedContentControl, ICustomCornerRadius
     {
         Button B1;
         Button B2;
-        public TitleBox()
-        {
-            this.InitializeComponent();
-            
-        }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
@@ -40,11 +36,6 @@ namespace Aura.UI.Controls
         protected void B1_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             this.OnClickInButton1();
-        }
- 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
          #region Properties    
@@ -90,6 +81,17 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<bool> Button2ActiveProperty =
             AvaloniaProperty.Register<TitleBox, bool>(nameof(Button2Active), true);
+
+        /// <summary>
+        /// Defines the CornerRadius
+        /// </summary>
+        public CornerRadius CornerRadius
+        {
+            get { return GetValue(CornerRadiusProperty); }
+            set { SetValue(CornerRadiusProperty, value); }
+        }
+        public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
+            AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(2.5));
         #endregion
 
         /// <summary>

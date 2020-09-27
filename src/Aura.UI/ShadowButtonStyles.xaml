@@ -1,47 +1,47 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<Style Selector="MaterialButton">
-		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-		<Setter Property="VerticalContentAlignment" Value="Stretch"/>
+	<Style Selector="ShadowButton">
+		<Setter Property="HorizontalContentAlignment" Value="Center"/>
+		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
 		<Setter Property="CornerRadius" Value="5"/>
+		<Setter Property="BoxShadow" Value="0 0 5 0 Black"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="MaterialButton">
-				<Decorator Padding="0">
+				<Decorator Padding="{TemplateBinding ShadowPadding}">
+					<Border BoxShadow="0 0 3 0 Black" CornerRadius="{TemplateBinding CornerRadius}">
 						<Grid Background="{TemplateBinding Background}">
-							
+
 							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
 													   CornerRadius="{TemplateBinding CornerRadius}"
-													   IsVisible="{TemplateBinding MaterialIsVisible}">															
+													   IsVisible="{TemplateBinding MaterialIsVisible}">
 							</ExperimentalAcrylicBorder>
 							<ContentPresenter Name="PART_ContentPresenter"
 							BorderBrush="{TemplateBinding BorderBrush}"
 							BorderThickness="{TemplateBinding BorderThickness}" 
 							ContentTemplate="{TemplateBinding ContentTemplate}"
-							CornerRadius="{TemplateBinding CornerRadius}"
 							Content="{TemplateBinding Content}"
 							Padding="{TemplateBinding Padding}"
 							TextBlock.Foreground="{TemplateBinding Foreground}"
 							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>	
-						
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+
 						</Grid>
+					</Border>
 				</Decorator>
-			</ControlTemplate>  
+			</ControlTemplate>
 		</Setter>
-	</Style> 
-	<Style Selector="MaterialButton:pointerover">
+	</Style>
+	<Style Selector="ShadowButton:pointerover">
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/>
 	</Style>
-	<Style Selector="MaterialButton:pressed">
+	<Style Selector="ShadowButton:pressed">
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>
 	</Style>
 	<Design.PreviewWith>
-		<Border Padding="20">
-				<MaterialButton CornerRadius="0">
-					xd
-				</MaterialButton> 
+		<Border Padding="10">
+			<ShadowButton Content="xd"/>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

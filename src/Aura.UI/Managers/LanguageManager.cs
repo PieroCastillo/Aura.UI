@@ -109,16 +109,23 @@ namespace Aura.UI.Managers
 
             window.Opened += (sender, e) =>
             {
-                if (_windows != null)
+                try
                 {
-                    _windows.Add(window);
-                    disposable = this.WhenAnyValue(x => x.SelectedLanguage).Where(x => x != null).Subscribe(x =>
+                    if (_windows != null)
                     {
-                        if (x != null && x.Style != null)
+                        _windows.Add(window);
+                        disposable = this.WhenAnyValue(x => x.SelectedLanguage).Where(x => x != null).Subscribe(x =>
                         {
-                            window.Styles[0] = x.Style;
-                        }
-                    });
+                            if (x != null && x.Style != null)
+                            {
+                                window.Styles.Add(x.Style);
+                            }
+                        });
+                    }
+                }
+                catch
+                {
+
                 }
             };
 
