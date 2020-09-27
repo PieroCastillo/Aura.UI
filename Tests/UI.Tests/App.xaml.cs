@@ -12,7 +12,7 @@ namespace UI.Tests
     public class App : Application
     {
         //public static IThemeSelector? Selector { get; set; }
-        public static ILanguageManager? Manager { get; set; }
+        //public static ILanguageManager? Manager { get; set; }
         public override void Initialize()
         {
             AvaloniaXamlLoader.Load(this);
@@ -25,20 +25,20 @@ namespace UI.Tests
                 //Selector = ThemeSelector.Create("Themes");
                 //Selector.LoadSelectedTheme("Theme.theme");
                 
-                Manager = LanguageManager.Create("Languages");
-                Manager.LoadSelectedLanguage("Language.theme");
-                desktop.MainWindow = new MainWindow()
-                {
-                    DataContext = new
-                    {
-                        Manager/*, Selector*/
-                    }
-                };
-                desktop.Exit += (sender , e) =>
-                {
-                    //Selector.SaveSelectedTheme("Theme.theme");
-                    Manager.SaveSelectedLanguage("Language.theme");
-                };
+                //Manager = LanguageManager.Create("Languages");
+                //Manager.LoadSelectedLanguage("Language.theme");
+                desktop.MainWindow = new MainWindow();
+                //{
+                //    DataContext = new
+                //    {
+                //        Manager/*, Selector*/
+                //    }
+                //};
+                //desktop.Exit += (sender , e) =>
+                //{
+                //    //Selector.SaveSelectedTheme("Theme.theme");
+                //    Manager.SaveSelectedLanguage("Language.theme");
+                //};
             }
 
             base.OnFrameworkInitializationCompleted();

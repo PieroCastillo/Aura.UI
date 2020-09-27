@@ -5,6 +5,7 @@
 		<StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
 		<StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
 		<StyleInclude Source="avares://Aura.UI.Mobile/CupertinoStyles.xaml"/>
+		<StyleInclude Source="avares://Aura.UI.Mobile/MaterialStyles.xaml"/>
 	</Application.Styles>
 
 </Application>

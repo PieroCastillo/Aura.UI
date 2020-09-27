@@ -42,7 +42,7 @@ namespace UI.Tests
 
             border_bg.Background = pickerButton.Background;
 
-            EnableFeatures();
+            //EnableFeatures();
         }
 
         private void Open_pages_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
@@ -70,7 +70,7 @@ namespace UI.Tests
         private void EnableFeatures()
         {    
             //App.Selector.EnableThemes(this);
-            App.Manager.EnableLanguages(this); 
+            //App.Manager.EnableLanguages(this); 
         }
     }
 }
