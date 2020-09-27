@@ -26,10 +26,6 @@
 			<SubType>Designer</SubType>
 		</AvaloniaResource>
 	</ItemGroup>
-
-	<ItemGroup>
-	  <None Remove="CupertinoAlertDialogStyles.xaml" />
-	</ItemGroup>
 	
   <ItemGroup>
     <EmbeddedResource Include="..\..\DesignSources\auraui-logov2.png">
@@ -57,9 +53,44 @@
 	
 
   <ItemGroup>
+    <AvaloniaResource Update="AlertDialogStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
     <AvaloniaResource Update="CupertinoAlertDialogStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
     </AvaloniaResource>
+    <AvaloniaResource Update="CupertinoDialogStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
+    <AvaloniaResource Update="DialogStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
+    <AvaloniaResource Update="MaterialStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
+  </ItemGroup>
+	
+	
+
+  <ItemGroup>
+    <Folder Include="ControlStyles\" />
+  </ItemGroup>
+	
+	
+
+  <ItemGroup>
+    <None Update="AlertDialogStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="CupertinoDialogStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="DialogStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MaterialStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

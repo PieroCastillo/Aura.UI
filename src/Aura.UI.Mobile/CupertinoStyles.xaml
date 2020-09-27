@@ -3,9 +3,11 @@
 		xmlns:ms="clr-namespace:System;assembly=netstandard">
 	<Styles.Resources>
 		<CornerRadius x:Key="CupertinoRadius">5</CornerRadius>
+		<BoxShadow x:Key="DefaultCupertinoBoxShadow">0 0 20 0 Black</BoxShadow>
 	</Styles.Resources>
 	<StyleInclude Source="avares://Ripple/RippleEffect/RippleEffect.xaml"/>
 	<StyleInclude Source="avares://Aura.UI.Mobile/CupertinoAlertDialogStyles.xaml"/>
+	<StyleInclude Source="avares://Aura.UI.Mobile/CupertinoDialogStyles.xaml"/>
 	<Style Selector="RippleEffect">
 		<Setter Property="RippleFill" Value="{DynamicResource ThemeForegroundBrush}"/>
 		<Setter Property="RippleOpacity" Value="0.5"/>

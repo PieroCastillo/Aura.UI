@@ -1,4 +1,5 @@
 ﻿using Aura.UI.Attributes;
+using Aura.UI.Mobile.Dialogs;
 using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
@@ -16,7 +17,12 @@ namespace Aura.UI.Mobile.Primitives
     [TemplatePart(Name = "PART_CancelButton", Type = typeof(Button))]
     public class AlertDialogBase : DialogBase
     {
-        Button CancelButton;
+        public Button CancelButton;
+
+        public AlertDialogBase()
+        {
+            PseudoClasses.Set(":emergency", IsEmergency == true);
+        }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
@@ -37,6 +43,23 @@ namespace Aura.UI.Mobile.Primitives
         {
             
         }
+
+        public void ApplyAlertDialogParameters(AlertDialogParameters dialogParameters)
+        {
+            this.Header = dialogParameters.Header;
+            this.Content = dialogParameters.Content;
+            this.AgreeButtonContent = dialogParameters.AgreeContentButton;
+            this.CancelButtonContent = dialogParameters.CancelContentButton;
+
+            this.AgreeButton.Click += (sender, e) =>
+            {
+                dialogParameters.AgreeClick.Invoke();
+            };
+            this.CancelButton.Click += (sender, e) =>
+            {
+                dialogParameters.CancelClick.Invoke();
+            };
+        }
         #endregion
 
         #region Properties
@@ -50,6 +73,14 @@ namespace Aura.UI.Mobile.Primitives
         }
         public static readonly StyledProperty<object> CancelButtonContentProperty =
             AvaloniaProperty.Register<AlertDialogBase, object>(nameof(CancelButtonContent), "Cancel");
+
+        public bool IsEmergency
+        {
+            get => GetValue(IsEmergencyProperty);
+            set => SetValue(IsEmergencyProperty, value);
+        }
+        public static readonly StyledProperty<bool> IsEmergencyProperty =
+            AvaloniaProperty.Register<AlertDialogBase, bool>(nameof(IsEmergency), false);
         #endregion
     }
 }

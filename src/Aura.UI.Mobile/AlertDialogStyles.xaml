@@ -1,0 +1,89 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Styles.Resources>
+		<CornerRadius x:Key="MaterialCornerRadius">5</CornerRadius>
+	</Styles.Resources>
+	<Style Selector="AlertDialog">
+		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="AlertDialog">
+				<Grid>
+					<Border Opacity="{DynamicResource ThemeDisabledOpacity}"
+							Background="{DynamicResource ThemeForegroundBrush}"/>
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="*"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<Border Grid.Column="1" Grid.Row="1" Padding="10"
+								Background="{TemplateBinding Background}"
+								CornerRadius="{DynamicResource MaterialCornerRadius}"
+								BoxShadow="0 7 20 0 Black">
+							<StackPanel Spacing="0">
+								<Border></Border>
+								<ContentPresenter Content="{TemplateBinding Header}"
+											  ContentTemplate="{TemplateBinding HeaderTemplate}"
+											  TextBlock.FontSize="18"
+												Padding="10 10 0 0"
+											  TextBlock.FontWeight="Medium"/>
+								<ContentPresenter Name="PART_ContentPresenter"
+											  Content="{TemplateBinding Content}" Padding="10"/>
+
+								<UniformGrid Grid.Row="2"
+											 Rows="1" Columns="2"
+											 HorizontalAlignment="Right" VerticalAlignment="Bottom">
+									<Button Name="PART_CancelButton"
+											Content="{TemplateBinding CancelButtonContent}"/>
+									<Button Name="PART_AgreeButton"
+											Content="{TemplateBinding AgreeButtonContent}"/>
+								</UniformGrid>
+
+							</StackPanel>
+						</Border>
+					</Grid>	
+				</Grid>								
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="AlertDialog /template/ Button">
+		<Setter Property="Foreground" Value="{DynamicResource ThemeAccentBrush2}"/>
+		<Setter Property="Padding" Value="5"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="Button">
+				<Border Padding="{TemplateBinding Padding}"
+						Background="Transparent">
+					<ContentPresenter Name="PART_ContentPresenter"
+										Content="{TemplateBinding Content}"
+									  ContentTemplate="{TemplateBinding ContentTemplate}"
+										TextBlock.FontWeight="Medium"
+										HorizontalContentAlignment="Center"
+										TextBlock.FontSize="13"
+									    CornerRadius="5"
+									  Background="{TemplateBinding Background}"
+										TextBlock.Foreground="{TemplateBinding Foreground}"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="AlertDialog /template/ Button:pressed /template/ ContentPresenter">
+		<Setter Property="TextBlock.Foreground" Value="{DynamicResource ThemeAccentBrush2}"/>
+		<Setter Property="Background" Value="Transparent"/>
+	</Style>
+	<Style Selector="AlertDialog[IsEmergency=True] /template/ Button#PART_CancelButton">
+		<Setter Property="Foreground" Value="{DynamicResource ErrorBrush}"/>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<AlertDialog Header="Alert!" Content="Are You serious?"
+						 IsEmergency="True"
+						 Height="400"
+						 Width="300"/>
+		</Border>
+	</Design.PreviewWith>
+</Styles> 
