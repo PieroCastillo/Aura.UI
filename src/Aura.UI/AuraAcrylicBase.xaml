@@ -4,7 +4,7 @@
 		<ExperimentalAcrylicMaterial x:Key="NullBrush"  MaterialOpacity="-1" TintOpacity="0"
 											  TintColor="#00000000"
 									 FallbackColor="#00000000"></ExperimentalAcrylicMaterial> 
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrush"  MaterialOpacity="1" TintOpacity="1"
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrush"  MaterialOpacity="0.7" TintOpacity="1"
 									 TintColor="{DynamicResource ThemeBackgroundColor}"
 									 FallbackColor="{DynamicResource ThemeBackgroundColor}"></ExperimentalAcrylicMaterial>
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderLowBrush"   MaterialOpacity="1" TintOpacity="1"

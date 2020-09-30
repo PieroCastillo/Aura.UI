@@ -31,10 +31,6 @@ namespace Aura.UI.Controls
         Slider AlphaSL;
         Slider DarknessSL;
         Border PreviewBorder;
-        public SuperColorPicker()
-        {
-            this.InitializeComponent();
-        }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
@@ -81,10 +77,5 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<Color> SelectedColorProperty =
             AvaloniaProperty.Register<SuperColorPicker, Color>(nameof(SelectedColor), Colors.White);
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

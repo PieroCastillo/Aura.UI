@@ -25,20 +25,12 @@ namespace Aura.UI.Controls
         ColorWindowSmall colorWindow;
         public ColorPickerButton()
         {
-            this.InitializeComponent();
-
-            this.Background = Brushes.White;
-            
+            this.Background = Brushes.White;         
         }
 
         private void ColorWindow_Closed(object sender, System.EventArgs e)
         {
             this.Background = colorWindow.SelectedBrush;
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         protected override void OnClick()

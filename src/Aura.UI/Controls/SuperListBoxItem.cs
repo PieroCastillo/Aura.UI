@@ -16,15 +16,6 @@ namespace Aura.UI.Controls
     [TemplatePart(Name = "PART_SecondaryText", Type = typeof(TextBlock))]
     public class SuperListBoxItem : ListBoxItem
     {
-        public SuperListBoxItem()
-        {
-            this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
 
         //Text 1
         /// <summary>

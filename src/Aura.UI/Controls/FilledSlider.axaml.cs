@@ -13,15 +13,6 @@ namespace Aura.UI.Controls
     /// </summary>
     public class FilledSlider : Slider
     {
-        public FilledSlider()
-        {
-            this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
         /// <summary>
         /// Template for the Thumb of the <see cref="FilledSlider"/>
         /// </summary>

@@ -16,11 +16,6 @@ namespace Aura.UI.Controls
     public class MaterialButton : Button, IMaterial, ICustomCornerRadius
     {
 
-        public MaterialButton()
-        {
-            this.InitializeComponent();
-        }
-
         /// <summary>
         /// Defines the CornerRadius
         /// </summary>
@@ -58,9 +53,5 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<bool> MaterialIsVisibleProperty =
              AvaloniaProperty.Register<MaterialButton, bool>(nameof(MaterialIsVisible), true);
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

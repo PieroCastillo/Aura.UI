@@ -26,15 +26,9 @@ namespace Aura.UI.Controls
         Button CloseButton;
         public AuraTabItem()
         {
-            this.InitializeComponent();
             this.Closing += new EventHandler<RoutedEventArgs>(OnClosing);
         }
 
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
         /// <summary>
         /// Close now the tab
         /// </summary>

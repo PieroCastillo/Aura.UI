@@ -20,10 +20,7 @@ namespace Aura.UI.Controls
     {
         ExperimentalAcrylicBorder leftborder;
         ExperimentalAcrylicBorder rightborder;
-        public ModernSlider()
-        {
-            this.InitializeComponent();
-        }
+
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
@@ -56,11 +53,6 @@ namespace Aura.UI.Controls
                         break;
                 }
             }
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         /// <summary>

@@ -193,8 +193,4 @@ namespace Aura.UI.Controls.Ribbon
         ////    AvaloniaProperty.Register<Ribbon, Ribbon>(nameof(Header));
         #endregion
     }
-    public enum ExpansionState
-    { 
-       Total/*, Floating*/, Hidden 
-    }
 }

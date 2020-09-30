@@ -14,13 +14,7 @@ namespace Aura.UI.Controls
     {
         public Page()
         {
-            this.InitializeComponent();
             ViewerParent = this.GetParentTOfLogical<PagesView>();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         public PagesView ViewerParent { get; set; }

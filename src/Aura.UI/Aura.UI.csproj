@@ -32,6 +32,13 @@
     </AvaloniaResource>
   </ItemGroup>
    <ItemGroup>
+     <None Remove="RevealStyles\Button.xaml" />
+     <None Remove="Styles\FollowerStyles.xaml" />
+     <None Remove="Styles\NavigationViewItemStyles.xaml" />
+     <None Remove="Styles\NavigationViewStyles.xaml" />
+     <None Remove="Styles\ProgressRingStyles.xaml" />
+   </ItemGroup>
+   <ItemGroup>
      <None Include="..\..\.editorconfig" Link=".editorconfig" />
      <EmbeddedResource Include="..\..\DesignSources\auraui-logov2.png">
        <Pack>True</Pack>
@@ -64,16 +71,22 @@
      <AvaloniaResource Update="AuraDark.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="AuraTabViewStyles.xaml">
+     <AvaloniaResource Update="RevealStyles\Button.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="FilledSliderStyles.xaml">
+     <AvaloniaResource Update="Styles\AuraTabViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="GroupBoxStyles.xaml">
+     <AvaloniaResource Update="Styles\FilledSliderStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="HSLIndicatorStyles.xaml">
+     <AvaloniaResource Update="Styles\FollowerStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\GroupBoxStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\HSLIndicatorStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Languages\EnglishLanguage.xaml">
@@ -82,42 +95,59 @@
      <AvaloniaResource Update="Languages\SpanishLanguage.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="MaterialButtonStyles.xaml">
+     <AvaloniaResource Update="Styles\MaterialButtonStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="ModernSliderStyles.xaml">
+     <AvaloniaResource Update="Styles\ModernSliderStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="PageStyles.xaml">
+     <AvaloniaResource Update="Styles\NavigationViewItemStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="PagesViewStyles.xaml">
+     <AvaloniaResource Update="Styles\NavigationViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="RGBIndicatorStyles.xaml">
+     <AvaloniaResource Update="Styles\PageStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="RibbonGroupStyles.xaml">
+     <AvaloniaResource Update="Styles\PagesViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="RibbonItemStyles.xaml">
+     <AvaloniaResource Update="Styles\ProgressRingStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="RibbonSeparatorStyles.xaml">
+     <AvaloniaResource Update="Styles\RGBIndicatorStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="RibbonStyles.xaml">
+     <AvaloniaResource Update="Styles\RibbonGroupStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="ShadowButtonStyles.xaml">
+     <AvaloniaResource Update="Styles\RibbonItemStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="SuperColorPickerStyles.xaml">
+     <AvaloniaResource Update="Styles\RibbonSeparatorStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="SuperListBoxItemStyles.xaml">
+     <AvaloniaResource Update="Styles\RibbonStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
+     <AvaloniaResource Update="Styles\ShadowButtonStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\SuperColorPickerStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\SuperListBoxItemStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+   </ItemGroup>
+   <ItemGroup>
+     <Compile Update="Controls\FilledSlider.axaml.cs">
+       <DependentUpon>FilledSlide</DependentUpon>
+     </Compile>
+     <Compile Update="Controls\GroupBox.axaml.cs">
+       <DependentUpon>GroupBox</DependentUpon>
+     </Compile>
    </ItemGroup>
    <ItemGroup>
      <None Update="AuraDark.xaml">

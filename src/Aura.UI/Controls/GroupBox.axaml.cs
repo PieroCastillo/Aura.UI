@@ -13,10 +13,6 @@ namespace Aura.UI.Controls
     /// </summary>
     public class GroupBox : HeaderedContentControl, ICustomCornerRadius, IMaterial
     {
-        public GroupBox()
-        {
-            this.InitializeComponent();
-        }
 
         /// <summary>
         /// Defines the CornerRadious
@@ -56,9 +52,5 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<bool> MaterialIsVisibleProperty =
              AvaloniaProperty.Register<MaterialButton, bool>(nameof(MaterialIsVisible), true);
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

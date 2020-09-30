@@ -23,16 +23,6 @@ namespace Aura.UI.Controls
     /// </summary>
     public class PagesView : SelectingItemsControl
     {
-        public PagesView()
-        {
-            this.InitializeComponent();         
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-
-        }
         #region Properties
         /// <summary>
         /// Defines if the Title of the Selected <see cref="Page"/> can change the Title of the Parent Window

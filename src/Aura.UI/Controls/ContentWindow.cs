@@ -19,8 +19,6 @@ namespace Aura.UI.Controls
 
         public ContentWindow()
         {
-            AvaloniaXamlLoader.Load(this);
-
             ExtendClientAreaToDecorationsHint = true;
             ExtendClientAreaTitleBarHeightHint = -1;
 

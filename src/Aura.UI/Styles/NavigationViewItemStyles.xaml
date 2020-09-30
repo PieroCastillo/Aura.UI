@@ -1,0 +1,59 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="NavigationViewItem">
+		<Setter Property="Height" Value="50"/>
+		<Setter Property="Padding" Value="1"/>
+		<Setter Property="Template">
+			<ControlTemplate TargetType="NavigationViewItem">
+				<Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+					<StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+						<Border Grid.Column="0" Grid.Row="0">
+							<Image Source="{TemplateBinding Icon}" 
+								   Stretch="UniformToFill" Margin="15"/>
+						</Border>
+						<Border Name="PART_HeaderContainer" Padding="10" 
+								HorizontalAlignment="Left">
+							<Border.Transitions>
+								<Transitions>
+									<DoubleTransition Property="Width" Duration="0:0:0.5" Easing="QuadraticEaseOut"/>
+									<DoubleTransition Property="Opacity" Duration="0:0:0.5" Easing="QuadraticEaseOut"/>
+								</Transitions>
+							</Border.Transitions>
+							<ContentPresenter Content="{TemplateBinding Header}"
+											  ContentTemplate="{TemplateBinding HeaderTemplate}"
+											  HorizontalAlignment="Left"
+												VerticalAlignment="Center"/>
+						</Border>
+					</StackPanel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="NavigationViewItem[ExpansionState=Hidden] /template/ Border#PART_HeaderContainer">
+		<Setter Property="Width" Value="0"/>
+		<Setter Property="Opacity" Value="0"/>
+	</Style>
+	<!--<Style Selector="NavigationViewItem[ExpansionState=Total] /template/ Border#PART_HeaderContainer">
+		<Style.Animations>
+			<Animation Duration="0:0:0.5" Easing="QuadraticEaseOut" FillMode="Forward">
+				<KeyFrame Cue="0%">
+					<Setter Property="Width" Value="0"/>
+					<Setter Property="Opacity" Value="0"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>-->
+	<Style Selector="NavigationViewItem:pointerover">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlLowBrush}"/>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<Border.Resources>			
+				<DrawingImage x:Key="Ionicons.MusicalNoteMD">
+					<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M256 64v225.1c-12.6-7.3-27.1-11.7-42.7-11.7-47.1 0-85.3 38.2-85.3 85.3s38.2 85.3 85.3 85.3 85.3-38.2 85.3-85.3V149.3H384V64H256z"   />
+				</DrawingImage>
+			</Border.Resources>
+			<NavigationViewItem Icon="{DynamicResource Ionicons.MusicalNoteMD}"  Header="Music"/>
+		</Border>
+	</Design.PreviewWith>
+</Styles>
