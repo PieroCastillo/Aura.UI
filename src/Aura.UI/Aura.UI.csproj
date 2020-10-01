@@ -32,13 +32,6 @@
     </AvaloniaResource>
   </ItemGroup>
    <ItemGroup>
-     <None Remove="RevealStyles\Button.xaml" />
-     <None Remove="Styles\FollowerStyles.xaml" />
-     <None Remove="Styles\NavigationViewItemStyles.xaml" />
-     <None Remove="Styles\NavigationViewStyles.xaml" />
-     <None Remove="Styles\ProgressRingStyles.xaml" />
-   </ItemGroup>
-   <ItemGroup>
      <None Include="..\..\.editorconfig" Link=".editorconfig" />
      <EmbeddedResource Include="..\..\DesignSources\auraui-logov2.png">
        <Pack>True</Pack>
@@ -140,6 +133,12 @@
      <AvaloniaResource Update="Styles\SuperListBoxItemStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
+	   <AvaloniaResource Update="AvaloniaStyles\AvaloniaStyles.xaml">
+		   <Generator>MSBuild:Compile</Generator>
+	   </AvaloniaResource>
+	   <AvaloniaResource Update="AvaloniaStyles\ContentPresenterStyles.xaml">
+		   <Generator>MSBuild:Compile</Generator>
+	   </AvaloniaResource>
    </ItemGroup>
    <ItemGroup>
      <Compile Update="Controls\FilledSlider.axaml.cs">
@@ -148,10 +147,5 @@
      <Compile Update="Controls\GroupBox.axaml.cs">
        <DependentUpon>GroupBox</DependentUpon>
      </Compile>
-   </ItemGroup>
-   <ItemGroup>
-     <None Update="AuraDark.xaml">
-       <Generator>MSBuild:Compile</Generator>
-     </None>
    </ItemGroup>
 </Project>
