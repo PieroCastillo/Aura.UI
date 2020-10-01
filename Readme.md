@@ -28,6 +28,7 @@ Aura.UI
   
 * Controls in Developing
    * GradientEditor : This control creates a GradientBrush to use in other controls.
+   * NavigationView : A scrollable MenuItems, like UWP NavigationView.
    
 * Windows Availables
    * ColorWindowSmall : This window shows a ColorPicker.
@@ -37,13 +38,9 @@ Aura.UI
 
 * Planned Controls and Windows for future versions:
    * TabbedWindow : An optimized window to use with AuraTabItems. 
-   * NavigationView : A scrollable MenuItems, like UWP NavigationView.
    * StatusBar : This bar shows an status of application, it will use a class for the status.
-<<<<<<< HEAD
    * WriteablePanel : A panel por represent and edit images easily. 
-=======
-   * WritteablePanel : A panel that represents and edits images easily. 
-
+   
 * UI Extensions
    * TabControlExtensions:
    ```c#
@@ -121,50 +118,6 @@ using Aura.UI.UIExtensions;
 using Aura.UI.Windows;
 ```
 
-# Language Manager
-
-## What's that?
-
-It's a tool to ease the changes of an application's language.
-<img src="DocumentationGifs/Language_Testing.gif">
-## How to use
-
-Add the using statements to ```App.xaml.cs``` and ```MainWindow.xaml```
-```c#
-using Aura.UI.Managers;
-```
-On ```App.xaml.cs```
-```c#
-public static ILanguageManager? Manager { get; set; }
-public override void OnFrameworkInitializationCompleted()
-        {
-            if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-            {
-                Manager = LanguageManager.Create("Languages");
-                Manager.LoadSelectedLanguage("Language.theme");
-                desktop.MainWindow = new MainWindow()
-                {
-                    DataContext = Manager
-                };
-                desktop.Exit += (sender , e) =>
-                {
-                    Manager.SaveSelectedLanguage("Language.theme");
-                };
-            }
-            base.OnFrameworkInitializationCompleted();
-        }
-```
-On ```MainWindow.xaml.cs```
-```c#
-public MainWindow(){
-   InitializeComponent();
-   App.Manager.EnableLanguages(this);
-}
-```
-Finally, add this using statement to ```Program.cs```
-```c#
-using Avalonia.Controls.ApplicationLifetimes;
-```
 # Controls
 
 ## AuraTabItem 
