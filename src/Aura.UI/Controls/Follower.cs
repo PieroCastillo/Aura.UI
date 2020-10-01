@@ -1,4 +1,5 @@
-﻿using Aura.UI.UIExtensions;
+﻿using Aura.UI.Attributes;
+using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -9,6 +10,7 @@ using System.Text;
 
 namespace Aura.UI.Controls
 {
+    [InDeveloping]
     public class Follower : ContentControl
     {
         public Follower()

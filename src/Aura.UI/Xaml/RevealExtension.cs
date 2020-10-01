@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using Aura.UI.Attributes;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
 using Avalonia.Data;
@@ -13,6 +14,8 @@ using System.Text;
 
 namespace Aura.UI.Xaml
 {
+    [DonotUse(Reason = "THIS EXTENSION IS IN DEVELOPING")]
+    [InDeveloping]
     public class RevealExtension : MarkupExtension
     {
         public override object ProvideValue(IServiceProvider serviceProvider)
