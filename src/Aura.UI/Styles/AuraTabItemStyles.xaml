@@ -5,7 +5,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Left"/>
 		<Setter Property="FontSize" Value="12"/>
 		<Setter Property="VerticalAlignment" Value="Center"/>
-		<Setter Property="Foreground" Value="{DynamicResource ThemeLowForegroundBrush}"/>
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundLowBrush}"/>
 		<Setter Property="Margin" Value="0 0 0 0"/>
 		<Setter Property="Padding" Value="10 0"/>
 		<Setter Property="BorderBrush" Value="Transparent"/>
@@ -98,12 +98,14 @@
 	</Style>
 	<Style Selector="AuraTabItem:pointerover /template/ Border#PART_Container">
 		<Setter Property="Opacity" Value="0.7"/>
+		<Setter Property="Background" Value="{DynamicResource ThemeControlHighlightLowBrush}"/>
 	</Style>
 	<Style Selector="AuraTabItem:selected:pointerover /template/ Border#PART_Container">
 		<Setter Property="Opacity" Value="1"/>
+		<Setter Property="Background" Value="{DynamicResource ThemeControlHighlightMidBrush}"/>
 	</Style>
 	<Style Selector="AuraTabItem:selected">
-		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
+		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush4}"/>
 		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>
 	</Style>
@@ -116,7 +118,7 @@
 
 	<Design.PreviewWith>
 		<Border Padding="0">
-			<AuraTabView Width="400" Height="400" Background="#FF111111">
+			<AuraTabView Width="400" Height="400">
 				<AuraTabItem Header="test2">
 					<TextBlock>test2</TextBlock>
 				</AuraTabItem>

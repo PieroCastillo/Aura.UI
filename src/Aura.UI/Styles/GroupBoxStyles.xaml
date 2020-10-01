@@ -2,12 +2,12 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="GroupBox">
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="True"/>
+		<Setter Property="MaterialIsVisible" Value="False"/>
 		<Setter Property="BorderThickness" Value="3"/>
 		<Setter Property="CornerRadius" Value="10"/>
 		<Setter Property="Padding" Value="10"/>
-		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
-		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/> 
+		<Setter Property="Background" Value="{DynamicResource ThemeControlHighlightLowBrush}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderLowBrush}"/> 
 		<Setter Property="Template">
 			<ControlTemplate TargetType="GroupBox">
 				<Grid Margin="{TemplateBinding Margin}">
@@ -18,9 +18,10 @@
                         Margin="6,0,6,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        Background="{TemplateBinding Background}" 
+                        Background="{TemplateBinding BorderBrush}" 
                         Content="{TemplateBinding Header, Mode=OneWay}"
 						ContentTemplate="{TemplateBinding HeaderTemplate}"
+						TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
                         ZIndex="999" />
 					<Border
                         Margin="0,10,0,0"
@@ -36,7 +37,7 @@
 													   IsVisible="{TemplateBinding MaterialIsVisible}"/>
 							<ContentPresenter Name="PART_ContentPresenter"
 						              Margin="{TemplateBinding Padding}"
-									  Content="{TemplateBinding Content}"									  
+									  Content="{TemplateBinding Content}"
 									  ContentTemplate="{TemplateBinding ContentTemplate}"/>
 						</Grid>
 					</Border>
