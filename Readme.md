@@ -24,11 +24,14 @@ Aura.UI
   *  FilledSlider
   *  ModernSlider
   *  Ribbon
-  * SuperListBoxItem 
+  *  SuperListBoxItem 
   
 * Controls in Developing
    * GradientEditor : This control creates a GradientBrush to use in other controls.
    * NavigationView : A scrollable MenuItems, like UWP NavigationView.
+   * Follower : This Control follow the cursor whitin a control.
+   * ColourSlider : This slider has colors as values.
+   * ProgressRing : This is similar to progressbar, but is indefinite.
    
 * Windows Availables
    * ColorWindowSmall : This window shows a ColorPicker.
@@ -56,12 +59,17 @@ Aura.UI
    ```
    * LogicalExtensions:
    ```c#
-   GetParentTOfLogical<T>(this ILogical Logical) where T : class
+   GetParentTOfLogical<T>(this ILogical Logical) where T : class {}
    // Return the closest logical parent
 
-   GetParentTOfLogical<T>(this ILogical Logical) where T : class
+   GetParentTOfLogical<T>(this ILogical Logical) where T : class {}
    // Return the closest window parent
    ```
+   * Extensions in Developing 
+   ```xml
+     <!--RevealExtension ==> This extension for xaml create a RevealEffect for a Brush Property-->
+     <Button Background={Reveal TintColor=Gray, CursorRadius=20, Opacity=0.5}></Button>
+    ```
 
 # Install
 
