@@ -1,0 +1,35 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ms="clr-namespace:System;assembly=netstandard">
+	<Styles.Resources>
+		<ms:Double x:Key="DefaultContainerAnimationTranslateTranformX">100</ms:Double>
+		<ms:TimeSpan x:Key="DefaultContainerAnimationDuration">0:0:0.5</ms:TimeSpan>
+	</Styles.Resources>
+	<Style Selector="ContentPresenter.Container">
+		<Style.Animations>
+			<Animation Duration="{DynamicResource DefaultContainerAnimationDuration}"
+					   Easing="QuadraticEaseInOut" FillMode="Forward">
+				<KeyFrame Cue="0%">
+					<Setter Property="TranslateTransform.X" 
+							Value="{DynamicResource DefaultContainerAnimationTranslateTranformX}"/>
+					<Setter Property="Opacity" Value="0"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="TranslateTransform.X" Value="0"/>
+					<Setter Property="Opacity" Value="1"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<Button Name="btn">
+				<ContentPresenter Classes="Container">
+					<ContentPresenter.Content>
+						<ShadowButton Height="200" Width="400"></ShadowButton>
+					</ContentPresenter.Content>
+				</ContentPresenter>
+			</Button>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

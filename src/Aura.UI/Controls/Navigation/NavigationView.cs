@@ -17,13 +17,7 @@ namespace Aura.UI.Controls.Navigation
     {
         #region Fields
         NavigationViewItem ToggleNav;
-        DispatcherTimer tmr;
         #endregion
-
-        public NavigationView()
-        {
-            tmr = new DispatcherTimer(new TimeSpan(0, 0, 0, 5), DispatcherPriority.Background, new EventHandler(Do));
-        }
 
         #region Functionalities
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -32,41 +26,12 @@ namespace Aura.UI.Controls.Navigation
 
             ToggleNav = this.GetControl<NavigationViewItem>(e, "PART_ToggleNav");
             ToggleNav.PointerPressed += ToggleNav_PointerPressed;
-
-            //this.PointerEnter += NavigationView_PointerEnter;
-            this.PointerLeave += NavigationView_PointerLeave;
         }
 
-        private void NavigationView_PointerLeave(object sender, Avalonia.Input.PointerEventArgs e)
-        {
-            if(tmr != null)
-            {
-                tmr.Start();
-                tmr.Tick += Timer_Tick;
-            }
-        }
-
-        private void NavigationView_PointerEnter(object sender, Avalonia.Input.PointerEventArgs e)
-        {
-            if(tmr != null) 
-            {
-                tmr.Stop();
-            }
-        }
 
         private void ToggleNav_PointerPressed(object sender, Avalonia.Input.PointerPressedEventArgs e)
         {
-    
-  
-        }
-        private void Timer_Tick(object sender, EventArgs e)
-        {
             ToggleNavigationViewExpansionState(this);
-        }
-
-        private void Do(object sender, EventArgs e)
-        {
-
         }
 
         public static void ToggleNavigationViewExpansionState(NavigationView navigationView)
