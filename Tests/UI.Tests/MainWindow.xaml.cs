@@ -20,7 +20,6 @@ namespace UI.Tests
         Button open_pages;
         ColorPickerButton pickerButton;
         Border border_bg;
-        
         public MainWindow()
         {
             InitializeComponent();
