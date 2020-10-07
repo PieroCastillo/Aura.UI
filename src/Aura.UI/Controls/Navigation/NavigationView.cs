@@ -28,22 +28,39 @@ namespace Aura.UI.Controls.Navigation
             ToggleNav.PointerPressed += ToggleNav_PointerPressed;
         }
 
+        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+        {
+            base.OnPropertyChanged(change);
+
+            //if(change.Property == SelectedItemProperty)
+            //{
+                ChangeSelectedTitle();
+            //}
+        }
+
+        private void ChangeSelectedTitle()
+        {
+            if(SelectedItem is NavigationViewItem)
+            {
+                Title = (SelectedItem as NavigationViewItem).Title;
+            }
+        }
 
         private void ToggleNav_PointerPressed(object sender, Avalonia.Input.PointerPressedEventArgs e)
         {
-            ToggleNavigationViewExpansionState(this);
+            ToggleNavigationViewOpenState(this);
         }
 
-        public static void ToggleNavigationViewExpansionState(NavigationView navigationView)
+        public static void ToggleNavigationViewOpenState(NavigationView navigationView)
         {
-            var e = navigationView.ExpansionState;
+            var e = navigationView.IsOpen;
             switch (e)
             {
-                case ExpansionState.Total:
-                    navigationView.ExpansionState = ExpansionState.Hidden;
+                case true:
+                    navigationView.IsOpen = false;
                     break;
-                case ExpansionState.Hidden:
-                    navigationView.ExpansionState = ExpansionState.Total;
+                case false:
+                    navigationView.IsOpen = true;
                     break;
             }
         }
@@ -52,13 +69,22 @@ namespace Aura.UI.Controls.Navigation
         /// <summary>
         /// Get or set the expansion state of the NavigationView
         /// </summary>
-        public ExpansionState ExpansionState
+        public bool IsOpen
         {
-            get { return GetValue(ExpansionStateProperty); }
-            set { SetValue(ExpansionStateProperty, value); }
+            get { return GetValue(IsOpenProperty); }
+            set { SetValue(IsOpenProperty, value); }
         }
-        public static readonly StyledProperty<ExpansionState> ExpansionStateProperty =
-            AvaloniaProperty.Register<NavigationView, ExpansionState>(nameof(ExpansionState), ExpansionState.Total);
+        public static readonly StyledProperty<bool> IsOpenProperty =
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), false);
+
+        public object Title
+        {
+            get => GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
+        }
+        public static readonly StyledProperty<object> TitleProperty =
+            AvaloniaProperty.Register<NavigationView, object>(nameof(Title), "Title");
+
 
         public object Header
         {
@@ -75,6 +101,22 @@ namespace Aura.UI.Controls.Navigation
         }
         public static readonly StyledProperty<ITemplate> HeaderTemplateProperty =
             AvaloniaProperty.Register<NavigationView, ITemplate>(nameof(HeaderTemplate));
+
+        public double CompactPaneLength
+        {
+            get => GetValue(CompactPaneLengthProperty);
+            set => SetValue(CompactPaneLengthProperty, value);
+        }
+        public static readonly StyledProperty<double> CompactPaneLengthProperty =
+            AvaloniaProperty.Register<NavigationView, double>(nameof(CompactPaneLength), 150);
+
+        public double OpenPaneLength
+        {
+            get => GetValue(OpenPaneLengthProperty);
+            set => SetValue(OpenPaneLengthProperty, value);
+        }
+        public static readonly StyledProperty<double> OpenPaneLengthProperty =
+            AvaloniaProperty.Register<NavigationView, double>(nameof(OpenPaneLength), 50);
         #endregion
     }
 }

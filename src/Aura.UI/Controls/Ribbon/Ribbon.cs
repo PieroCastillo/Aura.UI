@@ -185,6 +185,16 @@ namespace Aura.UI.Controls.Ribbon
         public static readonly StyledProperty<ExpansionState> ExpansionStateProperty =
             AvaloniaProperty.Register<Ribbon, ExpansionState>(nameof(ExpansionState), ExpansionState.Total);
 
+        /// <summary>
+        /// Defines the Pane Height of the Ribbon when this is opened
+        /// </summary>
+        public double OpenPaneHeight
+        {
+            get => GetValue(OpenPaneLengthProperty);
+            set => SetValue(OpenPaneLengthProperty, value);
+        }
+        public static readonly StyledProperty<double> OpenPaneLengthProperty =
+            AvaloniaProperty.Register<Ribbon, double>(nameof(OpenPaneHeight), 150);
         //public Ribbon Self
         //{
         //    get { return this; }
