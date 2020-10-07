@@ -118,7 +118,7 @@
 					<Setter Property="Height" Value="0"/>
 				</KeyFrame>
 				<KeyFrame Cue="100%">
-					<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/>
+					<Setter Property="Height" Value="{Binding $parent[Ribbon].OpenPaneHeight}"/>
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
@@ -129,7 +129,7 @@
 			<Animation Duration="0:0:0.4" Easing="QuarticEaseOut"
 					   FillMode="Forward"> 
 				<KeyFrame Cue="0%"> 
-					<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/> 
+					<Setter Property="Height" Value="{Binding $parent[Ribbon].OpenPaneHeight}"/> 
 				</KeyFrame>
 				<KeyFrame Cue="100%">
 					<Setter Property="Height" Value="0"/>
@@ -193,11 +193,8 @@
 	<!--Preview-->
 	<Design.PreviewWith>
 		<Border Padding="10">
-			<Border.Resources>
-				<ms:Double x:Key="DefaultRibbonContainerHeight">170</ms:Double>
-			</Border.Resources>
 			<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
-					ExpansionState="Total">
+					ExpansionState="Total" OpenPaneHeight="170">
 				<RibbonItem Header="Start">
 					<RibbonPanel>
 						<RibbonGroup Header="Colour">
