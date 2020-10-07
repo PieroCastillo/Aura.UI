@@ -64,16 +64,10 @@
      <AvaloniaResource Update="AuraDark.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-     <AvaloniaResource Update="RevealStyles\Button.xaml">
-       <Generator>MSBuild:Compile</Generator>
-     </AvaloniaResource>
      <AvaloniaResource Update="Styles\AuraTabViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\FilledSliderStyles.xaml">
-       <Generator>MSBuild:Compile</Generator>
-     </AvaloniaResource>
-     <AvaloniaResource Update="Styles\FollowerStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\GroupBoxStyles.xaml">
@@ -92,12 +86,6 @@
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\ModernSliderStyles.xaml">
-       <Generator>MSBuild:Compile</Generator>
-     </AvaloniaResource>
-     <AvaloniaResource Update="Styles\NavigationViewItemStyles.xaml">
-       <Generator>MSBuild:Compile</Generator>
-     </AvaloniaResource>
-     <AvaloniaResource Update="Styles\NavigationViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\PageStyles.xaml">
