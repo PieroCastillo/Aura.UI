@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.Tests", "Tests\UI.Tests\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "external", "external", "{7939BCED-2D7B-4404-8592-2FE251A040B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ColorPicker", "external\ColorPicker\src\ColorPicker\ColorPicker.csproj", "{C33F128B-055B-4533-9B9F-8579DA9195E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Avalonia.ColorPicker", "external\ColorPicker\src\ColorPicker\Avalonia.ColorPicker.csproj", "{C33F128B-055B-4533-9B9F-8579DA9195E9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0F84999C-70F6-4D29-A4A5-D2D25336C0CB}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,9 +22,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aura.UI.Mobile", "src\Aura.UI.Mobile\Aura.UI.Mobile.csproj", "{5DBE2466-4308-4D94-9283-E6975320CD40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Tests.Mobile", "Tests\UI.Tests.Mobile\UI.Tests.Mobile.csproj", "{1748D8FA-FB7F-4B4F-B1BA-049364CCEB33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.Tests.Mobile", "Tests\UI.Tests.Mobile\UI.Tests.Mobile.csproj", "{1748D8FA-FB7F-4B4F-B1BA-049364CCEB33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI.Tests.Mobile.NetCore", "Tests\UI.Tests.Mobile.NetCore\UI.Tests.Mobile.NetCore.csproj", "{FDDAC139-62DD-49B4-88BC-4B714B10926E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.Tests.Mobile.NetCore", "Tests\UI.Tests.Mobile.NetCore\UI.Tests.Mobile.NetCore.csproj", "{FDDAC139-62DD-49B4-88BC-4B714B10926E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ripple", "external\Ripple\Ripple.csproj", "{46A83613-EC17-4B7A-B442-2AF24AF3E7AC}"
 EndProject
