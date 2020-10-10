@@ -70,7 +70,7 @@
 								</Transitions>
 							</ExperimentalAcrylicBorder.Transitions>
 							<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-								<ContentPresenter Name="PART_ContentHost"
+								<ContentPresenter Name="PART_SelectedContentHost"
 										Content="{TemplateBinding SelectedContent}"
 										Padding="{TemplateBinding Padding}"
 										ContentTemplate="{TemplateBinding SelectedContentTemplate}">
