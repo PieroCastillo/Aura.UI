@@ -1,10 +1,13 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Styles.Resources>
-		<ExperimentalAcrylicMaterial x:Key="NullBrush"  MaterialOpacity="-1" TintOpacity="0"
+		<ExperimentalAcrylicMaterial x:Key="NullBrush"  MaterialOpacity="-10" TintOpacity="0"
 											  TintColor="#00000000"
-									 FallbackColor="#00000000"></ExperimentalAcrylicMaterial> 
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrush"  MaterialOpacity="0.7" TintOpacity="1"
+									 FallbackColor="#00000000"></ExperimentalAcrylicMaterial>
+		<ExperimentalAcrylicMaterial x:Key="OnlyNoiseBrush"  MaterialOpacity="0.5" TintOpacity="0"
+							 TintColor="{DynamicResource ThemeBackgroundColor}"
+							 FallbackColor="{DynamicResource ThemeBackgroundColor}"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrush"  MaterialOpacity="0.7" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeBackgroundColor}"
 									 FallbackColor="{DynamicResource ThemeBackgroundColor}"></ExperimentalAcrylicMaterial>
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderLowBrush"   MaterialOpacity="1" TintOpacity="1"
@@ -80,7 +83,7 @@
 
 	<Design.PreviewWith>
 		<Border Padding="10">
-			<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
+			<!--<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
 					ExpansionState="Total">
 				<RibbonItem Header="Start">
 					<RibbonPanel>
@@ -116,7 +119,8 @@
 						<RibbonGroup></RibbonGroup>
 					</RibbonPanel>
 				</RibbonItem>
-			</Ribbon>
+			</Ribbon>-->
+			<MaterialButton Content="wenas" Material="{DynamicResource NullBrush}"/>
 		</Border>
 	</Design.PreviewWith>
 </Styles>
