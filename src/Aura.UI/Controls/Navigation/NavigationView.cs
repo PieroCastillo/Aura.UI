@@ -3,17 +3,20 @@ using Aura.UI.Controls.Primitives;
 using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Generators;
 using Avalonia.Controls.Primitives;
+using Avalonia.Media;
 using Avalonia.Styling;
 using Avalonia.Threading;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Text;
 
 namespace Aura.UI.Controls.Navigation
 {
     [TemplatePart(Name = "PART_ToggleNav", Type = typeof(NavigationViewItem))]
-    public class NavigationView : TabViewBase, IHeadered
+    public class NavigationView : TabViewBase, IHeadered, IMaterial
     {
         #region Fields
         NavigationViewItem ToggleNav;
@@ -26,23 +29,44 @@ namespace Aura.UI.Controls.Navigation
 
             ToggleNav = this.GetControl<NavigationViewItem>(e, "PART_ToggleNav");
             ToggleNav.PointerPressed += ToggleNav_PointerPressed;
+
         }
 
-        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+        protected override void OnContainersMaterialized(ItemContainerEventArgs e)
         {
-            base.OnPropertyChanged(change);
+            base.OnContainersMaterialized(e);
 
-            //if(change.Property == SelectedItemProperty)
-            //{
-                ChangeSelectedTitle();
-            //}
+            UpdateSelectedTitle();
         }
 
-        private void ChangeSelectedTitle()
+        protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-            if(SelectedItem is NavigationViewItem)
+            base.ItemsCollectionChanged(sender, e);
+
+            //UpdateSelectedTitle();
+        }
+
+        protected override void OnContainersRecycled(ItemContainerEventArgs e)
+        {
+            base.OnContainersRecycled(e);
+
+            UpdateSelectedTitle();
+        }
+
+        private void UpdateSelectedTitle()
+        {
+            if(SelectedIndex == -1)
             {
-                Title = (SelectedItem as NavigationViewItem).Title;
+                Title = TitleTemplate = null;
+            }
+            else
+            {
+                var navitem = SelectedItem as NavigationViewItem;
+                if(navitem != null)
+                {
+                    Title = navitem.Title;
+                    TitleTemplate = navitem.TitleTemplate;
+                }
             }
         }
 
@@ -54,14 +78,22 @@ namespace Aura.UI.Controls.Navigation
         public static void ToggleNavigationViewOpenState(NavigationView navigationView)
         {
             var e = navigationView.IsOpen;
-            switch (e)
+            var a = navigationView.AlwaysOpen;
+            if(a != true)
             {
-                case true:
-                    navigationView.IsOpen = false;
-                    break;
-                case false:
-                    navigationView.IsOpen = true;
-                    break;
+                switch (e)
+                {
+                    case true:
+                        navigationView.IsOpen = false;
+                        break;
+                    case false:
+                        navigationView.IsOpen = true;
+                        break;
+                }
+            }
+            else if(a == true)
+            {
+                navigationView.IsOpen = true;
             }
         }
         #endregion
@@ -77,6 +109,56 @@ namespace Aura.UI.Controls.Navigation
         public static readonly StyledProperty<bool> IsOpenProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), false);
 
+        public IBrush PaneBackground
+        {
+            get => GetValue(PaneBackgroundProperty);
+            set => SetValue(PaneBackgroundProperty, value);
+        }
+        public static readonly StyledProperty<IBrush> PaneBackgroundProperty =
+            AvaloniaProperty.Register<NavigationView, IBrush>(nameof(PaneBackground));
+
+        public bool AlwaysOpen
+        {
+            get { return GetValue(AlwaysOpenProperty); }
+            set { SetValue(AlwaysOpenProperty, value); }
+        }
+        public static readonly StyledProperty<bool> AlwaysOpenProperty =
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(AlwaysOpen), false);
+
+        public IImage HeaderIcon
+        {
+            get => GetValue(HeaderIconProperty);
+            set => SetValue(HeaderIconProperty, value);
+        }
+        public static readonly StyledProperty<IImage> HeaderIconProperty =
+            AvaloniaProperty.Register<NavigationView, IImage>(nameof(HeaderIcon));
+
+        /// <summary>
+        /// Defines the Material for the AcrylicBorder in the Template
+        /// </summary>
+        public ExperimentalAcrylicMaterial Material
+        {
+            get { return GetValue(MaterialProperty); }
+            set { SetValue(MaterialProperty, value); }
+        }
+        public static readonly StyledProperty<ExperimentalAcrylicMaterial> MaterialProperty =
+            AvaloniaProperty.Register<NavigationView, ExperimentalAcrylicMaterial>(nameof(Material),
+                new ExperimentalAcrylicMaterial()
+                {
+                    TintColor = Colors.White,
+                    MaterialOpacity = 0.85,
+                    TintOpacity = 0.85
+                });
+        /// <summary>
+        /// Defines if the Material can be visible
+        /// </summary>
+        public bool MaterialIsVisible
+        {
+            get { return GetValue(MaterialIsVisibleProperty); }
+            set { SetValue(MaterialIsVisibleProperty, value); }
+        }
+        public static readonly StyledProperty<bool> MaterialIsVisibleProperty =
+             AvaloniaProperty.Register<NavigationView, bool>(nameof(MaterialIsVisible), true);
         public object Title
         {
             get => GetValue(TitleProperty);
@@ -85,6 +167,13 @@ namespace Aura.UI.Controls.Navigation
         public static readonly StyledProperty<object> TitleProperty =
             AvaloniaProperty.Register<NavigationView, object>(nameof(Title), "Title");
 
+        public ITemplate TitleTemplate
+        {
+            get => GetValue(TitleTemplateProperty);
+            set => SetValue(TitleTemplateProperty, value);
+        }
+        public static readonly StyledProperty<ITemplate> TitleTemplateProperty =
+            AvaloniaProperty.Register<NavigationView, ITemplate>(nameof(TitleTemplate));
 
         public object Header
         {
