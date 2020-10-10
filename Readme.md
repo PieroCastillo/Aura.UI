@@ -241,6 +241,83 @@ This ListBoxItem has a Icon and styled texts.
 
 <img src="DocumentationGifs/SuperListBoxItem.gif">
 
+## NavigationView
+
+This Control is really recommended for the main navigation of an application.
+
+<img src="DocumentationGifs/DefaultNavigationViewGif.gif">
+
+*Default style of NavigationView*
+
+### NavigationView Subcontrols:
+
+   * NavigationViewItem: This represent an item of the NavigationView, to ubicate that in the bottom you shouls add the class ".Footer"
+   Like this:
+   ```xml
+   <NavigationView Classes="Footer"/>
+   ```
+   For now you should order it backwards.
+   ```xml
+   <NavigationViewItem Classes="Footer" Header="1"/>
+	<NavigationViewItem Classes="Footer" Header="2"/>
+	<NavigationViewItem Classes="Footer" Header="3"/>
+	<NavigationViewItem Classes="Footer" Header="4"/>
+	<NavigationViewItem Classes="Footer" Header="5"/>
+   ```
+
+   This code produce this:
+
+   <img src="DocumentationGifs/navigationviewitem_bottom.png">
+
+### Custom NavigationView
+
+The follow code make an custom NavigationView
+```xml
+<Border>
+	<Grid>
+		<Grid Background="{DynamicResource ThemeBackgroundBrush}"
+				  Opacity="0.5"/>
+			<NavigationView AlwaysOpen="True" HeaderIcon="{DynamicResource Material.HomeOutline}"
+						Header="Home" OpenPaneLength="250" Material="{DynamicResource NullBrush}">
+			<NavigationViewItem Icon="{DynamicResource MaterialLight.Picture}"
+									Header="Images" Title="Images in C:/">
+				<TextBlock Text="Page1"/>
+			</NavigationViewItem>
+			<NavigationViewItem Icon="{DynamicResource Ionicons.DocumentMD}"
+									Header="Documents" Title="Documents in D:/">
+			   <TextBlock Text="Page2"/>
+			</NavigationViewItem>
+
+
+			<!--Footer-->
+
+			<NavigationViewItem Icon="{DynamicResource EvaIcons.Settings2Outline}"
+									Header="Settings" Title="Settings"
+									Classes="Footer">
+				<StackPanel Spacing="20">
+					<TextBlock Text="AlwaysOpen=&quot;True&quot;"/>
+					<TextBlock Text="Header=&quot;Home&quot;"/>
+				</StackPanel>
+			</NavigationViewItem>
+			<NavigationViewItem Icon="{DynamicResource EvaIcons.PrinterOutline}"
+									Header="Print" Title="Printers"
+									Classes="Footer">
+				<TextBlock Text="Page4"/>
+			</NavigationViewItem>
+			<NavigationViewItem Icon="{DynamicResource Material.AccountCircleOutline}"
+						Header="Accounts" Title="Accounts"
+						Classes="Footer">
+				<TextBlock Text="Page5"/>
+			</NavigationViewItem>
+		</NavigationView>
+		<Border Background="{DynamicResource ThemeBackgroundBrush}"
+					Opacity="0" Height="20" VerticalAlignment="Top"
+					Name="drag_border"/>
+	</Grid>
+</Border>
+```
+
+<img src="DocumentationGifs/CustomNavigationViewGif.gif">
 
 # About Aura.UI
 
