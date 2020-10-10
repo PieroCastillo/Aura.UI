@@ -20,6 +20,7 @@ namespace UI.Tests
         Button open_pages;
         ColorPickerButton pickerButton;
         Border border_bg;
+        Border drag;
         public MainWindow()
         {
             InitializeComponent();
@@ -34,14 +35,34 @@ namespace UI.Tests
             open_pages = this.Find<Button>("open_pages");
             pickerButton = this.Find<ColorPickerButton>("CP_btn");
             border_bg = this.Find<Border>("border_bg");
+            drag = this.Find<Border>("drag_b");
 
             addbtn.Click += Addbtn_Click;
             cbtn.Click += Cbtn_Click;
             open_pages.Click += Open_pages_Click;
 
+            drag.PointerPressed += Drag_PointerPressed;
+
             border_bg.Background = pickerButton.Background;
 
             //EnableFeatures();
+        }
+
+        private void Drag_PointerPressed(object sender, PointerPressedEventArgs e)
+        {
+            this.BeginMoveDrag(e);
+        }
+
+        public void OpenDefaultNavigationView(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var win = new NavigationViewWindowDefault();
+            win.ShowDialog(this);
+        }
+
+        public void OpenCustomNavigationView(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            var win = new CustomNavigationViewWindow();
+            win.ShowDialog(this);
         }
 
         private void Open_pages_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
