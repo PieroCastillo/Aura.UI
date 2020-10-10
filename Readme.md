@@ -24,11 +24,11 @@ Aura.UI
   *  FilledSlider
   *  ModernSlider
   *  Ribbon
-  *  SuperListBoxItem 
+  *  SuperListBoxItem
+  *   * NavigationView 
   
 * Controls in Developing
    * GradientEditor : This control creates a GradientBrush to use in other controls.
-   * NavigationView : A scrollable MenuItems, like UWP NavigationView.
    * Follower : This Control follow the cursor whitin a control.
    * ColourSlider : This slider has colors as values.
    * ProgressRing : This is similar to progressbar, but is indefinite.
