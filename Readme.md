@@ -323,6 +323,14 @@ The follow code make an custom NavigationView
 
 This library is open source and free, in a few months come out the first stable version,for now, Aura.UI is a beta. 
 
+## Credits 
+
+This library is possible thanks to the follow projects:
+   * [Avalonia](http://avaloniaui.net/) by the AvaloniaUI Team.
+   * [ColorPicker](github.com/MikeCodesDotNET/ColorPicker) by MikeCodesDotNet.
+   * [Math.NET Numerics](https://github.com/mathnet/mathnet-numerics) by Math.NET Team.
+
+
 # How To Collaborate
 
 If you want to collaborate with this proyect, contact me with the next links:
