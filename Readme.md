@@ -25,7 +25,7 @@ Aura.UI
   *  ModernSlider
   *  Ribbon
   *  SuperListBoxItem
-  *   * NavigationView 
+  *  NavigationView 
   
 * Controls in Developing
    * GradientEditor : This control creates a GradientBrush to use in other controls.
