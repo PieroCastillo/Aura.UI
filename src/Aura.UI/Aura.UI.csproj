@@ -2,7 +2,7 @@
 <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <OutputType>Library</OutputType>
-    <Version>0.1.3-preview5</Version>
+    <Version>0.1.3-preview6</Version>
     <Authors>Piero Castillo</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Control's Library for Avalonia.</Description>
