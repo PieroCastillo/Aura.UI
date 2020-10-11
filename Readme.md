@@ -94,7 +94,7 @@ Aura.UI.
 
 Open the terminal on the root folder of your project and write <br/>
 ```shell
-dotnet add package Aura.UI --version 0.1.3-preview3
+dotnet add package Aura.UI --version 0.1.3-preview6
 ```
  Do it like this:
 
