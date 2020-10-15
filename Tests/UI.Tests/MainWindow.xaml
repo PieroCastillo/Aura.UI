@@ -3,6 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:ms="clr-namespace:System;assembly=netstandard"
+		xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
         mc:Ignorable="d"
 		Background="{x:Null}"
         x:Class="UI.Tests.MainWindow" Height="700" Width="800"
@@ -48,9 +49,12 @@
 		</DrawingImage>
 	</ContentWindow.Resources>
 	<Grid Background="{x:Null}">
-		<Grid Background="{DynamicResource ThemeBackgroundBrush}" Opacity="0.5"/>
-		<TabControl TabStripPlacement="Left" Margin="0, 15, 0 ,20">
-		<TabItem Header="AuraTabItem">
+		<Grid Background="{DynamicResource ThemeBackgroundBrush}" Opacity="0.6"/>
+		<NavigationView Name="nav"
+						AlwaysOpen="True" Material="{DynamicResource NullBrush}"
+						Background="{DynamicResource SystemControlBackgroundAltMediumHighBrush}"
+						OpenPaneLength="250" Header="Aura.UI &#10;TestApplication">
+		<NavigationViewItem Header="AuraTabItem" Title="AuraTabItem">
 			<Grid>
 				<TabControl Name="tabview">
 				</TabControl> 
@@ -59,8 +63,8 @@
 				<Button VerticalAlignment="Center"
 						HorizontalAlignment="Right" Name="cbtn">DeleteTab</Button>
 			</Grid>
-		</TabItem>
-		<TabItem Header="TitleBox">
+		</NavigationViewItem>
+		<NavigationViewItem Header="TitleBox" Title="TitleBox">
 			<Border Padding="10">
 				<Border.Resources>
 					<DrawingImage x:Key="EvaIcons.Close">
@@ -80,7 +84,7 @@
 					</TitleBox.Button2Content>
 				</TitleBox>
 			</Border>
-		</TabItem>
+		</NavigationViewItem>
 		<!--<TabItem Header="Language">
 			<Border Padding="20">
 				<Grid>
@@ -109,10 +113,10 @@
 				</Grid>
 			</Border>
 		</TabItem>-->
-	    <TabItem Header="PagesView">
+	    <NavigationViewItem Header="PagesView" Title="PagesView">
 			<Button Name="open_pages">Open Pages</Button>
-		</TabItem>
-	    <TabItem Header="AuraTabView">
+		</NavigationViewItem>
+	    <NavigationViewItem Header="AuraTabView" Title="AuraTabView">
 			<Border>
 				<AuraTabView Name="tabvw_">
 						<AuraTabItem Header="NonClosable" IsClosable="False">
@@ -121,8 +125,8 @@
 						<AuraTabItem Header="IsClosable = True"></AuraTabItem>
 					</AuraTabView>
 			</Border>
-		</TabItem>
-		<TabItem Header="ColorPickerButton">
+		</NavigationViewItem>
+		<NavigationViewItem Header="ColorPickerButton" Title="ColorPickerButton">
 			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition Width="*"></ColumnDefinition>
@@ -131,11 +135,11 @@
 				<ColorPickerButton Grid.Column="0" Name="CP_btn" Height="30" Width="30"></ColorPickerButton>
 				<Border Grid.Column="1" Name="border_bg" Height="100" Width="100" Background="{Binding #CP_btn.Background}"></Border>
 			</Grid>
-		</TabItem>
-			<TabItem Header="SuperColorPicker">
+		</NavigationViewItem>
+			<NavigationViewItem Header="SuperColorPicker" Title="SuperColorPicker">
 				<SuperColorPicker Height="270" Width="500"></SuperColorPicker>
-			</TabItem>
-			<TabItem Header="FilledSlider">
+			</NavigationViewItem>
+			<NavigationViewItem Header="FilledSlider" Title="FilledSlider">
 				<Grid>
 					<Border Padding="20">
 						<StackPanel Orientation="Horizontal">
@@ -148,8 +152,8 @@
 						<Button Content="{Binding #sl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
 					</StackPanel>	
 				</Grid>
-			</TabItem>
-			<TabItem Header="ModernSlider">
+			</NavigationViewItem>
+			<NavigationViewItem Header="ModernSlider" Title="ModernSlider">
 				<WrapPanel>
 					<Border Padding="20">
 						<StackPanel Orientation="Horizontal">
@@ -162,8 +166,8 @@
 						<Button Content="{Binding #msl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
 					</StackPanel>
 				</WrapPanel>
-			</TabItem>
-			<TabItem Header="GroupBox"> 
+			</NavigationViewItem>
+			<NavigationViewItem Header="GroupBox" Title="GroupBox"> 
 				<Grid>
 					<GroupBox Header="Yes, I'm a Header" MaterialIsVisible="False">
 						<StackPanel Spacing="10">
@@ -172,8 +176,8 @@
 						</StackPanel>
 					</GroupBox>
 				</Grid>
-			</TabItem>	
-			<TabItem Header="Ribbon">
+			</NavigationViewItem>	
+			<NavigationViewItem Header="Ribbon" Title="Ribbon">
 				<Grid>
 					<Border Padding="10">
 						<Ribbon  LeftContent="File" RightContent="Settings"
@@ -250,14 +254,14 @@
 						</Ribbon>-->
 					</Border>
 				</Grid>
-			</TabItem>
-			<TabItem Header="NavigationView">
+			</NavigationViewItem>
+			<NavigationViewItem Header="NavigationView" Title="NavigationView">
 				<StackPanel Orientation="Vertical" Spacing="20">
 					<Button Content="Open Default NavigationView" Click="OpenDefaultNavigationView"/>
 					<Button Content="Open Custom NavigationView" Click="OpenCustomNavigationView"/>
 				</StackPanel>
-			</TabItem>
-			<TabItem Header="SuperListBoxItem">
+			</NavigationViewItem>
+			<NavigationViewItem Header="SuperListBoxItem" Title="SuperListBoxItem">
 				<Border Padding="10">
 					<ListBox>
 						<SuperListBoxItem MainText="Avalonia App" SecondaryText="src/AvaloniaApp/AvaloniaApp.csproj"
@@ -268,7 +272,7 @@
 										  Icon="{DynamicResource Unicons.Vuejs}"/>
 					</ListBox>
 				</Border>
-			</TabItem>
+			</NavigationViewItem>
 			<!--<TabItem Header="RevealTest">
 				<Border Background="{Reveal TintColor=Gray, CursorRadius=50, Opacity=0.5}">
 				</Border>
@@ -278,7 +282,14 @@
 					<Follower/> 
 				</Border>
 			</TabItem>-->
-			<TabItem Header="AcrylicControls">
+			<NavigationViewItem Header="TileControl" Title="Music">
+				<Border Padding="20">
+					<Grid>
+						<l:MusicView VerticalAlignment="Stretch" />
+					</Grid>
+				</Border>
+			</NavigationViewItem>
+			<NavigationViewItem Header="AcrylicControls" Title="AcrylicControls">
 				<StackPanel Spacing="20">
 					<MaterialButton Content="I'm a Button! Come On, Click me!"/>
 					<ModernSlider Orientation="Horizontal" LeftContent="Modern" RightContent="Slider"/>
@@ -293,8 +304,8 @@
 
 					<ShadowButton Content="I have a Shadow!"/>
 				</StackPanel>
-			</TabItem>
-	</TabControl>	
+			</NavigationViewItem>
+		</NavigationView>	
 		<Border Background="{DynamicResource ThemeBackgroundBrush}" Name="drag_b" VerticalAlignment="Top" Height="20" Opacity="0"/>
 	</Grid>
 </ContentWindow>

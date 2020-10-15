@@ -1,0 +1,232 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="UI.Tests.Views.MusicView">
+	<UserControl.Styles>
+		<Style Selector="TileControl">
+			<Setter Property="MaterialIsVisible" Value="True"/>
+			<Setter Property="InternalPadding" Value="0"/>
+			<Setter Property="Width" Value="200"/>
+			<Setter Property="Height" Value="260"/>
+		</Style>
+		<Style Selector="TileControl > Border">
+			<Setter Property="Height" Value="150"/>
+		</Style>
+		<Style Selector="TileControl > Border > ImageBrush"> 
+			<Setter Property="Stretch" Value="None"/>
+		</Style>
+	</UserControl.Styles>
+		<Grid RowDefinitions="*,*,*,*,*">
+			
+		<!--Colbreakz-->
+		<TileCollection Header="Colbreakz" TileMode="HorizontalDisposition">
+			<TileControl Header="20000" SecondaryHeader="Colbreakz">
+				<Border CornerRadius="7">
+					<Border.Background>
+						<ImageBrush Source="avares://UI.Tests/Assets/20000.jpg"  Stretch="UniformToFill"/>
+					</Border.Background>
+				</Border>
+			</TileControl>
+			<TileControl Header="40000" SecondaryHeader="Colbreakz">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/40000.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="75000" SecondaryHeader="Colbreakz">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/75000.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="You and Me" SecondaryHeader="Colbreakz">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/younme.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+		</TileCollection>	
+		
+		<!--Krewella-->
+		<TileCollection Grid.Row="1"
+			Header="Krewella" TileMode="HorizontalDisposition">
+			<TileControl SecondaryHeader="Fall Out Boys">
+			<TileControl.Header>
+				Alone Togheter&#10;(Krewella Remix)
+			</TileControl.Header>
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/alonetogheterRM.jpg" Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="Greenlights" SecondaryHeader="Krewella">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/greenlights.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="TH2C&#10;(Dyro Remix)" SecondaryHeader="Krewella">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/th2cdyro.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+			</TileControl>
+		
+		</TileCollection>
+		<!--Getsix-->
+		<TileCollection Grid.Row="2"
+			Header="Getsix" TileMode="HorizontalDisposition">
+			<TileControl Header="Nerve" SecondaryHeader="Getsix and Miss Lina">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/nerve.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="In to the Fire" SecondaryHeader="Getsix and Miss Lina">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/in2thefire.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+		</TileCollection>
+		<StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="20">
+		<!--KDrew-->
+		<TileCollection Header="KDrew" TileMode="VerticalDisposition"
+						Height="400">
+			<TileControl Header="Summer Ashes" SecondaryHeader="KDrew">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/summerashes.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="Summer Ashes&#10;(VIP Remix)" SecondaryHeader="KDrew"
+						>
+				<Border CornerRadius="7">
+					<Border.Background>
+						<ImageBrush Source="avares://UI.Tests/Assets/summershesvip.jpg"  Stretch="UniformToFill"/>
+					</Border.Background>
+				</Border>
+			</TileControl>
+		
+			<TileControl Header="Tonight" SecondaryHeader="KDrew">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/tonight.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="Tonight&#10;(VIP Remix)" SecondaryHeader="KDrew">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/tonightvip.png"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+				
+		</TileCollection>
+		<!--Zedd-->
+		<TileCollection Header="Zedd" TileMode="VerticalDisposition"
+						Height="400">
+			<TileControl Header="Funny" SecondaryHeader="Zedd">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/funny.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="Hourglass" SecondaryHeader="Zedd">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/hourglass.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="Stay the Night" SecondaryHeader="Zedd">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/staythenight.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+		</TileCollection>				
+		</StackPanel>
+		<!--Another Favorite Songs-->
+		<TileCollection Grid.Row="4"
+			Header="Other Good Songs" TileMode="UniformDisposition">
+			<TileControl Header="Bring the Rain" SecondaryHeader="Candyland">
+				<Border CornerRadius="7">
+					<Border.Background>
+						<ImageBrush Source="avares://UI.Tests/Assets/bringtherain.jpg"  Stretch="UniformToFill"/>
+					</Border.Background>
+				</Border>
+			</TileControl>
+			<TileControl Header="Deja Vu" SecondaryHeader="DVVBS">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/dejavu.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="How you love me" SecondaryHeader="3Lau">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/howyouloveme.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="Ignite" SecondaryHeader="K-391">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/ignite.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="Levels" SecondaryHeader="Avicii">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/levels.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="More Than You Know" SecondaryHeader="Axwell λ Ingrosso">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/morethanyouknow.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="Nana" SecondaryHeader="Geoxor">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/nana.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+			<TileControl Header="No Guarantee" SecondaryHeader="Synflex">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/noguarantee.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>		
+			<TileControl Header="Virus" SecondaryHeader="Martin Garrix">
+			<Border CornerRadius="7">
+				<Border.Background>
+					<ImageBrush Source="avares://UI.Tests/Assets/virus.jpg"  Stretch="UniformToFill"/>
+				</Border.Background>
+			</Border>
+		</TileControl>
+		</TileCollection>
+	</Grid>
+</UserControl>

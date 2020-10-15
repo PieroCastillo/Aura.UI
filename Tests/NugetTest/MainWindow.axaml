@@ -1,9 +1,24 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
+﻿<ContentWindow xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="NugetTest.MainWindow"
+		Background="{x:Null}"
         Title="NugetTest">
-    Welcome to Avalonia!
-</Window>
+	<Grid>
+		<Grid Background="{DynamicResource ThemeBackgroundBrush}" Opacity="0.4"/>
+		<NavigationView AlwaysOpen="True"
+						Header="NugetTest"
+						PaneBackground="Transparent"
+						Material="{DynamicResource NullBrush}">
+			<NavigationViewItem Header="A" Title="A"/>
+			<NavigationViewItem Header="B" Title="B"/>
+		</NavigationView>
+		<Border Name="drag" 
+				VerticalAlignment="Top"
+				Background="{DynamicResource ThemeBackgroundBrush}"
+				Opacity="0"
+				Height="20"/>
+	</Grid>
+</ContentWindow>
