@@ -32,6 +32,15 @@
     </AvaloniaResource>
   </ItemGroup>
    <ItemGroup>
+     <None Remove="75000.jpg" />
+     <None Remove="Styles\CircularProgressBarStyles.xaml" />
+     <None Remove="Styles\TileCollectionStyles.xaml" />
+     <None Remove="Styles\TileControlStyles.xaml" />
+   </ItemGroup>
+   <ItemGroup>
+     <AvaloniaResource Include="75000.jpg" />
+   </ItemGroup>
+   <ItemGroup>
      <None Include="..\..\.editorconfig" Link=".editorconfig" />
      <EmbeddedResource Include="..\..\DesignSources\auraui-logov2.png">
        <Pack>True</Pack>
@@ -60,6 +69,9 @@
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\AuraTabViewStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\CircularProgressBarStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\FilledSliderStyles.xaml">
@@ -113,11 +125,14 @@
      <AvaloniaResource Update="Styles\SuperListBoxItemStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
-	   <AvaloniaResource Update="AvaloniaStyles\AvaloniaStyles.xaml">
-		   <Generator>MSBuild:Compile</Generator>
-	   </AvaloniaResource>
 	   <AvaloniaResource Update="AvaloniaStyles\ContentPresenterStyles.xaml">
 		   <Generator>MSBuild:Compile</Generator>
+	   </AvaloniaResource>
+	   <AvaloniaResource Update="Styles\TileCollectionStyles.xaml">
+	     <Generator>MSBuild:Compile</Generator>
+	   </AvaloniaResource>
+	   <AvaloniaResource Update="Styles\TileControlStyles.xaml">
+	     <Generator>MSBuild:Compile</Generator>
 	   </AvaloniaResource>
    </ItemGroup>
    <ItemGroup>
