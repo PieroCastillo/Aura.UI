@@ -1,0 +1,119 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="TileControl">
+		<Setter Property="Padding" Value="10"/>
+		<Setter Property="BoxShadow" Value="0 0 7 0 Black"/>
+		<Setter Property="InternalBoxShadow" Value="0 0 5 0 Black"/>
+		<Setter Property="InternalCornerRadius" Value="7"/>
+		<Setter Property="CornerRadius" Value="7"/>
+		<Setter Property="InternalPadding" Value="20"/>
+		<Setter Property="MaterialIsVisible" Value="False"/>
+		<Setter Property="Background" Value="{DynamicResource ThemeControlHighBrush}"/>
+		<Setter Property="SecondaryBackground" Value="{DynamicResource ThemeControlMidBrush}"/>
+
+	</Style>
+	<Style Selector="TileControl[MaterialIsVisible=False]"> 	
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid>
+					<Decorator Padding="{TemplateBinding Padding}">
+					<Border BoxShadow="{TemplateBinding BoxShadow}" 
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Background="{TemplateBinding Background}">
+						<Grid RowDefinitions="*, Auto">
+							<Grid Grid.Row="0" RowDefinitions="*">	
+								<ContentPresenter 
+											  Name="PART_ContentPresenter"
+											  Content="{TemplateBinding Content}"
+											 Padding="{TemplateBinding InternalPadding}"/>
+							</Grid>
+							<Border Grid.Row="1"
+									Background="{TemplateBinding SecondaryBackground}">
+								<Grid ColumnDefinitions="20,*,20" RowDefinitions="20,*,10,*,20">
+									<ContentPresenter Grid.Column="1"
+													  Grid.Row="1"
+													Name="PART_HeaderPresenter"
+													Content="{TemplateBinding Header}"
+													TextBlock.FontSize="18"/>
+									<ContentPresenter Grid.Column="1"
+													  Grid.Row="3"
+													Content="{TemplateBinding SecondaryHeader}"
+													TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"/>
+								</Grid>
+							</Border>
+						</Grid>
+					</Border>
+				</Decorator>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="TileControl[MaterialIsVisible=True]">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlHighBrush}"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid>	
+					<Border Padding="{TemplateBinding Padding}" >
+						<Border
+						BoxShadow="{TemplateBinding BoxShadow}" 
+						CornerRadius="{TemplateBinding CornerRadius}">
+							<Grid>
+						<ExperimentalAcrylicBorder 
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Material="{TemplateBinding Material}" HorizontalAlignment="Stretch"
+							VerticalAlignment="Stretch" >
+						<Grid RowDefinitions="*, Auto">
+							<Grid Grid.Row="0" RowDefinitions="*">	
+								<ContentPresenter 
+											  Name="PART_ContentPresenter"
+											  Content="{TemplateBinding Content}"
+											 Padding="{TemplateBinding InternalPadding}"/>
+							</Grid>
+							<ExperimentalAcrylicBorder Grid.Row="1"
+									Material="{DynamicResource ThemeAcrylicControlMidBrush}">
+								<Grid ColumnDefinitions="20,*,20" RowDefinitions="20,*,10,*,20"
+									  Background="Transparent">
+									<ContentPresenter Grid.Column="1"
+													  Grid.Row="1"
+													Name="PART_HeaderPresenter"
+													Content="{TemplateBinding Header}"
+													TextBlock.FontSize="18"/>
+									<ContentPresenter Grid.Column="1"
+													  Grid.Row="3"
+													Content="{TemplateBinding SecondaryHeader}"
+													TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"/>
+								</Grid>
+							</ExperimentalAcrylicBorder>
+						</Grid>
+					</ExperimentalAcrylicBorder>
+							</Grid>
+						</Border>
+					</Border>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="TileControl[ScaleOnPointerOver=true]:pointerover">
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+			</Transitions>
+		</Setter>
+		<Setter Property="RenderTransform" Value="scale(1.05)"/>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="0">
+			<Grid>
+				<TileControl MaterialIsVisible="True" Header="75000"
+						SecondaryHeader="Colbreakz">
+	
+					<Border Height="100" Width="100"> <!---->
+					<Border.Background>
+						<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
+					</Border.Background>
+				</Border>
+			</TileControl>
+			</Grid>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

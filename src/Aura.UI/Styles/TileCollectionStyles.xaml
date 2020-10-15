@@ -1,0 +1,88 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="TileCollection">
+		<Setter Property="Header" Value="TileCollection"/>
+		<Setter Property="Padding" Value="10"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Padding="{TemplateBinding Padding}">
+					<Grid RowDefinitions="Auto,*">
+						<ContentPresenter Name="PART_HeaderPresenter"
+											Content="{TemplateBinding Header}"
+											TextBlock.FontWeight="Bold"
+											TextBlock.FontSize="18"/>
+						<ScrollViewer Grid.Row="1"
+										HorizontalScrollBarVisibility="Auto"
+									  VerticalScrollBarVisibility="Auto">
+							<ItemsPresenter 
+										Items="{TemplateBinding Items}"
+										ItemsPanel="{TemplateBinding ItemsPanel}"/>
+						</ScrollViewer>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="TileCollection[TileMode=HorizontalDisposition]">
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<StackPanel Orientation="Horizontal"/>
+			</ItemsPanelTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="TileCollection[TileMode=VerticalDisposition]">
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<StackPanel Orientation="Vertical"/>
+			</ItemsPanelTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="TileCollection[TileMode=UniformDisposition]">
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<UniformGrid Columns="{Binding $parent[TileCollection].Columns}"
+							 Rows="{Binding $parent[TileCollection].Rows}"/>
+			</ItemsPanelTemplate>
+		</Setter>
+	</Style>
+	<Design.PreviewWith>
+		<Border Width="300" >
+			<TileCollection TileMode="HorizontalDisposition" >
+				<TileControl MaterialIsVisible="False" Header="75000"
+						SecondaryHeader="Colbreakz">
+	
+					<Border Height="100" Width="100"> <!---->
+					<Border.Background>
+						<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
+					</Border.Background>
+				</Border>
+				</TileControl>
+				<TileControl MaterialIsVisible="False" Header="75000"
+						SecondaryHeader="Colbreakz">
+	
+					<Border Height="100" Width="100"> <!---->
+					<Border.Background>
+						<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
+					</Border.Background>
+				</Border>
+				</TileControl><TileControl MaterialIsVisible="False" Header="75000"
+						SecondaryHeader="Colbreakz">
+	
+					<Border Height="100" Width="100"> <!---->
+					<Border.Background>
+						<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
+					</Border.Background>
+				</Border>
+				</TileControl><TileControl MaterialIsVisible="False" Header="75000"
+						SecondaryHeader="Colbreakz">
+	
+					<Border Height="100" Width="100"> <!---->
+						<Border.Background>
+							<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
+						</Border.Background>
+					</Border>
+				</TileControl>
+			</TileCollection>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

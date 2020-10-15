@@ -1,0 +1,53 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="CircularProgressBar">
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundLowBrush}"/>
+		<Setter Property="Radius" Value="10"/>
+		<Setter Property="Diameter" Value="50"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border>
+					<Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+						<Grid.RowDefinitions>
+							<RowDefinition Height="10"/>
+							<RowDefinition Height="*"/>
+							<RowDefinition Height="10"/>
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="10"/>
+							<ColumnDefinition Width="*"/>
+							<ColumnDefinition Width="10"/>
+						</Grid.ColumnDefinitions>
+						<Border Grid.Row="1" Grid.Column="1">
+							<Grid>
+								<Path Name="b_circle"
+								Stroke="{TemplateBinding Foreground}"
+								StrokeThickness="{TemplateBinding Radius}"
+								Height="{TemplateBinding Diameter}"
+								Width="{TemplateBinding Diameter}">
+								<Path.Data>
+									<EllipseGeometry Rect="{Binding #b_circle.Bounds}"/>
+								</Path.Data>
+								</Path>
+								<Path Stroke="{DynamicResource ThemeAccentBrush2}">
+									<Path.Data>
+										<PathGeometry>
+											<PathFigure>
+												<ArcSegment RotationAngle="0" SweepDirection="Clockwise"/>
+											</PathFigure>
+										</PathGeometry>
+									</Path.Data>
+								</Path>
+							</Grid>
+						</Border>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<CircularProgressBar/>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

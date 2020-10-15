@@ -74,8 +74,7 @@
 													TextBlock.FontSize="30"/>
 									<ContentPresenter Grid.Row="1"
 												  Name="PART_SelectedContentHost"
-													HorizontalContentAlignment="Center"
-													  VerticalContentAlignment="Center"
+													  Padding="20"
 												  Content="{TemplateBinding SelectedContent}"
 												  ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
 								</Grid>

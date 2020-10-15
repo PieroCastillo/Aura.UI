@@ -53,7 +53,7 @@
 	</Style>
 	<Style Selector="NavigationViewItem[IsHeader=False]:pointerover /template/ Border#PART_Border">
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>
-		<Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>
+		<Setter Property="Background" Value="{DynamicResource SystemAltLowColor}"/>
 	</Style>
 	<Style Selector="NavigationViewItem.Footer">
 		<Setter Property="VerticalAlignment" Value="Bottom"/>
@@ -78,7 +78,6 @@
 				<NavigationViewItem VerticalAlignment="Top" IsHeader="True" Header="Accounts" Icon="{DynamicResource Microns.Menu}"/>
 				<NavigationViewItem VerticalAlignment="Top" Header="Settings" Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 				<NavigationViewItem VerticalAlignment="Top" Header="Settings" Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
-				 
 				
 				<NavigationViewItem Classes="Footer" Header="1" Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 				<NavigationViewItem Classes="Footer" Header="2" Icon="{DynamicResource EvaIcons.Settings2Outline}"/>

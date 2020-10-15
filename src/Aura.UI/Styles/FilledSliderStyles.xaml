@@ -152,8 +152,8 @@
  		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush3}"/>
 	</Style> 
 	<Design.PreviewWith>
-		<Border Padding="20" Background="Black"> 
-			<StackPanel Background="{DynamicResource ThemeBackgroundBrush}"> 
+		<Border Padding="20" Background="Yellow"> 
+			<StackPanel Background="{DynamicResource SystemAltLowColor}"> 
 				<FilledSlider Orientation="Horizontal" Width="100" Height="20"></FilledSlider>
 				<FilledSlider Orientation="Vertical" Width="20" Height="100"></FilledSlider>  
 			</StackPanel>
