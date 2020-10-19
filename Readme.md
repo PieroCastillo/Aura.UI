@@ -14,62 +14,40 @@ Aura.UI
 
 # Overview
 
-* Controls Availables
-  *  AuraTabItem 
-  *  AuraTabView
-  *  SuperColorPicker
-  *  ColorPickerButton
-  *  PagesView
-  *  GroupBox
-  *  FilledSlider
-  *  ModernSlider
-  *  Ribbon
-  *  SuperListBoxItem
-  *  NavigationView 
-  
-* Controls in Developing
-   * GradientEditor : This control creates a GradientBrush to use in other controls.
-   * Follower : This Control follow the cursor whitin a control.
-   * ColourSlider : This slider has colors as values.
-   * ProgressRing : This is similar to progressbar, but is indefinite.
-   
-* Windows Availables
-   * ColorWindowSmall : This window shows a ColorPicker.
+| Controls Availables |  | 
+| -----------------  | --- | 
+|  AuraTabItem       | AuraTabView
+|  PagesView         | GroupBox |
+|  SuperColorPicker  | Ribbon |
+|  ColorPickerButton | SuperListBoxItem |
+| FilledSlider       |  NavigationView |
+| ModernSlider       | CardControl
+| ColorWindowSmall   | CardCollection
 
-* Windows in Developing:
-   * ChangeColorWindow : This window creates a SolidColorBrush or GradientBrush.
+<br/>
 
-* Planned Controls and Windows for future versions:
-   * TabbedWindow : An optimized window to use with AuraTabItems. 
-   * StatusBar : This bar shows an status of application, it will use a class for the status.
-   * WriteablePanel : A panel por represent and edit images easily. 
-   
-* UI Extensions
-   * TabControlExtensions:
-   ```c#
-    CloseTab(this TabControl tabControl, TabItem tabItem) //CloseTab with itself
-    CloseTab(this TabControl tabControl, int index) //CLoses Tab with index
-    AddTab(this TabControl tabControl, TabItem TabItemToAdd,bool Focus)
-    //Add a Tab 
-   ```
-   * TemplatedControlExtensions:
-   ```c#
-    GetControl<T>(this TemplatedControl templatedControl ,TemplateAppliedEventArgs e, string name) where T : AvaloniaObject
-    //Return an AvaloniaObject from Template
-   ```
-   * LogicalExtensions:
-   ```c#
-   GetParentTOfLogical<T>(this ILogical Logical) where T : class {}
-   // Return the closest logical parent
+| Planned Controls | Description |
+| ---- | ---|
+| GradientEditor | This control creates a GradientBrush to use in other controls.
+| Follower     | This Control follow the cursor whitin a control.
+| ColourSlider | This slider has colors as values.
+| ProgressRing | This is similar to progressbar, but is indefinite.
+| ChangeColorWindow | This window creates a SolidColorBrush or GradientBrush.
+| TabbedWindow | An optimized window to use with AuraTabItems. 
 
-   GetParentTOfLogical<T>(this ILogical Logical) where T : class {}
-   // Return the closest window parent
-   ```
-   * Extensions in Developing 
+<br/>
+
+| UI Extensions | OverView |
+| --- | --- |
+| TabControlExtensions |  *//CloseTab with itself* <br/> CloseTab(this **TabControl**, **TabItem**) <br/>  *//Closes Tab with index* <br/>  CloseTab(this **TabControl**, **int**) <br/>  *//Add a Tab* <br/>  AddTab(this **TabControl**, **TabItem**, **bool**) <br/> |
+| TemplatedControlExtensions | *//Return an AvaloniaObject from Template* <br/>  GetControl<T>(this **TemplatedControl**,**TemplateAppliedEventArgs**, **string**) |
+|  LogicalExtensions | *// Return the closest logical parent* <br/> GetParentTOfLogical<T>(this **ILogical**) <br/> *// Return the closest window parent* <br/>  GetParentTOfLogical<T>(this **ILogical**) <br/> |
+
+   <!-- * Extensions in Developing 
    ```xml
-     <!--RevealExtension ==> This extension for xaml create a RevealEffect for a Brush Property-->
+     <!--RevealExtension ==> This extension for xaml create a RevealEffect for a Brush Property
      <Button Background={Reveal TintColor=Gray, CursorRadius=20, Opacity=0.5}></Button>
-    ```
+    ``` -->
 
 # Install
 
@@ -94,7 +72,7 @@ Aura.UI.
 
 Open the terminal on the root folder of your project and write <br/>
 ```shell
-dotnet add package Aura.UI --version 0.1.3-preview6
+dotnet add package Aura.UI --version 0.1.3-preview7
 ```
  Do it like this:
 
@@ -110,7 +88,7 @@ Add Styles to App.xaml
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 x:Class="YourApp.App">
     <Application.Styles>
-        <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+        <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentDark.xaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
        <StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/> <!-- Add this Source --> 
        <StyleInclude Source="avares://Aura.UI/AuraAcrylicBase.xaml"/> <!--When you use a controls with IMaterial Interface , you should add this source-->
@@ -319,6 +297,12 @@ The follow code make an custom NavigationView
 
 <img src="DocumentationGifs/CustomNavigationViewGif.gif">
 
+## CardControl 
+
+ This control organize a Card within a CardCollection.
+
+ <img src="DocumentationGifs/CardControl.gif"/>
+
 # About Aura.UI
 
 This library is open source and free, in a few months come out the first stable version,for now, Aura.UI is a beta. 
@@ -334,6 +318,7 @@ This library is possible thanks to the follow projects:
 # How To Collaborate
 
 If you want to collaborate with this proyect, contact me with the next links:
-* [![Whatsapp](https://img.shields.io/badge/Whatsapp-Text%20me!-brightgreen)](https://wa.me/51902446088)
-* [![Messenger](https://img.shields.io/badge/Messenger-Text%20me!-blue)](https://www.messenger.com/t/piero.idk.2000)
+
 * [![Gitter](https://img.shields.io/badge/Gitter-Text%20me!-red)](https://gitter.im/PieroCastillo)
+
+Or make a pull request!
