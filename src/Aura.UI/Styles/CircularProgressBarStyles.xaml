@@ -1,6 +1,6 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<Style Selector="CircularProgressBar">
+	<!--<Style Selector="CircularProgressBar">
 		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundLowBrush}"/>
 		<Setter Property="Radius" Value="10"/>
 		<Setter Property="Diameter" Value="50"/>
@@ -49,5 +49,5 @@
 		<Border Padding="10">
 			<CircularProgressBar/>
 		</Border>
-	</Design.PreviewWith>
+	</Design.PreviewWith>-->
 </Styles>

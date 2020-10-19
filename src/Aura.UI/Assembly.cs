@@ -1,6 +1,7 @@
 ﻿using Avalonia.Controls.Presenters;
 using Avalonia.Metadata;
 
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Core")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Windows")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Primitives")]
@@ -10,6 +11,5 @@ using Avalonia.Metadata;
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Navigation")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia.Xaml.Interactivity")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia.Xaml.Interactions")]
-//[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Status")]
 //[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Xaml")]
-//[assembly: XmlnsDefinition("https://github.com/PieroCastillo/Aura.UI", "Aura.UI.Xaml")]
+//[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Status")]

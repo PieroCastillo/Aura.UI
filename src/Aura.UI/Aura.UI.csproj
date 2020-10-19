@@ -2,7 +2,7 @@
 <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <OutputType>Library</OutputType>
-    <Version>0.1.3-preview6</Version>
+    <Version>0.1.3-preview7</Version>
     <Authors>Piero Castillo</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Control's Library for Avalonia.</Description>
@@ -12,6 +12,7 @@
     <RepositoryUrl>https://github.com/PieroCastillo/Aura.UI</RepositoryUrl>   
     <PackageLicenseExpression>MIT</PackageLicenseExpression> 
     <LangVersion>8.0</LangVersion>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
 	
 <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -33,12 +34,14 @@
   </ItemGroup>
    <ItemGroup>
      <None Remove="75000.jpg" />
+     <None Remove="Assets\noise.png" />
+     <None Remove="Styles\CardCollectionStyles.xaml" />
+     <None Remove="Styles\CardControlStyles.xaml" />
      <None Remove="Styles\CircularProgressBarStyles.xaml" />
-     <None Remove="Styles\TileCollectionStyles.xaml" />
-     <None Remove="Styles\TileControlStyles.xaml" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Include="75000.jpg" />
+     <AvaloniaResource Include="Assets\noise.png" />
    </ItemGroup>
    <ItemGroup>
      <None Include="..\..\.editorconfig" Link=".editorconfig" />
@@ -128,10 +131,10 @@
 	   <AvaloniaResource Update="AvaloniaStyles\ContentPresenterStyles.xaml">
 		   <Generator>MSBuild:Compile</Generator>
 	   </AvaloniaResource>
-	   <AvaloniaResource Update="Styles\TileCollectionStyles.xaml">
+	   <AvaloniaResource Update="Styles\CardCollectionStyles.xaml">
 	     <Generator>MSBuild:Compile</Generator>
 	   </AvaloniaResource>
-	   <AvaloniaResource Update="Styles\TileControlStyles.xaml">
+	   <AvaloniaResource Update="Styles\CardControlStyles.xaml">
 	     <Generator>MSBuild:Compile</Generator>
 	   </AvaloniaResource>
    </ItemGroup>

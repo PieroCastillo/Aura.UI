@@ -1,10 +1,11 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:r="clr-namespace:Avalonia.ReactiveUI;assembly=Avalonia.ReactiveUI">
 	<Styles.Resources>
 		<DrawingImage x:Key="Microns.Menu">
 			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M64 96L448 96 448 144 64 144 64 96ZM64 232L448 232 448 280 64 280 64 232ZM64 368L448 368 448 416 64 416 64 368Z"   />
 		</DrawingImage>
-	
+		<PageSlide x:Key="SlideAn" Duration="0:0:0.4"/>
 	</Styles.Resources>
 	<Style Selector="NavigationView">
 		<Setter Property="ItemsPanel">
@@ -58,26 +59,32 @@
 						</Border>
 						<Border Grid.Column="1" Background="{TemplateBinding Background}">
 							<ScrollViewer VerticalScrollBarVisibility="Auto"
+										  HorizontalContentAlignment="Left"
 										  HorizontalScrollBarVisibility="Auto">
-								<Grid>
-									<Grid.RowDefinitions>
-										<RowDefinitions>
-											<RowDefinition Height="Auto"/>
-											<RowDefinition Height="*"/>
-										</RowDefinitions>
-									</Grid.RowDefinitions>
-									<ContentPresenter Grid.Row="0"
-												  Name="PART_TitlePresenter"
-												  Content="{Binding $parent[NavigationView].SelectedItem.Title}"
-												  Padding="20"
-													TextBlock.FontWeight="Light"
-													TextBlock.FontSize="30"/>
-									<ContentPresenter Grid.Row="1"
-												  Name="PART_SelectedContentHost"
-													  Padding="20"
-												  Content="{TemplateBinding SelectedContent}"
-												  ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
-								</Grid>
+								
+									<Grid>   
+										<Grid.RowDefinitions> 
+											<RowDefinitions>
+												<RowDefinition Height="Auto"/>
+												<RowDefinition Height="*"/>
+												<RowDefinition Height="Auto"/>
+												<RowDefinition Height="*"/>
+											</RowDefinitions>
+										</Grid.RowDefinitions>
+										<ContentPresenter Name="PART_TitlePresenter" 
+														  Grid.Row="0"
+														Content="{Binding $parent[NavigationView].SelectedItem.Title}"
+														Padding="20"
+														TextBlock.FontWeight="Light"
+														TextBlock.FontSize="30">				
+										</ContentPresenter>
+										<!----> 
+										<ContentPresenter Grid.Row="1" Name="PART_SelectedContentHost"
+														  Padding="20"
+													  Content="{TemplateBinding SelectedContent}"
+													  ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
+									<!---->
+									</Grid>
 							</ScrollViewer>
 						</Border>
 					</Grid>

@@ -21,7 +21,7 @@
 			</Animation>
 		</Style.Animations>
 	</Style>
-	<Design.PreviewWith>
+	<Design.PreviewWith> 
 		<Border Padding="10">
 			<Button Name="btn">
 				<ContentPresenter Classes="Container">

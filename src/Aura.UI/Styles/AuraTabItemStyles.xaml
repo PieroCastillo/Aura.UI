@@ -16,6 +16,7 @@
 			<ControlTemplate TargetType="AuraTabItem">
 				<Decorator Padding="2 2 2  0">
 					<Grid>
+						<Thumb Name="PART_Thumb"/>
 					<Border Name="PART_Container" BorderThickness="0 0 0 0" Background="{TemplateBinding Background}"
 					   BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="7,7,0,0"
 					   Padding="10 5 0 0">

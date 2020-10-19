@@ -10,6 +10,7 @@ using System.Text;
 
 namespace Aura.UI.Managers
 {
+    [Obsolete]
     public class Language : ReactiveObject, ILanguage
     {
 #pragma warning disable CS8632 // La anotación para tipos de referencia que aceptan valores NULL solo debe usarse en el código dentro de un contexto de anotaciones "#nullable".

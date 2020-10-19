@@ -7,6 +7,7 @@ using Avalonia.Themes;
 namespace Aura.UI.Managers
 {
 #nullable enable
+    [Obsolete]
     public interface ILanguage
     {
         string Name { get; set; }

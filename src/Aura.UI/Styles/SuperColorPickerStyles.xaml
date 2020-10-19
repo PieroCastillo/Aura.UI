@@ -20,7 +20,7 @@
 							<c:ColorWheel
 								 Name="PART_ColorWheel" 
 								 Height="200" Width="200"
-								 HorizontalAlignment="Center" 
+								 HorizontalAlignment="Center"
 								 VerticalAlignment="Center"  
 								Opacity="{Binding #PART_SliderAlpha.Value}"/>
 							<FilledSlider Grid.Row="1" Name="PART_SliderAlpha" Minimum="0"

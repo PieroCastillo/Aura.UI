@@ -6,6 +6,7 @@ using System.Text;
 namespace Aura.UI.Managers
 {
 #nullable enable
+    [Obsolete]
     public interface ILanguageManager
     {
         ILanguage? SelectedLanguage { get; set; }
