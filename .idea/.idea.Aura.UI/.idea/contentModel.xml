@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\piero\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\piero\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Aura.UI.-805299482.00" t="ExcludeRecursive" />
+    <e p="C:\Users\piero\Desktop\AuraDev\Aura.UI" t="IncludeFlat">
+      <e p=".editorconfig" t="Include" />
+      <e p="Aura.UI.sln" t="IncludeFlat" />
+      <e p="DesignSources\auraui-logov2.png" t="Include" />
+      <e p="external" t="Include">
+        <e p="ColorPicker\src\ColorPicker" t="IncludeRecursive">
+          <e p="Avalonia.ColorPicker.csproj" t="IncludeRecursive" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="ColorWheel.axaml" t="Include" />
+          <e p="ColorWheel.axaml.cs" t="Include" />
+          <e p="Converters" t="Include">
+            <e p="BooleanToNumericConverter.cs" t="Include" />
+            <e p="EnumToBooleanConverter.cs" t="Include" />
+            <e p="LogarithmicConverter.cs" t="Include" />
+            <e p="RGBColorToBrushConverter.cs" t="Include" />
+            <e p="RGBColorToHexConverter.cs" t="Include" />
+            <e p="StringFormatConverter.cs" t="Include" />
+          </e>
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.1" t="Include">
+                <e p="Avalonia" t="Include">
+                  <e p="Resources" t="Include" />
+                </e>
+                <e p="Avalonia.ColorPicker.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Structures" t="Include">
+            <e p="CIE1931.cs" t="Include" />
+            <e p="CIEXYZ.cs" t="Include" />
+            <e p="ColorTemperature.cs" t="Include" />
+            <e p="HSV.cs" t="Include" />
+            <e p="RGB.cs" t="Include" />
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="CircularMath.cs" t="Include" />
+          </e>
+          <e p="Wheels" t="Include">
+            <e p="ColorWheelBase.cs" t="Include" />
+            <e p="HSVWheel.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Ripple" t="IncludeRecursive">
+          <e p="Assembly.cs" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.1" t="Include">
+                <e p="Avalonia" t="Include">
+                  <e p="Resources" t="Include" />
+                </e>
+                <e p="Ripple.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Ripple.csproj" t="IncludeRecursive" />
+          <e p="RippleEffect" t="Include">
+            <e p="RippleEffect.cs" t="Include" />
+            <e p="RippleEffect.xaml" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="Solution Items" t="Include" />
+      <e p="src" t="Include">
+        <e p="Aura.UI" t="IncludeRecursive">
+          <e p="75000.jpg" t="Include" />
+          <e p="Assembly.cs" t="Include" />
+          <e p="Attributes" t="Include">
+            <e p="DonotUseAttribute.cs" t="Include" />
+            <e p="ExperimentalAttribute.cs" t="Include" />
+            <e p="InDevelopingAttribute.cs" t="Include" />
+            <e p="PrimitiveAttribute.cs" t="Include" />
+            <e p="TemplatePartAttibute.cs" t="Include" />
+          </e>
+          <e p="Aura.UI.csproj" t="IncludeRecursive" />
+          <e p="AuraAcrylicBase.xaml" t="Include" />
+          <e p="AuraUI.xaml" t="Include" />
+          <e p="AuraUI.xaml.cs" t="Include" />
+          <e p="AvaloniaStyles" t="Include">
+            <e p="AvaloniaStyles.xaml" t="Include" />
+            <e p="ContentPresenterStyles.xaml" t="Include" />
+          </e>
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Collections" t="Include">
+            <e p="INotifyCollectionContentChanged.cs" t="Include" />
+            <e p="ObservableContentCollection.cs" t="Include" />
+          </e>
+          <e p="Controls" t="Include">
+            <e p="AuraTabItem.cs" t="Include" />
+            <e p="AuraTabView.cs" t="Include" />
+            <e p="CardCollection.cs" t="Include" />
+            <e p="CardControl.cs" t="Include" />
+            <e p="CircularProgressBar.cs" t="Include" />
+            <e p="ColorPickerButton.cs" t="Include" />
+            <e p="ColorWheel.axaml" t="Include" />
+            <e p="ColorWheel.axaml.cs" t="Include" />
+            <e p="ContentWindow.cs" t="Include" />
+            <e p="Indicators" t="Include">
+              <e p="HSLIndicator.axaml" t="Include" />
+              <e p="HSLIndicator.axaml.cs" t="Include" />
+              <e p="RGBIndicator.axaml" t="Include" />
+              <e p="RGBIndicator.axaml.cs" t="Include" />
+            </e>
+            <e p="MaterialButton.cs" t="Include" />
+            <e p="ModernSlider.cs" t="Include" />
+            <e p="Navigation" t="Include">
+              <e p="NavigationView.cs" t="Include" />
+              <e p="NavigationViewItem.cs" t="Include" />
+            </e>
+            <e p="Page.cs" t="Include" />
+            <e p="PagesView.cs" t="Include" />
+            <e p="Primitives" t="Include">
+              <e p="ICustomCornerRadious.cs" t="Include" />
+              <e p="ICustomValue.cs" t="Include" />
+              <e p="IMaterial.cs" t="Include" />
+              <e p="TabViewBase.cs" t="Include" />
+            </e>
+            <e p="Ribbon" t="Include">
+              <e p="Ribbon.cs" t="Include" />
+              <e p="RibbonGroup.cs" t="Include" />
+              <e p="RibbonItem.cs" t="Include" />
+              <e p="RibbonPanel.cs" t="Include" />
+              <e p="RibbonSeparator.cs" t="Include" />
+            </e>
+            <e p="ShadowButton.cs" t="Include" />
+            <e p="SuperColorPicker.cs" t="Include" />
+            <e p="SuperListBoxItem.cs" t="Include" />
+          </e>
+          <e p="Converters" t="Include">
+            <e p="BooleanToNumericConverter.cs" t="Include" />
+            <e p="EnumToBooleanConverter.cs" t="Include" />
+            <e p="LogarithmicConverter.cs" t="Include" />
+            <e p="RGBColorToBrushConverter.cs" t="Include" />
+            <e p="RGBColorToHexConverter.cs" t="Include" />
+            <e p="StringFormatConverter.cs" t="Include" />
+          </e>
+          <e p="Events" t="Include">
+            <e p="CollectionChangingEventArgs.cs" t="Include" />
+            <e p="SliderClickedEventArgs.cs" t="Include" />
+          </e>
+          <e p="Exceptions" t="Include">
+            <e p="AuraException.cs" t="Include" />
+          </e>
+          <e p="ExpansionState.cs" t="Include" />
+          <e p="Extensions" t="Include">
+            <e p="ColorExtensions.cs" t="Include" />
+            <e p="ObjectExtensions.cs" t="Include" />
+          </e>
+          <e p="Helpers" t="Include">
+            <e p="ColorHelper.cs" t="Include" />
+            <e p="GradientCalculator.cs" t="Include" />
+          </e>
+          <e p="Languages" t="Include">
+            <e p="EnglishLanguage.xaml" t="Include" />
+            <e p="SpanishLanguage.xaml" t="Include" />
+          </e>
+          <e p="Managers" t="Include">
+            <e p="ILanguage.cs" t="Include" />
+            <e p="ILanguageManager.cs" t="Include" />
+            <e p="Language.cs" t="Include" />
+            <e p="LanguageManager.cs" t="Include" />
+            <e p="ThemeManager.cs" t="Include" />
+          </e>
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.1" t="Include">
+                <e p="Aura.UI.AssemblyInfo.cs" t="Include" />
+                <e p="Avalonia" t="Include">
+                  <e p="Resources" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Resources" t="Include">
+            <e p="TransparentBackground.png" t="Include" />
+          </e>
+          <e p="Structures" t="Include">
+            <e p="CIE1931.cs" t="Include" />
+            <e p="CIEXYZ.cs" t="Include" />
+            <e p="ColorTemperature.cs" t="Include" />
+            <e p="HSV.cs" t="Include" />
+            <e p="RGB.cs" t="Include" />
+          </e>
+          <e p="Styles" t="Include">
+            <e p="AuraTabItemStyles.xaml" t="Include" />
+            <e p="AuraTabViewStyles.xaml" t="Include" />
+            <e p="CardCollectionStyles.xaml" t="Include" />
+            <e p="CardControlStyles.xaml" t="Include" />
+            <e p="CircularProgressBarStyles.xaml" t="Include" />
+            <e p="ColorPickerButtonStyles.xaml" t="Include" />
+            <e p="FilledSliderStyles.xaml" t="Include" />
+            <e p="GroupBoxStyles.xaml" t="Include" />
+            <e p="HSLIndicatorStyles.xaml" t="Include" />
+            <e p="MaterialButtonStyles.xaml" t="Include" />
+            <e p="ModernSliderStyles.xaml" t="Include" />
+            <e p="Navigation" t="Include">
+              <e p="NavigationViewItemStyles.xaml" t="Include" />
+              <e p="NavigationViewStyles.xaml" t="Include" />
+            </e>
+            <e p="PageStyles.xaml" t="Include" />
+            <e p="PagesViewStyles.xaml" t="Include" />
+            <e p="RGBIndicatorStyles.xaml" t="Include" />
+            <e p="RibbonGroupStyles.xaml" t="Include" />
+            <e p="RibbonItemStyles.xaml" t="Include" />
+            <e p="RibbonSeparatorStyles.xaml" t="Include" />
+            <e p="RibbonStyles.xaml" t="Include" />
+            <e p="ShadowButtonStyles.xaml" t="Include" />
+            <e p="SuperColorPickerStyles.xaml" t="Include" />
+            <e p="SuperListBoxItemStyles.xaml" t="Include" />
+            <e p="TitleBoxStyles.xaml" t="Include" />
+          </e>
+          <e p="UIExtensions" t="Include">
+            <e p="LogicalExtensions.cs" t="Include" />
+            <e p="RibbonExtensions.cs" t="Include" />
+            <e p="TabControlExtensions.cs" t="Include" />
+            <e p="TemplatedControlExtensions.cs" t="Include" />
+          </e>
+          <e p="Utilities" t="Include">
+            <e p="CircularMath.cs" t="Include" />
+          </e>
+          <e p="Wheels" t="Include">
+            <e p="ColorWheelBase.cs" t="Include" />
+            <e p="HSVWheel.cs" t="Include" />
+          </e>
+          <e p="Windows" t="Include">
+            <e p="ColorWindowSmall.axaml" t="Include" />
+            <e p="ColorWindowSmall.axaml.cs" t="Include" />
+          </e>
+          <e p="Xaml" t="Include">
+            <e p="RevealExtension.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Aura.UI.Mobile" t="IncludeRecursive">
+          <e p="AlertDialogStyles.xaml" t="Include" />
+          <e p="Assembly.cs" t="Include" />
+          <e p="Aura.UI.Mobile.csproj" t="IncludeRecursive" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="ControlStyles" t="Include" />
+          <e p="Cupertino" t="Include">
+            <e p="CupertinoAlertDialog.cs" t="Include" />
+            <e p="CupertinoDialog.cs" t="Include" />
+          </e>
+          <e p="CupertinoAlertDialogStyles.xaml" t="Include" />
+          <e p="CupertinoDialogStyles.xaml" t="Include" />
+          <e p="CupertinoStyles.xaml" t="Include" />
+          <e p="Dialogs" t="Include">
+            <e p="Dialogs.cs" t="Include" />
+          </e>
+          <e p="DialogStyles.xaml" t="Include" />
+          <e p="Material" t="Include">
+            <e p="AlertDialog.cs" t="Include" />
+            <e p="Dialog.cs" t="Include" />
+          </e>
+          <e p="MaterialStyles.xaml" t="Include" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.1" t="Include">
+                <e p="Aura.UI.Mobile.AssemblyInfo.cs" t="Include" />
+                <e p="Avalonia" t="Include">
+                  <e p="Resources" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Primitives" t="Include">
+            <e p="AlertDialogBase.cs" t="Include" />
+            <e p="DialogBase.cs" t="Include" />
+            <e p="IDialog.cs" t="Include" />
+            <e p="TabBarBase.cs" t="Include" />
+          </e>
+          <e p="Themes.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Tests" t="Include">
+        <e p="NugetTest" t="IncludeRecursive">
+          <e p="App.axaml" t="Include" />
+          <e p="App.axaml.cs" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="MainWindow.axaml" t="Include" />
+          <e p="MainWindow.axaml.cs" t="Include" />
+          <e p="nuget.config" t="Include" />
+          <e p="NugetTest.csproj" t="IncludeRecursive" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netcoreapp3.1" t="Include">
+                <e p="Avalonia" t="Include">
+                  <e p="Resources" t="Include" />
+                </e>
+                <e p="NugetTest.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Program.cs" t="Include" />
+        </e>
+        <e p="UI.Tests" t="IncludeRecursive">
+          <e p="App.xaml" t="Include" />
+          <e p="App.xaml.cs" t="Include" />
+          <e p="Assets" t="Include">
+            <e p="20000.jpg" t="Include" />
+            <e p="40000.jpg" t="Include" />
+            <e p="75000.jpg" t="Include" />
+            <e p="alonetogheterRM.jpg" t="Include" />
+            <e p="bringtherain.jpg" t="Include" />
+            <e p="dejavu.jpg" t="Include" />
+            <e p="funny.jpg" t="Include" />
+            <e p="greenlights.jpg" t="Include" />
+            <e p="hourglass.jpg" t="Include" />
+            <e p="howyouloveme.jpg" t="Include" />
+            <e p="ignite.jpg" t="Include" />
+            <e p="in2thefire.jpg" t="Include" />
+            <e p="levels.jpg" t="Include" />
+            <e p="morethanyouknow.jpg" t="Include" />
+            <e p="nana.jpg" t="Include" />
+            <e p="nerve.jpg" t="Include" />
+            <e p="noguarantee.jpg" t="Include" />
+            <e p="staythenight.jpg" t="Include" />
+            <e p="summerashes.jpg" t="Include" />
+            <e p="summershesvip.jpg" t="Include" />
+            <e p="th2cdyro.jpg" t="Include" />
+            <e p="tonight.jpg" t="Include" />
+            <e p="tonightvip.png" t="Include" />
+            <e p="virus.jpg" t="Include" />
+            <e p="younme.jpg" t="Include" />
+          </e>
+          <e p="auraui-logo.png" t="Include" />
+          <e p="auraui-logov2.png" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="Language.theme" t="Include" />
+          <e p="MainWindow.xaml" t="Include" />
+          <e p="MainWindow.xaml.cs" t="Include" />
+          <e p="nuget.config" t="Include" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netcoreapp3.1" t="Include">
+                <e p="Avalonia" t="Include">
+                  <e p="Resources" t="Include" />
+                </e>
+                <e p="UI.Tests.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Program.cs" t="Include" />
+          <e p="UI.Tests.csproj" t="IncludeRecursive" />
+          <e p="Views" t="Include">
+            <e p="CustomNavigationViewWindow.axaml" t="Include" />
+            <e p="CustomNavigationViewWindow.axaml.cs" t="Include" />
+            <e p="MusicView.axaml" t="Include" />
+            <e p="MusicView.axaml.cs" t="Include" />
+            <e p="NavigationViewWindowDefault.axaml" t="Include" />
+            <e p="NavigationViewWindowDefault.axaml.cs" t="Include" />
+            <e p="PagesTest.axaml" t="Include" />
+            <e p="PagesTest.axaml.cs" t="Include" />
+          </e>
+        </e>
+        <e p="UI.Tests.Mobile" t="IncludeRecursive">
+          <e p="App.axaml" t="Include" />
+          <e p="App.axaml.cs" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="MainWindow.axaml" t="Include" />
+          <e p="MainWindow.axaml.cs" t="Include" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.1" t="Include">
+                <e p="Avalonia" t="Include">
+                  <e p="Resources" t="Include" />
+                </e>
+                <e p="UI.Tests.Mobile.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="UI.Tests.Mobile.csproj" t="IncludeRecursive" />
+        </e>
+        <e p="UI.Tests.Mobile.NetCore" t="IncludeRecursive">
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="nuget.config" t="Include" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netcoreapp3.1" t="Include">
+                <e p="Avalonia" t="Include">
+                  <e p="Resources" t="Include" />
+                </e>
+                <e p="UI.Tests.Mobile.NetCore.AssemblyInfo.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Program.cs" t="Include" />
+          <e p="UI.Tests.Mobile.NetCore.csproj" t="IncludeRecursive" />
+        </e>
+      </e>
+    </e>
+  </component>
+</project>
