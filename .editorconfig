@@ -5,3 +5,6 @@ dotnet_diagnostic.IDE1006.severity = none
 
 # CS8632: La anotación para tipos de referencia que aceptan valores NULL solo debe usarse en el código dentro de un contexto de anotaciones "#nullable".
 dotnet_diagnostic.CS8632.severity = none
+
+# CS1591: Falta el comentario XML para el tipo o miembro visible públicamente
+dotnet_diagnostic.CS1591.severity = none

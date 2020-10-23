@@ -9,12 +9,15 @@ using Avalonia.Input;
 using Microsoft.Toolkit.Extensions;
 using System;
 using UI.Tests.Views;
+using Avalonia.Controls.Primitives;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace UI.Tests
 {
     public class MainWindow : ContentWindow
     {
         TabControl tabc;
+        AuraTabView tabvw;
         Button addbtn;
         Button cbtn;
         Button open_pages;
@@ -30,6 +33,10 @@ namespace UI.Tests
             this.Icon = new WindowIcon(new Bitmap(@"auraui-logov2.png"));
 
             tabc = this.Find<TabControl>("tabview");
+
+            tabvw = this.Find<AuraTabView>("tabvw_");
+            tabvw.AddActionToAdderButton(AddTab);
+
             addbtn = this.Find<Button>("btn");
             cbtn = this.Find<Button>("cbtn");
             open_pages = this.Find<Button>("open_pages");
@@ -46,6 +53,11 @@ namespace UI.Tests
             border_bg.Background = pickerButton.Background;
 
             //EnableFeatures();
+        }
+
+        private void AddTab()
+        {
+            tabvw.AddTab(new AuraTabItem() { Header = "HeaderTest", Content = "ContentTest" }, true);
         }
 
         private void Drag_PointerPressed(object sender, PointerPressedEventArgs e)
