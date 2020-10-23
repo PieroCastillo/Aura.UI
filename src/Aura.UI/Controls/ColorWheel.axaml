@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" Height="200" Width="200"
              x:Class="ColorPicker.ColorWheel">
 	
 	<UserControl.Styles>
@@ -12,23 +12,26 @@
 					<DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
 				</Transitions>
 			</Setter>
-		</Style>
+		</Style> 
 
 		<Style Selector="Ellipse.Thumb:pointerover">
 			<Setter Property="Opacity" Value="0.7"/>
 		</Style>
 	</UserControl.Styles>
-	 
-	<Grid x:Name="grid">
-		<Ellipse x:Name="selector"
-				 Classes="Thumb"
-				 Canvas.Left="10"
-				 Stroke="#7F707070"
-				 Canvas.Top="10"
-				 StrokeThickness="3"
-				 Height="26"
-				 VerticalAlignment="Top"
-				 HorizontalAlignment="Left"
-				 Width="26" />
-	</Grid>
+
+	<Border Padding="0">
+		<Grid x:Name="grid">
+			<Ellipse x:Name="selector"
+					 Classes="Thumb"
+					 Canvas.Left="10"
+					 Stroke="{DynamicResource ThemeAccentBrush}"
+					 Canvas.Top="10"
+					 StrokeThickness="4"
+					 Fill="White"
+					 Height="26"
+					 VerticalAlignment="Top"
+					 HorizontalAlignment="Left"
+					 Width="26" />
+		</Grid>
+	</Border>
 </UserControl>

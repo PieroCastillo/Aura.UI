@@ -8,5 +8,5 @@
         x:Class="Aura.UI.Windows.ColorWindowSmall"
         Title="Select Color" SizeToContent="WidthAndHeight"
 			   CanResize="False">
-	<SuperColorPicker Name="cp_picker"></SuperColorPicker>
+	<SuperColorPicker Name="cp_picker" Orientation="Vertical"></SuperColorPicker>
 </ContentWindow>

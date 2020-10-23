@@ -12,7 +12,7 @@ using System.Diagnostics;
 using Point = Avalonia.Point;
 using HA = Avalonia.Layout.HorizontalAlignment;
 using VA = Avalonia.Layout.VerticalAlignment;
-
+using Avalonia.Controls.Primitives;
 
 namespace ColorPicker.Wheels
 {
@@ -93,12 +93,14 @@ namespace ColorPicker.Wheels
             if (border == null)
             {
                 border = new Ellipse();
-                border.Fill = new SolidColorBrush(Colors.Transparent);
-                border.Stroke = new SolidColorBrush(Colors.Gray);
+                border.Fill = Brushes.Transparent;
+                border.Stroke = this.FindResource("ThemeBorderMidBrush") as IBrush;
                 border.StrokeThickness = 3;
                 border.IsHitTestVisible = false;
-                border.Opacity = 50;
+                border.Opacity = 10;
                 this.Children.Add(border);
+                border.Height -= 3;
+                border.Width -= 3;
                 border.HorizontalAlignment = HA.Center;
                 border.VerticalAlignment = VA.Center;
             }
@@ -106,7 +108,7 @@ namespace ColorPicker.Wheels
             border.Width = Math.Min(bmp_width, bmp_height) + (border.StrokeThickness /2);
             border.Height = Math.Min(bmp_width, bmp_height) + (border.StrokeThickness /2);
 
-            var writeableBitmap = new WriteableBitmap(new PixelSize(bmp_width, bmp_height), new Vector(96, 96), PixelFormat.Bgra8888);
+            var writeableBitmap = new WriteableBitmap(new PixelSize(bmp_width, bmp_height), new Vector(96, 96), PixelFormat.Bgra8888, AlphaFormat.Unpremul);
 
             using (var lockedFrameBuffer = writeableBitmap.Lock())
             {

@@ -7,6 +7,11 @@ namespace ColorPicker.Wheels
 {
     public class HSVWheel : ColorWheelBase
     {
+        public HSVWheel()
+        {
+            
+        }
+
         private const double whiteFactor = 2.2; // Provide more accuracy around the white-point
 
         public override RGBColor ColorMapping(double radius, double theta, double value)

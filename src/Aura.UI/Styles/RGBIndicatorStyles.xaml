@@ -9,19 +9,19 @@
 				     Padding="{TemplateBinding Padding}">
 					<StackPanel Spacing="10" Orientation="Horizontal">
 						<TextBlock Foreground="{TemplateBinding Foreground}"
-								   >R :</TextBlock>
+								   >R:</TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}"
 								   Name="PART_RText"></TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}"
-								   >G :</TextBlock>
+								   >G:</TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}"
 								   Name="PART_GText"></TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}"
-								   >B :</TextBlock>
+								   >B:</TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}"
 								   Name="PART_BText"></TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}"
-								   >A :</TextBlock>
+								   >A:</TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}"
 								   Name="PART_AText"></TextBlock>
 					</StackPanel>

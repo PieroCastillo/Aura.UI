@@ -8,15 +8,14 @@
 					 BorderThickness="{TemplateBinding BorderThickness}"
 					 Padding="{TemplateBinding Padding}">
 					<StackPanel Spacing="10" Orientation="Horizontal">
-						<TextBlock Foreground="{TemplateBinding Foreground}"
-								   >H :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}">H:</TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}" 
 								   Name="PART_HText"></TextBlock>
-						<TextBlock Foreground="{TemplateBinding Foreground}">S :</TextBlock>
+						<TextBlock Foreground="{TemplateBinding Foreground}">S:</TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}" 
 								   Name="PART_SText"></TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}"
-								   >L :</TextBlock>
+								   >L:</TextBlock>
 						<TextBlock Foreground="{TemplateBinding Foreground}" 
 								   Name="PART_LText"></TextBlock>
 					</StackPanel>
@@ -24,6 +23,7 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
+	
 	<Design.PreviewWith>
 		<Border Padding="0">
 			<HSLIndicator></HSLIndicator>

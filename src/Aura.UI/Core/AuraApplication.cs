@@ -1,11 +1,12 @@
-﻿//using Aura.UI.Controls;
-//using Aura.UI.Controls.Primitives;
+﻿////using Aura.UI.Controls;
+////using Aura.UI.Controls.Primitives;
 //using Aura.UI.Managers;
 //using Avalonia;
 //using Avalonia.Controls;
 //using System;
 //using System.Collections.Generic;
 //using System.Text;
+//using System.Reflection;
 
 //namespace Aura.UI.Core
 //{
@@ -16,29 +17,23 @@
 //    /// </summary>
 //    public class AuraApplication : Application
 //    {
-//        public void SetPresenterWindow(Window @base)
-//        {
+//        /// <summary>
+//        /// You should put your App version in this property.
+//        /// </summary>
+//        public static readonly AttachedProperty<string> ApplicationVersionProperty =
+//            AvaloniaProperty.RegisterAttached<AuraApplication, AuraApplication, string>("ApplicationVersion", inherits: true);
 
-//        }
+//        public static readonly AttachedProperty<string> ApplicationTitle =
+//            AvaloniaProperty.RegisterAttached<AuraApplication, AuraApplication, string>("ApplicationTitle");
 
-//        public void SetRecentStartWindow()
-//        {
+//        //public void SetTheme(ITheme theme)
+//        //{
 
-//        }
+//        //}
 
-//        public void SetMainWindow()
-//        {
+//        //public void CreateDefaultTheme()
+//        //{
 
-//        }
-
-//        public void SetTheme(ITheme theme)
-//        {
-
-//        }
-
-//        public void CreateDefaultTheme()
-//        {
-
-//        }
+//        //}
 //    }
 //}

@@ -5,6 +5,7 @@ using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Layout;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using ColorPicker;
@@ -67,6 +68,28 @@ namespace Aura.UI.Controls
             PreviewBorder.Background = new SolidColorBrush(color_);
              
         }
+        /// <summary>
+        /// The orientation of the supercolorpicker
+        /// </summary>
+        public Orientation Orientation
+        {
+            get => GetValue(OrientationProperty);
+            set => SetValue(OrientationProperty, value);
+        }
+        public static readonly StyledProperty<Orientation> OrientationProperty =
+            AvaloniaProperty.Register<SuperColorPicker, Orientation>(nameof(Orientation), Orientation.Horizontal);
+
+        /// <summary>
+        /// Defines the CornerRadius
+        /// </summary>
+        public CornerRadius CornerRadius
+        {
+            get { return GetValue(CornerRadiusProperty); }
+            set { SetValue(CornerRadiusProperty, value); }
+        }
+        public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
+            AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius));
+
         /// <summary>
         /// Return the Selected Color of the ColorPicker
         /// </summary>

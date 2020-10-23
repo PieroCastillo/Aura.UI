@@ -149,4 +149,7 @@
        <DependentUpon>GroupBox</DependentUpon>
      </Compile>
    </ItemGroup>
+   <ItemGroup>
+     <Folder Include="Controls\Colouring\" />
+   </ItemGroup>
 </Project>

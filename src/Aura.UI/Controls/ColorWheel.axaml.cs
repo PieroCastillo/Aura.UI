@@ -17,7 +17,8 @@ namespace ColorPicker
         public static readonly StyledProperty<double> ThumbSizeProperty = AvaloniaProperty.Register<ColorWheel, double>(nameof(ThumbSize));
         public static readonly StyledProperty<double> ThetaProperty = AvaloniaProperty.Register<ColorWheel, double>(nameof(Theta));
         public static readonly StyledProperty<double> RadProperty = AvaloniaProperty.Register<ColorWheel, double>(nameof(Rad));
-        public static readonly StyledProperty<RGBColor> SelectedColorProperty = AvaloniaProperty.Register<ColorWheel, RGBColor>(nameof(SelectedColor), new RGBColor(255, 255, 255), false, Avalonia.Data.BindingMode.TwoWay);
+        public static readonly StyledProperty<RGBColor> SelectedColorProperty = 
+            AvaloniaProperty.Register<ColorWheel, RGBColor>(nameof(SelectedColor), Colors.White, true, Avalonia.Data.BindingMode.TwoWay);
 
 
         //UI Controls (defined in XAML)
@@ -79,7 +80,7 @@ namespace ColorPicker
         {
             get { return (double)GetValue(RadProperty); }
             set { SetValue(RadProperty, value); }
-        }
+        } 
 
         public RGBColor SelectedColor
         {
@@ -114,6 +115,7 @@ namespace ColorPicker
 
                 wheel.PointerPressed += Wheel_PointerPressed;
             }
+            _selector.Fill = Brushes.White;
         }
 
 
@@ -216,6 +218,10 @@ namespace ColorPicker
                 _selector.Margin = new Thickness(mx, my, 0, 0);
                 _selector.Fill = new SolidColorBrush(SelectedColor);
             }
+            else
+            {
+                _selector.Fill = new SolidColorBrush(Colors.White);
+            }
         }
 
 
@@ -246,9 +252,5 @@ namespace ColorPicker
 
             Bounds = new Rect(new Point(_x, to.Y), this.Bounds.Size);
         }
-
-
-
-
     }
 }

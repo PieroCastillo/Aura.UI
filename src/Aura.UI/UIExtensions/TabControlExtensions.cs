@@ -2,6 +2,11 @@
 using System;
 using System.Collections;
 using Aura.UI.Controls;
+using System.Collections.Generic;
+using System.Linq;
+using System.Diagnostics;
+using Avalonia.Media;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Aura.UI.UIExtensions
 {
@@ -22,7 +27,9 @@ namespace Aura.UI.UIExtensions
                 }
                 else
                 {
+                    //var n_index = NewIndex(tabControl, tabItem);
                     ((IList)tabControl.Items).Remove(tabItem); //removes the tabitem itself
+                    //tabControl.SelectedIndex = n_index;
                 }
             }
             catch (Exception e)
@@ -30,6 +37,55 @@ namespace Aura.UI.UIExtensions
                 throw new Exception("The TabItem does not exist", e);
             }
         }
+        /*
+        internal static int NewIndex(TabControl tabsHost, TabItem Item)
+        {
+            // gets the selected state of the tabitem to delete
+            var item_S = Item.IsSelected;
+            // Gets if the index of the item to delete
+            var index = (tabsHost.Items as IList).IndexOf(Item);
+            switch (item_S)
+            {
+                case true:
+                    if (index == 0)
+                    {
+                        Debug.WriteLine("The index is 0 because the last index was 0");
+                        return 0;
+                    }
+                        else if (index > 0)
+                    {
+                        Debug.WriteLine("The index decreased correctly");
+                        return index--;
+                    }
+                    return 0;
+                case false:
+                    return tabsHost.SelectedIndex;
+            }
+        }
+        internal static int NewIndex(TabControl tabsHost, int index)
+        {
+            var Item = (tabsHost.Items as IList)[index] as TabItem;
+            // gets the selected state of the tabitem to delete
+            var item_S = Item.IsSelected;
+            switch (item_S)
+            {
+                case true:
+                    //if (index == 0)
+                    //{
+                    //    Debug.WriteLine("The index is 0 because the last index was 0");
+                    //    return 0;
+                    //}
+                    //else if (index > 0)
+                    //{
+                        Debug.WriteLine("The index decreased correctly");
+                        return index--;
+                //}
+                //return 0;
+                case false:
+                    return tabsHost.SelectedIndex;
+            }
+        }
+        */
         /// <summary>
         /// Removes a TabItem with its index number.
         /// </summary>
@@ -46,6 +102,8 @@ namespace Aura.UI.UIExtensions
                 }
                 else
                 {
+                    //var item = (tabControl.Items as List<TabItem>).Select(x => x.IsSelected == true);
+                    //tabControl.SelectedIndex = NewIndex(tabControl, index);
                     ((IList)tabControl.Items).RemoveAt(index);
                 }
             }
