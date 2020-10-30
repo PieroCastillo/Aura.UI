@@ -33,14 +33,11 @@
     </AvaloniaResource>
   </ItemGroup>
    <ItemGroup>
-     <None Remove="75000.jpg" />
-     <None Remove="Assets\noise.png" />
-     <None Remove="Styles\CardCollectionStyles.xaml" />
-     <None Remove="Styles\CardControlStyles.xaml" />
-     <None Remove="Styles\CircularProgressBarStyles.xaml" />
+     <None Remove="Assets\auraui-logov2.ico" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Include="75000.jpg" />
+     <AvaloniaResource Include="Assets\auraui-logov2.ico" />
      <AvaloniaResource Include="Assets\noise.png" />
    </ItemGroup>
    <ItemGroup>
@@ -57,24 +54,21 @@
      </EmbeddedResource>
    </ItemGroup>
    <ItemGroup>
-     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview5" />
-	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview5" />
-	 <PackageReference Include="Avalonia.Xaml.Interactions" Version="0.10.0-preview5" />
+     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview6" />
+	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview6" />
+	 <PackageReference Include="Avalonia.Xaml.Interactions" Version="0.10.0-preview6" />
      <PackageReference Include="MessageBox.Avalonia" Version="0.9.6.1" />
-	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
+	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview6" />
 	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.1" />
-     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
+     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
 	   <PackageReference Include="MathNet.Numerics" Version="4.12.0" />
-	   <PackageReference Include="Avalonia" Version="0.10.0-preview5" />
+	   <PackageReference Include="Avalonia" Version="0.10.0-preview6" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Update="AuraAcrylicBase.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\AuraTabViewStyles.xaml">
-       <Generator>MSBuild:Compile</Generator>
-     </AvaloniaResource>
-     <AvaloniaResource Update="Styles\CircularProgressBarStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\FilledSliderStyles.xaml">
@@ -137,19 +131,5 @@
 	   <AvaloniaResource Update="Styles\CardControlStyles.xaml">
 	     <Generator>MSBuild:Compile</Generator>
 	   </AvaloniaResource>
-   </ItemGroup>
-   <ItemGroup>
-     <Compile Update="Controls\ColorWheel.axaml.cs">
-       <DependentUpon>%(Filename)</DependentUpon>
-     </Compile>
-     <Compile Update="Controls\FilledSlider.axaml.cs">
-       <DependentUpon>FilledSlide</DependentUpon>
-     </Compile>
-     <Compile Update="Controls\GroupBox.axaml.cs">
-       <DependentUpon>GroupBox</DependentUpon>
-     </Compile>
-   </ItemGroup>
-   <ItemGroup>
-     <Folder Include="Controls\Colouring\" />
    </ItemGroup>
 </Project>
