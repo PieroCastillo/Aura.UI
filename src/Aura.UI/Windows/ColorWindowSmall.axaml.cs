@@ -11,7 +11,7 @@ namespace Aura.UI.Windows
     /// <summary>
     /// Shows a <see cref="SuperColorPicker"/>
     /// </summary>
-    public class ColorWindowSmall : Window
+    public class ColorWindowSmall : ToolWindow
     {
         SuperColorPicker colorPicker_;
         public ColorWindowSmall()
