@@ -11,14 +11,14 @@ using System;
 
 namespace Aura.UI.Controls.Indicators
 {
-    [TemplatePart(Name = "PART_HText", Type = typeof(TextBlock))]
-    [TemplatePart(Name = "PART_SText", Type = typeof(TextBlock))]
-    [TemplatePart(Name = "PART_LText", Type = typeof(TextBlock))]
+    [TemplatePart(Name = "PART_HText", Type = typeof(TextBox))]
+    [TemplatePart(Name = "PART_SText", Type = typeof(TextBox))]
+    [TemplatePart(Name = "PART_LText", Type = typeof(TextBox))]
     public class HSLIndicator : TemplatedControl
     {
-        TextBlock H_;
-        TextBlock S_;
-        TextBlock L_;
+        TextBox H_;
+        TextBox S_;
+        TextBox L_;
         public HSLIndicator()
         {
             this.InitializeComponent();
@@ -36,9 +36,9 @@ namespace Aura.UI.Controls.Indicators
         {
             base.OnApplyTemplate(e);
 
-            this.H_ = this.GetControl<TextBlock>(e, "PART_HText");
-            this.S_ = this.GetControl<TextBlock>(e, "PART_SText");
-            this.L_ = this.GetControl<TextBlock>(e, "PART_LText");
+            this.H_ = this.GetControl<TextBox>(e, "PART_HText");
+            this.S_ = this.GetControl<TextBox>(e, "PART_SText");
+            this.L_ = this.GetControl<TextBox>(e, "PART_LText");
             this.PropertyChanged += HSLIndicator_PropertyChanged;
         }
 

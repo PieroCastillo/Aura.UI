@@ -16,7 +16,7 @@ namespace Aura.UI.Controls
     /// </summary>
     [TemplatePart(Name = "PART_Br_Left", Type = typeof(ExperimentalAcrylicBorder))]
     [TemplatePart(Name = "PART_Br_Right", Type = typeof(ExperimentalAcrylicBorder))]
-    public class ModernSlider : FilledSlider, ICustomCornerRadius
+    public partial class ModernSlider : FilledSlider, ICustomCornerRadius
     {
         ExperimentalAcrylicBorder leftborder;
         ExperimentalAcrylicBorder rightborder;
@@ -54,16 +54,5 @@ namespace Aura.UI.Controls
                 }
             }
         }
-
-        /// <summary>
-        /// Defines the CornerRadius
-        /// </summary>
-        public CornerRadius CornerRadius
-        {
-            get { return GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
-        }
-        public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
-            AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
     }
 }

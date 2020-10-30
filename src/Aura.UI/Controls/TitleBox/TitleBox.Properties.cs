@@ -1,44 +1,12 @@
 ﻿using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
-using Avalonia.Markup.Xaml;
-using Aura.UI.UIExtensions;
-using Aura.UI.Attributes;
-using Aura.UI.Controls.Primitives;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Aura.UI.Controls
 {
-    /// <summary>
-    /// It's similar to <see cref="GroupBox"/>, but has a Two button on the TopRight
-    /// </summary>
-    [TemplatePart(Name = "PART_B1", Type = typeof(Button))]
-    [TemplatePart(Name = "PART_B2", Type = typeof(Button))]
-    public class TitleBox : HeaderedContentControl, ICustomCornerRadius
+    public partial class TitleBox
     {
-        Button B1;
-        Button B2;
-
-        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
-        {
-            base.OnApplyTemplate(e);
-
-            B1 = this.GetControl<Button>(e, "PART_B1");
-            B2 = this.GetControl<Button>(e, "PART_B2");
-            B1.Click += B1_Click;
-            B2.Click += B2_Click;
-        }
-
-        protected void B2_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            this.OnClickInButton2();
-        }
-
-        protected void B1_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
-        {
-            this.OnClickInButton1();
-        }
-
-         #region Properties    
         /// <summary>
         /// Content of the primary button
         /// </summary>
@@ -60,7 +28,7 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<object> Button2ContentProperty =
             AvaloniaProperty.Register<TitleBox, object>(nameof(Button2Content), "2");
 
-       
+
         /// <summary>
         /// Defines if the primary button is visible
         /// </summary>
@@ -92,15 +60,5 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(2.5));
-        #endregion
-
-        /// <summary>
-        /// Do something when the first button is clicked
-        /// </summary>
-        public virtual void OnClickInButton1() { }
-        /// <summary>
-        /// Do something when the second button is clicked
-        /// </summary>
-        public virtual void OnClickInButton2() { }
     }
 }

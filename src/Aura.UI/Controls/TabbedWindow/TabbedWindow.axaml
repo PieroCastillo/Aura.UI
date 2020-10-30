@@ -1,0 +1,39 @@
+﻿<ContentWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		x:Class="Aura.UI.Controls.TabbedWindow" WindowState="Maximized"
+        Title="TabbedWindow" Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
+	<ContentWindow.Styles>
+		<!--<Style Selector="ContentWindow AuraTabView#tab_manager">
+			<Setter Property="ItemsMargin" Value="0"/>
+		</Style>-->
+		<Style Selector="ContentWindow[WindowState=Normal] AuraTabView#tab_manager">
+			<Setter Property="ItemsMargin" Value="0 5 0 0"/>
+		</Style>
+		<!--<Style Selector="ContentWindow[WindowState=Maximized] :is(AuraTabView)#tab_manager">
+			<Setter Property="ItemsMargin" Value="0 10 0 0"/>
+		</Style>
+		<Style Selector="ContentWindow[WindowState=FullScreen] AuraTabView#tab_manager">
+			<Setter Property="ItemsMargin" Value="0"/>
+		</Style>
+		<Style Selector="ContentWindow[WindowState=Normal] AuraTabView#tab_manager">
+			<Setter Property="ItemsMargin" Value="0"/>
+		</Style>-->
+	</ContentWindow.Styles>
+	<Grid>
+		<AuraTabView Grid.Row="1"
+					Name="tab_manager" 
+					 SecondaryBackground="{Binding $parent[TabbedWindow].SecondaryBackground}"
+					 Items="{Binding $parent[TabbedWindow].TabItems, Mode=TwoWay}">
+		</AuraTabView>
+		<Border Grid.Row="1" 
+				Name="drag_border" Background="Transparent"
+				VerticalAlignment="Top"
+				HorizontalAlignment="Right"
+				CornerRadius="0 0 0 7"
+				Width="{Binding #tab_manager.WidthRemainingSpace}" 
+				Height="{Binding #tab_manager.HeightRemainingSpace}"/>
+	</Grid>
+</ContentWindow>

@@ -9,16 +9,16 @@ using Avalonia.Media;
 
 namespace Aura.UI.Controls.Indicators
 {
-    [TemplatePart(Name = "PART_RText", Type = typeof(TextBlock))]
-    [TemplatePart(Name = "PART_GText", Type = typeof(TextBlock))]
-    [TemplatePart(Name = "PART_BText", Type = typeof(TextBlock))]
-    [TemplatePart(Name = "PART_AText", Type = typeof(TextBlock))]
+    [TemplatePart(Name = "PART_RText", Type = typeof(TextBox))]
+    [TemplatePart(Name = "PART_GText", Type = typeof(TextBox))]
+    [TemplatePart(Name = "PART_BText", Type = typeof(TextBox))]
+    [TemplatePart(Name = "PART_AText", Type = typeof(TextBox))]
     public class RGBIndicator : TemplatedControl
     {
-        TextBlock R_;
-        TextBlock G_;
-        TextBlock B_;
-        TextBlock A_; 
+        TextBox R_;
+        TextBox G_;
+        TextBox B_;
+        TextBox A_; 
         public RGBIndicator()
         {
             this.InitializeComponent();
@@ -37,10 +37,10 @@ namespace Aura.UI.Controls.Indicators
         {
             base.OnApplyTemplate(e);
 
-            this.R_ = this.GetControl<TextBlock>(e, "PART_RText");
-            this.G_ = this.GetControl<TextBlock>(e, "PART_GText");
-            this.B_ = this.GetControl<TextBlock>(e, "PART_BText");
-            this.A_ = this.GetControl<TextBlock>(e, "PART_AText");
+            this.R_ = this.GetControl<TextBox>(e, "PART_RText");
+            this.G_ = this.GetControl<TextBox>(e, "PART_GText");
+            this.B_ = this.GetControl<TextBox>(e, "PART_BText");
+            this.A_ = this.GetControl<TextBox>(e, "PART_AText");
 
             this.PropertyChanged += RGBIndicator_PropertyChanged;
         }

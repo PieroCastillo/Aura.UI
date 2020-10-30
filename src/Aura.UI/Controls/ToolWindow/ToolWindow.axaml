@@ -1,0 +1,75 @@
+﻿<CustomWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="450"
+        x:Class="Aura.UI.Controls.ToolWindow" Title="ToolWindow"
+		BorderBrush="{DynamicResource ThemeAccentBrush2}">
+	<CustomWindow.Resources>
+		<DrawingImage x:Key="Ionicons.CloseMD">
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"   />
+		</DrawingImage>
+	</CustomWindow.Resources>
+	<Grid ColumnDefinitions="auto, *,auto"
+		  RowDefinitions="auto, *, auto">
+		<Grid.Styles>
+			<Style Selector="Border.SideVertical">
+				<Setter Property="Width" Value="5"/>
+			</Style>
+			<Style Selector="Border.SideHorizontal">
+				<Setter Property="Height" Value="5"/>
+			</Style>
+			<Style Selector="Border.Corner">
+				<Setter Property="Height" Value="5"/>
+				<Setter Property="Width" Value="5"/>
+			</Style>
+			<Style Selector="Border.b">
+				<Setter Property="Background" 
+						Value="{Binding $parent[ToolWindow].BorderBrush}"/>
+			</Style>
+		</Grid.Styles>
+		<!--Sides-->
+		<Border Name="PART_LeftBorder" Grid.Column="0" Grid.Row="1" 
+				Classes="SideVertical b"/>
+		<Border Name="PART_RightBorder" Grid.Column="2" Grid.Row="1" 
+				Classes="SideVertical b"/>
+		<Grid Grid.Column="1" Grid.Row="0" RowDefinitions="5, *">
+			<Border Grid.Row="0" Name="PART_TopBorder" Classes="b"/>
+			<Border Grid.Row="1" Name="PART_DragBorder"  Classes="b" VerticalAlignment="Stretch">
+				<Grid ColumnDefinitions="*, 30">
+					<Grid.Styles>
+						<!--Close Button Styles-->
+						<Style Selector="MaterialButton#PART_CloseButton:pressed">
+							<Setter Property="RenderTransform" Value="scale(0.95)"/>
+						</Style>
+					</Grid.Styles>
+					<TextBlock Text="{Binding $parent[Window].Title}"
+						   Padding="5" TextBlock.FontWeight="DemiBold" FontFamily="Segoe UI"/>
+					<MaterialButton Grid.Column="1" Name="PART_CloseButton"
+									CornerRadius="0" Classes="close"
+									Material="{Material TintOpacity=1.5, TintColor=Red, MaterialOpacity=0.5}">
+						<!--<Button.Template>
+							<ControlTemplate>
+								<ContentPresenter Content="{TemplateBinding Content}"
+													  Padding="{TemplateBinding Padding}" 
+													  Background="{TemplateBinding Background}"/>
+							</ControlTemplate>
+						</Button.Template>-->
+						<Image Source="{DynamicResource Ionicons.CloseMD}"/>
+					</MaterialButton>
+				</Grid>
+			</Border>
+		</Grid>
+		<Border Name="PART_BottomBorder" Grid.Column="1" Grid.Row="2" Classes="SideHorizontal b"/>
+		<!--Corners-->
+		<Border Name="PART_TopLeftBorder" Grid.Column="0" Grid.Row="0" Classes="b"/>
+		<Border Name="PART_TopRightBorder" Grid.Column="0" Grid.Row="2" Classes="Corner b"/>
+		<Border Name="PART_BottomRightBorder" Grid.Column="2" Grid.Row="2" Classes="Corner b"/>
+		<Border Name="PART_BottomLeftBorder" Grid.Column="2" Grid.Row="0" Classes="b"/>
+		
+		<!--Content-->
+		<ContentPresenter Grid.Column="1"
+						  Grid.Row="1"
+			Content="{Binding $parent[ToolWindow].ContentView}"/>
+	</Grid>
+</CustomWindow>

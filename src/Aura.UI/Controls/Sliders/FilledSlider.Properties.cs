@@ -1,17 +1,12 @@
-﻿using Aura.UI.Attributes;
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
+﻿using Avalonia;
 using Avalonia.Controls.Templates;
-using Avalonia.Markup.Xaml;
-using Avalonia.Metadata;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Aura.UI.Controls
 {
-    /// <summary>
-    /// Easy to custom slider
-    /// </summary>
-    public class FilledSlider : Slider
+    public  partial class FilledSlider
     {
         /// <summary>
         /// Template for the Thumb of the <see cref="FilledSlider"/>
