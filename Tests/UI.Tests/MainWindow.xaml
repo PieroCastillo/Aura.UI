@@ -6,6 +6,7 @@
 		xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700" 
 		Background="{x:Null}"
+		Icon="avares://UI.Tests/Assets/auraui-logov2.ico"
         x:Class="UI.Tests.MainWindow" Height="700" Width="800"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
 	<ContentWindow.Resources> 
@@ -85,14 +86,20 @@
 	    <NavigationViewItem Header="PagesView" Title="PagesView">
 			<Button Name="open_pages">Open Pages</Button>
 		</NavigationViewItem>
-	    <NavigationViewItem Header="AuraTabView" Title="AuraTabView">
+	    <NavigationViewItem Header="AuraTabView" Title="AuraTabView" IsSelected="True">
 			<Border HorizontalAlignment="Center" VerticalAlignment="Center"
 					BoxShadow="0 0 5 0 Black">
 				<Grid>
 					<AuraTabView Name="tabvw_"
 						 Width="1000" Height="700"
 						ItemsMargin="0 5 0 0">
-						<AuraTabItem Header="IsClosable = True"/>
+						<AuraTabView.SecondaryBackground>
+							<SolidColorBrush Color="LightGreen" Opacity="0.5"/>
+						</AuraTabView.SecondaryBackground>
+						<AuraTabView.FallBackContent>
+							<Image Source="avares://UI.Tests/auraui-logov2.png"
+								   Height="250" Opacity="0.5"/>
+						</AuraTabView.FallBackContent>
 					</AuraTabView>
 					<Border Height="45" Background="Blue" Opacity="0.5"
 							VerticalAlignment="Top" HorizontalAlignment="Left"
@@ -263,7 +270,25 @@
 					</Grid>
 				</Border>
 			</NavigationViewItem>
+			<NavigationViewItem Header="TabbedWindow" Title="TabbedWindow">
+				<Grid>
+					<Button Height="50" Width="100" 
+							Content="Open TabbedWindow"
+							HorizontalAlignment="Center" VerticalAlignment="Center"
+							Click="OpenTabbedWindow"/>
+				</Grid>
+			</NavigationViewItem>
+			<NavigationViewItem Header="ToolWindow" Title="ToolWindow">
+				<Grid>
+					<Button Name="tool_w_btn"
+							Content="Open ToolWindow"
+							HorizontalAlignment="Center" 
+							VerticalAlignment="Center"
+							Click="OpenToolWindow"/>
+				</Grid>
+			</NavigationViewItem>
 		</NavigationView>	
+		
 		<Border Background="{DynamicResource ThemeBackgroundBrush}" Name="drag_b" VerticalAlignment="Top" Height="20" Opacity="0"/>
 	</Grid>
 </ContentWindow>

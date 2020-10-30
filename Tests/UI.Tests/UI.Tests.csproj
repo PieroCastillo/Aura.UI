@@ -23,6 +23,7 @@
     <None Remove="Assets\40000.jpg" />
     <None Remove="Assets\75000.jpg" />
     <None Remove="Assets\alonetogheterRM.jpg" />
+    <None Remove="Assets\auraui-logov2.ico" />
     <None Remove="Assets\bringtherain.jpg" />
     <None Remove="Assets\dejavu.jpg" />
     <None Remove="Assets\funny.jpg" />
@@ -50,6 +51,7 @@
     <AvaloniaResource Include="Assets\40000.jpg" />
     <AvaloniaResource Include="Assets\75000.jpg" />
     <AvaloniaResource Include="Assets\alonetogheterRM.jpg" />
+    <AvaloniaResource Include="Assets\auraui-logov2.ico" />
     <AvaloniaResource Include="Assets\bringtherain.jpg" />
     <AvaloniaResource Include="Assets\dejavu.jpg" />
     <AvaloniaResource Include="Assets\funny.jpg" />
@@ -79,8 +81,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-preview5" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
+    <PackageReference Include="Avalonia" Version="0.10.0-preview6" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />

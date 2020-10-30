@@ -11,6 +11,10 @@ using System;
 using UI.Tests.Views;
 using Avalonia.Controls.Primitives;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Avalonia.Interactivity;
+using System.IO;
+using System.Diagnostics;
+using MessageBox.Avalonia;
 
 namespace UI.Tests
 {
@@ -30,7 +34,7 @@ namespace UI.Tests
 #if DEBUG
             this.AttachDevTools();
 #endif
-            this.Icon = new WindowIcon(new Bitmap(@"auraui-logov2.png"));
+           //this.Icon = new WindowIcon(new Bitmap(@"auraui-logov2.png"));
 
             tabc = this.Find<TabControl>("tabview");
 
@@ -52,12 +56,39 @@ namespace UI.Tests
 
             border_bg.Background = pickerButton.Background;
 
+            var xdd = new AuraTabItem();
             //EnableFeatures();
+        }
+
+        public void OpenTabbedWindow(object sender, RoutedEventArgs e)
+        {
+            var win = new TabbedWindowTest();
+            win.Show();
+        }
+
+        public void OpenToolWindow(object sender, RoutedEventArgs e)
+        {
+            var win = new ToolWindowTest();
+            win.ShowDialog(this);
         }
 
         private void AddTab()
         {
-            tabvw.AddTab(new AuraTabItem() { Header = "HeaderTest", Content = "ContentTest" }, true);
+            var t__ = new TextBlock() { Text = "HeaderTest" };
+            var t = new AuraTabItem() { Header = t__ , Content = "ContentTest" };
+
+            t.Closing += (s, e) =>
+            {
+                Debug.WriteLine("The Tab has been closed");
+                //CloseMessage();
+            };
+            tabvw.AddTab(t, true);
+        }
+
+        public void CloseMessage()
+        {
+            var m = MessageBoxManager.GetMessageBoxStandardWindow("Close Event", "The tabitem has been closed correctly");
+             m.Show();
         }
 
         private void Drag_PointerPressed(object sender, PointerPressedEventArgs e)
