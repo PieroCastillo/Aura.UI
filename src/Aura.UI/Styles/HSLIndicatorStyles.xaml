@@ -1,32 +1,48 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="HSLIndicator /template/ TextBox">
+		<Setter Property="IsReadOnly" Value="true"/>
+		<Setter Property="HorizontalAlignment" Value="Stretch"/>
+		<Setter Property="TextAlignment" Value="Center"/>
+		<Setter Property="MinWidth" Value="0"/>
+		<Setter Property="MinHeight" Value="0"/>
+		<Setter Property="Padding" Value="5"/>
+	</Style>
+	<Style Selector="HSLIndicator /template/ TextBlock">
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="VerticalAlignment" Value="Center"/>
+	</Style>
+	<Style Selector="HSLIndicator /template/ TextBlock">
+		<Setter Property="VerticalAlignment" Value="Center"/>
+	</Style>
 	<Style Selector="HSLIndicator">
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="HSLIndicator">
 				<Border Background="{TemplateBinding Background}"
-					 BorderThickness="{TemplateBinding BorderThickness}"
 					 Padding="{TemplateBinding Padding}">
-					<StackPanel Spacing="10" Orientation="Horizontal">
-						<TextBlock Foreground="{TemplateBinding Foreground}">H:</TextBlock>
-						<TextBlock Foreground="{TemplateBinding Foreground}" 
-								   Name="PART_HText"></TextBlock>
-						<TextBlock Foreground="{TemplateBinding Foreground}">S:</TextBlock>
-						<TextBlock Foreground="{TemplateBinding Foreground}" 
-								   Name="PART_SText"></TextBlock>
-						<TextBlock Foreground="{TemplateBinding Foreground}"
-								   >L:</TextBlock>
-						<TextBlock Foreground="{TemplateBinding Foreground}" 
-								   Name="PART_LText"></TextBlock>
-					</StackPanel>
+					<Grid ColumnDefinitions="* * * * * *">
+						<TextBlock Grid.Column="0" Foreground="{TemplateBinding Foreground}"
+								   Text="H:"/>
+						<TextBox Grid.Column="1" Foreground="{TemplateBinding Foreground}"
+								   Name="PART_HText"/>
+						<TextBlock Grid.Column="2" Foreground="{TemplateBinding Foreground}"
+								   Text="S:"/>
+						<TextBox Grid.Column="3" Foreground="{TemplateBinding Foreground}"
+								   Name="PART_SText"/>
+						<TextBlock Grid.Column="4" Foreground="{TemplateBinding Foreground}"
+								   Text="L:"/>
+						<TextBox Grid.Column="5" Foreground="{TemplateBinding Foreground}"
+								   Name="PART_LText" />
+					</Grid>
 				</Border> 
 			</ControlTemplate>
 		</Setter>
 	</Style>
 	
 	<Design.PreviewWith>
-		<Border Padding="0">
-			<HSLIndicator></HSLIndicator>
+		<Border Padding="0" Width="400">
+			<HSLIndicator ></HSLIndicator>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

@@ -2,21 +2,13 @@
 	    xmlns:c="clr-namespace:ColorPicker;assembly=Aura.UI"	
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:ms="clr-namespace:System;assembly=netstandard">
-	<Styles.Resources>
-		<ms:Double x:Key="PreviewBorderHeight">100</ms:Double>
-		<Color x:Key="white">#FFFFFF</Color>
-	</Styles.Resources>
 	<Style Selector="SuperColorPicker">
 		<Setter Property="Background" 
 				Value="{DynamicResource ThemeControlHighBrush}"/>
 		<Setter Property="CornerRadius" Value="20"/>
-		<Setter Property="Padding" Value="10 10 10 10"/>
 		<Setter Property="Background" Value="{DynamicResource ThemeControlHighlightMidBrush}"/>
 	</Style>
 	<Style Selector="SuperColorPicker[Orientation=Horizontal]">
-		<Style.Resources>
-			<ms:Double x:Key="PreviewBorderWidth">250</ms:Double>
-		</Style.Resources>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="SuperColorPicker">
 				<Grid>
@@ -26,10 +18,11 @@
 					    Background="{TemplateBinding Background}">
 					<Grid ColumnDefinitions="auto,*"  RowDefinitions="*">
 						<Grid ColumnDefinitions="5, *, 5,auto,5"
-							  RowDefinitions="5, auto,5,auto,5"
+							  RowDefinitions="5, *,5,auto,5"
 							  HorizontalAlignment="Stretch">
 							<Grid Grid.Column="1" Grid.Row="1"
 								  HorizontalAlignment="Center"
+								  VerticalAlignment="Center"
 								RowDefinitions="5, auto, 5"
 								ColumnDefinitions="5, Auto, 5">
 								<Border Grid.Column="1" Grid.Row="1"
@@ -57,9 +50,9 @@
 								</FilledSlider.Background>
 							</FilledSlider>
 						</Grid>
-						<Grid Grid.Column="1"
+						<Grid Grid.Column="1"  
 							VerticalAlignment="Stretch"
-							HorizontalAlignment="Stretch" 
+							HorizontalAlignment="Stretch"
 							RowDefinitions="Auto,Auto,*">
 							<AuraTabView Grid.Row="0"
 										HorizontalAlignment="Stretch"
@@ -68,9 +61,12 @@
 										AdderButtonIsVisible="False">
 								<AuraTabItem Header="RGB" IsClosable="False">
 									<RGBIndicator Name="PART_RGB"></RGBIndicator>
-								</AuraTabItem>
+								</AuraTabItem> 
 								<AuraTabItem Header="Hex" IsClosable="False">
-									<TextBlock Name="PART_HEXText" Padding="10"></TextBlock>
+									<Border Padding="10" Height="50"> 
+										<TextBox Height="30" MinWidth="0" Name="PART_HEXText"
+											 VerticalAlignment="Center"/>
+									</Border>
 								</AuraTabItem>
 								<AuraTabItem Header="HSL" IsClosable="False">
 									<HSLIndicator Name="PART_HSL"></HSLIndicator>
@@ -109,95 +105,93 @@
 	<Style Selector="SuperColorPicker[Orientation=Vertical]">
 		<Setter Property="Padding" Value="0 10 0 0"/>
 		<Setter Property="Template">
-			<ControlTemplate TargetType="SuperColorPicker">
-				<Grid>
-					<Border BorderThickness="{TemplateBinding BorderThickness}"
-						Padding="{TemplateBinding Padding}"
+			<ControlTemplate>
+				<Decorator>
+					<Border Padding="{TemplateBinding Padding}"
 						CornerRadius="{TemplateBinding CornerRadius}"
 					    Background="{TemplateBinding Background}">
-					<Grid RowDefinitions="auto,*"  ColumnDefinitions="*">
-						<Grid ColumnDefinitions="5, *, 5,auto,5"
-							  RowDefinitions="5, auto,5,auto,5"
-							  HorizontalAlignment="Stretch">
-							<Grid Grid.Column="1" Grid.Row="1"
-								  HorizontalAlignment="Center"
-								RowDefinitions="5, auto, 5"
-								ColumnDefinitions="5, Auto, 5">
-								<Border Grid.Column="1" Grid.Row="1"
-									BoxShadow="0 0 5 0 Black" 
-									CornerRadius="1000">
-									<c:ColorWheel
-									 SelectedColor="{Binding SelectedColor}"
-									 Rad="0"
-									 Name="PART_ColorWheel"
-									 HorizontalAlignment="Center"
-									 VerticalAlignment="Center"
-									Opacity="{Binding #PART_SliderAlpha.Value}"/>
-								</Border>
+						<Grid RowDefinitions="auto,*">
+							<Grid ColumnDefinitions="5,*,5,auto,5"
+								  RowDefinitions="5,auto,5,auto,5">
+								<Grid Grid.Column="1" Grid.Row="1"
+									  HorizontalAlignment="Center"
+									RowDefinitions="5, *, 5"
+									ColumnDefinitions="5, *, 5">
+									<Border Grid.Column="1" Grid.Row="1"
+										BoxShadow="0 0 5 0 Black"
+										CornerRadius="1000" 
+										HorizontalAlignment="Center">
+										<c:ColorWheel
+										 SelectedColor="{Binding SelectedColor}"
+										 Name="PART_ColorWheel"
+										 HorizontalAlignment="Center"
+										 VerticalAlignment="Center"
+										Opacity="{Binding #PART_SliderAlpha.Value}"/>
+									</Border>
+								</Grid>
+								<FilledSlider Grid.Column="1" Grid.Row="3"
+										Name="PART_SliderAlpha" Minimum="0"
+										Maximum="1" Value="1" Orientation="Horizontal"/>
+								<FilledSlider Grid.Column="3" Grid.Row="1"
+										Name="PART_SliderDarkness"
+										Orientation="Vertical" Value="1"
+										Minimum="0" Maximum="1"
+										VerticalAlignment="Stretch">
+									<FilledSlider.Background>
+										<SolidColorBrush Color="{Binding #PART_ColorWheel.SelectedColor}"/>
+									</FilledSlider.Background>
+								</FilledSlider>
 							</Grid>
-							<FilledSlider Grid.Column="1" Grid.Row="3" 
-									Name="PART_SliderAlpha" Minimum="0"
-									Maximum="1" Value="1" Orientation="Horizontal"/>
-							<FilledSlider Grid.Column="3" Grid.Row="1"
-									Name="PART_SliderDarkness"
-									Orientation="Vertical" Value="1"
-									Minimum="0" Maximum="1"
-									VerticalAlignment="Stretch">
-								<FilledSlider.Background>
-									<SolidColorBrush Color="{Binding #PART_ColorWheel.SelectedColor}"/>
-								</FilledSlider.Background>
-							</FilledSlider>
-						</Grid>
-						<Grid Grid.Row="1"
-							VerticalAlignment="Stretch"
-							HorizontalAlignment="Stretch" 
-							RowDefinitions="Auto,Auto,*">
-							<AuraTabView Grid.Row="0"
-										HorizontalAlignment="Stretch"
-										HorizontalContentAlignment="Stretch"
-								        Background="Transparent"
-										AdderButtonIsVisible="False">
-								<AuraTabItem Header="RGB" IsClosable="False">
-									<RGBIndicator Name="PART_RGB"></RGBIndicator>
-								</AuraTabItem>
-								<AuraTabItem Header="Hex" IsClosable="False">
-									<TextBlock Name="PART_HEXText" Padding="10"></TextBlock>
-								</AuraTabItem>
-								<AuraTabItem Header="HSL" IsClosable="False">
-									<HSLIndicator Name="PART_HSL"></HSLIndicator>
-								</AuraTabItem>
-							</AuraTabView>
-							<TextBlock Grid.Row="1"
-							Padding="10 5"
-							Background="{DynamicResource SystemControlBackgroundAltMediumBrush}"
-							HorizontalAlignment="Stretch"
-							Text="{DynamicResource PreviewText}"/>
-							<Grid Grid.Row="2" 
-							VerticalAlignment="Stretch" 
-							Background="{DynamicResource SystemControlBackgroundAltMediumBrush}"
-							ColumnDefinitions="10,*,10"
-							RowDefinitions="10,*,10">
-								<Border CornerRadius="5" Grid.Column="1" Grid.Row="1"
-										 BorderBrush="{DynamicResource ThemeBorderLowBrush}"
-										 BorderThickness="5">
-									<Border.Background>
-										<ImageBrush Source="resm:Aura.UI.Resources.TransparentBackground.png"
-													TileMode="Tile" Opacity="0.6" Stretch="UniformToFill"/>
-									</Border.Background>
-								</Border>
-								<Border  Grid.Column="1" Grid.Row="1"
-										 Name="PART_Preview" CornerRadius="5"
-										 BorderBrush="{DynamicResource ThemeBorderLowBrush}"
-										 BorderThickness="5"/>
+							<Grid Grid.Row="1"
+								RowDefinitions="auto,auto,*">
+								<AuraTabView Grid.Row="0"
+											Background="Transparent"
+											AdderButtonIsVisible="False">
+									<AuraTabItem Header="RGB" IsClosable="False">
+										<RGBIndicator Name="PART_RGB"></RGBIndicator>
+									</AuraTabItem>
+									<AuraTabItem Header="Hex" IsClosable="False">
+										<Border Padding="10" Height="50">
+											<TextBox Height="30" Name="PART_HEXText"
+												 VerticalAlignment="Center"/>
+										</Border>
+									</AuraTabItem>
+									<AuraTabItem Header="HSL" IsClosable="False">
+										<HSLIndicator Name="PART_HSL"></HSLIndicator>
+									</AuraTabItem>
+								</AuraTabView>
+								<TextBlock Grid.Row="1"
+								Padding="10 5"
+								Background="{DynamicResource SystemControlBackgroundAltMediumBrush}"
+								Text="Preview"/>
+								<Grid Grid.Row="2"
+								Background="{DynamicResource SystemControlBackgroundAltMediumBrush}"
+								ColumnDefinitions="10,*,10"
+								RowDefinitions="10,*,10">
+									<Border Grid.Column="1" Grid.Row="1" CornerRadius="5"
+											 BorderBrush="{DynamicResource ThemeBorderLowBrush}"
+											 BorderThickness="5">
+										<Border.Background>
+											<ImageBrush Source="resm:Aura.UI.Resources.TransparentBackground.png"
+														TileMode="Tile" Opacity="0.6" Stretch="UniformToFill"/>
+										</Border.Background>
+									</Border>
+									<Border  Grid.Column="1" Grid.Row="1"
+											 Name="PART_Preview" CornerRadius="5"
+											 BorderBrush="{DynamicResource ThemeBorderLowBrush}"
+											 BorderThickness="5"/>
+								</Grid>
 							</Grid>
 						</Grid>
-					</Grid>
 					</Border>
-				</Grid>
+				</Decorator>
 			</ControlTemplate>
 		</Setter>
 	</Style>
-
+	<Style Selector="SuperColorPicker /template/ TextBox">
+		<Setter Property="IsReadOnly" Value="True"/>
+	</Style>
+	
 	<Style Selector="SuperColorPicker /template/ AuraTabItem">
 		<Setter Property="Height" Value="30"/>
 	</Style>
