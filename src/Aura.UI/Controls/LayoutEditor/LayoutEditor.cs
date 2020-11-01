@@ -4,8 +4,10 @@ using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Aura.UI.Controls.Editors
@@ -21,6 +23,23 @@ namespace Aura.UI.Controls.Editors
         Thumb TopRight;
         Thumb BottomLeft;
         Thumb BottomRight;
+        Thumb mover_;
+
+        public LayoutEditor()
+        {
+            this.DoubleTapped += (s, e) =>
+            {
+                switch (EditMode)
+                {
+                    case EditMode.Resize:
+                        EditMode = EditMode.Rotate;
+                        break;
+                    case EditMode.Rotate:
+                        EditMode = EditMode.Resize;
+                        break;
+                }
+            };
+        }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
@@ -36,6 +55,8 @@ namespace Aura.UI.Controls.Editors
             TopRight = this.GetControl<Thumb>(e, "PART_Thumb_TopRight");
             BottomLeft = this.GetControl<Thumb>(e, "PART_Thumb_BottomLeft");
             BottomRight = this.GetControl<Thumb>(e, "PART_Thumb_BottomRight");
+            mover_ = this.GetControl<Thumb>(e, "PART_move");
+
 
             // defines border controllers
             SetThumbFunction(Top, Side.Top);
@@ -47,31 +68,52 @@ namespace Aura.UI.Controls.Editors
             SetThumbFunction(TopRight, Corner.TopRight);
             SetThumbFunction(BottomLeft, Corner.BottomLeft);
             SetThumbFunction(BottomRight, Corner.BottomRight);
+
+            mover_.DragDelta += (s, e) =>
+            {
+                LayoutHelper.MoveByDrag(this, e);
+            };
         }
 
         protected void SetThumbFunction(Thumb t, Side side)
         {
+            t.DragStarted += (s, e) =>
+            {
+                this.NewSizeBySide(e, side);
+            };
             t.DragDelta += (s, e) =>
             {
                 this.NewSizeBySide(e, side);
             };
-            t.DragCompleted += (s, e) =>
-            {
-                this.NewSizeBySide(e, side);
-            };
+            //t.DragCompleted += (s, e) =>
+            //{
+            //    this.NewSizeBySide(e, side);
+            //};
         }
         protected void SetThumbFunction(Thumb t, Corner corner)
         {
+            t.DragStarted += (s, e) =>
+            {
+                this.NewSizeByCorner(e, corner);
+            };
             t.DragDelta += (s, e) =>
             {
                 this.NewSizeByCorner(e, corner);
+#if DEBUG
+                Debug.WriteLine("Dragged Corner");
+#endif
             };
-            t.DragCompleted += (s, e) =>
-            {
-                this.NewSizeByCorner(e, corner);
-            };
+//            t.DragCompleted += (s, e) =>
+//            {
+//                this.NewSizeByCorner(e, corner);
+
+//#if DEBUG
+//                Debug.WriteLine("Dragged Side");
+//#endif
+//            };
         }
 
+        
 
         public EditMode EditMode
         {

@@ -1,5 +1,43 @@
 ﻿<Styles  xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Design.PreviewWith> 
+		<Border Padding="0">
+			<!--<StackPanel Background="Gray">
+				<StackPanel.Styles>
+					<Style Selector="AuraTabItem">
+						<Setter Property="Height" Value="40"/>
+					</Style>
+				</StackPanel.Styles>
+				<AuraTabItem Header="test2">
+					<TextBlock>test2</TextBlock>
+				</AuraTabItem>
+				<AuraTabItem Header="test4" IsClosable="False">
+					<TextBlock>test2</TextBlock>
+				</AuraTabItem>
+				<AuraTabItem Header="test4" IsClosable="True">
+					<TextBlock>test2</TextBlock>
+				</AuraTabItem>
+			</StackPanel>-->
+			<Border.Styles>
+				<Style Selector="AuraTabItem">
+					<Setter Property="Height" Value="40"/>
+				</Style>
+			</Border.Styles>
+			<AuraTabView Width="400" Padding="40" TabStripPlacement="Bottom"
+						Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
+				<AuraTabItem Header="test2" IsClosable="False">
+					<TextBlock>test2</TextBlock>
+				</AuraTabItem>
+				<AuraTabItem Header="test4" IsClosable="False">
+					<TextBlock>test2</TextBlock>
+				</AuraTabItem>
+				<AuraTabItem Header="test454" IsClosable="True">
+					<TextBlock>test2</TextBlock>
+				</AuraTabItem>
+			</AuraTabView>
+		</Border>
+	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="Ionicons.CloseMD">
 			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"   />
@@ -29,7 +67,7 @@
 							<Border Name="PART_Container"
 									Background="{TemplateBinding Background}"
 									BorderBrush="{TemplateBinding BorderBrush}"
-									CornerRadius="{TemplateBinding CornerRadius}" Margin="0 -1 0 0">
+									CornerRadius="{TemplateBinding CornerRadius}" Margin="0 0 0 0">
 								<Grid RowDefinitions="*, auto">
 									<Border Padding="10 5 0 0">
 										<Grid Background="Transparent">
@@ -106,7 +144,8 @@
 										Background="{TemplateBinding Background}"
 										Padding="2 2 2 0"
 										BorderBrush="{TemplateBinding BorderBrush}"
-										CornerRadius="{TemplateBinding CornerRadius}" Margin="0 0 0 0">
+										CornerRadius="{TemplateBinding CornerRadius}"
+									Margin="2.5 2.5 -1 2.5">
 									<Grid RowDefinitions="*, auto">
 										<Border Padding="10 5 0 0">
 											<Grid Background="Transparent">
@@ -171,14 +210,15 @@
 	<Style Selector="AuraTabItem[TabStripPlacement=Right]">
 		<Setter Property="CornerRadius" Value="0,7,7,0"/>
 		<Setter Property="Template">
-			<ControlTemplate TargetType="AuraTabItem">
+			<ControlTemplate>
 				<Grid ColumnDefinitions="auto,*">
 					<Decorator Grid.Column="1" Padding="2 2 2 0">
 						<Border Name="PART_Container"
 								Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
-								CornerRadius="{TemplateBinding CornerRadius}" Margin="0 -1 0 0">
-							<Grid RowDefinitions="*">
+								CornerRadius="{TemplateBinding CornerRadius}" 
+								Margin="-2 2.5 2.5 2.5">
+							<Grid RowDefinitions="*"> 
 								<Thumb Name="PART_TabThumb" Classes="TabItemThumb"/>
 								<Border Padding="10 5 0 0">
 									<Grid Background="Transparent">
@@ -245,7 +285,7 @@
 						<Border Name="PART_Container"
 								Background="{TemplateBinding Background}"
 								BorderBrush="{TemplateBinding BorderBrush}"
-								CornerRadius="{TemplateBinding CornerRadius}" Margin="0 -1 0 0">
+								CornerRadius="{TemplateBinding CornerRadius}" Margin="2.5 -2 2.5 2.5">
 							<Grid RowDefinitions="*, auto">
 								<Thumb Name="PART_TabThumb" Classes="TabItemThumb"/>
 								<Border Padding="10 5 0 0">
@@ -363,42 +403,4 @@
 		<Setter Property="IsVisible" Value="false"/>
 	</Style>
 
-
-	<Design.PreviewWith> 
-		<Border Padding="0">
-			<!--<StackPanel Background="Gray">
-				<StackPanel.Styles>
-					<Style Selector="AuraTabItem">
-						<Setter Property="Height" Value="40"/>
-					</Style>
-				</StackPanel.Styles>
-				<AuraTabItem Header="test2">
-					<TextBlock>test2</TextBlock>
-				</AuraTabItem>
-				<AuraTabItem Header="test4" IsClosable="False">
-					<TextBlock>test2</TextBlock>
-				</AuraTabItem>
-				<AuraTabItem Header="test4" IsClosable="True">
-					<TextBlock>test2</TextBlock>
-				</AuraTabItem>
-			</StackPanel>-->
-			<Border.Styles>
-				<Style Selector="AuraTabItem">
-					<Setter Property="Height" Value="40"/>
-				</Style>
-			</Border.Styles>
-			<AuraTabView Width="400" Padding="40" TabStripPlacement="Right"
-						Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
-				<AuraTabItem Header="test2" IsClosable="False">
-					<TextBlock>test2</TextBlock>
-				</AuraTabItem>
-				<AuraTabItem Header="test4" IsClosable="False">
-					<TextBlock>test2</TextBlock>
-				</AuraTabItem>
-				<AuraTabItem Header="test454" IsClosable="True">
-					<TextBlock>test2</TextBlock>
-				</AuraTabItem>
-			</AuraTabView>
-		</Border>
-	</Design.PreviewWith>
 </Styles>

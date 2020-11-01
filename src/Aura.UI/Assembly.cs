@@ -12,4 +12,5 @@ using Avalonia.Metadata;
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia.Xaml.Interactivity")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Avalonia.Xaml.Interactions")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Xaml")]
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Editors")]
 //[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Status")]

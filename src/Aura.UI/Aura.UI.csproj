@@ -34,6 +34,7 @@
   </ItemGroup>
    <ItemGroup>
      <None Remove="Assets\auraui-logov2.ico" />
+     <None Remove="Styles\LayoutEditorStyles.xaml" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Include="75000.jpg" />
@@ -84,6 +85,9 @@
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Languages\SpanishLanguage.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\LayoutEditorStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\MaterialButtonStyles.xaml">

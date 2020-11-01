@@ -2,6 +2,20 @@
 	    xmlns:c="clr-namespace:ColorPicker;assembly=Aura.UI"	
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:ms="clr-namespace:System;assembly=netstandard">
+	<Design.PreviewWith>
+		<Grid RowDefinitions="*,*">
+			<Border Grid.Row="0" HorizontalAlignment="Center"
+					BorderBrush="{DynamicResource ThemeForegroundBrush}">
+				<SuperColorPicker Orientation="Horizontal"
+								  Width="600" Height="300"/>
+			</Border>
+			<Border Grid.Row="1"  HorizontalAlignment="Center" 
+					BorderBrush="{DynamicResource ThemeForegroundBrush}">
+				<SuperColorPicker Orientation="Vertical"
+								  Width="300" Height="600"/>
+			</Border>
+		</Grid>
+	</Design.PreviewWith>  
 	<Style Selector="SuperColorPicker">
 		<Setter Property="Background" 
 				Value="{DynamicResource ThemeControlHighBrush}"/>
@@ -274,18 +288,4 @@
 			</ControlTemplate> 
 		</Setter>
 	</Style>
-	<Design.PreviewWith>
-		<Grid RowDefinitions="*,*">
-			<Border Grid.Row="0" HorizontalAlignment="Center"
-					BorderBrush="{DynamicResource ThemeForegroundBrush}">
-				<SuperColorPicker Orientation="Horizontal"
-								  Width="600" Height="300"/>
-			</Border>
-			<Border Grid.Row="1"  HorizontalAlignment="Center" 
-					BorderBrush="{DynamicResource ThemeForegroundBrush}">
-				<SuperColorPicker Orientation="Vertical"
-								  Width="300" Height="600"/>
-			</Border>
-		</Grid>  
-	</Design.PreviewWith>  
 </Styles>
