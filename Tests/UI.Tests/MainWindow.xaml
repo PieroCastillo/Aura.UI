@@ -86,7 +86,7 @@
 	    <NavigationViewItem Header="PagesView" Title="PagesView">
 			<Button Name="open_pages">Open Pages</Button>
 		</NavigationViewItem>
-	    <NavigationViewItem Header="AuraTabView" Title="AuraTabView" IsSelected="True">
+	    <NavigationViewItem Header="AuraTabView" Title="AuraTabView">
 			<Border HorizontalAlignment="Center" VerticalAlignment="Center"
 					BoxShadow="0 0 5 0 Black">
 				<Grid>
@@ -287,8 +287,18 @@
 							Click="OpenToolWindow"/>
 				</Grid>
 			</NavigationViewItem>
+			<NavigationViewItem Header="LayoutEditor" Title="LayoutEditor" IsSelected="True">
+				<Grid Background="YellowGreen">
+					<LayoutEditor Padding="0">
+						<Border Background="Yellow">
+							<TextBlock Text="Resize Me!"/>
+						</Border>
+					</LayoutEditor>
+				</Grid>
+			</NavigationViewItem>
 		</NavigationView>	
 		
-		<Border Background="{DynamicResource ThemeBackgroundBrush}" Name="drag_b" VerticalAlignment="Top" Height="20" Opacity="0"/>
+		<Border Background="{DynamicResource ThemeBackgroundBrush}" Name="drag_b" 
+				VerticalAlignment="Top" Height="20" Opacity="0"/>
 	</Grid>
 </ContentWindow>

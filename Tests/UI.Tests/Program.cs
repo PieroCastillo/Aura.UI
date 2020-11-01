@@ -19,7 +19,9 @@ namespace UI.Tests
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseManagedSystemDialogs()
-                .LogToDebug();
+                .UseSkia()
+                .With<Win32PlatformOptions>(new Win32PlatformOptions() { UseWindowsUIComposition = true })
+                .LogToTrace();
                
     }
 }
