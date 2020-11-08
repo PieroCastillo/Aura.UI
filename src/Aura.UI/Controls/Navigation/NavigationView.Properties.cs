@@ -4,8 +4,11 @@ using Avalonia.Controls.Templates;
 using Avalonia.Media;
 using Avalonia.Styling;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia.Collections;
+using Avalonia.Interactivity;
 
 namespace Aura.UI.Controls.Navigation
 {
@@ -121,6 +124,50 @@ namespace Aura.UI.Controls.Navigation
         }
         public static readonly StyledProperty<double> OpenPaneLengthProperty =
             AvaloniaProperty.Register<NavigationView, double>(nameof(OpenPaneLength), 50);
+        // /// <summary>
+        // /// The Panel used in the footer
+        // /// </summary>
+        // public ITemplate<IPanel> FooterItemsPanel
+        // {
+        //     get => GetValue(FooterItemsPanelProperty);
+        //     set => SetValue(FooterItemsPanelProperty, value);
+        // }
+        //
+        // public static readonly StyledProperty< ITemplate<IPanel> > FooterItemsPanelProperty =
+        //     AvaloniaProperty.Register<NavigationView, ITemplate<IPanel> >(nameof(FooterItemsPanel));
+        // /// <summary>
+        // /// The Template of the Footer Item
+        // /// </summary>
+        // public ITemplate FooterItemTemplate
+        // {
+        //     get => GetValue(FooterItemTemplateProperty);
+        //     set => SetValue(FooterItemTemplateProperty, value);
+        // }
+        //
+        // public static readonly StyledProperty<ITemplate> FooterItemTemplateProperty =
+        //     AvaloniaProperty.Register<NavigationView, ITemplate>(nameof(FooterItemTemplate));
+        //
+        // private IEnumerable _footeritems = new AvaloniaList<object>();
+        // /// <summary>
+        // /// Defines the Footer Items
+        // /// </summary>
+        // public IEnumerable FooterItems
+        // {
+        //     get => _footeritems;
+        //     set
+        //     {
+        //         //var e = new RoutedEventArgs(FooterItemsChangedEvent);
+        //         //RaiseEvent(e);
+        //         SetAndRaise(FooterItemsProperty, ref _footeritems, value);
+        //         //e.Handled = true;
+        //     } 
+        // }
+        //
+        // public static readonly DirectProperty<NavigationView, IEnumerable> FooterItemsProperty =
+        //     AvaloniaProperty.RegisterDirect<NavigationView, IEnumerable>(
+        //         nameof(FooterItems),
+        //         o => o.FooterItems,
+        //         (o, v) => o.FooterItems = v);
         #endregion
     }
 }

@@ -6,6 +6,7 @@ using Avalonia.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia.Styling;
 
 namespace Aura.UI.Controls
 {
@@ -14,6 +15,9 @@ namespace Aura.UI.Controls
         object _fallbackcontent = new TextBlock { Text = "Nothing here",
                                                   HorizontalAlignment = HorizontalAlignment.Center,
                                                   VerticalAlignment = VerticalAlignment.Center, FontSize = 16};
+        /// <summary>
+        /// This content is showed when there is not item.
+        /// </summary>
         public object FallBackContent
         {
             get => _fallbackcontent;
@@ -25,6 +29,48 @@ namespace Aura.UI.Controls
              o => o.FallBackContent,
              (o, v) => o.FallBackContent = v);
 
+        /// <summary>
+        /// Defines the Header
+        /// </summary>
+        public object Header
+        {
+            get => GetValue(HeaderProperty);
+            set => SetValue(HeaderProperty, value);
+        }
+        public static readonly StyledProperty<object> HeaderProperty =
+            AvaloniaProperty.Register<AuraTabView, object>(nameof(Header));
+
+        /// <summary>
+        /// Defines the Header Template
+        /// </summary>
+        public ITemplate HeaderTemplate
+        {
+            get => GetValue(HeaderTemplateProperty);
+            set => SetValue(HeaderTemplateProperty, value);
+        }
+        public static readonly StyledProperty<ITemplate> HeaderTemplateProperty =
+            AvaloniaProperty.Register<AuraTabView, ITemplate>(nameof(HeaderTemplate));
+/// <summary>
+/// Defines the Footer
+/// </summary>
+        public object Footer
+        {
+            get => GetValue(FooterProperty);
+            set => SetValue(FooterProperty, value);
+        }
+        public static readonly StyledProperty<object> FooterProperty =
+            AvaloniaProperty.Register<AuraTabView, object>(nameof(Footer));
+/// <summary>
+/// Defines the Footer Template
+/// </summary>
+        public ITemplate FooterTemplate
+        {
+            get => GetValue(FooterTemplateProperty);
+            set => SetValue(FooterTemplateProperty, value);
+        }
+        public static readonly StyledProperty<ITemplate> FooterTemplateProperty =
+            AvaloniaProperty.Register<AuraTabView, ITemplate>(nameof(FooterTemplateProperty));
+        
         /// <summary>
         /// This property defines if the <see cref="AuraTabView.AdderButton"/> can be visible, the default value is true
         /// </summary>

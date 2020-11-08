@@ -1,0 +1,43 @@
+<Styles xmlns="https://github.com/avaloniaui">
+    <Style Selector="ResizeDecorator">
+        <!--<Setter Property="MinHeight" Value="20"></Setter>
+        <Setter Property="MinWidth" Value="20"></Setter>-->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Grid>
+                    <ResizeThumb VerticalAlignment="Top"
+                                 HorizontalAlignment="Left"
+                                 Classes="corner"></ResizeThumb>
+                    <ResizeThumb VerticalAlignment="Top"
+                                 HorizontalAlignment="Right"
+                                 Classes="corner"></ResizeThumb>
+                    <ResizeThumb VerticalAlignment="Bottom"
+                                 HorizontalAlignment="Left"
+                                 Classes="corner"></ResizeThumb>
+                    <ResizeThumb VerticalAlignment="Bottom"
+                                 HorizontalAlignment="Right"
+                                 Classes="corner"></ResizeThumb>
+                    
+                    <MoveThumb VerticalAlignment="Center"
+                               HorizontalAlignment="Center"></MoveThumb>
+                    
+                    <ResizeThumb HorizontalAlignment="Left"
+                                 Margin="0 7"></ResizeThumb>
+                    <ResizeThumb HorizontalAlignment="Right"
+                                 Margin="0 7"></ResizeThumb>
+                    <ResizeThumb VerticalAlignment="Top"
+                                 Margin="7 0"></ResizeThumb>
+                    <ResizeThumb VerticalAlignment="Bottom"
+                                 Margin="7 0"></ResizeThumb>
+                </Grid>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="ResizeDecorator /template/ ResizeThumb.corner">
+        <Setter Property="Height" Value="7"></Setter>
+        <Setter Property="Width" Value="7"></Setter>
+    </Style>
+    <Style Selector="ResizeDecorator /template/ ResizeThumb">
+        <Setter Property="DataContext" Value="{Binding $parent[ResizeDecorator].DataContext}"></Setter>
+    </Style>
+</Styles>

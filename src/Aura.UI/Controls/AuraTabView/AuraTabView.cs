@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Aura.UI.Controls.Primitives;
 
 namespace Aura.UI.Controls
 {
@@ -21,7 +22,7 @@ namespace Aura.UI.Controls
     /// </summary>
     [TemplatePart(Name = "PART_AdderButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_InternalBorder", Type = typeof(Border))]
-    public partial class AuraTabView : TabControl
+    public partial class AuraTabView : TabControl, IHeadered, IFootered
     {
         #region Fiels
         /// <summary>

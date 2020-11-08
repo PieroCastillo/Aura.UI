@@ -36,48 +36,13 @@
 					<TextBlock Text="Page3"/>
 				</NavigationViewItem>
 				
-				<!--<NavigationViewItem Icon="{DynamicResource Material.AccountCircleOutline}"
-									Header="Accounts" Title="Your Account">
-					<TextBlock Text="Page1"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource MaterialLight.Picture}"
-									Header="Images" Title="Your Images">
-					<TextBlock Text="Page2"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource Ionicons.DocumentMD}"
-									Header="Documents" Title="Documents in Desktop">
-					<TextBlock Text="Page3"/>
-				</NavigationViewItem>
-
-				<NavigationViewItem Icon="{DynamicResource Material.AccountCircleOutline}"
-									Header="Accounts" Title="Your Account">
-					<TextBlock Text="Page1"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource MaterialLight.Picture}"
-									Header="Images" Title="Your Images">
-					<TextBlock Text="Page2"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource Ionicons.DocumentMD}"
-									Header="Documents" Title="Documents in Desktop">
-					<TextBlock Text="Page3"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource Material.AccountCircleOutline}"
-									Header="Accounts" Title="Your Account">
-					<TextBlock Text="Page1"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource MaterialLight.Picture}"
-									Header="Images" Title="Your Images">
-					<TextBlock Text="Page2"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource Ionicons.DocumentMD}"
-									Header="Documents" Title="Documents in Desktop">
-					<TextBlock Text="Page3"/>
-				</NavigationViewItem>-->
-				<NavigationViewItem Icon="{DynamicResource EvaIcons.Settings2Outline}"
-									Header="Settings" Title="Settings"
-									VerticalAlignment="Bottom">
-					<TextBlock Text="Page4"/>
-				</NavigationViewItem>
+				<NavigationView.FooterItems>
+					<NavigationViewItem Icon="{DynamicResource EvaIcons.Settings2Outline}"
+					                    Header="Settings" Title="Settings"
+					                    VerticalAlignment="Bottom">
+						<TextBlock Text="Page4"/>
+					</NavigationViewItem>
+				</NavigationView.FooterItems>
 			</NavigationView>
 		</Border>
 	</Design.PreviewWith>
@@ -126,13 +91,15 @@
 														Icon="{TemplateBinding HeaderIcon}"/>
 									<ScrollViewer Grid.Row="1" Grid.Column="0"
 												VerticalScrollBarVisibility="Auto">
-										<ItemsPresenter 
-													Name="PART_ItemsPresenter"
-													VerticalAlignment="Stretch"
-													HorizontalAlignment="Stretch"
-													Items="{TemplateBinding Items}"
-													ItemsPanel="{TemplateBinding ItemsPanel}"
-													ItemTemplate="{TemplateBinding ItemTemplate}"/>
+										<DockPanel>
+											<ItemsPresenter DockPanel.Dock="Top"
+												Name="PART_ItemsPresenter"
+												VerticalAlignment="Stretch"
+												HorizontalAlignment="Stretch"
+												Items="{TemplateBinding Items}"
+												ItemsPanel="{TemplateBinding ItemsPanel}"
+												ItemTemplate="{TemplateBinding ItemTemplate}"/>
+										</DockPanel>
 									</ScrollViewer>
 								</Grid>
 							</ExperimentalAcrylicBorder>
@@ -212,6 +179,9 @@
 		<Setter Property="IsOpen" Value="True"/>
 	</Style>
 	<Style Selector="NavigationView[IsOpen=False] NavigationViewItem">
+		<Setter Property="IsOpen" Value="False"/>
+	</Style>
+	<Style Selector="NavigationView NavigationViewItem">
 		<Setter Property="IsOpen" Value="False"/>
 	</Style>
 </Styles>

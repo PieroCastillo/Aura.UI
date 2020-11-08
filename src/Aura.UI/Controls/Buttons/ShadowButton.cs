@@ -22,12 +22,12 @@ namespace Aura.UI.Controls
         /// <summary>
         /// Gets or sets the <see cref="BoxShadow"/> of the Button
         /// </summary>
-        public BoxShadow BoxShadow
+        public BoxShadows BoxShadow
         {
             get => GetValue(BoxShadowProperty);
             set => SetValue(BoxShadowProperty, value);
         }
-        public static readonly StyledProperty<BoxShadow> BoxShadowProperty =
-            AvaloniaProperty.Register<ShadowButton, BoxShadow>(nameof(BoxShadow), new BoxShadow() { Blur = 5, Color = Colors.Black });
+        public static readonly StyledProperty<BoxShadows> BoxShadowProperty =
+            AvaloniaProperty.Register<ShadowButton, BoxShadows>(nameof(BoxShadow));
     }
 }

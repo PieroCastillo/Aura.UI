@@ -1,5 +1,4 @@
 ﻿using ABI.Windows.Foundation;
-using Aura.UI.Controls.Editors;
 using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
@@ -17,41 +16,7 @@ namespace Aura.UI.Helpers
     public static class LayoutHelper
     {
         public const double MagicNumber = 1.2;
-        /*switch (side)
-            {
-                case Side.Top:
-                    var t = Canvas.GetTop(control);
-                    var t_n = t + v.Y;
-                    //if(t_n != 0)
-                        Canvas.SetTop(control, t_n);
-                    //else if(t_n <= 0)
-                    //    Canvas.SetTop(control, 0);
-                    break;
-                case Side.Bottom:
-                    var b = Canvas.GetBottom(control);
-                    var b_n = b + v.Y;
-                    //if (b_n != 0)
-                        Canvas.SetBottom(control, b_n);
-                    //else if (b_n <= 0)
-                    //    Canvas.SetBottom(control, 0);
-                    break;
-                case Side.Left:
-                    var l = Canvas.GetLeft(control);
-                    var l_n = l + v.X;
-                    //if(l_n != 0)
-                        Canvas.SetLeft(control, l_n);
-                    //else if(l_n <= 0)
-                    //    Canvas.SetLeft(control, 0);
-                    break;
-                case Side.Right:
-                    var r = Canvas.GetLeft(control);
-                    var r_n = r + v.X;
-                    //if(r_n != 0)
-                        Canvas.SetRight(control, r_n);
-                    //else if(r_n <= 0)
-                    //    Canvas.SetRight(control, 0);
-                    break;
-            }*/
+
         public static void NewSizeBySide(this Control control, VectorEventArgs e, Side side)
         {
             var old_m = control.Margin;

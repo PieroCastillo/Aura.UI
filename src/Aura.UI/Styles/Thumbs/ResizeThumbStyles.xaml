@@ -1,0 +1,14 @@
+<Styles xmlns="https://github.com/avaloniaui">
+    <Style Selector="ResizeThumb">
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="PartControl"
+                        BorderBrush="{DynamicResource ThemeForegroundBrush}"
+                        BorderThickness="2"
+                        Width="7"
+                        Height="7"
+                        Background="{DynamicResource SystemControlBackgroundAltMediumHighBrush}"></Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+</Styles>

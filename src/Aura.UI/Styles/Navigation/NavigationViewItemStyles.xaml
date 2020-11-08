@@ -9,6 +9,7 @@
 		<Setter Property="VerticalAlignment" Value="Top"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		<Setter Property="DockPanel.Dock" Value="Top"/>
+		<Setter Property="IsHitTestVisible" Value="True"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Padding="{TemplateBinding Padding}"  Name="PART_Border"
@@ -26,10 +27,11 @@
 						<Border Name="PART_ContainerBorder">
 							<ContentPresenter Name="PART_ContentPresenter"
 											Content="{TemplateBinding Header}"
-										  ContentTemplate="{TemplateBinding HeaderTemplate}"
-										  TextBlock.FontSize="14"
-											  TextBlock.FontFamily="SegoeUI"
-											VerticalAlignment="Center"/>
+											ContentTemplate="{TemplateBinding HeaderTemplate}"
+											TextBlock.FontSize="14"
+											TextBlock.FontFamily="Segoe UI"
+											VerticalAlignment="Center"
+											/>
 						</Border>
 				</StackPanel>
 				</Border>

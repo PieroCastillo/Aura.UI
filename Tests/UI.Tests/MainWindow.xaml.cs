@@ -60,12 +60,6 @@ namespace UI.Tests
             //EnableFeatures();
         }
 
-        public void OpenTabbedWindow(object sender, RoutedEventArgs e)
-        {
-            var win = new TabbedWindowTest();
-            win.Show();
-        }
-
         public void OpenToolWindow(object sender, RoutedEventArgs e)
         {
             var win = new ToolWindowTest();

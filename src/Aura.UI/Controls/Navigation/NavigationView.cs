@@ -19,7 +19,7 @@ namespace Aura.UI.Controls.Navigation
     public partial class NavigationView : TabViewBase, IHeadered, IMaterial
     {
         #region Fields
-        NavigationViewItem ToggleNav;
+        private NavigationViewItem ToggleNav;
         #endregion
 
         #region Functionalities

@@ -4,7 +4,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:ms="clr-namespace:System;assembly=netstandard"
 		xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700" 
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="900" 
 		Background="{x:Null}"
 		Icon="avares://UI.Tests/Assets/auraui-logov2.ico"
         x:Class="UI.Tests.MainWindow" Height="700" Width="800"
@@ -85,33 +85,41 @@
 		</NavigationViewItem>
 	    <NavigationViewItem Header="PagesView" Title="PagesView">
 			<Button Name="open_pages">Open Pages</Button>
-		</NavigationViewItem>
+		</NavigationViewItem> 
 	    <NavigationViewItem Header="AuraTabView" Title="AuraTabView">
-			<Border HorizontalAlignment="Center" VerticalAlignment="Center"
-					BoxShadow="0 0 5 0 Black">
-				<Grid>
-					<AuraTabView Name="tabvw_"
-						 Width="1000" Height="700"
-						ItemsMargin="0 5 0 0">
-						<AuraTabView.SecondaryBackground>
-							<SolidColorBrush Color="LightGreen" Opacity="0.5"/>
-						</AuraTabView.SecondaryBackground>
-						<AuraTabView.FallBackContent>
-							<Image Source="avares://UI.Tests/auraui-logov2.png"
-								   Height="250" Opacity="0.5"/>
-						</AuraTabView.FallBackContent>
-					</AuraTabView>
-					<Border Height="45" Background="Blue" Opacity="0.5"
-							VerticalAlignment="Top" HorizontalAlignment="Left"
-							Width="{Binding #tabvw_.LateralSpaceLeftOver}"/>
-				</Grid>
-			</Border>
+			<Grid RowDefinitions="*, auto">
+				<Border HorizontalAlignment="Center" VerticalAlignment="Center"
+				        BoxShadow="0 0 5 0 Black">
+					<Grid>
+						<AuraTabView Name="tabvw_" Header="AuraTabView"
+						             Footer="Aura.UI"
+						             Width="1000" Height="700"
+						             TabStripPlacement="{Binding #tab_st.SelectedItem.Header}"
+						             ><!-- ItemsMargin="0 5 0 0" -->
+							<AuraTabView.SecondaryBackground>
+								<SolidColorBrush Color="LightGreen" Opacity="0.5"/>
+							</AuraTabView.SecondaryBackground>
+							<AuraTabView.FallBackContent>
+								<Image Source="avares://UI.Tests/auraui-logov2.png"
+								       Height="250" Opacity="0.5"/>
+							</AuraTabView.FallBackContent>
+							<AuraTabItem Header="Header 1"></AuraTabItem>
+							<AuraTabItem Header="Header 2"></AuraTabItem>
+						</AuraTabView>
+					</Grid>
+				</Border>
+				<TabStrip Name="tab_st" Grid.Row="1" Height="40" Width="500">
+					<TabItem Header="Top" />
+					<TabItem Header="Bottom"/>
+					<TabItem Header="Left"/>
+					<TabItem Header="Right"/>
+				</TabStrip>
+			</Grid>
 		</NavigationViewItem>
 		<NavigationViewItem Header="ColorPickerButton" Title="ColorPickerButton">
 			<Grid>
 				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*"></ColumnDefinition>
-					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition><ColumnDefinition Width="*"></ColumnDefinition>
 				</Grid.ColumnDefinitions>
 				<ColorPickerButton Grid.Column="0" Name="CP_btn" Height="30" Width="30"></ColorPickerButton>
 				<Border Grid.Column="1" Name="border_bg" Height="100" Width="100" Background="{Binding #CP_btn.Background}"></Border>
@@ -270,14 +278,6 @@
 					</Grid>
 				</Border>
 			</NavigationViewItem>
-			<NavigationViewItem Header="TabbedWindow" Title="TabbedWindow">
-				<Grid>
-					<Button Height="50" Width="100" 
-							Content="Open TabbedWindow"
-							HorizontalAlignment="Center" VerticalAlignment="Center"
-							Click="OpenTabbedWindow"/>
-				</Grid>
-			</NavigationViewItem>
 			<NavigationViewItem Header="ToolWindow" Title="ToolWindow">
 				<Grid>
 					<Button Name="tool_w_btn"
@@ -287,14 +287,22 @@
 							Click="OpenToolWindow"/>
 				</Grid>
 			</NavigationViewItem>
-			<NavigationViewItem Header="LayoutEditor" Title="LayoutEditor" IsSelected="True">
-				<Grid Background="YellowGreen">
-					<LayoutEditor Padding="0">
-						<Border Background="Yellow">
-							<TextBlock Text="Resize Me!"/>
-						</Border>
-					</LayoutEditor>
-				</Grid>
+			<NavigationViewItem Header="ShadowButton" Title="ShadowButton" >
+				<StackPanel Spacing="30">
+					<ShadowButton>This is a ShadowButton</ShadowButton>
+				</StackPanel>
+			</NavigationViewItem>
+			<NavigationViewItem Header="Resize Decorator" Title="Resizing" IsSelected="True">
+				<Canvas Background="{DynamicResource ThemeAccentBrush4}">
+					<Button Name="btn_to" Content="Resize me!" Height="50"
+					        Width="100" Canvas.Top="10" Canvas.Left="20">
+					</Button>
+					<ResizeDecorator DataContext="{Binding #btn_to}"
+									Width="{Binding #btn_to.Bounds.Width}" 
+					                Height="{Binding #btn_to.Bounds.Height}"
+									Canvas.Top="{Binding #btn_to.Bounds.Top}"
+									Canvas.Left="{Binding #btn_to.Bounds.Left}"></ResizeDecorator>
+				</Canvas>
 			</NavigationViewItem>
 		</NavigationView>	
 		

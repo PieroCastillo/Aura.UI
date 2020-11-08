@@ -14,7 +14,7 @@ namespace Aura.UI.Controls
         /// <param name="e"></param>
         protected virtual void OnClosing(object sender, RoutedEventArgs e)
         {
-
+            IsClosing = true;
         }
 
         public event EventHandler<RoutedEventArgs> Closing

@@ -1,5 +1,39 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:drag="https://github.com/adam-currie"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		mc:Ignorable="d"
+		d:DesignHeight="100" d:DesignWidth="400 ">
+	<Design.PreviewWith> 
+		<Border Height="300" Width="400">
+			<Border.Styles>
+				<Style Selector="AuraTabItem">
+				</Style>
+			</Border.Styles>
+			<Grid>
+				<Border VerticalAlignment="Top"
+						Height="30" Background="Blue"
+						HorizontalAlignment="Right"/>
+				<AuraTabView Name="vw" 
+							 Margin="0,0,0,0" TabStripPlacement="Right"
+							 SelectedIndex="0" Width="400" Height="600"
+							 SecondaryBackground="{DynamicResource ThemeAccentBrush4}"> 
+				<AuraTabItem Header="Settings" IsClosable="False">
+					<Border Background="Yellow" Width="30" 
+							HorizontalAlignment="Right"/>
+				</AuraTabItem> 
+				<AuraTabItem Header="Another Tab" Name="tab">._.XD</AuraTabItem>
+
+				<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
+				<!--AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
+				<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
+				<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>-->
+			</AuraTabView> 
+
+			</Grid>
+		</Border>
+	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="FluentIconsFilled.add_filled">
 			<DrawingGroup>
@@ -18,10 +52,12 @@
 	<Style Selector="AuraTabView:empty /template/ ContentPresenter#PART_FallBackContent">
 		<Setter Property="IsVisible" Value="True"/>
 	</Style>
+	
 	<Style Selector="AuraTabView[TabStripPlacement=Top]">
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
-				<UniformGrid Rows="1" ></UniformGrid>
+				<UniformGrid Rows="1"/>
+				<!-- <UniformGrid Rows="1" ></UniformGrid> -->
 			</ItemsPanelTemplate>
 		</Setter>
 		<Setter Property="ItemsMargin" Value="0 5 0 0"/>
@@ -39,58 +75,77 @@
 							 <RowDefinition Height="*"></RowDefinition>
 						 </Grid.RowDefinitions>	
 					<!--Item Presenter-->
-						<DockPanel Grid.Row="0" Background="{TemplateBinding SecondaryBackground}"
-								   Name="PART_DockContainer"
-						   Width="{TemplateBinding Width}">
-						<!--Items and Adder Button-->
-						<Grid Margin="{TemplateBinding ItemsMargin}">
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="auto"/>
-							</Grid.ColumnDefinitions>
-							<ItemsPresenter Grid.Column="0"
-							  Name="PART_ItemsPresenter"
-							 Items="{TemplateBinding Items}"
-							 ItemsPanel="{TemplateBinding ItemsPanel}"
-							 ItemTemplate="{TemplateBinding ItemTemplate}"
-							 HorizontalAlignment="Left"
-							  MaxWidth="{TemplateBinding MaxWidthOfItemsPresenter}">
-								<ItemsPresenter.Transitions>
-									<Transitions>
-										<DoubleTransition Property="Width" Duration="0:0:0.3"
-													  Easing="CubicEaseIn"/>
-									</Transitions>
-								</ItemsPresenter.Transitions>
-							</ItemsPresenter>
-							<Button Grid.Column="1"
-								Name="PART_AdderButton" Padding="9" Background="Transparent"
-								IsVisible="{TemplateBinding AdderButtonIsVisible}" Width="35">
-								<Image Source="{DynamicResource FluentIconsFilled.add_filled}"/>
+						<Grid>
+							<DockPanel Grid.Row="0" Background="{TemplateBinding SecondaryBackground}"
+							           Name="PART_DockContainer"
+							           Width="{TemplateBinding Width}">
+								<!--Header-->
+								<ContentPresenter Content="{TemplateBinding Header}"
+								                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+								                  TextBlock.FontSize="15"
+								                  TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
+								                  VerticalContentAlignment="Center"
+								                  Margin="5, 0"
+								                  DockPanel.Dock="Left"></ContentPresenter>
+								<!--Items and Adder Button-->
+								<Grid Margin="{TemplateBinding ItemsMargin}">
+									<Grid.ColumnDefinitions>
+										<ColumnDefinition Width="*"/>
+										<ColumnDefinition Width="auto"/>
+									</Grid.ColumnDefinitions>
+										<ItemsPresenter Grid.Column="0"
+										                Name="PART_ItemsPresenter"
+										                Items="{TemplateBinding Items}"
+										                ItemsPanel="{TemplateBinding ItemsPanel}"
+										                ItemTemplate="{TemplateBinding ItemTemplate}"
+										                HorizontalAlignment="Left"
+										                MaxWidth="{TemplateBinding MaxWidthOfItemsPresenter}">
+											<ItemsPresenter.Transitions>
+												<Transitions>
+													<DoubleTransition Property="Width" Duration="0:0:0.3"
+													                  Easing="CubicEaseIn"/>
+												</Transitions>
+											</ItemsPresenter.Transitions>
+										</ItemsPresenter>
+									<Button Grid.Column="1"
+										Name="PART_AdderButton" Padding="9" Background="Transparent"
+										IsVisible="{TemplateBinding AdderButtonIsVisible}" Width="35">
+											<Image Source="{DynamicResource FluentIconsFilled.add_filled}"/>
 								<!--<Path Fill="{TemplateBinding Foreground}"
 				 					Stretch="None">
 									<Path.Data>M 13.660715 6.1607142 H 9.1071429 c -0.1479234 0 -0.2678566 -0.119934 -0.2678566 -0.2678568 V 1.3392857 C 8.8392863 0.59967039 8.2396155 0 7.5000005 0 6.760385 0 6.1607142 0.59967039 6.1607142 1.3392857 v 4.5535717 c 0 0.1479228 -0.119934 0.2678568 -0.2678568 0.2678568 H 1.3392857 C 0.59967039 6.1607142 0 6.760385 0 7.5000005 0 8.2396155 0.59967039 8.8392863 1.3392857 8.8392863 h 4.5535717 c 0.1479228 0 0.2678568 0.1199332 0.2678568 0.2678566 v 4.5535721 c 0 0.739615 0.5996708 1.339286 1.3392863 1.339286 0.739615 0 1.3392858 -0.599671 1.3392858 -1.339286 V 9.1071429 c 0 -0.1479234 0.1199332 -0.2678566 0.2678566 -0.2678566 h 4.5535721 c 0.739615 0 1.339286 -0.5996708 1.339286 -1.3392858 0 -0.7396155 -0.599671 -1.3392863 -1.339286 -1.3392863 z m 0 0</Path.Data>
 								</Path>-->
-						</Button>
+									</Button>
+								</Grid>
+								<!--secondary background-->
+								<Grid Name="PART_InternalGrid">
+									<Grid.Transitions>
+										<Transitions>
+											<DoubleTransition Property="Width" Duration="0:0:0.3"
+															  Easing="CubicEaseIn"/>
+										</Transitions>
+									</Grid.Transitions>
+									<Border Name="PART_InternalBorder"
+										Background="Transparent">
+										<Border.Transitions>
+											<Transitions>
+												<DoubleTransition Property="Width" Duration="0:0:0.3"
+															  Easing="CubicEaseIn"/>
+											</Transitions>
+										</Border.Transitions>
+									</Border>	
 						</Grid>
-						<!--secondary background-->
-						<Grid Name="PART_InternalGrid">
-							<Grid.Transitions>
-								<Transitions>
-									<DoubleTransition Property="Width" Duration="0:0:0.3"
-													  Easing="CubicEaseIn"/>
-								</Transitions>
-							</Grid.Transitions>
-							<Border Name="PART_InternalBorder"
-								Background="Transparent">
-								<Border.Transitions>
-									<Transitions>
-										<DoubleTransition Property="Width" Duration="0:0:0.3"
-													  Easing="CubicEaseIn"/>
-									</Transitions>
-								</Border.Transitions>
-							</Border>	
+								<!--Footer-->
+								<ContentPresenter Content="{TemplateBinding Footer}"
+								                  ContentTemplate="{TemplateBinding FooterTemplate}"
+								                  TextBlock.FontSize="15"
+								                  TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
+								                  VerticalContentAlignment="Center"
+								                  Margin="5,0"
+								                  DockPanel.Dock="Right" HorizontalAlignment="Right"></ContentPresenter>
+							</DockPanel>
+							<Border Name="PART_BoxShadow" Background="Transparent" Height="5" BoxShadow="inset 0 -5 3 -5 Black" VerticalAlignment="Bottom"/>
 						</Grid>
-					</DockPanel>
 
 					<!--Content Host-->					  
 					 <Border Grid.Row="1" BoxShadow="0 0 0 0 Black"
@@ -120,7 +175,7 @@
 				<UniformGrid Rows="1"></UniformGrid>
 			</ItemsPanelTemplate>
 		</Setter>
-		<Setter Property="ItemsMargin" Value="0,0,0,5"/>
+		<Setter Property="ItemsMargin" Value="0,0,0,0"/>
 		<Setter Property="Template">  
 		   <ControlTemplate TargetType="AuraTabView"> 
 				  <Border BorderBrush="{TemplateBinding BorderBrush}"
@@ -134,12 +189,20 @@
 								 <RowDefinition Height="auto"></RowDefinition>
 							 </Grid.RowDefinitions>	
 					<!--Item Presenter-->
-						<DockPanel Grid.Row="1"
-								   Name="PART_DockContainer"
+						<Grid Grid.Row="1">
+							<DockPanel Name="PART_DockContainer"
 								   Background="{TemplateBinding SecondaryBackground}"
 						   Width="{TemplateBinding Width}">
-						<!--Items and Adder Button-->
-						<Grid Margin="{TemplateBinding ItemsMargin}">
+								<!--Header-->
+								<ContentPresenter Content="{TemplateBinding Header}"
+								                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+								                  TextBlock.FontSize="15"
+								                  TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
+								                  VerticalContentAlignment="Center"
+								                  Margin="5, 0"
+								                  DockPanel.Dock="Left"></ContentPresenter>
+								<!--Items and Adder Button-->
+								<Grid Margin="{TemplateBinding ItemsMargin}">
 							<Grid.ColumnDefinitions>
 								<ColumnDefinition Width="*"/>
 								<ColumnDefinition Width="auto"/>
@@ -168,8 +231,8 @@
 								</Path>-->
 						</Button>
 						</Grid>
-						<!--secondary background-->
-						<Grid  Name="PART_InternalGrid">
+								<!--secondary background-->
+								<Grid  Name="PART_InternalGrid">
 							<Grid.Transitions>
 								<Transitions>
 									<DoubleTransition Property="Width" Duration="0:0:0.3"
@@ -186,9 +249,23 @@
 								</Border.Transitions>
 							</Border>	
 						</Grid>
-					</DockPanel>
+								
+								<!--Footer-->
+								<ContentPresenter Content="{TemplateBinding Footer}"
+								                  ContentTemplate="{TemplateBinding FooterTemplate}"
+								                  TextBlock.FontSize="15"
+								                  TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
+								                  VerticalContentAlignment="Center"
+								                  Margin="5,0"
+								                  DockPanel.Dock="Right" HorizontalAlignment="Right"></ContentPresenter>
+							</DockPanel>
+							<Border Name="PART_BoxShadow"
+									Background="Transparent" Height="5" 
+							        VerticalAlignment="Top"
+							        BoxShadow="inset 0 5 3 -5 Black"></Border>
+						</Grid>
 
-					<!--Content Host-->					  
+							<!--Content Host-->					  
 						<Border Grid.Row="0"
 							 BorderBrush="Transparent">
 						  <Grid 
@@ -228,11 +305,20 @@
 					  VerticalAlignment="{TemplateBinding VerticalAlignment}">
 					<Grid ColumnDefinitions="auto,*">
 						<!--Item Presenter-->
-						<DockPanel Grid.Column="0"
+						<Grid>
+							<DockPanel Grid.Column="0"
 								   Background="{TemplateBinding SecondaryBackground}"
 								   Name="PART_DockContainer"
 						   Height="{TemplateBinding Height}">
-							<!--Items and Adder Button-->
+								<!--Header-->
+								<ContentPresenter Content="{TemplateBinding Header}"
+								                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+								                  TextBlock.FontSize="15"
+								                  TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
+								                  VerticalContentAlignment="Center"
+								                  Margin="5, 5"
+								                  DockPanel.Dock="Top"></ContentPresenter>
+								<!--Items and Adder Button-->
 							<Grid Margin="{TemplateBinding ItemsMargin}"
 								  DockPanel.Dock="Top" 
 								  RowDefinitions="*,auto">
@@ -278,7 +364,20 @@
 									</Border.Transitions>
 								</Border>
 							</Grid>
+							
+							<!--Footer-->
+							<ContentPresenter Content="{TemplateBinding Footer}"
+							                  ContentTemplate="{TemplateBinding FooterTemplate}"
+							                  TextBlock.FontSize="15"
+							                  TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
+							                  VerticalContentAlignment="Center"
+							                  Margin="5,5"
+							                  DockPanel.Dock="Bottom" VerticalAlignment="Bottom"></ContentPresenter>
 						</DockPanel>
+							<Border Name="PART_BoxShadow" Background="Transparent" Width="5"
+							        HorizontalAlignment="Right"
+							        BoxShadow="inset -5 0 5 -5 Black"></Border>
+						</Grid>
 
 						<!--Content Host-->
 						<Border Grid.Column="1" BoxShadow="0 0 0 0 Black"
@@ -321,12 +420,21 @@
 					  VerticalAlignment="{TemplateBinding VerticalAlignment}">
 					<Grid ColumnDefinitions="*,auto">
 						<!--Item Presenter-->
-						<DockPanel Grid.Column="1"
+						<Grid Grid.Column="1">
+							<DockPanel
 								   Name="PART_DockContainer"
 								   Background="{TemplateBinding SecondaryBackground}"
-						   Height="{TemplateBinding Height}">
-							<!--Items and Adder Button-->
-							<Grid Margin="{TemplateBinding ItemsMargin}"
+								   Height="{TemplateBinding Height}">
+									<!--Header-->
+									<ContentPresenter Content="{TemplateBinding Header}"
+								                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+								                  TextBlock.FontSize="15"
+								                  TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
+								                  VerticalContentAlignment="Center"
+								                  Margin="5, 5"
+								                  DockPanel.Dock="Top"></ContentPresenter>
+									<!--Items and Adder Button-->
+									<Grid Margin="{TemplateBinding ItemsMargin}"
 								  DockPanel.Dock="Top"
 								  RowDefinitions="*,auto">
 								<ItemsPresenter Grid.Row="0"
@@ -371,9 +479,21 @@
 									</Border.Transitions>
 								</Border>
 							</Grid>
+							
+							<!--Footer-->
+							<ContentPresenter Content="{TemplateBinding Footer}"
+							                  ContentTemplate="{TemplateBinding FooterTemplate}"
+							                  TextBlock.FontSize="15"
+							                  TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
+							                  VerticalContentAlignment="Center"
+							                  Margin="5,5"
+							                  DockPanel.Dock="Bottom" VerticalAlignment="Bottom"></ContentPresenter>
 						</DockPanel>
-
-						<!--Content Host-->
+							<Border Name="PART_BoxShadow" Background="Transparent" Width="5"
+							        HorizontalAlignment="Left"
+							        BoxShadow="inset 5 0 5 -5 Black"/>
+						</Grid>
+							<!--Content Host-->
 						<Border Grid.Column="0" BoxShadow="0 0 0 0 Black"
 								BorderBrush="Transparent" Margin="0">
 							
@@ -405,33 +525,7 @@
 	<Style Selector="AuraTabView /template/ Border#PART_InternalBorder">
 		<Setter Property="CornerRadius" Value="0 0 0 5"/>
 	</Style>
-    <Design.PreviewWith> 
-		<Border>
-			<Border.Styles>
-				<Style Selector="AuraTabItem">
-				</Style>
-			</Border.Styles>
-			<Grid>
-				<Border VerticalAlignment="Top"
-						Height="30" Background="Blue"
-						HorizontalAlignment="Right"/>
-				<AuraTabView Name="vw" 
-							 Margin="0,0,0,0" TabStripPlacement="Right"
-							 SelectedIndex="0" Width="400" Height="600"
-							 SecondaryBackground="{DynamicResource ThemeAccentBrush4}"> 
-				<AuraTabItem Header="Settings" IsClosable="False">
-					<Border Background="Yellow" Width="30" 
-							HorizontalAlignment="Right"/>
-				</AuraTabItem> 
-				<AuraTabItem Header="Another Tab" Name="tab">._.XD</AuraTabItem>
-
-				<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
-				<!--AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
-				<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
-				<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>-->
-			</AuraTabView> 
-
-			</Grid>
-		</Border>
-	</Design.PreviewWith>
+	<Style Selector="AuraTabView /template/ Border#PART_BoxShadow">
+		<Setter Property="ZIndex" Value="-1"/>
+	</Style>
 </Styles>

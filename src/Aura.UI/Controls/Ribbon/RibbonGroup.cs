@@ -8,6 +8,7 @@ using Avalonia.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia.Interactivity;
 
 namespace Aura.UI.Controls.Ribbon
 {
@@ -22,6 +23,12 @@ namespace Aura.UI.Controls.Ribbon
             base.OnApplyTemplate(e);
 
             MiniButton = this.GetControl<MaterialButton>(e, "PART_MiniButton");
+            MiniButton.Click += (s, _) =>
+            {
+                var e = new RoutedEventArgs(MiniButtonClickEvent);
+                RaiseEvent(e);
+                e.Handled = true;
+            };
         }
 
         public MaterialButton MiniButton
@@ -39,5 +46,13 @@ namespace Aura.UI.Controls.Ribbon
         }
         public static readonly StyledProperty<object> MiniButtonContentProperty =
             AvaloniaProperty.Register<RibbonGroup, object>(nameof(MiniButtonContent),"L");
+
+        public event EventHandler<RoutedEventArgs> MiniButtonClick
+        {
+            add => AddHandler(MiniButtonClickEvent, value);
+            remove => RemoveHandler(MiniButtonClickEvent, value);
+        }
+        public static readonly RoutedEvent<RoutedEventArgs> MiniButtonClickEvent = 
+            RoutedEvent.Register<RibbonGroup, RoutedEventArgs>(nameof(MiniButtonClick), RoutingStrategies.Bubble);
     }
 }

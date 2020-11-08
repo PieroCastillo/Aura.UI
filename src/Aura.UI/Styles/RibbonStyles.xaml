@@ -6,6 +6,12 @@
 	<Styles.Resources>
 		<CornerRadius x:Key="ToggleRadius">3</CornerRadius>
 		<ms:Double x:Key="DefaultRibbonContainerHeight">150</ms:Double>
+		<DrawingImage x:Key="Octicons.TriangleUp">
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M12 11L6 5l-6 6h12z"   />
+		</DrawingImage>
+		<DrawingImage x:Key="Octicons.TriangleDown">
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M0 5l6 6 6-6H0z"   />
+		</DrawingImage>
  	</Styles.Resources>
 	<Style Selector="Ribbon">
 		<Setter Property="ExpansionState" Value="Total"/>
@@ -13,7 +19,7 @@
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="ItemsPanel"> 
 			<ItemsPanelTemplate>
-				<StackPanel Orientation="Horizontal" Spacing="1" VerticalAlignment="Stretch"/>
+				<StackPanel Orientation="Horizontal" Spacing="0" VerticalAlignment="Stretch"/>
 			</ItemsPanelTemplate>
 		</Setter>
 		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
@@ -21,100 +27,110 @@
 			<ControlTemplate TargetType="Ribbon">
 				<Border>
 					<StackPanel>  
-						<Grid>
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="Auto"/>
-								<ColumnDefinition Width="Auto"/>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="Auto"/>
-								<ColumnDefinition Width="Auto"/>
-							</Grid.ColumnDefinitions>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="*"/>
-							</Grid.RowDefinitions>
-							<ContentPresenter Grid.Column="0"
-											Content="{TemplateBinding Header}"
-											HorizontalAlignment="Center" 
-											VerticalAlignment="Center"
-											Padding="10"/>
-							<MaterialButton Grid.Column="1"
-											Name="PART_LeftButton"
-											Content="{TemplateBinding LeftContent}"
-											Classes="BorderButtons"
-											CornerRadius="0"/>
-							<ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Auto"
-										  VerticalAlignment="Stretch" BorderThickness="0"
-										  Padding="0" Margin="0">
-								<ItemsPresenter
-											VerticalAlignment="Stretch"
-											Name="PART_ItemsPresenter"
-											Items="{TemplateBinding Items}"
-											ItemsPanel="{TemplateBinding ItemsPanel}"
-											Classes="BorderButtons"/>
-							</ScrollViewer>
-							<MaterialButton Grid.Column="3"
-											CornerRadius="0"
-											Name="PART_RightButton"
-											Content="{TemplateBinding RightContent}"
-											Classes="BorderButtons"
-											HorizontalAlignment="Right"/>
-							<ToggleButton Name="PART_Toggle" Grid.Column="4"
-										  IsChecked="True" IsThreeState="False"
-										  Background="Transparent"></ToggleButton>
-						</Grid>
-						<ExperimentalAcrylicBorder Name="PART_ContentContainer"
-								Material="{TemplateBinding Material}">
-							<ExperimentalAcrylicBorder.Transitions> 
+						<Border Margin="5" Padding="5 0" BoxShadow="0 0 4 0 Black">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="*"/>
+									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="Auto"/>
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="*"/>
+								</Grid.RowDefinitions>
+								<ContentPresenter Grid.Column="0"
+								                  Content="{TemplateBinding Header}"
+								                  HorizontalAlignment="Center" 
+								                  VerticalAlignment="Center"
+								                  Padding="10"/>
+								<ShadowButton Grid.Column="1"
+								                Name="PART_LeftButton"
+								                Content="{TemplateBinding LeftContent}"
+								                Classes="BorderButtons"
+								                CornerRadius="0"/>
+								<ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Auto"
+								              VerticalAlignment="Stretch" BorderThickness="0"
+								              Padding="0" Margin="0">
+									<ItemsPresenter
+										VerticalAlignment="Stretch"
+										Name="PART_ItemsPresenter"
+										Items="{TemplateBinding Items}"
+										ItemsPanel="{TemplateBinding ItemsPanel}"
+										Classes="BorderButtons"/>
+								</ScrollViewer>
+								<ShadowButton Grid.Column="3"
+								                CornerRadius="0"
+								                Name="PART_RightButton"
+								                Content="{TemplateBinding RightContent}"
+								                Classes="BorderButtons"
+								                HorizontalAlignment="Right"/>
+								<ToggleButton Name="PART_Toggle" Grid.Column="4"
+								              IsChecked="True" IsThreeState="False"
+								              Background="Transparent"></ToggleButton>
+							</Grid>
+						</Border>
+						<Border Name="PART_ContentContainer"
+						        Height="1" ZIndex="-1"
+						        VerticalAlignment="Bottom"
+						        BoxShadow="0 0 4 0 Black" Margin="4">
+							<Border.Transitions>
 								<Transitions>
 									<DoubleTransition Property="Height" Duration="0:0:0.3"/>
 								</Transitions>
-							</ExperimentalAcrylicBorder.Transitions>
-							<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-								<ContentPresenter Name="PART_SelectedContentHost"
-										Content="{TemplateBinding SelectedContent}"
-										Padding="{TemplateBinding Padding}"
-										ContentTemplate="{TemplateBinding SelectedContentTemplate}">
-									<ContentPresenter.Transitions>
-										<Transitions>
-											<DoubleTransition Property="Opacity" Duration="0:0:0.3"/>
-										</Transitions>
-									</ContentPresenter.Transitions>							
-								</ContentPresenter>
-							</ScrollViewer> 
-						</ExperimentalAcrylicBorder>
-						<ListBox x:Name="list"></ListBox>
+							</Border.Transitions>
+							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}">
+								<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+									<ContentPresenter Name="PART_SelectedContentHost"
+											Content="{TemplateBinding SelectedContent}"
+											Padding="{TemplateBinding Padding}"
+											ContentTemplate="{TemplateBinding SelectedContentTemplate}">
+										<ContentPresenter.Transitions>
+											<Transitions>
+												<DoubleTransition Property="Opacity" Duration="0:0:0.3"/>
+											</Transitions>
+										</ContentPresenter.Transitions>							
+									</ContentPresenter>
+								</ScrollViewer> 
+							</ExperimentalAcrylicBorder>
+						</Border>
 					</StackPanel>
 				</Border> 
 			</ControlTemplate>
 		</Setter> 
 	</Style>
 	<!--ModernButton Styles-->
-	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons">
+	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="MaterialIsVisible" Value="False"/>
+		<Setter Property="ShadowPadding" Value="5 0"></Setter>
+		<Setter Property="BoxShadow" Value="0 0 0 0 Black"></Setter>
 	</Style>
-	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons:pointerover">
+	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pointerover">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
 		<Setter Property="MaterialIsVisible" Value="True"/>
+		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
-	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons:pressed">
+	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pressed">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
 		<Setter Property="MaterialIsVisible" Value="True"/>
+		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
-	<Style Selector="Ribbon /template/ MaterialButton.BorderButtons:pressed:pointerover">
+	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pressed:pointerover">
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="MaterialIsVisible" Value="True"/>
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 
 	<!--Container Expansion Animations-->
-	<Style Selector="Ribbon[ExpansionState=Total] /template/ ExperimentalAcrylicBorder#PART_ContentContainer">
+	<Style Selector="Ribbon[ExpansionState=Total] /template/ Border#PART_ContentContainer">
 		<Style.Animations>
-			<Animation Duration="0:0:0.4"  Easing="CircularEaseOut"
-					   FillMode="Forward"> 
-				<KeyFrame Cue="0%"> 
+			<Animation Duration="0:0:0.4"  Easing="QuarticEaseOut"
+					   FillMode="Forward">
+				<KeyFrame Cue="0%">
 					<Setter Property="Height" Value="0"/>
 				</KeyFrame>
 				<KeyFrame Cue="100%">
@@ -124,7 +140,7 @@
 		</Style.Animations>
 		<!--<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/>-->
 	</Style>
-	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ExperimentalAcrylicBorder#PART_ContentContainer">
+	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ Border#PART_ContentContainer">
 		<Style.Animations>
 			<Animation Duration="0:0:0.4" Easing="QuarticEaseOut"
 					   FillMode="Forward"> 
@@ -139,53 +155,38 @@
 		<!--<Setter Property="Height" Value="0"/>-->
 	</Style>
 	
-	
-	<!--<Style Selector="Ribbon[ExpansionState=Total] /template/ ContentPresenter#PART_ContentHost">
-		<Style.Animations>
-			<Animation Duration="0:0:0.4" FillMode="Forward"
-					   Easing="SineEaseOut">
-				<KeyFrame Cue="0%">
-					<Setter Property="TranslateTransform.X" Value="300"/> 
-					<Setter Property="Opacity" Value="0"/>
-				</KeyFrame>
-				<KeyFrame Cue="100%">
-					<Setter Property="TranslateTransform.X" Value="0"/>
-					<Setter Property="Opacity" Value="1"/> 
-				</KeyFrame>
-			</Animation>
-		</Style.Animations>
-	</Style>--> 
-	
 	<!--ToggleButton Icons-->
 	<Style Selector="Ribbon[ExpansionState=Total] /template/ ToggleButton#PART_Toggle"><!--:checked-->
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleButton">
-				<ExperimentalAcrylicBorder Padding="2"
-					Material="{DynamicResource ThemeAcrylicControlLowBrush}"
-					CornerRadius="{DynamicResource ToggleRadius}">
-					<DrawingPresenter Width="16">
-						<DrawingPresenter.Drawing>
-							<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}"
-								Geometry="F1M256,-341L384,-213 354,-183 256,-281 158,-183 128,-213 256,-341z"   />
-						</DrawingPresenter.Drawing>
-					</DrawingPresenter>
-				</ExperimentalAcrylicBorder>
+				<!-- <ExperimentalAcrylicBorder Padding="2" -->
+				<!-- 	Material="{DynamicResource ThemeAcrylicControlLowBrush}" -->
+				<!-- 	CornerRadius="{DynamicResource ToggleRadius}"> -->
+					<!-- <DrawingPresenter Width="16"> -->
+					<!-- 	<DrawingPresenter.Drawing> -->
+					<!-- 		<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}" -->
+					<!-- 			Geometry="F1M256,-341L384,-213 354,-183 256,-281 158,-183 128,-213 256,-341z"   /> -->
+					<!-- 	</DrawingPresenter.Drawing> -->
+					<!-- </DrawingPresenter> -->
+				<!-- </ExperimentalAcrylicBorder> -->
+				<Image Source="{DynamicResource Octicons.TriangleDown}" Stretch="UniformToFill"></Image>
 			</ControlTemplate>
 		</Setter>
 	</Style> 
 	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ToggleButton#PART_Toggle"><!--:unchecked-->
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleButton">
-				<ExperimentalAcrylicBorder Padding="2"
-					Material="{DynamicResource ThemeAcrylicControlLowBrush}"
-					CornerRadius="{DynamicResource ToggleRadius}">
-					<DrawingPresenter Width="16">
-						<DrawingPresenter.Drawing>
-							<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}"
-								Geometry="F1M158,-345L256,-247 354,-345 384,-315 256,-187 128,-315 158,-345z"/>
-						</DrawingPresenter.Drawing>
-					</DrawingPresenter>
-				</ExperimentalAcrylicBorder>
+				<!-- <ExperimentalAcrylicBorder Padding="2" -->
+				<!-- 	Material="{DynamicResource ThemeAcrylicControlLowBrush}" -->
+				<!-- 	CornerRadius="{DynamicResource ToggleRadius}"> -->
+				<!-- 	<DrawingPresenter Width="16"> -->
+				<!-- 		<DrawingPresenter.Drawing> -->
+				<!-- 			<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}" -->
+				<!-- 				Geometry="F1M158,-345L256,-247 354,-345 384,-315 256,-187 128,-315 158,-345z"/> -->
+				<!-- 		</DrawingPresenter.Drawing> -->
+				<!-- 	</DrawingPresenter> -->
+				<!-- </ExperimentalAcrylicBorder> -->
+				<Image Source="{DynamicResource Octicons.TriangleUp}" Stretch="UniformToFill"></Image>
 			</ControlTemplate>
 		</Setter>
 	</Style>

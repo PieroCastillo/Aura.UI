@@ -13,6 +13,7 @@ using Aura.UI.UIExtensions;
 using Aura.UI.Attributes;
 using System.Diagnostics;
 using Aura.UI.Controls.Primitives;
+using Avalonia.Threading;
 
 namespace Aura.UI.Controls
 {
@@ -44,15 +45,27 @@ namespace Aura.UI.Controls
             var x = this.Parent as TabControl;
             x.CloseTab(this);
         }
+
         /// <summary>
         /// Close the Tab
         /// </summary>
         public void Close()
         {
-             var e = new RoutedEventArgs(ClosingEvent);
-            RaiseEvent(e);
-            e.Handled = true;
-            this.Close(null);
+            // if (timetoelapse != null)
+            // {
+            //     timetoelapse = new TimeSpan(0, 0, 0, 0, 400);
+            // }
+            //
+            // var timer = new DispatcherTimer();
+            // timer.Interval = timetoelapse;
+            // timer.Start();
+            // timer.Tick += (s, e_) =>
+            // {
+               var e = new RoutedEventArgs(ClosingEvent);
+                RaiseEvent(e);
+                e.Handled = true;
+                this.Close(null);
+            // };
         }
 
 

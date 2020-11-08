@@ -57,7 +57,7 @@
 			Header="Krewella" TileMode="HorizontalDisposition">
 			<CardControl SecondaryHeader="Fall Out Boys">
 			<CardControl.Header>
-				Alone Togheter&#10;(Krewella Remix)
+				Alone Togheter
 			</CardControl.Header>
 			<Border CornerRadius="7 0">
 				<Border.Background>
@@ -72,7 +72,7 @@
 				</Border.Background>
 			</Border>
 		</CardControl>
-			<CardControl Header="TH2C&#10;(Dyro Remix)" SecondaryHeader="Krewella">
+			<CardControl Header="TH2C" SecondaryHeader="Krewella">
 			<Border CornerRadius="7 0">
 				<Border.Background>
 					<ImageBrush Source="avares://UI.Tests/Assets/th2cdyro.jpg"  Stretch="UniformToFill"/>
@@ -126,7 +126,7 @@
 				</Border.Background>
 			</Border>
 		</CardControl>
-			<CardControl Header="Tonight&#10;(VIP Remix)" SecondaryHeader="KDrew">
+			<CardControl Header="Tonight VIP" SecondaryHeader="KDrew">
 			<Border CornerRadius="7 0">
 				<Border.Background>
 					<ImageBrush Source="avares://UI.Tests/Assets/tonightvip.png"  Stretch="UniformToFill"/>

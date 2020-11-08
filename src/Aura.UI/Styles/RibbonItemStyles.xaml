@@ -12,29 +12,31 @@
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="RibbonItem">
-				<Grid Name="PART_Container" Margin="0"
-					  VerticalAlignment="{TemplateBinding VerticalAlignment}"
-					  HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-					  Height="{TemplateBinding Height}">
+				<Border Name="PART_Border" Margin="2.5 0">
+					<Grid Name="PART_Container" Margin="0"
+					      VerticalAlignment="{TemplateBinding VerticalAlignment}"
+					      HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+					      Height="{TemplateBinding Height}">
 					
-					<Grid Margin="0" Height="{TemplateBinding Height}" VerticalAlignment="Stretch">  
-						<Border Background="{TemplateBinding Background}"/>   
-						<ExperimentalAcrylicBorder Height="{TemplateBinding Height}"
-												   Material="{TemplateBinding Material}"
-												   VerticalAlignment="Stretch"
-												   IsVisible="{TemplateBinding MaterialIsVisible}"/>
-						<Button Name="PART_ButtonContainer" Background="White" Padding="0" Margin="0"
-							Height="{TemplateBinding Height}"
-								  BorderThickness="1" VerticalAlignment="Stretch">
-							<ContentPresenter Height="{TemplateBinding Height}"
-										  Content="{TemplateBinding Header}"
-										  Padding="{TemplateBinding Padding}"
-										  VerticalAlignment="Stretch"
-										  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-										  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-						</Button>
-					</Grid>		
-				</Grid>
+						<Grid Margin="0" Height="{TemplateBinding Height}" VerticalAlignment="Stretch">  
+							<Border Background="{TemplateBinding Background}"/>   
+							<ExperimentalAcrylicBorder Height="{TemplateBinding Height}"
+							                           Material="{TemplateBinding Material}"
+							                           VerticalAlignment="Stretch"
+							                           IsVisible="{TemplateBinding MaterialIsVisible}"/>
+							<Button Name="PART_ButtonContainer" Background="White" Padding="0" Margin="0"
+							        Height="{TemplateBinding Height}"
+							        BorderThickness="1" VerticalAlignment="Stretch">
+								<ContentPresenter Height="{TemplateBinding Height}"
+								                  Content="{TemplateBinding Header}"
+								                  Padding="{TemplateBinding Padding}"
+								                  VerticalAlignment="Stretch"
+								                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+							</Button>
+						</Grid>		
+					</Grid>
+				</Border>
 			</ControlTemplate>
 		</Setter> 
 	</Style>
@@ -55,6 +57,9 @@
 	<Style Selector="RibbonItem:selected"> 
 		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
 		<Setter Property="MaterialIsVisible" Value="True"/>
+	</Style>
+	<Style Selector="RibbonItem:selected /template/ Border#PART_Border">
+		<Setter Property="BoxShadow" Value="0 0 5 0 Black"></Setter>
 	</Style>
 	<Style Selector="RibbonItem:pointerover">
 		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>

@@ -6,30 +6,30 @@
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
 		<Setter Property="CornerRadius" Value="5"/>
-		<Setter Property="BoxShadow" Value="0 0 5 0 Black"/>
+		<Setter Property="BoxShadow" Value="0 0 3 0 Black"/>
+		<Setter Property="ShadowPadding" Value="5"></Setter>
 		<Setter Property="Template">
-			<ControlTemplate TargetType="MaterialButton">
-				<Decorator Padding="{TemplateBinding ShadowPadding}">
-					<Border BoxShadow="0 0 3 0 Black" CornerRadius="{TemplateBinding CornerRadius}">
-						<Grid Background="{TemplateBinding Background}">
-
+			<ControlTemplate>
+					<Border BoxShadow="{TemplateBinding BoxShadow}"
+							BorderThickness="{TemplateBinding BorderThickness}" 
+					        CornerRadius="{TemplateBinding CornerRadius}"
+							Margin="{TemplateBinding ShadowPadding}"
+							Background="{TemplateBinding Background}">
+						<Grid>
 							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
-													   CornerRadius="{TemplateBinding CornerRadius}"
-													   IsVisible="{TemplateBinding MaterialIsVisible}">
+							                           CornerRadius="{TemplateBinding CornerRadius}"
+							                           IsVisible="{TemplateBinding MaterialIsVisible}">
 							</ExperimentalAcrylicBorder>
 							<ContentPresenter Name="PART_ContentPresenter"
-							BorderBrush="{TemplateBinding BorderBrush}"
-							BorderThickness="{TemplateBinding BorderThickness}" 
-							ContentTemplate="{TemplateBinding ContentTemplate}"
-							Content="{TemplateBinding Content}"
-							Padding="{TemplateBinding Padding}"
-							TextBlock.Foreground="{TemplateBinding Foreground}"
-							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-
+							                  BorderBrush="{TemplateBinding BorderBrush}"
+							                  Content="{TemplateBinding Content}"
+							                  ContentTemplate="{TemplateBinding ContentTemplate}"
+							                  TextBlock.Foreground="{TemplateBinding Foreground}"
+							                  Padding="{TemplateBinding Padding}"
+							                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+							                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
 						</Grid>
 					</Border>
-				</Decorator>
 			</ControlTemplate>
 		</Setter>
 	</Style>

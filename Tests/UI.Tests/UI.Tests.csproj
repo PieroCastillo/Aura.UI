@@ -87,9 +87,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Views\MusicView.axaml.cs">
-      <DependentUpon>MusicView.axaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
 </Project>

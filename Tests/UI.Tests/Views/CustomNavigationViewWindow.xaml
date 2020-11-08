@@ -31,36 +31,29 @@
 				  Opacity="0.5"/>
 			<NavigationView AlwaysOpen="True" HeaderIcon="{DynamicResource Material.HomeOutline}"
 						Header="Home" OpenPaneLength="250" Material="{DynamicResource NullBrush}">
-				<NavigationViewItem Icon="{DynamicResource MaterialLight.Picture}"
-									Header="Images" Title="Images in C:/">
-					<TextBlock Text="Page1"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource Ionicons.DocumentMD}"
-									Header="Documents" Title="Documents in D:/">
-					<TextBlock Text="Page2"/>
-				</NavigationViewItem>
-
-
-				<!--Footer-->
-
-				<NavigationViewItem Icon="{DynamicResource EvaIcons.Settings2Outline}"
-									Header="Settings" Title="Settings"
-									Classes="Footer">
-					<StackPanel Spacing="20">
-						<TextBlock Text="AlwaysOpen=&quot;True&quot;"/>
-						<TextBlock Text="Header=&quot;Home&quot;"/>
-					</StackPanel>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource EvaIcons.PrinterOutline}"
-									Header="Print" Title="Printers"
-									Classes="Footer">
-					<TextBlock Text="Page4"/>
-				</NavigationViewItem>
-				<NavigationViewItem Icon="{DynamicResource Material.AccountCircleOutline}"
-						Header="Accounts" Title="Accounts"
-						Classes="Footer">
-					<TextBlock Text="Page5"/>
-				</NavigationViewItem>
+						<NavigationViewItem Icon="{DynamicResource EvaIcons.PrinterOutline}"
+						                    Header="Print" Title="Printers">
+							<TextBlock Text="Page4"/>
+						</NavigationViewItem>
+						<NavigationViewItem Icon="{DynamicResource Material.AccountCircleOutline}"
+						                    Header="Accounts" Title="Accounts">
+							<TextBlock Text="Page5"/>
+						</NavigationViewItem>
+						<NavigationViewItem Icon="{DynamicResource MaterialLight.Picture}"
+						                    Header="Images" Title="Images in C:/">
+							<TextBlock Text="Page1"/>
+						</NavigationViewItem>
+						<NavigationViewItem Icon="{DynamicResource Ionicons.DocumentMD}"
+						                    Header="Documents" Title="Documents in D:/">
+							<TextBlock Text="Page2"/>
+						</NavigationViewItem>
+						
+						<NavigationViewItem Icon="{DynamicResource EvaIcons.Settings2Outline}"
+						                    Header="Settings" Title="Settings" Classes="Footer">
+								<StackPanel Spacing="20">
+									<TextBlock Text="AlwaysOpen=&quot;True&quot;"/><TextBlock Text="Header=&quot;Home&quot;"/>
+								</StackPanel>
+						</NavigationViewItem>
 			</NavigationView>
 			<Border Background="{DynamicResource ThemeBackgroundBrush}"
 					Opacity="0" Height="20" VerticalAlignment="Top"
