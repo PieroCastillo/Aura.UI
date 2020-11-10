@@ -293,15 +293,26 @@
 				</StackPanel>
 			</NavigationViewItem>
 			<NavigationViewItem Header="Resize Decorator" Title="Resizing" IsSelected="True">
+				<ScrollViewer HorizontalScrollBarVisibility="Visible"
+				              VerticalScrollBarVisibility="Visible">
+					<Canvas Background="{DynamicResource ThemeAccentBrush4}">
+						<Button Name="btn_to" Content="Resize me!" Height="50"
+						        Width="100" Canvas.Top="10" Canvas.Left="20">
+							<Button.Tag>xd</Button.Tag>
+						</Button>
+						<ResizeDecorator ItemToResize="{Binding #btn_to}" 
+						                 DataContext="{Binding #btn_to}" 
+						                 RenderTransform="scale(1.1)"
+						                 Width="{Binding #btn_to.Bounds.Width}" 
+						                 Height="{Binding #btn_to.Bounds.Height}" 
+						                 Canvas.Top="{Binding #btn_to.Bounds.Top}" 
+						                 Canvas.Left="{Binding #btn_to.Bounds.Left}"/>
+					</Canvas>
+				</ScrollViewer>
+			</NavigationViewItem>
+			<NavigationViewItem Header="Rotator And Skew Decorator" Title="Rotating and Skewing">
 				<Canvas Background="{DynamicResource ThemeAccentBrush4}">
-					<Button Name="btn_to" Content="Resize me!" Height="50"
-					        Width="100" Canvas.Top="10" Canvas.Left="20">
-					</Button>
-					<ResizeDecorator DataContext="{Binding #btn_to}"
-									Width="{Binding #btn_to.Bounds.Width}" 
-					                Height="{Binding #btn_to.Bounds.Height}"
-									Canvas.Top="{Binding #btn_to.Bounds.Top}"
-									Canvas.Left="{Binding #btn_to.Bounds.Left}"></ResizeDecorator>
+					<RotatorDecorator></RotatorDecorator>
 				</Canvas>
 			</NavigationViewItem>
 		</NavigationView>	

@@ -1,7 +1,12 @@
 <Styles xmlns="https://github.com/avaloniaui">
-    <Style Selector="ResizeDecorator">
-        <!--<Setter Property="MinHeight" Value="20"></Setter>
-        <Setter Property="MinWidth" Value="20"></Setter>-->
+    <Style Selector="ResizeDecorator"> 
+    <!--     <Setter Property="MinHeight" Value="20"></Setter> -->
+    <!--     <Setter Property="MinWidth" Value="20"></Setter> -->
+    <!--     <Setter Property="Width" Value="{Binding ItemToResize.Bounds.Width}"/> -->
+    <!--     <Setter Property="Height" Value="{Binding ItemToResize.Bounds.Height}"/> -->
+    <!--     <Setter Property="Canvas.Left" Value="{Binding ItemToResize.Bounds.Left}"/> -->
+    <!--     <Setter Property="Canvas.Top" Value="{Binding ItemToResize.Bounds.Top}"/> -->
+    <!--     <Setter Property="DataContext" Value="{Binding ItemToResize}"/> -->
         <Setter Property="Template">
             <ControlTemplate>
                 <Grid>
