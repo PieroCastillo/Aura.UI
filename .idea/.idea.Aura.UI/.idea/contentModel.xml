@@ -126,6 +126,7 @@
             <e p="TemplatePartAttibute.cs" t="Include" />
           </e>
           <e p="Aura.UI.csproj" t="IncludeRecursive" />
+          <e p="Aura.UI.csproj.DotSettings" t="Include" />
           <e p="AuraAcrylicBase.xaml" t="Include" />
           <e p="AuraUI.xaml" t="Include" />
           <e p="AuraUI.xaml.cs" t="Include" />
@@ -202,6 +203,9 @@
               <e p="RibbonPanel.cs" t="Include" />
               <e p="RibbonSeparator.cs" t="Include" />
             </e>
+            <e p="RotatorDecorator" t="Include">
+              <e p="RotatorDecorator.cs" t="Include" />
+            </e>
             <e p="Sliders" t="Include">
               <e p="FilledSlider.Properties.cs" t="Include" />
               <e p="FilledSlider.cs" t="Include" />
@@ -218,6 +222,8 @@
             <e p="Thumbs" t="Include">
               <e p="MoveThumb.cs" t="Include" />
               <e p="ResizeThumb.cs" t="Include" />
+              <e p="RotateThumb.cs" t="Include" />
+              <e p="SkewThumb.cs" t="Include" />
             </e>
             <e p="TitleBox" t="Include">
               <e p="TitleBox.Events.cs" t="Include" />
@@ -309,6 +315,8 @@
             <e p="Thumbs" t="Include">
               <e p="MoveThumbStyles.xaml" t="Include" />
               <e p="ResizeThumbStyles.xaml" t="Include" />
+              <e p="RotateThumbStyles.xaml" t="Include" />
+              <e p="SkewThumbStyles.xaml" t="Include" />
             </e>
             <e p="TitleBoxStyles.xaml" t="Include" />
           </e>
