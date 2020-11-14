@@ -1,0 +1,19 @@
+<Styles xmlns="https://github.com/avaloniaui">
+    <Style Selector="Follower">
+        <Setter Property="Canvas.Top" Value="0"></Setter>
+        <Setter Property="Canvas.Left" Value="0"></Setter>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <ContentPresenter
+                    Content="{TemplateBinding CanvasLayer}"></ContentPresenter>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="Follower :is(Control)">
+        <Setter Property="Canvas.Top" Value="0"></Setter>
+        <Setter Property="Canvas.Left" Value="0"></Setter>
+    </Style>
+    <Style Selector="Follower Canvas">
+        <Setter Property="IsHitTestVisible" Value="False"></Setter>
+    </Style>
+</Styles>
