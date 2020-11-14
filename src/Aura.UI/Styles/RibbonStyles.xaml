@@ -76,7 +76,7 @@
 						        BoxShadow="0 0 4 0 Black" Margin="4">
 							<Border.Transitions>
 								<Transitions>
-									<DoubleTransition Property="Height" Duration="0:0:0.3"/>
+									<DoubleTransition Property="Height" Duration="0:0:0.3" Easing="QuadraticEaseOut"/>
 								</Transitions>
 							</Border.Transitions>
 							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}">
@@ -156,7 +156,7 @@
 	</Style>
 	
 	<!--ToggleButton Icons-->
-	<Style Selector="Ribbon[ExpansionState=Total] /template/ ToggleButton#PART_Toggle"><!--:checked-->
+	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ToggleButton#PART_Toggle"><!--:checked-->
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleButton">
 				<!-- <ExperimentalAcrylicBorder Padding="2" -->
@@ -173,7 +173,7 @@
 			</ControlTemplate>
 		</Setter>
 	</Style> 
-	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ToggleButton#PART_Toggle"><!--:unchecked-->
+	<Style Selector="Ribbon[ExpansionState=Total] /template/ ToggleButton#PART_Toggle"><!--:unchecked-->
 		<Setter Property="Template">
 			<ControlTemplate TargetType="ToggleButton">
 				<!-- <ExperimentalAcrylicBorder Padding="2" -->
