@@ -45,6 +45,8 @@
 	<StyleInclude Source="/Styles/Decorators/ResizeDecoratorStyles.xaml"></StyleInclude>
 	<StyleInclude Source="/Styles/Thumbs/RotateThumbStyles.xaml"></StyleInclude>
 	<StyleInclude Source="/Styles/Thumbs/SkewThumbStyles.xaml"></StyleInclude>
+	<StyleInclude Source="/Styles/Decorators/RotatorDecoratorStyles.xaml"></StyleInclude>
+	<StyleInclude Source="/Styles/FollowerStyles.xaml"/>
 	
 	<!--I do not the reason of why when I write the ModernSlider Styles in its xaml, that does not compile-->
 	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
