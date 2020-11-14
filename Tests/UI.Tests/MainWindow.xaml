@@ -48,7 +48,7 @@
 	</ContentWindow.Resources>
 	<Grid Background="{x:Null}">
 		<Grid Background="{DynamicResource ThemeBackgroundBrush}" Opacity="0.6"/>
-		<NavigationView Name="nav"
+		<NavigationView Name="nav" 
 						AlwaysOpen="True" Material="{DynamicResource NullBrush}"
 						Background="{DynamicResource SystemControlBackgroundAltMediumHighBrush}"
 						OpenPaneLength="250" Header="Aura.UI &#10;TestApplication">
@@ -292,7 +292,21 @@
 					<ShadowButton>This is a ShadowButton</ShadowButton>
 				</StackPanel>
 			</NavigationViewItem>
-			<NavigationViewItem Header="Resize Decorator" Title="Resizing" IsSelected="True">
+			<!-- <NavigationViewItem  IsSelected="True" -->
+			<!--                      Header="ExperimentalAcrylicMaterial Binding" -->
+			<!--                     Title="ExperimentalAcrylicMaterial Binding"> -->
+			<!-- 	<Grid> -->
+			<!-- 		<StackPanel Width="300"  -->
+			<!-- 		            HorizontalAlignment="Left"> -->
+			<!-- 			<ExperimentalAcrylicBorder Height="100" -->
+			<!-- 				Material="{Material }"></ExperimentalAcrylicBorder> -->
+			<!-- 			<FilledSlider Maximum="2"></FilledSlider> -->
+			<!-- 			<FilledSlider Maximum="2"></FilledSlider> -->
+			<!-- 			<SuperColorPicker Orientation="Vertical"></SuperColorPicker> -->
+			<!-- 		</StackPanel> -->
+			<!-- 	</Grid> -->
+			<!-- </NavigationViewItem> -->
+			<NavigationViewItem Header="Resize Decorator" Title="Resizing">
 				<ScrollViewer HorizontalScrollBarVisibility="Visible"
 				              VerticalScrollBarVisibility="Visible">
 					<Canvas Background="{DynamicResource ThemeAccentBrush4}">
@@ -310,14 +324,60 @@
 					</Canvas>
 				</ScrollViewer>
 			</NavigationViewItem>
-			<NavigationViewItem Header="Rotator And Skew Decorator" Title="Rotating and Skewing">
-				<Canvas Background="{DynamicResource ThemeAccentBrush4}">
-					<RotatorDecorator></RotatorDecorator>
-				</Canvas>
+			<NavigationViewItem Header="Rotator And Skew Decorator" 
+			                    Title="Rotating and Skewing" IsSelected="True">
+				<Grid ColumnDefinitions="Auto 10 *">
+					<StackPanel>
+						<TextBlock>Rotation Angle</TextBlock>
+						<TextBox Text="{Binding #r_t.Angle}"></TextBox>
+						<TextBlock>Skew X Angle</TextBlock>
+						<TextBox Text="{Binding #r_t.SkewX}"></TextBox>
+						<TextBlock>Skew Y Angle</TextBlock>
+						<TextBox Text="{Binding #r_t.SkewY}"></TextBox>
+					</StackPanel>
+					<Canvas Grid.Column="2" Background="{DynamicResource ThemeAccentBrush4}">
+						<RotatorDecorator Name="r_t" Angle="50">
+							<RotatorDecorator.ItemToRotate>
+								<Button Name="b_2" Content="Rotate and Skew me!"></Button> 
+							</RotatorDecorator.ItemToRotate>
+						</RotatorDecorator>
+					</Canvas>
+				</Grid>
 			</NavigationViewItem>
+			<NavigationViewItem Header="Follower"
+			                    Title="Following Cursor">
+				<CheckBox Name="ch_" IsChecked="False"
+				          Content="See Follower"></CheckBox>
+			</NavigationViewItem>
+			<!-- <NavigationViewItem Header="Follower"  -->
+			<!--                     Title="Following Cursor"> -->
+			<!-- 	<Grid> -->
+			<!-- 		<Follower Background="LightBlue"> -->
+			<!-- 			<Button Canvas.Top="10" Width="200" -->
+			<!-- 			        Canvas.Left="10"> -->
+			<!-- 				<TextBlock TextWrapping="Wrap" TextAlignment="Center"> -->
+			<!-- 					I'll follow you even thought you don't wanna -->
+			<!-- 				</TextBlock> -->
+			<!-- 			</Button> -->
+			<!-- 		</Follower> -->
+			<!-- 	</Grid> -->
+			<!-- </NavigationViewItem> -->
 		</NavigationView>	
-		
+		<Follower LayerControl="{Binding #nav}">
+			<Follower.CanvasLayer>
+				<Canvas Name="canv" Background="Transparent" 
+				        Opacity="0.5"></Canvas>
+			</Follower.CanvasLayer>
+			<Follower.FollowerControl>
+				<Ellipse Fill="Yellow"
+				         IsVisible="{Binding #ch_.IsChecked}"
+				         Width="50"
+				         Height="50"></Ellipse>
+				         <!-- Canvas.Top="0" -->
+				         <!-- Canvas.Left="0" -->
+			</Follower.FollowerControl>
+		</Follower>
 		<Border Background="{DynamicResource ThemeBackgroundBrush}" Name="drag_b" 
-				VerticalAlignment="Top" Height="20" Opacity="0"/>
+			        VerticalAlignment="Top" Height="20" Opacity="0"/>
 	</Grid>
 </ContentWindow>
