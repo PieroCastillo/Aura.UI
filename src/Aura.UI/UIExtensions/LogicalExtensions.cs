@@ -23,9 +23,9 @@ namespace Aura.UI.UIExtensions
         /// </summary>
         /// <param name="Logical">The control to get its parent</param>
         /// <returns>the parent of the control</returns>
-        public static T GetParentTOfLogical<T>(this ILogical Logical) where T : class
+        public static T GetParentTOfLogical<T>(this ILogical logical) where T : class
         {
-            return Logical.GetSelfAndLogicalAncestors().OfType<T>().FirstOrDefault<T>();
+            return logical.GetSelfAndLogicalAncestors().OfType<T>().FirstOrDefault<T>();
         }
     }
 }
