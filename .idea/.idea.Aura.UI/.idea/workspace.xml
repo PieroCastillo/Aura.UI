@@ -12,7 +12,13 @@
       <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/ResizeDecoratorStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/ResizeDecoratorStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/RotateThumb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/RotateThumb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/SkewThumb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/SkewThumb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Extensions/ObjectExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Helpers/LayoutHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/UIExtensions/LogicalExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/UIExtensions/LogicalExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,21 +30,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/IL/2DEF852F-D88D-4AAB-AE10-BAD0975D28F2/5c/16a13831/0200002Cpdb.il" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/00E4CC82-435B-478C-B083-227A479F9D7B/280/RuntimeMethodInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Tests/UI.Tests/Views/MusicView.xaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A76B8C80-4D9F-4FC8-8A9A-03F322A6D646/7A/AvaloniaList.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/2DEF852F-D88D-4AAB-AE10-BAD0975D28F2/F/SortedDictionary.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3C2E205D-04D0-44C3-8C21-30A014740617/6/Layoutable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4B0F8028-C599-432C-A2B2-D3504072AEFE/3/ExpressionObserverBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4B0F8028-C599-432C-A2B2-D3504072AEFE/11/TemplateBinding.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/TabStripPlacementSelector/TabStripPlacementSelector.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/TabStripPlacementSelector/TabStripPlacementSelector.Properties.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/DockPlacementSelector/DockPlacementSelector.Properties.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/DockPlacementSelector/DockPlacementSelector.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView.Events.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Properties.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Events.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/TabControlExtensions.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView.cs" />
@@ -53,7 +54,6 @@
       <option value="$PROJECT_DIR$/Tests/UI.Tests/App.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Buttons/ShadowButton.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/ShadowButtonStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonItemStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/SnapUi/Controls/DropZoneStackPanel.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/SnapUi/Controls/DropZoneUniformGrid.cs" />
@@ -66,21 +66,30 @@
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/LayoutEditor/LayoutEditor.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/LayoutEditorStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeThumb/ResizeThumb.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Helpers/LayoutHelper.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/ControlExtensions.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/MoveThumb.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/ResizeThumbStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/MoveThumbStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/ResizeThumb.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/ResizeDecoratorStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/RotateThumb.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/RotateThumbStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/SkewThumbStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Helpers/LayoutHelper.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Extensions/VectorExtensions.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/RotateThumb.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/FolllowerStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/VisualExtensions.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/LogicalExtensions.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/FollowerStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Follower/Follower.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Follower/Follower.Properties.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonStyles.xaml" />
       <option value="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/RotatorDecoratorStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/SkewThumb.cs" />
     </changedPaths>
   </component>
@@ -182,6 +191,10 @@
       <workItem from="1604765908453" duration="15253000" />
       <workItem from="1604875052237" duration="6854000" />
       <workItem from="1604942186936" duration="6035000" />
+      <workItem from="1605060576843" duration="4760000" />
+      <workItem from="1605110662438" duration="16163000" />
+      <workItem from="1605195206297" duration="18194000" />
+      <workItem from="1605280056716" duration="22575000" />
     </task>
     <servers />
   </component>
@@ -204,24 +217,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/src/Aura.UI/Helpers/LayoutHelper.cs</url>
-          <line>24</line>
-          <properties documentPath="$PROJECT_DIR$/src/Aura.UI/Helpers/LayoutHelper.cs" initialLine="25" containingFunctionPresentation="method 'NewSizeBySide'">
-            <startOffsets>
-              <option value="641" />
-            </startOffsets>
-            <endOffsets>
-              <option value="654" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

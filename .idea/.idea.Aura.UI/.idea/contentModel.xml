@@ -166,6 +166,10 @@
             <e p="ContentWindow" t="Include">
               <e p="ContentWindow.cs" t="Include" />
             </e>
+            <e p="Follower" t="Include">
+              <e p="Follower.Properties.cs" t="Include" />
+              <e p="Follower.cs" t="Include" />
+            </e>
             <e p="GroupBox" t="Include">
               <e p="GroupBox.cs" t="Include" />
             </e>
@@ -253,12 +257,11 @@
           <e p="ExpansionState.cs" t="Include" />
           <e p="Extensions" t="Include">
             <e p="ColorExtensions.cs" t="Include" />
-            <e p="ObjectExtensions.cs" t="Include" />
+            <e p="VectorExtensions.cs" t="Include" />
           </e>
           <e p="Helpers" t="Include">
             <e p="ColorHelper.cs" t="Include" />
             <e p="GradientCalculator.cs" t="Include" />
-            <e p="LayoutHelper.cs" t="Include" />
             <e p="RectHelper.cs" t="Include" />
           </e>
           <e p="Languages" t="Include">
@@ -292,8 +295,10 @@
             <e p="ColorPickerButtonStyles.xaml" t="Include" />
             <e p="Decorators" t="Include">
               <e p="ResizeDecoratorStyles.xaml" t="Include" />
+              <e p="RotatorDecoratorStyles.xaml" t="Include" />
             </e>
             <e p="FilledSliderStyles.xaml" t="Include" />
+            <e p="FollowerStyles.xaml" t="Include" />
             <e p="GroupBoxStyles.xaml" t="Include" />
             <e p="HSLIndicatorStyles.xaml" t="Include" />
             <e p="MaterialButtonStyles.xaml" t="Include" />
@@ -326,6 +331,7 @@
             <e p="RibbonExtensions.cs" t="Include" />
             <e p="TabControlExtensions.cs" t="Include" />
             <e p="TemplatedControlExtensions.cs" t="Include" />
+            <e p="VisualExtensions.cs" t="Include" />
           </e>
           <e p="Utilities" t="Include">
             <e p="CircularMath.cs" t="Include" />
