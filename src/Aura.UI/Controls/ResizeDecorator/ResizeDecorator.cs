@@ -46,5 +46,6 @@ namespace Aura.UI.Controls
                 nameof(ItemToResize),
                 o => o.ItemToResize,
                 (o, s) => o.ItemToResize = s);
+        
     }
 }

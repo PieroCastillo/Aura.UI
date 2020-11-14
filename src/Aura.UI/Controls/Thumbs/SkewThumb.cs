@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -12,13 +14,25 @@ namespace Aura.UI.Controls.Thumbs
             base.OnDragDelta(e);
 
             double last_x, last_y;
-            last_x = SkewX;
-            last_y = SkewY;
-            SkewX = last_x + e.Vector.X;
-            SkewY = last_y + e.Vector.Y;
+            last_x = SkewX + 0;
+            last_y = SkewY + 0;
+            
+            var n_x = last_x + (e.Vector.X / 180 * Math.PI);
+            var n_y = last_y + (e.Vector.Y / 180 * Math.PI);
 
-            var i_ = new ItemsControl();
-            i_
+            if (!double.IsNaN(n_x))
+            {
+                SkewX = Math.Truncate(n_x);
+            }
+
+            if (!double.IsNaN(n_y))
+            {
+                SkewY = Math.Truncate(n_y);
+            }
+            
+            #if DEBUG
+            Debug.WriteLine($"Angle X:{SkewX} Angle Y:{SkewY}");
+            #endif
         }
         
         private double _skewx = 0;
@@ -35,11 +49,12 @@ namespace Aura.UI.Controls.Thumbs
             AvaloniaProperty.RegisterDirect<SkewThumb, double>(
                 nameof(SkewX),
                 o => o.SkewX,
-                (o, v) => o.SkewX = v);
+                (o, v) => o.SkewX = v,
+                0);
         
         private double _skewy = 0;
         /// <summary>
-        /// Gets or Sets the Skew X angle
+        /// Gets or Sets the Skew Y angle
         /// </summary>
         public double SkewY
         {
@@ -49,8 +64,9 @@ namespace Aura.UI.Controls.Thumbs
 
         public readonly static DirectProperty<SkewThumb, double> SkewYProperty =
             AvaloniaProperty.RegisterDirect<SkewThumb, double>(
-                nameof(SkewX),
+                nameof(SkewY),
                 o => o.SkewY,
-                (o, v) => o.SkewY = v);
+                (o, v) => o.SkewY = v,
+                0);
     }
 }
