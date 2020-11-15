@@ -14,7 +14,6 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Avalonia.Interactivity;
 using System.IO;
 using System.Diagnostics;
-using MessageBox.Avalonia;
 
 namespace UI.Tests
 {
@@ -81,8 +80,7 @@ namespace UI.Tests
 
         public void CloseMessage()
         {
-            var m = MessageBoxManager.GetMessageBoxStandardWindow("Close Event", "The tabitem has been closed correctly");
-             m.Show();
+            
         }
 
         private void Drag_PointerPressed(object sender, PointerPressedEventArgs e)

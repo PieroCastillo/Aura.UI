@@ -24,19 +24,10 @@ Aura.UI
 | FilledSlider       |  NavigationView |
 | ModernSlider       | CardControl
 | ColorWindowSmall   | CardCollection
+| Follower(Preview)
 
 <br/>
 
-| Planned Controls | Description |
-| ---- | ---|
-| GradientEditor | This control creates a GradientBrush to use in other controls.
-| Follower     | This Control follow the cursor whitin a control.
-| ColourSlider | This slider has colors as values.
-| ProgressRing | This is similar to progressbar, but is indefinite.
-| ChangeColorWindow | This window creates a SolidColorBrush or GradientBrush.
-| TabbedWindow | An optimized window to use with AuraTabItems. 
-
-<br/>
 
 | UI Extensions | OverView |
 | --- | --- |
@@ -73,7 +64,7 @@ Aura.UI.
 
 Open the terminal on the root folder of your project and write <br/>
 ```shell
-dotnet add package Aura.UI --version 0.1.3-preview7
+dotnet add package Aura.UI --version 0.1.3-preview8
 ```
  Do it like this:
 
@@ -110,52 +101,53 @@ using Aura.UI.Windows;
 ## AuraTabItem 
 
  A Closable TabItem what has extra features.
- <img src="DocumentationGifs/AuraTabItem_Adding_Closing.gif">
+ <img src="DocumentationGifs/AuraTabItemv2.gif">
 
 ## AuraTabView
 
 Is similar to TabControl, but this can add new tabs with a built-in button, also its tabs reduce its width when the spacing is little.
 
-<img src="DocumentationGifs/AuraTabView_Adding_Testing.gif">
+<img src="DocumentationGifs/AuraTabViewv2.gif">
 
 ## TitleBox
 
 Similar to GroupBox, but has 2 buttons and is easy-to-custom.
-<img src="DocumentationGifs/TitleBox_ReScaling.gif">
+<img src="DocumentationGifs/TitleBoxv2.gif">
 
 ## SuperColorPicker
 
 This color picker can modify the opacity and the color of a SolidColorBrush, and let you see a preview, too.
 
-<img src="DocumentationGifs/SuperColorPicker_Testing.gif">
+<img src="DocumentationGifs/SuperColorPickerv2.gif">
+
 ## ColorPickerButton 
 A Toggle Button when you click it, shows a ColorPicker on a Window.
 
-<img src="DocumentationGifs/ColorPickerButton_Testing.gif">
+<img src="DocumentationGifs/ColorPickerv2.gif">
 
 ## PagesView 
 
  A Pages Collection for simplify the life.
 
- <img src="DocumentationGifs/PagesView_Testing.gif">
+ <img src="DocumentationGifs/PagesViewv2.gif">
 
 ## ModernSlider
 
 This Slider imitates the Android Slider, but uses the Acrylic Textures!
 
-<img src="DocumentationGifs/ModernSlider_Testing.gif">
+<img src="DocumentationGifs/ModernSliderv2.gif">
 
 ## GroupBox
 
 This Control has a header and that show it in the top.
 
-<img src="DocumentationGifs/GroupBox_WO_Material_ReScaling.gif">
+<img src="DocumentationGifs/GroupBoxv2.gif">
 
 ## Ribbon (Preview)
 
 This control shows a Ribbon, and use its own subcontrols.
 
-<img src="DocumentationGifs/RibbonTesting_prev.gif"> 
+<img src="DocumentationGifs/Ribbonv2.gif"> 
 
 ### Ribbon SubControls:
 
@@ -164,7 +156,7 @@ This control shows a Ribbon, and use its own subcontrols.
    * RibbonGroup : This HeaderedContentControl organizes the groups of the RibbonItem.
    * RibbonSeparator : This control separates the RibbonGroups.
   
- The default height of the container is ```150```, but if you want to change it, you have to edit the follow resource:
+<!-- The default height of the container is ```150```, but if you want to change it, you have to edit the follow resource:
  ```xml 
    <ParentWindow xmlns:ms="clr-namespace:System;assembly=netstandard">
       <ParentWindow.Resources>
@@ -268,8 +260,7 @@ The follow code make an custom NavigationView
 			</NavigationViewItem>
 
 
-			<!--Footer-->
-
+			
 			<NavigationViewItem Icon="{DynamicResource EvaIcons.Settings2Outline}"
 									Header="Settings" Title="Settings"
 									Classes="Footer">
@@ -298,11 +289,19 @@ The follow code make an custom NavigationView
 
 <img src="DocumentationGifs/CustomNavigationViewGif.gif">
 
+-->
+
 ## CardControl 
 
  This control organize a Card within a CardCollection.
 
  <img src="DocumentationGifs/CardControl.gif"/>
+
+ ## Follower
+
+ This control follow the cursor within a canvas and a control
+
+ <img src="DocumentationGifs/Follower.gif">
 
 # About Aura.UI
 
@@ -318,8 +317,8 @@ This library is possible thanks to the follow projects:
 
 # How To Collaborate
 
-If you want to collaborate with this proyect, contact me with the next links:
+Just enter to the follow Gitter chat! 
 
-* [![Gitter](https://img.shields.io/badge/Gitter-Text%20me!-red)](https://gitter.im/PieroCastillo)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AuraDevCommunity/Aura-UI) 
 
-Or make a pull request!
+Or make a pull request! All pull request are welcome!
