@@ -47,7 +47,7 @@
 						   Padding="5" TextBlock.FontWeight="DemiBold" FontFamily="Segoe UI"/>
 					<MaterialButton Grid.Column="1" Name="PART_CloseButton"
 									CornerRadius="0" Classes="close"
-									Material="{Material TintOpacity=1.5, TintColor=Red, MaterialOpacity=0.5}">
+									Material="{AcrylicMaterial TintOpacity=1.5, TintColor=Red, MaterialOpacity=0.5}">
 						<!--<Button.Template>
 							<ControlTemplate>
 								<ContentPresenter Content="{TemplateBinding Content}"

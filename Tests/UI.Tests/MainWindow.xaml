@@ -306,7 +306,8 @@
 			<!-- 		</StackPanel> -->
 			<!-- 	</Grid> -->
 			<!-- </NavigationViewItem> -->
-			<NavigationViewItem Header="Resize Decorator" Title="Resizing">
+	
+			<!--	<NavigationViewItem Header="Resize Decorator" Title="Resizing">
 				<ScrollViewer HorizontalScrollBarVisibility="Visible"
 				              VerticalScrollBarVisibility="Visible">
 					<Canvas Background="{DynamicResource ThemeAccentBrush4}">
@@ -316,7 +317,7 @@
 						</Button>
 						<ResizeDecorator ItemToResize="{Binding #btn_to}" 
 						                 DataContext="{Binding #btn_to}" 
-						                 RenderTransform="scale(1.1)"
+						                 RenderTransform="scale(1)"
 						                 Width="{Binding #btn_to.Bounds.Width}" 
 						                 Height="{Binding #btn_to.Bounds.Height}" 
 						                 Canvas.Top="{Binding #btn_to.Bounds.Top}" 
@@ -338,30 +339,79 @@
 					<Canvas Grid.Column="2" Background="{DynamicResource ThemeAccentBrush4}">
 						<RotatorDecorator Name="r_t" Angle="50">
 							<RotatorDecorator.ItemToRotate>
-								<Button Name="b_2" Content="Rotate and Skew me!"></Button> 
+								<Button Name="b_2" Content="Rotate and Skew me!"
+								        Width="200" Height="50"
+								        Canvas.Top="10"
+								        Canvas.Left="10"></Button> 
 							</RotatorDecorator.ItemToRotate>
 						</RotatorDecorator>
 					</Canvas>
 				</Grid>
-			</NavigationViewItem>
+			</NavigationViewItem> ->-->
+			
 			<NavigationViewItem Header="Follower"
 			                    Title="Following Cursor">
 				<CheckBox Name="ch_" IsChecked="False"
 				          Content="See Follower"></CheckBox>
 			</NavigationViewItem>
-			<!-- <NavigationViewItem Header="Follower"  -->
-			<!--                     Title="Following Cursor"> -->
-			<!-- 	<Grid> -->
-			<!-- 		<Follower Background="LightBlue"> -->
-			<!-- 			<Button Canvas.Top="10" Width="200" -->
-			<!-- 			        Canvas.Left="10"> -->
-			<!-- 				<TextBlock TextWrapping="Wrap" TextAlignment="Center"> -->
-			<!-- 					I'll follow you even thought you don't wanna -->
-			<!-- 				</TextBlock> -->
-			<!-- 			</Button> -->
-			<!-- 		</Follower> -->
-			<!-- 	</Grid> -->
-			<!-- </NavigationViewItem> -->
+			<!-- <NavigationViewItem Header="ControlDesigner"
+			                    Title="Rotating, Skewing and Resizing">
+				<Grid ColumnDefinitions="150, *">
+					<StackPanel>
+						<TextBlock Text="Width"></TextBlock>
+						<TextBox Text="{Binding #Designer.Width}"></TextBox>
+						<TextBlock Text="Height"></TextBlock>
+						<TextBox Text="{Binding #Designer.Height}"></TextBox>
+						<TextBlock Text="Canvas.Top"></TextBlock>
+						<TextBox Text="{Binding #Designer.(Canvas.Top)}"></TextBox>
+						<TextBlock Text="Canvas.Left"></TextBlock>
+						<TextBox Text="{Binding #Designer.(Canvas.Left)}"></TextBox>
+						<TextBlock Text="Canvas.Bottom"></TextBlock>
+						<TextBox Text="{Binding #Designer.(Canvas.Bottom)}"></TextBox>
+						<TextBlock Text="Canvas.Right"></TextBlock>
+						<TextBox Text="{Binding #Designer.(Canvas.Right)}"></TextBox>
+						<TextBlock Text="Skew Angle X"></TextBlock>
+						<TextBox Text="{Binding #Designer.SkewAngleX}"></TextBox>
+						<TextBlock Text="Skew Angle Y"></TextBlock>
+						<TextBox Text="{Binding #Designer.SkewAngleY}"></TextBox>
+						<TextBlock Text="Rotation Angle"></TextBlock>
+						<TextBox Text="{Binding #Designer.RotationAngle}"></TextBox>
+						<TextBlock Text="Edit Mode"></TextBlock>
+						
+						<ComboBox Name="edit_">
+							<ComboBoxItem Content="None" IsSelected="True"></ComboBoxItem>
+							<ComboBoxItem Content="Resize"></ComboBoxItem>
+							<ComboBoxItem Content="Rotate"></ComboBoxItem>
+						</ComboBox>
+					</StackPanel>
+					<Canvas Grid.Column="1"
+					        Background="{DynamicResource ThemeAccentBrush4}">
+						<ControlDesigner Name="Designer" EditMode="{Binding #edit_.SelectedItem.Content, Mode=TwoWay}">
+							<ControlDesigner.ControlToDesign>
+								<Button Canvas.Top="0"
+						        Canvas.Left="0"
+						        Width="200"
+						        Height="100"
+						        Content="Wow"></Button>
+							</ControlDesigner.ControlToDesign>
+						</ControlDesigner>
+					</Canvas>
+				</Grid>
+			</NavigationViewItem> -->
+			
+			<NavigationViewItem Header="AcrylicMaterial Extension"
+			                    Title="AcrylicMaterial like Binding">
+				<Grid RowDefinitions="*, 30, auto">
+					<ExperimentalAcrylicBorder Opacity="0.5" Height="200" Width="200" Material="{AcrylicMaterial MaterialOpacity=1.5, TintColor=Blue, TintOpacity=1}" />
+					<TextBlock Grid.Row="2" Background="{DynamicResource ThemeBackgroundBrush}">
+						<TextBlock.Text>
+							<x:String>
+								&lt;ExperimentalAcrylicBorder Opacity="0.5" Height="200" Width="200" Material="{AcrylicMaterial MaterialOpacity=1.5, TintColor=Blue, TintOpacity=1}"/&gt;
+							</x:String>
+						</TextBlock.Text>
+					</TextBlock>
+				</Grid>
+			</NavigationViewItem>
 		</NavigationView>	
 		<Follower LayerControl="{Binding #nav}">
 			<Follower.CanvasLayer>
@@ -373,10 +423,9 @@
 				         IsVisible="{Binding #ch_.IsChecked}"
 				         Width="50"
 				         Height="50"></Ellipse>
-				         <!-- Canvas.Top="0" -->
-				         <!-- Canvas.Left="0" -->
 			</Follower.FollowerControl>
 		</Follower>
+		
 		<Border Background="{DynamicResource ThemeBackgroundBrush}" Name="drag_b" 
 			        VerticalAlignment="Top" Height="20" Opacity="0"/>
 	</Grid>

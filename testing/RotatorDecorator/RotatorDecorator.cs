@@ -67,5 +67,14 @@ namespace Aura.UI.Controls
                 (o, v) => o.SkewY = v,
                 0);
 
+        public bool IsVisibleDecorations
+        {
+            get => GetValue(IsVisibleDecorationsProperty);
+            set => SetValue(IsVisibleDecorationsProperty, value);
+        }
+
+        public static readonly StyledProperty<bool> IsVisibleDecorationsProperty =
+            AvaloniaProperty.Register<RotatorDecorator, bool>(nameof(IsVisibleDecorations), true);
+
     }
 }

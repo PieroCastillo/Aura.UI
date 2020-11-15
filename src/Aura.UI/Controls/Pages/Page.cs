@@ -1,4 +1,6 @@
-﻿using Aura.UI.UIExtensions;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
@@ -19,6 +21,28 @@ namespace Aura.UI.Controls
 
         public PagesView ViewerParent { get; set; }
 
+        // protected override void OnKeyDown(KeyEventArgs e)
+        // {
+        //     var s = this.GetParentTOfLogical<PagesView>();
+        //     
+        //     if (e.Key == Key.Right | e.Key is Key.PageUp)
+        //     {
+        //         s.Next();
+        //     }
+        //     else if (e.Key == Key.Left | e.Key is Key.PageDown)
+        //     {
+        //         s.Previous();
+        //     }
+        //     else if (e.Key == Key.Home)
+        //     {
+        //         s.GoTo(0);
+        //     }
+        //     else if (e.Key == Key.End)
+        //     {
+        //         s.GoTo(s.ItemCount - 1);
+        //     }
+        // }
+        
         /// <summary>
         /// Defines the Title of the Parent Window
         /// </summary>
@@ -39,6 +63,5 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<bool> IsSelectedProperty =
             AvaloniaProperty.Register<Page, bool>(nameof(IsSelected), false);
-
     }
 }

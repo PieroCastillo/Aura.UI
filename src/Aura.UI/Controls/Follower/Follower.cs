@@ -10,9 +10,7 @@ using Avalonia.Metadata;
 namespace Aura.UI.Controls
 {
     public partial class Follower : TemplatedControl
-    {
-        private bool pointer_l = true;
-        
+    {  
         static Follower()
         {
             //IsHitTestVisibleProperty.OverrideDefaultValue<Follower>(false);
@@ -71,7 +69,7 @@ namespace Aura.UI.Controls
             }
 
 #if DEBUG
-            Debug.WriteLine($"moved to Top:{t_} Bottom:{t_s} Left:{l_} Right:{l_s}");
+         //   Debug.WriteLine($"moved to Top:{t_} Bottom:{t_s} Left:{l_} Right:{l_s}");
 #endif
 
         }

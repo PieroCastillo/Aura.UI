@@ -63,6 +63,12 @@
           <e p="nuget.config" t="Include" />
           <e p="obj" t="ExcludeRecursive">
             <e p="Debug" t="Include">
+              <e p="net5.0" t="Include">
+                <e p="Avalonia" t="Include">
+                  <e p="resources" t="Include" />
+                </e>
+                <e p="UI.Tests.AssemblyInfo.cs" t="Include" />
+              </e>
               <e p="netcoreapp3.1" t="Include">
                 <e p="Avalonia" t="Include">
                   <e p="resources" t="Include" />
@@ -193,12 +199,10 @@
               <e p="CustomWindow.cs" t="Include" />
               <e p="ICustomCornerRadious.cs" t="Include" />
               <e p="ICustomValue.cs" t="Include" />
+              <e p="IDesignable.cs" t="Include" />
               <e p="IFootered.cs" t="Include" />
               <e p="IMaterial.cs" t="Include" />
               <e p="TabViewBase.cs" t="Include" />
-            </e>
-            <e p="ResizeDecorator" t="Include">
-              <e p="ResizeDecorator.cs" t="Include" />
             </e>
             <e p="Ribbon" t="Include">
               <e p="Ribbon.cs" t="Include" />
@@ -206,9 +210,6 @@
               <e p="RibbonItem.cs" t="Include" />
               <e p="RibbonPanel.cs" t="Include" />
               <e p="RibbonSeparator.cs" t="Include" />
-            </e>
-            <e p="RotatorDecorator" t="Include">
-              <e p="RotatorDecorator.cs" t="Include" />
             </e>
             <e p="Sliders" t="Include">
               <e p="FilledSlider.Properties.cs" t="Include" />
@@ -222,12 +223,6 @@
             </e>
             <e p="SuperListBox" t="Include">
               <e p="SuperListBoxItem.cs" t="Include" />
-            </e>
-            <e p="Thumbs" t="Include">
-              <e p="MoveThumb.cs" t="Include" />
-              <e p="ResizeThumb.cs" t="Include" />
-              <e p="RotateThumb.cs" t="Include" />
-              <e p="SkewThumb.cs" t="Include" />
             </e>
             <e p="TitleBox" t="Include">
               <e p="TitleBox.Events.cs" t="Include" />
@@ -293,10 +288,6 @@
             <e p="CardCollectionStyles.xaml" t="Include" />
             <e p="CardControlStyles.xaml" t="Include" />
             <e p="ColorPickerButtonStyles.xaml" t="Include" />
-            <e p="Decorators" t="Include">
-              <e p="ResizeDecoratorStyles.xaml" t="Include" />
-              <e p="RotatorDecoratorStyles.xaml" t="Include" />
-            </e>
             <e p="FilledSliderStyles.xaml" t="Include" />
             <e p="FollowerStyles.xaml" t="Include" />
             <e p="GroupBoxStyles.xaml" t="Include" />
@@ -317,12 +308,6 @@
             <e p="ShadowButtonStyles.xaml" t="Include" />
             <e p="SuperColorPickerStyles.xaml" t="Include" />
             <e p="SuperListBoxItemStyles.xaml" t="Include" />
-            <e p="Thumbs" t="Include">
-              <e p="MoveThumbStyles.xaml" t="Include" />
-              <e p="ResizeThumbStyles.xaml" t="Include" />
-              <e p="RotateThumbStyles.xaml" t="Include" />
-              <e p="SkewThumbStyles.xaml" t="Include" />
-            </e>
             <e p="TitleBoxStyles.xaml" t="Include" />
           </e>
           <e p="UIExtensions" t="Include">
@@ -345,7 +330,7 @@
             <e p="ColorWindowSmall.axaml.cs" t="Include" />
           </e>
           <e p="Xaml" t="Include">
-            <e p="MaterialExtension.cs" t="Include" />
+            <e p="AcrylicMaterialExtension.cs" t="Include" />
             <e p="RevealExtension.cs" t="Include" />
           </e>
           <e p="bin" t="ExcludeRecursive" />

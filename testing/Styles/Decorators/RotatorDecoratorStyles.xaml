@@ -46,5 +46,17 @@
                 </Grid>
             </ControlTemplate>
         </Setter>
+    </Style>    
+    <Style Selector="RotatorDecorator[IsVisibleDecorations=True] /template/ SkewThumb">
+        <Setter Property="IsVisible" Value="True"></Setter>
+    </Style>
+    <Style Selector="RotatorDecorator[IsVisibleDecorations=False] /template/ SkewThumb">
+        <Setter Property="IsVisible" Value="False"></Setter>
+    </Style>
+    <Style Selector="RotatorDecorator[IsVisibleDecorations=True] /template/ RotateThumb">
+        <Setter Property="IsVisible" Value="True"></Setter>
+    </Style>
+    <Style Selector="RotatorDecorator[IsVisibleDecorations=False] /template/ RotateThumb">
+        <Setter Property="IsVisible" Value="False"></Setter>
     </Style>
 </Styles>

@@ -45,4 +45,16 @@
     <Style Selector="ResizeDecorator /template/ ResizeThumb">
         <Setter Property="DataContext" Value="{Binding $parent[ResizeDecorator].DataContext}"></Setter>
     </Style>
+    <Style Selector="ResizeDecorator[IsVisibleDecorations=True] /template/ ResizeThumb">
+        <Setter Property="IsVisible" Value="True"></Setter>
+    </Style>
+    <Style Selector="ResizeDecorator[IsVisibleDecorations=False] /template/ ResizeThumb">
+        <Setter Property="IsVisible" Value="False"></Setter>
+    </Style>    
+    <Style Selector="ResizeDecorator[IsVisibleDecorations=True] /template/ MoveThumb">
+        <Setter Property="IsVisible" Value="True"></Setter>
+    </Style>
+    <Style Selector="ResizeDecorator[IsVisibleDecorations=False] /template/ MoveThumb">
+        <Setter Property="IsVisible" Value="False"></Setter>
+    </Style>
 </Styles>

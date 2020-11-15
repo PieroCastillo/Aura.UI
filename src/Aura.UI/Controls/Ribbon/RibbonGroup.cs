@@ -31,7 +31,8 @@ namespace Aura.UI.Controls.Ribbon
             };
         }
 
-        public MaterialButton MiniButton
+        //[Obsolete("Use the event, maybe this property will be deleted")]
+        protected MaterialButton MiniButton
         {
             get { return GetValue(MiniButtonProperty); }
             set { SetValue(MiniButtonProperty, value); }

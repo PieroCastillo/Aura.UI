@@ -36,6 +36,7 @@ namespace Aura.UI.Controls
         protected IEnumerable<Action> Actions = new List<Action>();
         #endregion
         #region Methods
+        
         [Obsolete]
         /// <summary>
         /// You should overwrite this Method for add your custom tabitem
@@ -50,6 +51,7 @@ namespace Aura.UI.Controls
                 action.Invoke();
             }
         }
+        
         protected void AdderButtonClicked(object sender, RoutedEventArgs e)
         {
             var e_ = new RoutedEventArgs(ClickOnAddingButtonEvent);
@@ -73,8 +75,10 @@ namespace Aura.UI.Controls
             base.OnApplyTemplate(e);
 
             AdderButton = this.GetControl<Button>(e, "PART_AdderButton");
-
+            
+#pragma warning disable 612
             AdderButton.Click += OnAdding; // In the future this will be removed
+#pragma warning restore 612
 
             AdderButton.Click += AdderButtonClicked;
 

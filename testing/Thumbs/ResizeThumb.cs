@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
@@ -16,6 +17,8 @@ namespace Aura.UI.Controls.Thumbs
             if (item != null)
             {
                 double delta_v, delta_h;
+                
+                
                 switch (VerticalAlignment)
                 {
                     case VerticalAlignment.Bottom:
@@ -42,6 +45,10 @@ namespace Aura.UI.Controls.Thumbs
                         item.Width += delta_h;
                         break;
                 }
+                #if DEBUG
+                Debug.WriteLine($"canvas margin is Top : {Canvas.GetTop(item)}       Left : {Canvas.GetLeft(item)}");
+                Debug.WriteLine($"                 Bottom : {Canvas.GetBottom(item)} Right : {Canvas.GetRight(item)}");
+                #endif
             }
 
             e.Handled = true;

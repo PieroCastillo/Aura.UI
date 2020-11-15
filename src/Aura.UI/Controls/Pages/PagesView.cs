@@ -1,20 +1,7 @@
-﻿using Aura.UI.Attributes;
-using Aura.UI.UIExtensions;
+﻿using Aura.UI.UIExtensions;
 using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using Avalonia.Input;
-using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
-using MessageBox.Avalonia;
-using ReactiveUI;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Reactive;
-using System.Windows.Input;
 
 namespace Aura.UI.Controls
 {
@@ -35,30 +22,7 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<bool> CanChangeTheWindowTitleProperty =
             AvaloniaProperty.Register<PagesView, bool>(nameof(CanChangeTheWindowTitle), true);
         #endregion
-        protected override void OnKeyDown(KeyEventArgs e)
-        {
-                if (e.Key == Key.Right | e.Key is Key.PageUp)
-                {
-                    Next();
-                    e.Handled = true;
-                }
-                else if (e.Key == Key.Left | e.Key is Key.PageDown)
-                {
-                    Previous();
-                    e.Handled = true;
-                }
-                else if (e.Key == Key.Home)
-                {
-                    GoTo(0);
-                    e.Handled = true;
-                }
-                else if (e.Key == Key.End)
-                {
-                    GoTo((Items as List<object>).Count() - 1);
-                    e.Handled = true;
-                }
-            base.OnKeyDown(e);
-        }
+
         /// <summary>
         /// Backs to the previous page
         /// </summary>

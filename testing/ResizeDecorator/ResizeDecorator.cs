@@ -47,5 +47,14 @@ namespace Aura.UI.Controls
                 o => o.ItemToResize,
                 (o, s) => o.ItemToResize = s);
         
+        public bool IsVisibleDecorations
+        {
+            get => GetValue(IsVisibleDecorationsProperty);
+            set => SetValue(IsVisibleDecorationsProperty, value);
+        }
+
+        public static readonly StyledProperty<bool> IsVisibleDecorationsProperty =
+            AvaloniaProperty.Register<ResizeDecorator, bool>(nameof(IsVisibleDecorations), true);
+        
     }
 }

@@ -5,20 +5,40 @@
     <projectFile>Tests/UI.Tests.Mobile.NetCore/UI.Tests.Mobile.NetCore.csproj</projectFile>
     <projectFile>Tests/NugetTest/NugetTest.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5830b3e8-d10b-430b-a8c6-7e2b283021c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/Views/MusicView.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/Views/MusicView.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/RotateThumb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/RotateThumb.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/SkewThumb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/SkewThumb.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Extensions/ObjectExtensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Helpers/LayoutHelper.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/UIExtensions/LogicalExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/UIExtensions/LogicalExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/ContentWindow/ContentWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/ContentWindow/ContentWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Follower/Follower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Follower/Follower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Pages/Page.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Pages/Page.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Pages/PagesView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Pages/PagesView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/testing/ResizeDecorator/ResizeDecorator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Ribbon/RibbonGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Ribbon/RibbonGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/testing/RotatorDecorator/RotatorDecorator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/MoveThumb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Thumbs/MoveThumb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/ResizeThumb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Thumbs/ResizeThumb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/RotateThumb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Thumbs/RotateThumb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/SkewThumb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Thumbs/SkewThumb.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/ToolWindow/ToolWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/ToolWindow/ToolWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/ResizeDecoratorStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Styles/Decorators/ResizeDecoratorStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/RotatorDecoratorStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Styles/Decorators/RotatorDecoratorStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/Navigation/NavigationViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Styles/Navigation/NavigationViewStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/MoveThumbStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Styles/Thumbs/MoveThumbStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/ResizeThumbStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Styles/Thumbs/ResizeThumbStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/RotateThumbStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Styles/Thumbs/RotateThumbStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/SkewThumbStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/testing/Styles/Thumbs/SkewThumbStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Xaml/MaterialExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Xaml/AcrylicMaterialExtension.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,60 +57,61 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3C2E205D-04D0-44C3-8C21-30A014740617/6/Layoutable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4B0F8028-C599-432C-A2B2-D3504072AEFE/3/ExpressionObserverBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4B0F8028-C599-432C-A2B2-D3504072AEFE/11/TemplateBinding.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/F9E8E74F-0926-4402-B832-0C7BCA0D1592/20/NameScope.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/TabControlExtensions.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/FooteredTabViewBase.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView.Properties.cs" />
-      <option value="$PROJECT_DIR$/Tests/UI.Tests/Views/CustomNavigationViewWindow.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Navigation/NavigationViewStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Navigation/NavigationViewItemStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/IFootered.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabView.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabView.Properties.cs" />
-      <option value="$PROJECT_DIR$/Tests/UI.Tests/App.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Buttons/ShadowButton.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/ShadowButtonStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonItemStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/SnapUi/Controls/DropZoneStackPanel.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/SnapUi/Controls/DropZoneUniformGrid.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/SnapUi/Controls/Draggable.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/AuraTabViewStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/AuraTabItemStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Ribbon/RibbonGroup.cs" />
       <option value="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/LayoutEditor/LayoutEditor.Properties.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/LayoutEditor/LayoutEditor.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/LayoutEditorStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeThumb/ResizeThumb.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/ControlExtensions.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/MoveThumb.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/ResizeThumbStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/MoveThumbStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/ResizeThumb.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/ResizeDecoratorStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/RotateThumbStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Thumbs/SkewThumbStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Helpers/LayoutHelper.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Extensions/VectorExtensions.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/RotateThumb.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/FolllowerStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/VisualExtensions.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/LogicalExtensions.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/FollowerStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Follower/Follower.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Follower/Follower.Properties.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Styles/RibbonStyles.xaml" />
-      <option value="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/RotatorDecoratorStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/SkewThumb.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/IDesignable.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/DesignerCanvas/DesignerCanvas.Events.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/DesignerCanvas/DesignerCanvas.Properties.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/DesignerCanvas/DesignerCanvas.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ControlDesigner/ControlDesigner.Properties.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/DesignerCanvas/DesignerCanvas.Mixins.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ContentWindow/ContentWindow.cs" />
+      <option value="$PROJECT_DIR$/Tests/UI.Tests/Views/MusicView.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Navigation/NavigationViewStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/RotatorDecorator/RotatorDecorator.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ResizeDecorator/ResizeDecorator.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/RotatorDecoratorStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/Decorators/ResizeDecoratorStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ControlDesigner/ControlDesigner.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/ResizeThumb.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/ControlDesignerStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Pages/Page.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Styles/AuraTabItemStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ToolWindow/ToolWindow.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Xaml/AcrylicMaterialExtension.cs" />
+      <option value="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Pages/PagesView.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Follower/Follower.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabView.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Ribbon/RibbonGroup.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1izDhkclZIUSUIYk9UTqGhPryd5" />
@@ -114,10 +135,14 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="me.fornever.avaloniarider.idea.settings.AvaloniaSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.UI.Tests">
+  <component name="RunManager" selected="Publish to folder.Publish Aura.UI to folder">
+    <configuration name="Publish Aura.UI to folder" type="DotNetFolderPublish" factoryName="Publish to folder" temporary="true">
+      <riderPublish uuid_high="1393117735389119030" uuid_low="-5517372887645688254" />
+      <method v="2" />
+    </configuration>
     <configuration name="NugetTest" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -172,6 +197,11 @@
         <option name="Build" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Publish to folder.Publish Aura.UI to folder" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -195,6 +225,11 @@
       <workItem from="1605110662438" duration="16163000" />
       <workItem from="1605195206297" duration="18194000" />
       <workItem from="1605280056716" duration="22575000" />
+      <workItem from="1605375963993" duration="10139000" />
+      <workItem from="1605403480840" duration="137000" />
+      <workItem from="1605403973015" duration="1135000" />
+      <workItem from="1605405402310" duration="708000" />
+      <workItem from="1605406575409" duration="10112000" />
     </task>
     <servers />
   </component>
@@ -217,5 +252,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

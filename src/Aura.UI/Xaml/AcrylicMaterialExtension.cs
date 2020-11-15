@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Aura.UI.Xaml
 {
-    public class MaterialExtension : MarkupExtension
+    public class AcrylicMaterialExtension : MarkupExtension
     {
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
@@ -16,6 +16,7 @@ namespace Aura.UI.Xaml
                 FallbackColor = FallBackColor,
                 TintOpacity = TintOpacity,
                 MaterialOpacity = MaterialOpacity
+                
             };
         }
         public Color TintColor { get; set; }
