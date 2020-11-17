@@ -24,7 +24,7 @@ Aura.UI
 | FilledSlider       |  NavigationView |
 | ModernSlider       | CardControl
 | ColorWindowSmall   | CardCollection
-| Follower(Preview)
+| Follower(Preview) | ToolWindow(Preview)
 
 <br/>
 
@@ -311,7 +311,7 @@ This library is open source and free, in a few months come out the first stable 
 
 This library is possible thanks to the follow projects:
    * [Avalonia](http://avaloniaui.net/) by the AvaloniaUI Team.
-   * [ColorPicker](github.com/MikeCodesDotNET/ColorPicker) by MikeCodesDotNet.
+   * [ColorPicker](http://github.com/MikeCodesDotNET/ColorPicker) by MikeCodesDotNet.
    * [Math.NET Numerics](https://github.com/mathnet/mathnet-numerics) by Math.NET Team.
 
 
