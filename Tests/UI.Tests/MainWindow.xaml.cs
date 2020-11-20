@@ -30,11 +30,13 @@ namespace UI.Tests
         public MainWindow()
         {
             InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
-           //this.Icon = new WindowIcon(new Bitmap(@"auraui-logov2.png"));
 
+            this.Icon = new WindowIcon(new Bitmap(@"auraui-logov2.png"));
+
+           #if DEBUG
+            this.AttachDevTools();
+            #endif
+           
             tabc = this.Find<TabControl>("tabview");
 
             tabvw = this.Find<AuraTabView>("tabvw_");
@@ -82,9 +84,9 @@ namespace UI.Tests
         {
             
         }
-
+        
         private void Drag_PointerPressed(object sender, PointerPressedEventArgs e)
-        {
+        { 
             this.BeginMoveDrag(e);
         }
 

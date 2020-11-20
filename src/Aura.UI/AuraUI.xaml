@@ -49,6 +49,9 @@
 	<StyleInclude Source="/Styles/FollowerStyles.xaml"/>
 	<!-- <StyleInclude Source="/Styles/ControlDesignerStyles.xaml"/> -->
 	
+	<!--New controls added to 0.1.3-preview9 -->
+	
+	
 	<!--I do not the reason of why when I write the ModernSlider Styles in its xaml, that does not compile-->
 	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/> 

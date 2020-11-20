@@ -85,6 +85,7 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.0-preview6" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
+    <PackageReference Include="Live.Avalonia" Version="1.0.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />

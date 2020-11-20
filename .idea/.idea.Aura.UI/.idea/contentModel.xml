@@ -224,6 +224,9 @@
             <e p="SuperListBox" t="Include">
               <e p="SuperListBoxItem.cs" t="Include" />
             </e>
+            <e p="Thumbs" t="Include">
+              <e p="MoveThumb.cs" t="Include" />
+            </e>
             <e p="TitleBox" t="Include">
               <e p="TitleBox.Events.cs" t="Include" />
               <e p="TitleBox.Properties.cs" t="Include" />

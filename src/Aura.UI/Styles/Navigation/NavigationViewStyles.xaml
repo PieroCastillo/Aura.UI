@@ -36,26 +36,30 @@
 							</Border.Transitions>
 							<ExperimentalAcrylicBorder VerticalAlignment="Stretch" 
 													   Material="{TemplateBinding Material}">
-								<Grid RowDefinitions="Auto,*" ColumnDefinitions="*" HorizontalAlignment="Stretch">
-									<NavigationViewItem Grid.Row="0" Grid.Column="0"
-														Name="PART_ToggleNav" 
-														IsHeader="True"
-														Header="{TemplateBinding Header}"
-														HeaderTemplate="{TemplateBinding HeaderTemplate}"
-														HorizontalAlignment="Stretch"
-														Icon="{TemplateBinding HeaderIcon}"/>
-									<ScrollViewer Grid.Row="1" Grid.Column="0"
-												VerticalScrollBarVisibility="Auto">
-										<DockPanel>
-											<ItemsPresenter DockPanel.Dock="Top"
-												Name="PART_ItemsPresenter"
-												VerticalAlignment="Stretch"
-												HorizontalAlignment="Stretch"
-												Items="{TemplateBinding Items}"
-												ItemsPanel="{TemplateBinding ItemsPanel}"
-												ItemTemplate="{TemplateBinding ItemTemplate}"/>
-										</DockPanel>
-									</ScrollViewer>
+								<Grid>
+									<Border HorizontalAlignment="Right" Width="1" Margin="5 0 0 0 " Background="Transparent"
+									        IsHitTestVisible="False" BoxShadow="-1 0 5 0 Black" ZIndex="999"/>
+									<Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch">
+										<NavigationViewItem Grid.Row="0" Grid.Column="0"
+										                    Name="PART_ToggleNav" 
+										                    IsHeader="True"
+										                    Header="{TemplateBinding Header}"
+										                    HeaderTemplate="{TemplateBinding HeaderTemplate}"
+										                    HorizontalAlignment="Stretch"
+										                    Icon="{TemplateBinding HeaderIcon}"/>
+										<ScrollViewer Grid.Row="1" Grid.Column="0"
+										              VerticalScrollBarVisibility="Auto">
+											<DockPanel>
+												<ItemsPresenter DockPanel.Dock="Top"
+												                Name="PART_ItemsPresenter"
+												                VerticalAlignment="Stretch"
+												                HorizontalAlignment="Stretch"
+												                Items="{TemplateBinding Items}"
+												                ItemsPanel="{TemplateBinding ItemsPanel}"
+												                ItemTemplate="{TemplateBinding ItemTemplate}"/>
+											</DockPanel>
+										</ScrollViewer>
+									</Grid>
 								</Grid>
 							</ExperimentalAcrylicBorder>
 						</Border>

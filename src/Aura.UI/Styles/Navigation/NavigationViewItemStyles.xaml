@@ -30,8 +30,7 @@
 											ContentTemplate="{TemplateBinding HeaderTemplate}"
 											TextBlock.FontSize="14"
 											TextBlock.FontFamily="Segoe UI"
-											VerticalAlignment="Center"
-											/>
+											VerticalAlignment="Center"/>
 						</Border>
 				</StackPanel>
 				</Border>

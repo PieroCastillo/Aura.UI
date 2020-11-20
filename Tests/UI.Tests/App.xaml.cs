@@ -5,6 +5,12 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Reactive;
+using Aura.UI.Controls;
+using Avalonia.Controls;
+using Live.Avalonia;
+using ReactiveUI;
 
 namespace UI.Tests
 {
@@ -22,26 +28,12 @@ namespace UI.Tests
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                //Selector = ThemeSelector.Create("Themes");
-                //Selector.LoadSelectedTheme("Theme.theme");
-                
-                //Manager = LanguageManager.Create("Languages");
-                //Manager.LoadSelectedLanguage("Language.theme");
                 desktop.MainWindow = new MainWindow();
-                //{
-                //    DataContext = new
-                //    {
-                //        Manager/*, Selector*/
-                //    }
-                //};
-                //desktop.Exit += (sender , e) =>
-                //{
-                //    //Selector.SaveSelectedTheme("Theme.theme");
-                //    Manager.SaveSelectedLanguage("Language.theme");
-                //};
             }
 
+            
             base.OnFrameworkInitializationCompleted();
         }
+
     }
 }

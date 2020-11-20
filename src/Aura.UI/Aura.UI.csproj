@@ -39,7 +39,6 @@
   </ItemGroup>
    <ItemGroup>
      <None Remove="Assets\auraui-logov2.ico" />
-     <None Remove="Styles\LayoutEditorStyles.xaml" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Include="75000.jpg" />
