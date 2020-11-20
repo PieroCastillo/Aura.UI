@@ -3,6 +3,7 @@
 [![downloads](https://img.shields.io/nuget/dt/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI) 
 [![Discord](https://img.shields.io/badge/discord-join%20chat-JY9sDq)]( https://discord.gg/JY9sDq)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
+![Size](https://img.shields.io/github/repo-size/PieroCastillo/Aura.UI)
 
 <h1 align="center">
 <img src="DesignSources/auraui-logov2.png" width="256"/> 
@@ -24,7 +25,7 @@ Aura.UI
 | FilledSlider       |  NavigationView |
 | ModernSlider       | CardControl
 | ColorWindowSmall   | CardCollection
-| Follower(Preview)
+| Follower(Preview) | ToolWindow(Preview)
 
 <br/>
 
@@ -311,7 +312,7 @@ This library is open source and free, in a few months come out the first stable 
 
 This library is possible thanks to the follow projects:
    * [Avalonia](http://avaloniaui.net/) by the AvaloniaUI Team.
-   * [ColorPicker](github.com/MikeCodesDotNET/ColorPicker) by MikeCodesDotNet.
+   * [ColorPicker](http://github.com/MikeCodesDotNET/ColorPicker) by MikeCodesDotNet.
    * [Math.NET Numerics](https://github.com/mathnet/mathnet-numerics) by Math.NET Team.
 
 
