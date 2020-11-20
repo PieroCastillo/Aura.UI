@@ -3,6 +3,7 @@
 [![downloads](https://img.shields.io/nuget/dt/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI) 
 [![Discord](https://img.shields.io/badge/discord-join%20chat-JY9sDq)]( https://discord.gg/JY9sDq)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
+![Size](https://img.shields.io/github/repo-size/PieroCastillo/Aura.UI)
 
 <h1 align="center">
 <img src="DesignSources/auraui-logov2.png" width="256"/> 
