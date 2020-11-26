@@ -5,6 +5,7 @@ using Aura.UI.Controls;
 using System.Collections.Generic;
 using System.Linq;
 using System.Diagnostics;
+using Avalonia;
 using Avalonia.Media;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
@@ -74,7 +75,7 @@ namespace Aura.UI.UIExtensions
         /// </summary>
         /// <param name="tabControl">The TabControl Parent</param>
         /// <param name="TabItemToAdd">The TabItem to Add</param>
-        /// <returns>If the method has been done correctly,return bool if it has been done correctly or false if it has been done incorrectly</returns>
+        /// <returns>If the method has been done correctly,returns bool if it has been done correctly or false if it has been done incorrectly</returns>
         public static bool AddTab(this TabControl tabControl, TabItem TabItemToAdd, bool Focus = true)
         {
             try

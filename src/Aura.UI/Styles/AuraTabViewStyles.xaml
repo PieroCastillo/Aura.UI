@@ -528,4 +528,8 @@
 	<Style Selector="AuraTabView /template/ Border#PART_BoxShadow">
 		<Setter Property="ZIndex" Value="-1"/>
 	</Style>
+	
+	<Style Selector="AuraTabView AuraTabItem">
+		<Setter Property="CanBeDragged" Value="{Binding $parent[AuraTabView].ReorderableTabs}"></Setter>
+	</Style>
 </Styles>

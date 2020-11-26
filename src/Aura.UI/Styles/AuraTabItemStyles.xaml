@@ -384,6 +384,14 @@
 		</Style.Animations>
 	</Style>
 	
+	<Style Selector="TabControl AuraTabItem">
+		<Setter Property="DragDrop.AllowDrop" Value="False"></Setter>
+	</Style>
+	
+	<Style Selector="AuraTabView AuraTabItem">
+		<Setter Property="DragDrop.AllowDrop" Value="True"></Setter>
+	</Style>
+	
 	<Style Selector="AuraTabItem[IsSelected=False]:pointerover">
 		<!--<Style.Animations>
 			<Animation Duration="0:0:0.2">

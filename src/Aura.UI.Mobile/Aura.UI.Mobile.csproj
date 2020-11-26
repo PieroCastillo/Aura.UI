@@ -36,61 +36,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-preview5" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview5" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
-    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview5" />
+    <PackageReference Include="Avalonia" Version="0.10.0-preview6" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview6" />
+    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview6" />
     <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.1" />
   </ItemGroup>
 	
 	
 
   <ItemGroup>
-    <ProjectReference Include="..\..\external\Ripple\Ripple.csproj" />
     <ProjectReference Include="..\Aura.UI\Aura.UI.csproj" />
   </ItemGroup>
 	
 	
-
-  <ItemGroup>
-    <AvaloniaResource Update="AlertDialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaResource>
-    <AvaloniaResource Update="CupertinoAlertDialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaResource>
-    <AvaloniaResource Update="CupertinoDialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaResource>
-    <AvaloniaResource Update="DialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaResource>
-    <AvaloniaResource Update="MaterialStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaResource>
-  </ItemGroup>
-	
-	
-
-  <ItemGroup>
-    <Folder Include="ControlStyles\" />
-  </ItemGroup>
-	
-	
-
-  <ItemGroup>
-    <None Update="AlertDialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="CupertinoDialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="DialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="MaterialStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-  </ItemGroup>
 
 </Project>

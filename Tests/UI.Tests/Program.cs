@@ -2,6 +2,7 @@
 using Avalonia.Dialogs;
 using Avalonia.Controls.ApplicationLifetimes;
 using System;
+using Avalonia.ReactiveUI;
 
 namespace UI.Tests
 {

@@ -138,4 +138,7 @@
 	     <Generator>MSBuild:Compile</Generator>
 	   </AvaloniaResource>
    </ItemGroup>
+   <ItemGroup>
+     <ProjectReference Include="..\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />
+   </ItemGroup>
 </Project>

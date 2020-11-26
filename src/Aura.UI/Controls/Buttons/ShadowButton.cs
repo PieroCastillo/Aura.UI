@@ -3,6 +3,7 @@ using Avalonia.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia.Controls;
 
 namespace Aura.UI.Controls
 {

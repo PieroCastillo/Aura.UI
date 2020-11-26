@@ -62,370 +62,244 @@
 							HorizontalAlignment="Right" Name="cbtn">DeleteTab</Button>
 					</Grid>
 		</NavigationViewItem>
-		<NavigationViewItem Header="TitleBox" Title="TitleBox">
-			<Border Padding="10">
-				<Border.Resources>
-					<DrawingImage x:Key="EvaIcons.Close">
-						<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="F1M424.945587158203,-450.102813720703C427.12939453125,-450.107666015625 429.331298828125,-449.827239990234 431.496948242188,-449.246948242188 440.159545898438,-446.925811767578 446.925811767578,-440.159545898438 449.246948242188,-431.496948242188C451.568084716797,-422.834350585938,449.091461181641,-413.591461181641,442.75,-407.25L335.25,-300 442.75,-192.75C447.482818603516,-188.05583190918,450.144958496094,-181.665939331055,450.144958496094,-175C450.144958496094,-168.334060668945,447.482818603516,-161.94416809082,442.75,-157.25C438.055847167969,-152.517181396484,431.665924072266,-149.855041503906,425,-149.855041503906C418.334075927734,-149.855041503906,411.944152832031,-152.517181396484,407.25,-157.25L300,-264.75 192.75,-157.25C188.05583190918,-152.517181396484,181.665939331055,-149.855041503906,175,-149.855041503906C168.334060668945,-149.855041503906,161.94416809082,-152.517181396484,157.25,-157.25C152.517181396484,-161.94416809082,149.855041503906,-168.334060668945,149.855041503906,-175C149.855041503906,-181.665939331055,152.517181396484,-188.05583190918,157.25,-192.75L264.75,-300 157.25,-407.25C147.44694519043,-417.053039550781,147.44694519043,-432.946929931641,157.25,-442.75C167.05305480957,-452.553039550781,182.94694519043,-452.553070068359,192.75,-442.75L300,-335.25 407.25,-442.75C412.006103515625,-447.506103515625,418.394256591797,-450.088226318359,424.945587158203,-450.102813720703z"/>
-					</DrawingImage>
-					<DrawingImage x:Key="BoxIcons.SolidPin">
-						<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="F1M384,-874.666015625L640,-874.666015625C687.10400390625,-874.666015625,725.3330078125,-836.43701171875,725.3330078125,-789.3330078125L725.3330078125,-704 640,-704 640,-465.664001464844 640.002014160156,-465.664001464844 755.5009765625,-392.832000732422C763.52197265625,-384.85400390625,768.002014160156,-374.015991210938,768.002014160156,-362.6669921875L768.002014160156,-277.334014892578C768.002014160156,-253.738998413086,748.929992675781,-234.667007446289,725.335021972656,-234.667007446289L554.668029785156,-234.667007446289 554.668029785156,-106.6669921875 512.0009765625,-21.3340015411377 469.334014892578,-106.6669921875 469.334014892578,-234.667007446289 298.6669921875,-234.667007446289C275.114990234375,-234.667007446289,256,-253.738998413086,256,-277.334014892578L256,-362.6669921875C256,-374.015991210938,260.480010986328,-384.852996826172,268.501007080078,-392.832000732422L384,-465.664001464844 384,-704 298.6669921875,-704 298.6669921875,-789.3330078125C298.6669921875,-836.43701171875,336.89599609375,-874.666015625,384,-874.666015625z"   />
-					</DrawingImage>
-				</Border.Resources>
-				<TitleBox  Width="400" Height="500" Header="TitleBox"
-						   Button1Active="True" Button2Active="True">
-					<TitleBox.Button1Content>
-						<Image Stretch="UniformToFill" Source="{DynamicResource BoxIcons.SolidPin}"/>
-					</TitleBox.Button1Content>
-					<TitleBox.Button2Content>
-						<Image Stretch="UniformToFill" Source="{DynamicResource EvaIcons.Close}"/>
-					</TitleBox.Button2Content>
-				</TitleBox>
-			</Border>
-		</NavigationViewItem>
-	    <NavigationViewItem Header="PagesView" Title="PagesView">
-			<Button Name="open_pages">Open Pages</Button>
-		</NavigationViewItem> 
-	    <NavigationViewItem Header="AuraTabView" Title="AuraTabView">
-			<Grid RowDefinitions="*, auto">
-				<Border HorizontalAlignment="Center" VerticalAlignment="Center"
-				        BoxShadow="0 0 5 0 Black">
-					<Grid>
-						<AuraTabView Name="tabvw_" Header="AuraTabView"
-						             Footer="Aura.UI"
-						             Width="1000" Height="700"
-						             TabStripPlacement="{Binding #tab_st.SelectedItem.Header}"
-						             ><!-- ItemsMargin="0 5 0 0" -->
-							<AuraTabView.SecondaryBackground>
-								<SolidColorBrush Color="LightGreen" Opacity="0.5"/>
-							</AuraTabView.SecondaryBackground>
-							<AuraTabView.FallBackContent>
-								<Image Source="avares://UI.Tests/auraui-logov2.png"
-								       Height="250" Opacity="0.5"/>
-							</AuraTabView.FallBackContent>
-							<AuraTabItem Header="Header 1"></AuraTabItem>
-							<AuraTabItem Header="Header 2"></AuraTabItem>
-						</AuraTabView>
-					</Grid>
-				</Border>
-				<TabStrip Name="tab_st" Grid.Row="1" Height="40" Width="500">
-					<TabItem Header="Top" />
-					<TabItem Header="Bottom"/>
-					<TabItem Header="Left"/>
-					<TabItem Header="Right"/>
-				</TabStrip>
-			</Grid>
-		</NavigationViewItem>
-		<NavigationViewItem Header="ColorPickerButton" Title="ColorPickerButton">
-			<Grid>
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="*"></ColumnDefinition><ColumnDefinition Width="*"></ColumnDefinition>
-				</Grid.ColumnDefinitions>
-				<ColorPickerButton Grid.Column="0" Name="CP_btn" Height="30" Width="30"></ColorPickerButton>
-				<Border Grid.Column="1" Name="border_bg" Height="100" Width="100" Background="{Binding #CP_btn.Background}"></Border>
-			</Grid>
-		</NavigationViewItem>
-			<NavigationViewItem Header="SuperColorPicker" Title="SuperColorPicker">
-				<SuperColorPicker Height="600" Width="300" Orientation="Vertical"></SuperColorPicker>
-			</NavigationViewItem>
-			<NavigationViewItem Header="FilledSlider" Title="FilledSlider">
-				<Grid>
-					<Border Padding="20">
-						<StackPanel Orientation="Horizontal">
-							<FilledSlider Name="sl_1" Orientation="Horizontal" Width="200" Height="20"></FilledSlider>
-							<FilledSlider Name="sl_2" Orientation="Vertical" Width="20" Height="200"></FilledSlider>
-						</StackPanel>
-					</Border>
-					<StackPanel Spacing="10">
-						<Button Content="{Binding #sl_1.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
-						<Button Content="{Binding #sl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
-					</StackPanel>	
-				</Grid>
-			</NavigationViewItem>
-			<NavigationViewItem Header="ModernSlider" Title="ModernSlider">
-				<WrapPanel>
-					<Border Padding="20">
-						<StackPanel Orientation="Horizontal">
-							<ModernSlider Name="msl_1" Orientation="Horizontal" Width="200" Height="60"></ModernSlider>
-							<ModernSlider Name="msl_2" Orientation="Vertical"  Width="60" Height="200"></ModernSlider>
-						</StackPanel>
-					</Border>
-					<StackPanel Spacing="10">
-						<Button Content="{Binding #msl_1.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
-						<Button Content="{Binding #msl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
-					</StackPanel>
-				</WrapPanel>
-			</NavigationViewItem>
-			<NavigationViewItem Header="GroupBox" Title="GroupBox"> 
-				<Grid>
-					<GroupBox Header="Yes, I'm a Header" MaterialIsVisible="False">
-						<StackPanel Spacing="10">
-							<MaterialButton>Oh, I don't know that!</MaterialButton>
-							<TextBlock Text="MaterialIsVisible=False"/>
-						</StackPanel>
-					</GroupBox>
-				</Grid>
-			</NavigationViewItem>	
-			<NavigationViewItem Header="Ribbon" Title="Ribbon">
-				<Grid>
+				<NavigationViewItem Header="TitleBox" Title="TitleBox">
 					<Border Padding="10">
-						<Ribbon  LeftContent="File" RightContent="Settings"
-					ExpansionState="Total" OpenPaneHeight="170">
-							<Ribbon.Header>
-								<Image Source="avares://UI.Tests/auraui-logov2.png" Height="15" Stretch="UniformToFill"></Image>
-							</Ribbon.Header>
-							<RibbonItem Header="Start">
-								<RibbonPanel>
-									<RibbonGroup Header=":3" Width="200">
-										<Button Content="Why?"/>
-									</RibbonGroup>
-									<RibbonSeparator/>
-									<RibbonGroup Width="100">
-										<StackPanel>
-											<Button Content="Why?"/>
-											<Button Content="Why? v2"/>
-											<Button Content="Why? v3"/>
-										</StackPanel>
-									</RibbonGroup>
-									<RibbonSeparator></RibbonSeparator>
-									<RibbonGroup></RibbonGroup>
-								</RibbonPanel>
-							</RibbonItem>
-							<RibbonItem Header="Edit">
-								<RibbonPanel>
-									<RibbonGroup Header=":3" Width="200">
-										<StackPanel>
-											<Button Content="Why?"/>
-											<Button Content="Why? v2"/>
-											<Button Content="Why? v3"/>
-										</StackPanel>
-									</RibbonGroup>
-									<RibbonSeparator/>
-									<RibbonGroup Width="100">
-										<Button Content="Why?"/>
-									</RibbonGroup>
-									<RibbonSeparator></RibbonSeparator>
-									<RibbonGroup></RibbonGroup>
-								</RibbonPanel>
-							</RibbonItem>
-						</Ribbon>
-						<!--<Border.Resources>
-							<ms:Double x:Key="DefaultRibbonContainerHeight">170</ms:Double>
+						<Border.Resources>
+							<DrawingImage x:Key="EvaIcons.Close">
+								<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="F1M424.945587158203,-450.102813720703C427.12939453125,-450.107666015625 429.331298828125,-449.827239990234 431.496948242188,-449.246948242188 440.159545898438,-446.925811767578 446.925811767578,-440.159545898438 449.246948242188,-431.496948242188C451.568084716797,-422.834350585938,449.091461181641,-413.591461181641,442.75,-407.25L335.25,-300 442.75,-192.75C447.482818603516,-188.05583190918,450.144958496094,-181.665939331055,450.144958496094,-175C450.144958496094,-168.334060668945,447.482818603516,-161.94416809082,442.75,-157.25C438.055847167969,-152.517181396484,431.665924072266,-149.855041503906,425,-149.855041503906C418.334075927734,-149.855041503906,411.944152832031,-152.517181396484,407.25,-157.25L300,-264.75 192.75,-157.25C188.05583190918,-152.517181396484,181.665939331055,-149.855041503906,175,-149.855041503906C168.334060668945,-149.855041503906,161.94416809082,-152.517181396484,157.25,-157.25C152.517181396484,-161.94416809082,149.855041503906,-168.334060668945,149.855041503906,-175C149.855041503906,-181.665939331055,152.517181396484,-188.05583190918,157.25,-192.75L264.75,-300 157.25,-407.25C147.44694519043,-417.053039550781,147.44694519043,-432.946929931641,157.25,-442.75C167.05305480957,-452.553039550781,182.94694519043,-452.553070068359,192.75,-442.75L300,-335.25 407.25,-442.75C412.006103515625,-447.506103515625,418.394256591797,-450.088226318359,424.945587158203,-450.102813720703z"/>
+							</DrawingImage>
+							<DrawingImage x:Key="BoxIcons.SolidPin">
+								<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="F1M384,-874.666015625L640,-874.666015625C687.10400390625,-874.666015625,725.3330078125,-836.43701171875,725.3330078125,-789.3330078125L725.3330078125,-704 640,-704 640,-465.664001464844 640.002014160156,-465.664001464844 755.5009765625,-392.832000732422C763.52197265625,-384.85400390625,768.002014160156,-374.015991210938,768.002014160156,-362.6669921875L768.002014160156,-277.334014892578C768.002014160156,-253.738998413086,748.929992675781,-234.667007446289,725.335021972656,-234.667007446289L554.668029785156,-234.667007446289 554.668029785156,-106.6669921875 512.0009765625,-21.3340015411377 469.334014892578,-106.6669921875 469.334014892578,-234.667007446289 298.6669921875,-234.667007446289C275.114990234375,-234.667007446289,256,-253.738998413086,256,-277.334014892578L256,-362.6669921875C256,-374.015991210938,260.480010986328,-384.852996826172,268.501007080078,-392.832000732422L384,-465.664001464844 384,-704 298.6669921875,-704 298.6669921875,-789.3330078125C298.6669921875,-836.43701171875,336.89599609375,-874.666015625,384,-874.666015625z"   />
+							</DrawingImage>
 						</Border.Resources>
-						<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
-								ExpansionState="Total">
-							<RibbonItem Header="Start">
-								<RibbonPanel>
-									<RibbonGroup Header="Colour">
-										<Border Background="Yellow" Height="90" Width="100"/>
-									</RibbonGroup>
-									<RibbonSeparator></RibbonSeparator>
-									<RibbonGroup Header="Themes">
-										<StackPanel Orientation="Horizontal">
-											<Border Background="Black" Width="60" Height="90"/>
-											<Border Background="White" Width="60" Height="90"/>
-										</StackPanel>
-									</RibbonGroup>
-									<RibbonSeparator></RibbonSeparator>
-									<RibbonGroup Header="Fonts">
-										<StackPanel Spacing="10">
-											<TextBlock FontSize="20">Ribbon</TextBlock>
-											<TextBlock FontSize="14">Ribbon</TextBlock>
-											<TextBlock FontSize="10">Ribbon</TextBlock>
-										</StackPanel>
-									</RibbonGroup>
-								</RibbonPanel>
-							</RibbonItem>
-							<RibbonItem Header="Edit">
-								<RibbonPanel>
-								</RibbonPanel>
-							</RibbonItem>
-						</Ribbon>-->
+						<TitleBox  Width="400" Height="500" Header="TitleBox"
+								  Button1Active="True" Button2Active="True">
+							<TitleBox.Button1Content>
+								<Image Stretch="UniformToFill" Source="{DynamicResource BoxIcons.SolidPin}"/>
+							</TitleBox.Button1Content>
+							<TitleBox.Button2Content>
+								<Image Stretch="UniformToFill" Source="{DynamicResource EvaIcons.Close}"/>
+							</TitleBox.Button2Content>
+						</TitleBox>
 					</Border>
-				</Grid>
-			</NavigationViewItem>
-			<NavigationViewItem Header="NavigationView" Title="NavigationView">
-				<StackPanel Orientation="Vertical" Spacing="20">
-					<Button Content="Open Default NavigationView" Click="OpenDefaultNavigationView"/>
-					<Button Content="Open Custom NavigationView" Click="OpenCustomNavigationView"/>
-				</StackPanel>
-			</NavigationViewItem>
-			<NavigationViewItem Header="SuperListBoxItem" Title="SuperListBoxItem">
-				<Border Padding="10">
-					<ListBox>
-						<SuperListBoxItem MainText="Avalonia App" SecondaryText="src/AvaloniaApp/AvaloniaApp.csproj"
-										  Icon="{DynamicResource AvaloniaIcons.Logo}"/>
-						<SuperListBoxItem MainText="Console App" SecondaryText="src/HelloWorld/Helloworld.csproj"
-										  Icon="{DynamicResource VSImageLib.Console_16x}"/>
-						<SuperListBoxItem MainText="Vue ASP.Net Core App" SecondaryText="src/VueApp/VueApp.csproj"
-										  Icon="{DynamicResource Unicons.Vuejs}"/>
-					</ListBox>
-				</Border>
-			</NavigationViewItem>
-			<!--<TabItem Header="RevealTest">
-				<Border Background="{Reveal TintColor=Gray, CursorRadius=50, Opacity=0.5}">
-				</Border>
-			</TabItem>
-			<TabItem Header="Follower">
-				<Border Name="brd">
-					<Follower/> 
-				</Border>
-			</TabItem>-->
-			<NavigationViewItem Header="CardControl" Title="Music">
-				<Border Padding="20">
-					<Grid>
-						<l:MusicView VerticalAlignment="Stretch" />
+				</NavigationViewItem>
+			    <NavigationViewItem Header="PagesView" Title="PagesView">
+					<Button Name="open_pages">Open Pages</Button>
+				</NavigationViewItem> 
+			    <NavigationViewItem Header="AuraTabView" Title="AuraTabView">
+					<Grid RowDefinitions="10,*,10,auto,10" ColumnDefinitions="10,*,10">
+						<!--<Border HorizontalAlignment="Center" VerticalAlignment="Center"
+						        BoxShadow="0 0 5 0 Black" Margin="10">-->
+							<AuraTabView Name="tabvw_" Header="AuraTabView"
+							             Footer="Aura.UI" Grid.Column="1" Grid.Row="1"
+							             TabStripPlacement="{Binding #tab_st.SelectedItem.Header}">
+									<!-- ItemsMargin="0 5 0 0" -->
+								<AuraTabView.Items>
+									<AuraTabItem Header="Header 0">
+										<TextBlock Text="Content 0" FontSize="30"></TextBlock>
+									</AuraTabItem>
+									<AuraTabItem Header="Header 1">
+										<TextBlock Text="Content 1" FontSize="30"></TextBlock>
+									</AuraTabItem>
+									<AuraTabItem Header="Header 2">
+										<TextBlock Text="Content 2" FontSize="30"></TextBlock>
+									</AuraTabItem>
+									<AuraTabItem Header="Header 3">
+										<TextBlock Text="Content 3" FontSize="30"></TextBlock>
+									</AuraTabItem>
+									<AuraTabItem Header="Header 4">
+										<TextBlock Text="Content 4" FontSize="30"></TextBlock>
+									</AuraTabItem>
+									<AuraTabItem Header="Header 5">
+										<TextBlock Text="Content 5" FontSize="30"></TextBlock>
+									</AuraTabItem>
+								</AuraTabView.Items>
+								<AuraTabView.SecondaryBackground>
+									<SolidColorBrush Color="LightGreen" Opacity="0.5"/>
+								</AuraTabView.SecondaryBackground>
+								<AuraTabView.FallBackContent>
+									<Image Source="avares://UI.Tests/auraui-logov2.png"
+									       Height="250" Opacity="0.5"/>
+								</AuraTabView.FallBackContent>
+							</AuraTabView>
+						<!--</Border>-->
+						<TabStrip Name="tab_st" Grid.Row="3" Grid.Column="1" Height="40" Width="500">
+							<TabItem Header="Top"/>
+							<TabItem Header="Bottom"/>
+							<TabItem Header="Left"/>
+							<TabItem Header="Right"/>
+						</TabStrip>
 					</Grid>
-				</Border>
+				</NavigationViewItem>
+				<NavigationViewItem Header="ColorPickerButton" Title="ColorPickerButton">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+							<ColumnDefinition Width="*"></ColumnDefinition>
+						</Grid.ColumnDefinitions>
+						<ColorPickerButton Grid.Column="0" Name="CP_btn" Height="30" Width="30"></ColorPickerButton>
+						<Border Grid.Column="1" Name="border_bg" Height="100" Width="100" Background="{Binding #CP_btn.Background}"/>
+					</Grid>
+				</NavigationViewItem>
+				<NavigationViewItem Header="SuperColorPicker" Title="SuperColorPicker">
+					<SuperColorPicker Height="600" Width="300" Orientation="Vertical"/>
+				</NavigationViewItem>
+				<NavigationViewItem Header="FilledSlider" Title="FilledSlider">
+					<Grid>
+						<Border Padding="20">
+							<StackPanel Orientation="Horizontal">
+								<FilledSlider Name="sl_1" Orientation="Horizontal" Width="200" Height="20"></FilledSlider>
+								<FilledSlider Name="sl_2" Orientation="Vertical" Width="20" Height="200"></FilledSlider>
+							</StackPanel>
+						</Border>
+						<StackPanel Spacing="10">
+							<Button Content="{Binding #sl_1.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+							<Button Content="{Binding #sl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+						</StackPanel>	
+					</Grid>
 			</NavigationViewItem>
-			<NavigationViewItem Header="ToolWindow" Title="ToolWindow">
-				<Grid>
-					<Button Name="tool_w_btn"
-							Content="Open ToolWindow"
-							HorizontalAlignment="Center" 
-							VerticalAlignment="Center"
-							Click="OpenToolWindow"/>
-				</Grid>
+				<NavigationViewItem Header="ModernSlider" Title="ModernSlider">
+					<WrapPanel>
+						<Border Padding="20">
+							<StackPanel Orientation="Horizontal">
+								<ModernSlider Name="msl_1" Orientation="Horizontal" Width="200" Height="60"></ModernSlider>
+								<ModernSlider Name="msl_2" Orientation="Vertical"  Width="60" Height="200"></ModernSlider>
+							</StackPanel>
+						</Border>
+						<StackPanel Spacing="10">
+							<Button Content="{Binding #msl_1.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+							<Button Content="{Binding #msl_2.Value}" Height="50" Width="100" VerticalAlignment="Bottom" HorizontalAlignment="Center"></Button>
+						</StackPanel>
+					</WrapPanel>
 			</NavigationViewItem>
-			<NavigationViewItem Header="ShadowButton" Title="ShadowButton" >
-				<StackPanel Spacing="30">
-					<ShadowButton>This is a ShadowButton</ShadowButton>
-				</StackPanel>
-			</NavigationViewItem>
-			<!-- <NavigationViewItem  IsSelected="True" 
-			                      Header="ExperimentalAcrylicMaterial Binding" 
-			                    Title="ExperimentalAcrylicMaterial Binding"> 
-				<Grid> 
-					<StackPanel Width="300"  
-					            HorizontalAlignment="Left">
-			 			<ExperimentalAcrylicBorder Height="100" 
-							Material="{Material }"></ExperimentalAcrylicBorder> 
-						<FilledSlider Maximum="2"></FilledSlider> 
-						<FilledSlider Maximum="2"></FilledSlider> 
-			 			<SuperColorPicker Orientation="Vertical"></SuperColorPicker> 
-				</StackPanel> 
-				</Grid> 
-			 </NavigationViewItem> -->
-			<!--	<NavigationViewItem Header="Resize Decorator" Title="Resizing">
-				<ScrollViewer HorizontalScrollBarVisibility="Visible"
-				              VerticalScrollBarVisibility="Visible">
-					<Canvas Background="{DynamicResource ThemeAccentBrush4}">
-						<Button Name="btn_to" Content="Resize me!" Height="50"
-						        Width="100" Canvas.Top="10" Canvas.Left="20">
-							<Button.Tag>xd</Button.Tag>
-						</Button>
-						<ResizeDecorator ItemToResize="{Binding #btn_to}" 
-						                 DataContext="{Binding #btn_to}" 
-						                 RenderTransform="scale(1)"
-						                 Width="{Binding #btn_to.Bounds.Width}" 
-						                 Height="{Binding #btn_to.Bounds.Height}" 
-						                 Canvas.Top="{Binding #btn_to.Bounds.Top}" 
-						                 Canvas.Left="{Binding #btn_to.Bounds.Left}"/>
-					</Canvas>
-				</ScrollViewer>
-			</NavigationViewItem>
-			<NavigationViewItem Header="Rotator And Skew Decorator" 
-			                    Title="Rotating and Skewing" IsSelected="True">
-				<Grid ColumnDefinitions="Auto 10 *">
-					<StackPanel>
-						<TextBlock>Rotation Angle</TextBlock>
-						<TextBox Text="{Binding #r_t.Angle}"></TextBox>
-						<TextBlock>Skew X Angle</TextBlock>
-						<TextBox Text="{Binding #r_t.SkewX}"></TextBox>
-						<TextBlock>Skew Y Angle</TextBlock>
-						<TextBox Text="{Binding #r_t.SkewY}"></TextBox>
+				<NavigationViewItem Header="GroupBox" Title="GroupBox"> 
+					<Grid>
+						<GroupBox Header="Yes, I'm a Header" MaterialIsVisible="False">
+							<StackPanel Spacing="10">
+								<MaterialButton>Oh, I don't know that!</MaterialButton>
+								<TextBlock Text="MaterialIsVisible=False"/>
+							</StackPanel>
+						</GroupBox>
+					</Grid>
+				</NavigationViewItem>	
+				<NavigationViewItem Header="Ribbon" Title="Ribbon">
+					<Grid>
+						<Border Padding="10">
+							<Ribbon  LeftContent="File" RightContent="Settings"
+								ExpansionState="Total" OpenPaneHeight="170">
+								<Ribbon.Header>
+									<Image Source="avares://UI.Tests/auraui-logov2.png" Height="15" Stretch="UniformToFill"></Image>
+								</Ribbon.Header>
+								<RibbonItem Header="Start">
+									<RibbonPanel>
+										<RibbonGroup Header=":3" Width="200">
+											<Button Content="Why?"/>
+										</RibbonGroup>
+										<RibbonSeparator/>
+										<RibbonGroup Width="100">
+											<StackPanel>
+												<Button Content="Why?"/>
+												<Button Content="Why? v2"/>
+												<Button Content="Why? v3"/>
+											</StackPanel>
+										</RibbonGroup>
+										<RibbonSeparator/>
+										<RibbonGroup></RibbonGroup>
+									</RibbonPanel>
+								</RibbonItem>
+								<RibbonItem Header="Edit">
+									<RibbonPanel>
+										<RibbonGroup Header=":3" Width="200">
+											<StackPanel>
+												<Button Content="Why?"/>
+												<Button Content="Why? v2"/>
+												<Button Content="Why? v3"/>
+											</StackPanel>
+										</RibbonGroup>
+										<RibbonSeparator/>
+										<RibbonGroup Width="100">
+											<Button Content="Why?"/>
+										</RibbonGroup>
+										<RibbonSeparator/>
+										<RibbonGroup/>
+									</RibbonPanel>
+								</RibbonItem>
+							</Ribbon>
+						</Border>
+					</Grid>
+				</NavigationViewItem>
+				<NavigationViewItem Header="NavigationView" Title="NavigationView">
+					<StackPanel Orientation="Vertical" Spacing="20">
+						<Button Content="Open Default NavigationView" Click="OpenDefaultNavigationView"/>
+						<Button Content="Open Custom NavigationView" Click="OpenCustomNavigationView"/>
 					</StackPanel>
-					<Canvas Grid.Column="2" Background="{DynamicResource ThemeAccentBrush4}">
-						<RotatorDecorator Name="r_t" Angle="50">
-							<RotatorDecorator.ItemToRotate>
-								<Button Name="b_2" Content="Rotate and Skew me!"
-								        Width="200" Height="50"
-								        Canvas.Top="10"
-								        Canvas.Left="10"></Button> 
-							</RotatorDecorator.ItemToRotate>
-						</RotatorDecorator>
-					</Canvas>
-				</Grid>
-			</NavigationViewItem> ->-->
-			
-			<NavigationViewItem Header="Follower"
-			                    Title="Following Cursor">
-				<CheckBox Name="ch_" IsChecked="False"
-				          Content="See Follower"></CheckBox>
-			</NavigationViewItem>
-			<!-- <NavigationViewItem Header="ControlDesigner"
-			                    Title="Rotating, Skewing and Resizing">
-				<Grid ColumnDefinitions="150, *">
-					<StackPanel>
-						<TextBlock Text="Width"></TextBlock>
-						<TextBox Text="{Binding #Designer.Width}"></TextBox>
-						<TextBlock Text="Height"></TextBlock>
-						<TextBox Text="{Binding #Designer.Height}"></TextBox>
-						<TextBlock Text="Canvas.Top"></TextBlock>
-						<TextBox Text="{Binding #Designer.(Canvas.Top)}"></TextBox>
-						<TextBlock Text="Canvas.Left"></TextBlock>
-						<TextBox Text="{Binding #Designer.(Canvas.Left)}"></TextBox>
-						<TextBlock Text="Canvas.Bottom"></TextBlock>
-						<TextBox Text="{Binding #Designer.(Canvas.Bottom)}"></TextBox>
-						<TextBlock Text="Canvas.Right"></TextBlock>
-						<TextBox Text="{Binding #Designer.(Canvas.Right)}"></TextBox>
-						<TextBlock Text="Skew Angle X"></TextBlock>
-						<TextBox Text="{Binding #Designer.SkewAngleX}"></TextBox>
-						<TextBlock Text="Skew Angle Y"></TextBlock>
-						<TextBox Text="{Binding #Designer.SkewAngleY}"></TextBox>
-						<TextBlock Text="Rotation Angle"></TextBlock>
-						<TextBox Text="{Binding #Designer.RotationAngle}"></TextBox>
-						<TextBlock Text="Edit Mode"></TextBlock>
-						
-						<ComboBox Name="edit_">
-							<ComboBoxItem Content="None" IsSelected="True"></ComboBoxItem>
-							<ComboBoxItem Content="Resize"></ComboBoxItem>
-							<ComboBoxItem Content="Rotate"></ComboBoxItem>
-						</ComboBox>
+				</NavigationViewItem>
+				<NavigationViewItem Header="SuperListBoxItem" Title="SuperListBoxItem">
+					<Border Padding="10">
+						<ListBox>
+							<SuperListBoxItem MainText="Avalonia App" SecondaryText="src/AvaloniaApp/AvaloniaApp.csproj"
+											  Icon="{DynamicResource AvaloniaIcons.Logo}"/>
+							<SuperListBoxItem MainText="Console App" SecondaryText="src/HelloWorld/Helloworld.csproj"
+											  Icon="{DynamicResource VSImageLib.Console_16x}"/>
+							<SuperListBoxItem MainText="Vue ASP.Net Core App" SecondaryText="src/VueApp/VueApp.csproj"
+											  Icon="{DynamicResource Unicons.Vuejs}"/>
+						</ListBox>
+					</Border>
+				</NavigationViewItem>
+				<NavigationViewItem Header="CardControl" Title="Music">
+					<Border Padding="20">
+						<Grid>
+							<l:MusicView VerticalAlignment="Stretch" />
+						</Grid>
+					</Border>
+				</NavigationViewItem>
+				<NavigationViewItem Header="ToolWindow" Title="ToolWindow">
+					<Grid>
+						<Button Name="tool_w_btn"
+								Content="Open ToolWindow"
+								HorizontalAlignment="Center" 
+								VerticalAlignment="Center"
+								Click="OpenToolWindow"/>
+					</Grid>
+				</NavigationViewItem>
+				<NavigationViewItem Header="ShadowButton" Title="ShadowButton" >
+					<StackPanel Spacing="30">
+						<ShadowButton>This is a ShadowButton</ShadowButton>
 					</StackPanel>
-					<Canvas Grid.Column="1"
-					        Background="{DynamicResource ThemeAccentBrush4}">
-						<ControlDesigner Name="Designer" EditMode="{Binding #edit_.SelectedItem.Content, Mode=TwoWay}">
-							<ControlDesigner.ControlToDesign>
-								<Button Canvas.Top="0"
-						        Canvas.Left="0"
-						        Width="200"
-						        Height="100"
-						        Content="Wow"></Button>
-							</ControlDesigner.ControlToDesign>
-						</ControlDesigner>
-					</Canvas>
-				</Grid>
-			</NavigationViewItem> -->
-			
-			<NavigationViewItem Header="AcrylicMaterial Extension"
-			                    Title="AcrylicMaterial like Binding">
-				<Grid RowDefinitions="*, 30, auto">
-					<ExperimentalAcrylicBorder Opacity="0.5" Height="200" Width="200" Material="{AcrylicMaterial MaterialOpacity=1.5, TintColor=Blue, TintOpacity=1}" />
-					<TextBlock Grid.Row="2" Background="{DynamicResource ThemeBackgroundBrush}">
-						<TextBlock.Text>
-							<x:String>
-								&lt;ExperimentalAcrylicBorder Opacity="0.5" Height="200" Width="200" Material="{AcrylicMaterial MaterialOpacity=1.5, TintColor=Blue, TintOpacity=1}"/&gt;
-							</x:String>
-						</TextBlock.Text>
-					</TextBlock>
-				</Grid>
-			</NavigationViewItem>
-		</NavigationView>	
-		<Follower LayerControl="{Binding #nav}">
-			<Follower.CanvasLayer>
-				<Canvas Name="canv" Background="Transparent" 
-				        Opacity="0.5"></Canvas>
-			</Follower.CanvasLayer>
-			<Follower.FollowerControl>
-				<Ellipse Fill="Yellow"
+				</NavigationViewItem>
+				<NavigationViewItem Header="Follower"
+				                    Title="Following Cursor">
+					<CheckBox Name="ch_" IsChecked="False"
+					          Content="See Follower"></CheckBox>
+				</NavigationViewItem>
+				<NavigationViewItem Header="AcrylicMaterial Extension"
+				                    Title="AcrylicMaterial like Binding">
+					<Grid RowDefinitions="*, 30, auto">
+						<ExperimentalAcrylicBorder Opacity="0.5" Height="200" Width="200" Material="{AcrylicMaterial MaterialOpacity=1.5, TintColor=Blue, TintOpacity=1}" />
+						<TextBlock Grid.Row="2" Background="{DynamicResource ThemeBackgroundBrush}">
+							<TextBlock.Text>
+								<x:String>
+									&lt;ExperimentalAcrylicBorder Opacity="0.5" Height="200" Width="200" Material="{AcrylicMaterial MaterialOpacity=1.5, TintColor=Blue, TintOpacity=1}"/&gt;
+								</x:String>
+							</TextBlock.Text>
+						</TextBlock>
+					</Grid>
+				</NavigationViewItem>
+			</NavigationView>	
+			<Follower LayerControl="{Binding #nav}">
+				<Follower.CanvasLayer>
+					<Canvas Name="canv" Background="Transparent" 
+					        Opacity="0.5"></Canvas>
+				</Follower.CanvasLayer>
+				<Follower.FollowerControl>
+					<Ellipse Fill="Yellow"
 				         IsVisible="{Binding #ch_.IsChecked}"
 				         Width="50"
 				         Height="50"></Ellipse>
-			</Follower.FollowerControl>
-		</Follower>
+				</Follower.FollowerControl>
+			</Follower>
 		
-		<Border Background="{DynamicResource ThemeBackgroundBrush}" Name="drag_b" 
+			<Border Background="{DynamicResource ThemeBackgroundBrush}" Name="drag_b" 
 			        VerticalAlignment="Top" Height="20" Opacity="0"/>
 	</Grid>
 </ContentWindow>

@@ -288,4 +288,7 @@
 			</ControlTemplate> 
 		</Setter>
 	</Style>
+	<Style Selector="SuperColorPicker /template/ AuraTabView">
+		<Setter Property="ReorderableTabs" Value="False"></Setter>
+	</Style>
 </Styles>

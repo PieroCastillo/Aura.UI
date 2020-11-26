@@ -9,7 +9,6 @@ using System.Diagnostics;
 using System.Reactive;
 using Aura.UI.Controls;
 using Avalonia.Controls;
-using Live.Avalonia;
 using ReactiveUI;
 
 namespace UI.Tests

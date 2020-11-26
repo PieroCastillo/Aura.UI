@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-preview5" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview5" />
-    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview5" />
+    <PackageReference Include="Avalonia" Version="0.10.0-preview6" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview6" />
+    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview6" />
   </ItemGroup>
 	<ItemGroup>
 		<Compile Update="**\*.xaml.cs">

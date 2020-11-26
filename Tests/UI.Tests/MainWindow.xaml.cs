@@ -69,7 +69,7 @@ namespace UI.Tests
 
         private void AddTab()
         {
-            var t__ = new TextBlock() { Text = "HeaderTest" };
+            var t__ = new TextBlock() { Text = "HeaderTest" + " " + $"{tabvw.ItemCount}", Background = Brushes.Transparent};
             var t = new AuraTabItem() { Header = t__ , Content = "ContentTest" };
 
             t.Closing += (s, e) =>

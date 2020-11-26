@@ -226,6 +226,7 @@
             </e>
             <e p="Thumbs" t="Include">
               <e p="MoveThumb.cs" t="Include" />
+              <e p="ResizeThumb.cs" t="Include" />
             </e>
             <e p="TitleBox" t="Include">
               <e p="TitleBox.Events.cs" t="Include" />
@@ -348,34 +349,27 @@
             </e>
           </e>
         </e>
+        <e p="Aura.UI.Dragging" t="IncludeRecursive">
+          <e p="Aura.UI.Dragging.csproj" t="IncludeRecursive" />
+          <e p="ControlObject.cs" t="Include" />
+          <e p="DraggingOperations.cs" t="Include" />
+          <e p="ItemsControlOperations.cs" t="Include" />
+          <e p="RemoteRender.cs" t="Include" />
+          <e p="RemoteRenderControl.cs" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.1" t="Include">
+                <e p="Aura.UI.Dragging.AssemblyInfo.cs" t="Include" />
+                <e p="Avalonia" t="Include">
+                  <e p="resources" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="Aura.UI.Mobile" t="IncludeRecursive">
-          <e p="AlertDialogStyles.xaml" t="Include" />
           <e p="Aura.UI.Mobile.csproj" t="IncludeRecursive" />
-          <e p="ControlStyles" t="Include" />
-          <e p="Cupertino" t="Include">
-            <e p="CupertinoAlertDialog.cs" t="Include" />
-            <e p="CupertinoDialog.cs" t="Include" />
-          </e>
-          <e p="CupertinoAlertDialogStyles.xaml" t="Include" />
-          <e p="CupertinoDialogStyles.xaml" t="Include" />
-          <e p="CupertinoStyles.xaml" t="Include" />
-          <e p="DialogStyles.xaml" t="Include" />
-          <e p="Dialogs" t="Include">
-            <e p="Dialogs.cs" t="Include" />
-          </e>
-          <e p="Material" t="Include">
-            <e p="AlertDialog.cs" t="Include" />
-            <e p="Dialog.cs" t="Include" />
-          </e>
-          <e p="MaterialStyles.xaml" t="Include" />
-          <e p="Primitives" t="Include">
-            <e p="AlertDialogBase.cs" t="Include" />
-            <e p="DialogBase.cs" t="Include" />
-            <e p="IDialog.cs" t="Include" />
-            <e p="TabBarBase.cs" t="Include" />
-          </e>
-          <e p="Themes.cs" t="Include" />
-          <e p="assembly.cs" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
           <e p="obj" t="ExcludeRecursive">
             <e p="Debug" t="Include">
