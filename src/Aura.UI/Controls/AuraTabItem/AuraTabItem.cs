@@ -33,6 +33,8 @@ namespace Aura.UI.Controls
         public AuraTabItem()
         {
             this.Closing += new EventHandler<RoutedEventArgs>(OnClosing);
+            
+            EnableDragDrop();
             //tab_parent = this.GetParentTOfLogical<AuraTabView>();
         }
 
@@ -51,15 +53,6 @@ namespace Aura.UI.Controls
         /// </summary>
         public void Close()
         {
-            // if (timetoelapse != null)
-            // {
-            //     timetoelapse = new TimeSpan(0, 0, 0, 0, 400);
-            // }
-            //
-            // var timer = new DispatcherTimer();
-            // timer.Interval = timetoelapse;
-            // timer.Start();
-            // timer.Tick += (s, e_) =>
             // {
                var e = new RoutedEventArgs(ClosingEvent);
                 RaiseEvent(e);
@@ -88,9 +81,6 @@ namespace Aura.UI.Controls
             {
                 IsSelected = true;
             };
-            //thumb.DragStarted += OnDragStarted;
-            //thumb.DragDelta += OnDragDelta;
-            //thumb.DragCompleted += OnDragCompleted;
         }
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {

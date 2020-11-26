@@ -2,12 +2,21 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia.Media;
 
 namespace Aura.UI.Controls
 {
     public partial class AuraTabItem
     {
 
+        public TranslateTransform DraggingTransform
+        {
+            get => GetValue(DraggingTransformProperty);
+            set => SetValue(DraggingTransformProperty, value);
+        }
+        public static readonly StyledProperty<TranslateTransform> DraggingTransformProperty =
+                AvaloniaProperty.Register<AuraTabItem, TranslateTransform>(nameof(DraggingTransform), new TranslateTransform(0,0));
+        
         /// <summary>
         /// This property defines if the AuraTabItem can be closed
         /// </summary>
@@ -43,9 +52,13 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
 
-        //public bool CanBeDragged { get; }
-        //public static readonly StyledProperty<bool> CanBeDraggedProperty =
-        //    AvaloniaProperty.Register<AuraTabItem, bool>(nameof(CanBeDragged), true);
+        public bool CanBeDragged
+        {
+            get => GetValue(CanBeDraggedProperty);
+            set => SetValue(CanBeDraggedProperty, value);
+        }
+        public static readonly StyledProperty<bool> CanBeDraggedProperty =
+            AvaloniaProperty.Register<AuraTabItem, bool>(nameof(CanBeDragged), true);
 
     }
 }

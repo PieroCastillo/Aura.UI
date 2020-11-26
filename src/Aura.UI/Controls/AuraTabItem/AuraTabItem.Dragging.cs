@@ -8,68 +8,83 @@ using Avalonia.Media;
 using Avalonia.Native;
 using Avalonia.Skia;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using Aura.UI.Dragging;
+using Avalonia.Collections;
+using Avalonia.LogicalTree;
+using SkiaSharp;
 
 namespace Aura.UI.Controls
 {
-    //public partial class AuraTabItem
-    //{
+    public partial class AuraTabItem
+    {
+        internal void EnableDragDrop()
+        {
+            DragDrop.SetAllowDrop(this, true);
+            AddHandler(DragDrop.DragEnterEvent, OnDragStarted);
+            AddHandler(DragDrop.DragLeaveEvent, OnDragLeave);
+            AddHandler(DragDrop.DragOverEvent, OnDragOver);
+            AddHandler(DragDrop.DropEvent, OnDrop);
+        }
 
-    //    protected virtual void OnDragStarted(object sender, VectorEventArgs e)
-    //    {
+        protected override void OnPointerPressed(PointerPressedEventArgs e)
+        {
+            base.OnPointerPressed(e);
+            this.IsSelected = true;
+            var tabitem = (e.Source as ILogical).GetParentTOfLogical<AuraTabItem>(); // sets the source
+            if (this.GetParentTOfLogical<AuraTabView>() != null)
+            {
+                if (tabitem != null)
+                {
+                    var n = new ControlObject(tabitem);
+                    DragDrop.DoDragDrop(e, n, DragDropEffects.Move);
+                    Debug.WriteLine("Drag started");
+                }
+            }
+
+            e.Handled = true;
+        }
+
+        protected virtual void OnDragStarted(object sender, DragEventArgs e)
+        {
+
+        }
+        
+        protected virtual void OnDragOver(object sender, DragEventArgs e)
+        {
             
-    //    }
-    //    protected virtual void OnDragDelta(object sender, VectorEventArgs e)
-    //    {
-    //        //this.Bounds.Translate(e.Vector);
-    //    }
-    //    protected virtual void OnDragCompleted(object sender, VectorEventArgs e)
-    //    {
-    //        //var r_ =  this.Bounds.Translate(e.Vector);
-    //        //var tab_v = this.GetParentTOfLogical<TabControl>();
-    //        //if(tab_v is AuraTabView v_)
-    //        //{
-    //        //    var intersect_y_n = RectHelper.CheckInOut(this.Bounds, v_.dock_container.Bounds);
-    //        //    if (intersect_y_n)
-    //        //    {
-    //        //        tab_v.CloseTab(this);
-    //        //        var win = new TabbedWindow();
-    //        //        win.WindowState = 0;
-    //        //        win.Position = r_.Position.ToAvnPoint().ToAvaloniaPixelPoint();
-    //        //        win.AddTab(this);
-    //        //        win.Show();
-    //        //    }
-    //        //    else if (!intersect_y_n)
-    //        //    {
+        }
 
-    //        //    }
-    //        //}
-    //    }
+        protected virtual void OnDragLeave(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
-    //    public event EventHandler<VectorEventArgs> DragStarted
-    //    {
-    //        add => AddHandler(DragStartedEvent, value);
-    //        remove => RemoveHandler(DragStartedEvent, value);
-    //    }
-    //    public static readonly RoutedEvent<VectorEventArgs> DragStartedEvent =
-    //        RoutedEvent.Register<AuraTabItem, VectorEventArgs>(nameof(DragStarted), RoutingStrategies.Bubble);
+        protected virtual void OnDrop(object sender, DragEventArgs e)
+        {
+            if (CanBeDragged)
+            {
+                ItemsControlOperations.MoveItemOnDrop<AuraTabView, AuraTabItem>(
+                    sender, 
+                    e,
+                    (view,src,item) =>
+                    {
+                        int h = (view.Items as IList).IndexOf(item);
 
-    //    public bool BlockXDrag
-    //    {
-    //        get => GetValue(BlockXDragProperty);
-    //        set => SetValue(BlockXDragProperty, value);
-    //    }
-    //    public static readonly StyledProperty<bool> BlockXDragProperty =
-    //        AvaloniaProperty.Register<AuraTabItem, bool>(nameof(BlockXDrag), false);
-
-    //    public bool BlockYDrag
-    //    {
-    //        get => GetValue(BlockYDragProperty);
-    //        set => SetValue(BlockYDragProperty, value);
-    //    }
-    //    public static readonly StyledProperty<bool> BlockYDragProperty =
-    //        AvaloniaProperty.Register<AuraTabItem, bool>(nameof(BlockYDrag), true);
-    //}
+                        item.RenderTransform = null;
+                        
+                        view.lastselectindex = view.SelectedIndex;
+                        view.SelectedIndex = h;
+                        view.SelectedItem = (view.Items as IList)[view.SelectedIndex];
+                    } );
+                Debug.WriteLine("Drag completed");
+                Debug.WriteLine($"Selected Index: {this.GetParentTOfLogical<AuraTabView>().SelectedIndex}");
+                Debug.WriteLine($"Tab Index: {(this.GetParentTOfLogical<AuraTabView>().Items as IList).IndexOf(this)}");
+            }
+        }
+    }
 }

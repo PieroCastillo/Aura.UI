@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Avalonia" Version="0.10.0-preview6" />
+      <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
+    </ItemGroup>
+
+</Project>

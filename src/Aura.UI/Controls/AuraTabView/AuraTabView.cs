@@ -8,6 +8,8 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
 using System;
+using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -29,6 +31,8 @@ namespace Aura.UI.Controls
         /// This Button add a new TabItem
         /// </summary>
         public Button AdderButton;
+
+        public double lastselectindex = 0;
         protected Border b_;
         protected Grid g_;
         protected internal DockPanel dock_container;
@@ -37,12 +41,12 @@ namespace Aura.UI.Controls
         #endregion
         #region Methods
         
-        [Obsolete]
         /// <summary>
         /// You should overwrite this Method for add your custom tabitem
         /// </summary>
         /// <param name="sender">the sender object</param>
         /// <param name="e">the information of the event</param>
+        [Obsolete]
         protected virtual void OnAdding(object sender, RoutedEventArgs e)
         {
             //this.AddTab(new AuraTabItem() { Header = "HeaderTest", Content = "ContentTest" }, true) ;
@@ -59,12 +63,34 @@ namespace Aura.UI.Controls
             e_.Handled = true;
         }
 
+        static AuraTabView()
+        {
+            SelectionModeProperty.OverrideDefaultValue<AuraTabView>(SelectionMode.Toggle);
+        }
 
-        [Obsolete]
+        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+        {
+            base.OnPropertyChanged(change);
+
+            if (this.SelectedItem == null)
+            {
+                double d = ((double)ItemCount / 2);
+                if (this.lastselectindex < d)
+                {
+                    SelectedItem = (Items as IList).OfType<object>().FirstOrDefault();
+                }
+                else if (lastselectindex >= d)
+                {
+                    SelectedItem = (Items as IList).OfType<object>().LastOrDefault();
+                }
+            }
+        }
+
         /// <summary>
         /// Execute the action what is putted
         /// </summary>
         /// <param name="action">The action to execute</param>
+        [Obsolete]
         public void AddActionToAdderButton(Action action)
         {
             (Actions as IList<Action>).Add(action);
@@ -93,6 +119,18 @@ namespace Aura.UI.Controls
         {
             this.WidthRemainingSpace = g_.Bounds.Width;
             this.HeightRemainingSpace = g_.Bounds.Height;
+
+            /*if (e.Property.Name == SelectedItemProperty.Name)
+            {
+                if (this.ItemCount == 0)
+                {
+                    SelectedItem = null;
+                }
+                else
+                {
+                    this.SelectedItem = (this.Items as IList)[this.SelectedIndex];
+                }
+            }*/
         }
 
         #endregion

@@ -141,5 +141,14 @@ namespace Aura.UI.Controls
             AvaloniaProperty.RegisterDirect<AuraTabView, double>(
                 nameof(WidthRemainingSpace),
                 o => o.WidthRemainingSpace);
+
+        public bool ReorderableTabs
+        {
+            get => GetValue(ReorderableTabsProperty);
+            set => SetValue(ReorderableTabsProperty, value);
+        }
+
+        public readonly static StyledProperty<bool> ReorderableTabsProperty =
+            AvaloniaProperty.Register<AuraTabView, bool>(nameof(ReorderableTabs), true);
     }
 }
