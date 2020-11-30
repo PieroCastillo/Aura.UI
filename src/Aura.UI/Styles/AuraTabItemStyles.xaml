@@ -83,7 +83,6 @@
 													<ColumnDefinition Width="20"></ColumnDefinition>
 												</Grid.ColumnDefinitions>
 												<Grid>
-													<Thumb Name="PART_TabThumb" Classes="TabItemThumb"/>
 													<ContentPresenter Grid.Column="0"
 													 Name="PART_ContentPresenter"
 													Background="Transparent"
@@ -108,10 +107,10 @@
 												</Button>
 											</Grid>
 
-											<Border Name="PART_Separator" Opacity="0.6"
+											<Border Name="PART_Separator"
 											Grid.Column="1" Grid.Row="0" CornerRadius="5"
 											BoxShadow="0 0 2 0 Gray"
-											Width="1"
+											Width="1" 
 											Background="{DynamicResource ThemeForegroundBrush}"></Border>
 										</Grid>
 									</Border>
@@ -130,7 +129,6 @@
 					<Grid ColumnDefinitions="*,auto">
 						<Grid Grid.Column="0">
 							<Grid>
-								<Thumb Name="PART_TabThumb" Classes="TabItemThumb"/>
 								<!--<Decorator  HorizontalAlignment="Stretch">-->
 								<Border Name="PART_Container"
 										Background="{TemplateBinding Background}"
@@ -211,7 +209,6 @@
 								CornerRadius="{TemplateBinding CornerRadius}" 
 								Margin="-2 2.5 2.5 2.5">
 							<Grid RowDefinitions="*"> 
-								<Thumb Name="PART_TabThumb" Classes="TabItemThumb"/>
 								<Border Padding="10 5 0 0">
 									<Grid Background="Transparent">
 										<Grid.RowDefinitions>
@@ -279,7 +276,6 @@
 								BorderBrush="{TemplateBinding BorderBrush}"
 								CornerRadius="{TemplateBinding CornerRadius}" Margin="2.5 -2 2.5 2.5">
 							<Grid RowDefinitions="*, auto">
-								<Thumb Name="PART_TabThumb" Classes="TabItemThumb"/>
 								<Border Padding="10 5 0 0">
 									<Grid Background="Transparent">
 										<Grid.RowDefinitions>
@@ -337,13 +333,9 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-
-	<Style Selector="AuraTabItem /template/ Thumb#PART_TabThumb.TabItemThumb">
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Background="Transparent"/>
-			</ControlTemplate>
-		</Setter>
+	
+	<Style Selector="AuraTabItem:dragging">
+		<Setter Property="Opacity" Value="0.6"></Setter>
 	</Style>
 	
 	<Style Selector="AuraTabItem:selected /template/ Border#PART_Container">
@@ -355,25 +347,20 @@
 	<Style Selector="AuraTabItem:pointerover /template/ Button#PART_CloseButton">
 		<Setter Property="IsVisible" Value="true"/>
 	</Style>
-	<Style Selector="AuraTabItem:pointerover /template/ Border#PART_Separator">
-		<Setter Property="IsVisible" Value="false"/>
-	</Style>
 	<Style Selector="AuraTabItem:selected /template/ Button#PART_CloseButton">
 		<Setter Property="IsVisible" Value="true"/>
 	</Style>
 	<Style Selector="AuraTabItem:selected[IsClosable=false] /template/ Button#PART_CloseButton">
 		<Setter Property="IsVisible" Value="False"/>
 	</Style>
-	<Style Selector="AuraTabItem:selected /template/ Border#PART_Separator">
-		<Setter Property="IsVisible" Value="false"/>
-	</Style>
+	
 	<Style Selector="AuraTabItem:disabled">
 		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
 	</Style>
 	 
 	<Style Selector="AuraTabItem[IsClosing=true]">
 		<Style.Animations>
-			<Animation Duration="0:0:0.4">
+			<Animation Duration="0:0:0.2">
 				<KeyFrame Cue="0%">
 					<Setter Property="Opacity" Value="1"/>
 				</KeyFrame>
@@ -409,10 +396,15 @@
 		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltMediumBrush}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>		
 	</Style>
-	
-	
-	<!-- <Style Selector="AuraTabItem:selected /template/ Border#PART_SelectorBorder"> -->
-	<!-- 	<Setter Property="IsVisible" Value="false"/> -->
-	<!-- </Style> -->
 
+	
+	<Style Selector="AuraTabItem:pointerover /template/ Border#PART_Separator">
+		<Setter Property="Opacity" Value="0"></Setter>
+	</Style>
+	<Style Selector="AuraTabItem:selected:pointerover /template/ Border#PART_Separator">
+		<Setter Property="Opacity" Value="0"></Setter>
+	</Style>
+	<Style Selector="AuraTabItem:selected /template/ Border#PART_Separator">
+		<Setter Property="Opacity" Value="0"></Setter>
+	</Style>
 </Styles>

@@ -21,8 +21,8 @@ namespace Aura.UI.Dragging
             where TItemsControl : ItemsControl 
             where TControlItem : Control
         {
-            var src = sender as TControlItem; // sets the source
-            var target = e.Data.Get(nameof(Control)) as TControlItem;// sets the target to drop
+                var src = sender as TControlItem; // sets the source
+                var target = e.Data.Get(nameof(Control)) as TControlItem;// sets the target to drop
 
             if (!target.Equals(src))//checks it
             {
@@ -49,7 +49,6 @@ namespace Aura.UI.Dragging
             if(items is IAvaloniaList<object>)
             {
                 (items as IAvaloniaList<object>).Move(targetindex, srcindex);
-                
             }
             else
             {

@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
-using Avalonia.VisualTree;
 using Avalonia.Controls.Primitives;
-using Avalonia.LogicalTree;
-using Avalonia.Input;
 using Avalonia.Interactivity;
 using Aura.UI.UIExtensions;
 using Aura.UI.Attributes;
 using System.Diagnostics;
 using Aura.UI.Controls.Primitives;
-using Avalonia.Threading;
+using Avalonia.Controls.Metadata;
 
 namespace Aura.UI.Controls
 {
@@ -22,7 +16,7 @@ namespace Aura.UI.Controls
     /// </summary>
     //[TemplatePart(Name = "PART_Thumb", Type = typeof(Thumb))]
     [TemplatePart(Name = "PART_CloseButton", Type = typeof(Button))]
-    [InDevelopingFeatures(Name = "Dragging")]
+    [PseudoClasses(":dragging")]
     public partial class AuraTabItem : TabItem, ICustomCornerRadius
     {
         /// <summary>
@@ -32,7 +26,7 @@ namespace Aura.UI.Controls
         Thumb thumb;
         public AuraTabItem()
         {
-            this.Closing += new EventHandler<RoutedEventArgs>(OnClosing);
+            this.Closing += OnClosing;
             
             EnableDragDrop();
             //tab_parent = this.GetParentTOfLogical<AuraTabView>();
@@ -53,12 +47,9 @@ namespace Aura.UI.Controls
         /// </summary>
         public void Close()
         {
-            // {
-               var e = new RoutedEventArgs(ClosingEvent);
-                RaiseEvent(e);
-                e.Handled = true;
-                this.Close(null);
-            // };
+            var e = new RoutedEventArgs(ClosingEvent);
+            RaiseEvent(e); 
+            this.Close(null);
         }
 
 
@@ -76,11 +67,11 @@ namespace Aura.UI.Controls
                 CloseButton.IsVisible = false;
             }
             // set up tab dragging
-            thumb = this.GetControl<Thumb>(e, "PART_TabThumb");
+            /*thumb = this.GetControl<Thumb>(e, "PART_TabThumb");
             this.PointerPressed += (s, e) =>
             {
                 IsSelected = true;
-            };
+            };*/
         }
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {

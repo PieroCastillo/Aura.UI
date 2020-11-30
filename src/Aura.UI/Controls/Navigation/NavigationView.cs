@@ -11,11 +11,16 @@ using Avalonia.Threading;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Linq;
 using System.Text;
+using Avalonia.Controls.Metadata;
+using Avalonia.Interactivity;
+using Avalonia.LogicalTree;
 
 namespace Aura.UI.Controls.Navigation
 {
     [TemplatePart(Name = "PART_ToggleNav", Type = typeof(NavigationViewItem))]
+    [PseudoClasses(":normal")]
     public partial class NavigationView : TabViewBase, IHeadered, IMaterial
     {
         #region Fields
@@ -30,7 +35,25 @@ namespace Aura.UI.Controls.Navigation
             ToggleNav = this.GetControl<NavigationViewItem>(e, "PART_ToggleNav");
             ToggleNav.PointerPressed += ToggleNav_PointerPressed;
 
+            // IList<SelectingItemsControl> s = this.GetLogicalDescendants().OfType<SelectingItemsControl>().ToList();
+            //
+            // foreach (var si in s)
+            // {
+            //     si.SelectionChanged += (sender, args) =>
+            //     {
+            //         args.Handled = true;
+            //     };
+            // }
         }
+
+        protected override void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            base.OnSelectionChanged(sender, e);
+            
+            PseudoClasses.Remove(":normal");
+            PseudoClasses.Add(":normal");
+        }
+
 
         protected override void OnContainersMaterialized(ItemContainerEventArgs e)
         {
@@ -38,14 +61,7 @@ namespace Aura.UI.Controls.Navigation
 
             UpdateSelectedTitle();
         }
-
-        protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            base.ItemsCollectionChanged(sender, e);
-
-            //UpdateSelectedTitle();
-        }
-
+        
         protected override void OnContainersRecycled(ItemContainerEventArgs e)
         {
             base.OnContainersRecycled(e);

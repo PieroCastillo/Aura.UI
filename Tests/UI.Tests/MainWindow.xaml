@@ -47,7 +47,7 @@
 		</DrawingImage>
 	</ContentWindow.Resources>
 	<Grid Background="{x:Null}">
-		<Grid Background="{DynamicResource ThemeBackgroundBrush}" Opacity="0.6"/>
+		<Grid Background="{DynamicResource ThemeBackgroundBrush}" Opacity="0.4"/>
 			<NavigationView Name="nav" 
 						AlwaysOpen="True" Material="{DynamicResource NullBrush}"
 						Background="{DynamicResource SystemControlBackgroundAltMediumHighBrush}"
@@ -123,7 +123,8 @@
 								</AuraTabView.FallBackContent>
 							</AuraTabView>
 						<!--</Border>-->
-						<TabStrip Name="tab_st" Grid.Row="3" Grid.Column="1" Height="40" Width="500">
+						<TabStrip Name="tab_st" Grid.Row="3" Grid.Column="1" Height="40" Width="500"
+						          SelectionChanged="HandItems">
 							<TabItem Header="Top"/>
 							<TabItem Header="Bottom"/>
 							<TabItem Header="Left"/>

@@ -61,6 +61,11 @@ namespace UI.Tests
             //EnableFeatures();
         }
 
+        public void HandItems(object sender, SelectionChangedEventArgs e)
+        {
+            e.Handled = true;
+        }
+        
         public void OpenToolWindow(object sender, RoutedEventArgs e)
         {
             var win = new ToolWindowTest();

@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Text;
+using Avalonia.Interactivity;
 
 namespace Aura.UI.Controls.Primitives
 {
@@ -14,22 +15,12 @@ namespace Aura.UI.Controls.Primitives
     {
         public TabViewBase()
         {
-            this.SelectionChanged += OnSelectionChanged;
-
-            //PseudoClasses.Set(":selectionchanged", SelectedItemChanged == true);
+            this.AddHandler(SelectionChangedEvent, OnSelectionChanged, RoutingStrategies.Bubble);
         }
-
+        
         protected virtual void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
         }
-
-        //public bool SelectedItemChanged
-        //{
-        //    get { return GetValue(SelectedItemChangedProperty); }
-        //    private set { SetValue(SelectedItemChangedProperty, value); }
-        //}
-        //public readonly static StyledProperty<bool> SelectedItemChangedProperty =
-        //    AvaloniaProperty.Register<TabViewBase, bool>(nameof(SelectedItemChangedProperty), false);
     }
 }

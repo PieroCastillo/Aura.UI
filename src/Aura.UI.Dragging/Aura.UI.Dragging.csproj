@@ -2,6 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>0.1.3-preview9</PackageVersion>
+        <Title>Aura.UI.Dragging</Title>
+        <Authors>Piero Castillo</Authors>
+        <Description>Dragging library for Aura.UI</Description>
+        <RepositoryUrl>github.com/PieroCastillo/Aura.UI</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>

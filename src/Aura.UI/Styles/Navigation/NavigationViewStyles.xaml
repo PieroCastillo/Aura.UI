@@ -63,7 +63,7 @@
 								</Grid>
 							</ExperimentalAcrylicBorder>
 						</Border>
-						<Border Grid.Column="1" Background="{TemplateBinding Background}">
+						<Border Name="PART_Container" Grid.Column="1" Background="{TemplateBinding Background}">
 							<ScrollViewer VerticalScrollBarVisibility="Auto"
 										  HorizontalContentAlignment="Left"
 										  HorizontalScrollBarVisibility="Auto">
@@ -78,13 +78,13 @@
 										<ContentPresenter Name="PART_TitlePresenter" 
 														  Grid.Row="0"
 														Content="{Binding $parent[NavigationView].SelectedItem.Title}"
-														Padding="20"
+														Padding="20" Classes="content_x"
 														TextBlock.FontWeight="Light"
 														TextBlock.FontSize="30">				
 										</ContentPresenter>
 										<!----> 
 										<ContentPresenter Grid.Row="1" Name="PART_SelectedContentHost"
-														  Padding="20"
+														  Padding="20" Classes="content_x"
 													  Content="{TemplateBinding SelectedContent}"
 													  ContentTemplate="{TemplateBinding SelectedContentTemplate}"/>
 									<!---->
@@ -120,6 +120,22 @@
 			</Animation>
 		</Style.Animations>
 	</Style>
+	
+	<Style Selector="NavigationView:normal /template/ ContentPresenter.content_x">
+		<Style.Animations>
+			<Animation Duration="0:0:0.3" Delay="0:0:0.1" FillMode="Forward" Easing="CubicEaseOut">
+				<KeyFrame Cue="0%">
+					<Setter Property="TranslateTransform.X" Value="{Binding $parent[Border].Bounds.Width}"/>
+					<Setter Property="Opacity" Value="0.45"></Setter>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="TranslateTransform.X" Value="0"></Setter>
+					<Setter Property="Opacity" Value="1"></Setter>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+	
 	<!--<Style Selector="NavigationView[AlwaysOpen=True] /template/ Border#PART_Pane">
 		<Setter Property="Width" Value="{Binding $parent[NavigationView].OpenPaneLength}"/>
 	</Style>-->

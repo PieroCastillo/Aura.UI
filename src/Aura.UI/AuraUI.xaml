@@ -30,7 +30,6 @@
 
 	<!--New Controls added to 0.1.3-preview4-->
 	<StyleInclude Source="/Styles/ShadowButtonStyles.xaml"/>
-	<StyleInclude Source="/AvaloniaStyles/AvaloniaStyles.xaml"/>
 	<StyleInclude Source="/Styles/Navigation/NavigationViewStyles.xaml"/>
 	<StyleInclude Source="/Styles/Navigation/NavigationViewItemStyles.xaml"/>
 
@@ -72,13 +71,6 @@
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="20" Background="Black">
-			<!--<ModernSlider Orientation="Horizontal" Height="50"
-						  Width="150"></ModernSlider>-->
-
-			<!--<Image Source="avares://Aura.UI/75000.jpg" Height="60"/>-->
-			<!--<Button Content="xd" Height="50" Width="50" VerticalContentAlignment="Center"
-					HorizontalContentAlignment="Center"/>-->
-			<!--<SuperColorPicker Height="300" Width="500"/>-->
 		</Border>
 	</Design.PreviewWith>  
 </Styles>  

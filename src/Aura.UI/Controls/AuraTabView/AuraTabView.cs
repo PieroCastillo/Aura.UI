@@ -24,7 +24,7 @@ namespace Aura.UI.Controls
     /// </summary>
     [TemplatePart(Name = "PART_AdderButton", Type = typeof(Button))]
     [TemplatePart(Name = "PART_InternalBorder", Type = typeof(Border))]
-    public partial class AuraTabView : TabControl, IHeadered, IFootered
+    public partial class AuraTabView : TabViewBase, IHeadered, IFootered
     {
         #region Fiels
         /// <summary>
@@ -55,6 +55,12 @@ namespace Aura.UI.Controls
                 action.Invoke();
             }
         }
+
+        protected override void OnSelectionChanged(object sender,SelectionChangedEventArgs e)
+        {
+            e.Handled = true;
+        }
+        
         
         protected void AdderButtonClicked(object sender, RoutedEventArgs e)
         {
@@ -63,11 +69,13 @@ namespace Aura.UI.Controls
             e_.Handled = true;
         }
 
+        
         static AuraTabView()
         {
             SelectionModeProperty.OverrideDefaultValue<AuraTabView>(SelectionMode.Toggle);
         }
 
+        
         protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
         {
             base.OnPropertyChanged(change);
@@ -119,18 +127,6 @@ namespace Aura.UI.Controls
         {
             this.WidthRemainingSpace = g_.Bounds.Width;
             this.HeightRemainingSpace = g_.Bounds.Height;
-
-            /*if (e.Property.Name == SelectedItemProperty.Name)
-            {
-                if (this.ItemCount == 0)
-                {
-                    SelectedItem = null;
-                }
-                else
-                {
-                    this.SelectedItem = (this.Items as IList)[this.SelectedIndex];
-                }
-            }*/
         }
 
         #endregion
