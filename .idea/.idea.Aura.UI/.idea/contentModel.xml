@@ -117,7 +117,6 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="src" t="Include">
         <e p="Aura.UI" t="IncludeRecursive">
-          <e p="75000.jpg" t="Include" />
           <e p="Assembly.cs" t="Include" />
           <e p="Assets" t="Include">
             <e p="auraui-logov2.ico" t="Include" />
@@ -136,10 +135,6 @@
           <e p="AuraAcrylicBase.xaml" t="Include" />
           <e p="AuraUI.xaml" t="Include" />
           <e p="AuraUI.xaml.cs" t="Include" />
-          <e p="AvaloniaStyles" t="Include">
-            <e p="AvaloniaStyles.xaml" t="Include" />
-            <e p="ContentPresenterStyles.xaml" t="Include" />
-          </e>
           <e p="Collections" t="Include">
             <e p="INotifyCollectionContentChanged.cs" t="Include" />
             <e p="ObservableContentCollection.cs" t="Include" />
@@ -248,7 +243,6 @@
           </e>
           <e p="Events" t="Include">
             <e p="CollectionChangingEventArgs.cs" t="Include" />
-            <e p="SliderClickedEventArgs.cs" t="Include" />
           </e>
           <e p="Exceptions" t="Include">
             <e p="AuraException.cs" t="Include" />
@@ -266,15 +260,6 @@
           <e p="Languages" t="Include">
             <e p="EnglishLanguage.xaml" t="Include" />
             <e p="SpanishLanguage.xaml" t="Include" />
-          </e>
-          <e p="Managers" t="Include">
-            <e p="ILanguage.cs" t="Include" />
-            <e p="ILanguageManager.cs" t="Include" />
-            <e p="ITheme.cs" t="Include" />
-            <e p="Language.cs" t="Include" />
-            <e p="LanguageManager.cs" t="Include" />
-            <e p="Theme.cs" t="Include" />
-            <e p="ThemeManager.cs" t="Include" />
           </e>
           <e p="Resources" t="Include">
             <e p="TransparentBackground.png" t="Include" />
@@ -335,7 +320,6 @@
           </e>
           <e p="Xaml" t="Include">
             <e p="AcrylicMaterialExtension.cs" t="Include" />
-            <e p="RevealExtension.cs" t="Include" />
           </e>
           <e p="bin" t="ExcludeRecursive" />
           <e p="obj" t="ExcludeRecursive">
@@ -354,8 +338,6 @@
           <e p="ControlObject.cs" t="Include" />
           <e p="DraggingOperations.cs" t="Include" />
           <e p="ItemsControlOperations.cs" t="Include" />
-          <e p="RemoteRender.cs" t="Include" />
-          <e p="RemoteRenderControl.cs" t="Include" />
           <e p="bin" t="ExcludeRecursive" />
           <e p="obj" t="ExcludeRecursive">
             <e p="Debug" t="Include">
