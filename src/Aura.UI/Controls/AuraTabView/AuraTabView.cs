@@ -36,25 +36,9 @@ namespace Aura.UI.Controls
         protected Border b_;
         protected Grid g_;
         protected internal DockPanel dock_container;
-        [Obsolete]
-        protected IEnumerable<Action> Actions = new List<Action>();
         #endregion
         #region Methods
         
-        /// <summary>
-        /// You should overwrite this Method for add your custom tabitem
-        /// </summary>
-        /// <param name="sender">the sender object</param>
-        /// <param name="e">the information of the event</param>
-        [Obsolete]
-        protected virtual void OnAdding(object sender, RoutedEventArgs e)
-        {
-            //this.AddTab(new AuraTabItem() { Header = "HeaderTest", Content = "ContentTest" }, true) ;
-            foreach (Action action in Actions)
-            {
-                action.Invoke();
-            }
-        }
 
         protected override void OnSelectionChanged(object sender,SelectionChangedEventArgs e)
         {
@@ -94,25 +78,12 @@ namespace Aura.UI.Controls
             }
         }
 
-        /// <summary>
-        /// Execute the action what is putted
-        /// </summary>
-        /// <param name="action">The action to execute</param>
-        [Obsolete]
-        public void AddActionToAdderButton(Action action)
-        {
-            (Actions as IList<Action>).Add(action);
-        }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
 
             AdderButton = this.GetControl<Button>(e, "PART_AdderButton");
-            
-#pragma warning disable 612
-            AdderButton.Click += OnAdding; // In the future this will be removed
-#pragma warning restore 612
 
             AdderButton.Click += AdderButtonClicked;
 

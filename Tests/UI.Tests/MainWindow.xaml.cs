@@ -40,7 +40,10 @@ namespace UI.Tests
             tabc = this.Find<TabControl>("tabview");
 
             tabvw = this.Find<AuraTabView>("tabvw_");
-            tabvw.AddActionToAdderButton(AddTab);
+            tabvw.ClickOnAddingButton += delegate(object? sender, RoutedEventArgs args)
+            {
+                AddTab();
+            };
 
             addbtn = this.Find<Button>("btn");
             cbtn = this.Find<Button>("cbtn");

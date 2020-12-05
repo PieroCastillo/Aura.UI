@@ -48,6 +48,8 @@
           <e p="Views" t="Include">
             <e p="CustomNavigationViewWindow.xaml" t="Include" />
             <e p="CustomNavigationViewWindow.xaml.cs" t="Include" />
+            <e p="LightSystemView.axaml" t="Include" />
+            <e p="LightSystemView.axaml.cs" t="Include" />
             <e p="MusicView.axaml.cs" t="Include" />
             <e p="MusicView.xaml" t="Include" />
             <e p="NavigationViewWindowDefault.axaml" t="Include" />
@@ -343,6 +345,27 @@
             <e p="Debug" t="Include">
               <e p="netstandard2.1" t="Include">
                 <e p="Aura.UI.Dragging.AssemblyInfo.cs" t="Include" />
+                <e p="Avalonia" t="Include">
+                  <e p="resources" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="Aura.UI.Lighting" t="IncludeRecursive">
+          <e p="Aura.UI.Lighting.csproj" t="IncludeRecursive" />
+          <e p="Controls" t="Include">
+            <e p="LightBox.Properties.cs" t="Include" />
+            <e p="LightBox.cs" t="Include" />
+            <e p="ShadowDecorator.cs" t="Include" />
+          </e>
+          <e p="LightPoint.cs" t="Include" />
+          <e p="assembly.cs" t="Include" />
+          <e p="bin" t="ExcludeRecursive" />
+          <e p="obj" t="ExcludeRecursive">
+            <e p="Debug" t="Include">
+              <e p="netstandard2.1" t="Include">
+                <e p="Aura.UI.Lighting.AssemblyInfo.cs" t="Include" />
                 <e p="Avalonia" t="Include">
                   <e p="resources" t="Include" />
                 </e>

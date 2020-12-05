@@ -1,5 +1,4 @@
-﻿using Aura.UI.Managers;
-using Aura.UI.UIExtensions;
+﻿using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;

@@ -61,7 +61,7 @@
 						<Button VerticalAlignment="Center"
 							HorizontalAlignment="Right" Name="cbtn">DeleteTab</Button>
 					</Grid>
-		</NavigationViewItem>
+				</NavigationViewItem>
 				<NavigationViewItem Header="TitleBox" Title="TitleBox">
 					<Border Padding="10">
 						<Border.Resources>
@@ -285,6 +285,9 @@
 							</TextBlock.Text>
 						</TextBlock>
 					</Grid>
+				</NavigationViewItem>
+				<NavigationViewItem Header="LightBox" Title="2D Lighting System">
+					<l:LightSystemView></l:LightSystemView>
 				</NavigationViewItem>
 			</NavigationView>	
 			<Follower LayerControl="{Binding #nav}">
