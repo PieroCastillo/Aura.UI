@@ -23,10 +23,6 @@ namespace Aura.UI.Controls
             AddHandler(DragDrop.DropEvent, OnDrop);
         }
 
-        static AuraTabItem()
-        {
-            RenderTransformProperty.OverrideDefaultValue<AuraTabItem>(new TranslateTransform(0,0));
-        }
         
         protected override void OnPointerPressed(PointerPressedEventArgs e)
         {
@@ -95,6 +91,7 @@ namespace Aura.UI.Controls
                     view.lastselectindex = view.SelectedIndex;
                     view.SelectedIndex = h;
                     view.SelectedItem = (view.Items as IList)[view.SelectedIndex];
+                    
                 } );
             Debug.WriteLine("Drag completed");
             Debug.WriteLine($"Selected Index: {this.GetParentTOfLogical<AuraTabView>().SelectedIndex}");

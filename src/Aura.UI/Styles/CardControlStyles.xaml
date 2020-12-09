@@ -7,12 +7,11 @@
 		<Setter Property="InternalCornerRadius" Value="7"/>
 		<Setter Property="CornerRadius" Value="7"/>
 		<Setter Property="InternalPadding" Value="20"/>
-		<Setter Property="MaterialIsVisible" Value="False"/>
 		<Setter Property="Background" Value="{DynamicResource ThemeControlHighBrush}"/>
 		<Setter Property="SecondaryBackground" Value="{DynamicResource ThemeControlMidBrush}"/>
 
 	</Style>
-	<Style Selector="CardControl[MaterialIsVisible=False]"> 	
+	<Style Selector="CardControl"> 	
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid>
@@ -50,50 +49,6 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	<Style Selector="CardControl[MaterialIsVisible=True]">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlHighBrush}"/>
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Grid>	
-					<Border Padding="{TemplateBinding Padding}" >
-						<Border
-						BoxShadow="{TemplateBinding BoxShadow}" 
-						CornerRadius="{TemplateBinding CornerRadius}">
-							<Grid RowDefinitions="*, Auto">
-								<ExperimentalAcrylicBorder 
-								CornerRadius="{TemplateBinding TopCornerRadius}"
-								Material="{TemplateBinding Material}" HorizontalAlignment="Stretch"
-								VerticalAlignment="Stretch" >
-								<Grid Grid.Row="0" RowDefinitions="*">	
-								<ContentPresenter 
-											  Name="PART_ContentPresenter"
-											  Content="{TemplateBinding Content}"
-											 Padding="{TemplateBinding InternalPadding}"/>
-							</Grid>
-								</ExperimentalAcrylicBorder>
-								<ExperimentalAcrylicBorder Grid.Row="1"
-									Material="{DynamicResource ThemeAcrylicControlMidBrush}"
-									CornerRadius="{TemplateBinding BottomCornerRadius}">
-								<Grid ColumnDefinitions="20,*,20" RowDefinitions="20,*,10,*,20"
-									  Background="Transparent">
-									<ContentPresenter Grid.Column="1"
-													  Grid.Row="1"
-													Name="PART_HeaderPresenter"
-													Content="{TemplateBinding Header}"
-													TextBlock.FontSize="18"/>
-									<ContentPresenter Grid.Column="1"
-													  Grid.Row="3"
-													Content="{TemplateBinding SecondaryHeader}"
-													TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"/>
-								</Grid>
-							</ExperimentalAcrylicBorder>				
-							</Grid>
-						</Border>
-					</Border>
-				</Grid>
-			</ControlTemplate>
-		</Setter>
-	</Style>
 	<Style Selector="CardControl[ScaleOnPointerOver=true]:pointerover">
 		<Setter Property="Transitions">
 			<Transitions>
@@ -105,13 +60,10 @@
 	<Design.PreviewWith>
 		<Border Padding="20">
 			<Grid>
-				<CardControl MaterialIsVisible="False" Header="75000"
+				<CardControl Header="75000"
 						SecondaryHeader="Colbreakz">
 	
 					<Border Height="100" Width="100"> <!---->
-					<Border.Background>
-						<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
-					</Border.Background>
 				</Border>
 			</CardControl>
 			</Grid>

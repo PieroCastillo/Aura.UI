@@ -27,9 +27,14 @@ namespace Aura.UI.Controls
         public AuraTabItem()
         {
             this.Closing += OnClosing;
-            
+
             EnableDragDrop();
             //tab_parent = this.GetParentTOfLogical<AuraTabView>();
+        }
+
+        static AuraTabItem()
+        {
+            CanBeDraggedProperty.Changed.AddClassHandler<AuraTabItem>((x,e) => x.OnCanDraggablePropertyChanged(x,e));
         }
 
         /// <summary>
@@ -52,7 +57,17 @@ namespace Aura.UI.Controls
             this.Close(null);
         }
 
-
+        protected void OnCanDraggablePropertyChanged(object sender, AvaloniaPropertyChangedEventArgs e)
+        {
+            if (CanBeDragged == true)
+            {
+                PseudoClasses.Add(":lockdrag");
+            }
+            else if (CanBeDragged == false)
+            {
+                PseudoClasses.Remove(":lockdrag");
+            }
+        }
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
@@ -66,20 +81,11 @@ namespace Aura.UI.Controls
             {
                 CloseButton.IsVisible = false;
             }
-            // set up tab dragging
-            /*thumb = this.GetControl<Thumb>(e, "PART_TabThumb");
-            this.PointerPressed += (s, e) =>
-            {
-                IsSelected = true;
-            };*/
         }
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             this.Close();
         }
-
-
-
     }
 }
 

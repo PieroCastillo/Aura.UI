@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Aura.UI.Controls
 {
-    public class CardControl : HeaderedContentControl, IMaterial
+    public class CardControl : HeaderedContentControl
     {
         public object SecondaryHeader
         {
@@ -59,28 +59,6 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<BoxShadows> InternalBoxShadowProperty =
             AvaloniaProperty.Register<CardControl, BoxShadows>(nameof(InternalBoxShadow));
-
-        /// <summary>
-        /// Defines the Material for the AcrylicBorder in the Template
-        /// </summary>
-        public ExperimentalAcrylicMaterial Material
-        {
-            get { return GetValue(MaterialProperty); }
-            set { SetValue(MaterialProperty, value); }
-        }
-        public static readonly StyledProperty<ExperimentalAcrylicMaterial> MaterialProperty =
-            AvaloniaProperty.Register<CardControl, ExperimentalAcrylicMaterial>(nameof(Material));
-        /// <summary>
-        /// Defines if the Material can be visible
-        /// </summary>
-        public bool MaterialIsVisible
-        {
-            get { return GetValue(MaterialIsVisibleProperty); }
-            set { SetValue(MaterialIsVisibleProperty, value); }
-        }
-        public static readonly StyledProperty<bool> MaterialIsVisibleProperty =
-             AvaloniaProperty.Register<CardControl, bool>(nameof(MaterialIsVisible), true);
-
 
         /// <summary>
         /// Defines the Uniform CornerRadius

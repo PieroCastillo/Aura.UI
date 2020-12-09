@@ -13,12 +13,8 @@ namespace Aura.UI.Controls.Primitives
 {
     public class TabViewBase : TabControl
     {
-        public TabViewBase()
-        {
-            this.AddHandler(SelectionChangedEvent, OnSelectionChanged, RoutingStrategies.Bubble);
-        }
         
-        protected virtual void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        protected virtual void OnSelectionChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
             
         }

@@ -21,7 +21,6 @@ namespace UI.Tests
                 .UsePlatformDetect()
                 .UseManagedSystemDialogs()
                 .UseSkia()
-                .With<Win32PlatformOptions>(new Win32PlatformOptions() { UseWindowsUIComposition = true })
                 .LogToTrace();
                
     }

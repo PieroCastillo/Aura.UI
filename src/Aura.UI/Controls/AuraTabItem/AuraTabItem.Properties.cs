@@ -3,20 +3,12 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Avalonia.Media;
+using Avalonia.Controls;
 
 namespace Aura.UI.Controls
 {
     public partial class AuraTabItem
     {
-
-        public TranslateTransform DraggingTransform
-        {
-            get => GetValue(DraggingTransformProperty);
-            set => SetValue(DraggingTransformProperty, value);
-        }
-        public static readonly StyledProperty<TranslateTransform> DraggingTransformProperty =
-                AvaloniaProperty.Register<AuraTabItem, TranslateTransform>(nameof(DraggingTransform), new TranslateTransform(0,0));
-        
         /// <summary>
         /// This property defines if the AuraTabItem can be closed
         /// </summary>

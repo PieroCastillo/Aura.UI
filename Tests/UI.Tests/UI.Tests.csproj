@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <IsPackable>false</IsPackable>
+    <IsPackable>true</IsPackable>
     <LangVersion>8</LangVersion>
     <Nullable>enable</Nullable>
     <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
@@ -87,7 +87,6 @@
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Aura.UI.Lighting\Aura.UI.Lighting.csproj" />
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
   </ItemGroup>
 </Project>

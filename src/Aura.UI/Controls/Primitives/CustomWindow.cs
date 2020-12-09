@@ -39,34 +39,11 @@ namespace Aura.UI.Controls.Primitives
         public CustomWindow()
         {
             SystemDecorations = 0;
-            this.PropertyChanged += CustomWindow_PropertyChanged;
+            InitializeBorderAndCorners();
         }
 
-        internal void CustomWindow_PropertyChanged(object sender, AvaloniaPropertyChangedEventArgs e)
-        {
-            if(e.Property == CanResizeProperty)
-            {
-                if (CanResize)
-                {
-                    if (!_isinitializedborder)
-                    {
-                        InitializeBorderAndCorners();
-                    }
-                }
-                else if(CanResize == false)
-                {
-                    if(_isinitializedborder == false)
-                    {
-                        ResetBordersAndCorners();
-                    }
-                }
-            }
-        }
-
-        internal bool _isinitializedborder;
         protected void InitializeBorderAndCorners()
         {
-            _isinitializedborder = true;
                 //Sides
                 SetUpBorder<Border>("PART_LeftBorder", StandardCursorType.LeftSide, WindowEdge.West);
                 SetUpBorder<Border>("PART_RightBorder", StandardCursorType.RightSide, WindowEdge.East);
@@ -82,7 +59,6 @@ namespace Aura.UI.Controls.Primitives
 
         protected void ResetBordersAndCorners()
         {
-            _isinitializedborder = false;
             //Sides
             ResetBorder<Border>("PART_LeftBorder", WindowEdge.West);//, StandardCursorType.LeftSide
             ResetBorder<Border>("PART_RightBorder", WindowEdge.East);//, StandardCursorType.RightSide

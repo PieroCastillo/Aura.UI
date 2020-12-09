@@ -286,10 +286,9 @@
 						</TextBlock>
 					</Grid>
 				</NavigationViewItem>
-				<NavigationViewItem Header="LightBox" Title="2D Lighting System">
-					<l:LightSystemView></l:LightSystemView>
-				</NavigationViewItem>
 			</NavigationView>	
+			
+		
 			<Follower LayerControl="{Binding #nav}">
 				<Follower.CanvasLayer>
 					<Canvas Name="canv" Background="Transparent" 

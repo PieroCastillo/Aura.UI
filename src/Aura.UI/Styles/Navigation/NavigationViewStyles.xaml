@@ -5,7 +5,6 @@
 		<DrawingImage x:Key="Microns.Menu">
 			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M64 96L448 96 448 144 64 144 64 96ZM64 232L448 232 448 280 64 280 64 232ZM64 368L448 368 448 416 64 416 64 368Z"   />
 		</DrawingImage>
-		<PageSlide x:Key="SlideAn" Duration="0:0:0.4"/>
 	</Styles.Resources>
 	<Style Selector="NavigationView">
 		<Setter Property="ItemsPanel">
@@ -123,7 +122,7 @@
 	
 	<Style Selector="NavigationView:normal /template/ ContentPresenter.content_x">
 		<Style.Animations>
-			<Animation Duration="0:0:0.3" Delay="0:0:0.1" FillMode="Forward" Easing="CubicEaseOut">
+			<Animation Duration="0:0:0.3" FillMode="Forward" Easing="CubicEaseOut">
 				<KeyFrame Cue="0%">
 					<Setter Property="TranslateTransform.X" Value="{Binding $parent[Border].Bounds.Width}"/>
 					<Setter Property="Opacity" Value="0.45"></Setter>

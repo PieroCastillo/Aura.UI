@@ -1,0 +1,41 @@
+﻿<ContentWindow xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="550"
+        x:Class="UI.Tests.Views.RibbonWindowTest"
+        Title="Ribbon Test">
+	<Grid>
+		<Ribbon OpenPaneHeight="150" Header="TextEditor"
+				LeftContent="File" RightContent="Ask">
+			<RibbonItem Header="Menu">
+				<RibbonPanel>
+					<RibbonGroup Header="Start">
+						
+					</RibbonGroup>
+					<RibbonSeparator/>
+					<RibbonGroup Header="Themes">
+						
+					</RibbonGroup>
+					<RibbonSeparator/>
+					<RibbonGroup Header="Fonts">
+						
+					</RibbonGroup>
+				</RibbonPanel>
+			</RibbonItem>
+			<RibbonItem Header="Insert">
+				<RibbonPanel>
+					<RibbonPanel>
+					
+					</RibbonPanel>
+				</RibbonPanel>
+			</RibbonItem>
+			<RibbonItem Header="Layout">
+				
+			</RibbonItem>
+			<RibbonItem Header="Tools">
+
+			</RibbonItem>
+		</Ribbon>
+	</Grid>
+</ContentWindow>

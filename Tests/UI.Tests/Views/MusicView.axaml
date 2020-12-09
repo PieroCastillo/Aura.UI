@@ -2,11 +2,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignHeight="50" d:DesignWidth="100"
+             mc:Ignorable="d" 
              x:Class="UI.Tests.Views.MusicView">
 	<UserControl.Styles>
 		<Style Selector="CardControl">
-			<Setter Property="MaterialIsVisible" Value="True"/>
 			<Setter Property="InternalPadding" Value="0"/>
 			<Setter Property="Width" Value="200"/>
 			<Setter Property="Height" Value="260"/>
@@ -15,7 +14,7 @@
 			<Setter Property="Height" Value="150"/>
 		</Style>
 		<Style Selector="CardControl > Border > ImageBrush"> 
-			<Setter Property="Stretch" Value="None"/>
+			<Setter Property="Stretch" Value="UniformToFill"/>
 		</Style>
 	</UserControl.Styles>
 		<Grid RowDefinitions="*,*,*,*,*">

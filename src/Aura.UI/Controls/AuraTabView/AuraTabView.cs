@@ -39,13 +39,6 @@ namespace Aura.UI.Controls
         #endregion
         #region Methods
         
-
-        protected override void OnSelectionChanged(object sender,SelectionChangedEventArgs e)
-        {
-            e.Handled = true;
-        }
-        
-        
         protected void AdderButtonClicked(object sender, RoutedEventArgs e)
         {
             var e_ = new RoutedEventArgs(ClickOnAddingButtonEvent);

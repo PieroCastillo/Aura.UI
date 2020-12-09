@@ -25,7 +25,16 @@ namespace Aura.UI.Controls.Navigation
     {
         #region Fields
         private NavigationViewItem ToggleNav;
+
+        public new readonly static RoutedEvent<SelectionChangedEventArgs> SelectionChangedEvent =
+            RoutedEvent.Register<SelectingItemsControl, SelectionChangedEventArgs>(nameof(SelectionChanged),
+                                                                                    RoutingStrategies.Direct);
         #endregion
+
+        public NavigationView()
+        {
+            SelectedItemProperty.Changed.AddClassHandler<NavigationView>((x, e) => x.OnSelectionChanged(x, e));
+        }
 
         #region Functionalities
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -35,18 +44,9 @@ namespace Aura.UI.Controls.Navigation
             ToggleNav = this.GetControl<NavigationViewItem>(e, "PART_ToggleNav");
             ToggleNav.PointerPressed += ToggleNav_PointerPressed;
 
-            // IList<SelectingItemsControl> s = this.GetLogicalDescendants().OfType<SelectingItemsControl>().ToList();
-            //
-            // foreach (var si in s)
-            // {
-            //     si.SelectionChanged += (sender, args) =>
-            //     {
-            //         args.Handled = true;
-            //     };
-            // }
         }
 
-        protected override void OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        protected override void OnSelectionChanged(object sender,AvaloniaPropertyChangedEventArgs e)
         {
             base.OnSelectionChanged(sender, e);
             
@@ -113,6 +113,5 @@ namespace Aura.UI.Controls.Navigation
             }
         }
         #endregion
-
     }
 }

@@ -5,6 +5,7 @@ using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Animation;
 using Avalonia.Controls;
+using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
@@ -26,12 +27,26 @@ namespace Aura.UI.Controls.Ribbon
     [TemplatePart(Name = "PART_RightButton", Type = typeof(MaterialButton))]
     [TemplatePart(Name = "PART_LeftButton", Type = typeof(MaterialButton))]
     [TemplatePart(Name = "PART_Toggle", Type = typeof(ToggleButton))]
+    [PseudoClasses(":changing")]
     //[TemplatePart(Name= ¨PART_AnimationBox", Type = typeof(AnimationBox))]
     public class Ribbon : TabViewBase, IMaterial, IHeadered
     {
         public MaterialButton LeftButton;
         public MaterialButton RightButton;
         ToggleButton ToggleStateButton;
+
+        public Ribbon()
+        {
+            SelectedItemProperty.Changed.AddClassHandler<Ribbon>((x,e) => x.OnSelectionChanged(x,e));
+        }
+
+        protected override void OnSelectionChanged(object sender, AvaloniaPropertyChangedEventArgs e)
+        {
+            base.OnSelectionChanged(sender, e);
+
+            PseudoClasses.Remove(":changing");
+            PseudoClasses.Add(":changing");
+        }
 
         #region Functionalities
         /// <summary>
