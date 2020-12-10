@@ -59,9 +59,6 @@ namespace UI.Tests
             drag.PointerPressed += Drag_PointerPressed;
 
             border_bg.Background = pickerButton.Background;
-
-            var xdd = new AuraTabItem();
-            //EnableFeatures();
         }
 
         public void HandItems(object sender, SelectionChangedEventArgs e)
