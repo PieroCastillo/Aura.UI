@@ -10,9 +10,15 @@
 		<Grid Background="{DynamicResource ThemeBackgroundBrush}" Opacity="0.4"/>
 		<NavigationView AlwaysOpen="True"
 						Header="NugetTest"
-						PaneBackground="Transparent"
+						PaneBackground="LightPink"
 						Material="{DynamicResource NullBrush}">
-			<NavigationViewItem Header="A" Title="A"/>
+			<NavigationViewItem Header="A" Title="A">
+				<AuraTabView>
+					<AuraTabItem Header="header1"/>
+					<AuraTabItem Header="header2"/>
+					<AuraTabItem Header="header3"/>
+				</AuraTabView>
+			</NavigationViewItem>
 			<NavigationViewItem Header="B" Title="B"/>
 		</NavigationView>
 		<Border Name="drag" 
