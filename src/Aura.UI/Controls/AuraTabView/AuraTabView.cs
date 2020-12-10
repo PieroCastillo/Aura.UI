@@ -60,11 +60,11 @@ namespace Aura.UI.Controls
             if (this.SelectedItem == null)
             {
                 double d = ((double)ItemCount / 2);
-                if (this.lastselectindex < d)
+                if (this.lastselectindex < d & ItemCount != 0)
                 {
                     SelectedItem = (Items as IList).OfType<object>().FirstOrDefault();
                 }
-                else if (lastselectindex >= d)
+                else if (lastselectindex >= d & ItemCount != 0)
                 {
                     SelectedItem = (Items as IList).OfType<object>().LastOrDefault();
                 }
