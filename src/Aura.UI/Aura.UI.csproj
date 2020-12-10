@@ -2,7 +2,6 @@
 <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <OutputType>Library</OutputType>
-    <Version>0.1.3-preview7</Version>
     <Authors>Piero Castillo</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Description>Control's Library for Avalonia.</Description>
@@ -17,7 +16,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression> 
     <LangVersion>8.0</LangVersion>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <PackageVersion>0.1.3-preview9</PackageVersion>
+    <PackageVersion>0.1.3-preview91</PackageVersion>
+    <Version>0.1.3-preview91</Version>
   </PropertyGroup>
 	
 <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -25,6 +25,7 @@
 </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
   <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  <OutputPath>C:\Users\piero\Desktop\AuraDev\Aura.UI\build\Aura.UI\</OutputPath>
 </PropertyGroup>
    <ItemGroup>
     <Compile Update="**\*.xaml.cs">
