@@ -31,7 +31,7 @@ namespace UI.Tests
         {
             InitializeComponent();
 
-            this.Icon = new WindowIcon(new Bitmap(@"auraui-logov2.png"));
+            //this.Icon = new WindowIcon(new Bitmap("./auraui-logov2.png"));
 
            #if DEBUG
             this.AttachDevTools();
@@ -113,6 +113,22 @@ namespace UI.Tests
             pages_test.ShowDialog(this);
         }
 
+        public void OpenContentDialog(object sender, RoutedEventArgs e)
+        {
+            var dialog = new ContentDialog();
+            dialog.Content = "I'm a ContentDialog :D";
+            dialog.SetOwner(this);
+            dialog.OkButtonClick += (s, e) =>
+            {
+                dialog.Close();
+            };
+            dialog.CancelButtonClick += (s, e) =>
+            {
+                dialog.Close();
+            };
+            dialog.Show();
+        }
+
         private void Cbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             tabc.CloseTab(tabc.ItemCount);
@@ -129,10 +145,6 @@ namespace UI.Tests
             AvaloniaXamlLoader.Load(this);          
         }
 
-        private void EnableFeatures()
-        {    
-            //App.Selector.EnableThemes(this);
-            //App.Manager.EnableLanguages(this); 
-        }
+
     }
 }

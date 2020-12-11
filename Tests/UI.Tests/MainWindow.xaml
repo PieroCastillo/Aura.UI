@@ -6,7 +6,7 @@
 		xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
         mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="900" 
 		Background="{x:Null}"
-		Icon="avares://UI.Tests/Assets/auraui-logov2.ico"
+		Icon="avares://UI.Tests/auraui-logov2.png"
         x:Class="UI.Tests.MainWindow" Height="700" Width="800"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
 	<ContentWindow.Resources> 
@@ -284,6 +284,11 @@
 								</x:String>
 							</TextBlock.Text>
 						</TextBlock>
+					</Grid>
+				</NavigationViewItem>
+				<NavigationViewItem Header="ContentDialog" Title="ContentDialog" >
+					<Grid>
+						<Button Content="Open ContentDialog" Click="OpenContentDialog"/>
 					</Grid>
 				</NavigationViewItem>
 			</NavigationView>	
