@@ -40,6 +40,7 @@
   </ItemGroup>
    <ItemGroup>
      <None Remove="Assets\auraui-logov2.ico" />
+     <None Remove="Styles\ControlDialogStyles.xaml" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Include="Assets\auraui-logov2.ico" />
@@ -72,6 +73,9 @@
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\AuraTabViewStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\ControlDialogStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\FilledSliderStyles.xaml">
