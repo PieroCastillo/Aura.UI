@@ -14,8 +14,8 @@
 		</Setter>
 		<!--<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>-->
 		<Setter Property="Material" Value="{DynamicResource OnlyNoiseBrush}"/>
-		<Setter Property="OpenPaneLength" Value="150"/>
-		<Setter Property="CompactPaneLength" Value="35"/>
+		<Setter Property="OpenPaneLength" Value="200"/>
+		<Setter Property="CompactPaneLength" Value="50"/>
 		<Setter Property="HeaderIcon" Value="{DynamicResource Microns.Menu}"/>
 		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
 		<Setter Property="PaneBackground" Value="{x:Null}"/>

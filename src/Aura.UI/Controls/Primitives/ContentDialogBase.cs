@@ -1,6 +1,7 @@
 ﻿using Aura.UI.Services;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,13 +23,37 @@ namespace Aura.UI.Controls.Primitives
         public void Show()
         {
             ContentDialogService.ShowDialogOn(Owner, this);
+            var e = new RoutedEventArgs(ShowingEvent);
+            RaiseEvent(e);
+            e.Handled = true; 
         }
-
 
         public void Close()
         {
+            var e = new RoutedEventArgs(ClosingEvent);
+            this.RaiseEvent(e);
+            e.Handled = true;
             ContentDialogService.CloseDialogOn(Owner, this);
         }
+
+        public event EventHandler<RoutedEventArgs> Showing
+        {
+            add => AddHandler(ShowingEvent, value);
+            remove => RemoveHandler(ShowingEvent, value);
+        }
+        public static readonly RoutedEvent<RoutedEventArgs> ShowingEvent =
+            RoutedEvent.Register<ContentDialogBase, RoutedEventArgs>(nameof(Showing), RoutingStrategies.Bubble);
+
+
+        public event EventHandler<RoutedEventArgs> Closing
+        {
+            add => AddHandler(ClosingEvent, value);
+            remove => RemoveHandler(ClosingEvent, value);
+        }
+        public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
+            RoutedEvent.Register<ContentDialogBase, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
+        
+
         private WindowBase Owner
         {
             get;

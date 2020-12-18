@@ -1,0 +1,42 @@
+﻿<Styles xmlns="https://github.com/avaloniaui">
+	<Design.PreviewWith>
+		<SuperNavigationView Width="600"
+							 Height="400">
+			<SuperNavigationViewItem Title="Title1" Content="Content"/>
+		</SuperNavigationView>
+	</Design.PreviewWith>
+	<Style Selector="SuperNavigationView">
+		<Setter Property="ItemsPanel">
+			<ItemsPanelTemplate>
+				<DockPanel/>
+			</ItemsPanelTemplate>
+		</Setter>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Background="{TemplateBinding Background}">
+					<Grid RowDefinitions="auto,*">
+						<Grid>
+							<ContentPresenter Name="PART_HeaderPresenter"
+											  Content="{TemplateBinding Header}"/>
+							<ScrollViewer>
+								<ItemsPresenter Name="PART_ItemsPresenter"
+												Items="{TemplateBinding Items}"
+												ItemTemplate="{TemplateBinding ItemTemplate}"
+												ItemsPanel="{TemplateBinding ItemsPanel}"/>
+							</ScrollViewer>
+						</Grid>
+						<Grid Grid.Row="1" Background="{TemplateBinding Background}">
+							<ScrollViewer>
+								<Grid RowDefinitions="auto,*">
+									<ContentPresenter Content="{TemplateBinding Title}"/>
+									<ContentPresenter Grid.Row="1" Name="PART_SelectedContentPresenter"
+											  Content="{TemplateBinding SelectedContent}"/>
+								</Grid>
+							</ScrollViewer>
+						</Grid>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>

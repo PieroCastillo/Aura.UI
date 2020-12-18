@@ -13,6 +13,7 @@ using Avalonia.Controls.Platform;
 using Avalonia.Layout;
 using Avalonia.Controls.ApplicationLifetimes;
 using Aura.UI.UIExtensions;
+using Aura.UI.Services;
 
 namespace Aura.UI.Controls
 {
@@ -39,6 +40,14 @@ namespace Aura.UI.Controls
             colorWindow.ShowDialog(this.GetParentWindowOfLogical());
             
             colorWindow.Closed += ColorWindow_Closed;
+
+            var owner = this.GetParentWindowOfLogical();
+            var cp = new SuperColorPicker();
+
+            owner.NewContentDialog(cp,
+                null,
+                null,
+                "Ok","Cancel");
         }
 
     }

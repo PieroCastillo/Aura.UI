@@ -1,0 +1,68 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<SuperNavigationViewItem Header="Header" IsExpanded="True">
+			<SuperNavigationViewItem Header="Sub Item"/>
+		</SuperNavigationViewItem>
+	</Design.PreviewWith>
+	<Styles.Resources>
+		<DrawingImage x:Key="Entypo+.ChevronThinUp">
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M2.582,13.891c-0.272,0.268-0.709,0.268-0.979,0s-0.271-0.701,0-0.969l7.908-7.83c0.27-0.268,0.707-0.268,0.979,0  l7.908,7.83c0.27,0.268,0.27,0.701,0,0.969c-0.271,0.268-0.709,0.268-0.978,0L10,6.75L2.582,13.891z"   />
+		</DrawingImage>
+		<DrawingImage x:Key="Entypo+.ChevronThinDown">
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M17.418,6.109c0.272-0.268,0.709-0.268,0.979,0c0.27,0.268,0.271,0.701,0,0.969l-7.908,7.83  c-0.27,0.268-0.707,0.268-0.979,0l-7.908-7.83c-0.27-0.268-0.27-0.701,0-0.969c0.271-0.268,0.709-0.268,0.979,0L10,13.25  L17.418,6.109z"   />
+		</DrawingImage>
+	</Styles.Resources>
+	<Style Selector="SuperNavigationViewItem">
+		<Setter Property="Height" Value="40"/>
+		<Setter Property="Padding" Value="5"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid Background="{TemplateBinding Background}">
+					<Border Padding="{TemplateBinding Padding}" Name="PART_Border" BorderThickness="{TemplateBinding BorderThickness}"
+						>
+					<!--<Border.Transitions>
+						<Transitions>
+							<DoubleTransition Property="Width"
+											  Easing="QuadraticEaseInOut"/>
+						</Transitions>
+					</Border.Transitions>-->
+					<StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Left">
+						<Border Name="PART_SelectionBorder" Width="5" CornerRadius="5" />
+						<Image Name="img" Source="{TemplateBinding Icon}" Stretch="Uniform" Width="16"
+							   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+						<Border Name="PART_ContainerBorder">
+							<ContentPresenter Name="PART_ContentPresenter"
+										Content="{TemplateBinding Header}"
+										TextBlock.FontSize="14"
+										TextBlock.FontFamily="Segoe UI"
+										VerticalAlignment="Center"/>
+						</Border>
+						<ToggleButton Padding="0" Width="15"
+									  Classes=".togglenav" VerticalAlignment="Center"
+									  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
+									  Background="Transparent">
+							<Image Name="PART_Img"/>
+						</ToggleButton>
+					</StackPanel>
+				</Border>
+				</Grid>
+			</ControlTemplate>
+		</Setter> 
+	</Style>
+	<Style Selector="SuperNavigationViewItem:empty /template/ ToggleButton">
+		<Setter Property="Opacity" Value="0"/>
+	</Style>
+	<Style Selector="SuperNavigationViewItem /template/ ToggleButton[IsChecked=True] /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="Background" Value="Transparent"/>
+	</Style>
+	<!--<Style Selector="SuperNavigationViewItem:empty /template/ ToggleButton.togglenav">
+		<Setter Property="Opacity" Value="0"/>
+	</Style>-->
+	<Style Selector="SuperNavigationViewItem[IsExpanded=False] /template/ Image#PART_Img">
+		<Setter Property="Source" Value="{DynamicResource Entypo+.ChevronThinDown}"/>
+	</Style>
+	<Style Selector="SuperNavigationViewItem[IsExpanded=True] /template/ Image#PART_Img">
+		<Setter Property="Source" Value="{DynamicResource Entypo+.ChevronThinUp}"/>
+	</Style>
+</Styles>

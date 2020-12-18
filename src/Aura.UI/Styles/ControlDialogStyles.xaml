@@ -12,12 +12,13 @@
 				<Grid Name="PART_GridContainer"
 					  RowDefinitions="auto,*,auto"
 					  ColumnDefinitions="auto,*,auto" 
-					  Background="#99000000">
+					  Background="#77000000">
 					<Border Name="PART_BorderShadow"
 							Grid.Column="1" Grid.Row="1"
 							VerticalAlignment="Center"
 							HorizontalAlignment="Center"
 							BoxShadow="0 0 5 1 Black"
+							CornerRadius="15"
 							Background="{TemplateBinding Background}">
 						<Grid RowDefinitions="20,*,20"
 							  ColumnDefinitions="20,*,20">
@@ -30,10 +31,10 @@
 												  TextBlock.FontSize="25"
 												  TextBlock.FontWeight="DemiBold"/>
 								<DockPanel Grid.Row="2">
-									<Button Name="PART_CancelButton" Content="Cancel"
+									<Button Name="PART_CancelButton" Content="{TemplateBinding CancelButtonContent}"
 											Margin="5" HorizontalAlignment="Right"
 											DockPanel.Dock="Right"/>
-									<Button Name="PART_OkButton" Content="Ok"
+									<Button Name="PART_OkButton" Content="{TemplateBinding OkButtonContent}"
 											Margin="5" HorizontalAlignment="Right"/>
 								</DockPanel>
 							</Grid>
