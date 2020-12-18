@@ -14,6 +14,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Avalonia.Interactivity;
 using System.IO;
 using System.Diagnostics;
+using Aura.UI.Services;
 
 namespace UI.Tests
 {
@@ -95,19 +96,19 @@ namespace UI.Tests
             this.BeginMoveDrag(e);
         }
 
-        public void OpenDefaultNavigationView(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        public void OpenDefaultNavigationView(object sender, RoutedEventArgs e)
         {
             var win = new NavigationViewWindowDefault();
             win.ShowDialog(this);
         }
 
-        public void OpenCustomNavigationView(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        public void OpenCustomNavigationView(object sender, RoutedEventArgs e)
         {
             var win = new CustomNavigationViewWindow();
             win.ShowDialog(this);
         }
 
-        private void Open_pages_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void Open_pages_Click(object sender, RoutedEventArgs e)
         {
             var pages_test = new PagesTest();
             pages_test.ShowDialog(this);
@@ -115,18 +116,11 @@ namespace UI.Tests
 
         public void OpenContentDialog(object sender, RoutedEventArgs e)
         {
-            var dialog = new ContentDialog();
-            dialog.Content = "I'm a ContentDialog :D";
-            dialog.SetOwner(this);
-            dialog.OkButtonClick += (s, e) =>
-            {
-                dialog.Close();
-            };
-            dialog.CancelButtonClick += (s, e) =>
-            {
-                dialog.Close();
-            };
-            dialog.Show();
+            this.NewContentDialog("I'm a Content Dialog :D",
+                                  (s, e) => { Debug.WriteLine("Ok Button Pressed"); },
+                                  (s, e) => { Debug.WriteLine("Cancel Button Pressed"); }, 
+                                  "Ok",
+                                  "Cancel");
         }
 
         private void Cbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
