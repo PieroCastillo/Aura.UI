@@ -41,6 +41,8 @@
    <ItemGroup>
      <None Remove="Assets\auraui-logov2.ico" />
      <None Remove="Styles\ControlDialogStyles.xaml" />
+     <None Remove="Styles\Navigation\SuperNavigationViewItemStyles.xaml" />
+     <None Remove="Styles\Navigation\SuperNavigationViewStyles.xaml" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Include="Assets\auraui-logov2.ico" />
@@ -60,13 +62,13 @@
      </EmbeddedResource>
    </ItemGroup>
    <ItemGroup>
-     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-preview6" />
-	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-preview6" />
-	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-preview6" />
-	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="6.1.1" />
-     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />
+     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-rc1" />
+	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-rc1" />
+	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-rc1" />
+	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="7.0.0-preview4" />
+     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc1" />
 	   <PackageReference Include="MathNet.Numerics" Version="4.12.0" />
-	   <PackageReference Include="Avalonia" Version="0.10.0-preview6" />
+	   <PackageReference Include="Avalonia" Version="0.10.0-rc1" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Update="AuraAcrylicBase.xaml">
@@ -100,6 +102,12 @@
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\ModernSliderStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\Navigation\SuperNavigationViewItemStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\Navigation\SuperNavigationViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\PageStyles.xaml">
