@@ -57,7 +57,7 @@ namespace Aura.UI.Controls.Thumbs
                     case HorizontalAlignment.Right:
                         delta_h = Math.Min(e.Vector.X, item.Bounds.Width + item.MinWidth);
                         Rect _r4 = r1.WithX(Canvas.GetRight(item) + delta_h);
-                        if (cvr2.Contains(_r4)) ;
+                        if (cvr2.Contains(_r4))
                         {
                             Canvas.SetRight(item, Canvas.GetRight(item) + delta_h);
                             item.Width += delta_h;
