@@ -23,7 +23,7 @@ namespace Aura.UI.Controls
         /// This button close its AuraTabItem parent
         /// </summary>
         Button CloseButton;
-        Thumb thumb;
+
         public AuraTabItem()
         {
             this.Closing += OnClosing;
