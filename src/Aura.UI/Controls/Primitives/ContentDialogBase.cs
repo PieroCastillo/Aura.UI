@@ -28,7 +28,7 @@ namespace Aura.UI.Controls.Primitives
             e.Handled = true; 
         }
 
-        public void Close()
+        public virtual void Close()
         {
             var e = new RoutedEventArgs(ClosingEvent);
             this.RaiseEvent(e);

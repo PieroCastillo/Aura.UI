@@ -13,7 +13,7 @@ using Aura.UI.Controls.Primitives;
 
 namespace Aura.UI.Services
 {
-    public static class ContentDialogService
+    public static partial class ContentDialogService
     {
         internal  static void ShowDialogOn(WindowBase window, Control dialog)
         {
@@ -130,6 +130,8 @@ namespace Aura.UI.Services
                     OnClosing.Invoke(s, e);
                 };
             }
+
+            c.Show();
         }
     } 
 }
