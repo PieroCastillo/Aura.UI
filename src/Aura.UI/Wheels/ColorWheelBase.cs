@@ -13,6 +13,8 @@ using Point = Avalonia.Point;
 using HA = Avalonia.Layout.HorizontalAlignment;
 using VA = Avalonia.Layout.VerticalAlignment;
 using Avalonia.Controls.Primitives;
+using Aura.UI.Rendering;
+using Avalonia.Threading;
 
 namespace ColorPicker.Wheels
 {
@@ -40,8 +42,8 @@ namespace ColorPicker.Wheels
 
         public override void Render(DrawingContext dc)
         {
-            base.Render(dc);
             DrawHsvDial(dc);
+            //RenderCustomHsvDial(dc);
         }
 
         /// <summary>
@@ -157,6 +159,20 @@ namespace ColorPicker.Wheels
             Debug.WriteLine($"YO! This puppy took {stopwatch.ElapsedMilliseconds} MS to complete");
         }
 
+        protected void RenderCustomHsvDial(DrawingContext context)
+        {
+            base.Render(context);
+
+            var sw = new Stopwatch();
+            sw.Start();
+
+            //var f = new FormattedText() { Text = "Available for Skia Rendering only" };
+            if(context != null)
+                context.Custom(new ColorHSVWheelRender(new Rect(0,0, Bounds.Width, Bounds.Height), null, 5f, Colors.Black));
+            Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
+            sw.Stop();
+            Debug.WriteLine($"takes {sw.ElapsedMilliseconds} MS to render");
+        }
     }
 }
 
