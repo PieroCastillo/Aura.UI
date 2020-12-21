@@ -72,7 +72,6 @@ namespace UI.Tests
             var win = new ToolWindowTest();
             win.ShowDialog(this);
         }
-
         private void AddTab()
         {
             var t__ = new TextBlock() { Text = "HeaderTest" + " " + $"{tabvw.ItemCount}", Background = Brushes.Transparent};
@@ -123,6 +122,12 @@ namespace UI.Tests
                                   "Cancel");
         }
 
+        public void OpenMessageDialog(object sender, RoutedEventArgs e)
+        {
+            this.NewMessageDialog("I'm a MessageDialog :D", 
+                                    "Use me when you just show info or \n un-interactive messages", 
+                                    (s,e) => { Debug.WriteLine("MessageDialog Closed"); });
+        }
         private void Cbtn_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             tabc.CloseTab(tabc.ItemCount);

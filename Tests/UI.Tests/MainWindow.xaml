@@ -286,10 +286,11 @@
 						</TextBlock>
 					</Grid>
 				</NavigationViewItem>
-				<NavigationViewItem Header="ContentDialog" Title="ContentDialog" >
-					<Grid>
+				<NavigationViewItem Header="ContentDialog" Title="ContentDialog" IsSelected="true" >
+					<StackPanel Spacing="10">
 						<Button Content="Open ContentDialog" Click="OpenContentDialog"/>
-					</Grid>
+						<Button Content="Open MessageDialog" Click="OpenMessageDialog"/>
+					</StackPanel>
 				</NavigationViewItem>
 			</NavigationView>	
 			
