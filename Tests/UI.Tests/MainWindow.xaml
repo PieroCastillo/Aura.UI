@@ -286,11 +286,40 @@
 						</TextBlock>
 					</Grid>
 				</NavigationViewItem>
-				<NavigationViewItem Header="ContentDialog" Title="ContentDialog" IsSelected="true" >
+				<NavigationViewItem Header="Dialogs" Title="Dialogs">
 					<StackPanel Spacing="10">
 						<Button Content="Open ContentDialog" Click="OpenContentDialog"/>
 						<Button Content="Open MessageDialog" Click="OpenMessageDialog"/>
 					</StackPanel>
+				</NavigationViewItem>
+				<NavigationViewItem Header="Renders" Title="Custom Rendering">
+					<StackPanel HorizontalAlignment="Left" Spacing="20">
+						<TextBlock Text="ColorSquare"/>
+						<ColorSquare Width="200" Height="200" StrokeColor="Gray"
+									 ColorToRender="Green"/>
+						<TextBlock Text="ColorWheel"/>
+						<ColorWheel Width="200" Height="200" StrokeWidth="30"/>
+					</StackPanel>
+				</NavigationViewItem>
+				<NavigationViewItem Header="SubControls" Title="SubControls" IsSelected="True">
+					<Grid>
+						<StackPanel Spacing="10" HorizontalAlignment="Left">
+							<ComboBox Name="cb">
+								<ComboBoxItem Content="Yellow"/>
+								<ComboBoxItem Content="Blue"/> 
+								<ComboBoxItem Content="Yellow"/>
+								<ComboBoxItem Content="Green"/>
+							</ComboBox>
+							<ColorSquarePicker Width="200" Height="200" Name="cqp" 
+											   Color="Red"/>
+							<!--Color="{Binding #cb.SelectedItem.Content, Mode=OneWay}"-->
+							<Border Height="50" BorderBrush="Black" BorderThickness="10">
+								<Border.Background>
+									<SolidColorBrush Color="{Binding #cqp.ModifiedColor}"/>
+								</Border.Background>
+							</Border>
+						</StackPanel>
+					</Grid>
 				</NavigationViewItem>
 			</NavigationView>	
 			

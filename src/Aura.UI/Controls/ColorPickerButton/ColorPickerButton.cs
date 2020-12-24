@@ -18,35 +18,31 @@ using Aura.UI.Services;
 namespace Aura.UI.Controls
 {
     /// <summary>
-    /// This control shows a <see cref="SuperColorPicker"/> in a Window when is clicked.
+    /// This control shows a <see cref="SuperColorPicker"/> in a Dialog when is clicked.
     /// The selected color is in the Background property.
     /// </summary>
     public class ColorPickerButton : Button
     {
-        ColorWindowSmall colorWindow;
         public ColorPickerButton()
         {
             this.Background = Brushes.White;         
         }
 
-        private void ColorWindow_Closed(object sender, System.EventArgs e)
-        {
-            this.Background = colorWindow.SelectedBrush;
-        }
 
         protected override void OnClick()
         {
-            colorWindow = new ColorWindowSmall();
+            /*colorWindow = new ColorWindowSmall();
             colorWindow.ShowDialog(this.GetParentWindowOfLogical());
             
             colorWindow.Closed += ColorWindow_Closed;
-
+            */
             var owner = this.GetParentWindowOfLogical();
             var cp = new SuperColorPicker();
+            cp.PreviewColor = (Background as ISolidColorBrush).Color;
 
             owner.NewContentDialog(cp,
-                null,
-                null,
+                (a,r) => { this.Background = new SolidColorBrush(cp.SelectedColor); },
+                (a,r) => { this.Background = new SolidColorBrush(cp.PreviewColor); },
                 "Ok","Cancel");
         }
 

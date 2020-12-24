@@ -36,6 +36,9 @@ namespace Aura.UI.Rendering
 
                 var info = new SKImageInfo(width, height);
 
+                //canvas.Scale((float)Bounds.Width, (float)Bounds.Height, -(float)Bounds.Width, -(float)Bounds.Height);
+                canvas.RotateDegrees(-90f, (float)Bounds.Center.X, (float)Bounds.Center.Y);
+
                 using (SKPaint paint = new SKPaint())
                 {
                     SKColor[] colors = new SKColor[8];
@@ -50,12 +53,8 @@ namespace Aura.UI.Rendering
                     // Create sweep gradient based on center of canvas
                     paint.Shader = SKShader.CreateSweepGradient(center, colors, null);
 
-                    // Draw a circle with a wide line
-                    int strokeWidth = 20; //sets the circle width
-                                          //paint.Style = SKPaintStyle.Stroke;
-                                          // paint.StrokeWidth = strokeWidth;
 
-                    float radius = (Math.Min(info.Width, info.Height) - strokeWidth) / 2; //computes the radius
+                    float radius = (Math.Min(info.Width, info.Height) - StrokeWidth) / 2; //computes the radius
                     canvas.DrawCircle(center, radius, paint); // draw a circle with its respects parameters
                 }
 
@@ -81,7 +80,7 @@ namespace Aura.UI.Rendering
                     SKPoint center = new SKPoint(info.Rect.MidX, info.Rect.MidY); // creates the center
                     float radius = (Math.Min(info.Width, info.Height) - StrokeWidth) / 2; //computes the radius
 
-                    paint.Shader = SKShader.CreateColor(SKColors.Black);
+                    paint.Shader = SKShader.CreateColor(colorStroke);
 
                     paint.Style = SKPaintStyle.Stroke;
                     paint.StrokeWidth = StrokeWidth;

@@ -19,10 +19,6 @@ namespace Aura.UI.Controls.Indicators
         TextBox H_;
         TextBox S_;
         TextBox L_;
-        public HSLIndicator()
-        {
-            this.InitializeComponent();
-        }
 
         public Color ColorToShow
         {
@@ -83,9 +79,5 @@ namespace Aura.UI.Controls.Indicators
 
         }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

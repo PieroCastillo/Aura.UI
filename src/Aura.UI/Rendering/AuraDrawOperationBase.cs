@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Rendering.SceneGraph;
 using Avalonia.Skia;

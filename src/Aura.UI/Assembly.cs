@@ -14,4 +14,5 @@ using Avalonia.Metadata;
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Xaml")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Primitives.Dragging")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Thumbs")]
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Colouring")]
 //[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Status")]

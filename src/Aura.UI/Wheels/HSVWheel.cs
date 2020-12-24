@@ -1,4 +1,5 @@
-﻿using ColorPicker.Structures;
+﻿using Avalonia.Media;
+using ColorPicker.Structures;
 using System;
 using System.Windows;
 using Point = Avalonia.Point;
@@ -9,7 +10,7 @@ namespace ColorPicker.Wheels
     {
         public HSVWheel()
         {
-            
+            RenderTransform = new ScaleTransform() { ScaleX = -1 };
         }
 
         private const double whiteFactor = 2.2; // Provide more accuracy around the white-point

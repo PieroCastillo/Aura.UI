@@ -39,7 +39,12 @@
     </AvaloniaResource>
   </ItemGroup>
    <ItemGroup>
+     <AvaloniaXaml Remove="Controls\Indicators\HSLIndicator.axaml" />
+     <AvaloniaXaml Remove="Controls\Indicators\RGBIndicator.axaml" />
+   </ItemGroup>
+   <ItemGroup>
      <None Remove="Assets\auraui-logov2.ico" />
+     <None Remove="Styles\ColorPicker\ColorSquarePickerStyles.xaml" />
      <None Remove="Styles\ControlDialogStyles.xaml" />
      <None Remove="Styles\MessageDialogStyles.xaml" />
      <None Remove="Styles\Navigation\SuperNavigationViewItemStyles.xaml" />
@@ -77,6 +82,9 @@
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\AuraTabViewStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Styles\ColorPicker\ColorSquarePickerStyles.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Styles\ControlDialogStyles.xaml">

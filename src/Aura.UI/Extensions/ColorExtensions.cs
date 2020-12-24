@@ -176,5 +176,94 @@ namespace Aura.UI.Extensions
             return (h, s, l);
 
         }
+
+        public static (double hh, double ss, double ll) ToHSL(this Color color) => new Helpers.RGBStruct(color).ToHSL();
+
+        /// <summary>
+        /// Decomposes a <see cref="Color"/> to HSV format
+        /// </summary>
+        /// <param name="color">Color to Decompose</param>
+        /// <param name="hue">0 to 360</param>
+        /// <param name="saturation">0 up to 100</param>
+        /// <param name="brightness">0 up to 100</param>
+        public static void ToHSV(this Color color, out float hue, out byte saturation, out byte brightness)
+        {
+            color.Decompose(out _, out byte r, out byte g, out byte b);
+
+            r /= 255;
+            g /= 255;
+            b /= 255;
+
+            byte mx = Math.Max(r, Math.Max(g, b));
+            byte mn = Math.Min(r, Math.Min(g, b));
+
+            hue = color.GetHue();
+
+            saturation = (byte)((mx == 0) ? 0 : (1 - (1 * mn / mx)) * 100);
+
+            brightness = (byte)(mx * 100);
+        }
+
+        internal static float GetHue(this Color color)
+        {
+            color.Decompose(out _, out byte r, out byte g, out byte b);
+            if (r == g && g == b)
+                return 0f;
+
+            int min = Math.Min(Math.Min(r, g), b);
+            int max = Math.Max(Math.Max(r, g), b);
+
+            float delta = max - min;
+            float hue;
+
+            if (r == max)
+                hue = (g - b) / delta;
+            else if (g == max)
+                hue = (b - r) / delta + 2f;
+            else
+                hue = (r - g) / delta + 4f;
+
+            hue *= 60f;
+            if (hue < 0f)
+                hue += 360f;
+
+            return hue;
+        }
+
+        public static Color FromHSV(this Color color, float hue, byte saturation, byte value)
+        {
+            saturation /= 100;
+            value /= 100;
+
+            int hi = Convert.ToInt32(Math.Floor(hue / 60)) % 6;
+            double f = hue / 60 - Math.Floor(hue / 60f);
+
+            value *= 255;
+            byte v = value;
+            byte p = (byte)(value * (1 - saturation));
+            byte q = (byte)(value * (1 - f * saturation));
+            byte t = (byte)(value * (1 - (1 - f) * saturation));
+
+            if (hi == 0)
+                return Color.FromRgb(v, t, p);
+            else if (hi == 1)
+                return Color.FromRgb(q, v, p);
+            else if (hi == 2)
+                return Color.FromRgb(p, v, t);
+            else if (hi == 3)
+                return Color.FromRgb(p, q, v);
+            else if (hi == 4)
+                return Color.FromRgb(t, p, v);
+            else
+                return Color.FromRgb(v, p, q);
+        }
+
+        public static void Decompose(this Color color,out byte a,out byte r, out byte g, out byte b)
+        {
+            a = color.A;
+            r = color.R;
+            g = color.G;
+            b = color.B;
+        }
     }
 }

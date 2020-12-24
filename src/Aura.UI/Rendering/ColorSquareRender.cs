@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 using Avalonia.Rendering.SceneGraph;
 using Avalonia.Skia;
@@ -18,24 +19,45 @@ namespace Aura.UI.Rendering
             StrokeColor = strokeColor;
             StrokeWidth = strokeWidth;
         }
+
+        /// <summary>
+        /// Returns a color on point
+        /// </summary>
+        /// <param name="point">the point</param>
+        /// <returns>a color</returns>
+        public Color HitOn(PixelPoint point)
+        {
+           if(Surface != null)
+            {
+                var color_src = Surface.PeekPixels().GetPixelColor(point.X, point.Y);
+
+                return new Color(255, color_src.Red, color_src.Green, color_src.Blue);
+            }
+            return Colors.White;
+        }
+
         public Color HueColor { get; }
         public Color StrokeColor { get; }
         public int StrokeWidth { get; }
+
+        protected SKSurface Surface { get; set; }
         public override void Render(IDrawingContextImpl context)
         {
             var canvas = (context as ISkiaDrawingContextImpl)?.SkCanvas;
-            if(canvas == null)
+            var surface = (context as ISkiaDrawingContextImpl)?.SkSurface;
+            
+            if(canvas == null | surface == null)
             {
                 context.Clear(Colors.White);
                 context.DrawText(new SolidColorBrush(Colors.Black), new Point(), NoSkia);
             }
             else 
             {
+                Surface = surface;
                 var width = (int)Bounds.Width;
                 var height = (int)Bounds.Height;
 
                 var info = new SKImageInfo(width,height);
-                canvas.Clear();
 
                 using (SKPaint paint = new SKPaint())
                 {
@@ -71,6 +93,7 @@ namespace Aura.UI.Rendering
                     canvas.DrawRect(rect, paint);
                 }
             }
+            
         }
     }
 }

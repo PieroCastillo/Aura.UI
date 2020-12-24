@@ -12,15 +12,19 @@
 					<DoubleTransition Property="Opacity" Duration="0:0:0.2"/>
 				</Transitions>
 			</Setter>
-		</Style> 
+		</Style>
 
+		<Style Selector="ColorWheel">
+			<Setter Property="ZIndex" Value="999"/>
+		</Style>
+		
 		<Style Selector="Ellipse.Thumb:pointerover">
 			<Setter Property="Opacity" Value="0.7"/>
 		</Style>
 	</UserControl.Styles>
 
-	<Border Padding="0">
-		<Grid x:Name="grid">
+	<Border>
+		<Grid Name="grid"> 
 			<Ellipse x:Name="selector"
 					 Classes="Thumb"
 					 Canvas.Left="10"

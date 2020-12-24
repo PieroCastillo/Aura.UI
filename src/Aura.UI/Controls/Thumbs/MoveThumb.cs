@@ -27,7 +27,13 @@ namespace Aura.UI.Controls.Thumbs
                 nameof(ControlToMove),
                 o => o.ControlToMove,
                 (o, v) => o.ControlToMove = v);
-        
+
+
+        protected override void OnPointerPressed(PointerPressedEventArgs e)
+        {
+            base.OnPointerPressed(e);
+            e.Handled = false;
+        }
 
         protected override void OnDragDelta(VectorEventArgs e)
         {

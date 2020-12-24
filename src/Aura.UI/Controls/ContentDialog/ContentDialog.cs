@@ -21,10 +21,6 @@ namespace Aura.UI.Controls
             OkButton = this.GetControl<Button>(e, "PART_OkButton");
             CancelButton = this.GetControl<Button>(e, "PART_CancelButton");
             var bs = this.GetControl<Grid>(e, "PART_GridContainer");
-            bs.PointerPressed += (s, n) =>
-            {
-                this.GetParentTOfVisual<Window>().BeginMoveDrag(n);
-            };
 
             OkButton.Click += (s, e) =>
             {

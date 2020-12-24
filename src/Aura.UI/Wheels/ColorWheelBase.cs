@@ -20,6 +20,8 @@ namespace ColorPicker.Wheels
 {
     public abstract class ColorWheelBase : Panel
     {
+
+
         public static StyledProperty<double> InnerRadiusProperty = AvaloniaProperty.Register<HSVWheel, double>(nameof(InnerRadius));
 
         public static void OnPropertyChanged(AvaloniaObject obj, AvaloniaPropertyChangedEventArgs args)
@@ -42,8 +44,19 @@ namespace ColorPicker.Wheels
 
         public override void Render(DrawingContext dc)
         {
+            /*var stopwatch = new Stopwatch();
+            stopwatch.Start();
+
             DrawHsvDial(dc);
-            //RenderCustomHsvDial(dc);
+
+            stopwatch.Stop();
+            Debug.WriteLine($"YO! This puppy took {stopwatch.ElapsedMilliseconds} MS to complete");*/
+            float cx = (float)(Bounds.Width) / 2.0f;
+            float cy = (float)(Bounds.Height) / 2.0f;
+
+            float outer_radius = (float)Math.Min(cx, cy);
+            ActualOuterRadius = outer_radius;
+            RenderCustomHsvDial(dc);
         }
 
         /// <summary>
@@ -87,9 +100,6 @@ namespace ColorPicker.Wheels
             if (bmp_width <= 0 || bmp_height <= 0)
                 return;
 
-
-            var stopwatch = new Stopwatch();
-            stopwatch.Start();
 
             //This probably wants to move somewhere else....
             if (border == null)
@@ -155,21 +165,19 @@ namespace ColorPicker.Wheels
 
             drawingContext.DrawImage(writeableBitmap, Bounds);
 
-            stopwatch.Stop();
-            Debug.WriteLine($"YO! This puppy took {stopwatch.ElapsedMilliseconds} MS to complete");
         }
+
+        bool prev_changed = false;
 
         protected void RenderCustomHsvDial(DrawingContext context)
         {
-            base.Render(context);
-
             var sw = new Stopwatch();
             sw.Start();
 
+
             //var f = new FormattedText() { Text = "Available for Skia Rendering only" };
-            if(context != null)
-                context.Custom(new ColorHSVWheelRender(new Rect(0,0, Bounds.Width, Bounds.Height), null, 5f, Colors.Black));
-            Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
+            context.Custom(new ColorHSVWheelRender(Bounds, null, 0f, (Color)this.FindResource("ThemeBorderLowColor")));
+            //Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
             sw.Stop();
             Debug.WriteLine($"takes {sw.ElapsedMilliseconds} MS to render");
         }

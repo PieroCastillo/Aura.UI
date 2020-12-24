@@ -19,11 +19,6 @@ namespace Aura.UI.Controls.Indicators
         TextBox G_;
         TextBox B_;
         TextBox A_; 
-        public RGBIndicator()
-        {
-            this.InitializeComponent();
-        }
-
         public Color ColorToShow
         {
             get { return GetValue(ColorToShowProperty); }
@@ -58,9 +53,5 @@ namespace Aura.UI.Controls.Indicators
             this.A_.Text = @struct.a.ToString();
         }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

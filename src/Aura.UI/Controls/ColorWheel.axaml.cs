@@ -88,6 +88,14 @@ namespace ColorPicker
             set { SetValue(SelectedColorProperty, value); }
         }
 
+        public RGBColor PreviewColor
+        {
+            get => GetValue(PreviewColorProperty);
+            set => SetValue(PreviewColorProperty, value);
+        }
+        public readonly static StyledProperty<RGBColor> PreviewColorProperty = 
+            AvaloniaProperty.Register<ColorWheel, RGBColor>(nameof(PreviewColor));
+
 
         //Wheel Creation & Configuration 
 
@@ -109,8 +117,11 @@ namespace ColorPicker
             {
                 wheel = (ColorWheelBase)Activator.CreateInstance(WheelClass);
                 wheel.Name = "wheel";
-                wheel.PointerPressed += Wheel_PointerPressed; ;
+                wheel.PointerPressed += Wheel_PointerPressed;
                 wheel.ZIndex = -2;
+                //wheel.RenderTransform = new ScaleTransform(-1, 0);
+            
+                //wheel.RenderTransformOrigin = new RelativePoint(0.5, 0.5, RelativeUnit.Relative);
                 _grid.Children.Add(wheel);
 
                 wheel.PointerPressed += Wheel_PointerPressed;
@@ -229,7 +240,7 @@ namespace ColorPicker
         {
             Theta = CalculateTheta(point);
             Rad = CalculateR(point);
-            SelectedColor = wheel.ColorMapping(Rad, Theta, 1.0);
+            SelectedColor = wheel.ColorMapping(Rad, Theta, 1);
 
             UpdateSelector();            
         }

@@ -1,0 +1,35 @@
+﻿<Styles xmlns="https://github.com/avaloniaui">
+	<Design.PreviewWith>
+		<StackPanel>
+			<ColorSquarePicker Name="c" Width="200" Height="200" Color="Green"/>
+			<TextBlock Text="{Binding #c.ModifiedColor}" FontWeight="Bold" Foreground="{Binding #c.ModifiedColor}"/>
+		</StackPanel>
+	</Design.PreviewWith>
+	<Style Selector="ColorSquarePicker">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Canvas>
+					<ColorSquare Width="{TemplateBinding Width}"
+								 Height="{TemplateBinding Height}" IsHitTestVisible="False"
+								 Name="PART_ColorSquare" ColorToRender="{TemplateBinding Color}"/>
+					
+						<MoveThumb ControlToMove="{Binding #PART_Thumb}" Name="PART_Thumb"
+								   Classes="thumbSquare"  Width="20" Height="20" Background="White"
+								   Canvas.Top="0" Canvas.Left="0" Canvas.Right="0" Canvas.Bottom="0">
+						</MoveThumb>
+					
+				</Canvas>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="MoveThumb.thumbSquare">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Ellipse Width="20" Height="20"
+						 Stroke="{DynamicResource ThemeBorderHighBrush}"
+						 StrokeThickness="2" Fill="{TemplateBinding Background}">
+				</Ellipse>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>

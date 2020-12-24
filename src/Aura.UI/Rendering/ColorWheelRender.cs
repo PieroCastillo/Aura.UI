@@ -31,7 +31,6 @@ namespace Aura.UI.Rendering
             else // when it's valid to this
             {
                 var info = new SKImageInfo((int)Bounds.Width, (int)Bounds.Height); // creates the image info
-                canvas.Clear();// clean the render space
 
                 using (SKPaint paint = new SKPaint()) // creates the paint 
                 {

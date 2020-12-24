@@ -47,6 +47,8 @@ namespace Aura.UI.Controls
             DarknessSL = this.GetControl<Slider>(e, "PART_SliderDarkness");
             PreviewBorder = this.GetControl<Border>(e, "PART_Preview");
 
+            //color_W.PreviewColor = PreviewColor;
+
             color_W.SelectedColor = new ColorPicker.Structures.RGBColor(255,255,255);
 
             //sets the cursor
@@ -77,5 +79,16 @@ namespace Aura.UI.Controls
              
         }
 
+        private Color _previewcolor;
+        public Color PreviewColor
+        {
+            get => _previewcolor;
+            set => SetAndRaise(PreviewColorProperty, ref _previewcolor, value);
+        }
+        public readonly static DirectProperty<SuperColorPicker, Color> PreviewColorProperty = 
+            AvaloniaProperty.RegisterDirect<SuperColorPicker, Color>(
+                nameof(PreviewColor),
+                o => o.PreviewColor,
+                (o,v) => o.PreviewColor = v);
     }
 }
