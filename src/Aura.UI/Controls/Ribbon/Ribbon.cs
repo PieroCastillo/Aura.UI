@@ -3,20 +3,11 @@ using Aura.UI.Controls.Primitives;
 using Aura.UI.Exceptions;
 using Aura.UI.UIExtensions;
 using Avalonia;
-using Avalonia.Animation;
 using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
-using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
-using Avalonia.Interactivity;
 using Avalonia.Media;
-using Avalonia.Styling;
-using DynamicData.Annotations;
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Text;
 
 namespace Aura.UI.Controls.Ribbon
 {
