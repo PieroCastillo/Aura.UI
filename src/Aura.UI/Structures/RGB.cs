@@ -22,7 +22,7 @@ namespace ColorPicker.Structures
         }
     }
 
-    public struct RGBColor
+    public struct RGBColor : ICloneable
     {
         public float r, g, b;
 
@@ -30,6 +30,11 @@ namespace ColorPicker.Structures
         public byte Gb { get { return FloatToByte(g); } set { g = ByteToFloat(value); } }
         public byte Bb { get { return FloatToByte(b); } set { b = ByteToFloat(value); } }
         //public float R { get { return r; } set { r = value; } }
+
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
 
         public RGBColor(float red, float green, float blue)
         {

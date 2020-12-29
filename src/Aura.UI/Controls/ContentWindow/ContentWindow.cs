@@ -20,16 +20,6 @@ namespace Aura.UI.Controls
             ExtendClientAreaTitleBarHeightHint = -1;
 
             TransparencyLevelHint = WindowTransparencyLevel.AcrylicBlur;
-
-            this.GetObservable(IsExtendedIntoWindowDecorationsProperty)
-                .Subscribe(x =>
-                {
-                    if (!x)
-                    {
-                        SystemDecorations = SystemDecorations.Full;
-                        TransparencyLevelHint = WindowTransparencyLevel.Blur;
-                    }
-                });
         }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
