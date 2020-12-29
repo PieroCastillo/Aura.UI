@@ -31,15 +31,68 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(0));
 
+        private Color _selectedColor;
         /// <summary>
         /// Return the Selected Color of the ColorPicker
         /// </summary>
         public Color SelectedColor
         {
-            get { return GetValue(SelectedColorProperty); }
-            private set { SetValue(SelectedColorProperty, value); }
+            get => _selectedColor;
+            set => SetAndRaise(SelectedColorProperty, ref _selectedColor, value);
         }
-        public static readonly StyledProperty<Color> SelectedColorProperty =
-            AvaloniaProperty.Register<SuperColorPicker, Color>(nameof(SelectedColor), Colors.White);
+        public static readonly DirectProperty<SuperColorPicker, Color> SelectedColorProperty =
+            AvaloniaProperty.RegisterDirect<SuperColorPicker, Color>(
+                nameof(SelectedColor),
+                o => o.SelectedColor,
+                unsetValue: Colors.White);
+
+        private double _red;
+        public double Red
+        {
+            get => _red;
+            set => SetAndRaise(RedProperty, ref _red, value);
+        }
+        public readonly static DirectProperty<SuperColorPicker, double> RedProperty =
+            AvaloniaProperty.RegisterDirect<SuperColorPicker, double>(
+                nameof(Red),
+                o => o.Red,
+                (o, v) => o.Red = v, 255);
+
+
+        private double _green;
+        public double Green
+        {
+            get => _green;
+            set => SetAndRaise(GreenProperty, ref _green, value);
+        }
+        public readonly static DirectProperty<SuperColorPicker, double> GreenProperty =
+            AvaloniaProperty.RegisterDirect<SuperColorPicker, double>(
+                nameof(Green),
+                o => o.Green,
+                (o, v) => o.Green = v, 255);
+
+
+        private double _blue;
+        public double Blue
+        {
+            get => _blue;
+            set => SetAndRaise(BlueProperty, ref _red, value);
+        }
+        public readonly static DirectProperty<SuperColorPicker, double> BlueProperty =
+            AvaloniaProperty.RegisterDirect<SuperColorPicker, double>(
+                nameof(Blue),
+                o => o.Blue,
+                (o, v) => o.Blue = v, 255);
+        private double _alpha;
+        public double Alpha
+        {
+            get => _alpha;
+            set => SetAndRaise(AlphaProperty, ref _red, value);
+        }
+        public readonly static DirectProperty<SuperColorPicker, double> AlphaProperty =
+            AvaloniaProperty.RegisterDirect<SuperColorPicker, double>(
+                nameof(Alpha),
+                o => o.Alpha,
+                (o, v) => o.Alpha = v, 255);
     }
 }

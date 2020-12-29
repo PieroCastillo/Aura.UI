@@ -8,6 +8,7 @@ using ColorPicker.Structures;
 using ColorPicker.Utilities;
 using ColorPicker.Wheels;
 using System;
+using System.Diagnostics;
 
 namespace ColorPicker
 {
@@ -94,14 +95,21 @@ namespace ColorPicker
             set => SetValue(PreviewColorProperty, value);
         }
         public readonly static StyledProperty<RGBColor> PreviewColorProperty = 
-            AvaloniaProperty.Register<ColorWheel, RGBColor>(nameof(PreviewColor));
+            AvaloniaProperty.Register<ColorWheel, RGBColor>(nameof(PreviewColor), Colors.White);
 
+
+        bool previewcolorload = false;
 
         //Wheel Creation & Configuration 
-
         public override void Render(DrawingContext context)
         {
             UpdateSelector();
+            if (!previewcolorload)
+            {
+                UpdateSelectorFromPoint(new Rect(DesiredSize).Center);
+                SelectedColor = (RGBColor)PreviewColor.Clone();
+            }
+            previewcolorload = true;
             base.Render(context);
         }
 
@@ -126,7 +134,6 @@ namespace ColorPicker
 
                 wheel.PointerPressed += Wheel_PointerPressed;
             }
-            _selector.Fill = Brushes.White;
         }
 
 
@@ -241,6 +248,8 @@ namespace ColorPicker
             Theta = CalculateTheta(point);
             Rad = CalculateR(point);
             SelectedColor = wheel.ColorMapping(Rad, Theta, 1);
+
+            Debug.WriteLine($"Point: X = {point.X} Y = {point.Y}");
 
             UpdateSelector();            
         }
