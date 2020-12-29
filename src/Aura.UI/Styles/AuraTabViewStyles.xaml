@@ -1,22 +1,15 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-		xmlns:drag="https://github.com/adam-currie"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		mc:Ignorable="d"
-		d:DesignHeight="100" d:DesignWidth="400 ">
+		mc:Ignorable="d">
 	<Design.PreviewWith> 
-		<Border Height="300" Width="400">
-			<Border.Styles>
-				<Style Selector="AuraTabItem">
-				</Style>
-			</Border.Styles>
+		<Border>
 			<Grid>
 				<Border VerticalAlignment="Top"
 						Height="30" Background="Blue"
 						HorizontalAlignment="Right"/>
-				<AuraTabView Name="vw" 
-							 Margin="0,0,0,0" TabStripPlacement="Right"
+				<AuraTabView TabStripPlacement="Top"
 							 SelectedIndex="0" Width="400" Height="600"
 							 SecondaryBackground="{DynamicResource ThemeAccentBrush4}"> 
 				<AuraTabItem Header="Settings" IsClosable="False">
