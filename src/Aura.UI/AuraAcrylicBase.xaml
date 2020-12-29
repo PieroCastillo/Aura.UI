@@ -6,81 +6,104 @@
 									 FallbackColor="#00000000"></ExperimentalAcrylicMaterial>
 		<ExperimentalAcrylicMaterial x:Key="OnlyNoiseBrush"  MaterialOpacity="0.5" TintOpacity="0"
 							 TintColor="{DynamicResource ThemeBackgroundColor}"
-							 FallbackColor="{DynamicResource ThemeBackgroundColor}"/>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrush"  MaterialOpacity="0.7" TintOpacity="0.5"
+							 FallbackColor="{DynamicResource ThemeBackgroundColor}"
+									 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrush"  MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeBackgroundColor}"
-									 FallbackColor="{DynamicResource ThemeBackgroundColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderLowBrush"   MaterialOpacity="1" TintOpacity="1"
+								 FallbackColor="{DynamicResource ThemeBackgroundColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderLowBrush"   MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeBorderLowColor}"
-									 FallbackColor="{DynamicResource ThemeBorderLowColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderMidBrush"		MaterialOpacity="1" TintOpacity="1"
+								 FallbackColor="{DynamicResource ThemeBorderLowColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderMidBrush"		MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeBorderMidColor}"
-									 FallbackColor="{DynamicResource ThemeBorderMidColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderHighBrush"	MaterialOpacity="1" TintOpacity="1"
+								 FallbackColor="{DynamicResource ThemeBorderMidColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderHighBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeBorderHighColor}"
-									 FallbackColor="{DynamicResource ThemeBorderHighColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlLowBrush"	MaterialOpacity="1" TintOpacity="1"
+								 FallbackColor="{DynamicResource ThemeBorderHighColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlLowBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeControlLowColor}"
-									 FallbackColor="{DynamicResource ThemeControlLowColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlMidBrush"    MaterialOpacity="1" TintOpacity="1"
+								 FallbackColor="{DynamicResource ThemeControlLowColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlMidBrush"    MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeControlMidColor}"
-									 FallbackColor="{DynamicResource ThemeControlMidColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlMidHighBrush"	MaterialOpacity="1" TintOpacity="1"
+								 FallbackColor="{DynamicResource ThemeControlMidColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlMidHighBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeControlMidHighColor}"
-									 FallbackColor="{DynamicResource ThemeControlMidHighColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighBrush"	MaterialOpacity="1" TintOpacity="1"
+								 FallbackColor="{DynamicResource ThemeControlMidHighColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighBrush"	MaterialOpacity="0" TintOpacity="0.5"
 								 	 TintColor="{DynamicResource ThemeControlHighColor}"
-									 FallbackColor="{DynamicResource ThemeControlHighColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlVeryHighBrush"	MaterialOpacity="1" TintOpacity="1"
+								 FallbackColor="{DynamicResource ThemeControlHighColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlVeryHighBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeControlVeryHighColor}"
-								 FallbackColor="{DynamicResource ThemeControlVeryHighColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightLowBrush"	MaterialOpacity="1" TintOpacity="1"
+							 FallbackColor="{DynamicResource ThemeControlVeryHighColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightLowBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeControlHighlightLowColor}"
-								 FallbackColor="{DynamicResource ThemeControlHighlightLowColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightMidBrush"	MaterialOpacity="1" TintOpacity="1"
+							 FallbackColor="{DynamicResource ThemeControlHighlightLowColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightMidBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeControlHighlightMidColor}"
-								 FallbackColor="{DynamicResource ThemeControlHighlightMidColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightHighBrush"	MaterialOpacity="1" TintOpacity="1"
+							 FallbackColor="{DynamicResource ThemeControlHighlightMidColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicControlHighlightHighBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeControlHighlightHighColor}"
-								 FallbackColor="{DynamicResource ThemeControlHighlightHighColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundBrush"	MaterialOpacity="1" TintOpacity="1"
+							 FallbackColor="{DynamicResource ThemeControlHighlightHighColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeForegroundColor}"
-								 FallbackColor="{DynamicResource ThemeForegroundColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundLowBrush"	MaterialOpacity="1" TintOpacity="1"
+							 FallbackColor="{DynamicResource ThemeForegroundColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundLowBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeForegroundLowColor}"
-								 FallbackColor="{DynamicResource ThemeForegroundLowColor}"></ExperimentalAcrylicMaterial>
+							 FallbackColor="{DynamicResource ThemeForegroundLowColor}"
+								 BackgroundSource="Digger"/>
 
-		<ExperimentalAcrylicMaterial x:Key="HighlightAcrylicBrush"	MaterialOpacity="1" TintOpacity="1" 
+		<ExperimentalAcrylicMaterial x:Key="HighlightAcrylicBrush"	MaterialOpacity="0" TintOpacity="0.5" 
 									 TintColor="{DynamicResource HighlightColor}"
-							 FallbackColor="{DynamicResource HighlightColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="HighlightForegroundBrush"	MaterialOpacity="1" TintOpacity="1"
+						 FallbackColor="{DynamicResource HighlightColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="HighlightForegroundBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource HighlightForegroundColor}"
-							 FallbackColor="{DynamicResource HighlightForegroundColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush"	MaterialOpacity="1" TintOpacity="1"
+						 FallbackColor="{DynamicResource HighlightForegroundColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeAccentColor}"
-								FallbackColor="{DynamicResource ThemeAccentColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush2"	MaterialOpacity="1" TintOpacity="1"
+							FallbackColor="{DynamicResource ThemeAccentColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush2"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeAccentColor2}"
-							FallbackColor="{DynamicResource ThemeAccentColor2}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush3"	MaterialOpacity="1" TintOpacity="1"
+						FallbackColor="{DynamicResource ThemeAccentColor2}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush3"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeAccentColor3}"
-							 FallbackColor="{DynamicResource ThemeAccentColor3}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush4"	MaterialOpacity="1" TintOpacity="1"
+						 FallbackColor="{DynamicResource ThemeAccentColor3}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicAccentBrush4"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeAccentColor4}"
-							 FallbackColor="{DynamicResource ThemeAccentColor4}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicBrush"	MaterialOpacity="1" TintOpacity="1"
+						 FallbackColor="{DynamicResource ThemeAccentColor4}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ErrorColor}"
-							 FallbackColor="{DynamicResource ErrorColor}"></ExperimentalAcrylicMaterial>
-		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicLowBrush"	MaterialOpacity="1" TintOpacity="1"
+						 FallbackColor="{DynamicResource ErrorColor}"
+								 BackgroundSource="Digger"/>
+		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicLowBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ErrorLowColor}"
-								 FallbackColor="{DynamicResource ErrorLowColor}"></ExperimentalAcrylicMaterial>
+							 FallbackColor="{DynamicResource ErrorLowColor}"
+								 BackgroundSource="Digger"/>
 
 		<ExperimentalAcrylicMaterial x:Key="DefaultAcrylicRibbonBrush"
 									 TintColor="{DynamicResource ThemeBackgroundColor}"
-									TintOpacity="1" MaterialOpacity="1" 
-									 FallbackColor="{DynamicResource ThemeBackgroundColor}"/> 
+									TintOpacity="0.5" MaterialOpacity="0"
+								 FallbackColor="{DynamicResource ThemeBackgroundColor}"
+								 BackgroundSource="Digger"/> 
 	</Styles.Resources>
-
 	<Design.PreviewWith>
 		<Border Padding="10">
 			<!--<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
