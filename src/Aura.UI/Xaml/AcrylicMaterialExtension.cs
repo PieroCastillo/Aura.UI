@@ -10,18 +10,20 @@ namespace Aura.UI.Xaml
     {
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            return new ExperimentalAcrylicMaterial 
-            { 
+            return new ExperimentalAcrylicMaterial
+            {
                 TintColor = TintColor,
                 FallbackColor = FallBackColor,
                 TintOpacity = TintOpacity,
-                MaterialOpacity = MaterialOpacity
-                
+                MaterialOpacity = MaterialOpacity,
+                BackgroundSource = this.AcrylicBackgroundSource
             };
         }
         public Color TintColor { get; set; }
         public Color FallBackColor { get; set; }
         public double TintOpacity { get; set; }
         public double MaterialOpacity { get; set; }
+
+        public AcrylicBackgroundSource AcrylicBackgroundSource { get; set; } = AcrylicBackgroundSource.Digger;
     }
 }
