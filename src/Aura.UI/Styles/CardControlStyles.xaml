@@ -14,11 +14,11 @@
 	<Style Selector="CardControl"> 	
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid>
-					<Decorator Padding="{TemplateBinding Padding}">
+					
 					<Border BoxShadow="{TemplateBinding BoxShadow}" 
 							CornerRadius="{TemplateBinding CornerRadius}"
-							Background="{TemplateBinding Background}">
+							Background="{TemplateBinding Background}"
+							Margin="{TemplateBinding Padding}" ClipToBounds="False">
 						<Grid RowDefinitions="*, Auto">
 							<Grid Grid.Row="0" RowDefinitions="*">	
 								<ContentPresenter 
@@ -27,7 +27,7 @@
 											  CornerRadius="{TemplateBinding TopCornerRadius}"
 											 Padding="{TemplateBinding InternalPadding}"/>
 							</Grid>
-							<Border Grid.Row="1"
+							<Border Grid.Row="1" ClipToBounds="False"
 									Background="{TemplateBinding SecondaryBackground}"
 									CornerRadius="{TemplateBinding BottomCornerRadius}">
 								<Grid ColumnDefinitions="20,*,20" RowDefinitions="20,*,10,*,20">
@@ -44,29 +44,23 @@
 							</Border>
 						</Grid>
 					</Border>
-				</Decorator>
-				</Grid>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 	<Style Selector="CardControl[ScaleOnPointerOver=true]:pointerover">
 		<Setter Property="Transitions">
 			<Transitions>
-				<TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.2"/>
+				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
 			</Transitions>
 		</Setter>
 		<Setter Property="RenderTransform" Value="scale(1.05)"/>
 	</Style>
-	<Design.PreviewWith>
-		<Border Padding="20">
-			<Grid>
+	<Design.PreviewWith> 
 				<CardControl Header="75000"
 						SecondaryHeader="Colbreakz">
 	
 					<Border Height="100" Width="100"> <!---->
 				</Border>
 			</CardControl>
-			</Grid>
-		</Border>
 	</Design.PreviewWith>
 </Styles>
