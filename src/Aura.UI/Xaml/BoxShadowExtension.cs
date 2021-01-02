@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Aura.UI.Xaml
 {
-    public class BoxShadowExtension : StyledElement
+    public class BoxShadowExtension : AvaloniaObject
     {
         public object ProvideValue(IServiceProvider serviceProvider)
         {
