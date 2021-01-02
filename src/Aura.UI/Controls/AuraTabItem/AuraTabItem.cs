@@ -16,7 +16,7 @@ namespace Aura.UI.Controls
     /// </summary>
     //[TemplatePart(Name = "PART_Thumb", Type = typeof(Thumb))]
     [TemplatePart(Name = "PART_CloseButton", Type = typeof(Button))]
-    [PseudoClasses(":dragging")]
+    [PseudoClasses(":dragging", ":lockdrag")]
     public partial class AuraTabItem : TabItem, ICustomCornerRadius
     {
         /// <summary>
@@ -35,6 +35,15 @@ namespace Aura.UI.Controls
         static AuraTabItem()
         {
             CanBeDraggedProperty.Changed.AddClassHandler<AuraTabItem>((x,e) => x.OnCanDraggablePropertyChanged(x,e));
+            IsSelectedProperty.Changed.AddClassHandler<AuraTabItem>((x, e) => x.UpdatePseudoClass(x, e));
+        }
+
+        void UpdatePseudoClass(AuraTabItem item, AvaloniaPropertyChangedEventArgs e)
+        {
+             if(item.IsSelected == false)
+            {
+                item.PseudoClasses.Remove(":dragging");
+            }
         }
 
         /// <summary>

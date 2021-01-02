@@ -15,6 +15,8 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Aura.UI.Controls.Primitives;
+using Avalonia.Controls.Generators;
+using Aura.UI.Controls.Generators;
 
 namespace Aura.UI.Controls
 {
@@ -50,9 +52,14 @@ namespace Aura.UI.Controls
         static AuraTabView()
         {
             SelectionModeProperty.OverrideDefaultValue<AuraTabView>(SelectionMode.Toggle);
+            
         }
 
-        
+        protected override IItemContainerGenerator CreateItemContainerGenerator()
+        {
+            return new AuraTabItemContainerGenerator(this);
+        }
+
         protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
         {
             base.OnPropertyChanged(change);
