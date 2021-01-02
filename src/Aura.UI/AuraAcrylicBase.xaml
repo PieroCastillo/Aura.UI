@@ -97,11 +97,16 @@
 									 TintColor="{DynamicResource ErrorLowColor}"
 							 FallbackColor="{DynamicResource ErrorLowColor}"
 								 BackgroundSource="Digger"/>
+		
+		<ExperimentalAcrylicMaterial x:Key="SystemAcrylicAltHighBrush" MaterialOpacity="0" TintOpacity="1"
+									 TintColor="{DynamicResource SystemAltHighColor}"
+									 FallbackColor="{DynamicResource SystemAltHighColor}"
+									 BackgroundSource="Digger"/>
 
 		<ExperimentalAcrylicMaterial x:Key="DefaultAcrylicRibbonBrush"
-									 TintColor="{DynamicResource ThemeBackgroundColor}"
-									TintOpacity="0.5" MaterialOpacity="0"
-								 FallbackColor="{DynamicResource ThemeBackgroundColor}"
+									 TintColor="{DynamicResource SystemAltHighColor}"
+									TintOpacity="1" MaterialOpacity="0.5"
+								 FallbackColor="{DynamicResource SystemAltHighColor}"
 								 BackgroundSource="Digger"/> 
 	</Styles.Resources>
 	<Design.PreviewWith>
