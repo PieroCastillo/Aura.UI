@@ -10,7 +10,8 @@
 	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="Microns.Menu">
-			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M64 96L448 96 448 144 64 144 64 96ZM64 232L448 232 448 280 64 280 64 232ZM64 368L448 368 448 416 64 416 64 368Z"   />
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}"  
+							  Geometry="M64 96L448 96 448 144 64 144 64 96ZM64 232L448 232 448 280 64 280 64 232ZM64 368L448 368 448 416 64 416 64 368Z"   />
 		</DrawingImage>
 	</Styles.Resources>
 	<Style Selector="NavigationView">
@@ -20,12 +21,13 @@
 			</ItemsPanelTemplate>
 		</Setter>
 		<!--<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>-->
-		<Setter Property="Material" Value="{DynamicResource OnlyNoiseBrush}"/>
+		<Setter Property="Material" Value="{DynamicResource SystemAcrylicAltHighBrush}"/>
 		<Setter Property="OpenPaneLength" Value="200"/>
 		<Setter Property="CompactPaneLength" Value="50"/>
 		<Setter Property="HeaderIcon" Value="{DynamicResource Microns.Menu}"/>
-		<Setter Property="Background" Value="{DynamicResource ThemeBackgroundBrush}"/>
-		<Setter Property="PaneBackground" Value="{x:Null}"/>
+		<Setter Property="Background">
+			<SolidColorBrush Color="{DynamicResource SystemAltHighColor}"/>
+		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="NavigationView">
 				<Border Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
@@ -43,8 +45,7 @@
 							<ExperimentalAcrylicBorder VerticalAlignment="Stretch" 
 													   Material="{TemplateBinding Material}">
 								<Grid>
-									<Border HorizontalAlignment="Right" Width="1" Margin="5 0 0 0 " Background="Transparent"
-									        IsHitTestVisible="False" BoxShadow="-1 0 5 0 Black" ZIndex="999"/>
+									<!--BoxShadow="-1 0 5 0 Black"-->
 									<Grid RowDefinitions="Auto,*" HorizontalAlignment="Stretch">
 										<NavigationViewItem Grid.Row="0" Grid.Column="0"
 										                    Name="PART_ToggleNav" 
@@ -66,10 +67,12 @@
 											</DockPanel>
 										</ScrollViewer>
 									</Grid>
+									
 								</Grid>
 							</ExperimentalAcrylicBorder>
 						</Border>
-						<Border Name="PART_Container" Grid.Column="1" Background="{TemplateBinding Background}">
+						<Border Name="PART_Container" Grid.Column="1" Background="{TemplateBinding Background}"
+								BoxShadow="{BoxShadow HorizontalLength=-1, ShadowColor={StaticResource SystemBaseLowColor}}">
 							<ScrollViewer VerticalScrollBarVisibility="Auto"
 										  HorizontalContentAlignment="Left"
 										  HorizontalScrollBarVisibility="Auto">

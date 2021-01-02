@@ -37,7 +37,6 @@
 		<Setter Property="VerticalAlignment" Value="Top"/>
 		<Setter Property="HorizontalAlignment" Value="Stretch"/>
 		<Setter Property="DockPanel.Dock" Value="Top"/>
-		<Setter Property="IsHitTestVisible" Value="True"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Padding="{TemplateBinding Padding}"  Name="PART_Border"
