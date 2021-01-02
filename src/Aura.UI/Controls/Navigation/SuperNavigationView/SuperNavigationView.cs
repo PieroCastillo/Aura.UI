@@ -1,8 +1,10 @@
 ﻿using Avalonia;
 using Avalonia.Collections;
 using Avalonia.Controls;
+using Avalonia.Controls.Generators;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Presenters;
+using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using System;
 using System.Collections.Generic;
@@ -16,11 +18,11 @@ namespace Aura.UI.Controls.Navigation
         static SuperNavigationView()
         {
             SelectionModeProperty.OverrideDefaultValue<SuperNavigationView>(SelectionMode.Single);
+            SelectedItemProperty.Changed.AddClassHandler<SuperNavigationView>((x, e) => x.OnSelectedItemChanged(x, e));
         }
 
         public SuperNavigationView()
         {
-            SelectedItemProperty.Changed.AddClassHandler<SuperNavigationView>((x, e) => x.OnSelectedItemChanged(x, e));
             PseudoClasses.Add(":normal");
         }
 
@@ -29,6 +31,12 @@ namespace Aura.UI.Controls.Navigation
             UpdateTitleAndSelectedContent();
             PseudoClasses.Remove(":normal");
             PseudoClasses.Add(":normal");
+        }
+
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+        {
+            base.OnApplyTemplate(e);
+            UpdateTitleAndSelectedContent();
         }
 
         ///<inheritdoc/>
@@ -51,12 +59,24 @@ namespace Aura.UI.Controls.Navigation
             return false;
         }
 
+        protected override void OnContainersMaterialized(ItemContainerEventArgs e)
+        {
+            base.OnContainersMaterialized(e);
+            UpdateTitleAndSelectedContent();
+        }
+
+        protected override void OnContainersDematerialized(ItemContainerEventArgs e)
+        {
+            base.OnContainersDematerialized(e);
+            UpdateTitleAndSelectedContent();
+        }
+
         protected virtual void UpdateTitleAndSelectedContent()
         {
-            if(ContentPart != null & SelectedItem is SuperNavigationViewItem & SelectedItem != null)
+            if(SelectedItem is SuperNavigationViewItem s)
             {
-                SelectedContent = (SelectedItem as SuperNavigationViewItem).Content;
-                Title = (SelectedItem as SuperNavigationViewItem).Title;
+                SelectedContent = s.Content;
+                Title = s.Title;
             }
         }
     }
