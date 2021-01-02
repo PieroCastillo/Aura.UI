@@ -1,9 +1,20 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Background="Green">
+				<CardControl Header="75000"
+							SecondaryHeader="Colbreakz">
+
+					<Border Height="100" Width="100">
+						<!---->
+					</Border>
+				</CardControl>
+		</Border>
+	</Design.PreviewWith>
 	<Style Selector="CardControl">
 		<Setter Property="Padding" Value="10"/>
-		<Setter Property="BoxShadow" Value="0 0 7 0 Black"/>
-		<Setter Property="InternalBoxShadow" Value="0 0 5 0 Black"/>
+		<Setter Property="BoxShadow" Value="{BoxShadow ShadowColor={StaticResource ThemeForegroundColor}, BlurRadius=7}"/><!--0 0 7 0 Black-->
+		<Setter Property="InternalBoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor={StaticResource ThemeForegroundColor}}"/><!--0 0 5 0 Black-->
 		<Setter Property="InternalCornerRadius" Value="7"/>
 		<Setter Property="CornerRadius" Value="7"/>
 		<Setter Property="InternalPadding" Value="20"/>
@@ -14,33 +25,34 @@
 	<Style Selector="CardControl"> 	
 		<Setter Property="Template">
 			<ControlTemplate>
-					
 					<Border BoxShadow="{TemplateBinding BoxShadow}" 
 							CornerRadius="{TemplateBinding CornerRadius}"
 							Background="{TemplateBinding Background}"
-							Margin="{TemplateBinding Padding}" ClipToBounds="False">
+							Margin="{TemplateBinding Padding}">
 						<Grid RowDefinitions="*, Auto">
 							<Grid Grid.Row="0" RowDefinitions="*">	
-								<ContentPresenter 
-											  Name="PART_ContentPresenter"
+								<ContentPresenter  Name="PART_ContentPresenter"
 											  Content="{TemplateBinding Content}"
 											  CornerRadius="{TemplateBinding TopCornerRadius}"
 											 Padding="{TemplateBinding InternalPadding}"/>
 							</Grid>
-							<Border Grid.Row="1" ClipToBounds="False"
+							<Border Grid.Row="1" ClipToBounds="false"
 									Background="{TemplateBinding SecondaryBackground}"
 									CornerRadius="{TemplateBinding BottomCornerRadius}">
-								<Grid ColumnDefinitions="20,*,20" RowDefinitions="20,*,10,*,20">
-									<ContentPresenter Grid.Column="1"
-													  Grid.Row="1"
-													Name="PART_HeaderPresenter"
-													Content="{TemplateBinding Header}"
-													TextBlock.FontSize="18"/>
-									<ContentPresenter Grid.Column="1"
-													  Grid.Row="3"
-													Content="{TemplateBinding SecondaryHeader}"
-													TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"/>
-								</Grid>
+								<ExperimentalAcrylicBorder Material="{DynamicResource SystemAcrylicAltHighBrush}"
+														   CornerRadius="{TemplateBinding BottomCornerRadius}">
+									<Grid ColumnDefinitions="20,*,20" RowDefinitions="20,*,10,*,20">
+										<ContentPresenter Grid.Column="1"
+														  Grid.Row="1"
+														Name="PART_HeaderPresenter"
+														Content="{TemplateBinding Header}"
+														TextBlock.FontSize="18"/>
+										<ContentPresenter Grid.Column="1"
+														  Grid.Row="3"
+														Content="{TemplateBinding SecondaryHeader}"
+														TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"/>
+									</Grid>
+								</ExperimentalAcrylicBorder>
 							</Border>
 						</Grid>
 					</Border>
@@ -55,12 +67,4 @@
 		</Setter>
 		<Setter Property="RenderTransform" Value="scale(1.05)"/>
 	</Style>
-	<Design.PreviewWith> 
-				<CardControl Header="75000"
-						SecondaryHeader="Colbreakz">
-	
-					<Border Height="100" Width="100"> <!---->
-				</Border>
-			</CardControl>
-	</Design.PreviewWith>
 </Styles>

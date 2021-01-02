@@ -6,7 +6,7 @@
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
 		<Setter Property="CornerRadius" Value="5"/>
-		<Setter Property="BoxShadow" Value="0 0 3 0 Black"/>
+		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=3, ShadowColor={StaticResource SystemBaseMediumColor}}"/><!--0 0 3 0 Black-->
 		<Setter Property="ShadowPadding" Value="5"></Setter>
 		<Setter Property="Template">
 			<ControlTemplate>

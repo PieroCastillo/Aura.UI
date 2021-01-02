@@ -58,7 +58,9 @@
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Ribbon">
 				<StackPanel>  
-						<Border Margin="5" Padding="5 0" BoxShadow="0 0 4 0 Black">
+						<Border Name="PART_TopBorder" Margin="5" Padding="5 0"
+								CornerRadius="5"
+								BoxShadow="{BoxShadow BlurRadius=4, ShadowColor={StaticResource SystemBaseMediumColor}}"> <!--BoxShadow="0 0 4 0 Black"-->
 							<Grid>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition Width="Auto"/>
@@ -104,14 +106,18 @@
 						</Border>
 						<Border Name="PART_ContentContainer"
 						        Height="1" ZIndex="-1"
+								CornerRadius="5"
+								Background="Transparent"
 						        VerticalAlignment="Bottom"
-						        BoxShadow="0 0 4 0 Black" Margin="4">
+						        BoxShadow="{BoxShadow BlurRadius=4, ShadowColor={StaticResource SystemBaseMediumColor}, VerticalLength=0, HorizontalLength=0, SpreadRadius=0}"
+								Margin="4">
 							<Border.Transitions>
 								<Transitions>
 									<DoubleTransition Property="Height" Duration="0:0:0.3" Easing="QuadraticEaseOut"/>
 								</Transitions>
 							</Border.Transitions>
-							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}">
+							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
+													   CornerRadius="{Binding #PART_ContentContainer.CornerRadius}">
 								<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
 									<ContentPresenter Name="PART_SelectedContentHost"
 											Content="{TemplateBinding SelectedContent}"
