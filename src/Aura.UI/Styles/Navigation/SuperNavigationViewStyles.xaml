@@ -1,11 +1,42 @@
-﻿<Styles xmlns="https://github.com/avaloniaui">
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
-		<SuperNavigationView Width="600"
-							 Height="400">
-			<SuperNavigationViewItem Title="Title1" Content="Content"/>
+		<SuperNavigationView Width="1000"
+							 Height="600">
+			<SuperNavigationViewItem Header="Header" IsSelected="True" Title="Item Title" IsExpanded="True" 
+									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
+				<SuperNavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
+					<SuperNavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
+					<SuperNavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content"/>
+				</SuperNavigationViewItem>
+			</SuperNavigationViewItem>
+			<SuperNavigationViewItem Header="Header" IsSelected="True" Title="Item Title" IsExpanded="True"
+									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
+				<SuperNavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
+					<SuperNavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
+					<SuperNavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content"/>
+				</SuperNavigationViewItem>
+				<SuperNavigationViewItem Header="Header" IsSelected="True" Title="Item Title" IsExpanded="True"
+									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
+					<SuperNavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
+						<SuperNavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
+						<SuperNavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content"/>
+					</SuperNavigationViewItem>
+				</SuperNavigationViewItem>
+			</SuperNavigationViewItem>
 		</SuperNavigationView>
 	</Design.PreviewWith>
+	<Styles.Resources>
+		<DrawingImage x:Key="Microns.Menu">
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}"
+							  Geometry="M64 96L448 96 448 144 64 144 64 96ZM64 232L448 232 448 280 64 280 64 232ZM64 368L448 368 448 416 64 416 64 368Z"   />
+		</DrawingImage>
+	</Styles.Resources>
 	<Style Selector="SuperNavigationView">
+		<Setter Property="Background" Value="{DynamicResource SystemBackgroundAltHighBrush}"/>
+		<Setter Property="Icon" Value="{DynamicResource Microns.Menu}"/>
+		<Setter Property="HorizontalAlignment" Value="Center"/>
+		<Setter Property="DockPanel.Dock" Value="Left"/>
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
 				<DockPanel/>
@@ -13,30 +44,59 @@
 		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Border Background="{TemplateBinding Background}">
-					<Grid RowDefinitions="auto,*">
-						<Grid>
-							<ContentPresenter Name="PART_HeaderPresenter"
-											  Content="{TemplateBinding Header}"/>
-							<ScrollViewer>
-								<ItemsPresenter Name="PART_ItemsPresenter"
-												Items="{TemplateBinding Items}"
-												ItemTemplate="{TemplateBinding ItemTemplate}"
-												ItemsPanel="{TemplateBinding ItemsPanel}"/>
-							</ScrollViewer>
-						</Grid>
-						<Grid Grid.Row="1" Background="{TemplateBinding Background}">
-							<ScrollViewer>
-								<Grid RowDefinitions="auto,*">
-									<ContentPresenter Content="{TemplateBinding Title}"/>
-									<ContentPresenter Grid.Row="1" Name="PART_SelectedContentPresenter"
-											  Content="{TemplateBinding SelectedContent}"/>
-								</Grid>
-							</ScrollViewer>
-						</Grid>
+				<Border> 
+					<Grid ColumnDefinitions="auto,*">
+						<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
+												   Material="{DynamicResource SystemAcrylicAltHighBrush}"
+												   Padding="5,0">
+							<Grid RowDefinitions="auto,auto">
+								<!--<Border Padding="20,5,0,5">
+									<Grid ColumnDefinitions="auto,20,*">
+										<Image Name="PART_Img" Source="{TemplateBinding Icon}" Stretch="UniformToFill"/>
+										<ContentPresenter Grid.Column="2"
+														  Name="PART_HeaderPresenter"
+														  Content="{TemplateBinding Header}"
+														  TextBlock.FontWeight="SemiBold"/>
+									</Grid>
+								</Border>-->
+								<SuperNavigationViewItem Name="PART_HeaderItem" Icon="{TemplateBinding Icon}" Header="{TemplateBinding Header}"/>
+								<DockPanel Grid.Row="1">
+									<ScrollViewer DockPanel.Dock="Top"> 
+										<ItemsPresenter Name="PART_ItemsPresenter"
+														Items="{TemplateBinding Items}"
+														ItemTemplate="{TemplateBinding ItemTemplate}"
+														ItemsPanel="{TemplateBinding ItemsPanel}"/>
+									</ScrollViewer>
+								</DockPanel>
+							</Grid>
+						</ExperimentalAcrylicBorder>
+						<Border Name="PART_Container" Grid.Column="1" BoxShadow="{BoxShadow ShadowColor={StaticResource SystemBaseLowColor}}">
+							<Grid Background="{TemplateBinding Background}">
+								<ScrollViewer VerticalScrollBarVisibility="Auto"
+										  HorizontalContentAlignment="Left"
+										  HorizontalScrollBarVisibility="Auto">
+									<Grid RowDefinitions="auto,*">
+										<ContentPresenter Grid.Row="0"
+														  Name="PART_TitlePresenter"
+													  Content="{Binding $parent[SuperNavigationView].Title}"
+														TextBlock.FontWeight="Light"
+														TextBlock.FontSize="30"
+														  Padding="20"/>
+										<ContentPresenter Grid.Row="1" Padding="20,10,20,10"
+												  Name="PART_SelectedContentPresenter"
+												  Content="{Binding $parent[SuperNavigationView].SelectedContent}"/>
+									</Grid>
+								</ScrollViewer>
+							</Grid>
+						</Border>
 					</Grid>
 				</Border>
 			</ControlTemplate>
 		</Setter>
+	</Style>
+	<Style Selector="SuperNavigationView /template/ SuperNavigationViewItem#PART_HeaderItem /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="TextBlock.FontWeight" Value="SemiBold"/>
+		<Setter Property="Padding" Value="5"/>
+		<Setter Property="IsEnabled" Value="False"/>
 	</Style>
 </Styles>
