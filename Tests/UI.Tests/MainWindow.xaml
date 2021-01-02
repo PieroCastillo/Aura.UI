@@ -49,9 +49,7 @@
 	<Grid Background="{x:Null}">
 		<Grid Background="{DynamicResource ThemeBackgroundBrush}" Opacity="0.4"/>
 			<NavigationView Name="nav" 
-						AlwaysOpen="True" Material="{DynamicResource NullBrush}"
-						Background="{DynamicResource SystemControlBackgroundAltMediumHighBrush}"
-						OpenPaneLength="250" Header="Aura.UI &#10;TestApplication">
+						AlwaysOpen="True" OpenPaneLength="250" Header="Aura.UI TestApplication">
 				<NavigationViewItem Header="AuraTabItem" Title="AuraTabItem">
 					<Grid>
 						<TabControl Name="tabview">
@@ -178,7 +176,6 @@
 						<GroupBox Header="Yes, I'm a Header" MaterialIsVisible="False">
 							<StackPanel Spacing="10">
 								<MaterialButton>Oh, I don't know that!</MaterialButton>
-								<TextBlock Text="MaterialIsVisible=False"/>
 							</StackPanel>
 						</GroupBox>
 					</Grid>
@@ -315,6 +312,19 @@
 							</Border>
 						</Border>
 					</StackPanel>
+				</NavigationViewItem>
+				<NavigationViewItem Header="SuperNavigationView"
+									Title="A herarchical NavigationView" 
+									IsSelected="True">
+					<SuperNavigationView Header="Hi">
+						<SuperNavigationViewItem Header="Header" IsSelected="True" Title="Item Title" IsExpanded="True"
+												 Content="Item Content">
+							<SuperNavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
+								<SuperNavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
+								<SuperNavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content"/>
+							</SuperNavigationViewItem>
+						</SuperNavigationViewItem>
+					</SuperNavigationView>
 				</NavigationViewItem>
 			</NavigationView>	
 			
