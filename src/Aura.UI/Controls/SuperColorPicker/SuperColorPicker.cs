@@ -1,19 +1,12 @@
 ﻿using Aura.UI.Attributes;
 using Aura.UI.Controls.Indicators;
-using Aura.UI.Extensions;
-using Aura.UI.Helpers;
 using Aura.UI.UIExtensions;
-using Aura.UI.ViewModels;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
-using Avalonia.Layout;
-using Avalonia.Markup.Xaml;
 using Avalonia.Media;
-using Avalonia.Native.Interop;
 using ColorPicker;
-using System.Xml.Linq;
 
 namespace Aura.UI.Controls
 {
