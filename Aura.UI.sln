@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.MVVM", "UI.MVVM\UI.MVVM.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{3AF1E581-2ACF-4F42-BC10-12BACF221499}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aura.UI.Sample", "samples\Aura.UI.Sample\Aura.UI.Sample.csproj", "{6CA26783-BD32-4CF5-B0C9-C3DDED2279D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aura.UI.ControlsGallery", "samples\Aura.UI.Sample\Aura.UI.ControlsGallery.csproj", "{6CA26783-BD32-4CF5-B0C9-C3DDED2279D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
