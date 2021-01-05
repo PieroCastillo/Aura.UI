@@ -18,11 +18,11 @@
 					  Background="#77000000">
 					<Border Name="PART_Border"
 							Grid.Column="1" Grid.Row="1"
-							BoxShadow="0 0 5 1 Black"
+							BoxShadow="{BoxShadow BlurRadius=5, SpreadRadius=1, ShadowColor={StaticResource SystemBaseMediumColor}}"
 							Background="{TemplateBinding Background}"
 							VerticalAlignment="Center"
 							HorizontalAlignment="Center"
-							CornerRadius="5">
+							CornerRadius="5"><!--0 0 5 1 Black-->
 						<Grid ColumnDefinitions="10,*,10"
 							  RowDefinitions="10,*,10">
 							<Grid Grid.Column="1" Grid.Row="1"
