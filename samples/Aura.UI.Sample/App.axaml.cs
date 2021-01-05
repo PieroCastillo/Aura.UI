@@ -2,7 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-namespace Aura.UI.Sample
+namespace Aura.UI.ControlsGallery
 {
     public class App : Application
     {
