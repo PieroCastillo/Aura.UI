@@ -3,14 +3,22 @@
 	<Design.PreviewWith>
 		<Border>
 			<SuperNavigationViewItem Header="Header" Icon="{DynamicResource EvaIcons.Settings2Outline}"
-									 IsExpanded="True" >
-				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}" 
-										 IsExpanded="True">
+									 IsExpanded="False" IsOpen="False">
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}">
 					<SuperNavigationViewItem Header="SubItem 2" IsSelected="True" 
 											 Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 					<SuperNavigationViewItem Header="SubItem 3"
 											 Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 				</SuperNavigationViewItem>
+
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
+				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>  
 			</SuperNavigationViewItem>
 		</Border>
 	</Design.PreviewWith>
@@ -27,9 +35,14 @@
 	</Styles.Resources>
 	<Style Selector="SuperNavigationViewItem"> 
 		<Setter Property="Padding" Value="0,0,0,0"/>
-		<Setter Property="MinWidth" Value="150"/>
+		<Setter Property="MinWidth" Value="0"/>
 		<Setter Property="DockPanel.Dock" Value="Top"/>
 		<Setter Property="VerticalAlignment" Value="Top"/>
+		<!--<Setter Property="Transitions">
+			<Transitions>
+				<DoubleTransition Property="Width" Duration="0:0:0.5" Easing="ExponentialEaseOut"/>
+			</Transitions>
+		</Setter>-->
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
 				<UniformGrid Columns="1"/>
@@ -40,12 +53,6 @@
 				<Grid Background="{TemplateBinding Background}">
 					<Border Padding="{TemplateBinding Padding}" Name="PART_Border" 
 							BorderThickness="{TemplateBinding BorderThickness}">
-					<!--<Border.Transitions>
-						<Transitions>
-							<DoubleTransition Property="Width"
-											  Easing="QuadraticEaseInOut"/>
-						</Transitions>
-					</Border.Transitions>-->
 						<Grid RowDefinitions="*,*">
 							<Grid ColumnDefinitions="auto,*">
 								<!--<Border Width="{Binding $parent[SuperNavigationViewItem].LateralWidth}"/>-->
@@ -56,6 +63,11 @@
 										   HorizontalAlignment="Left"
 										   VerticalAlignment="Center"/>
 									<Border Grid.Column="4" Name="PART_ContainerBorder">
+										<Border.Transitions>
+											<Transitions>
+												<DoubleTransition Property="Opacity" Duration="0:0:0.4" Easing="ExponentialEaseOut"/>
+											</Transitions>
+										</Border.Transitions>
 										<ContentPresenter Name="PART_ContentPresenter"
 													Content="{TemplateBinding Header}"
 													TextBlock.FontSize="14"
@@ -63,7 +75,7 @@
 													VerticalAlignment="Center"/>
 									</Border>
 									<ToggleButton Grid.Column="6"
-												  Padding="2.5,10"
+												  Padding="2.5,2.5" Margin="5"
 												  Classes=".togglenav"
 												  VerticalAlignment="Center"
 												  HorizontalAlignment="Right"
@@ -85,7 +97,20 @@
 		</Setter> 
 	</Style>
 
-	<Style Selector="SuperNavigationViewItem:selected /template/ Border#PART_SelectionBorder">
+	<Style Selector="SuperNavigationViewItem[IsExpanded=true] /template/ ItemsPresenter#PART_ItemsPresenter"> 
+		<Style.Animations>
+			<Animation Duration="0:0:0.3" FillMode="Forward" Easing="CubicEaseOut">
+				<KeyFrame Cue="0%">
+					<Setter Property="TranslateTransform.Y" Value="{Binding $parent.Bounds.Height}"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="TranslateTransform.Y" Value="0"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+	
+	<Style Selector="SuperNavigationViewItem[IsSelected=true] /template/ Border#PART_SelectionBorder">
 		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}"/>
 		<Setter Property="BoxShadow" Value="0 0 .5 0 Black"/>
 	</Style>
@@ -96,14 +121,6 @@
 		<Setter Property="Background" Value="Transparent"/>
 	</Style>
 
-	<!--<Style Selector="SuperNavigationViewItem:focus">
-		<Setter Property="Background">
-			<SolidColorBrush Color="{DynamicResource SystemBaseLowColor}"/>
-		</Setter>
-	</Style>-->
-	<!--<Style Selector="SuperNavigationViewItem:empty /template/ ToggleButton.togglenav">
-		<Setter Property="Opacity" Value="0"/>
-	</Style>-->
 	<Style Selector="SuperNavigationViewItem[IsExpanded=False] /template/ Image#PART_Img">
 		<Setter Property="Source" Value="{DynamicResource Entypo+.ChevronThinDown}"/>
 	</Style>
@@ -111,9 +128,39 @@
 		<Setter Property="Source" Value="{DynamicResource Entypo+.ChevronThinUp}"/>
 	</Style>
 
-	<Style Selector="SuperNavigationViewItem[IsExpanded=True] /template/ :is(Control)#PART_BottomBorder">
-		<Setter Property="Height" Value="NaN"/>
+	<Style Selector="SuperNavigationViewItem[IsOpen=True]">
+		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].OpenPaneLength}"/>
 	</Style>
+		<Style Selector="SuperNavigationViewItem[IsOpen=false]">
+		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].CompactPaneLength}"/>
+	</Style>
+	
+	<Style Selector="SuperNavigationViewItem[IsOpen=true] /template/ Border#PART_ContainerBorder">
+		<Setter Property="Opacity" Value="1"/>
+	</Style>
+	<Style Selector="SuperNavigationViewItem[IsOpen=False] /template/ Border#PART_ContainerBorder">
+		<Setter Property="Opacity" Value="0"/>
+	</Style>
+
+	<Style Selector="SuperNavigationViewItem:pointerover">
+		<Setter Property="Background">
+			<SolidColorBrush Color="{DynamicResource SystemAltLowColor}"/>
+		</Setter>
+	</Style>
+
+
+	<!--<Style Selector="SuperNavigationViewItem[IsOpen=true] /template/ Border#PART_ContainerBorder">
+		<Setter Property="Opacity" Value="1"/>
+		<Setter Property="Width" Value="NaN"/>
+	</Style>
+	<Style Selector="SuperNavigationViewItem[IsOpen=false] /template/ Border#PART_ContainerBorder">
+		<Setter Property="Opacity" Value="0"/>
+		<Setter Property="Width" Value="0"/>
+	</Style>-->
+	
+	<!--<Style Selector="SuperNavigationViewItem[IsExpanded=True] /template/ :is(Control)#PART_BottomBorder">
+		<Setter Property="Height" Value="NaN"/>
+	</Style>-->
 
 	<Style Selector="SuperNavigationViewItem[IsExpanded=False] /template/ :is(Control)#PART_BottomBorder">
 		<Setter Property="Height" Value="0"/>

@@ -1,22 +1,22 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
-		<SuperNavigationView Width="1000"
-							 Height="600">
-			<SuperNavigationViewItem Header="Header" IsSelected="True" Title="Item Title" IsExpanded="True" 
+		<SuperNavigationView Width="1000" CompactPaneLength="50" IsOpen="True"
+							 Height="600" SelectedItem="{Binding #st}">
+			<SuperNavigationViewItem Header="Header" Title="Item Title" IsExpanded="True"
 									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
-				<SuperNavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
+				<SuperNavigationViewItem Name="st" Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
 					<SuperNavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
 					<SuperNavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content"/>
 				</SuperNavigationViewItem>
 			</SuperNavigationViewItem>
-			<SuperNavigationViewItem Header="Header" IsSelected="True" Title="Item Title" IsExpanded="True"
+			<SuperNavigationViewItem Header="Header" Title="Item Title" IsExpanded="True"
 									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
 				<SuperNavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
 					<SuperNavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
 					<SuperNavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content"/>
 				</SuperNavigationViewItem>
-				<SuperNavigationViewItem Header="Header" IsSelected="True" Title="Item Title" IsExpanded="True"
+				<SuperNavigationViewItem Header="Header" Title="Item Title" IsExpanded="True"
 									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
 					<SuperNavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
 						<SuperNavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
@@ -33,10 +33,12 @@
 		</DrawingImage>
 	</Styles.Resources>
 	<Style Selector="SuperNavigationView">
-		<Setter Property="Background" Value="{DynamicResource SystemBackgroundAltHighBrush}"/>
+		<Setter Property="CompactPaneLength" Value="50"/>
+		<Setter Property="OpenPaneLength" Value="250"/>
+		<Setter Property="Background">
+			<SolidColorBrush Color="{DynamicResource SystemAltHighColor}"/>
+		</Setter>
 		<Setter Property="Icon" Value="{DynamicResource Microns.Menu}"/>
-		<Setter Property="HorizontalAlignment" Value="Center"/>
-		<Setter Property="DockPanel.Dock" Value="Left"/>
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
 				<DockPanel/>
@@ -44,56 +46,95 @@
 		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Border> 
-					<Grid ColumnDefinitions="auto,*">
-						<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
+				<SplitView IsPaneOpen="{Binding $parent[SuperNavigationView].IsOpen}"
+							   CompactPaneLength="{Binding $parent[SuperNavigationView].CompactPaneLength}"
+							   OpenPaneLength="{Binding $parent[SuperNavigationView].OpenPaneLength}"
+							   DisplayMode="{Binding $parent[SuperNavigationView].DisplayMode}">
+						<SplitView.Pane>
+							<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
 												   Material="{DynamicResource SystemAcrylicAltHighBrush}"
 												   Padding="5,0">
-							<Grid RowDefinitions="auto,auto">
-								<!--<Border Padding="20,5,0,5">
-									<Grid ColumnDefinitions="auto,20,*">
-										<Image Name="PART_Img" Source="{TemplateBinding Icon}" Stretch="UniformToFill"/>
-										<ContentPresenter Grid.Column="2"
-														  Name="PART_HeaderPresenter"
-														  Content="{TemplateBinding Header}"
-														  TextBlock.FontWeight="SemiBold"/>
-									</Grid>
-								</Border>-->
-								<SuperNavigationViewItem Name="PART_HeaderItem" Icon="{TemplateBinding Icon}" Header="{TemplateBinding Header}"/>
+							<Grid RowDefinitions="auto,*">
+								<SuperNavigationViewItem Name="PART_HeaderItem"
+														 Icon="{Binding $parent[SuperNavigationView].Icon}" 
+														 Header="{Binding $parent[SuperNavigationView].Header}"/>
 								<DockPanel Grid.Row="1">
 									<ScrollViewer DockPanel.Dock="Top"> 
 										<ItemsPresenter Name="PART_ItemsPresenter"
-														Items="{TemplateBinding Items}"
-														ItemTemplate="{TemplateBinding ItemTemplate}"
-														ItemsPanel="{TemplateBinding ItemsPanel}"/>
+														Items="{Binding $parent[SuperNavigationView].Items}"
+														ItemTemplate="{Binding $parent[SuperNavigationView].ItemTemplate}"
+														ItemsPanel="{Binding $parent[SuperNavigationView].ItemsPanel}"/>
 									</ScrollViewer>
 								</DockPanel>
 							</Grid>
 						</ExperimentalAcrylicBorder>
-						<Border Name="PART_Container" Grid.Column="1" BoxShadow="{BoxShadow ShadowColor={StaticResource SystemBaseLowColor}}">
-							<Grid Background="{TemplateBinding Background}">
+						</SplitView.Pane>
+						<Border Name="PART_Container" BoxShadow="{BoxShadow ShadowColor={StaticResource SystemBaseLowColor}}">
+							<Grid Background="{Binding $parent[SuperNavigationView].Background}">
 								<ScrollViewer VerticalScrollBarVisibility="Auto"
-										  HorizontalContentAlignment="Left"
-										  HorizontalScrollBarVisibility="Auto">
+											  HorizontalContentAlignment="Left"
+											  HorizontalScrollBarVisibility="Auto">
 									<Grid RowDefinitions="auto,*">
-										<ContentPresenter Grid.Row="0"
-														  Name="PART_TitlePresenter"
-													  Content="{Binding $parent[SuperNavigationView].Title}"
-														TextBlock.FontWeight="Light"
-														TextBlock.FontSize="30"
-														  Padding="20"/>
+										<ContentPresenter Grid.Row="0" IsVisible="{Binding !$parent[SuperNavigationView].HideTitle}"
+															  Name="PART_TitlePresenter"
+														  Content="{Binding $parent[SuperNavigationView].Title}"
+															TextBlock.FontWeight="Light"
+															TextBlock.FontSize="30"
+															  Padding="20"/>
 										<ContentPresenter Grid.Row="1" Padding="20,10,20,10"
-												  Name="PART_SelectedContentPresenter"
-												  Content="{Binding $parent[SuperNavigationView].SelectedContent}"/>
+													  Name="PART_SelectedContentPresenter"
+													  Content="{Binding $parent[SuperNavigationView].SelectedContent}"/>
 									</Grid>
 								</ScrollViewer>
 							</Grid>
 						</Border>
-					</Grid>
-				</Border>
+					</SplitView>
 			</ControlTemplate>
 		</Setter>
 	</Style>
+	<!--<Style Selector="SuperNavigationView /template/ ExperimentalAcrylicMaterial#PART_AcrylicBorder">
+		<Style.Animations>
+			<Animation Duration="0:0:1" FillMode="Forward" Easing="QuadraticEaseOut">
+				<KeyFrame Cue="0%">
+					<Setter Property="TranslateTransform.Y" Value="{Binding $self.Bounds.Width}"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="TranslateTransform.Y" Value="0"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>-->
+	<Style Selector="SuperNavigationView:normal /template/ ContentPresenter#PART_SelectedContentPresenter">
+		<Style.Animations>
+			<Animation Duration="0:0:0.3" FillMode="Forward" Easing="CubicEaseOut">
+				<KeyFrame Cue="0%">
+					<Setter Property="TranslateTransform.Y" Value="{Binding $self.Bounds.Width}"/>
+					<Setter Property="Opacity" Value="0"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="TranslateTransform.Y" Value="0"/>
+					<Setter Property="Opacity" Value="1"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+
+	<Style Selector="SuperNavigationView[IsOpen=true] /template/ ExperimentalAcrylicBorder#PART_AcrylicBorder">
+		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].OpenPaneLength}"/>
+	</Style>
+
+	<Style Selector="SuperNavigationView[IsOpen=false] /template/ ExperimentalAcrylicBorder#PART_AcrylicBorder">
+		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].CompactPaneLength}"/>
+	</Style>
+
+	<Style Selector="SuperNavigationView[IsOpen=false] SuperNavigationViewItem">
+		<Setter Property="IsOpen" Value="False"/>
+	</Style>
+
+	<Style Selector="SuperNavigationView[IsOpen=true] SuperNavigationViewItem">
+		<Setter Property="IsOpen" Value="true"/>
+	</Style>
+	
 	<Style Selector="SuperNavigationView /template/ SuperNavigationViewItem#PART_HeaderItem /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.FontWeight" Value="SemiBold"/>
 		<Setter Property="Padding" Value="5"/>
