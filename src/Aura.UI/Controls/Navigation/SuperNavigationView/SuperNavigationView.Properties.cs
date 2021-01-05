@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Media;
+using Avalonia.Controls;
 using Avalonia.Media.Imaging;
 using System;
 using System.Collections.Generic;
@@ -17,17 +18,14 @@ namespace Aura.UI.Controls.Navigation
         public readonly static StyledProperty<object> HeaderProperty =
             AvaloniaProperty.Register<SuperNavigationView, object>(nameof(Header), "Header");
 
-        private IImage _icon;
         public IImage Icon
         {
-            get => _icon;
-            set => SetAndRaise(IconProperty, ref _icon, value);
+            get => GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
         }
-        public readonly static DirectProperty<SuperNavigationView, IImage> IconProperty =
-            AvaloniaProperty.RegisterDirect<SuperNavigationView, IImage>(
-                nameof(Icon),
-                o => o.Icon,
-                (o,v) => o.Icon = v);
+        public readonly static StyledProperty<IImage> IconProperty =
+            AvaloniaProperty.Register<SuperNavigationView, IImage>(
+                nameof(Icon));
 
         private object _title;
         public object Title
@@ -51,5 +49,54 @@ namespace Aura.UI.Controls.Navigation
             AvaloniaProperty.RegisterDirect<SuperNavigationView, object>(
                 nameof(SelectedContent),
                 o => o.SelectedContent);
+
+
+        public double CompactPaneLength
+        {
+            get => GetValue(CompactPaneLengthProperty);
+            set => SetValue(CompactPaneLengthProperty, value);
+        }
+        public readonly static StyledProperty<double> CompactPaneLengthProperty =
+            AvaloniaProperty.Register<SuperNavigationView, double>(nameof(CompactPaneLength), 50);
+
+        public double OpenPaneLength
+        {
+            get => GetValue(OpenPaneLengthProperty);
+            set => SetValue(OpenPaneLengthProperty, value);
+        }
+        public readonly static StyledProperty<double> OpenPaneLengthProperty =
+            AvaloniaProperty.Register<SuperNavigationView, double>(nameof(OpenPaneLength), 200);
+
+        public bool IsOpen
+        {
+            get => GetValue(IsOpenProperty);
+            set => SetValue(IsOpenProperty, value);
+        }
+        public readonly static StyledProperty<bool> IsOpenProperty =
+            AvaloniaProperty.Register<SuperNavigationView, bool>(nameof(IsOpen), true);
+
+        public bool HideTitle
+        {
+            get => GetValue(HideTitleProperty);
+            set => SetValue(HideTitleProperty, value);
+        }
+        public readonly static StyledProperty<bool> HideTitleProperty =
+            AvaloniaProperty.Register<SuperNavigationView, bool>(nameof(HideTitle), false);
+
+        public bool AlwaysOpen
+        {
+            get => GetValue(AlwaysOpenProperty);
+            set => SetValue(AlwaysOpenProperty, value);
+        }
+        public readonly static StyledProperty<bool> AlwaysOpenProperty =
+            AvaloniaProperty.Register<SuperNavigationView, bool>(nameof(IsOpen), false);
+
+        public SplitViewDisplayMode DisplayMode
+        {
+            get => GetValue(DisplayModeProperty);
+            set => SetValue(DisplayModeProperty, value);
+        }
+        public static readonly StyledProperty<SplitViewDisplayMode> DisplayModeProperty =
+            AvaloniaProperty.Register<SuperNavigationView, SplitViewDisplayMode>(nameof(DisplayMode), SplitViewDisplayMode.CompactInline);
     }
 }
