@@ -2,18 +2,86 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:pg="using:Aura.UI.ControlsGallery.Pages"
         mc:Ignorable="d"
 		Width="800" Height="450"
-        x:Class="Aura.UI.Sample.MainWindow"
+        x:Class="Aura.UI.ControlsGallery.MainWindow"
 		TransparencyLevelHint="AcrylicBlur"
 		Background="{x:Null}"
+		WindowStartupLocation="CenterScreen"
 		 ExtendClientAreaToDecorationsHint="True"
 		ExtendClientAreaChromeHints="PreferSystemChrome"
 		ExtendClientAreaTitleBarHeightHint="-1"
-        Title="Aura.UI Sample">
-	<SuperNavigationView HorizontalAlignment="Left" Header="Aura.UI Sample">
-		<SuperNavigationViewItem Header="">
-			
-		</SuperNavigationViewItem>
-	</SuperNavigationView>
+        Title="Aura.UI Controls Gallery">
+	<Grid>
+		<SuperNavigationView Header="Aura.UI Gallery"  SelectedItem="{Binding #el}"
+							 Icon="{DynamicResource Material.Home}">
+			<SuperNavigationViewItem Name="el" Header="Basic Input" 
+									 Title="Basic Input" Icon="{DynamicResource FontAwesome.CheckSquareRegular}">
+				<SuperNavigationViewItem Header="ShadowButton" Title="ShadowButton"
+										 Icon="{DynamicResource Modern.InterfaceButton}">
+					
+				</SuperNavigationViewItem>
+				<SuperNavigationViewItem Header="MaterialButton" Title="MaterialButton"
+						 Icon="{DynamicResource Modern.InterfaceButton}">
+
+				</SuperNavigationViewItem>
+			</SuperNavigationViewItem>
+			<SuperNavigationViewItem Header="Layout" Title="Layout"
+									 Icon="{DynamicResource BoxIcons.RegularLayout}">
+				<SuperNavigationViewItem Header="GroupBox" Title="GroupBox"
+										 Icon="{DynamicResource VSImageLib.GroupBox_16x}">
+					
+				</SuperNavigationViewItem>
+				<SuperNavigationViewItem Header="CardCollection" Title="Card Collection"
+										 Icon="{DynamicResource Material.CardsOutline}">
+					
+				</SuperNavigationViewItem>
+			</SuperNavigationViewItem>
+			<SuperNavigationViewItem Header="Navigation" Title="Navigation"
+									 Icon="{DynamicResource FluentIcons.navigation_regular}">
+				<SuperNavigationViewItem Header="AuraTabView" Title="AuraTabView"
+										 Icon="{DynamicResource FluentIconsFilled.tab_desktop_new_page_filled}">
+					
+				</SuperNavigationViewItem>
+				<SuperNavigationViewItem Header="NavigationView" Title="NavigationView"
+										 Icon="{DynamicResource FluentIcons.navigation_regular}">
+
+				</SuperNavigationViewItem>
+				<SuperNavigationViewItem Header="SuperNavigationView" Title="Herarchical NavigationView"
+										 Icon="{DynamicResource PicolIcons.Hierarchy}">
+
+				</SuperNavigationViewItem>
+				<SuperNavigationViewItem Header="Ribbon" Title="Ribbon View"
+										 Icon="{DynamicResource VSImageLib.RibbonMenu_16x}">
+					
+				</SuperNavigationViewItem>
+			</SuperNavigationViewItem>
+			<SuperNavigationViewItem Header="Rendering" Title="Custom Rendering"
+									 Icon="{DynamicResource VSImageLib2019.ColorWheel_16x}">
+				<SuperNavigationViewItem Header="ColorSquare" Title="Color Square"
+										 Icon="{DynamicResource BoxIcons.RegularCodeAlt}">
+					
+				</SuperNavigationViewItem>
+				<SuperNavigationViewItem Header="ColorWheel" Title="Color Wheel"
+										 Icon="{DynamicResource BoxIcons.RegularCodeAlt}">
+					
+				</SuperNavigationViewItem>
+			</SuperNavigationViewItem>
+			<SuperNavigationViewItem Header="Dialogs" Title="Dialogs"
+									 Icon="{DynamicResource BoxIcons.RegularMessageAlt}">
+				<SuperNavigationViewItem Header="ContentDialog" Title="ContentDialog"
+										 Icon="{DynamicResource BoxIcons.RegularMessageAltDots}">
+					
+				</SuperNavigationViewItem>
+				<SuperNavigationViewItem Header="MessageDialog" Title="MessageDialog"
+										 Icon="{DynamicResource BoxIcons.SolidMessageAltDots}">
+					<SuperNavigationViewItem.Content>
+						<pg:MessageDialogPage/>
+					</SuperNavigationViewItem.Content>
+				</SuperNavigationViewItem>
+			</SuperNavigationViewItem>
+		</SuperNavigationView>
+		<Border Background="Transparent" VerticalAlignment="Top" Height="19" PointerPressed="EnableDrag"/>
+	</Grid>
 </Window>

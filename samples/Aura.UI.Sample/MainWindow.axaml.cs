@@ -1,8 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Markup.Xaml;
 
-namespace Aura.UI.Sample
+namespace Aura.UI.ControlsGallery
 {
     public class MainWindow : Window
     {
@@ -17,6 +18,11 @@ namespace Aura.UI.Sample
         private void InitializeComponent()
         {
             AvaloniaXamlLoader.Load(this);
+        }
+
+        public void EnableDrag(object sender, PointerPressedEventArgs e)
+        {
+            BeginMoveDrag(e);
         }
     }
 }
