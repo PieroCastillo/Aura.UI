@@ -1,0 +1,431 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Aura.UI.ControlsGallery.Pages.CardControlPage"><!---->
+	<UserControl.Styles>
+		<Style Selector="TextBlock.titles">
+			<Setter Property="Padding" Value="10"/>
+			<Setter Property="FontSize" Value="20"/>
+			<Setter Property="FontWeight" Value="Bold"/>
+		</Style>
+		<Style Selector="CodeExample">
+			<Setter Property="CSharpVisible" Value="False"/>
+		</Style>
+	</UserControl.Styles>
+	<Grid RowDefinitions="auto,10,auto,auto,20,auto,auto,20,auto,auto">
+		<TextBlock Grid.Row="0" Text="The recommended use of CardControl is shows MultimediaMedia information, like Music, Movies, Books, etc."/>
+		<TextBlock Grid.Row="2" Classes="titles" Text="CardControl in Horizontal Disposition"/> 
+		<CodeExample Grid.Row="3">
+			<CodeExample.Control>
+				<Grid RowDefinitions="*,*,*">
+					<Grid.Styles>
+						<Style Selector="CardControl">
+							<Setter Property="InternalPadding" Value="0"/>
+							<Setter Property="Width" Value="200"/>
+							<Setter Property="Height" Value="260"/>
+						</Style>
+						<Style Selector="CardControl > Border.toclip">
+							<Setter Property="ClipToBounds" Value="True"/>
+						</Style>
+					</Grid.Styles>
+					<!--Colbreakz-->
+					<CardCollection Header="Colbreakz" TileMode="HorizontalDisposition">
+						<CardControl Header="20000" SecondaryHeader="Colbreakz">
+							<Border CornerRadius="7 0" Classes="toclip">
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/20000.jpg"  Stretch="UniformToFill"/>
+							</Border>
+						</CardControl>
+						<CardControl Header="40000" SecondaryHeader="Colbreakz">
+							<Border CornerRadius="7 0" Classes="toclip">
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/40000.jpg"  Stretch="UniformToFill"/>
+							</Border>
+						</CardControl>
+						<CardControl Header="75000" SecondaryHeader="Colbreakz">
+							<Border CornerRadius="7 0" Classes="toclip">
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/75000.jpg"  Stretch="UniformToFill"/>
+							</Border>
+						</CardControl>
+						<CardControl Header="You and Me" SecondaryHeader="Colbreakz">
+							<Border CornerRadius="7 0" Classes="toclip">
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/younme.jpg"  Stretch="UniformToFill"/>
+							</Border>
+						</CardControl>
+					</CardCollection>
+					<!--Krewella-->
+					<CardCollection Grid.Row="1"
+						Header="Krewella" TileMode="HorizontalDisposition">
+						<CardControl SecondaryHeader="Fall Out Boys">
+							<CardControl.Header>
+								Alone Togheter
+							</CardControl.Header>
+							<Border CornerRadius="7 0" Classes="toclip">
+
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/alonetogheterRM.jpg" Stretch="UniformToFill"/>
+
+							</Border>
+						</CardControl>
+						<CardControl Header="Greenlights" SecondaryHeader="Krewella">
+							<Border CornerRadius="7 0" Classes="toclip">
+
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/greenlights.jpg"  Stretch="UniformToFill"/>
+
+							</Border>
+						</CardControl>
+						<CardControl Header="TH2C" SecondaryHeader="Krewella">
+							<Border CornerRadius="7 0" Classes="toclip">
+
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/th2cdyro.jpg"  Stretch="UniformToFill"/>
+
+							</Border>
+						</CardControl>
+
+					</CardCollection>
+					<!--Getsix-->
+					<CardCollection Grid.Row="2"
+						Header="Getsix" TileMode="HorizontalDisposition">
+						<CardControl Header="Nerve" SecondaryHeader="Getsix and Miss Lina">
+							<Border CornerRadius="7 0" Classes="toclip">
+
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/nerve.jpg"  Stretch="UniformToFill"/>
+
+							</Border>
+						</CardControl>
+						<CardControl Header="In to the Fire" SecondaryHeader="Getsix and Miss Lina">
+							<Border CornerRadius="7 0" Classes="toclip">
+
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/in2thefire.jpg"  Stretch="UniformToFill"/>
+
+							</Border>
+						</CardControl>
+					</CardCollection>
+				</Grid>
+			</CodeExample.Control>
+			<CodeExample.XAMLText>
+&lt;Grid RowDefinitions="*,*,*"&gt;
+	&lt;Grid.Styles&gt;
+		&lt;Style Selector="CardControl"&gt;
+			&lt;Setter Property="InternalPadding" Value="0"/&gt;
+			&lt;Setter Property="Width" Value="200"/&gt;
+			&lt;Setter Property="Height" Value="260"/&gt;
+		&lt;/Style&gt;
+		&lt;Style Selector="CardControl &gt; Border.toclip"&gt;
+			&lt;Setter Property="ClipToBounds" Value="True"/&gt;
+		&lt;/Style&gt;
+	&lt;/Grid.Styles&gt;
+	&lt;CardCollection Header="Colbreakz" TileMode="HorizontalDisposition"&gt;
+		&lt;CardControl Header="20000" SecondaryHeader="Colbreakz"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/20000.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="40000" SecondaryHeader="Colbreakz"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/40000.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="75000" SecondaryHeader="Colbreakz"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/75000.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="You and Me" SecondaryHeader="Colbreakz"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/younme.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+	&lt;/CardCollection&gt;
+	&lt;CardCollection Grid.Row="1"
+	Header="Krewella" TileMode="HorizontalDisposition"&gt;
+		&lt;CardControl Header="Alone Togheter" SecondaryHeader="Fall Out Boys"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/alonetogheterRM.jpg" Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Greenlights" SecondaryHeader="Krewella"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/greenlights.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="TH2C" SecondaryHeader="Krewella"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/th2cdyro.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+	&lt;/CardCollection&gt;
+	&lt;CardCollection Grid.Row="2"
+	Header="Getsix" TileMode="HorizontalDisposition"&gt;
+		&lt;CardControl Header="Nerve" SecondaryHeader="Getsix and Miss Lina"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/nerve.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="In to the Fire" SecondaryHeader="Getsix and Miss Lina"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/in2thefire.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+	&lt;/CardCollection&gt;
+&lt;/Grid&gt;
+			</CodeExample.XAMLText>
+		</CodeExample>
+		<TextBlock Grid.Row="5" Classes="titles" Text="CardControl in Vertical Disposition"/>
+		<CodeExample Grid.Row="6">
+			<CodeExample.Control>
+				<Grid ColumnDefinitions="*,*">
+					<Grid.Styles>
+						<Style Selector="CardControl">
+							<Setter Property="InternalPadding" Value="0"/>
+							<Setter Property="Width" Value="200"/>
+							<Setter Property="Height" Value="260"/>
+						</Style>
+						<Style Selector="CardControl > Border.toclip">
+							<Setter Property="ClipToBounds" Value="True"/>
+						</Style>
+					</Grid.Styles>
+					<!--KDrew-->
+					<CardCollection Header="KDrew" TileMode="VerticalDisposition"
+										Height="400">
+							<CardControl Header="Summer Ashes" SecondaryHeader="KDrew">
+								<Border CornerRadius="7 0" Classes="toclip">
+
+									<Image Source="avares://Aura.UI.ControlsGallery/Assets/summerashes.jpg"  Stretch="UniformToFill"/>
+
+								</Border>
+							</CardControl>
+							<CardControl Header="Summer Ashes&#10;(VIP Remix)" SecondaryHeader="KDrew"
+						>
+								<Border CornerRadius="7 0" Classes="toclip">
+
+									<Image Source="avares://Aura.UI.ControlsGallery/Assets/summershesvip.jpg"  Stretch="UniformToFill"/>
+
+								</Border>
+							</CardControl>
+
+							<CardControl Header="Tonight" SecondaryHeader="KDrew">
+								<Border CornerRadius="7 0" Classes="toclip">
+
+									<Image Source="avares://Aura.UI.ControlsGallery/Assets/tonight.jpg"  Stretch="UniformToFill"/>
+
+								</Border>
+							</CardControl>
+							<CardControl Header="Tonight VIP" SecondaryHeader="KDrew">
+								<Border CornerRadius="7 0" Classes="toclip">
+
+									<Image Source="avares://Aura.UI.ControlsGallery/Assets/tonightvip.png"  Stretch="UniformToFill"/>
+
+								</Border>
+							</CardControl>
+
+						</CardCollection>
+					<!--Zedd-->
+					<CardCollection  Grid.Column="1" Header="Zedd"
+								TileMode="VerticalDisposition"
+								Height="400">
+						<CardControl Header="Funny" SecondaryHeader="Zedd">
+							<Border CornerRadius="7 0" Classes="toclip">
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/funny.jpg"  Stretch="UniformToFill"/>
+							</Border>
+						</CardControl>
+						<CardControl Header="Hourglass" SecondaryHeader="Zedd">
+							<Border CornerRadius="7 0" Classes="toclip">
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/hourglass.jpg"  Stretch="UniformToFill"/>
+							</Border>
+						</CardControl>
+						<CardControl Header="Stay the Night" SecondaryHeader="Zedd">
+							<Border CornerRadius="7 0" Classes="toclip">
+								<Image Source="avares://Aura.UI.ControlsGallery/Assets/staythenight.jpg"  Stretch="UniformToFill"/>
+							</Border>
+						</CardControl>
+					</CardCollection>
+				</Grid>
+			</CodeExample.Control>
+			<CodeExample.XAMLText>
+&lt;Grid ColumnDefinitions="*,*"&gt;
+	&lt;Grid.Styles&gt;
+		&lt;Style Selector="CardControl"&gt;
+			&lt;Setter Property="InternalPadding" Value="0"/&gt;
+			&lt;Setter Property="Width" Value="200"/&gt;
+			&lt;Setter Property="Height" Value="260"/&gt;
+		&lt;/Style&gt;
+		&lt;Style Selector="CardControl &gt; Border.toclip"&gt;
+			&lt;Setter Property="ClipToBounds" Value="True"/&gt;
+		&lt;/Style&gt;
+	&lt;/Grid.Styles
+	&lt;CardCollection Header="KDrew" TileMode="VerticalDisposition"
+		Height="400"&gt;
+		&lt;CardControl Header="Summer Ashes" SecondaryHeader="KDrew"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/summerashes.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Summer Ashes&#10;(VIP Remix)" SecondaryHeader="KDrew"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/summershesvip.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Tonight" SecondaryHeader="KDrew"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/tonight.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Tonight VIP" SecondaryHeader="KDrew"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/tonightvip.png"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+	&lt;/CardCollection&gt;
+	&lt;CardCollection  Grid.Column="1" Header="Zedd"
+					 TileMode="VerticalDisposition"
+				     Height="400"&gt;
+		&lt;CardControl Header="Funny" SecondaryHeader="Zedd"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/funny.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Hourglass" SecondaryHeader="Zedd"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/hourglass.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Stay the Night" SecondaryHeader="Zedd"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/staythenight.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+	&lt;/CardCollection&gt;
+&lt;/Grid&gt;
+			</CodeExample.XAMLText>
+		</CodeExample>
+		<TextBlock Grid.Row="8" Classes="titles" Text="CardControl in Uniform Disposition"/>
+		<CodeExample Grid.Row="9">
+			<CodeExample.Control>
+			<Grid>
+				<Grid.Styles>
+					<Style Selector="CardControl">
+						<Setter Property="InternalPadding" Value="0"/>
+						<Setter Property="Width" Value="200"/>
+						<Setter Property="Height" Value="260"/>
+					</Style>
+					<Style Selector="CardControl > Border.toclip">
+						<Setter Property="ClipToBounds" Value="True"/>
+					</Style>
+				</Grid.Styles>
+				<CardCollection Grid.Row="4"
+								Header="Other Good Songs"
+								TileMode="UniformDisposition">
+					<CardControl Header="Bring the Rain" SecondaryHeader="Candyland">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/bringtherain.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					<CardControl Header="Deja Vu" SecondaryHeader="DVVBS">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/dejavu.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					<CardControl Header="How you love me" SecondaryHeader="3Lau">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/howyouloveme.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					<CardControl Header="Ignite" SecondaryHeader="K-391">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/ignite.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					<CardControl Header="Levels" SecondaryHeader="Avicii">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/levels.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					<CardControl Header="More Than You Know" SecondaryHeader="Axwell λ Ingrosso">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/morethanyouknow.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					<CardControl Header="Nana" SecondaryHeader="Geoxor">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/nana.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					<CardControl Header="No Guarantee" SecondaryHeader="Synflex">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/noguarantee.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					<CardControl Header="Virus" SecondaryHeader="Martin Garrix">
+						<Border CornerRadius="7 0" Classes="toclip">
+							<Image Source="avares://Aura.UI.ControlsGallery/Assets/virus.jpg"  Stretch="UniformToFill"/>
+						</Border>
+					</CardControl>
+					</CardCollection>
+			</Grid>	
+			</CodeExample.Control>
+			<CodeExample.XAMLText>
+&lt;Grid&gt;
+	&lt;Grid.Styles&gt;
+		&lt;Style Selector="CardControl"&gt;
+			&lt;Setter Property="InternalPadding" Value="0"/&gt;
+			&lt;Setter Property="Width" Value="200"/&gt;
+			&lt;Setter Property="Height" Value="260"/&gt;
+		&lt;/Style&gt;
+		&lt;Style Selector="CardControl &gt; Border.toclip"&gt;
+			&lt;Setter Property="ClipToBounds" Value="True"/&gt;
+		&lt;/Style&gt;
+	&lt;/Grid.Styles&gt;
+	&lt;CardCollection Grid.Row="4"
+		Header="Other Good Songs"
+		TileMode="UniformDisposition"&gt;
+		&lt;CardControl Header="Bring the Rain" SecondaryHeader="Candyland"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/bringtherain.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Deja Vu" SecondaryHeader="DVVBS"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/dejavu.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="How you love me" SecondaryHeader="3Lau"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/howyouloveme.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Ignite" SecondaryHeader="K-391"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/ignite.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Levels" SecondaryHeader="Avicii"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/levels.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="More Than You Know" SecondaryHeader="Axwell λ Ingrosso"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/morethanyouknow.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Nana" SecondaryHeader="Geoxor"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/nana.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="No Guarantee" SecondaryHeader="Synflex"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/noguarantee.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+		&lt;CardControl Header="Virus" SecondaryHeader="Martin Garrix"&gt;
+			&lt;Border CornerRadius="7 0" Classes="toclip"&gt;
+				&lt;Image Source="avares://Aura.UI.ControlsGallery/Assets/virus.jpg"  Stretch="UniformToFill"/&gt;
+			&lt;/Border&gt;
+		&lt;/CardControl&gt;
+	&lt;/CardCollection&gt;
+&lt;/Grid&gt;
+			</CodeExample.XAMLText>
+		</CodeExample>
+	</Grid>
+</UserControl>

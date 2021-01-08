@@ -5,9 +5,11 @@
 		xmlns:pg="using:Aura.UI.ControlsGallery.Pages"
         mc:Ignorable="d"
 		Width="800" Height="450"
+		x:Name="win"
         x:Class="Aura.UI.ControlsGallery.MainWindow"
-		TransparencyLevelHint="AcrylicBlur"
+		TransparencyLevelHint="{Binding #combobox.SelectedItem.Content}"
 		Background="{x:Null}"
+		WindowState="Maximized"
 		WindowStartupLocation="CenterScreen"
 		 ExtendClientAreaToDecorationsHint="True"
 		ExtendClientAreaChromeHints="PreferSystemChrome"
@@ -35,7 +37,9 @@
 				</SuperNavigationViewItem>
 				<SuperNavigationViewItem Header="CardCollection" Title="Card Collection"
 										 Icon="{DynamicResource Material.CardsOutline}">
-					
+					<SuperNavigationViewItem.Content>
+						<pg:CardControlPage/>
+					</SuperNavigationViewItem.Content>
 				</SuperNavigationViewItem>
 			</SuperNavigationViewItem>
 			<SuperNavigationViewItem Header="Navigation" Title="Navigation"
@@ -83,5 +87,11 @@
 			</SuperNavigationViewItem>
 		</SuperNavigationView>
 		<Border Background="Transparent" VerticalAlignment="Top" Height="19" PointerPressed="EnableDrag"/>
+		<ComboBox Name="combobox" PlaceholderText="Window Transparency Level" SelectedItem="{Binding #s}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+			<ComboBoxItem>None</ComboBoxItem>
+			<ComboBoxItem>Transparent</ComboBoxItem>
+			<ComboBoxItem>Blur</ComboBoxItem>
+			<ComboBoxItem Name="s">AcrylicBlur</ComboBoxItem>
+		</ComboBox>
 	</Grid>
 </Window>

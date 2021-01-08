@@ -17,6 +17,7 @@ namespace Aura.UI.ControlsGallery
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseSkia()
+                .With(new Win32PlatformOptions() { AllowEglInitialization = true })
                 .LogToTrace();
     }
 }

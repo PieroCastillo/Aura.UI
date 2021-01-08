@@ -5,9 +5,13 @@
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
 		<FluentTheme Mode="Dark"/>
 		
+		<StyleInclude Source="avares://AvaloniaEdit/AvaloniaEdit.xaml"/>
 		<StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>
 		<StyleInclude Source="avares://Aura.UI/AuraAcrylicBase.xaml"/>
-
+		<StyleInclude Source="/Controls/CodeExample.xaml"/>
+		
+			
+				
 		<Style Selector="TextBlock">
 			<Setter Property="TextWrapping" Value="Wrap"/>
 		</Style>

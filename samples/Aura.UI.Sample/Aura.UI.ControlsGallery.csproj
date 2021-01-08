@@ -31,6 +31,7 @@
     <None Remove="Assets\virus.jpg" />
     <None Remove="Assets\younme.jpg" />
     <None Remove="auraui-logov2.png" />
+    <None Remove="Controls\CodeExample.xaml" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\20000.jpg" />
@@ -64,7 +65,13 @@
     </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
+    <AvaloniaXaml Include="Controls\CodeExample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaXaml>
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.0-rc1" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="0.10.0-rc1" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc1" />
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-rc1" />
   </ItemGroup>

@@ -4,23 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Aura.UI.ControlsGallery.Pages.MessageDialogPage">
-	<!---->
+	<UserControl.Resources>
+		<x:String x:Key="csharptext">
+//where "this" is a Window
+this.NewMessageDialog("Your Message Title","Your Message Content", null);
+		</x:String>
+	</UserControl.Resources>
 	<StackPanel Orientation="Vertical" Spacing="20">
 		<TextBlock TextWrapping="Wrap">
 			<x:String>The MessageDialog is a Dialog Control that just can be closed, it does not have an Buttons, its principal use is shows information to the user.</x:String>
 		</TextBlock>
-
-		<TextBlock TextWrapping="Wrap">
-			<x:String>The follow code throw a Message Dialog:</x:String>
-		</TextBlock>
-		<TextBox IsReadOnly="True" TextWrapping="Wrap">
-			<x:String>
+		<CodeExample XAMLVisible="False" HorizontalAlignment="Center">
+			<CodeExample.Control>
+				<Button Content="Show MessageDialog" HorizontalAlignment="Center"
+				Click="ShowMessageDialog" Margin="40"/>
+			</CodeExample.Control>
+			<CodeExample.CSharpText>
+				<x:String>
 //where "this" is a Window
 this.NewMessageDialog("Your Message Title","Your Message Content", null);
-			</x:String>
-		</TextBox>
-		
-		<Button Content="Show MessageDialog" HorizontalAlignment="Center"
-				Click="ShowMessageDialog"/>
+				</x:String>
+			</CodeExample.CSharpText>
+		</CodeExample>
 	</StackPanel>
 </UserControl>
