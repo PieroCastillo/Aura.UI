@@ -73,6 +73,7 @@
 							<Grid Background="{Binding $parent[SuperNavigationView].Background}">
 								<ScrollViewer VerticalScrollBarVisibility="Auto"
 											  HorizontalContentAlignment="Left"
+											  AllowAutoHide="True"
 											  HorizontalScrollBarVisibility="Auto">
 									<Grid RowDefinitions="auto,*">
 										<ContentPresenter Grid.Row="0" IsVisible="{Binding !$parent[SuperNavigationView].HideTitle}"

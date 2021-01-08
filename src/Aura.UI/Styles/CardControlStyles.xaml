@@ -50,7 +50,7 @@
 										<ContentPresenter Grid.Column="1"
 														  Grid.Row="3"
 														Content="{TemplateBinding SecondaryHeader}"
-														TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"/>
+														TextBlock.Foreground="{DynamicResource SystemControlBackgroundBaseMediumHighBrush}"/>
 									</Grid>
 								</ExperimentalAcrylicBorder>
 							</Border>
