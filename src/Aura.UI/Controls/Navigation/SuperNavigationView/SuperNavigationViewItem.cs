@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 
 namespace Aura.UI.Controls.Navigation
 {
-    [PseudoClasses(":opened",":closed")]
+    [PseudoClasses(":opened",":closed", ":selected")]
     public partial class SuperNavigationViewItem : TreeViewItem, IHeadered
     {
         private object _content = "Content";
@@ -59,29 +59,18 @@ namespace Aura.UI.Controls.Navigation
         {
             base.OnPointerPressed(e);
 
-            if (this.GetLogicalParent() is SuperNavigationView p)
-            {
-                if (p.SelectedItem != this)
-                {
-                    foreach (SuperNavigationViewItem s in p.Items)
-                    {
-                        s.IsSelected = false;
-                    }
-
-                    p.SelectedItems = null;
-                    p.SelectedItem = this;
-                    this.IsSelected = true;
-                }
-            }
+            this.GetParentTOfLogical<SuperNavigationView>().SelectSingleItem(this);
         }
+
+
         protected virtual void OnDeselected(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-            Debug.WriteLine("I'm deselected :c");
+            Debug.WriteLine("I'm deselected");
         }
 
         protected virtual void OnSelected(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-            Debug.WriteLine("I'm selected :D");
+            Debug.WriteLine("I'm selected");
         }
 
         protected virtual void OnOpened(object sender, RoutedEventArgs e)
@@ -95,7 +84,7 @@ namespace Aura.UI.Controls.Navigation
             PseudoClasses.Remove(":opened");
             PseudoClasses.Add(":closed");
 
-            if (this.GetParentTOfLogical<Control>() is SuperNavigationView)
+            /*if (this.GetParentTOfLogical<Control>() is SuperNavigationView)
             {
                 return;
             }
@@ -105,7 +94,9 @@ namespace Aura.UI.Controls.Navigation
 
                 s.IsSelected = true;
                 p.SelectedItem = s;
-            }
+            }*/
+            this.GetParentTOfLogical<SuperNavigationView>().SelectSingleItem(this);
+
         }
 
         public event EventHandler<RoutedEventArgs> Opened

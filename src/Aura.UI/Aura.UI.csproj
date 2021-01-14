@@ -19,14 +19,13 @@
     <PackageVersion>0.1.3-preview91</PackageVersion>
     <Version>0.1.3-preview91</Version>
   </PropertyGroup>
-	
+<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+</PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
   <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 </PropertyGroup>
-<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  <OutputPath>C:\Users\piero\Desktop\AuraDev\Aura.UI\build\Aura.UI\</OutputPath>
-</PropertyGroup>
+
    <ItemGroup>
     <Compile Update="**\*.xaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>

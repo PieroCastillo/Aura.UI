@@ -32,19 +32,45 @@ namespace Aura.UI.Controls.Navigation
             PseudoClasses.Add(":normal");
         }
 
+        internal void SelectSingleItem(object item)
+        {
+            if(SelectedItem != item)
+            {
+                PseudoClasses.Remove(":normal");
+                PseudoClasses.Add(":normal");
+            }
+            //_syncingSelectedItems = true;
+            SelectedItems.Clear();
+            SelectedItems.Add(item);
+            //_syncingSelectedItems = false;
+
+            //    
+
+            //if (SelectedItem is SuperNavigationViewItem n)
+            //{ n.IsSelected = false; }
+
+            //(item as ISelectable).IsSelected = true;
+
+            SelectedItem = item;
+        }
+
+
         protected void OnSelectedItemChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
             UpdateTitleAndSelectedContent();
 
-            if(e.OldValue != null & e.OldValue is SuperNavigationViewItem)
-                (e.OldValue as SuperNavigationViewItem).IsSelected = false;
+            //if(e.OldValue != null & e.OldValue is SuperNavigationViewItem)
+            //     (e.OldValue as SuperNavigationViewItem).IsSelected = false;
 
 
-            if (e.NewValue != null & e.NewValue is SuperNavigationViewItem)
-                (e.NewValue as SuperNavigationViewItem).IsSelected = true;
+            // if (e.NewValue != null & e.NewValue is SuperNavigationViewItem)
+            //     (e.NewValue as SuperNavigationViewItem).IsSelected = true;
 
-            PseudoClasses.Remove(":normal");
-            PseudoClasses.Add(":normal");
+            // if (e.OldValue != null & e.NewValue != null)
+            // {
+            //     PseudoClasses.Remove(":normal");
+            //     PseudoClasses.Add(":normal");
+            // }
 
             Debug.WriteLine("Item changed");
         }

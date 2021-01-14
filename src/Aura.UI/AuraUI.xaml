@@ -46,6 +46,8 @@
 	<StyleInclude Source="/Styles/Navigation/SuperNavigationViewItemStyles.xaml"/>
 	<StyleInclude Source="/Styles/Navigation/SuperNavigationViewStyles.xaml"/>
 	<StyleInclude Source="/Styles/SliderGroups/RGBSliderGroup.xaml"/>
+	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButton.xaml"/>
+	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButtonBar.xaml"/>
 	
 	
 	<!--I do not the reason of why when I write the ModernSlider Styles in its xaml, that does not compile-->

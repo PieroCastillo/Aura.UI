@@ -3,9 +3,9 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
-    public class CardControlPage : UserControl
+    public class FloatingButtonBarPage : UserControl
     {
-        public CardControlPage()
+        public FloatingButtonBarPage()
         {
             this.InitializeComponent();
         }

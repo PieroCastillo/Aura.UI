@@ -13,10 +13,6 @@
         <PackageIcon>auraui-logov2.png</PackageIcon>
     </PropertyGroup>
 
-    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-      <OutputPath>C:\Users\piero\Desktop\AuraDev\Aura.UI\build\Aura.UI.Dragging\</OutputPath>
-    </PropertyGroup>
-
     <ItemGroup>
       <PackageReference Include="Avalonia" Version="0.10.0-rc1" />
       <PackageReference Include="Avalonia.Desktop" Version="0.10.0-preview6" />

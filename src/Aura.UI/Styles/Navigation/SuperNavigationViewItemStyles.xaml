@@ -34,10 +34,11 @@
 		</DrawingImage>
 	</Styles.Resources>
 	<Style Selector="SuperNavigationViewItem"> 
-		<Setter Property="Padding" Value="0,0,0,0"/>
+		<Setter Property="Padding" Value="0 5"/>
 		<Setter Property="MinWidth" Value="0"/>
 		<Setter Property="DockPanel.Dock" Value="Top"/>
 		<Setter Property="VerticalAlignment" Value="Top"/>
+		<Setter Property="Background" Value="Transparent"/>
 		<!--<Setter Property="Transitions">
 			<Transitions>
 				<DoubleTransition Property="Width" Duration="0:0:0.5" Easing="ExponentialEaseOut"/>
@@ -45,27 +46,33 @@
 		</Setter>-->
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
-				<UniformGrid Columns="1"/>
+				<StackPanel Orientation="Vertical"/>
 			</ItemsPanelTemplate>
 		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid Background="{TemplateBinding Background}">
+				<Grid Background="{TemplateBinding Background}"
+					  TemplatedControl.IsTemplateFocusTarget="True"
+					  Focusable="True">
 					<Border Padding="{TemplateBinding Padding}" Name="PART_Border" 
-							BorderThickness="{TemplateBinding BorderThickness}">
+					  TemplatedControl.IsTemplateFocusTarget="True"
+					  Focusable="True"
+					  Background="Transparent"
+					  BorderThickness="{TemplateBinding BorderThickness}">
 						<Grid RowDefinitions="*,*">
 							<Grid ColumnDefinitions="auto,*">
 								<!--<Border Width="{Binding $parent[SuperNavigationViewItem].LateralWidth}"/>-->
-								<Grid Grid.Column="1" ColumnDefinitions="auto,10,auto,10,*,5,auto,5">
-									<Border Name="PART_SelectionBorder" Width="2.5" CornerRadius="5" />
-									<Image Grid.Column="2" Name="PART_ImgT" Source="{TemplateBinding Icon}"
+								<Grid Grid.Column="1" ColumnDefinitions="5,auto,10,auto,10,*,5,auto,5">
+									<Border Grid.Column="2" Name="PART_SelectionBorder" Width="2.5" CornerRadius="5" />
+									<Image Grid.Column="3" Name="PART_ImgT" Source="{TemplateBinding Icon}"
 										   Stretch="Uniform" Width="16"
 										   HorizontalAlignment="Left"
 										   VerticalAlignment="Center"/>
-									<Border Grid.Column="4" Name="PART_ContainerBorder">
+									<Border Grid.Column="5" Name="PART_ContainerBorder">
 										<Border.Transitions>
 											<Transitions>
-												<DoubleTransition Property="Opacity" Duration="0:0:0.4" Easing="ExponentialEaseOut"/>
+												<DoubleTransition Property="Opacity" Duration="0:0:0.4" 
+																  Easing="ExponentialEaseOut"/>
 											</Transitions>
 										</Border.Transitions>
 										<ContentPresenter Name="PART_ContentPresenter"
@@ -74,14 +81,22 @@
 													TextBlock.FontFamily="Segoe UI"
 													VerticalAlignment="Center"/>
 									</Border>
-									<ToggleButton Grid.Column="6"
+									<ToggleButton Grid.Column="7"
 												  Padding="2.5,2.5" Margin="5"
 												  Classes=".togglenav"
 												  VerticalAlignment="Center"
 												  HorizontalAlignment="Right"
 												  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
 												  Background="Transparent">
-										<Image Name="PART_Img" Height="15" Width="15"/>
+										<Image Name="PART_Img" Height="15" Width="15"
+											   Source="{DynamicResource Entypo+.ChevronThinDown}">
+											<Image.Transitions>
+												<Transitions>
+													<DoubleTransition Property="RotateTransform.Angle"  
+																	  Duration="0:0:1"/>
+												</Transitions>
+											</Image.Transitions>
+										</Image>
 									</ToggleButton>
 								</Grid>
 							</Grid>
@@ -110,7 +125,7 @@
 		</Style.Animations>
 	</Style>
 	
-	<Style Selector="SuperNavigationViewItem[IsSelected=true] /template/ Border#PART_SelectionBorder">
+	<Style Selector="SuperNavigationViewItem:selected /template/ Border#PART_SelectionBorder">
 		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}"/>
 		<Setter Property="BoxShadow" Value="0 0 .5 0 Black"/>
 	</Style>
@@ -122,10 +137,28 @@
 	</Style>
 
 	<Style Selector="SuperNavigationViewItem[IsExpanded=False] /template/ Image#PART_Img">
-		<Setter Property="Source" Value="{DynamicResource Entypo+.ChevronThinDown}"/>
+		<Style.Animations>
+			<Animation Duration="0:0:0.5" Easing="ExponentialEaseOut" FillMode="Forward">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="190"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="0"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
 	</Style>
 	<Style Selector="SuperNavigationViewItem[IsExpanded=True] /template/ Image#PART_Img">
-		<Setter Property="Source" Value="{DynamicResource Entypo+.ChevronThinUp}"/>
+		<Style.Animations>
+			<Animation Duration="0:0:0.5" Easing="ExponentialEaseOut" FillMode="Forward">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="0"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="180"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
 	</Style>
 
 	<Style Selector="SuperNavigationViewItem[IsOpen=True]">

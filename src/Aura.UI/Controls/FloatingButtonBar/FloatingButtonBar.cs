@@ -32,6 +32,14 @@ namespace Aura.UI.Controls
         }
         public static readonly StyledProperty<IImage> IconProperty =
             AvaloniaProperty.Register<FloatingButtonBar, IImage>(nameof(Icon));
+
+        public double OpenLength
+        {
+            get => GetValue(OpenLengthProperty);
+            set => SetValue(OpenLengthProperty, value);
+        }
+        public readonly static StyledProperty<double> OpenLengthProperty =
+            AvaloniaProperty.Register<FloatingButtonBar, double>(nameof(OpenLength));
     }
 
     public enum FloatingButtonBarExpandDirection

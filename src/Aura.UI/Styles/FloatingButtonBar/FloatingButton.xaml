@@ -1,3 +1,17 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui">
-	
+	<Style Selector="FloatingButton">
+		<Setter Property="Height" Value="40"/>
+		<Setter Property="Width" Value="40"/>
+		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAccentBrush}"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Name="PART_Border" Background="{TemplateBinding Background}"
+						CornerRadius="20" Padding="7" Margin="5" BoxShadow="{BoxShadow BlurRadius=5, ShadowColor={StaticResource SystemBaseMediumColor}}">
+					<ContentPresenter Name="PART_ContentPresenter"
+									  Content="{TemplateBinding Content}"
+									  ContentTemplate="{TemplateBinding ContentTemplate}"/>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
 </Styles>

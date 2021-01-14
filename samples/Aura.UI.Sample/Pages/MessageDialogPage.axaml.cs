@@ -1,9 +1,8 @@
-﻿using Aura.UI.UIExtensions;
-using Avalonia;
+﻿using Aura.UI.Services;
+using Aura.UI.UIExtensions;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
-using Aura.UI.Services;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
@@ -22,7 +21,7 @@ namespace Aura.UI.ControlsGallery.Pages
         public void ShowMessageDialog(object sender, RoutedEventArgs e)
         {
             var win = this.GetParentTOfVisual<Window>();
-            win.NewMessageDialog("Your Message Title","Your Message Content", null);
+            win.NewMessageDialog("Your Message Title", "Your Message Content", null);
         }
     }
 }

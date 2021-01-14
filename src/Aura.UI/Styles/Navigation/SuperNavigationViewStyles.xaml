@@ -53,7 +53,7 @@
 						<SplitView.Pane>
 							<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
 												   Material="{DynamicResource SystemAcrylicAltHighBrush}"
-												   Padding="5,0">
+												   Padding="0,0">
 							<Grid RowDefinitions="auto,*">
 								<SuperNavigationViewItem Name="PART_HeaderItem"
 														 Icon="{Binding $parent[SuperNavigationView].Icon}" 

@@ -1,14 +1,14 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
-		<Decorator Padding="10">
+		<Border Background="DarkGreen" Padding="10">
 			<Decorator.Resources>
 				<DrawingImage x:Key="BoxIcons.RegularPencil">
 					<GeometryDrawing Brush="{DynamicResource SystemControlHighlightBaseHighBrush}" Geometry="F1M640.127990722656,-643.669982910156L251.988998413086,-255.531005859375 251.990005493164,-255.531005859375 229.419006347656,-165.333999633789 319.615997314453,-187.861999511719 707.796997070313,-576.0009765625 640.127990722656,-643.669982910156z M768.127990722656,-771.669006347656L700.458984375,-704 768.127990722656,-636.330993652344 835.796997070313,-704 768.127990722656,-771.669006347656z M768.128479003906,-856.192016601563C790.229736328125,-856.192016601563,812.330993652344,-848.127990722656,828.458984375,-832L896.127990722656,-764.330993652344C912.255981445313,-748.203002929688 921.130981445313,-726.783996582031 921.130981445313,-704 921.130981445313,-681.216003417969 912.255981445313,-659.796997070313 896.127990722656,-643.669006347656L371.627014160156,-119.167999267578C366.165985107422,-113.707000732422,359.295989990234,-109.823997497559,351.786987304688,-107.946990966797L181.119995117188,-65.2799987792969C177.707000732422,-64.427001953125,174.251007080078,-64,170.794998168945,-63.9999961853027L170.794998168945,-64.0009994506836C159.617004394531,-64.0009994506836 148.694000244141,-68.3949966430664 140.630004882813,-76.5019912719727 130.04899597168,-87.1259994506836 125.73999786377,-102.486000061035 129.408996582031,-117.035011291504L172.07600402832,-287.701995849609C173.953002929688,-295.167999267578,177.835998535156,-302.037994384766,183.296997070313,-307.498992919922L707.797973632813,-832C723.926025390625,-848.127990722656,746.027221679688,-856.192016601563,768.128479003906,-856.192016601563z"   />
 				</DrawingImage>
 			</Decorator.Resources>
 			<Grid>
-				<FloatingButtonBar IsExpanded="True">
+				<FloatingButtonBar IsExpanded="true" OpenLength="300">
 					<FloatingButton>
 						<Image Stretch="Uniform" Source="{DynamicResource BoxIcons.RegularPencil}"/>
 					</FloatingButton>
@@ -16,7 +16,7 @@
 					<FloatingButton/>
 				</FloatingButtonBar>
 			</Grid>
-		</Decorator>
+		</Border>
 	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="FluentIconsFilled.add_filled">
@@ -26,21 +26,6 @@
 			</DrawingGroup>
 		</DrawingImage>
 	</Styles.Resources>
-	<Style Selector="FloatingButton">
-		<Setter Property="Height" Value="40"/>
-		<Setter Property="Width" Value="40"/>
-		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAccentBrush}"/>
-		<Setter Property="Template">
-			<ControlTemplate>
-				<Border Name="PART_Border" Background="{TemplateBinding Background}"
-						CornerRadius="20" Padding="10">
-					<ContentPresenter Name="PART_ContentPresenter"
-									  Content="{TemplateBinding Content}"
-									  ContentTemplate="{TemplateBinding ContentTemplate}"/>
-				</Border>
-			</ControlTemplate>
-		</Setter>
-	</Style>
 	<Style Selector="FloatingButtonBar">
 		<Setter Property="ExpandDirection" Value="ToRight"/>
 	</Style>
@@ -53,14 +38,20 @@
 		<Setter Property="Icon" Value="{DynamicResource FluentIconsFilled.add_filled}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid ColumnDefinitions="auto,*">
+				<Grid ColumnDefinitions="auto,auto">
 					<FloatingButton Name="PART_Button">
 						<Image Name="PART_Image" Source="{TemplateBinding Icon}"/>
 					</FloatingButton>
 					<ItemsPresenter Grid.Column="1"
 									Name="PART_ItemsPresenter"
 									Items="{TemplateBinding Items}"
-									ItemsPanel="{TemplateBinding ItemsPanel}"/>
+									ItemsPanel="{TemplateBinding ItemsPanel}">
+						<ItemsPresenter.Transitions>
+							<Transitions>
+								<DoubleTransition Property="Width" Easing="BounceEaseOut"/>
+							</Transitions>
+						</ItemsPresenter.Transitions>
+					</ItemsPresenter>
 				</Grid>
 			</ControlTemplate>
 		</Setter>
@@ -72,7 +63,7 @@
 		<Setter Property="IsHitTestVisible" Value="False"/>
 	</Style>
 	<Style Selector="FloatingButtonBar[ExpandDirection=ToRight][IsExpanded=True] /template/ ItemsPresenter#PART_ItemsPresenter">
-		<Setter Property="Width" Value="NaN"/>
+		<Setter Property="Width" Value="{Binding $parent[FloatingButtonBar].OpenLength}"/>
 		<Setter Property="IsVisible" Value="True"/>
 		<Setter Property="IsHitTestVisible" Value="True"/>
 	</Style>

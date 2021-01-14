@@ -17,7 +17,8 @@
         Title="Aura.UI Controls Gallery">
 	<Grid>
 		<SuperNavigationView Header="Aura.UI Gallery"  SelectedItem="{Binding #el}"
-							 Icon="{DynamicResource Material.Home}">
+							 Icon="{DynamicResource Material.Home}"
+							 DisplayMode="{Binding #splitmodebox.SelectedItem.Content}">
 			<SuperNavigationViewItem Name="el" Header="Basic Input" 
 									 Title="Basic Input" Icon="{DynamicResource FontAwesome.CheckSquareRegular}">
 				<SuperNavigationViewItem Header="ShadowButton" Title="ShadowButton"
@@ -85,13 +86,30 @@
 					</SuperNavigationViewItem.Content>
 				</SuperNavigationViewItem>
 			</SuperNavigationViewItem>
+			<SuperNavigationViewItem Header="Lighting" Title="Lights"
+										 Icon="{DynamicResource FluentIcons.lightbulb_regular}">
+				<SuperNavigationViewItem Header="Shadows" Title="Shadows"
+										 Icon="{DynamicResource Material.BoxShadow}">
+					
+				</SuperNavigationViewItem>
+			</SuperNavigationViewItem>
 		</SuperNavigationView>
 		<Border Background="Transparent" VerticalAlignment="Top" Height="19" PointerPressed="EnableDrag"/>
-		<ComboBox Name="combobox" PlaceholderText="Window Transparency Level" SelectedItem="{Binding #s}" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-			<ComboBoxItem>None</ComboBoxItem>
-			<ComboBoxItem>Transparent</ComboBoxItem>
-			<ComboBoxItem>Blur</ComboBoxItem>
-			<ComboBoxItem Name="s">AcrylicBlur</ComboBoxItem>
-		</ComboBox>
+		<Grid  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" ColumnDefinitions="auto,auto">
+			<ComboBox Name="splitmodebox" PlaceholderText="SuperNavigationView Display Mode"
+					  SelectedItem="{Binding #r}">
+				<ComboBoxItem Name="r">CompactInline</ComboBoxItem>
+				<ComboBoxItem>CompactOverlay</ComboBoxItem>
+				<ComboBoxItem>Inline</ComboBoxItem>
+				<ComboBoxItem>Overlay</ComboBoxItem>
+			</ComboBox>
+			<ComboBox Grid.Column="1" Name="combobox" PlaceholderText="Window Transparency Level" 
+					  SelectedItem="{Binding #s}" >
+				<ComboBoxItem>None</ComboBoxItem>
+				<ComboBoxItem>Transparent</ComboBoxItem>
+				<ComboBoxItem>Blur</ComboBoxItem>
+				<ComboBoxItem Name="s">AcrylicBlur</ComboBoxItem>
+			</ComboBox>
+		</Grid>
 	</Grid>
 </Window>
