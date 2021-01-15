@@ -10,17 +10,17 @@ namespace Aura.UI.Lighting
 {
     public partial class Shadow
     {
-        /// <summary>
+        /*/// <summary>
         /// Defines if the Shadow are enabled
         /// </summary>
         public static readonly AttachedProperty<bool> EnabledProperty =
-            AvaloniaProperty.RegisterAttached<Shadow, WindowBase, bool>(
+            AvaloniaProperty.RegisterAttached<Shadow, Control, bool>(
                 "Enabled", false, true, BindingMode.TwoWay);
-        public static bool GetEnabled(WindowBase element) 
+        public static bool GetEnabled(Control element) 
             => element.GetValue(EnabledProperty);
 
-        public static void SetEnabled(WindowBase element, bool value)
-            => element.SetValue(EnabledProperty, value);
+        public static void SetEnabled(Control element, bool value)
+            => element.SetValue(EnabledProperty, value);*/
 
         /// <summary>
         /// Defines the Shadow that decorates the control
@@ -31,8 +31,8 @@ namespace Aura.UI.Lighting
 
         public static BoxShadows GetBoxShadow(Control element) 
             => element.GetValue(BoxShadowProperty);
-        public static void SetBoxShadow(WindowBase element, bool value) 
-            => element.SetValue(EnabledProperty, value);
+        public static void SetBoxShadow(Control element, BoxShadows value) 
+            => element.SetValue(BoxShadowProperty, value);
 
         /// <summary>
         /// Defines the CornerRadius of the Shadow

@@ -6,6 +6,7 @@ using Avalonia.Threading;
 using Avalonia.VisualTree;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,35 +16,16 @@ namespace Aura.UI.Lighting
     {
         static Shadow()
         {
-            EnabledProperty.Changed.Subscribe(OnEnabledPropertyChanged);
+            //EnabledProperty.Changed.Subscribe(OnEnabledPropertyChanged);
+            BoxShadowProperty.Changed.Subscribe(Shadow.Current.ShadowChanged);
         }
 
-        internal static void OnEnabledPropertyChanged(AvaloniaPropertyChangedEventArgs<bool> e)
+        public static Shadow Current { get; } = new Shadow();
+
+        internal void ShadowChanged(AvaloniaPropertyChangedEventArgs e)
         {
-            var w = e.Sender as Control as IVisual;
-
-            if(e.OldValue.Value & e.NewValue.Value)
-            {
-            
-            }
-            else if(!e.OldValue.Value & !e.NewValue.Value)
-            {
-
-            }
-            else if(!e.OldValue.Value & e.NewValue.Value)
-            {
-                Dispatcher.UIThread.InvokeAsync(
-                    async () => 
-                    {
-                        await Task.Run(() => 
-                        { 
-                            foreach(Control control in w.VisualChildren)
-                            {
-                                AttachShadow(control);
-                            }
-                        });
-                    });
-            }
+            var control = (Control)e.Sender;
+            AttachShadow(control);
         }
 
         public static void AttachShadow(Control control)
@@ -51,13 +33,77 @@ namespace Aura.UI.Lighting
             var box = CreateBoxShadow(GetBoxShadow(control), GetShadowCornerRadius(control));
             AdornerLayer.SetAdornedElement(control, box);
             SetCurrent(control, box);
+            Debug.WriteLine($"Shadow Attached on {control}");
         }
 
         public static void DetachShadow(Control control)
         {
-            //TODO: detach the shadow
+            control.ClearValue(AdornerLayer.AdornedElementProperty);
+            Debug.WriteLine($"Shadow Detached on {control}");
         }
 
         public static Border CreateBoxShadow(BoxShadows box, CornerRadius corners) => new Border { CornerRadius = corners, BoxShadow = box };
+        /*public static Shadow Instance { get; } = new Shadow();
+
+        internal async static void OnEnabledPropertyChanged(AvaloniaPropertyChangedEventArgs<bool> e)
+        {
+            var w = e.Sender as Control as IVisual;
+
+            if(e.OldValue.Value & e.NewValue.Value)
+            {
+                await Task.Run(() => 
+                {
+                    foreach (Control control in w.VisualChildren)
+                    {
+                        DetachShadow(control);
+                    }
+                });
+                await Task.Run(() =>
+                {
+                    foreach (Control control in w.VisualChildren)
+                    {
+                        AttachShadow(control);
+                    }
+                });
+            }
+            else if(!e.OldValue.Value & !e.NewValue.Value)
+            {
+                await Task.Run(() =>
+                {
+                    foreach (Control control in w.VisualChildren)
+                    {
+                        AttachShadow(control);
+                    }
+                });
+                await Task.Run(() =>
+                {
+                    foreach (Control control in w.VisualChildren)
+                    {
+                        DetachShadow(control);
+                    }
+                });
+            }
+            else if(!e.OldValue.Value & e.NewValue.Value)
+            {
+                await Task.Run(() => 
+                { 
+                    foreach(Control control in w.VisualChildren)
+                    {
+                        AttachShadow(control);
+                    }
+                });
+            }
+            else if(e.OldValue.Value & !e.NewValue.Value)
+            {
+                await Task.Run(() =>
+                {
+                    foreach (Control control in w.VisualChildren)
+                    {
+                        DetachShadow(control);
+                    }
+                });
+            }
+        }*/
+
     }
 }

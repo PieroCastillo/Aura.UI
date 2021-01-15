@@ -1,6 +1,6 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<Design.PreviewWith>
+	<!--<Design.PreviewWith>
 		<Border Padding="0" Background="{DynamicResource ThemeControlLowBrush}">
 			<Border.Resources>
 				<DrawingImage x:Key="Microns.Menu">
@@ -27,7 +27,7 @@
 				<NavigationViewItem Classes="Footer" Header="5" Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 			</NavigationView>
 		</Border>
-	</Design.PreviewWith>
+	</Design.PreviewWith>-->
 	<Style Selector="NavigationViewItem">
 		<Setter Property="Padding" Value="5 10 10 10"/>
 		<!--<Setter Property="OpenLength" Value="300"/>

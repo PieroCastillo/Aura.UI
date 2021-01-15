@@ -2,7 +2,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
 		<Border>
-			<SuperNavigationViewItem Header="Header" Icon="{DynamicResource EvaIcons.Settings2Outline}"
+			<SuperNavigationViewItem Header="Header" IsSelected="True" Icon="{DynamicResource EvaIcons.Settings2Outline}"
 									 IsExpanded="False" IsOpen="False">
 				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}">
 					<SuperNavigationViewItem Header="SubItem 2" IsSelected="True" 
@@ -11,7 +11,7 @@
 											 Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 				</SuperNavigationViewItem>
 
-				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
+				<SuperNavigationViewItem Header="Sub Item" Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
 				<SuperNavigationViewItem Header="Sub Item"  Icon="{DynamicResource EvaIcons.Settings2Outline}"/>
@@ -33,7 +33,7 @@
 			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M17.418,6.109c0.272-0.268,0.709-0.268,0.979,0c0.27,0.268,0.271,0.701,0,0.969l-7.908,7.83  c-0.27,0.268-0.707,0.268-0.979,0l-7.908-7.83c-0.27-0.268-0.27-0.701,0-0.969c0.271-0.268,0.709-0.268,0.979,0L10,13.25  L17.418,6.109z"   />
 		</DrawingImage>
 	</Styles.Resources>
-	<Style Selector="SuperNavigationViewItem"> 
+	<Style Selector=":is(SuperNavigationViewItemBase)"> 
 		<Setter Property="Padding" Value="0 5"/>
 		<Setter Property="MinWidth" Value="0"/>
 		<Setter Property="DockPanel.Dock" Value="Top"/>
@@ -54,14 +54,14 @@
 				<Grid Background="{TemplateBinding Background}"
 					  TemplatedControl.IsTemplateFocusTarget="True"
 					  Focusable="True">
-					<Border Padding="{TemplateBinding Padding}" Name="PART_Border" 
+					<Border Name="PART_Border" 
 					  TemplatedControl.IsTemplateFocusTarget="True"
 					  Focusable="True"
 					  Background="Transparent"
 					  BorderThickness="{TemplateBinding BorderThickness}">
-						<Grid RowDefinitions="*,*">
-							<Grid ColumnDefinitions="auto,*">
-								<!--<Border Width="{Binding $parent[SuperNavigationViewItem].LateralWidth}"/>-->
+						<Grid RowDefinitions="5,*,5,*">
+							<Grid Grid.Row="1" ColumnDefinitions="auto,*">
+								<!--<Border Width="{Binding $parent[:is(SuperNavigationViewItemBase)].LateralWidth}"/>-->
 								<Grid Grid.Column="1" ColumnDefinitions="5,auto,10,auto,10,*,5,auto,5">
 									<Border Grid.Column="2" Name="PART_SelectionBorder" Width="2.5" CornerRadius="5" />
 									<Image Grid.Column="3" Name="PART_ImgT" Source="{TemplateBinding Icon}"
@@ -100,7 +100,7 @@
 									</ToggleButton>
 								</Grid>
 							</Grid>
-							<Border Grid.Row="1" Grid.Column="1" Name="PART_BottomBorder">
+							<Border Grid.Row="3" Grid.Column="1" Name="PART_BottomBorder">
 								<ItemsPresenter Name="PART_ItemsPresenter"
 												Items="{TemplateBinding Items}"
 												ItemsPanel="{TemplateBinding ItemsPanel}"/>
@@ -112,7 +112,7 @@
 		</Setter> 
 	</Style>
 
-	<Style Selector="SuperNavigationViewItem[IsExpanded=true] /template/ ItemsPresenter#PART_ItemsPresenter"> 
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsExpanded=true] /template/ ItemsPresenter#PART_ItemsPresenter"> 
 		<Style.Animations>
 			<Animation Duration="0:0:0.3" FillMode="Forward" Easing="CubicEaseOut">
 				<KeyFrame Cue="0%">
@@ -125,18 +125,18 @@
 		</Style.Animations>
 	</Style>
 	
-	<Style Selector="SuperNavigationViewItem:selected /template/ Border#PART_SelectionBorder">
+	<Style Selector=":is(SuperNavigationViewItemBase):selected /template/ Border#PART_SelectionBorder">
 		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush}"/>
-		<Setter Property="BoxShadow" Value="0 0 .5 0 Black"/>
+		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=.5, ShadowColor={StaticResource SystemBaseMediumColor}}"/><!--0 0 .5 0 Black-->
 	</Style>
-	<Style Selector="SuperNavigationViewItem:empty /template/ ToggleButton"> 
+	<Style Selector=":is(SuperNavigationViewItemBase):empty /template/ ToggleButton"> 
 		<Setter Property="Opacity" Value="0"/>
 	</Style>
-	<Style Selector="SuperNavigationViewItem /template/ ToggleButton[IsChecked=True] /template/ ContentPresenter#PART_ContentPresenter">
+	<Style Selector=":is(SuperNavigationViewItemBase) /template/ ToggleButton[IsChecked=True] /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="Background" Value="Transparent"/>
 	</Style>
 
-	<Style Selector="SuperNavigationViewItem[IsExpanded=False] /template/ Image#PART_Img">
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsExpanded=False] /template/ Image#PART_Img">
 		<Style.Animations>
 			<Animation Duration="0:0:0.5" Easing="ExponentialEaseOut" FillMode="Forward">
 				<KeyFrame Cue="0%">
@@ -148,7 +148,7 @@
 			</Animation>
 		</Style.Animations>
 	</Style>
-	<Style Selector="SuperNavigationViewItem[IsExpanded=True] /template/ Image#PART_Img">
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsExpanded=True] /template/ Image#PART_Img">
 		<Style.Animations>
 			<Animation Duration="0:0:0.5" Easing="ExponentialEaseOut" FillMode="Forward">
 				<KeyFrame Cue="0%">
@@ -160,42 +160,42 @@
 			</Animation>
 		</Style.Animations>
 	</Style>
-
-	<Style Selector="SuperNavigationViewItem[IsOpen=True]">
+ 
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=True]">
 		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].OpenPaneLength}"/>
 	</Style>
-		<Style Selector="SuperNavigationViewItem[IsOpen=false]">
+		<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=false]">
 		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].CompactPaneLength}"/>
 	</Style>
 	
-	<Style Selector="SuperNavigationViewItem[IsOpen=true] /template/ Border#PART_ContainerBorder">
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=true] /template/ Border#PART_ContainerBorder">
 		<Setter Property="Opacity" Value="1"/>
 	</Style>
-	<Style Selector="SuperNavigationViewItem[IsOpen=False] /template/ Border#PART_ContainerBorder">
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=False] /template/ Border#PART_ContainerBorder">
 		<Setter Property="Opacity" Value="0"/>
 	</Style>
 
-	<Style Selector="SuperNavigationViewItem:pointerover">
+	<Style Selector=":is(SuperNavigationViewItem):pointerover">
 		<Setter Property="Background">
-			<SolidColorBrush Color="{DynamicResource SystemAltLowColor}"/>
+			<SolidColorBrush Color="{DynamicResource SystemAltLowColor}" Opacity="0.5"/>
 		</Setter>
 	</Style>
 
 
-	<!--<Style Selector="SuperNavigationViewItem[IsOpen=true] /template/ Border#PART_ContainerBorder">
+	<!--<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=true] /template/ Border#PART_ContainerBorder">
 		<Setter Property="Opacity" Value="1"/>
 		<Setter Property="Width" Value="NaN"/>
 	</Style>
-	<Style Selector="SuperNavigationViewItem[IsOpen=false] /template/ Border#PART_ContainerBorder">
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=false] /template/ Border#PART_ContainerBorder">
 		<Setter Property="Opacity" Value="0"/>
 		<Setter Property="Width" Value="0"/>
 	</Style>-->
 	
-	<!--<Style Selector="SuperNavigationViewItem[IsExpanded=True] /template/ :is(Control)#PART_BottomBorder">
+	<!--<Style Selector=":is(SuperNavigationViewItemBase)[IsExpanded=True] /template/ :is(Control)#PART_BottomBorder">
 		<Setter Property="Height" Value="NaN"/>
 	</Style>-->
 
-	<Style Selector="SuperNavigationViewItem[IsExpanded=False] /template/ :is(Control)#PART_BottomBorder">
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsExpanded=False] /template/ :is(Control)#PART_BottomBorder">
 		<Setter Property="Height" Value="0"/>
 	</Style>	
 </Styles>

@@ -90,7 +90,9 @@
 										 Icon="{DynamicResource FluentIcons.lightbulb_regular}">
 				<SuperNavigationViewItem Header="Shadows" Title="Shadows"
 										 Icon="{DynamicResource Material.BoxShadow}">
-					
+					<SuperNavigationViewItem.Content>
+						<pg:ShadowsPage/>
+					</SuperNavigationViewItem.Content>
 				</SuperNavigationViewItem>
 			</SuperNavigationViewItem>
 		</SuperNavigationView>

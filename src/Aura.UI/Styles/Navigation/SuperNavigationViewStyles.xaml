@@ -55,7 +55,8 @@
 												   Material="{DynamicResource SystemAcrylicAltHighBrush}"
 												   Padding="0,0">
 							<Grid RowDefinitions="auto,*">
-								<SuperNavigationViewItem Name="PART_HeaderItem"
+								<SuperNavigationViewItemBase Name="PART_HeaderItem"
+															 Classes="header"
 														 Icon="{Binding $parent[SuperNavigationView].Icon}" 
 														 Header="{Binding $parent[SuperNavigationView].Header}"/>
 								<DockPanel Grid.Row="1">
@@ -128,17 +129,17 @@
 		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].CompactPaneLength}"/>
 	</Style>
 
-	<Style Selector="SuperNavigationView[IsOpen=false] SuperNavigationViewItem">
+	<Style Selector="SuperNavigationView[IsOpen=false] :is(SuperNavigationViewItemBase)">
 		<Setter Property="IsOpen" Value="False"/>
 	</Style>
 
-	<Style Selector="SuperNavigationView[IsOpen=true] SuperNavigationViewItem">
+	<Style Selector="SuperNavigationView[IsOpen=true] :is(SuperNavigationViewItemBase)">
 		<Setter Property="IsOpen" Value="true"/>
 	</Style>
 	
-	<Style Selector="SuperNavigationView /template/ SuperNavigationViewItem#PART_HeaderItem /template/ ContentPresenter#PART_ContentPresenter">
+	
+	<Style Selector="SuperNavigationViewItemBase.header /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.FontWeight" Value="SemiBold"/>
 		<Setter Property="Padding" Value="5"/>
-		<Setter Property="IsEnabled" Value="False"/>
 	</Style>
 </Styles>
