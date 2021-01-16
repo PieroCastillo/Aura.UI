@@ -85,8 +85,8 @@ Add Styles to App.xaml
         <StyleInclude Source="avares://Avalonia.Themes.Fluent/FluentDark.xaml"/>
         <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseDark.xaml"/>
        <StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/> <!-- Add this Source --> 
-       <StyleInclude Source="avares://Aura.UI/AuraAcrylicBase.xaml"/> <!--When you use a controls with IMaterial Interface , you should add this source-->
-    </Application.Styles> 
+       <StyleInclude Source="avares://Aura.UI/AuraAcrylicBase.xaml"/>  
+	</Application.Styles> 
    </Application>
 ```
 
@@ -97,6 +97,10 @@ using Aura.UI.Controls;
 using Aura.UI.UIExtensions;
 using Aura.UI.Windows;
 ```
+
+## Install Preview Version:
+
+Add to Nuget Sources the follow link: https://www.myget.org/F/auraui, and refresh.
 
 # Controls
 
