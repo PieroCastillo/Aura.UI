@@ -10,6 +10,7 @@
 		TransparencyLevelHint="{Binding #combobox.SelectedItem.Content}"
 		Background="{x:Null}"
 		WindowState="Maximized"
+		Icon="avares://Aura.UI/Assets/AuraUILogo.png"
 		WindowStartupLocation="CenterScreen"
 		 ExtendClientAreaToDecorationsHint="True"
 		ExtendClientAreaChromeHints="PreferSystemChrome"

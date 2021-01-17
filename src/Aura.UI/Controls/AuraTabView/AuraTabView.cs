@@ -37,7 +37,6 @@ namespace Aura.UI.Controls
         public double lastselectindex = 0;
         protected Border b_;
         protected Grid g_;
-        protected internal DockPanel dock_container;
         #endregion
         #region Methods
         
@@ -51,7 +50,7 @@ namespace Aura.UI.Controls
         
         static AuraTabView()
         {
-            SelectionModeProperty.OverrideDefaultValue<AuraTabView>(SelectionMode.Toggle);
+            SelectionModeProperty.OverrideDefaultValue<AuraTabView>(SelectionMode.Single);
             
         }
 
@@ -89,7 +88,7 @@ namespace Aura.UI.Controls
 
             b_ = this.GetControl<Border>(e, "PART_InternalBorder");
             g_ = this.GetControl<Grid>(e, "PART_InternalGrid");
-            dock_container = this.GetControl<DockPanel>(e, "PART_DockContainer");
+            //dock_container = this.GetControl<DockPanel>(e, "PART_DockContainer");
 
             this.PropertyChanged += AuraTabView_PropertyChanged;
         }

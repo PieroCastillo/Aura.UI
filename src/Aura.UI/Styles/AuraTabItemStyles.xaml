@@ -1,6 +1,25 @@
 ﻿<Styles  xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	
+	<Design.PreviewWith>
+		<Border>
+			<Grid>
+				<Border VerticalAlignment="Top"
+						Height="30" Background="Blue"
+						HorizontalAlignment="Right"/>
+				<AuraTabView TabStripPlacement="Left"
+								 SelectedIndex="0" Width="900" Height="600"
+								 SecondaryBackground="{DynamicResource ThemeAccentBrush4}">
+					<AuraTabItem Header="Settings" IsClosable="False">
+						<Border Background="Yellow" Width="30"
+								HorizontalAlignment="Right"/>
+					</AuraTabItem>
+					<AuraTabItem Header="Another Tab" Name="tab">._.XD</AuraTabItem>
+
+					<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
+				</AuraTabView>
+			</Grid>
+		</Border>
+	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="Ionicons.CloseMD">
 			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"   />
@@ -303,7 +322,7 @@
 	</Style>
 	
 	<Style Selector="AuraTabItem:selected /template/ Border#PART_Container">
-		<Setter Property="BoxShadow" Value="0 0 5 0 Black"/>
+		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor={StaticResource SystemBaseHighColor}}"/>
 	</Style>
 	<Style Selector="AuraTabItem /template/ Button#PART_CloseButton">
 		<Setter Property="IsVisible" Value="false"/>
@@ -347,17 +366,17 @@
 		<!--<Style.Animations>
 			<Animation Duration="0:0:0.2">
 				<KeyFrame Cue="100%">-->
-					<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltMediumLowBrush}"/>
+					<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/> 
 				<!--</KeyFrame>
 			</Animation> 
 		</Style.Animations>-->
 	</Style>
-	<Style Selector="AuraTabItem[IsSelected=True]:pointerover">
-		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltMediumBrush}"/>
+	<Style Selector="AuraTabItem:pointerover">
+		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>		
 	</Style>
 	<Style Selector="AuraTabItem[IsSelected=True]">
-		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltMediumBrush}"/>
+		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>		
 	</Style>
 

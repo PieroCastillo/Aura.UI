@@ -16,8 +16,8 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression> 
     <LangVersion>8.0</LangVersion>
     <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
-    <PackageVersion>0.1.3-preview91</PackageVersion>
-    <Version>0.1.3-preview91</Version>
+    <PackageVersion>0.1.3-preview93</PackageVersion>
+    <Version>0.1.3-preview93</Version>
   </PropertyGroup>
 <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
   <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -42,12 +42,8 @@
      <AvaloniaXaml Remove="Controls\Indicators\RGBIndicator.axaml" />
    </ItemGroup>
    <ItemGroup>
-     <None Remove="Styles\FloatingButtonBar\FloatingButton.xaml" />
-     <None Remove="Styles\FloatingButtonBar\FloatingButtonBar.xaml" />
-     <None Remove="Styles\SliderGroups\RGBSliderGroup.xaml" />
-   </ItemGroup>
-   <ItemGroup>
      <AvaloniaResource Include="Assets\auraui-logov2.ico" />
+     <AvaloniaResource Include="Assets\AuraUILogo.png" />
      <AvaloniaResource Include="Assets\noise.png" />
    </ItemGroup>
    <ItemGroup>

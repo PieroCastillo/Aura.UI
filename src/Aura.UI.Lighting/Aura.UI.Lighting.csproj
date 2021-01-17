@@ -2,6 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+		<PackageVersion>0.1.3-preview91</PackageVersion>
+		<Version>0.1.3-preview91</Version>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<RepositoryUrl>github.com/PieroCastillo/Aura.UI</RepositoryUrl>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
     </PropertyGroup>
 
     <ItemGroup>
