@@ -78,7 +78,9 @@
 									 Icon="{DynamicResource BoxIcons.RegularMessageAlt}">
 				<SuperNavigationViewItem Header="ContentDialog" Title="ContentDialog"
 										 Icon="{DynamicResource BoxIcons.RegularMessageAltDots}">
-					
+					<SuperNavigationViewItem.Content>
+						<pg:ContentDialogPage/>
+					</SuperNavigationViewItem.Content>
 				</SuperNavigationViewItem>
 				<SuperNavigationViewItem Header="MessageDialog" Title="MessageDialog"
 										 Icon="{DynamicResource BoxIcons.SolidMessageAltDots}">
