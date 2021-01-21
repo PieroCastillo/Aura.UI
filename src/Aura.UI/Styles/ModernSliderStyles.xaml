@@ -109,6 +109,25 @@
 		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush}"/> 		  
 	</Style>
 
+	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_IncreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidHighBrush}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_IncreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton#PART_DecreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush2}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_DecreaseButton">
+		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush}"/>
+	</Style>
+	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_DecreaseButton">
+		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush1}"/>
+	</Style>
+	
 	<Style Selector="MaterialButton.Repeats">
 		<Setter Property="CornerRadius" Value="0"/>
 	</Style>

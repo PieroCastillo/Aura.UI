@@ -46,7 +46,9 @@
 		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<SplitView IsPaneOpen="{Binding $parent[SuperNavigationView].IsOpen}"
+				<SplitView Name="split"
+					IsPaneOpen="{Binding $parent[SuperNavigationView].IsOpen, Mode=TwoWay}"
+						   UseLightDismissOverlayMode="True" UseLayoutRounding="True"
 							   CompactPaneLength="{Binding $parent[SuperNavigationView].CompactPaneLength}"
 							   OpenPaneLength="{Binding $parent[SuperNavigationView].OpenPaneLength}"
 							   DisplayMode="{Binding $parent[SuperNavigationView].DisplayMode}">
@@ -77,7 +79,8 @@
 											  AllowAutoHide="True"
 											  HorizontalScrollBarVisibility="Auto">
 									<Grid RowDefinitions="auto,*">
-										<ContentPresenter Grid.Row="0" IsVisible="{Binding !$parent[SuperNavigationView].HideTitle}"
+										<ContentPresenter Grid.Row="0" 
+														  IsVisible="{Binding !$parent[SuperNavigationView].HideTitle}"
 															  Name="PART_TitlePresenter"
 														  Content="{Binding $parent[SuperNavigationView].Title}"
 															TextBlock.FontWeight="Light"
@@ -136,7 +139,18 @@
 	<Style Selector="SuperNavigationView[IsOpen=true] :is(SuperNavigationViewItemBase)">
 		<Setter Property="IsOpen" Value="true"/>
 	</Style>
-	
+
+	<Style Selector="SplitView#split > :is(SuperNavigationViewItemBase)">
+		<Setter Property="IsOpen" Value="{Binding #split.IsPaneOpen}"/>
+	</Style>
+
+	<Style Selector="SuperNavigationView[IsOpen=false] > SplitView">
+		<Setter Property="IsPaneOpen" Value="False"/>
+	</Style>
+
+	<Style Selector="SuperNavigationView[IsOpen=true] > SplitView">
+		<Setter Property="IsPaneOpen" Value="True"/>
+	</Style>
 	
 	<Style Selector="SuperNavigationViewItemBase.header /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.FontWeight" Value="SemiBold"/>

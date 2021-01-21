@@ -6,6 +6,8 @@ using Avalonia.Controls.Generators;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
+using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
 using Avalonia.VisualTree;
 using System;

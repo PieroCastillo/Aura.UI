@@ -43,7 +43,7 @@
 	</Style>
 
 	<Style Selector="Border#PART_InternalBorder">
-		<Setter Property="Background" Value="Black"/> 
+		<Setter Property="Background" Value="Transparent"/> 
 	</Style>
 	
 	<Style Selector="AuraTabView[TabStripPlacement=Top]">

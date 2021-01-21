@@ -15,19 +15,21 @@ namespace Aura.UI.Lighting
     {
         public static ShadowDecoratorService Current { get; } = new ShadowDecoratorService();
 
-        internal void ShadowChanged(AvaloniaPropertyChangedEventArgs e)
+        internal void ShadowChanged(Control s, AvaloniaPropertyChangedEventArgs e)
         {
             if ( AdornerLayer.GetAdornerLayer(e.Sender as Control) != null)//e.NewValue != null &
             {
+                Detach(e.Sender as Control);
                  Attach(e.Sender as Control);
                 Debug.WriteLine("Shadow Changed");
             }
         }
 
-        internal void ShadowCornerRadiusChanged(AvaloniaPropertyChangedEventArgs e)
+        internal void ShadowCornerRadiusChanged(Control s, AvaloniaPropertyChangedEventArgs e)
         {
             if (AdornerLayer.GetAdornerLayer(e.Sender as Control) != null)//e.NewValue != null & 
             {
+                Detach(e.Sender as Control);
                 Attach(e.Sender as Control);
                 Debug.WriteLine("Shadow Corner Radius Changed");
             }
@@ -72,7 +74,6 @@ namespace Aura.UI.Lighting
             //}
 
         }
-
         private void Detach(Control control)
         {
             var layer = AdornerLayer.GetAdornerLayer(control);
@@ -80,6 +81,8 @@ namespace Aura.UI.Lighting
             var br = ShadowDecorator.GetCurrent(control);
             if(br != null )//& layer != null
             {
+                control.ClearValue(AdornerLayer.AdornedElementProperty);
+                control.ClearValue(ShadowDecorator.CurrentProperty);
                 layer.Children.Remove(br);
                 Debug.WriteLine("detach");
             }

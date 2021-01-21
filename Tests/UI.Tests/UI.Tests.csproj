@@ -83,8 +83,8 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-rc1" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc1" />
+    <PackageReference Include="Avalonia" Version="0.10.999-cibuild0012558-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.999-cibuild0012558-beta" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />

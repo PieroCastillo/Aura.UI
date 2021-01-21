@@ -164,10 +164,11 @@
 	<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=True]">
 		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].OpenPaneLength}"/>
 	</Style>
-		<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=false]">
+	<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=false]">
 		<Setter Property="Width" Value="{Binding $parent[SuperNavigationView].CompactPaneLength}"/>
 	</Style>
-	
+
+
 	<Style Selector=":is(SuperNavigationViewItemBase)[IsOpen=true] /template/ Border#PART_ContainerBorder">
 		<Setter Property="Opacity" Value="1"/>
 	</Style>

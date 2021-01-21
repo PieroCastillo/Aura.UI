@@ -1,11 +1,12 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
-    public class ShadowsPage : UserControl
+    public class NavigationViewPage : UserControl
     {
-        public ShadowsPage()
+        public NavigationViewPage()
         {
             this.InitializeComponent();
         }

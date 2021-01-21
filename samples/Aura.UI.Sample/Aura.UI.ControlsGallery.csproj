@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
@@ -70,14 +70,18 @@
     </AvaloniaXaml>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-rc1" />
+    <PackageReference Include="Avalonia" Version="0.10.999-cibuild0012558-beta" />
     <PackageReference Include="Avalonia.AvaloniaEdit" Version="0.10.0-rc1" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc1" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-rc1" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.999-cibuild0012558-beta" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.999-cibuild0012558-beta" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />
-    <ProjectReference Include="..\..\src\Aura.UI.Lighting\Aura.UI.Lighting.csproj" />
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Pages\GroupBoxPage.axaml.cs">
+      <DependentUpon>GroupBoxPage.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

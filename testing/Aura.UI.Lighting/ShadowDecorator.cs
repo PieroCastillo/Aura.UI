@@ -2,18 +2,21 @@
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Data;
+using Avalonia.Interactivity;
 using Avalonia.Media;
+using Avalonia.Threading;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Aura.UI.Lighting
 {
     public class ShadowDecorator : Border
     {
-         public readonly static AttachedProperty<bool> VisibleProperty =
-            AvaloniaProperty.RegisterAttached<ShadowDecorator, Control, bool>("Visible", false);
+        public readonly static AttachedProperty<bool> VisibleProperty =
+           AvaloniaProperty.RegisterAttached<ShadowDecorator, Control, bool>("Visible", false);
 
         public static bool GetVisible(Control control) => control.GetValue(VisibleProperty);
         public static void SetVisible(Control control, bool value) => control.SetValue(VisibleProperty, value);
@@ -38,36 +41,36 @@ namespace Aura.UI.Lighting
         public static CornerRadius GetShadowCornerRadius(Control element) => element.GetValue(ShadowCornerRadiusProperty);
         public static void SetShadowCornerRadius(Control element, CornerRadius value) => element.SetValue(ShadowCornerRadiusProperty, value);
 
-        public static readonly AttachedProperty<Border> CurrentProperty = 
+        public static readonly AttachedProperty<Border> CurrentProperty =
             AvaloniaProperty.RegisterAttached<ShadowDecorator, Control, Border>("Current");
         public static Border GetCurrent(Control control) => control.GetValue(CurrentProperty);
         public static void SetCurrent(Control control, Border value) => control.SetValue(CurrentProperty, value);
 
         static ShadowDecorator()
         {
-            //var app = Application.Current;
-
-            //if(app is IClassicDesktopStyleApplicationLifetime c)
-            //{
-            //    c.MainWindow.TemplateApplied += (s, e) =>
-            //    {
-                    
-            //    };
-            //}
-            //else if(app is ISingleViewApplicationLifetime s)
-            //{
-
-            //}
-            //ShadowProperty.Changed.AddClassHandler<Control>(ShadowDecoratorService.Current.ShadowChanged);
-            //ShadowCornerRadiusProperty.Changed.AddClassHandler<Control>(ShadowDecoratorService.Current.ShadowCornerRadiusChanged);
-
-            VisibleProperty.Changed.Subscribe(ShadowDecoratorService.Current.VisibleChanged);
-            ShadowProperty.Changed.Subscribe(ShadowDecoratorService.Current.ShadowChanged);
-            ShadowCornerRadiusProperty.Changed.Subscribe(ShadowDecoratorService.Current.ShadowCornerRadiusChanged);
-
             
+            new Action(Attach_Detach).Invoke();
 
-            Debug.WriteLine("subscriptions added");
+            void Attach_Detach()//object sender, RoutedEventArgs e
+            {
+                VisibleProperty.Changed.Subscribe(ShadowDecoratorService.Current.VisibleChanged);
+                ShadowProperty.Changed.AddClassHandler<Control>(ShadowDecoratorService.Current.ShadowChanged);
+                ShadowCornerRadiusProperty.Changed.AddClassHandler<Control>(ShadowDecoratorService.Current.ShadowCornerRadiusChanged);
+
+                Debug.WriteLine("subscriptions added");
+            }
         }
-    } 
+
+
+    }        
+    public static class ShadowDecoratorActivator
+    {
+        public static void ActivateShadows(this Control control)
+        {
+            var _b = ShadowDecorator.GetVisible(control);
+
+            ShadowDecorator.SetVisible(control, !_b);
+            ShadowDecorator.SetVisible(control, _b);
+        }
+    }
 }

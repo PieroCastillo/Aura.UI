@@ -21,8 +21,5 @@
 			<SubType>Designer</SubType>
 		</AvaloniaResource>
 	</ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Aura.UI.Mobile\Aura.UI.Mobile.csproj" />
-  </ItemGroup>
 
 </Project>

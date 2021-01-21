@@ -7,13 +7,13 @@
 	<StyleInclude Source="/Styles/AuraTabItemStyles.xaml"/>
 	<StyleInclude Source="/Styles/AuraTabViewStyles.xaml"/>
 	<StyleInclude Source="/Styles/TitleBoxStyles.xaml"/>
-	<StyleInclude Source="/Styles/ColorPickerButtonStyles.xaml"/>
+	<!--<StyleInclude Source="/Styles/ColorPickerButtonStyles.xaml"/>-->
 	<StyleInclude Source="/Styles/PageStyles.xaml"/> 
 	<StyleInclude Source="/Styles/PagesViewStyles.xaml"/>
-	<StyleInclude Source="/Styles/HSLIndicatorStyles.xaml"/>
+	<!--<StyleInclude Source="/Styles/HSLIndicatorStyles.xaml"/>-->
+	<!--<StyleInclude Source="/Styles/RGBIndicatorStyles.xaml"/>-->
 	<StyleInclude Source="/Styles/FilledSliderStyles.xaml"/>  
-	<StyleInclude Source="/Styles/RGBIndicatorStyles.xaml"/>
-	<StyleInclude Source="/Styles/SuperColorPickerStyles.xaml"/>
+	<!--<StyleInclude Source="/Styles/SuperColorPickerStyles.xaml"/>-->
 	<StyleInclude Source="/Styles/ModernSliderStyles.xaml"/>
 	<StyleInclude Source="/Styles/MaterialButtonStyles.xaml"/>
 	<StyleInclude Source="/Styles/GroupBoxStyles.xaml"/>
@@ -45,30 +45,12 @@
 	<StyleInclude Source="/Styles/MessageDialogStyles.xaml"/>
 	<StyleInclude Source="/Styles/Navigation/SuperNavigationViewItemStyles.xaml"/>
 	<StyleInclude Source="/Styles/Navigation/SuperNavigationViewStyles.xaml"/>
-	<StyleInclude Source="/Styles/SliderGroups/RGBSliderGroup.xaml"/>
+	<!--<StyleInclude Source="/Styles/SliderGroups/RGBSliderGroup.xaml"/>-->
 	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButton.xaml"/>
 	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButtonBar.xaml"/>
 	
 	
 	<!--I do not the reason of why when I write the ModernSlider Styles in its xaml, that does not compile-->
-	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/> 
-	</Style>
-	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_IncreaseButton">  
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidHighBrush}"/>
-	</Style>
-	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_IncreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/> 
-	</Style> 
-	<Style Selector="ModernSlider /template/ MaterialButton#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush2}"/> 
-	</Style>
-	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush}"/>
-	</Style>
-	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush1}"/>
-	</Style>
 	<Design.PreviewWith>
 		<Border Padding="20" Background="Black">
 		</Border>

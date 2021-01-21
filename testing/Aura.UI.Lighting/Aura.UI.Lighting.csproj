@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Avalonia" Version="0.10.0-rc1" />
+      <PackageReference Include="Avalonia" Version="0.10.999-cibuild0012558-beta" />
     </ItemGroup>
 
 </Project>

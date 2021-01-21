@@ -1,6 +1,5 @@
 ﻿using Aura.UI.Helpers;
 using Avalonia.Media;
-using ColorPicker.Structures;
 using System;
 using System.Collections.Generic;
 using System.Text;

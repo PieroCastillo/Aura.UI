@@ -109,46 +109,4 @@
 								 FallbackColor="{DynamicResource SystemAltHighColor}"
 								 BackgroundSource="Digger"/> 
 	</Styles.Resources>
-	<Design.PreviewWith>
-		<Border Padding="10">
-			<!--<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
-					ExpansionState="Total">
-				<RibbonItem Header="Start">
-					<RibbonPanel>
-						<RibbonGroup Header=":3" Width="200">
-							<StackPanel>
-								<Button Content="Why?"/>
-								<Button Content="Why? v2"/>
-								<Button Content="Why? v3"/>
-							</StackPanel>
-						</RibbonGroup>
-						<RibbonSeparator/>
-						<RibbonGroup Width="100">
-							<Button Content="Why?"/>
-						</RibbonGroup>
-						<RibbonSeparator></RibbonSeparator>
-						<RibbonGroup></RibbonGroup>
-					</RibbonPanel>
-				</RibbonItem>
-				<RibbonItem Header="Edit">
-					<RibbonPanel>
-						<RibbonGroup Header=":3" Width="200">
-							<StackPanel>
-								<Button Content="Why?"/>
-								<Button Content="Why? v2"/>
-								<Button Content="Why? v3"/>
-							</StackPanel>
-						</RibbonGroup>
-						<RibbonSeparator/>
-						<RibbonGroup Width="100">
-							<Button Content="Why?"/>
-						</RibbonGroup>
-						<RibbonSeparator></RibbonSeparator>
-						<RibbonGroup></RibbonGroup>
-					</RibbonPanel>
-				</RibbonItem>
-			</Ribbon>-->
-			<MaterialButton Content="wenas" Material="{DynamicResource NullBrush}"/>
-		</Border>
-	</Design.PreviewWith>
 </Styles>
