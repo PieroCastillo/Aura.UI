@@ -40,12 +40,9 @@
 			<ControlTemplate>
 				<Grid ColumnDefinitions="auto,auto">
 					<ToggleButton Name="PART_Button" IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}">
-						<ToggleButton.Transitions>
-							<Transitions>
-								<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" 
-															   Duration="0:0:.5"/>
-							</Transitions>
-						</ToggleButton.Transitions>
+						<ToggleButton.RenderTransform>
+							<RotateTransform/>
+						</ToggleButton.RenderTransform>
 						<Image Name="PART_Image" Source="{TemplateBinding Icon}"/>
 					</ToggleButton>
 					<ItemsPresenter Grid.Column="1"
@@ -94,16 +91,31 @@
 
 	<!--FloatingButtonBar[ExpandDirection=ToRight][IsExpanded=False] /template/ 
 	FloatingButtonBar[ExpandDirection=ToRight][IsExpanded=True] /template/-->
-	
-	<Style Selector="FloatingButtonBar[IsExpanded=false] ToggleButton#PART_Button">
-		<Setter Property="RenderTransform">
-			<RotateTransform Angle="0"/>
-		</Setter>
+
+	<Style Selector="FloatingButtonBar[IsExpanded=true] /template/ ToggleButton#PART_Button">
+		<Style.Animations>
+			<Animation Duration="0:0:.2" Easing="ExponentialEaseOut" FillMode="Forward">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="0"/>	<!--RotateTransform.Angle-->
+				</KeyFrame> 
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="45"/><!--RotateTransform.Angle-->
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
 	</Style>
-	
-	<Style Selector="FloatingButtonBar[IsExpanded=true] ToggleButton#PART_Button">
-		<Setter Property="RenderTransform">
-			<RotateTransform Angle="45"/>
-		</Setter>
+	<Style Selector="FloatingButtonBar[IsExpanded=false] /template/ ToggleButton#PART_Button">
+		<Style.Animations>
+			<Animation Duration="0:0:.2" Easing="ExponentialEaseOut" FillMode="Forward">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="45"/>
+					<!--RotateTransform.Angle-->
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="0"/>
+					<!--RotateTransform.Angle-->
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
 	</Style>
 </Styles>

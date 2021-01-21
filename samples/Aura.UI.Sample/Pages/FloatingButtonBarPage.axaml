@@ -17,6 +17,30 @@
 				<FloatingButton/>
 				<FloatingButton/>
 			</FloatingButtonBar>
+
+			<FloatingButtonBar IsExpanded="True" OpenLength="250"
+							   ExpandDirection="ToLeft">
+				<FloatingButton/>
+				<FloatingButton/>
+				<FloatingButton/>
+				<FloatingButton/>
+			</FloatingButtonBar>
+			
+			<FloatingButtonBar IsExpanded="True" OpenLength="250"
+							   ExpandDirection="ToTop">
+				<FloatingButton/>
+				<FloatingButton/>
+				<FloatingButton/>
+				<FloatingButton/>
+			</FloatingButtonBar>
+			
+			<FloatingButtonBar IsExpanded="True" OpenLength="250"
+							   ExpandDirection="ToBottom">
+				<FloatingButton/>
+				<FloatingButton/>
+				<FloatingButton/>
+				<FloatingButton/>
+			</FloatingButtonBar>
 		</UniformGrid>
 	</Grid>
 </UserControl>
