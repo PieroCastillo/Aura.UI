@@ -70,10 +70,10 @@
     </AvaloniaXaml>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.999-cibuild0012558-beta" />
+    <PackageReference Include="Avalonia" Version="0.10.0-rc2" />
     <PackageReference Include="Avalonia.AvaloniaEdit" Version="0.10.0-rc1" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.999-cibuild0012558-beta" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.999-cibuild0012558-beta" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc2" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-rc2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />

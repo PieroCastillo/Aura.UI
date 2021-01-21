@@ -2,7 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"
+			 VerticalAlignment="Center"
+			 HorizontalAlignment="Center"
              x:Class="Aura.UI.ControlsGallery.Pages.FloatingButtonBarPage">
 	<Grid>
 		<TextBlock>
@@ -10,7 +12,7 @@
 				The FloatingButtonBar is a Control that can organize Buttons.
 			</x:String>
 		</TextBlock>
-		<UniformGrid Rows="2" Columns="2">
+		<UniformGrid Rows="2" Columns="2" Width="700" Height="700">
 			<FloatingButtonBar IsExpanded="True" OpenLength="250">
 				<FloatingButton/>
 				<FloatingButton/>
@@ -19,7 +21,8 @@
 			</FloatingButtonBar>
 
 			<FloatingButtonBar IsExpanded="True" OpenLength="250"
-							   ExpandDirection="ToLeft">
+							   ExpandDirection="ToLeft" 
+							   UseLayoutRounding="False">
 				<FloatingButton/>
 				<FloatingButton/>
 				<FloatingButton/>
