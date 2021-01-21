@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Aura.UI.Controls.Navigation
 {
-    public partial class SuperNavigationView
+    public partial class NavigationView
     {
         public object Header
         {
@@ -16,7 +16,7 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(HeaderProperty, value);
         }
         public readonly static StyledProperty<object> HeaderProperty =
-            AvaloniaProperty.Register<SuperNavigationView, object>(nameof(Header), "Header");
+            AvaloniaProperty.Register<NavigationView, object>(nameof(Header), "Header");
 
         public IImage Icon
         {
@@ -24,7 +24,7 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(IconProperty, value);
         }
         public readonly static StyledProperty<IImage> IconProperty =
-            AvaloniaProperty.Register<SuperNavigationView, IImage>(
+            AvaloniaProperty.Register<NavigationView, IImage>(
                 nameof(Icon));
 
         private object _title;
@@ -33,8 +33,8 @@ namespace Aura.UI.Controls.Navigation
             get => _title;
             private set => SetAndRaise(TitleProperty, ref _title, value);
         }
-        public readonly static DirectProperty<SuperNavigationView, object> TitleProperty =
-            AvaloniaProperty.RegisterDirect<SuperNavigationView, object>(
+        public readonly static DirectProperty<NavigationView, object> TitleProperty =
+            AvaloniaProperty.RegisterDirect<NavigationView, object>(
                 nameof(Title),
                 o => o.Title);
 
@@ -45,8 +45,8 @@ namespace Aura.UI.Controls.Navigation
             private set => SetAndRaise(SelectedContentProperty, ref _selectedcontent, value);
         }
 
-        public readonly static DirectProperty<SuperNavigationView, object> SelectedContentProperty =
-            AvaloniaProperty.RegisterDirect<SuperNavigationView, object>(
+        public readonly static DirectProperty<NavigationView, object> SelectedContentProperty =
+            AvaloniaProperty.RegisterDirect<NavigationView, object>(
                 nameof(SelectedContent),
                 o => o.SelectedContent);
 
@@ -57,7 +57,7 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(CompactPaneLengthProperty, value);
         }
         public readonly static StyledProperty<double> CompactPaneLengthProperty =
-            AvaloniaProperty.Register<SuperNavigationView, double>(nameof(CompactPaneLength), 50);
+            AvaloniaProperty.Register<NavigationView, double>(nameof(CompactPaneLength), 50);
 
         public double OpenPaneLength
         {
@@ -65,7 +65,7 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(OpenPaneLengthProperty, value);
         }
         public readonly static StyledProperty<double> OpenPaneLengthProperty =
-            AvaloniaProperty.Register<SuperNavigationView, double>(nameof(OpenPaneLength), 200);
+            AvaloniaProperty.Register<NavigationView, double>(nameof(OpenPaneLength), 200);
 
         public bool IsOpen
         {
@@ -73,7 +73,7 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(IsOpenProperty, value);
         }
         public readonly static StyledProperty<bool> IsOpenProperty =
-            AvaloniaProperty.Register<SuperNavigationView, bool>(nameof(IsOpen), true);
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), true);
 
         public bool HideTitle
         {
@@ -81,7 +81,7 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(HideTitleProperty, value);
         }
         public readonly static StyledProperty<bool> HideTitleProperty =
-            AvaloniaProperty.Register<SuperNavigationView, bool>(nameof(HideTitle), false);
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(HideTitle), false);
 
         public bool AlwaysOpen
         {
@@ -89,7 +89,7 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(AlwaysOpenProperty, value);
         }
         public readonly static StyledProperty<bool> AlwaysOpenProperty =
-            AvaloniaProperty.Register<SuperNavigationView, bool>(nameof(IsOpen), false);
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), false);
 
         public SplitViewDisplayMode DisplayMode
         {
@@ -97,6 +97,6 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(DisplayModeProperty, value);
         }
         public static readonly StyledProperty<SplitViewDisplayMode> DisplayModeProperty =
-            AvaloniaProperty.Register<SuperNavigationView, SplitViewDisplayMode>(nameof(DisplayMode), SplitViewDisplayMode.CompactInline);
+            AvaloniaProperty.Register<NavigationView, SplitViewDisplayMode>(nameof(DisplayMode), SplitViewDisplayMode.CompactInline);
     }
 }

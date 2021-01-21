@@ -3,54 +3,77 @@
 		x:Class="Aura.UI.AuraUITheme">
 	<!--<Styles.Resources>
 		<SolidColorBrush x:Key="ThemeBackgroundBrush" Color="#FF111111"/>
-	</Styles.Resources>-->
+	</Styles.Resources>--><!--
 	<StyleInclude Source="/Styles/AuraTabItemStyles.xaml"/>
 	<StyleInclude Source="/Styles/AuraTabViewStyles.xaml"/>
 	<StyleInclude Source="/Styles/TitleBoxStyles.xaml"/>
-	<!--<StyleInclude Source="/Styles/ColorPickerButtonStyles.xaml"/>-->
+	--><!--<StyleInclude Source="/Styles/ColorPickerButtonStyles.xaml"/>--><!--
 	<StyleInclude Source="/Styles/PageStyles.xaml"/> 
 	<StyleInclude Source="/Styles/PagesViewStyles.xaml"/>
-	<!--<StyleInclude Source="/Styles/HSLIndicatorStyles.xaml"/>-->
-	<!--<StyleInclude Source="/Styles/RGBIndicatorStyles.xaml"/>-->
+	--><!--<StyleInclude Source="/Styles/HSLIndicatorStyles.xaml"/>--><!--
+	--><!--<StyleInclude Source="/Styles/RGBIndicatorStyles.xaml"/>--><!--
 	<StyleInclude Source="/Styles/FilledSliderStyles.xaml"/>  
-	<!--<StyleInclude Source="/Styles/SuperColorPickerStyles.xaml"/>-->
+	--><!--<StyleInclude Source="/Styles/SuperColorPickerStyles.xaml"/>--><!--
 	<StyleInclude Source="/Styles/ModernSliderStyles.xaml"/>
 	<StyleInclude Source="/Styles/MaterialButtonStyles.xaml"/>
 	<StyleInclude Source="/Styles/GroupBoxStyles.xaml"/>
 	<StyleInclude Source="avares://Aura.UI/Languages/EnglishLanguage.xaml"/>
 	
-	<!--New Controls added to 0.1.3-preview2-->
+	--><!--New Controls added to 0.1.3-preview2--><!--
 	<StyleInclude Source="/Styles/RibbonStyles.xaml"/>
 	<StyleInclude Source="/Styles/RibbonGroupStyles.xaml"/>
 	<StyleInclude Source="/Styles/RibbonSeparatorStyles.xaml"/> 
 	<StyleInclude Source="/Styles/RibbonItemStyles.xaml"/>
 
-	<!--New Controls added to 0.1.3-preview3-->
+	--><!--New Controls added to 0.1.3-preview3--><!--
 	<StyleInclude Source="/Styles/SuperListBoxItemStyles.xaml"/>
 
-	<!--New Controls added to 0.1.3-preview4-->
+	--><!--New Controls added to 0.1.3-preview4--><!--
 	<StyleInclude Source="/Styles/ShadowButtonStyles.xaml"/>
-	<StyleInclude Source="/Styles/Navigation/NavigationViewStyles.xaml"/>
-	<StyleInclude Source="/Styles/Navigation/NavigationViewItemStyles.xaml"/>
 
-	<!--New Controls added to 0.1.3-preview7-->
+	--><!--New Controls added to 0.1.3-preview7--><!--
 	<StyleInclude Source="/Styles/CardControlStyles.xaml"/>
 	<StyleInclude Source="/Styles/CardCollectionStyles.xaml"/>
 	
-	<!--New controls added to 0.1.3-preview8-->
+	--><!--New controls added to 0.1.3-preview8--><!--
 	<StyleInclude Source="/Styles/FollowerStyles.xaml"/>
 	
-	<!--New controls added to 0.1.3-preview91 -->
+	--><!--New controls added to 0.1.3-preview91 --><!--
 	<StyleInclude Source="/Styles/ControlDialogStyles.xaml"/>
 	<StyleInclude Source="/Styles/MessageDialogStyles.xaml"/>
-	<StyleInclude Source="/Styles/Navigation/SuperNavigationViewItemStyles.xaml"/>
-	<StyleInclude Source="/Styles/Navigation/SuperNavigationViewStyles.xaml"/>
-	<!--<StyleInclude Source="/Styles/SliderGroups/RGBSliderGroup.xaml"/>-->
+	<StyleInclude Source="/Styles/Navigation/NavigationViewItemStyles.xaml"/>
+	<StyleInclude Source="/Styles/Navigation/NavigationViewStyles.xaml"/>
+	--><!--<StyleInclude Source="/Styles/SliderGroups/RGBSliderGroup.xaml"/>--><!--
 	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButton.xaml"/>
-	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButtonBar.xaml"/>
+	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButtonBar.xaml"/>-->
 	
+	<StyleInclude Source="/AuraAcrylicBase.xaml"/>
+	<StyleInclude Source="/Controls/AuraTabItem/AuraTabItemStyles.xaml"/>
+	<StyleInclude Source="/Controls/AuraTabView/AuraTabViewStyles.xaml"/>
+	<StyleInclude Source="/Controls/Buttons/MaterialButtonStyles.xaml"/>
+	<StyleInclude Source="/Controls/Buttons/ShadowButtonStyles.xaml"/>
+	<StyleInclude Source="/Controls/CardCollection/CardCollectionStyles.xaml"/>
+	<StyleInclude Source="/Controls/CardCollection/CardControlStyles.xaml"/>
+	<StyleInclude Source="/Controls/ContentDialog/ContentlDialogStyles.xaml"/>
+	<StyleInclude Source="/Controls/FloatingButtonBar/FloatingButton.xaml"/>
+	<StyleInclude Source="/Controls/FloatingButtonBar/FloatingButtonBar.xaml"/>
+	<StyleInclude Source="/Controls/Follower/FollowerStyles.xaml"/>
+	<StyleInclude Source="/Controls/GroupBox/GroupBoxStyles.xaml"/>
+	<StyleInclude Source="/Controls/MessageDialog/MessageDialogStyles.xaml"/>
+	<StyleInclude Source="/Controls/Navigation/NavigationView/NavigationViewItemStyles.xaml"/>
+	<StyleInclude Source="/Controls/Navigation/NavigationView/NavigationViewStyles.xaml"/>
+	<StyleInclude Source="/Controls/Pages/PageStyles.xaml"/>
+	<StyleInclude Source="/Controls/Pages/PagesViewStyles.xaml"/>
+	<StyleInclude Source="/Controls/Ribbon/RibbonGroupStyles.xaml"/>
+	<StyleInclude Source="/Controls/Ribbon/RibbonItemStyles.xaml"/>
+	<StyleInclude Source="/Controls/Ribbon/RibbonSeparatorStyles.xaml"/>
+	<StyleInclude Source="/Controls/Ribbon/RibbonStyles.xaml"/>
+	<StyleInclude Source="/Controls/Sliders/FilledSliderStyles.xaml"/>
+	<StyleInclude Source="/Controls/Sliders/ModernSliderStyles.xaml"/>
+	<StyleInclude Source="/Controls/SuperListBox/SuperListBoxItemStyles.xaml"/>
+	<StyleInclude Source="/Controls/TitleBox/TitleBoxStyles.xaml"/>
 	
-	<!--I do not the reason of why when I write the ModernSlider Styles in its xaml, that does not compile-->
+
 	<Design.PreviewWith>
 		<Border Padding="20" Background="Black">
 		</Border>

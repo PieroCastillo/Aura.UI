@@ -18,13 +18,13 @@ using System.Threading.Tasks;
 namespace Aura.UI.Controls.Navigation
 {
     [PseudoClasses(":opened",":closed", ":selected")]
-    public partial class SuperNavigationViewItemBase : TreeViewItem, IHeadered
+    public partial class NavigationViewItemBase : TreeViewItem, IHeadered
     {
         private object _content = "Content";
 
-        static SuperNavigationViewItemBase()
+        static NavigationViewItemBase()
         {
-            IsExpandedProperty.Changed.AddClassHandler<SuperNavigationViewItemBase>(
+            IsExpandedProperty.Changed.AddClassHandler<NavigationViewItemBase>(
                 (x,e) =>
                 { 
                     if(x.IsExpanded == true)
@@ -38,9 +38,9 @@ namespace Aura.UI.Controls.Navigation
                         x.RaiseEvent(c_e);
                     }
                 });
-            OpenedEvent.AddClassHandler<SuperNavigationViewItemBase>((x, e) => x.OnOpened(x, e));
-            ClosedEvent.AddClassHandler<SuperNavigationViewItemBase>((x, e) => x.OnClosed(x, e));
-            IsSelectedProperty.Changed.AddClassHandler<SuperNavigationViewItemBase>
+            OpenedEvent.AddClassHandler<NavigationViewItemBase>((x, e) => x.OnOpened(x, e));
+            ClosedEvent.AddClassHandler<NavigationViewItemBase>((x, e) => x.OnClosed(x, e));
+            IsSelectedProperty.Changed.AddClassHandler<NavigationViewItemBase>
                 ((x, e) =>
                 {
                     if (x.IsSelected)
@@ -94,7 +94,7 @@ namespace Aura.UI.Controls.Navigation
             remove => RemoveHandler(OpenedEvent, value);
         }
         public static readonly RoutedEvent<RoutedEventArgs> OpenedEvent =
-            RoutedEvent.Register<SuperNavigationViewItemBase,RoutedEventArgs>(nameof(Opened), RoutingStrategies.Bubble);
+            RoutedEvent.Register<NavigationViewItemBase,RoutedEventArgs>(nameof(Opened), RoutingStrategies.Bubble);
 
         public event EventHandler<RoutedEventArgs> Closed
         {
@@ -102,7 +102,7 @@ namespace Aura.UI.Controls.Navigation
             remove => RemoveHandler(ClosedEvent, value);
         }
         public static readonly RoutedEvent<RoutedEventArgs> ClosedEvent =
-            RoutedEvent.Register<SuperNavigationViewItemBase, RoutedEventArgs>(nameof(Closed), RoutingStrategies.Bubble);
+            RoutedEvent.Register<NavigationViewItemBase, RoutedEventArgs>(nameof(Closed), RoutingStrategies.Bubble);
 
 
         public object Content
@@ -110,8 +110,8 @@ namespace Aura.UI.Controls.Navigation
             get => _content;
             set => SetAndRaise(ContentProperty, ref _content, value);
         }
-        public static readonly DirectProperty<SuperNavigationViewItemBase, object> ContentProperty =
-            AvaloniaProperty.RegisterDirect<SuperNavigationViewItemBase, object>(
+        public static readonly DirectProperty<NavigationViewItemBase, object> ContentProperty =
+            AvaloniaProperty.RegisterDirect<NavigationViewItemBase, object>(
                 nameof(Content),
                 o => o.Content,
                 (o,v) => o.Content = v);
@@ -122,8 +122,8 @@ namespace Aura.UI.Controls.Navigation
             get => _icon;
             set => SetAndRaise(IconProperty, ref _icon, value);
         }
-        public readonly static DirectProperty<SuperNavigationViewItemBase, IImage> IconProperty =
-            AvaloniaProperty.RegisterDirect<SuperNavigationViewItemBase, IImage>(
+        public readonly static DirectProperty<NavigationViewItemBase, IImage> IconProperty =
+            AvaloniaProperty.RegisterDirect<NavigationViewItemBase, IImage>(
                 nameof(Icon),
                 o => o.Icon,
                 (o, v) => o.Icon = v);
@@ -134,8 +134,8 @@ namespace Aura.UI.Controls.Navigation
             get => _title;
             set => SetAndRaise(TitleProperty, ref _title, value);
         }
-        public static readonly DirectProperty<SuperNavigationViewItemBase, object> TitleProperty =
-            AvaloniaProperty.RegisterDirect<SuperNavigationViewItemBase, object>(
+        public static readonly DirectProperty<NavigationViewItemBase, object> TitleProperty =
+            AvaloniaProperty.RegisterDirect<NavigationViewItemBase, object>(
                 nameof(Title),
                 o => o.Title,
                 (o, v) => o.Title = v);
@@ -146,6 +146,6 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(IsOpenProperty, value);
         }
         public static readonly StyledProperty<bool> IsOpenProperty =
-            AvaloniaProperty.Register<SuperNavigationView, bool>(nameof(IsOpen),true);
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen),true);
     }
 }

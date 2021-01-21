@@ -19,17 +19,17 @@ using System.Text;
 namespace Aura.UI.Controls.Navigation
 {
     [PseudoClasses(":normal")]
-    public partial class SuperNavigationView : TreeView, IItemsPresenterHost, IContentPresenterHost, IHeadered
+    public partial class NavigationView : TreeView, IItemsPresenterHost, IContentPresenterHost, IHeadered
     {
-        private SuperNavigationViewItemBase _headeritem;
+        private NavigationViewItemBase _headeritem;
 
-        static SuperNavigationView()
+        static NavigationView()
         {
-            SelectionModeProperty.OverrideDefaultValue<SuperNavigationView>(SelectionMode.Single);
-            SelectedItemProperty.Changed.AddClassHandler<SuperNavigationView>((x, e) => x.OnSelectedItemChanged(x, e));
+            SelectionModeProperty.OverrideDefaultValue<NavigationView>(SelectionMode.Single);
+            SelectedItemProperty.Changed.AddClassHandler<NavigationView>((x, e) => x.OnSelectedItemChanged(x, e));
         }
 
-        public SuperNavigationView()
+        public NavigationView()
         {
             PseudoClasses.Add(":normal");
         }
@@ -63,7 +63,7 @@ namespace Aura.UI.Controls.Navigation
         {
             base.OnApplyTemplate(e);
 
-            _headeritem = this.GetControl<SuperNavigationViewItemBase>(e, "PART_HeaderItem");
+            _headeritem = this.GetControl<NavigationViewItemBase>(e, "PART_HeaderItem");
 
             _headeritem.PointerPressed += (s, e_) =>
             {
@@ -98,8 +98,8 @@ namespace Aura.UI.Controls.Navigation
             }
             else
             {
-                var vs = s.GetVisualAncestors().OfType<SuperNavigationViewItemBase>().LastOrDefault();
-                (s as SuperNavigationViewItemBase).IsSelected = false;
+                var vs = s.GetVisualAncestors().OfType<NavigationViewItemBase>().LastOrDefault();
+                (s as NavigationViewItemBase).IsSelected = false;
                 SelectedItem = vs;
             }
         }
@@ -140,7 +140,7 @@ namespace Aura.UI.Controls.Navigation
 
         protected virtual void UpdateTitleAndSelectedContent()
         {
-            if (SelectedItem is SuperNavigationViewItemBase s)
+            if (SelectedItem is NavigationViewItemBase s)
             {
                 SelectedContent = s.Content;
                 Title = s.Title;

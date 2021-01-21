@@ -8,18 +8,18 @@ using System.Text;
 
 namespace Aura.UI.Controls.Navigation
 {
-    public class SuperNavigationViewItem : SuperNavigationViewItemBase
+    public class NavigationViewItem : NavigationViewItemBase
     {
-        static SuperNavigationViewItem()
+        static NavigationViewItem()
         {
-            SelectableMixin.Attach<SuperNavigationViewItem>(IsSelectedProperty);
+            SelectableMixin.Attach<NavigationViewItem>(IsSelectedProperty);
         }
 
         protected override void OnClosed(object sender, RoutedEventArgs e)
         {
             base.OnClosed(sender, e);
 
-            this.GetParentTOfLogical<SuperNavigationView>().SelectSingleItem(this);
+            this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)
@@ -30,7 +30,7 @@ namespace Aura.UI.Controls.Navigation
 
             if (!IsSelected)
             {
-                this.GetParentTOfLogical<SuperNavigationView>().SelectSingleItem(this);
+                this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
             }
         }
 
