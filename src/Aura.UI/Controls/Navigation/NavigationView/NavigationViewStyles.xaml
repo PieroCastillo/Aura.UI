@@ -3,20 +3,20 @@
 	<Design.PreviewWith>
 		<NavigationView Width="1000" CompactPaneLength="50" IsOpen="True"
 							 Height="600" SelectedItem="{Binding #st}">
-			<NavigationViewItem Header="Header" Title="Item Title" IsExpanded="True"
+			<NavigationViewItem Header="Header" Title="Item Title"
 									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
 				<NavigationViewItem Name="st" Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
 					<NavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
 					<NavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content"/>
 				</NavigationViewItem>
 			</NavigationViewItem>
-			<NavigationViewItem Header="Header" Title="Item Title" IsExpanded="True"
+			<NavigationViewItem Header="Header" Title="Item Title"
 									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
-				<NavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
+				<NavigationViewItem Header="Sub Item" Title="SubItem Title" Content="SubItem Content">
 					<NavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
 					<NavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content"/>
 				</NavigationViewItem>
-				<NavigationViewItem Header="Header" Title="Item Title" IsExpanded="True"
+				<NavigationViewItem Header="Header" Title="Item Title"
 									 Icon="/Assets/auraui-logov2.ico" Content="Item Content">
 					<NavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
 						<NavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content"/>
@@ -28,10 +28,22 @@
 	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="Microns.Menu">
-			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}"
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" 
 							  Geometry="M64 96L448 96 448 144 64 144 64 96ZM64 232L448 232 448 280 64 280 64 232ZM64 368L448 368 448 416 64 416 64 368Z"   />
 		</DrawingImage>
 	</Styles.Resources>
+
+	<Style Selector="NavigationView Separator">
+		<Setter Property="DockPanel.Dock" Value="Top"/>
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Decorator Padding="5">
+					<Border Height="1" CornerRadius="5" 
+							BoxShadow="0 0 1 0 Black" Background="{DynamicResource SystemControlBackgroundBaseHighBrush}"/>
+				</Decorator>
+			</ControlTemplate>
+		</Setter>
+	</Style>
 	<Style Selector="NavigationView">
 		<Setter Property="CompactPaneLength" Value="50"/>
 		<Setter Property="OpenPaneLength" Value="250"/>

@@ -19,17 +19,15 @@ namespace Aura.UI.Controls
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
-            Contract.Requires<NullReferenceException>(CanvasLayer != null);
-            Contract.Requires<NullReferenceException>(LayerControl != null);
             
-            CanvasLayer.Children.Add(FollowerControl);
-            LayerControl.PointerMoved += LayerControlOnPointerMoved;
+            OverlayLayer.GetOverlayLayer(this).Children.Add(FollowerControl);
+            AdornerLayer.GetAdornerLayer(this).PointerMoved += LayerControlOnPointerMoved;
         }
 
         private void LayerControlOnPointerMoved(object sender, PointerEventArgs e)
         {
 
-            var cv = CanvasLayer;
+            var cv = OverlayLayer.GetOverlayLayer(this.GetParentTOfVisual<Window>());
             
             double delta_v, delta_h;
             //double delta_vlow, delta_hlow;

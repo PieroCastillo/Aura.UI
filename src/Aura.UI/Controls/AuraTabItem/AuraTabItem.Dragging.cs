@@ -89,23 +89,28 @@ namespace Aura.UI.Controls
         protected virtual void OnDrop(object sender, DragEventArgs e)
         {
             PseudoClasses.Remove(":dragging");
-            ItemsControlOperations.MoveItemOnDrop<AuraTabView, AuraTabItem>(
-                sender, 
-                e,
-                (view,src,item) =>
-                {
-                    int h = (view.Items as IList).IndexOf(item);
+           
+
+            if(true) //TODO: check if theirs parent are the same 
+            { 
+                ItemsControlOperations.MoveItemOnDrop<AuraTabView, AuraTabItem>(
+                    sender, 
+                    e,
+                    (view,src,item) =>
+                    {
+                        int h = (view.Items as IList).IndexOf(item);
 
                     
-                    item.PseudoClasses.Remove(":dragging");
-                    view.lastselectindex = view.SelectedIndex;
-                    view.SelectedIndex = h;
-                    view.SelectedItem = (view.Items as IList)[view.SelectedIndex];
-                    var it = view.Items as IList<AuraTabItem>;
-                } );
-            Debug.WriteLine("Drag completed");
-            Debug.WriteLine($"Selected Index: {this.GetParentTOfLogical<AuraTabView>().SelectedIndex}");
-            Debug.WriteLine($"Tab Index: {(this.GetParentTOfLogical<AuraTabView>().Items as IList).IndexOf(this)}");
+                        item.PseudoClasses.Remove(":dragging");
+                        view.lastselectindex = view.SelectedIndex;
+                        view.SelectedIndex = h;
+                        view.SelectedItem = (view.Items as IList)[view.SelectedIndex];
+                        var it = view.Items as IList<AuraTabItem>;
+                    } );
+                Debug.WriteLine("Drag completed");
+                Debug.WriteLine($"Selected Index: {this.GetParentTOfLogical<AuraTabView>().SelectedIndex}");
+                Debug.WriteLine($"Tab Index: {(this.GetParentTOfLogical<AuraTabView>().Items as IList).IndexOf(this)}");
+            }
         }
 
 

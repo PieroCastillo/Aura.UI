@@ -37,10 +37,17 @@
       <SubType>Designer</SubType>
     </AvaloniaResource>
   </ItemGroup>
+
+   <ItemGroup>
+     <AvaloniaXaml Remove="AuraBrushes.axaml" />
+   </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Include="Assets\auraui-logov2.ico" />
      <AvaloniaResource Include="Assets\AuraUILogo.png" />
      <AvaloniaResource Include="Assets\noise.png" />
+     <AvaloniaResource Include="AuraBrushes.axaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
    </ItemGroup>
    <ItemGroup>
      <None Include="..\..\.editorconfig" Link=".editorconfig" />

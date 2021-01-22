@@ -17,10 +17,15 @@
 		ExtendClientAreaTitleBarHeightHint="100"
         Title="Aura.UI Controls Gallery">
 	
-	<Grid Margin="{Binding #win.OffScreenMargin}">
+	<Grid Margin="{Binding #win.OffScreenMargin}"> 
 		<NavigationView Header="Aura.UI Gallery"  SelectedItem="{Binding #el}"
 							 Icon="{DynamicResource Material.Home}" HideTitle="True"
 							 DisplayMode="{Binding #splitmodebox.SelectedItem.Content}">
+			<NavigationViewItem Header="What's new?"
+								Icon="{DynamicResource Zondicons.Announcement}">
+				
+			</NavigationViewItem>
+			<Separator/>
 			<NavigationViewItem Name="el" Header="Basic Input" 
 									 Title="Basic Input" Icon="{DynamicResource FontAwesome.CheckSquareRegular}">
 				<NavigationViewItem Header="Floating Button Bar" Title="Floating Button Bar"
@@ -61,7 +66,9 @@
 				</NavigationViewItem>
 				<NavigationViewItem Header="NavigationView" Title="Herarchical NavigationView"
 										 Icon="{DynamicResource FluentIcons.navigation_regular}">
-
+					<NavigationViewItem.Content>
+						<pg:NavigationViewPage/>
+					</NavigationViewItem.Content>
 				</NavigationViewItem>
 				<NavigationViewItem Header="Ribbon" Title="Ribbon View"
 										 Icon="{DynamicResource VSImageLib.RibbonMenu_16x}">

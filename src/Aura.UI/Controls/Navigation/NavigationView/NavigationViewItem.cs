@@ -2,6 +2,8 @@
 using Avalonia.Controls.Mixins;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.LogicalTree;
+using Avalonia.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
