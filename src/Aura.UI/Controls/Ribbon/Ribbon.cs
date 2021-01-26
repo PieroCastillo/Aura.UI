@@ -15,12 +15,7 @@ namespace Aura.UI.Controls.Ribbon
     /// This control use shows a Ribbon in the Top
     /// Use a <see cref="RibbonItem"/> to add Headers and Contents
     /// </summary>
-    [TemplatePart(Name = "PART_RightButton", Type = typeof(MaterialButton))]
-    [TemplatePart(Name = "PART_LeftButton", Type = typeof(MaterialButton))]
-    [TemplatePart(Name = "PART_Toggle", Type = typeof(ToggleButton))]
-    [PseudoClasses(":changing")]
-    //[TemplatePart(Name= ¨PART_AnimationBox", Type = typeof(AnimationBox))]
-    public class Ribbon : TabViewBase, IMaterial, IHeadered
+    public class Ribbon : TabViewBase, IHeadered
     {
         public MaterialButton LeftButton;
         public MaterialButton RightButton;
@@ -125,32 +120,6 @@ namespace Aura.UI.Controls.Ribbon
 
         #region Properties
         /// <summary>
-        /// Defines the Material for the AcrylicBorder in the Template
-        /// </summary>
-        public ExperimentalAcrylicMaterial Material
-        {
-            get { return GetValue(MaterialProperty); }
-            set { SetValue(MaterialProperty, value); }
-        }
-        public static readonly StyledProperty<ExperimentalAcrylicMaterial> MaterialProperty =
-            AvaloniaProperty.Register<Ribbon, ExperimentalAcrylicMaterial>(nameof(Material),
-                new ExperimentalAcrylicMaterial()
-                {
-                    TintColor = Colors.Black,
-                    MaterialOpacity = 1,
-                    TintOpacity = 0.85
-                });
-        /// <summary>
-        /// Defines if the Material can be visible
-        /// </summary>
-        public bool MaterialIsVisible
-        {
-            get { return GetValue(MaterialIsVisibleProperty); }
-            set { SetValue(MaterialIsVisibleProperty, value); }
-        }
-        public static readonly StyledProperty<bool> MaterialIsVisibleProperty =
-             AvaloniaProperty.Register<Ribbon, bool>(nameof(MaterialIsVisible), true);
-        /// <summary>
         /// LeftContent of the the Ribbon
         /// </summary>
         public object LeftContent
@@ -201,12 +170,6 @@ namespace Aura.UI.Controls.Ribbon
         }
         public static readonly StyledProperty<double> OpenPaneLengthProperty =
             AvaloniaProperty.Register<Ribbon, double>(nameof(OpenPaneHeight), 150);
-        //public Ribbon Self
-        //{
-        //    get { return this; }
-        //}
-        ////public static readonly StyledProperty<Ribbon> SelfProperty =
-        ////    AvaloniaProperty.Register<Ribbon, Ribbon>(nameof(Header));
         #endregion
     }
 }

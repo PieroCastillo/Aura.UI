@@ -1,26 +1,27 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
-		<Border Background="Green">
+		<Border>
 				<CardControl Header="75000"
 							SecondaryHeader="Colbreakz">
 
-					<Border Height="100" Width="100">
-						<!---->
-					</Border>
 				</CardControl>
 		</Border>
 	</Design.PreviewWith>
 	<Style Selector="CardControl">
 		<Setter Property="Padding" Value="10"/>
-		<Setter Property="BoxShadow" Value="{BoxShadow ShadowColor={StaticResource ThemeForegroundColor}, BlurRadius=7}"/><!--0 0 7 0 Black-->
-		<Setter Property="InternalBoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor={StaticResource ThemeForegroundColor}}"/><!--0 0 5 0 Black-->
+		<Setter Property="BoxShadow" Value="{BoxShadow ShadowColor={StaticResource SystemBaseHighColor}, BlurRadius=7}"/><!--0 0 7 0 Black-->
+		<Setter Property="InternalBoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor={StaticResource SystemBaseHighColor}}"/><!--0 0 5 0 Black-->
 		<Setter Property="InternalCornerRadius" Value="7"/>
 		<Setter Property="CornerRadius" Value="7"/>
 		<Setter Property="InternalPadding" Value="20"/>
-		<Setter Property="Background" Value="{DynamicResource ThemeControlHighBrush}"/>
-		<Setter Property="SecondaryBackground" Value="{DynamicResource ThemeControlMidBrush}"/>
-
+		<Setter Property="Background" Value="{DynamicResource CardControlSecondaryBackground}"/><!--ThemeControlHighBrush-->
+		<Setter Property="SecondaryBackground" Value="{DynamicResource CardControlBackground}"/><!--ThemeControlMidBrush-->
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
+			</Transitions>
+		</Setter>
 	</Style>
 	<Style Selector="CardControl"> 	
 		<Setter Property="Template">
@@ -60,11 +61,9 @@
 		</Setter>
 	</Style>
 	<Style Selector="CardControl[ScaleOnPointerOver=true]:pointerover">
-		<Setter Property="Transitions">
-			<Transitions>
-				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
-			</Transitions>
-		</Setter>
 		<Setter Property="RenderTransform" Value="scale(1.05)"/>
+	</Style>
+	<Style Selector="CardControl[ScaleOnPointerOver=false]:pointerover">
+		<Setter Property="RenderTransform" Value="scale(1)"/>
 	</Style>
 </Styles>

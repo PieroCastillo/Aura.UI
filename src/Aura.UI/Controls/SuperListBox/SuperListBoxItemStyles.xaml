@@ -5,7 +5,7 @@
 		<Setter Property="Padding" Value="10"/>
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="Template">
-			<ControlTemplate TargetType="{x:Type SuperListBoxItem}">
+			<ControlTemplate>
 				<Border Name="PART_Container"
 						Padding="{TemplateBinding Padding}"
 						Background="{TemplateBinding Background}">
@@ -22,7 +22,7 @@
 							<TextBlock Text="{TemplateBinding MainText}" FontSize="16"/>
 							<TextBlock	Grid.Row="2"
 										Text="{TemplateBinding SecondaryText}"
-									   Opacity="{DynamicResource ThemeDisabledOpacity}"/>
+									   Opacity="{DynamicResource SuperListBoxItemDisabledOpacity}"/>
 						</Grid>
 					</StackPanel>
 				</Border>
@@ -30,7 +30,7 @@
 		</Setter>
 	</Style> 
 	<Style Selector="SuperListBoxItem:disabled /template/ Border#PART_Container">
-		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/> 
+		<Setter Property="Opacity" Value="{DynamicResource SuperListBoxItemDisabledOpacity}"/> 
 	</Style>
 	<Style Selector="SuperListBoxItem:pressed:pointerover /template/ Border#PART_Container">
 		<Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>

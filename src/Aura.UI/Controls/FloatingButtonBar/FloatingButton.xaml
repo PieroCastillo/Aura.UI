@@ -1,12 +1,9 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:sys="clr-namespace:System;assembly=mscorlib">
-	<Styles.Resources>
-		<sys:Double x:Key="default_size">50</sys:Double>
-	</Styles.Resources>
 	<Style Selector="FloatingButton">
-		<Setter Property="Height" Value="{DynamicResource default_size}"/>
-		<Setter Property="Width" Value="{DynamicResource default_size}"/>
+		<Setter Property="Height" Value="{DynamicResource FloatingButtonSize}"/>
+		<Setter Property="Width" Value="{DynamicResource FloatingButtonSize}"/>
 		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAccentBrush}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -20,8 +17,8 @@
 		</Setter>
 	</Style>
 	<Style Selector="FloatingButtonBar /template/ ToggleButton#PART_Button">
-		<Setter Property="Height" Value="{DynamicResource default_size}"/>
-		<Setter Property="Width" Value="{DynamicResource default_size}"/>
+		<Setter Property="Height" Value="{DynamicResource FloatingButtonSize}"/>
+		<Setter Property="Width" Value="{DynamicResource FloatingButtonSize}"/>
 		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAccentBrush}"/>
 		<Setter Property="Template">
 			<ControlTemplate>

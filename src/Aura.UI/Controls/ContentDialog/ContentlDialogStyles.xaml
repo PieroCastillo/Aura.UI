@@ -1,12 +1,12 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui">
 	<Design.PreviewWith>
 		<Grid Width="800"
-				Height="600" Background="LightGreen">
+				Height="600" Background="Black">
 			<ContentDialog Content="Hello"/>
 		</Grid>
 	</Design.PreviewWith>
 	<Style Selector="ContentDialog">
-		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltMediumHighBrush}"/>
+		<Setter Property="Background" Value="{DynamicResource ContentDialogBackground}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid Name="PART_GridContainer"

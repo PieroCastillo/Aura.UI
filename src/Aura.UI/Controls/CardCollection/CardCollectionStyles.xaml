@@ -2,7 +2,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="CardCollection">
 		<Setter Property="Header" Value="CardCollection"/>
-		<Setter Property="Padding" Value="10"/>
+		<Setter Property="Padding" Value="{DynamicResource CardCollectionPadding}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Padding="{TemplateBinding Padding}">
@@ -48,38 +48,11 @@
 	<Design.PreviewWith>
 		<Border Width="300" >
 			<CardCollection TileMode="HorizontalDisposition" >
-				<CardControl MaterialIsVisible="False" Header="75000"
+				
+				<CardControl Header="75000"
 						SecondaryHeader="Colbreakz">
 	
-					<Border Height="100" Width="100"> <!---->
-					<Border.Background>
-						<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
-					</Border.Background>
-				</Border>
-				</CardControl>
-				<CardControl MaterialIsVisible="False" Header="75000"
-						SecondaryHeader="Colbreakz">
-	
-					<Border Height="100" Width="100"> <!---->
-					<Border.Background>
-						<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
-					</Border.Background>
-				</Border>
-				</CardControl><CardControl MaterialIsVisible="False" Header="75000"
-						SecondaryHeader="Colbreakz">
-	
-					<Border Height="100" Width="100"> <!---->
-					<Border.Background>
-						<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
-					</Border.Background>
-				</Border>
-				</CardControl><CardControl MaterialIsVisible="False" Header="75000"
-						SecondaryHeader="Colbreakz">
-	
-					<Border Height="100" Width="100"> <!---->
-						<Border.Background>
-							<ImageBrush Source="avares://Aura.UI/75000.jpg"/>
-						</Border.Background>
+					<Border Height="100" Width="100">
 					</Border>
 				</CardControl>
 			</CardCollection>

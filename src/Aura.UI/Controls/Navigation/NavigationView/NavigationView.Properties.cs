@@ -5,6 +5,9 @@ using Avalonia.Media.Imaging;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Avalonia.Collections;
+using System.Diagnostics;
+using System.Linq;
 
 namespace Aura.UI.Controls.Navigation
 {
@@ -98,5 +101,38 @@ namespace Aura.UI.Controls.Navigation
         }
         public static readonly StyledProperty<SplitViewDisplayMode> DisplayModeProperty =
             AvaloniaProperty.Register<NavigationView, SplitViewDisplayMode>(nameof(DisplayMode), SplitViewDisplayMode.CompactInline);
+
+        //private AutoCompleteBox _completeBox;
+        //public AutoCompleteBox CompleteBox
+        //{
+        //    get => _completeBox;
+        //    set => SetAndRaise(CompleteBoxProperty, ref _completeBox, value);
+        //}
+        //public readonly static DirectProperty<NavigationView, AutoCompleteBox> CompleteBoxProperty =
+        //    AvaloniaProperty.RegisterDirect<NavigationView, AutoCompleteBox>(nameof(CompleteBox),
+        //                                                                     o => o.CompleteBox,
+        //                                                                     (o, v) => o.CompleteBox = v);
+
+        public bool AutoCompleteBoxIsVisible
+        {
+            get => GetValue(AutoCompleteBoxIsVisibleProperty);
+            set => SetValue(AutoCompleteBoxIsVisibleProperty, value);
+        }
+        public readonly static StyledProperty<bool> AutoCompleteBoxIsVisibleProperty =
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(AutoCompleteBoxIsVisible), true);
+
+        private IEnumerable<string> _itemsasstrings;
+        public IEnumerable<string> ItemsAsStrings
+        {
+            get => _itemsasstrings;
+            private set
+            {
+                Debug.WriteLine($"{value.ToList().Count()}");
+                SetAndRaise(ItemsAsStringsProperty, ref _itemsasstrings, value);
+            }
+        }
+        public readonly static DirectProperty<NavigationView, IEnumerable<string>> ItemsAsStringsProperty =
+            AvaloniaProperty.RegisterDirect<NavigationView, IEnumerable<string>>(nameof(ItemsAsStrings),
+                                                                                 o => o.ItemsAsStrings);
     }
 }

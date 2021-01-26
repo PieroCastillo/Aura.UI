@@ -1,12 +1,20 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Styles.Resources>
-		<SolidColorBrush x:Key="AuraForegroundBrush"/>
-		<SolidColorBrush x:Key="AuraBackgroundBrush"/>
+		<SolidColorBrush x:Key="AuraForeground" Color="{StaticResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="AuraForeground1" Color="{StaticResource SystemBaseMediumColor}"/>
+		<SolidColorBrush x:Key="AuraForeground2" Color="{StaticResource SystemBaseLowColor}"/>
 		
-		<SolidColorBrush x:Key="AuraAccentBrush"/>
-		<SolidColorBrush x:Key="AuraAccentBrush1"/>
-		<SolidColorBrush x:Key="AuraAccentBrush2"/>
-		<SolidColorBrush x:Key="AuraAccentBrush3"/>
+		<SolidColorBrush x:Key="AuraBackground"/>
+		<SolidColorBrush x:Key="AuraBackground1"/>
+		<SolidColorBrush x:Key="AuraBackground2"/>
+
+		<SolidColorBrush x:Key="AuraError"/>
+		<SolidColorBrush x:Key="AuraError1"/>
+		
+		<SolidColorBrush x:Key="AuraAccent"/>
+		<SolidColorBrush x:Key="AuraAccent1"/>
+		<SolidColorBrush x:Key="AuraAccent2"/>
+		<SolidColorBrush x:Key="AuraAccent3"/>
 	</Styles.Resources>
 </Styles>

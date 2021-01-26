@@ -4,7 +4,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Center"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
 		<Setter Property="Padding" Value="10"/>
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterial}"/>
 		<Setter Property="CornerRadius" Value="5"/>
 		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=3, ShadowColor={StaticResource SystemBaseMediumColor}}"/><!--0 0 3 0 Black-->
 		<Setter Property="ShadowPadding" Value="5"></Setter>
@@ -34,14 +34,14 @@
 		</Setter>
 	</Style>
 	<Style Selector="ShadowButton:pointerover">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/>
+		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterialPointerOver}"/>
 	</Style>
 	<Style Selector="ShadowButton:pressed">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>
+		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterialPressed}"/>
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="10">
-			<ShadowButton Content="xd"/>
+			<ShadowButton Content="xd" Width="50"/>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

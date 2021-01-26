@@ -1,6 +1,5 @@
-﻿<Styles xmlns="https://github.com/avaloniaui"
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-	<Styles.Resources>
 		<ExperimentalAcrylicMaterial x:Key="NullBrush"  MaterialOpacity="-10" TintOpacity="0"
 											  TintColor="#00000000"
 									 FallbackColor="#00000000"></ExperimentalAcrylicMaterial>
@@ -103,10 +102,15 @@
 									 FallbackColor="{DynamicResource SystemAltHighColor}"
 									 BackgroundSource="Digger"/>
 
+
+		<ExperimentalAcrylicMaterial x:Key="SystemAcrylicAltHighUnfocusBrush" MaterialOpacity="0" TintOpacity="1"
+								 TintColor="{DynamicResource SystemAltHighColor}"
+								 FallbackColor="{DynamicResource SystemAltHighColor}"
+								 BackgroundSource="None"/>
+
 		<ExperimentalAcrylicMaterial x:Key="DefaultAcrylicRibbonBrush"
 									 TintColor="{DynamicResource SystemAltHighColor}"
 									TintOpacity="1" MaterialOpacity="0.5"
 								 FallbackColor="{DynamicResource SystemAltHighColor}"
 								 BackgroundSource="Digger"/> 
-	</Styles.Resources>
-</Styles>
+</ResourceDictionary>

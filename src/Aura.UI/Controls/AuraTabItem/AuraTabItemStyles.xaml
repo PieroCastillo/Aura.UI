@@ -6,7 +6,7 @@
 				<Border VerticalAlignment="Top"
 						Height="30" Background="Blue"
 						HorizontalAlignment="Right"/>
-				<AuraTabView TabStripPlacement="Left"
+				<AuraTabView TabStripPlacement="Top"
 								 SelectedIndex="0" Width="900" Height="600"
 								 SecondaryBackground="{DynamicResource ThemeAccentBrush4}">
 					<AuraTabItem Header="Settings" IsClosable="False">
@@ -14,30 +14,23 @@
 								HorizontalAlignment="Right"/>
 					</AuraTabItem>
 					<AuraTabItem Header="Another Tab" Name="tab">._.XD</AuraTabItem>
-
 					<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
+					<AuraTabItem Header="Another Tab" IsEnabled="False">._.XD</AuraTabItem>
 				</AuraTabView>
 			</Grid>
 		</Border>
 	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="Ionicons.CloseMD">
-			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"   />
+			<GeometryDrawing  Brush="{DynamicResource AuraTabItemForeground}" Geometry="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z"   />
 		</DrawingImage>
 	</Styles.Resources>
 	<Style Selector="AuraTabItem">
-		<Setter Property="Opacity" Value="1"/>
 		<Setter Property="HorizontalContentAlignment" Value="Left"/>
-		<Setter Property="FontSize" Value="12"/>
-		<Setter Property="VerticalAlignment" Value="Stretch"/>
-		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}"/>
-		<Setter Property="Margin" Value="0"/>
+		<Setter Property="FontSize" Value="{DynamicResource AuraTabItemFontSize}"/>
 		<Setter Property="Padding" Value="10 0"/>
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="BorderBrush" Value="Transparent"/>
 		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="HorizontalAlignment" Value="Stretch"/>
-		<Setter Property="ZIndex" Value="1"></Setter>
+		<Setter Property="Foreground" Value="{DynamicResource AuraTabItemForeground}"/>
 	</Style>
 
 	<Style Selector="AuraTabItem[TabStripPlacement=Top]">
@@ -317,9 +310,6 @@
 		</Setter>
 	</Style>
 	
-	<Style Selector="AuraTabItem:dragging">
-		<Setter Property="Opacity" Value="0.6"></Setter>
-	</Style>
 	
 	<Style Selector="AuraTabItem:selected /template/ Border#PART_Container">
 		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor={StaticResource SystemBaseHighColor}}"/>
@@ -338,9 +328,12 @@
 	</Style>
 	
 	<Style Selector="AuraTabItem:disabled">
-		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
+		<Setter Property="Opacity" Value="{DynamicResource AuraTabItemDisabledOpacity}"/>
 	</Style>
-	 
+	<Style Selector="AuraTabItem:dragging">
+		<Setter Property="Opacity" Value="{DynamicResource AuraTabItemDraggingOpacity}"></Setter>
+	</Style>
+
 	<Style Selector="AuraTabItem[IsClosing=true]">
 		<Style.Animations>
 			<Animation Duration="0:0:0.2">
@@ -363,21 +356,15 @@
 	</Style>
 	
 	<Style Selector="AuraTabItem[IsSelected=False]:pointerover">
-		<!--<Style.Animations>
-			<Animation Duration="0:0:0.2">
-				<KeyFrame Cue="100%">-->
-					<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/> 
-				<!--</KeyFrame>
-			</Animation> 
-		</Style.Animations>-->
+		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/>
 	</Style>
 	<Style Selector="AuraTabItem:pointerover">
-		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/>
-		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>		
+		<Setter Property="Background" Value="{DynamicResource AuraTabItemPointerOverBackground}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource AuraTabItemPointerOverBorderBrush}"/>		
 	</Style>
 	<Style Selector="AuraTabItem[IsSelected=True]">
-		<Setter Property="Background" Value="{DynamicResource SystemControlBackgroundAltHighBrush}"/>
-		<Setter Property="BorderBrush" Value="{DynamicResource ThemeForegroundBrush}"/>		
+		<Setter Property="Background" Value="{DynamicResource AuraTabItemIsSelectedBackground}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource AuraTabItemIsSelectedBorderBrush}"/>		
 	</Style>
 
 	

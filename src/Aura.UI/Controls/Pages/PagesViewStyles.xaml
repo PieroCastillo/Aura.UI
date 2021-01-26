@@ -23,7 +23,7 @@
 		<Border Padding="10"> 
 			<PagesView CanChangeTheWindowTitle="false"
 					   Height="200" Width="400" SelectedItem="{Binding #page}"> 
-				<Page IsSelected="true">Test 1</Page>  
+				<Page >Test 1</Page>  
 			    <Page Name="page">Test 2</Page> 
 			</PagesView> 
 		</Border> 

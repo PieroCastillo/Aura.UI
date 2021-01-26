@@ -4,7 +4,7 @@
 		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
 		<Setter Property="VerticalContentAlignment" Value="Stretch"/>
 		<Setter Property="Padding" Value="10"/>
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterial}"/>
 		<Setter Property="CornerRadius" Value="5"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="MaterialButton">
@@ -32,10 +32,10 @@
 		</Setter>
 	</Style> 
 	<Style Selector="MaterialButton:pointerover">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/>
+		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterialPointerOver}"/>
 	</Style>
 	<Style Selector="MaterialButton:pressed">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>
+		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterialPressed}"/>
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="20">

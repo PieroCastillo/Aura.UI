@@ -8,7 +8,7 @@
 				</DrawingImage>
 			</Decorator.Resources>
 			<Grid>
-				<FloatingButtonBar IsExpanded="true" OpenLength="300" ExpandDirection="ToBottom">
+				<FloatingButtonBar IsExpanded="true" OpenLength="300" ExpandDirection="ToLeft">
 					<FloatingButton>
 						<Image Stretch="Uniform" Source="{DynamicResource BoxIcons.RegularPencil}"/>
 					</FloatingButton>
@@ -111,7 +111,6 @@
 						</ItemsPresenter.Transitions>-->
 					</ItemsPresenter>
 					<ToggleButton Grid.Column="1" Name="PART_Button"
-								  Width="50"
 								  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}">
 						<ToggleButton.RenderTransform>
 							<RotateTransform/>

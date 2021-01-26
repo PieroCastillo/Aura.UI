@@ -39,15 +39,15 @@
   </ItemGroup>
 
    <ItemGroup>
-     <AvaloniaXaml Remove="AuraBrushes.axaml" />
+     <None Remove="Assets\AuraUILogo_full_icon.png" />
+     <None Remove="Assets\AuraUILogo_icon.png" />
    </ItemGroup>
+
    <ItemGroup>
-     <AvaloniaResource Include="Assets\auraui-logov2.ico" />
-     <AvaloniaResource Include="Assets\AuraUILogo.png" />
+     <AvaloniaResource Include="Assets\AuraUILogo_full_icon.png" />
+     <AvaloniaResource Include="Assets\AuraUILogo_icon.png" />
      <AvaloniaResource Include="Assets\noise.png" />
-     <AvaloniaResource Include="AuraBrushes.axaml">
-       <Generator>MSBuild:Compile</Generator>
-     </AvaloniaResource>
+	 <AvaloniaResource Include="AuraBrushes.axaml" />
    </ItemGroup>
    <ItemGroup>
      <None Include="..\..\.editorconfig" Link=".editorconfig" />
@@ -58,19 +58,19 @@
      </EmbeddedResource>
    </ItemGroup>
    <ItemGroup>
-     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0-rc2" />
-	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0-rc2" />
-	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-rc2" />
+     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
+	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
+	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
 	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="7.0.0-preview4" />
-     <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc2" />
+     <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
 	   <PackageReference Include="MathNet.Numerics" Version="4.12.0" />
-	   <PackageReference Include="Avalonia" Version="0.10.0-rc2" />
-	   <PackageReference Include="ReactiveUI" Version="13.0.27" />
+	   <PackageReference Include="Avalonia" Version="0.10.0" />
+	   <PackageReference Include="ReactiveUI" Version="13.1.1" />
 	   <PackageReference Include="SkiaSharp" Version="2.80.2" />
    </ItemGroup>
    <ItemGroup>
      <AvaloniaResource Update="AuraAcrylicBase.xaml">
-       <Generator>MSBuild:Compile</Generator>
+       <Generator></Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Controls\AuraTabView\AuraTabViewStyles.xaml">
        <Generator>MSBuild:Compile</Generator>

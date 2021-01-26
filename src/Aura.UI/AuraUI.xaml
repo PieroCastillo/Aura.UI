@@ -47,7 +47,8 @@
 	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButton.xaml"/>
 	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButtonBar.xaml"/>-->
 	
-	<StyleInclude Source="/AuraAcrylicBase.xaml"/>
+	<StyleInclude Source="/AuraUIResources.axaml"/>
+	<StyleInclude Source="/AuraBrushes.axaml"/>
 	<StyleInclude Source="/Controls/AuraTabItem/AuraTabItemStyles.xaml"/>
 	<StyleInclude Source="/Controls/AuraTabView/AuraTabViewStyles.xaml"/>
 	<StyleInclude Source="/Controls/Buttons/MaterialButtonStyles.xaml"/>
@@ -71,8 +72,15 @@
 	<StyleInclude Source="/Controls/Sliders/ModernSliderStyles.xaml"/>
 	<StyleInclude Source="/Controls/SuperListBox/SuperListBoxItemStyles.xaml"/>
 	<StyleInclude Source="/Controls/TitleBox/TitleBoxStyles.xaml"/>
-	
 
+	<Styles.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceInclude Source="/AuraAcrylicBase.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Styles.Resources>
+	
 	<Design.PreviewWith>
 		<Border Padding="20" Background="Black">
 		</Border>

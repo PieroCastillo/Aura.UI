@@ -1,13 +1,11 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="GroupBox">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="False"/>
 		<Setter Property="BorderThickness" Value="3"/>
-		<Setter Property="CornerRadius" Value="10"/>
-		<Setter Property="Padding" Value="10"/>
-		<Setter Property="Background" Value="{DynamicResource ThemeControlHighlightLowBrush}"/>
-		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderLowBrush}"/> 
+		<Setter Property="CornerRadius" Value="{DynamicResource GroupBoxCornerRadius}"/>
+		<Setter Property="Padding" Value="{DynamicResource GroupBoxPadding}"/>
+		<Setter Property="Background" Value="{DynamicResource GroupBoxBackground}"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource GroupBoxBorderBrush}"/> <!---->
 		<Setter Property="Template">
 			<ControlTemplate TargetType="GroupBox">
 				<Grid Margin="{TemplateBinding Margin}">
@@ -32,9 +30,6 @@
                         BorderThickness="{TemplateBinding BorderThickness}" 
 						CornerRadius="{TemplateBinding CornerRadius}">
 						<Grid>
-							<ExperimentalAcrylicBorder CornerRadius="{TemplateBinding CornerRadius}"
-													   Material="{TemplateBinding Material}"
-													   IsVisible="{TemplateBinding MaterialIsVisible}"/>
 							<ContentPresenter Name="PART_ContentPresenter"
 						              Margin="{TemplateBinding Padding}"
 									  Content="{TemplateBinding Content}"

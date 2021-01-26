@@ -54,7 +54,6 @@
 				<StackPanel Orientation="Horizontal" Spacing="0" VerticalAlignment="Stretch"/>
 			</ItemsPanelTemplate>
 		</Setter>
-		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Ribbon">
 				<StackPanel>  
@@ -101,7 +100,12 @@
 								                HorizontalAlignment="Right"/>
 								<ToggleButton Name="PART_Toggle" Grid.Column="4"
 								              IsChecked="True" IsThreeState="False"
-								              Background="Transparent"></ToggleButton>
+								              Background="Transparent">
+									<ToggleButton.RenderTransform>
+										<RotateTransform/>
+									</ToggleButton.RenderTransform>
+									<Image Source="{DynamicResource Octicons.TriangleDown}" Stretch="UniformToFill"/>
+								</ToggleButton>
 							</Grid>
 						</Border>
 						<Border Name="PART_ContentContainer"
@@ -116,8 +120,7 @@
 									<DoubleTransition Property="Height" Duration="0:0:0.3" Easing="QuadraticEaseOut"/>
 								</Transitions>
 							</Border.Transitions>
-							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
-													   CornerRadius="{Binding #PART_ContentContainer.CornerRadius}">
+							<ExperimentalAcrylicBorder Name="PART_RibbonAcrylicBorder" CornerRadius="{Binding #PART_ContentContainer.CornerRadius}">
 								<ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
 									<ContentPresenter Name="PART_SelectedContentHost"
 											Content="{TemplateBinding SelectedContent}"
@@ -136,29 +139,30 @@
 			</ControlTemplate>
 		</Setter> 
 	</Style>
+
+	<Style Selector="ExperimentalAcrylicBorder#PART_RibbonAcrylicBorder">
+		<Setter Property="Material" Value="{StaticResource RibbonMaterial}"/>
+	</Style>
+	
 	<!--ModernButton Styles-->
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons">
 		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="MaterialIsVisible" Value="False"/>
 		<Setter Property="ShadowPadding" Value="5 0"></Setter>
 		<Setter Property="BoxShadow" Value="0 0 0 0 Black"></Setter>
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pointerover">
 		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="True"/>
+		<!--<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>-->
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pressed">
 		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="True"/>
+		<!--<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>-->
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pressed:pointerover">
 		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="MaterialIsVisible" Value="True"/>
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>
+		<!--<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>-->
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 
@@ -208,40 +212,36 @@
 		</Style.Animations>
 	</Style>
 	
+	
 	<!--ToggleButton Icons-->
 	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ToggleButton#PART_Toggle"><!--:checked-->
-		<Setter Property="Template">
-			<ControlTemplate TargetType="ToggleButton">
-				<!-- <ExperimentalAcrylicBorder Padding="2" -->
-				<!-- 	Material="{DynamicResource ThemeAcrylicControlLowBrush}" -->
-				<!-- 	CornerRadius="{DynamicResource ToggleRadius}"> -->
-					<!-- <DrawingPresenter Width="16"> -->
-					<!-- 	<DrawingPresenter.Drawing> -->
-					<!-- 		<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}" -->
-					<!-- 			Geometry="F1M256,-341L384,-213 354,-183 256,-281 158,-183 128,-213 256,-341z"   /> -->
-					<!-- 	</DrawingPresenter.Drawing> -->
-					<!-- </DrawingPresenter> -->
-				<!-- </ExperimentalAcrylicBorder> -->
-				<Image Source="{DynamicResource Octicons.TriangleDown}" Stretch="UniformToFill"></Image>
-			</ControlTemplate>
-		</Setter>
+		<Style.Animations>
+			<Animation Duration="0:0:.3" FillMode="Forward" Easing="QuadraticEaseOut">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="180"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="0"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+		
 	</Style> 
 	<Style Selector="Ribbon[ExpansionState=Total] /template/ ToggleButton#PART_Toggle"><!--:unchecked-->
-		<Setter Property="Template">
-			<ControlTemplate TargetType="ToggleButton">
-				<!-- <ExperimentalAcrylicBorder Padding="2" -->
-				<!-- 	Material="{DynamicResource ThemeAcrylicControlLowBrush}" -->
-				<!-- 	CornerRadius="{DynamicResource ToggleRadius}"> -->
-				<!-- 	<DrawingPresenter Width="16"> -->
-				<!-- 		<DrawingPresenter.Drawing> -->
-				<!-- 			<GeometryDrawing Brush="{DynamicResource ThemeForegroundBrush}" -->
-				<!-- 				Geometry="F1M158,-345L256,-247 354,-345 384,-315 256,-187 128,-315 158,-345z"/> -->
-				<!-- 		</DrawingPresenter.Drawing> -->
-				<!-- 	</DrawingPresenter> -->
-				<!-- </ExperimentalAcrylicBorder> -->
-				<Image Source="{DynamicResource Octicons.TriangleUp}" Stretch="UniformToFill"></Image>
-			</ControlTemplate>
-		</Setter>
+		<Style.Animations>
+			<Animation Duration="0:0:.3" FillMode="Forward" Easing="QuadraticEaseOut">
+				<KeyFrame Cue="0%">
+					<Setter Property="RotateTransform.Angle" Value="0"/>
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="RotateTransform.Angle" Value="180"/>
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+	</Style>
+
+	<Style Selector="ToggleButton#PART_Toggle:checked /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="Background" Value="Transparent"/>
 	</Style>
 
 </Styles>
