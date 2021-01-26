@@ -5,7 +5,7 @@ using Avalonia.Markup.Xaml;
 
 namespace UI.Tests.Views
 {
-    public class RibbonWindowTest : ContentWindow
+    public class RibbonWindowTest : Window
     {
         public RibbonWindowTest()
         {

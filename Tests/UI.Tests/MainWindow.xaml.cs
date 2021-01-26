@@ -18,14 +18,13 @@ using Aura.UI.Services;
 
 namespace UI.Tests
 {
-    public class MainWindow : ContentWindow
+    public class MainWindow : Window
     {
         TabControl tabc;
         AuraTabView tabvw;
         Button addbtn;
         Button cbtn;
         Button open_pages;
-        ColorPickerButton pickerButton;
         Border border_bg;
         Border drag;
         public MainWindow()
@@ -49,7 +48,6 @@ namespace UI.Tests
             addbtn = this.Find<Button>("btn");
             cbtn = this.Find<Button>("cbtn");
             open_pages = this.Find<Button>("open_pages");
-            pickerButton = this.Find<ColorPickerButton>("CP_btn");
             border_bg = this.Find<Border>("border_bg");
             drag = this.Find<Border>("drag_b");
 
@@ -59,7 +57,6 @@ namespace UI.Tests
 
             drag.PointerPressed += Drag_PointerPressed;
 
-            border_bg.Background = pickerButton.Background;
         }
 
         public void HandItems(object sender, SelectionChangedEventArgs e)
@@ -104,7 +101,6 @@ namespace UI.Tests
         public void OpenCustomNavigationView(object sender, RoutedEventArgs e)
         {
             var win = new CustomNavigationViewWindow();
-            win.ShowDialog(this);
         }
 
         private void Open_pages_Click(object sender, RoutedEventArgs e)

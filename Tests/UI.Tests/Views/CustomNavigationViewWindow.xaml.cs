@@ -5,7 +5,7 @@ using Avalonia.Markup.Xaml;
 
 namespace UI.Tests.Views
 {
-    public class CustomNavigationViewWindow : ContentWindow
+    public class CustomNavigationViewWindow : Window
     {
         Border drag;
         public CustomNavigationViewWindow()
