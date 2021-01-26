@@ -4,8 +4,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
-			 VerticalAlignment="Center"
-			 HorizontalAlignment="Center"
              x:Class="Aura.UI.ControlsGallery.Pages.FloatingButtonBarPage">
 	<UserControl.Resources>
 		<sys:Boolean x:Key="value">true</sys:Boolean>
@@ -16,7 +14,9 @@
 				The FloatingButtonBar is a Control that can organize Buttons.
 			</x:String>
 		</TextBlock>
-		<CheckBox Name="check" Grid.Row="1" IsChecked="true"/>
+		<ToggleSwitch Name="check" Grid.Row="1" IsChecked="true" 
+					  OnContent="FloatingButtonBars Opened"
+					  OffContent="FloatingButtonBars Closed"/>
 		<UniformGrid Grid.Row="2" Rows="2" Columns="2" Width="700" Height="700">
 			<FloatingButtonBar IsExpanded="{Binding #check.IsChecked, Mode=TwoWay}" OpenLength="250">
 				<FloatingButton/>

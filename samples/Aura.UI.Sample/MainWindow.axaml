@@ -10,8 +10,8 @@
 		TransparencyLevelHint="{Binding #combobox.SelectedItem.Content}"
 		Background="{x:Null}"
 		WindowState="Maximized"
-		Icon="avares://Aura.UI/Assets/AuraUILogo.png"
 		WindowStartupLocation="CenterScreen"
+		Icon="avares://Aura.UI.ControlsGallery/Assets/AuraUILogo_icon.png"
 		 ExtendClientAreaToDecorationsHint="true"
 		ExtendClientAreaChromeHints="PreferSystemChrome"
 		ExtendClientAreaTitleBarHeightHint="100"
@@ -19,15 +19,16 @@
 	
 	<Grid Margin="{Binding #win.OffScreenMargin}"> 
 		<NavigationView Header="Aura.UI Gallery"  SelectedItem="{Binding #el}"
-							 Icon="{DynamicResource Material.Home}" HideTitle="True"
-							 DisplayMode="{Binding #splitmodebox.SelectedItem.Content}">
+			Name="nv"
+			Icon="{DynamicResource Material.Home}" HideTitle="True"
+			DisplayMode="{Binding #splitmodebox.SelectedItem.Content}">
 			<NavigationViewItem Header="What's new?"
 								Icon="{DynamicResource Zondicons.Announcement}">
 				
 			</NavigationViewItem>
 			<Separator/>
 			<NavigationViewItem Name="el" Header="Basic Input" 
-									 Title="Basic Input" Icon="{DynamicResource FontAwesome.CheckSquareRegular}">
+								Icon="{DynamicResource FontAwesome.CheckSquareRegular}">
 				<NavigationViewItem Header="Floating Button Bar" Title="Floating Button Bar"
 										 Icon="{DynamicResource BoxIcons.RegularCodeAlt}">
 					<NavigationViewItem.Content>
@@ -86,13 +87,14 @@
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
 				<NavigationViewItem Header="MessageDialog" Title="MessageDialog"
-										 Icon="{DynamicResource BoxIcons.SolidMessageAltDots}">
+									Icon="{DynamicResource BoxIcons.SolidMessageAltDots}">
 					<NavigationViewItem.Content>
 						<pg:MessageDialogPage/>
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
 			</NavigationViewItem>
 		</NavigationView>
+		
 		<Border Background="Transparent" VerticalAlignment="Top" Height="19" PointerPressed="EnableDrag"/>
 		<Grid  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" ColumnDefinitions="auto,auto">
 			<ComboBox Name="splitmodebox" PlaceholderText="NavigationView Display Mode"

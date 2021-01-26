@@ -8,7 +8,9 @@
     <None Remove="Assets\40000.jpg" />
     <None Remove="Assets\75000.jpg" />
     <None Remove="Assets\alonetogheterRM.jpg" />
-    <None Remove="Assets\auraui-logov2.ico" />
+    <None Remove="Assets\AuraUIBanner_v2.png" />
+    <None Remove="Assets\AuraUILogo_full_icon.png" />
+    <None Remove="Assets\AuraUILogo_icon.png" />
     <None Remove="Assets\bringtherain.jpg" />
     <None Remove="Assets\dejavu.jpg" />
     <None Remove="Assets\funny.jpg" />
@@ -30,7 +32,6 @@
     <None Remove="Assets\tonightvip.png" />
     <None Remove="Assets\virus.jpg" />
     <None Remove="Assets\younme.jpg" />
-    <None Remove="auraui-logov2.png" />
     <None Remove="Controls\CodeExample.xaml" />
   </ItemGroup>
   <ItemGroup>
@@ -38,7 +39,9 @@
     <AvaloniaResource Include="Assets\40000.jpg" />
     <AvaloniaResource Include="Assets\75000.jpg" />
     <AvaloniaResource Include="Assets\alonetogheterRM.jpg" />
-    <AvaloniaResource Include="Assets\auraui-logov2.ico" />
+    <AvaloniaResource Include="Assets\AuraUIBanner_v2.png" />
+    <AvaloniaResource Include="Assets\AuraUILogo_full_icon.png" />
+    <AvaloniaResource Include="Assets\AuraUILogo_icon.png" />
     <AvaloniaResource Include="Assets\bringtherain.jpg" />
     <AvaloniaResource Include="Assets\dejavu.jpg" />
     <AvaloniaResource Include="Assets\funny.jpg" />
@@ -60,9 +63,6 @@
     <AvaloniaResource Include="Assets\tonightvip.png" />
     <AvaloniaResource Include="Assets\virus.jpg" />
     <AvaloniaResource Include="Assets\younme.jpg" />
-    <AvaloniaResource Include="auraui-logov2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AvaloniaResource>
   </ItemGroup>
   <ItemGroup>
     <AvaloniaXaml Include="Controls\CodeExample.xaml">
@@ -70,10 +70,12 @@
     </AvaloniaXaml>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0-rc2" />
-    <PackageReference Include="Avalonia.AvaloniaEdit" Version="0.10.0-rc1" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0-rc2" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0-rc2" />
+    <PackageReference Include="Avalonia" Version="0.10.0" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="0.10.0" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
+    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />
