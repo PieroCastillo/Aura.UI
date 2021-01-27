@@ -149,20 +149,21 @@
 		<Setter Property="Background" Value="Transparent"/>
 		<Setter Property="ShadowPadding" Value="5 0"></Setter>
 		<Setter Property="BoxShadow" Value="0 0 0 0 Black"></Setter>
+		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}"/>
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pointerover">
 		<Setter Property="Background" Value="Transparent"/>
-		<!--<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>-->
+		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}"/>
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pressed">
 		<Setter Property="Background" Value="Transparent"/>
-		<!--<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>-->
+		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}"/>
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pressed:pointerover">
 		<Setter Property="Background" Value="Transparent"/>
-		<!--<Setter Property="Material" Value="{DynamicResource ThemeAcrylicBackgroundBrush}"/>-->
+		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}"/><!--ThemeAcrylicBackgroundBrush-->
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 
@@ -226,7 +227,8 @@
 			</Animation>
 		</Style.Animations>
 		
-	</Style> 
+	</Style>
+	
 	<Style Selector="Ribbon[ExpansionState=Total] /template/ ToggleButton#PART_Toggle"><!--:unchecked-->
 		<Style.Animations>
 			<Animation Duration="0:0:.3" FillMode="Forward" Easing="QuadraticEaseOut">
@@ -243,5 +245,10 @@
 	<Style Selector="ToggleButton#PART_Toggle:checked /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="Background" Value="Transparent"/>
 	</Style>
-
+	<Style Selector="ToggleButton#PART_Toggle:pointerover:pressed /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="Background" Value="Transparent"/>
+	</Style>
+	<Style Selector="ToggleButton#PART_Toggle[IsPointerOver=true] /template/ ContentPresenter#PART_ContentPresenter">
+		<Setter Property="Background" Value="Transparent"/>
+	</Style>
 </Styles>

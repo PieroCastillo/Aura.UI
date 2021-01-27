@@ -19,9 +19,9 @@ namespace Aura.UI.Controls
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
-            
-            OverlayLayer.GetOverlayLayer(this).Children.Add(FollowerControl);
-            AdornerLayer.GetAdornerLayer(this).PointerMoved += LayerControlOnPointerMoved;
+
+            CanvasLayer.Children.Add(LayerControl);
+            LayerControl.PointerMoved += LayerControlOnPointerMoved;
         }
 
         private void LayerControlOnPointerMoved(object sender, PointerEventArgs e)

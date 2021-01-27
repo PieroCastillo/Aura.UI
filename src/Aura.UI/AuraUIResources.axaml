@@ -15,13 +15,13 @@
 		<SolidColorBrush x:Key="AuraTabViewBackground" Color="{StaticResource SystemBaseLowColor}"/>
 		<SolidColorBrush x:Key="AuraTabViewForeground" Color="{StaticResource SystemBaseHighColor}"/>
 		<!--MaterialButton Resources-->
-		<DynamicResource x:Key="MaterialButtonMaterial" ResourceKey="ThemeAcrylicBackgroundBrush"/>
-		<DynamicResource x:Key="MaterialButtonMaterialPointerOver" ResourceKey="ThemeAcrylicControlMidBrush"/>
-		<DynamicResource x:Key="MaterialButtonMaterialPressed" ResourceKey="ThemeAcrylicControlLowBrush"/>
+		<DynamicResource x:Key="MaterialButtonMaterial" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicBackgroundBrush-->
+		<DynamicResource x:Key="MaterialButtonMaterialPointerOver" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicControlMidBrush-->
+		<DynamicResource x:Key="MaterialButtonMaterialPressed" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicControlLowBrush-->
 		<!--ShadowButton Resources-->
-		<DynamicResource x:Key="ShadowButtonMaterial" ResourceKey="ThemeAcrylicBackgroundBrush"/>
-		<DynamicResource x:Key="ShadowButtonMaterialPointerOver" ResourceKey="ThemeAcrylicControlMidBrush"/>
-		<DynamicResource x:Key="ShadowButtonMaterialPressed" ResourceKey="ThemeAcrylicControlLowBrush"/>
+		<DynamicResource x:Key="ShadowButtonMaterial" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicBackgroundBrush-->
+		<DynamicResource x:Key="ShadowButtonMaterialPointerOver" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicControlMidBrush-->
+		<DynamicResource x:Key="ShadowButtonMaterialPressed" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicControlLowBrush-->
 		<!--CardCollection Resources-->
 		<Thickness x:Key="CardCollectionPadding">10</Thickness>
 		<!--CardControl Resources-->
@@ -57,6 +57,9 @@
 		<!--Ribbon Resources-->
 		<StaticResource x:Key="RibbonMaterial" ResourceKey="DefaultAcrylicRibbonBrush"/>
 		<!--RibbonGroup Resources-->
+		<sys:Double x:Key="RibbonGroupDisabledOpacity">0.6</sys:Double>
+		<SolidColorBrush x:Key="RibbonGroupForeground" Color="{StaticResource SystemBaseHighColor}"/>
+		<Thickness x:Key="RibbonGroupPadding">10</Thickness>
 		<!--RibbonItem Resources-->
 		<!--FilledSlider Resources-->
 		<!--ModernSlider Resources-->

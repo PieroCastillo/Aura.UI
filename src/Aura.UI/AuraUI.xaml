@@ -48,7 +48,6 @@
 	<StyleInclude Source="/Styles/FloatingButtonBar/FloatingButtonBar.xaml"/>-->
 	
 	<StyleInclude Source="/AuraUIResources.axaml"/>
-	<StyleInclude Source="/AuraBrushes.axaml"/>
 	<StyleInclude Source="/Controls/AuraTabItem/AuraTabItemStyles.xaml"/>
 	<StyleInclude Source="/Controls/AuraTabView/AuraTabViewStyles.xaml"/>
 	<StyleInclude Source="/Controls/Buttons/MaterialButtonStyles.xaml"/>
