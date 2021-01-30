@@ -41,6 +41,7 @@
    <ItemGroup>
      <None Remove="Assets\AuraUILogo_full_icon.png" />
      <None Remove="Assets\AuraUILogo_icon.png" />
+     <None Remove="Controls\ProgressRing\ProgressRing.xaml" />
    </ItemGroup>
 
    <ItemGroup>
@@ -85,6 +86,9 @@
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Controls\GroupBox\GroupBoxStyles.xaml">
+       <Generator>MSBuild:Compile</Generator>
+     </AvaloniaResource>
+     <AvaloniaResource Update="Controls\ProgressRing\ProgressRing.xaml">
        <Generator>MSBuild:Compile</Generator>
      </AvaloniaResource>
      <AvaloniaResource Update="Languages\EnglishLanguage.xaml">

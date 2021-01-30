@@ -1,0 +1,40 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border Padding="0" ClipToBounds="False"
+				Background="LightBlue" Margin="100">
+			<ProgressRing Height="400" Width="400" ClipToBounds="False"/>
+		</Border>
+	</Design.PreviewWith>
+	<Style Selector="ProgressRing">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Grid>
+					<Path Stroke="Gray"
+						  StrokeThickness="5" Width="400" Height="400">
+						<Path.Data>
+							<EllipseGeometry RadiusX="195"
+											 RadiusY="195"
+											 Center="200,200" />
+						</Path.Data>
+					</Path>
+					<Path Stroke="{DynamicResource SystemControlHighlightAccentBrush}" StrokeThickness="5"
+						   Width="400" Height="400">
+						<Path.Data>
+							<PathGeometry>
+								<PathFigure StartPoint="0,200">
+									<ArcSegment Point="0,0" Size="200,200"
+												IsLargeArc="true"
+												SweepDirection="CounterClockwise"/>
+								</PathFigure>
+								<PathGeometry.Transform>
+									<RotateTransform Angle="0"/>
+								</PathGeometry.Transform>
+							</PathGeometry>
+						</Path.Data>
+					</Path>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>
