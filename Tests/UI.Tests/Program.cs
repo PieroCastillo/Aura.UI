@@ -19,7 +19,6 @@ namespace UI.Tests
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .UseSkia()
                 .LogToTrace();
                
     }

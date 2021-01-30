@@ -4,7 +4,7 @@
     <IsPackable>true</IsPackable>
     <LangVersion>8</LangVersion>
     <Nullable>enable</Nullable>
-    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
+    <TargetFrameworks>net5.0</TargetFrameworks>
     
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -20,75 +20,13 @@
       <SubType>Designer</SubType>
     </AvaloniaResource>
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="Assets\20000.jpg" />
-    <None Remove="Assets\40000.jpg" />
-    <None Remove="Assets\75000.jpg" />
-    <None Remove="Assets\alonetogheterRM.jpg" />
-    <None Remove="Assets\auraui-logov2.ico" />
-    <None Remove="Assets\bringtherain.jpg" />
-    <None Remove="Assets\dejavu.jpg" />
-    <None Remove="Assets\funny.jpg" />
-    <None Remove="Assets\greenlights.jpg" />
-    <None Remove="Assets\hourglass.jpg" />
-    <None Remove="Assets\howyouloveme.jpg" />
-    <None Remove="Assets\ignite.jpg" />
-    <None Remove="Assets\in2thefire.jpg" />
-    <None Remove="Assets\levels.jpg" />
-    <None Remove="Assets\morethanyouknow.jpg" />
-    <None Remove="Assets\nana.jpg" />
-    <None Remove="Assets\nerve.jpg" />
-    <None Remove="Assets\noguarantee.jpg" />
-    <None Remove="Assets\staythenight.jpg" />
-    <None Remove="Assets\summerashes.jpg" />
-    <None Remove="Assets\summershesvip.jpg" />
-    <None Remove="Assets\th2cdyro.jpg" />
-    <None Remove="Assets\tonight.jpg" />
-    <None Remove="Assets\tonightvip.png" />
-    <None Remove="Assets\virus.jpg" />
-    <None Remove="Assets\younme.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AvaloniaResource Include="Assets\20000.jpg" />
-    <AvaloniaResource Include="Assets\40000.jpg" />
-    <AvaloniaResource Include="Assets\75000.jpg" />
-    <AvaloniaResource Include="Assets\alonetogheterRM.jpg" />
-    <AvaloniaResource Include="Assets\auraui-logov2.ico" />
-    <AvaloniaResource Include="Assets\bringtherain.jpg" />
-    <AvaloniaResource Include="Assets\dejavu.jpg" />
-    <AvaloniaResource Include="Assets\funny.jpg" />
-    <AvaloniaResource Include="Assets\greenlights.jpg" />
-    <AvaloniaResource Include="Assets\hourglass.jpg" />
-    <AvaloniaResource Include="Assets\howyouloveme.jpg" />
-    <AvaloniaResource Include="Assets\ignite.jpg" />
-    <AvaloniaResource Include="Assets\in2thefire.jpg" />
-    <AvaloniaResource Include="Assets\levels.jpg" />
-    <AvaloniaResource Include="Assets\morethanyouknow.jpg" />
-    <AvaloniaResource Include="Assets\nana.jpg" />
-    <AvaloniaResource Include="Assets\nerve.jpg" />
-    <AvaloniaResource Include="Assets\noguarantee.jpg" />
-    <AvaloniaResource Include="Assets\staythenight.jpg" />
-    <AvaloniaResource Include="Assets\summerashes.jpg" />
-    <AvaloniaResource Include="Assets\summershesvip.jpg" />
-    <AvaloniaResource Include="Assets\th2cdyro.jpg" />
-    <AvaloniaResource Include="Assets\tonight.jpg" />
-    <AvaloniaResource Include="Assets\tonightvip.png" />
-    <AvaloniaResource Include="Assets\virus.jpg" />
-    <AvaloniaResource Include="Assets\younme.jpg" />
-    <AvaloniaResource Include="auraui-logov2.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AvaloniaResource>
-    <EmbeddedResource Include="Language.theme">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Avalonia" Version="0.10.0" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
-    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Avalonia" Version="0.10.0" />
+		<PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
+		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
+		<PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
+		<PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
+	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
   </ItemGroup>
