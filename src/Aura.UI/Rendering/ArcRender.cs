@@ -1,0 +1,59 @@
+﻿using Avalonia;
+using Avalonia.Media;
+using Avalonia.Platform;
+using Avalonia.Skia;
+using SkiaSharp;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
+
+namespace Aura.UI.Rendering
+{
+    public class ArcRender : AuraDrawOperationBase
+    {
+        public ArcRender(Rect bounds, 
+            IFormattedTextImpl textImpl, 
+            int stroke_w, float angle1, 
+            float angle2, 
+            Color strokeColor) : base(bounds, textImpl)
+        {
+            stroke = stroke_w;
+            StrokeColor = strokeColor;
+            _angle1 = angle1;
+            _angle2 = angle2;
+        }
+
+        private int stroke;
+        private Color StrokeColor;
+        private float _angle1;
+        private float _angle2;
+
+        public override void Render(IDrawingContextImpl drw_context)
+        {
+            if(drw_context is ISkiaDrawingContextImpl context)
+            {
+                var canvas = context.SkCanvas;
+
+                canvas.Flush();
+
+                var info = new SKImageInfo((int)Bounds.Width, (int)Bounds.Height);
+                SKRect rect = new SKRect(stroke, stroke, info.Width - stroke, info.Height - stroke);
+
+                Debug.WriteLine($"{info.Width},{info.Height}");
+
+                var paint = new SKPaint();
+                    paint.Shader = SKShader.CreateColor(StrokeColor.ToSKColor());
+                    paint.Style = SKPaintStyle.Stroke;
+                    paint.StrokeWidth = stroke;
+                    paint.IsAntialias = true;
+                    paint.Color = StrokeColor.ToSKColor();
+                    canvas.DrawArc(rect, _angle1, _angle2, false, paint);
+                
+                Debug.WriteLine("I was painted");
+            }
+        }
+
+        public override bool HitTest(Point p) => true;
+    }
+}

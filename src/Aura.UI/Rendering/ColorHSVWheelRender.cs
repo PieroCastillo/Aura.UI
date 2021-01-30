@@ -26,7 +26,6 @@ namespace Aura.UI.Rendering
             var canvas = ((ISkiaDrawingContextImpl)context)?.SkCanvas;
             if (canvas == null)
             {
-                context.Clear(Colors.White);
                 context.DrawText(new SolidColorBrush(Colors.Black),new Point(), NoSkia);
             }
             else
