@@ -19,10 +19,10 @@ namespace Aura.UI.Controls.Colouring
 
         static Arc()
         {
-            AffectsRender<Arc>(ArcColorProperty);
-            AffectsRender<Arc>(StrokeProperty);
-            AffectsRender<Arc>(StartAngleProperty);
-            AffectsRender<Arc>(SweepAngleProperty);
+            AffectsRender<Arc>(ArcColorProperty,
+                              StrokeProperty,
+                              StartAngleProperty,
+                              SweepAngleProperty);
         }
 
         public Color ArcColor
