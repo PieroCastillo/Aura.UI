@@ -7,26 +7,24 @@
         mc:Ignorable="d" 
         x:Class="UI.Tests.MainWindow"
 		Background="{x:Null}"
+		Padding="20"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
-	<Window.Styles>
-		<Style Selector=":is(Arc).rc">
-			<Style.Animations>
-				<Animation Duration="0:0:.5" FillMode="Both"
-						   RepeatCount="Infinite"
-						   IterationCount="Infinite">
-					<KeyFrame Cue="0%">
-						<Setter Property="StartAngle" Value="0"/>
-						<Setter Property="SweepAngle" Value="180"/> 
-					</KeyFrame>
-					<KeyFrame Cue="100%">
-						<Setter Property="StartAngle" Value="360"/>
-						<Setter Property="SweepAngle" Value="180"/>
-					</KeyFrame>
-				</Animation>
-			</Style.Animations>
-		</Style>
-	</Window.Styles>
-		<Arc Height="100" Width="100"
-			 ArcColor="{DynamicResource SystemAccentColorLight2}"
-			 Stroke="5" Classes="rc"/>
+	<StackPanel Spacing="20">
+		<StackPanel Orientation="Horizontal"
+					Spacing="20" HorizontalAlignment="Center">
+			<ProgressRing  Value="{Binding #num.Value, Mode=TwoWay}"
+						   IsIndeterminate="{Binding #tg.IsChecked}"
+					   Maximum="{Binding #max.Text}"
+					   Minimum="{Binding #min.Text}"/>
+			<ToggleSwitch Name="tg" OnContent="Indeterminate"
+						  OffContent="Normal"/>
+		</StackPanel>
+		<NumericUpDown Name="num" Width="210"
+					   Maximum="{Binding #max.Text}"
+					   Minimum="{Binding #min.Text}"/>
+		<TextBox Name="min" Watermark="Minimum" Text="0"
+				 UseFloatingWatermark="True"/>
+		<TextBox Name="max" Watermark="Maximum" Text="100"
+				 UseFloatingWatermark="True"/>
+	</StackPanel>
 </Window>

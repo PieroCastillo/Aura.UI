@@ -9,7 +9,7 @@ using System.Text;
 
 namespace Aura.UI.Rendering
 {
-    public class AuraDrawOperationBase : ICustomDrawOperation
+    public abstract class AuraDrawOperationBase : ICustomDrawOperation
     {
         public AuraDrawOperationBase(Rect bounds, IFormattedTextImpl noSkia)
         {

@@ -63,6 +63,7 @@
 	<StyleInclude Source="/Controls/Navigation/NavigationView/NavigationViewStyles.xaml"/>
 	<StyleInclude Source="/Controls/Pages/PageStyles.xaml"/>
 	<StyleInclude Source="/Controls/Pages/PagesViewStyles.xaml"/>
+	<StyleInclude Source="/Controls/ProgressRing/ProgressRing.xaml"/>
 	<StyleInclude Source="/Controls/Ribbon/RibbonGroupStyles.xaml"/>
 	<StyleInclude Source="/Controls/Ribbon/RibbonItemStyles.xaml"/>
 	<StyleInclude Source="/Controls/Ribbon/RibbonSeparatorStyles.xaml"/>

@@ -35,22 +35,23 @@ namespace Aura.UI.Rendering
             {
                 var canvas = context.SkCanvas;
 
-                canvas.Flush();
+                canvas.Save();
 
                 var info = new SKImageInfo((int)Bounds.Width, (int)Bounds.Height);
-                SKRect rect = new SKRect(stroke, stroke, info.Width - stroke, info.Height - stroke);
+                var s_r = stroke / 2;
+                SKRect rect = new SKRect( s_r, s_r, info.Height - s_r, info.Width - s_r);
 
-                Debug.WriteLine($"{info.Width},{info.Height}");
-
-                var paint = new SKPaint();
+                using (var paint = new SKPaint())
+                {
                     paint.Shader = SKShader.CreateColor(StrokeColor.ToSKColor());
                     paint.Style = SKPaintStyle.Stroke;
                     paint.StrokeWidth = stroke;
                     paint.IsAntialias = true;
                     paint.Color = StrokeColor.ToSKColor();
                     canvas.DrawArc(rect, _angle1, _angle2, false, paint);
-                
-                Debug.WriteLine("I was painted");
+                }
+
+                canvas.Restore();
             }
         }
 

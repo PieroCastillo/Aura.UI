@@ -54,6 +54,9 @@
 		<SolidColorBrush x:Key="NavigationViewItemPointerOver" Color="{StaticResource SystemAltLowColor}" Opacity="0.5"/>
 		<!--Page Resources-->
 		<!--PageView Resources-->
+		<!--ProgressRing-->
+		<StaticResource x:Key="ProgressRingForegroundColor" ResourceKey="SystemAccentColorLight1"/>
+		<StaticResource x:Key="ProgressRingBackgroundColor" ResourceKey="SystemChromeHighColor"/>
 		<!--Ribbon Resources-->
 		<StaticResource x:Key="RibbonMaterial" ResourceKey="DefaultAcrylicRibbonBrush"/>
 		<!--RibbonGroup Resources-->
