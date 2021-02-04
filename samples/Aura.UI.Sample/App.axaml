@@ -14,6 +14,11 @@
 		<Style Selector="TextBox">
 			<Setter Property="TextWrapping" Value="Wrap"/>
 		</Style>
+		<Style Selector="NavigationViewLinker">
+			<Setter Property="TopContent" Value="New"/>
+			<Setter Property="Height" Value="150"/>
+			<Setter Property="Width" Value="400"/>
+		</Style>
     </Application.Styles>
 	<Application.Resources>
 		<ResourceDictionary>

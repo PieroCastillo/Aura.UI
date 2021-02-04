@@ -19,6 +19,7 @@
     <None Remove="Assets\howyouloveme.jpg" />
     <None Remove="Assets\ignite.jpg" />
     <None Remove="Assets\in2thefire.jpg" />
+    <None Remove="Assets\interface.png" />
     <None Remove="Assets\levels.jpg" />
     <None Remove="Assets\morethanyouknow.jpg" />
     <None Remove="Assets\nana.jpg" />
@@ -50,6 +51,7 @@
     <AvaloniaResource Include="Assets\howyouloveme.jpg" />
     <AvaloniaResource Include="Assets\ignite.jpg" />
     <AvaloniaResource Include="Assets\in2thefire.jpg" />
+    <AvaloniaResource Include="Assets\interface.png" />
     <AvaloniaResource Include="Assets\levels.jpg" />
     <AvaloniaResource Include="Assets\morethanyouknow.jpg" />
     <AvaloniaResource Include="Assets\nana.jpg" />
@@ -76,6 +78,7 @@
     <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
     <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
+    <PackageReference Include="jp2masa.Avalonia.Flexbox" Version="0.2.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />
@@ -85,5 +88,8 @@
     <Compile Update="Pages\GroupBoxPage.axaml.cs">
       <DependentUpon>GroupBoxPage.axaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\LinkerPages\" />
   </ItemGroup>
 </Project>

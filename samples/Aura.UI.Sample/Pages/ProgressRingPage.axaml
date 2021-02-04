@@ -1,17 +1,11 @@
-﻿<Window xmlns="https://github.com/avaloniaui" 
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:ms="clr-namespace:System;assembly=netstandard"
-		xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
-        mc:Ignorable="d" 
-		SizeToContent="WidthAndHeight"
-		CanResize="False"
-        x:Class="UI.Tests.MainWindow"
-		Background="{x:Null}"
-		Padding="20"
-        Title="UI.Tests" WindowStartupLocation="CenterScreen">
-	<StackPanel Spacing="20">
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Aura.UI.ControlsGallery.Pages.ProgressRingPage">
+	<StackPanel Spacing="20" HorizontalAlignment="Center"
+				VerticalAlignment="Center">
 		<StackPanel Orientation="Horizontal"
 					Spacing="20" HorizontalAlignment="Center">
 			<ProgressRing  Value="{Binding #num.Value, Mode=TwoWay}"
@@ -29,4 +23,4 @@
 		<TextBox Name="max" Watermark="Maximum" Text="100"
 				 UseFloatingWatermark="True"/>
 	</StackPanel>
-</Window>
+</UserControl>
