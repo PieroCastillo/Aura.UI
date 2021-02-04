@@ -1,12 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.Media;
 using Avalonia.Platform;
-using Avalonia.Rendering.SceneGraph;
 using Avalonia.Skia;
 using SkiaSharp;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Rendering
 {
@@ -14,16 +11,17 @@ namespace Aura.UI.Rendering
     {
         public ColorWheelRender(Rect bounds, IFormattedTextImpl noSkia, float strokeWidth = 20) : base(bounds, noSkia)
         {
-            StrokeWidth = strokeWidth; 
+            StrokeWidth = strokeWidth;
         }
 
         public float StrokeWidth { get; }
+
         public override void Render(IDrawingContextImpl context)
         {
             // converts the impl to SKCanvas
             var canvas = (context as ISkiaDrawingContextImpl)?.SkCanvas;
             //Checks if that is valid
-            if(canvas == null)
+            if (canvas == null)
             {
                 context.Clear(Colors.White);
                 context.DrawText(new SolidColorBrush(Colors.Black), new Point(), NoSkia);
@@ -32,12 +30,12 @@ namespace Aura.UI.Rendering
             {
                 var info = new SKImageInfo((int)Bounds.Width, (int)Bounds.Height); // creates the image info
 
-                using (SKPaint paint = new SKPaint()) // creates the paint 
+                using (SKPaint paint = new SKPaint()) // creates the paint
                 {
                     // Define an array of rainbow colors
                     SKColor[] colors = new SKColor[8];
 
-                    for (int i = 0; i < colors.Length; i++) 
+                    for (int i = 0; i < colors.Length; i++)
                     {
                         colors[i] = SKColor.FromHsl(i * 360f / 7, 100, 50); //sets the colors
                     }

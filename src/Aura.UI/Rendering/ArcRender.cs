@@ -3,19 +3,15 @@ using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Skia;
 using SkiaSharp;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 
 namespace Aura.UI.Rendering
 {
     public class ArcRender : AuraDrawOperationBase
     {
-        public ArcRender(Rect bounds, 
-            IFormattedTextImpl textImpl, 
-            int stroke_w, float angle1, 
-            float angle2, 
+        public ArcRender(Rect bounds,
+            IFormattedTextImpl textImpl,
+            int stroke_w, float angle1,
+            float angle2,
             Color strokeColor) : base(bounds, textImpl)
         {
             stroke = stroke_w;
@@ -31,7 +27,7 @@ namespace Aura.UI.Rendering
 
         public override void Render(IDrawingContextImpl drw_context)
         {
-            if(drw_context is ISkiaDrawingContextImpl context)
+            if (drw_context is ISkiaDrawingContextImpl context)
             {
                 var canvas = context.SkCanvas;
 
@@ -39,7 +35,7 @@ namespace Aura.UI.Rendering
 
                 var info = new SKImageInfo((int)Bounds.Width, (int)Bounds.Height);
                 var s_r = stroke / 2;
-                SKRect rect = new SKRect( s_r, s_r, info.Height - s_r, info.Width - s_r);
+                SKRect rect = new SKRect(s_r, s_r, info.Height - s_r, info.Width - s_r);
 
                 using (var paint = new SKPaint())
                 {

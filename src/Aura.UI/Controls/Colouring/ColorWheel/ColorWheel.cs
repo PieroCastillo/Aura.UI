@@ -2,9 +2,6 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls.Colouring
 {
@@ -18,6 +15,7 @@ namespace Aura.UI.Controls.Colouring
         }
 
         private float _strokewidth = 20;
+
         public float StrokeWidth
         {
             get => _strokewidth;
@@ -28,6 +26,6 @@ namespace Aura.UI.Controls.Colouring
             AvaloniaProperty.RegisterDirect<ColorWheel, float>(
                 nameof(StrokeWidth),
                 o => o.StrokeWidth,
-                (o,v) => o.StrokeWidth = v); 
+                (o, v) => o.StrokeWidth = v);
     }
 }

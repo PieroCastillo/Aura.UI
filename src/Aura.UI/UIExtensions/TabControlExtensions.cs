@@ -1,13 +1,6 @@
 ﻿using Avalonia.Controls;
 using System;
 using System.Collections;
-using Aura.UI.Controls;
-using System.Collections.Generic;
-using System.Linq;
-using System.Diagnostics;
-using Avalonia;
-using Avalonia.Media;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Aura.UI.UIExtensions
 {
@@ -24,12 +17,11 @@ namespace Aura.UI.UIExtensions
             {
                 if (tabItem == null)
                 {
-
                 }
                 else
                 {
                     //var n_index = NewIndex(tabControl, tabItem);
-                    ((IList) tabControl.Items).Remove(tabItem); //removes the tabitem itself
+                    ((IList)tabControl.Items).Remove(tabItem); //removes the tabitem itself
                     //tabControl.SelectedIndex = n_index;
                 }
             }
@@ -39,7 +31,6 @@ namespace Aura.UI.UIExtensions
             }
             finally
             {
-                
             }
         }
 
@@ -55,13 +46,12 @@ namespace Aura.UI.UIExtensions
             {
                 if (index < 0)
                 {
-
                 }
                 else
                 {
                     //var item = (tabControl.Items as List<TabItem>).Select(x => x.IsSelected == true);
                     //tabControl.SelectedIndex = NewIndex(tabControl, index);
-                    ((IList) tabControl.Items).RemoveAt(index);
+                    ((IList)tabControl.Items).RemoveAt(index);
                 }
             }
             catch (Exception e)
@@ -81,7 +71,7 @@ namespace Aura.UI.UIExtensions
             try
             {
                 //Thanks to Grooky this is possible
-                ((IList) tabControl.Items).Add(TabItemToAdd);
+                ((IList)tabControl.Items).Add(TabItemToAdd);
                 switch (Focus)
                 {
                     case true:
@@ -98,4 +88,3 @@ namespace Aura.UI.UIExtensions
         }
     }
 }
-

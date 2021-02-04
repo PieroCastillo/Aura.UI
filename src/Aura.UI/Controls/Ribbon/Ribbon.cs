@@ -1,12 +1,9 @@
-﻿using Aura.UI.Attributes;
-using Aura.UI.Controls.Primitives;
+﻿using Aura.UI.Controls.Primitives;
 using Aura.UI.Exceptions;
 using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
-using Avalonia.Media;
 using System.Collections;
 
 namespace Aura.UI.Controls.Ribbon
@@ -19,11 +16,11 @@ namespace Aura.UI.Controls.Ribbon
     {
         public MaterialButton LeftButton;
         public MaterialButton RightButton;
-        ToggleButton ToggleStateButton;
+        private ToggleButton ToggleStateButton;
 
         public Ribbon()
         {
-            SelectedItemProperty.Changed.AddClassHandler<Ribbon>((x,e) => x.OnSelectionChanged(x,e));
+            SelectedItemProperty.Changed.AddClassHandler<Ribbon>((x, e) => x.OnSelectionChanged(x, e));
         }
 
         protected override void OnSelectionChanged(object sender, AvaloniaPropertyChangedEventArgs e)
@@ -35,6 +32,7 @@ namespace Aura.UI.Controls.Ribbon
         }
 
         #region Functionalities
+
         /// <summary>
         /// Close a RibbonItem
         /// </summary>
@@ -53,6 +51,7 @@ namespace Aura.UI.Controls.Ribbon
                 throw new AuraException<Ribbon>("The RibbonItem inserted does not exist", e);
             }
         }
+
         /// <summary>
         /// Close a RibbonItem
         /// </summary>
@@ -72,6 +71,7 @@ namespace Aura.UI.Controls.Ribbon
                 }
             }
         }
+
         /// <summary>
         /// Add a RibbonItem
         /// </summary>
@@ -84,7 +84,9 @@ namespace Aura.UI.Controls.Ribbon
                 (Items as IList).Insert(index, ribbonItemToAdd);
             }
         }
-        #endregion
+
+        #endregion Functionalities
+
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
@@ -119,6 +121,7 @@ namespace Aura.UI.Controls.Ribbon
         }
 
         #region Properties
+
         /// <summary>
         /// LeftContent of the the Ribbon
         /// </summary>
@@ -127,8 +130,10 @@ namespace Aura.UI.Controls.Ribbon
             get { return GetValue(LeftContentProperty); }
             set { SetValue(LeftContentProperty, value); }
         }
+
         public static readonly StyledProperty<object> LeftContentProperty =
              AvaloniaProperty.Register<Ribbon, object>(nameof(LeftContent), "Left");
+
         /// <summary>
         /// RightContent of the the Ribbon
         /// </summary>
@@ -137,8 +142,10 @@ namespace Aura.UI.Controls.Ribbon
             get { return GetValue(RightContentProperty); }
             set { SetValue(RightContentProperty, value); }
         }
+
         public static readonly StyledProperty<object> RightContentProperty =
             AvaloniaProperty.Register<Ribbon, object>(nameof(RightContent), "Right");
+
         /// <summary>
         /// Header of the the Ribbon
         /// </summary>
@@ -147,8 +154,10 @@ namespace Aura.UI.Controls.Ribbon
             get { return GetValue(HeaderProperty); }
             set { SetValue(HeaderProperty, value); }
         }
+
         public static readonly StyledProperty<object> HeaderProperty =
             AvaloniaProperty.Register<Ribbon, object>(nameof(Header), "Avalonia.App");
+
         /// <summary>
         /// Get or set the expansion state of the Ribbon
         /// </summary>
@@ -157,6 +166,7 @@ namespace Aura.UI.Controls.Ribbon
             get { return GetValue(ExpansionStateProperty); }
             set { SetValue(ExpansionStateProperty, value); }
         }
+
         public static readonly StyledProperty<ExpansionState> ExpansionStateProperty =
             AvaloniaProperty.Register<Ribbon, ExpansionState>(nameof(ExpansionState), ExpansionState.Total);
 
@@ -168,8 +178,10 @@ namespace Aura.UI.Controls.Ribbon
             get => GetValue(OpenPaneLengthProperty);
             set => SetValue(OpenPaneLengthProperty, value);
         }
+
         public static readonly StyledProperty<double> OpenPaneLengthProperty =
             AvaloniaProperty.Register<Ribbon, double>(nameof(OpenPaneHeight), 150);
-        #endregion
+
+        #endregion Properties
     }
 }

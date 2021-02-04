@@ -1,11 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Aura.UI.UIExtensions;
+﻿using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Input;
-using Avalonia.LogicalTree;
-using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.Controls
 {
@@ -24,7 +19,7 @@ namespace Aura.UI.Controls
         // protected override void OnKeyDown(KeyEventArgs e)
         // {
         //     var s = this.GetParentTOfLogical<PagesView>();
-        //     
+        //
         //     if (e.Key == Key.Right | e.Key is Key.PageUp)
         //     {
         //         s.Next();
@@ -42,7 +37,7 @@ namespace Aura.UI.Controls
         //         s.GoTo(s.ItemCount - 1);
         //     }
         // }
-        
+
         /// <summary>
         /// Defines the Title of the Parent Window
         /// </summary>
@@ -51,8 +46,10 @@ namespace Aura.UI.Controls
             get { return GetValue(TitleProperty); }
             set { SetValue(TitleProperty, value); }
         }
+
         public static readonly StyledProperty<string> TitleProperty =
             AvaloniaProperty.Register<Page, string>(nameof(Title), "Page");
+
         /// <summary>
         /// Indicates if the Page is selected
         /// </summary>
@@ -61,6 +58,7 @@ namespace Aura.UI.Controls
             get { return GetValue(IsSelectedProperty); }
             set { SetValue(IsSelectedProperty, value); }
         }
+
         public static readonly StyledProperty<bool> IsSelectedProperty =
             AvaloniaProperty.Register<Page, bool>(nameof(IsSelected), false);
     }

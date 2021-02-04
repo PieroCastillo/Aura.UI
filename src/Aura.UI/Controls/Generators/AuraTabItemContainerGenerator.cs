@@ -1,10 +1,6 @@
-﻿using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Controls.Generators;
 using Avalonia.Controls.Primitives;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls.Generators
 {

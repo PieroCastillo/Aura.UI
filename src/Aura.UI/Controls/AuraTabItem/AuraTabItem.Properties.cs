@@ -1,9 +1,4 @@
 ﻿using Avalonia;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Avalonia.Media;
-using Avalonia.Controls;
 
 namespace Aura.UI.Controls
 {
@@ -17,10 +12,12 @@ namespace Aura.UI.Controls
             get { return GetValue(IsClosableProperty); }
             set { SetValue(IsClosableProperty, value); }
         }
+
         public static readonly StyledProperty<bool> IsClosableProperty =
             AvaloniaProperty.Register<AuraTabItem, bool>(nameof(IsClosable), true);
 
         private bool _isclosing = false;
+
         /// <summary>
         /// Returns if the tab is closing.
         /// </summary>
@@ -41,6 +38,7 @@ namespace Aura.UI.Controls
             get { return GetValue(CornerRadiusProperty); }
             set { SetValue(CornerRadiusProperty, value); }
         }
+
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
 
@@ -49,8 +47,8 @@ namespace Aura.UI.Controls
             get => GetValue(CanBeDraggedProperty);
             set => SetValue(CanBeDraggedProperty, value);
         }
+
         public static readonly StyledProperty<bool> CanBeDraggedProperty =
             AvaloniaProperty.Register<AuraTabItem, bool>(nameof(CanBeDragged), true);
-
     }
 }

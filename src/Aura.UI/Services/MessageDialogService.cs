@@ -2,8 +2,6 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Services
 {
@@ -26,7 +24,7 @@ namespace Aura.UI.Services
             m.Content = content;
             m.Title = title;
 
-            if(OnClosing != null)
+            if (OnClosing != null)
             {
                 m.Closing += (s, e) =>
                 {

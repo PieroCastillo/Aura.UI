@@ -1,10 +1,7 @@
 ﻿using Aura.UI.Services;
-using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls.Primitives
 {
@@ -12,7 +9,7 @@ namespace Aura.UI.Controls.Primitives
     {
         public void SetOwner(WindowBase owner)
         {
-            if(owner == null)
+            if (owner == null)
             {
                 throw new ArgumentNullException("The Owner can't be null.");
             }
@@ -25,7 +22,7 @@ namespace Aura.UI.Controls.Primitives
             ContentDialogService.ShowDialogOn(Owner, this);
             var e = new RoutedEventArgs(ShowingEvent);
             RaiseEvent(e);
-            e.Handled = true; 
+            e.Handled = true;
         }
 
         public virtual void Close()
@@ -41,18 +38,18 @@ namespace Aura.UI.Controls.Primitives
             add => AddHandler(ShowingEvent, value);
             remove => RemoveHandler(ShowingEvent, value);
         }
+
         public static readonly RoutedEvent<RoutedEventArgs> ShowingEvent =
             RoutedEvent.Register<ContentDialogBase, RoutedEventArgs>(nameof(Showing), RoutingStrategies.Bubble);
-
 
         public event EventHandler<RoutedEventArgs> Closing
         {
             add => AddHandler(ClosingEvent, value);
             remove => RemoveHandler(ClosingEvent, value);
         }
+
         public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
             RoutedEvent.Register<ContentDialogBase, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
-        
 
         private WindowBase Owner
         {

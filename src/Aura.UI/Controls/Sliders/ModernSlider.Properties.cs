@@ -1,7 +1,4 @@
 ﻿using Avalonia;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls
 {
@@ -15,6 +12,7 @@ namespace Aura.UI.Controls
             get { return GetValue(CornerRadiusProperty); }
             set { SetValue(CornerRadiusProperty, value); }
         }
+
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
     }

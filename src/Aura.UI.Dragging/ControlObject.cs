@@ -37,7 +37,7 @@ namespace Aura.UI.Dragging
 
         public string? GetText()
         {
-            return nameof(Avalonia.Controls.Control);
+            return nameof(Control);
         }
 
         public IEnumerable<string>? GetFileNames()

@@ -1,48 +1,44 @@
-﻿using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
-using Avalonia.Threading;
-using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Diagnostics;
-using Avalonia.Interactivity;
-using Avalonia;
-using Aura.UI.Controls;
+﻿using Aura.UI.Controls;
 using Aura.UI.Controls.Primitives;
+using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
+using Avalonia.Interactivity;
+using Avalonia.Threading;
+using System;
+using System.Diagnostics;
 
 namespace Aura.UI.Services
 {
     public static partial class ContentDialogService
     {
-        internal  static void ShowDialogOn(WindowBase window, Control dialog)
+        internal static void ShowDialogOn(WindowBase window, Control dialog)
         {
-           Dispatcher.UIThread.Post(() =>
-           {
-               dialog.Width = window.Bounds.Width;
-               dialog.Height = window.Bounds.Height;
-               window.PropertyChanged += (s,e) =>
-               {
-                   dialog.Width = window.Bounds.Width;
-                   dialog.Height = window.Bounds.Height;
-               };
-               var layer = OverlayLayer.GetOverlayLayer(window);
-               layer.Children.Add(dialog);
-               Debug.WriteLine("dialog added");
-           });
+            Dispatcher.UIThread.Post(() =>
+            {
+                dialog.Width = window.Bounds.Width;
+                dialog.Height = window.Bounds.Height;
+                window.PropertyChanged += (s, e) =>
+                {
+                    dialog.Width = window.Bounds.Width;
+                    dialog.Height = window.Bounds.Height;
+                };
+                var layer = OverlayLayer.GetOverlayLayer(window);
+                layer.Children.Add(dialog);
+                Debug.WriteLine("dialog added");
+            });
         }
 
         internal static void CloseDialogOn(WindowBase window, Control dialog)
         {
-           Dispatcher.UIThread.Post(() => 
-           {
-               var layer = OverlayLayer.GetOverlayLayer(window);
-               if (layer.Children.Contains(dialog))
-               {
-                   layer.Children.Remove(dialog);
-               }
-               Debug.WriteLine("dialog closed");
-           });
+            Dispatcher.UIThread.Post(() =>
+            {
+                var layer = OverlayLayer.GetOverlayLayer(window);
+                if (layer.Children.Contains(dialog))
+                {
+                    layer.Children.Remove(dialog);
+                }
+                Debug.WriteLine("dialog closed");
+            });
         }
 
         public static void NewContentDialog(this WindowBase owner,
@@ -50,17 +46,17 @@ namespace Aura.UI.Services
                                          Action<object, RoutedEventArgs>? OnOKButtonClick,
                                          Action<object, RoutedEventArgs>? OnCancelButtonClick,
                                          object? OkButtonContent,
-                                         object? CancelButtonContent) 
+                                         object? CancelButtonContent)
             => NewContentDialog<ContentDialog>(
-                owner, 
-                content, 
-                OnOKButtonClick, 
-                OnCancelButtonClick, 
-                OkButtonContent, 
+                owner,
+                content,
+                OnOKButtonClick,
+                OnCancelButtonClick,
+                OkButtonContent,
                 CancelButtonContent);
 
         /// <summary>
-        /// Creates a new ContentDialog, you must set the window owner and the content, the rest parameters are optional, you can set them as null 
+        /// Creates a new ContentDialog, you must set the window owner and the content, the rest parameters are optional, you can set them as null
         /// </summary>
         /// <param name="owner">the window owner</param>
         /// <param name="content">the ContentDialog content</param>
@@ -105,8 +101,8 @@ namespace Aura.UI.Services
             dialog.Show();
         }
 
-        public static void NewCustomContentDialog<TContentDialogBase>(this WindowBase owner, 
-                                                  object content, 
+        public static void NewCustomContentDialog<TContentDialogBase>(this WindowBase owner,
+                                                  object content,
                                                   Action<object, RoutedEventArgs>? OnShowing,
                                                   Action<object, RoutedEventArgs>? OnClosing)
                                                   where TContentDialogBase : ContentDialogBase, new()
@@ -114,16 +110,16 @@ namespace Aura.UI.Services
             var c = new TContentDialogBase();
             c.SetOwner(owner);
             c.Content = content;
-            
-            if(OnShowing != null)
+
+            if (OnShowing != null)
             {
-                c.Showing += (s,e) =>
+                c.Showing += (s, e) =>
                 {
                     OnShowing.Invoke(s, e);
                 };
             }
 
-            if(OnClosing != null)
+            if (OnClosing != null)
             {
                 c.Closing += (s, e) =>
                 {
@@ -133,5 +129,5 @@ namespace Aura.UI.Services
 
             c.Show();
         }
-    } 
+    }
 }

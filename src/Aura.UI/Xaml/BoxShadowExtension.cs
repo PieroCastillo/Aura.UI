@@ -1,9 +1,6 @@
 ﻿using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Media;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Xaml
 {
@@ -28,36 +25,43 @@ namespace Aura.UI.Xaml
             get => GetValue(HorizontalLengthProperty);
             set => SetValue(HorizontalLengthProperty, value);
         }
-        public readonly static StyledProperty<double> HorizontalLengthProperty = 
-            AvaloniaProperty.Register<BoxShadowExtension, double>(nameof(HorizontalLength),0);
+
+        public readonly static StyledProperty<double> HorizontalLengthProperty =
+            AvaloniaProperty.Register<BoxShadowExtension, double>(nameof(HorizontalLength), 0);
 
         public double VerticalLength
         {
             get => GetValue(VerticalLengthProperty);
             set => SetValue(VerticalLengthProperty, value);
         }
+
         public readonly static StyledProperty<double> VerticalLengthProperty =
-            AvaloniaProperty.Register<BoxShadowExtension, double>(nameof(VerticalLength),0);
+            AvaloniaProperty.Register<BoxShadowExtension, double>(nameof(VerticalLength), 0);
+
         public double BlurRadius
         {
             get => GetValue(BlurRadiusProperty);
             set => SetValue(BlurRadiusProperty, value);
         }
+
         public readonly static StyledProperty<double> BlurRadiusProperty =
-            AvaloniaProperty.Register<BoxShadowExtension, double>(nameof(BlurRadius),5);
+            AvaloniaProperty.Register<BoxShadowExtension, double>(nameof(BlurRadius), 5);
+
         public double SpreadRadius
         {
             get => GetValue(SpreadRadiusProperty);
             set => SetValue(SpreadRadiusProperty, value);
         }
+
         public readonly static StyledProperty<double> SpreadRadiusProperty =
-            AvaloniaProperty.Register<BoxShadowExtension, double>(nameof(SpreadRadius),0);
+            AvaloniaProperty.Register<BoxShadowExtension, double>(nameof(SpreadRadius), 0);
 
         public Color ShadowColor
         {
             get => GetValue(ShadowColorProperty);
             set => SetValue(ShadowColorProperty, value);
         }
+
         public readonly static StyledProperty<Color> ShadowColorProperty =
             AvaloniaProperty.Register<BoxShadowExtension, Color>(nameof(ShadowColor));
 
@@ -66,6 +70,7 @@ namespace Aura.UI.Xaml
             get => GetValue(IsInsetProperty);
             set => SetValue(IsInsetProperty, value);
         }
+
         public readonly static StyledProperty<bool> IsInsetProperty =
             AvaloniaProperty.Register<BoxShadowExtension, bool>(nameof(IsInset), false);
     }

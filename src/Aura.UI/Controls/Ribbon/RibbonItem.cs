@@ -5,9 +5,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls.Ribbon
 {
@@ -17,7 +14,7 @@ namespace Aura.UI.Controls.Ribbon
     [TemplatePart(Name = "PART_ButtonContainer", Type = typeof(Button))]
     public class RibbonItem : TabItem, IMaterial
     {
-        Button btn_cont;
+        private Button btn_cont;
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
@@ -29,7 +26,7 @@ namespace Aura.UI.Controls.Ribbon
 
         private void Btn_cont_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            if(this.IsSelected != false)
+            if (this.IsSelected != false)
             {
                 this.ToggleRibbonRootState();
             }
@@ -38,6 +35,7 @@ namespace Aura.UI.Controls.Ribbon
                 this.IsSelected = true;
             }
         }
+
         /// <summary>
         /// Defines the Material for the AcrylicBorder in the Template
         /// </summary>
@@ -46,6 +44,7 @@ namespace Aura.UI.Controls.Ribbon
             get { return GetValue(MaterialProperty); }
             set { SetValue(MaterialProperty, value); }
         }
+
         public static readonly StyledProperty<ExperimentalAcrylicMaterial> MaterialProperty =
             AvaloniaProperty.Register<RibbonItem, ExperimentalAcrylicMaterial>(nameof(Material),
                 new ExperimentalAcrylicMaterial()
@@ -54,6 +53,7 @@ namespace Aura.UI.Controls.Ribbon
                     MaterialOpacity = 1,
                     TintOpacity = 0.85
                 });
+
         /// <summary>
         /// Defines if the Material can be visible
         /// </summary>
@@ -62,6 +62,7 @@ namespace Aura.UI.Controls.Ribbon
             get { return GetValue(MaterialIsVisibleProperty); }
             set { SetValue(MaterialIsVisibleProperty, value); }
         }
+
         public static readonly StyledProperty<bool> MaterialIsVisibleProperty =
              AvaloniaProperty.Register<RibbonItem, bool>(nameof(MaterialIsVisible), true);
     }

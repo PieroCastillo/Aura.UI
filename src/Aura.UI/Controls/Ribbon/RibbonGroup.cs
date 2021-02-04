@@ -1,14 +1,9 @@
 ﻿using Aura.UI.Attributes;
-using Aura.UI.Extensions;
 using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls.Primitives;
-using Avalonia.Controls.Shapes;
-using Avalonia.Media;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Avalonia.Interactivity;
+using System;
 
 namespace Aura.UI.Controls.Ribbon
 {
@@ -37,6 +32,7 @@ namespace Aura.UI.Controls.Ribbon
             get { return GetValue(MiniButtonProperty); }
             set { SetValue(MiniButtonProperty, value); }
         }
+
         public static readonly StyledProperty<MaterialButton> MiniButtonProperty =
             AvaloniaProperty.Register<RibbonGroup, MaterialButton>(nameof(MiniButton), new MaterialButton());
 
@@ -45,15 +41,17 @@ namespace Aura.UI.Controls.Ribbon
             get { return GetValue(MiniButtonContentProperty); }
             set { SetValue(MiniButtonContentProperty, value); }
         }
+
         public static readonly StyledProperty<object> MiniButtonContentProperty =
-            AvaloniaProperty.Register<RibbonGroup, object>(nameof(MiniButtonContent),"L");
+            AvaloniaProperty.Register<RibbonGroup, object>(nameof(MiniButtonContent), "L");
 
         public event EventHandler<RoutedEventArgs> MiniButtonClick
         {
             add => AddHandler(MiniButtonClickEvent, value);
             remove => RemoveHandler(MiniButtonClickEvent, value);
         }
-        public static readonly RoutedEvent<RoutedEventArgs> MiniButtonClickEvent = 
+
+        public static readonly RoutedEvent<RoutedEventArgs> MiniButtonClickEvent =
             RoutedEvent.Register<RibbonGroup, RoutedEventArgs>(nameof(MiniButtonClick), RoutingStrategies.Bubble);
     }
 }

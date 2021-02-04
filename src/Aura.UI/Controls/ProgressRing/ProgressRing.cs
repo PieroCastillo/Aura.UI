@@ -1,9 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls.Primitives;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Text;
 
 namespace Aura.UI.Controls
 {
@@ -18,7 +15,7 @@ namespace Aura.UI.Controls
             MaximumProperty.OverrideMetadata<ProgressRing>(new DirectPropertyMetadata<double>(100));
             MinimumProperty.OverrideMetadata<ProgressRing>(new DirectPropertyMetadata<double>(0));
             ValueProperty.OverrideMetadata<ProgressRing>(new DirectPropertyMetadata<double>(25));
-            
+
             AffectsRender<ProgressRing>(XAngleProperty, YAngleProperty);
         }
 
@@ -26,14 +23,10 @@ namespace Aura.UI.Controls
         {
             var pr = e.Sender as ProgressRing;
 
-            if(pr != null)
+            if (pr != null)
             {
                 pr.XAngle = -90;
-                var y_ang = Helpers.Maths.Calibrate(pr.Value, pr.Minimum, pr.Maximum);
-                Debug.WriteLine($"calibrate val : {y_ang}");
-                var y_s = Helpers.Maths.ToSexagesimalDegrees(y_ang) * 4;
-                pr.YAngle = y_s;
-                Debug.WriteLine($"{y_s} degrees");
+                pr.YAngle = Helpers.Maths.Calibrate(pr.Value, pr.Minimum, pr.Maximum, pr.Value) * 180;
             }
         }
     }

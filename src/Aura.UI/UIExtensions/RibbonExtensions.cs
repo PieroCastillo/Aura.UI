@@ -1,7 +1,4 @@
 ﻿using Aura.UI.Controls.Ribbon;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.UIExtensions
 {
@@ -12,7 +9,7 @@ namespace Aura.UI.UIExtensions
             var ribbonroot = ribbonItem.GetParentTOfLogical<Ribbon>();
             ribbonroot.ExpansionState = ExpansionState.Total;
         }
-        
+
         public static void CloseRibbonRoot(this RibbonItem ribbonItem)
         {
             var ribbonroot = ribbonItem.GetParentTOfLogical<Ribbon>();
@@ -27,6 +24,7 @@ namespace Aura.UI.UIExtensions
                 case ExpansionState.Hidden:
                     ribbonItem.OpenRibbonRoot();
                     break;
+
                 case ExpansionState.Total:
                     ribbonItem.CloseRibbonRoot();
                     break;

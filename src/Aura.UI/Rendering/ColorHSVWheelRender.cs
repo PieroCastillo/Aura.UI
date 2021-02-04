@@ -1,12 +1,9 @@
 ﻿using Avalonia;
 using Avalonia.Media;
 using Avalonia.Platform;
-using Avalonia.Rendering.SceneGraph;
 using Avalonia.Skia;
 using SkiaSharp;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Rendering
 {
@@ -26,7 +23,7 @@ namespace Aura.UI.Rendering
             var canvas = ((ISkiaDrawingContextImpl)context)?.SkCanvas;
             if (canvas == null)
             {
-                context.DrawText(new SolidColorBrush(Colors.Black),new Point(), NoSkia);
+                context.DrawText(new SolidColorBrush(Colors.Black), new Point(), NoSkia);
             }
             else
             {
@@ -51,7 +48,6 @@ namespace Aura.UI.Rendering
 
                     // Create sweep gradient based on center of canvas
                     paint.Shader = SKShader.CreateSweepGradient(center, colors, null);
-
 
                     float radius = (Math.Min(info.Width, info.Height) - StrokeWidth) / 2; //computes the radius
                     canvas.DrawCircle(center, radius, paint); // draw a circle with its respects parameters

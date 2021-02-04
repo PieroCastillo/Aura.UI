@@ -1,8 +1,8 @@
-using System;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
+using System;
 
 namespace Aura.UI.Controls.Thumbs
 {
@@ -12,7 +12,7 @@ namespace Aura.UI.Controls.Thumbs
     public class MoveThumb : Thumb
     {
         private Control _controltomove = new Control();
-        
+
         /// <summary>
         /// The Control to Move
         /// </summary>
@@ -28,7 +28,6 @@ namespace Aura.UI.Controls.Thumbs
                 o => o.ControlToMove,
                 (o, v) => o.ControlToMove = v);
 
-
         protected override void OnPointerPressed(PointerPressedEventArgs e)
         {
             base.OnPointerPressed(e);
@@ -39,7 +38,7 @@ namespace Aura.UI.Controls.Thumbs
         {
             base.OnDragDelta(e);
 
-            if(ControlToMove != null)
+            if (ControlToMove != null)
             {
                 double delta_v, delta_h;
                 delta_v = Math.Min(e.Vector.Y, ControlToMove.Bounds.Height - ControlToMove.MinHeight);

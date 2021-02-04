@@ -1,22 +1,14 @@
 ﻿using Aura.UI.Attributes;
+using Aura.UI.Controls.Generators;
+using Aura.UI.Controls.Primitives;
 using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
-using Avalonia.Input;
-using Avalonia.Interactivity;
-using Avalonia.Markup.Xaml;
-using Avalonia.Media;
-using System;
-using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.Threading.Tasks;
-using Aura.UI.Controls.Primitives;
 using Avalonia.Controls.Generators;
-using Aura.UI.Controls.Generators;
+using Avalonia.Controls.Primitives;
+using Avalonia.Interactivity;
+using System.Collections;
+using System.Linq;
 
 namespace Aura.UI.Controls
 {
@@ -29,6 +21,7 @@ namespace Aura.UI.Controls
     public partial class AuraTabView : TabViewBase, IHeadered, IFootered
     {
         #region Fiels
+
         /// <summary>
         /// This Button add a new TabItem
         /// </summary>
@@ -37,9 +30,11 @@ namespace Aura.UI.Controls
         public double lastselectindex = 0;
         protected Border b_;
         protected Grid g_;
-        #endregion
+
+        #endregion Fiels
+
         #region Methods
-        
+
         protected void AdderButtonClicked(object sender, RoutedEventArgs e)
         {
             var e_ = new RoutedEventArgs(ClickOnAddingButtonEvent);
@@ -47,11 +42,9 @@ namespace Aura.UI.Controls
             e_.Handled = true;
         }
 
-        
         static AuraTabView()
         {
             SelectionModeProperty.OverrideDefaultValue<AuraTabView>(SelectionMode.Single);
-            
         }
 
         protected override IItemContainerGenerator CreateItemContainerGenerator()
@@ -77,7 +70,6 @@ namespace Aura.UI.Controls
             }
         }
 
-
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
@@ -99,7 +91,6 @@ namespace Aura.UI.Controls
             this.HeightRemainingSpace = g_.Bounds.Height;
         }
 
-        #endregion
-
+        #endregion Methods
     }
 }

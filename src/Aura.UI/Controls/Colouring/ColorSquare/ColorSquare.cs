@@ -1,12 +1,8 @@
 ﻿using Aura.UI.Rendering;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Media;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
 namespace Aura.UI.Controls.Colouring
 {
@@ -18,6 +14,7 @@ namespace Aura.UI.Controls.Colouring
             SquareRender = render;
             context.Custom(render);
         }
+
         public ColorSquareRender SquareRender { get; private set; }
 
         private Color _lastcolor = Colors.White;

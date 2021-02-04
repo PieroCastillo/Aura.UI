@@ -1,4 +1,4 @@
-﻿<Styles xmlns="https://github.com/avaloniaui" 
+﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:ms="clr-namespace:System;assembly=netstandard">
 	<!--Preview-->
@@ -9,13 +9,13 @@
 				<RibbonItem Header="Start">
 					<RibbonPanel>
 						<RibbonGroup Header="Colour">
-							<Border Background="Yellow" Height="90" Width="100"/>
+							<Border Background="Yellow" Height="90" Width="100" />
 						</RibbonGroup>
 						<RibbonSeparator></RibbonSeparator>
 						<RibbonGroup Header="Themes">
 							<StackPanel Orientation="Horizontal">
-								<Border Background="Black" Width="60" Height="100"/>
-								<Border Background="White" Width="60" Height="100"/>
+								<Border Background="Black" Width="60" Height="100" />
+								<Border Background="White" Width="60" Height="100" />
 							</StackPanel>
 						</RibbonGroup>
 						<RibbonSeparator></RibbonSeparator>
@@ -26,62 +26,62 @@
 								<TextBlock FontSize="10">Ribbon</TextBlock>
 							</StackPanel>
 						</RibbonGroup>
-					</RibbonPanel> 
+					</RibbonPanel>
 				</RibbonItem>
 				<RibbonItem Header="Edit">
 					<RibbonPanel>
 					</RibbonPanel>
 				</RibbonItem>
 			</Ribbon>
-		</Border> 
+		</Border>
 	</Design.PreviewWith>
 	<Styles.Resources>
 		<CornerRadius x:Key="ToggleRadius">3</CornerRadius>
 		<ms:Double x:Key="DefaultRibbonContainerHeight">150</ms:Double>
 		<DrawingImage x:Key="Octicons.TriangleUp">
-			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M12 11L6 5l-6 6h12z"   />
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M12 11L6 5l-6 6h12z" />
 		</DrawingImage>
 		<DrawingImage x:Key="Octicons.TriangleDown">
-			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M0 5l6 6 6-6H0z"   />
+			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M0 5l6 6 6-6H0z" />
 		</DrawingImage>
  	</Styles.Resources>
 	<Style Selector="Ribbon">
-		<Setter Property="ExpansionState" Value="Total"/>
-		<Setter Property="VerticalAlignment" Value="Top"/>
-		<Setter Property="Padding" Value="10"/>
-		<Setter Property="ItemsPanel"> 
+		<Setter Property="ExpansionState" Value="Total" />
+		<Setter Property="VerticalAlignment" Value="Top" />
+		<Setter Property="Padding" Value="10" />
+		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
-				<StackPanel Orientation="Horizontal" Spacing="0" VerticalAlignment="Stretch"/>
+				<StackPanel Orientation="Horizontal" Spacing="0" VerticalAlignment="Stretch" />
 			</ItemsPanelTemplate>
 		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate TargetType="Ribbon">
-				<StackPanel>  
+				<StackPanel>
 						<Border Name="PART_TopBorder" Margin="5" Padding="5 0"
 								CornerRadius="5"
 								BoxShadow="{BoxShadow BlurRadius=4, ShadowColor={StaticResource SystemBaseMediumColor}}"> <!--BoxShadow="0 0 4 0 Black"-->
 							<Grid>
 								<Grid.ColumnDefinitions>
-									<ColumnDefinition Width="Auto"/>
-									<ColumnDefinition Width="Auto"/>
-									<ColumnDefinition Width="*"/>
-									<ColumnDefinition Width="Auto"/>
-									<ColumnDefinition Width="Auto"/>
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="*" />
+									<ColumnDefinition Width="Auto" />
+									<ColumnDefinition Width="Auto" />
 								</Grid.ColumnDefinitions>
 								<Grid.RowDefinitions>
-									<RowDefinition Height="*"/>
+									<RowDefinition Height="*" />
 								</Grid.RowDefinitions>
 								<ContentPresenter Grid.Column="0"
 								                  Content="{TemplateBinding Header}"
-								                  HorizontalAlignment="Center" 
+								                  HorizontalAlignment="Center"
 								                  VerticalAlignment="Center"
 												  TextBlock.FontWeight="Bold"
-								                  Padding="10"/>
+								                  Padding="10" />
 								<ShadowButton Grid.Column="1"
 								                Name="PART_LeftButton"
 								                Content="{TemplateBinding LeftContent}"
 								                Classes="BorderButtons"
-								                CornerRadius="0"/>
+								                CornerRadius="0" />
 								<ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Auto"
 								              VerticalAlignment="Stretch" BorderThickness="0"
 								              Padding="0" Margin="0">
@@ -90,21 +90,21 @@
 										Name="PART_ItemsPresenter"
 										Items="{TemplateBinding Items}"
 										ItemsPanel="{TemplateBinding ItemsPanel}"
-										Classes="BorderButtons"/>
+										Classes="BorderButtons" />
 								</ScrollViewer>
 								<ShadowButton Grid.Column="3"
 								                CornerRadius="0"
 								                Name="PART_RightButton"
 								                Content="{TemplateBinding RightContent}"
 								                Classes="BorderButtons"
-								                HorizontalAlignment="Right"/>
+								                HorizontalAlignment="Right" />
 								<ToggleButton Name="PART_Toggle" Grid.Column="4"
 								              IsChecked="True" IsThreeState="False"
 								              Background="Transparent">
 									<ToggleButton.RenderTransform>
-										<RotateTransform/>
+										<RotateTransform />
 									</ToggleButton.RenderTransform>
-									<Image Source="{DynamicResource Octicons.TriangleDown}" Stretch="UniformToFill"/>
+									<Image Source="{DynamicResource Octicons.TriangleDown}" Stretch="UniformToFill" />
 								</ToggleButton>
 							</Grid>
 						</Border>
@@ -117,7 +117,7 @@
 								Margin="4">
 							<Border.Transitions>
 								<Transitions>
-									<DoubleTransition Property="Height" Duration="0:0:0.3" Easing="QuadraticEaseOut"/>
+									<DoubleTransition Property="Height" Duration="0:0:0.3" Easing="QuadraticEaseOut" />
 								</Transitions>
 							</Border.Transitions>
 							<ExperimentalAcrylicBorder Name="PART_RibbonAcrylicBorder" CornerRadius="{Binding #PART_ContentContainer.CornerRadius}">
@@ -128,42 +128,42 @@
 											ContentTemplate="{TemplateBinding SelectedContentTemplate}">
 										<ContentPresenter.Transitions>
 											<Transitions>
-												<DoubleTransition Property="Opacity" Duration="0:0:0.3"/>
+												<DoubleTransition Property="Opacity" Duration="0:0:0.3" />
 											</Transitions>
-										</ContentPresenter.Transitions>							
+										</ContentPresenter.Transitions>
 									</ContentPresenter>
-								</ScrollViewer> 
+								</ScrollViewer>
 							</ExperimentalAcrylicBorder>
 						</Border>
 					</StackPanel>
 			</ControlTemplate>
-		</Setter> 
+		</Setter>
 	</Style>
 
 	<Style Selector="ExperimentalAcrylicBorder#PART_RibbonAcrylicBorder">
-		<Setter Property="Material" Value="{StaticResource RibbonMaterial}"/>
+		<Setter Property="Material" Value="{StaticResource RibbonMaterial}" />
 	</Style>
-	
+
 	<!--ModernButton Styles-->
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons">
-		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="ShadowPadding" Value="5 0"></Setter>
 		<Setter Property="BoxShadow" Value="0 0 0 0 Black"></Setter>
-		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}"/>
+		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}" />
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pointerover">
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}"/>
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}" />
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pressed">
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}"/>
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}" />
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 	<Style Selector="Ribbon /template/ ShadowButton.BorderButtons:pressed:pointerover">
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}"/><!--ThemeAcrylicBackgroundBrush-->
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Material" Value="{StaticResource DefaultAcrylicRibbonBrush}" /><!--ThemeAcrylicBackgroundBrush-->
 		<Setter Property="BoxShadow" Value="0 0 3 0 Black"></Setter>
 	</Style>
 
@@ -173,82 +173,80 @@
 			<Animation Duration="0:0:0.4"  Easing="QuarticEaseOut"
 					   FillMode="Forward">
 				<KeyFrame Cue="0%">
-					<Setter Property="Height" Value="0"/>
+					<Setter Property="Height" Value="0" />
 				</KeyFrame>
 				<KeyFrame Cue="100%">
-					<Setter Property="Height" Value="{Binding $parent[Ribbon].OpenPaneHeight}"/>
+					<Setter Property="Height" Value="{Binding $parent[Ribbon].OpenPaneHeight}" />
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
-		<!--<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}"/>-->
+		<!--<Setter Property="Height" Value="{DynamicResource DefaultRibbonContainerHeight}" />-->
 	</Style>
 	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ Border#PART_ContentContainer">
 		<Style.Animations>
 			<Animation Duration="0:0:0.4" Easing="QuarticEaseOut"
-					   FillMode="Forward"> 
-				<KeyFrame Cue="0%"> 
-					<Setter Property="Height" Value="{Binding $parent[Ribbon].OpenPaneHeight}"/> 
-				</KeyFrame>
-				<KeyFrame Cue="100%">
-					<Setter Property="Height" Value="0"/>
-				</KeyFrame> 
-			</Animation>
-		</Style.Animations>
-		<!--<Setter Property="Height" Value="0"/>-->
-	</Style>
-	
-	<!--Selected Item Changed Container Animation-->
-	<Style Selector="Ribbon:changing /template/ ContentPresenter#PART_SelectedContentHost"> 
-		<Style.Animations>
-			<Animation Duration="0:0:0.3" FillMode="Forward" Easing="CubicEaseOut" >
+					   FillMode="Forward">
 				<KeyFrame Cue="0%">
-					<Setter Property="TranslateTransform.X" Value="{Binding $parent[ExperimentalAcrylicBorder].Bounds.Width}"/>
-					<Setter Property="Opacity" Value="0"/>
+					<Setter Property="Height" Value="{Binding $parent[Ribbon].OpenPaneHeight}" />
 				</KeyFrame>
 				<KeyFrame Cue="100%">
-					<Setter Property="TranslateTransform.X" Value="0"/>
-					<Setter Property="Opacity" Value="1"/>
-				</KeyFrame>  
+					<Setter Property="Height" Value="0" />
+				</KeyFrame>
+			</Animation>
+		</Style.Animations>
+		<!--<Setter Property="Height" Value="0" />-->
+	</Style>
+
+	<!--Selected Item Changed Container Animation-->
+	<Style Selector="Ribbon:changing /template/ ContentPresenter#PART_SelectedContentHost">
+		<Style.Animations>
+			<Animation Duration="0:0:0.3" FillMode="Forward" Easing="CubicEaseOut">
+				<KeyFrame Cue="0%">
+					<Setter Property="TranslateTransform.X" Value="{Binding $parent[ExperimentalAcrylicBorder].Bounds.Width}" />
+					<Setter Property="Opacity" Value="0" />
+				</KeyFrame>
+				<KeyFrame Cue="100%">
+					<Setter Property="TranslateTransform.X" Value="0" />
+					<Setter Property="Opacity" Value="1" />
+				</KeyFrame>
 			</Animation>
 		</Style.Animations>
 	</Style>
-	
-	
+
 	<!--ToggleButton Icons-->
 	<Style Selector="Ribbon[ExpansionState=Hidden] /template/ ToggleButton#PART_Toggle"><!--:checked-->
 		<Style.Animations>
 			<Animation Duration="0:0:.3" FillMode="Forward" Easing="QuadraticEaseOut">
 				<KeyFrame Cue="0%">
-					<Setter Property="RotateTransform.Angle" Value="180"/>
+					<Setter Property="RotateTransform.Angle" Value="180" />
 				</KeyFrame>
 				<KeyFrame Cue="100%">
-					<Setter Property="RotateTransform.Angle" Value="0"/>
+					<Setter Property="RotateTransform.Angle" Value="0" />
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
-		
 	</Style>
-	
+
 	<Style Selector="Ribbon[ExpansionState=Total] /template/ ToggleButton#PART_Toggle"><!--:unchecked-->
 		<Style.Animations>
 			<Animation Duration="0:0:.3" FillMode="Forward" Easing="QuadraticEaseOut">
 				<KeyFrame Cue="0%">
-					<Setter Property="RotateTransform.Angle" Value="0"/>
+					<Setter Property="RotateTransform.Angle" Value="0" />
 				</KeyFrame>
 				<KeyFrame Cue="100%">
-					<Setter Property="RotateTransform.Angle" Value="180"/>
+					<Setter Property="RotateTransform.Angle" Value="180" />
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
 	</Style>
 
 	<Style Selector="ToggleButton#PART_Toggle:checked /template/ ContentPresenter#PART_ContentPresenter">
-		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Background" Value="Transparent" />
 	</Style>
 	<Style Selector="ToggleButton#PART_Toggle:pointerover:pressed /template/ ContentPresenter#PART_ContentPresenter">
-		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Background" Value="Transparent" />
 	</Style>
 	<Style Selector="ToggleButton#PART_Toggle[IsPointerOver=true] /template/ ContentPresenter#PART_ContentPresenter">
-		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Background" Value="Transparent" />
 	</Style>
 </Styles>

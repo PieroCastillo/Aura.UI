@@ -1,5 +1,5 @@
-using System.Linq;
 using Avalonia.VisualTree;
+using System.Linq;
 
 namespace Aura.UI.UIExtensions
 {

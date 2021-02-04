@@ -1,10 +1,4 @@
-﻿using Aura.UI.Attributes;
-using Avalonia;
-using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
-using Avalonia.Controls.Templates;
-using Avalonia.Markup.Xaml;
-using Avalonia.Metadata;
+﻿using Avalonia.Controls;
 
 namespace Aura.UI.Controls
 {
@@ -13,6 +7,5 @@ namespace Aura.UI.Controls
     /// </summary>
     public partial class FilledSlider : Slider
     {
-
     }
 }

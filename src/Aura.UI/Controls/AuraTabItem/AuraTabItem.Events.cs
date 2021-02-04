@@ -1,7 +1,5 @@
 ﻿using Avalonia.Interactivity;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls
 {
@@ -22,6 +20,7 @@ namespace Aura.UI.Controls
             add { AddHandler(ClosingEvent, value); }
             remove { RemoveHandler(ClosingEvent, value); }
         }
+
         public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
             RoutedEvent.Register<AuraTabItem, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
     }

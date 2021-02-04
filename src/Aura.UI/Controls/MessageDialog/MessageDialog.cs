@@ -6,8 +6,6 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 using Avalonia.Threading;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls
 {
@@ -28,6 +26,7 @@ namespace Aura.UI.Controls
         }
 
         private object _title = "Title";
+
         /// <summary>
         /// Gets or Sets the title
         /// </summary>
@@ -36,6 +35,7 @@ namespace Aura.UI.Controls
             get => _title;
             set => SetAndRaise(TitleProperty, ref _title, value);
         }
+
         /// <summary>
         /// Defines <see cref="Title"/>
         /// </summary>
@@ -43,12 +43,12 @@ namespace Aura.UI.Controls
             AvaloniaProperty.RegisterDirect<MessageDialog, object>(
                 nameof(Title),
                 o => o.Title,
-                (o,v) => o.Title = v);
+                (o, v) => o.Title = v);
 
         public override void Close()
         {
             var t = new DispatcherTimer();
-            t.Interval = new TimeSpan(0,0,0,0,500);
+            t.Interval = new TimeSpan(0, 0, 0, 0, 500);
             t.Start();
             PseudoClasses.Add(":closing");
             t.Tick += (s, e) =>

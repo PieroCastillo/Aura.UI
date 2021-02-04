@@ -1,7 +1,5 @@
 ﻿using Avalonia.Interactivity;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls
 {
@@ -12,6 +10,7 @@ namespace Aura.UI.Controls
             add => AddHandler(OkButtonClickEvent, value);
             remove => RemoveHandler(OkButtonClickEvent, value);
         }
+
         public static readonly RoutedEvent<RoutedEventArgs> OkButtonClickEvent =
             RoutedEvent.Register<ContentDialog, RoutedEventArgs>(nameof(OkButtonClick), RoutingStrategies.Bubble);
 
@@ -20,6 +19,7 @@ namespace Aura.UI.Controls
             add => AddHandler(CancelButtonClickEvent, value);
             remove => RemoveHandler(CancelButtonClickEvent, value);
         }
+
         public static readonly RoutedEvent<RoutedEventArgs> CancelButtonClickEvent =
             RoutedEvent.Register<ContentDialog, RoutedEventArgs>(nameof(CancelButtonClick), RoutingStrategies.Bubble);
     }

@@ -6,7 +6,6 @@ namespace Aura.UI.Controls
 {
     public partial class Follower
     {
-        
         /// <summary>
         /// This is the control that's going to follow the pointer
         /// </summary>
@@ -16,10 +15,12 @@ namespace Aura.UI.Controls
             get => GetValue(FollowerControlProperty);
             set => SetValue(FollowerControlProperty, value);
         }
+
         public readonly static StyledProperty<Control> FollowerControlProperty =
             AvaloniaProperty.Register<Follower, Control>(nameof(FollowerControl));
 
         private Control _layercontrol = new Control();
+
         /// <summary>
         /// Defines the control what will be inherited its "PointerOver" Event
         /// </summary>

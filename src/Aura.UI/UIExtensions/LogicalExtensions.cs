@@ -1,9 +1,6 @@
 ﻿using Avalonia.Controls;
 using Avalonia.LogicalTree;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Aura.UI.UIExtensions
 {
@@ -14,10 +11,11 @@ namespace Aura.UI.UIExtensions
         /// </summary>
         /// <param name="Logical">The window to get its parent</param>
         /// <returns>the window of the control</returns>
-        public static Window GetParentWindowOfLogical(this ILogical Logical)  
+        public static Window GetParentWindowOfLogical(this ILogical Logical)
         {
             return Logical.GetParentTOfLogical<Window>();
         }
+
         /// <summary>
         /// Return a parent of the ILogical indicated
         /// </summary>

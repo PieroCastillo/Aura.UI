@@ -1,16 +1,11 @@
-﻿using Aura.UI.UIExtensions;
+﻿using Aura.UI.Dragging;
+using Aura.UI.UIExtensions;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using Avalonia.Media;
-using System.Collections;
-using System.Diagnostics;
-using Aura.UI.Dragging;
-using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
-using Avalonia.Controls.Primitives.PopupPositioning;
 using Avalonia.LogicalTree;
+using System.Collections;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace Aura.UI.Controls
 {
@@ -25,7 +20,6 @@ namespace Aura.UI.Controls
             AddHandler(DragDrop.DropEvent, OnDrop);
         }
 
-        
         protected override async void OnPointerPressed(PointerPressedEventArgs e)
         {
             base.OnPointerPressed(e);
@@ -35,7 +29,6 @@ namespace Aura.UI.Controls
             {
                 var n = new ControlObject(tabitem);
                 await DragDrop.DoDragDrop(e, n, DragDropEffects.Move);
-
 
                 Debug.WriteLine("Drag started");
                 //PseudoClasses.Add(":dragging");
@@ -75,44 +68,39 @@ namespace Aura.UI.Controls
         {
             PseudoClasses.Add(":dragging");
         }
-        
+
         protected virtual void OnDragOver(object sender, DragEventArgs e)
         {
-
         }
 
         protected virtual void OnDragLeave(object sender, RoutedEventArgs e)
         {
             PseudoClasses.Remove(":dragging");
         }
-        
+
         protected virtual void OnDrop(object sender, DragEventArgs e)
         {
             PseudoClasses.Remove(":dragging");
-           
 
-            if(true) //TODO: check if theirs parent are the same 
-            { 
+            if (true) //TODO: check if theirs parent are the same
+            {
                 ItemsControlOperations.MoveItemOnDrop<AuraTabView, AuraTabItem>(
-                    sender, 
+                    sender,
                     e,
-                    (view,src,item) =>
+                    (view, src, item) =>
                     {
                         int h = (view.Items as IList).IndexOf(item);
 
-                    
                         item.PseudoClasses.Remove(":dragging");
                         view.lastselectindex = view.SelectedIndex;
                         view.SelectedIndex = h;
                         view.SelectedItem = (view.Items as IList)[view.SelectedIndex];
                         var it = view.Items as IList<AuraTabItem>;
-                    } );
+                    });
                 Debug.WriteLine("Drag completed");
                 Debug.WriteLine($"Selected Index: {this.GetParentTOfLogical<AuraTabView>().SelectedIndex}");
                 Debug.WriteLine($"Tab Index: {(this.GetParentTOfLogical<AuraTabView>().Items as IList).IndexOf(this)}");
             }
         }
-
-
     }
 }

@@ -6,18 +6,12 @@ using Avalonia.Controls.Generators;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
-using Avalonia.Input;
-using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
-using Avalonia.Threading;
 using Avalonia.VisualTree;
-using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Aura.UI.Controls.Navigation
 {
@@ -41,14 +35,10 @@ namespace Aura.UI.Controls.Navigation
 
         protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
-           base.ItemsCollectionChanged(sender, e);
-
+            base.ItemsCollectionChanged(sender, e);
 
             ProcessString();//Sets the items of AutoCompleteBox
         }
-
-
-
 
         protected virtual IEnumerable<string> ProcessString()
         {
@@ -79,13 +69,13 @@ namespace Aura.UI.Controls.Navigation
             (SelectedItem as ISelectable).IsSelected = false;
 
             SelectedItems.Clear();
-            SelectedItems.Add(item); 
+            SelectedItems.Add(item);
 
             (item as ISelectable).IsSelected = true;
 
-            var item_parents =  (item as ILogical).GetLogicalAncestors().OfType<NavigationViewItem>();
+            var item_parents = (item as ILogical).GetLogicalAncestors().OfType<NavigationViewItem>();
 
-            foreach(NavigationViewItem n in item_parents)
+            foreach (NavigationViewItem n in item_parents)
             {
                 n.IsExpanded = true;
             }
@@ -94,9 +84,8 @@ namespace Aura.UI.Controls.Navigation
 
             SelectedItem = item;
 
-//Sets the items of AutoCompleteBox
+            //Sets the items of AutoCompleteBox
         }
-
 
         protected void OnSelectedItemChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
@@ -124,6 +113,7 @@ namespace Aura.UI.Controls.Navigation
                         case true:
                             IsOpen = false;
                             break;
+
                         case false:
                             IsOpen = true;
                             break;
@@ -139,7 +129,6 @@ namespace Aura.UI.Controls.Navigation
             ProcessString();
         }
 
-
         private void CompleteBoxItemSelected(object sender, SelectionChangedEventArgs e)
         {
             var n = (sender as AutoCompleteBox).SelectedItem; //gets the header string
@@ -154,9 +143,8 @@ namespace Aura.UI.Controls.Navigation
                 SelectSingleItem(val_c); //select it
             }
         }
-    
 
-        void OnClose()
+        private void OnClose()
         {
             var s = SelectedItem as Control;
             if ((Items as IList<object>).Contains(s))
@@ -173,6 +161,7 @@ namespace Aura.UI.Controls.Navigation
 
         ///<inheritdoc/>
         IAvaloniaList<ILogical> IContentPresenterHost.LogicalChildren => LogicalChildren;
+
         private IContentPresenter ContentPart { get; set; }
 
         bool IContentPresenterHost.RegisterContentPresenter(IContentPresenter presenter)

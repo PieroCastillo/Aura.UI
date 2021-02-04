@@ -1,9 +1,5 @@
 ﻿using Avalonia;
 using Avalonia.Media;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Avalonia.Controls;
 
 namespace Aura.UI.Controls
 {
@@ -17,6 +13,7 @@ namespace Aura.UI.Controls
             get => GetValue(ShadowPaddingProperty);
             set => SetValue(ShadowPaddingProperty, value);
         }
+
         public static readonly StyledProperty<Thickness> ShadowPaddingProperty =
             AvaloniaProperty.Register<ShadowButton, Thickness>(nameof(ShadowPadding), new Thickness(5));
 
@@ -28,6 +25,7 @@ namespace Aura.UI.Controls
             get => GetValue(BoxShadowProperty);
             set => SetValue(BoxShadowProperty, value);
         }
+
         public static readonly StyledProperty<BoxShadows> BoxShadowProperty =
             AvaloniaProperty.Register<ShadowButton, BoxShadows>(nameof(BoxShadow));
     }

@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Attributes
 {
@@ -15,7 +13,7 @@ namespace Aura.UI.Attributes
         /// </summary>
         public string Reason
         {
-            get;set;
+            get; set;
         }
     }
 }

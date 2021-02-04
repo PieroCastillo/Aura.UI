@@ -2,11 +2,7 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
-using Microsoft.CodeAnalysis;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
 namespace Aura.UI.Controls.Primitives
 {
@@ -44,17 +40,17 @@ namespace Aura.UI.Controls.Primitives
 
         protected void InitializeBorderAndCorners()
         {
-                //Sides
-                SetUpBorder<Border>("PART_LeftBorder", StandardCursorType.LeftSide, WindowEdge.West);
-                SetUpBorder<Border>("PART_RightBorder", StandardCursorType.RightSide, WindowEdge.East);
-                SetUpBorder<Border>("PART_TopBorder", StandardCursorType.TopSide, WindowEdge.North);
-                SetUpBorder<Border>("PART_BottomBorder", StandardCursorType.BottomSide, WindowEdge.South);
+            //Sides
+            SetUpBorder<Border>("PART_LeftBorder", StandardCursorType.LeftSide, WindowEdge.West);
+            SetUpBorder<Border>("PART_RightBorder", StandardCursorType.RightSide, WindowEdge.East);
+            SetUpBorder<Border>("PART_TopBorder", StandardCursorType.TopSide, WindowEdge.North);
+            SetUpBorder<Border>("PART_BottomBorder", StandardCursorType.BottomSide, WindowEdge.South);
 
-                //Corners
-                SetUpBorder<Border>("PART_TopLeftBorder", StandardCursorType.TopLeftCorner, WindowEdge.NorthWest);
-                SetUpBorder<Border>("PART_TopRightBorder", StandardCursorType.TopRightCorner, WindowEdge.NorthEast);
-                SetUpBorder<Border>("PART_BottomLeftBorder", StandardCursorType.BottomLeftCorner, WindowEdge.SouthWest);
-                SetUpBorder<Border>("PART_BottomRightBorder", StandardCursorType.BottomRightCorner, WindowEdge.SouthEast);
+            //Corners
+            SetUpBorder<Border>("PART_TopLeftBorder", StandardCursorType.TopLeftCorner, WindowEdge.NorthWest);
+            SetUpBorder<Border>("PART_TopRightBorder", StandardCursorType.TopRightCorner, WindowEdge.NorthEast);
+            SetUpBorder<Border>("PART_BottomLeftBorder", StandardCursorType.BottomLeftCorner, WindowEdge.SouthWest);
+            SetUpBorder<Border>("PART_BottomRightBorder", StandardCursorType.BottomRightCorner, WindowEdge.SouthEast);
         }
 
         protected void ResetBordersAndCorners()
@@ -83,7 +79,7 @@ namespace Aura.UI.Controls.Primitives
         internal void SetUpBorder<T>(string name, StandardCursorType cursorType, WindowEdge edge) where T : Control
         {
             Control? ctl = this.Find<T>(name);
-            if(ctl != null)
+            if (ctl != null)
             {
                 ctl.Cursor = new Cursor(cursorType);
                 ctl.PointerPressed += (s, e_) =>
@@ -115,13 +111,14 @@ namespace Aura.UI.Controls.Primitives
                 Debug.WriteLine("The referenced control does not exist");
 #endif
             }
-        } 
+        }
 
         public object ContentView
         {
             get => GetValue(ContentViewProperty);
             set => SetValue(ContentViewProperty, value);
         }
+
         public readonly static StyledProperty<object> ContentViewProperty =
             AvaloniaProperty.Register<CustomWindow, object>(nameof(ContentView));
     }

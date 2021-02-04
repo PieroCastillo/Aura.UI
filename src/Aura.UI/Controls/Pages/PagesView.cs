@@ -11,6 +11,7 @@ namespace Aura.UI.Controls
     public class PagesView : SelectingItemsControl
     {
         #region Properties
+
         /// <summary>
         /// Defines if the Title of the Selected <see cref="Page"/> can change the Title of the Parent Window
         /// </summary>
@@ -19,14 +20,16 @@ namespace Aura.UI.Controls
             get { return GetValue(CanChangeTheWindowTitleProperty); }
             set { SetValue(CanChangeTheWindowTitleProperty, value); }
         }
+
         public static readonly StyledProperty<bool> CanChangeTheWindowTitleProperty =
             AvaloniaProperty.Register<PagesView, bool>(nameof(CanChangeTheWindowTitle), true);
-        #endregion
+
+        #endregion Properties
 
         /// <summary>
         /// Backs to the previous page
         /// </summary>
-        public void Previous()     
+        public void Previous()
         {
             try
             {
@@ -56,15 +59,15 @@ namespace Aura.UI.Controls
             }
             catch
             {
-
             }
         }
+
         /// <summary>
         /// Go to the indexed Page
         /// </summary>
         /// <param name="index">Index of the page</param>
         public void GoTo(int index)
-        { 
+        {
             try
             {
                 if ((Items as IList)[index] != null)
@@ -83,9 +86,9 @@ namespace Aura.UI.Controls
             }
             catch
             {
-
             }
         }
+
         /// <summary>
         /// Nexts to the next Page
         /// </summary>
@@ -118,7 +121,6 @@ namespace Aura.UI.Controls
             }
             catch
             {
-
             }
         }
     }

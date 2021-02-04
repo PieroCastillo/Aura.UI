@@ -1,31 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
-        <TargetFramework>netstandard2.1</TargetFramework>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <PackageVersion>0.1.3-preview91</PackageVersion>
-        <Title>Aura.UI.Dragging</Title>
-        <Authors>Piero Castillo</Authors>
+		<TargetFramework>netstandard2.1</TargetFramework>
         <Description>Dragging library for Aura.UI</Description>
-        <RepositoryUrl>github.com/PieroCastillo/Aura.UI</RepositoryUrl>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <Version>0.1.3-preview91</Version>
-        <PackageIcon>auraui-logov2.png</PackageIcon>
     </PropertyGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Avalonia" Version="0.10.0" />
-      <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
-      <PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
-      <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
-      <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Include="..\..\DesignSources\auraui-logov2.png">
-        <Pack>True</Pack>
-        <PackagePath></PackagePath>
-      </None>
-    </ItemGroup>
-
+	<Import Project="..\..\build\dragging.props"/>
+	<Import Project="..\..\build\version.props"/>
 </Project>

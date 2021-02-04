@@ -1,11 +1,7 @@
 ﻿using Avalonia;
-using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Rendering.SceneGraph;
 using Avalonia.Skia;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Rendering
 {
@@ -31,12 +27,11 @@ namespace Aura.UI.Rendering
 
         public virtual void Render(IDrawingContextImpl context)
         {
-            
         }
 
         protected virtual bool CheckSkia(IDrawingContextImpl context)
         {
-            if(context is ISkiaDrawingContextImpl)
+            if (context is ISkiaDrawingContextImpl)
             {
                 return true;
             }

@@ -1,10 +1,8 @@
-﻿using Avalonia;
+﻿using Aura.UI.Attributes;
+using Aura.UI.Controls.Primitives;
+using Aura.UI.UIExtensions;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using Avalonia.Markup.Xaml;
-using Aura.UI.UIExtensions;
-using Aura.UI.Attributes;
-using Aura.UI.Controls.Primitives;
 using Avalonia.Interactivity;
 
 namespace Aura.UI.Controls
@@ -16,8 +14,8 @@ namespace Aura.UI.Controls
     [TemplatePart(Name = "PART_B2", Type = typeof(Button))]
     public partial class TitleBox : HeaderedContentControl, ICustomCornerRadius
     {
-        Button B1;
-        Button B2;
+        private Button B1;
+        private Button B2;
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
@@ -51,6 +49,7 @@ namespace Aura.UI.Controls
         /// Do something when the first button is clicked
         /// </summary>
         public virtual void OnClickInButton1() { }
+
         /// <summary>
         /// Do something when the second button is clicked
         /// </summary>

@@ -1,12 +1,7 @@
-﻿using Aura.UI.Controls.Primitives;
-using Avalonia;
-using Avalonia.Controls;
+﻿using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using Avalonia.Styling;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls
 {
@@ -17,6 +12,7 @@ namespace Aura.UI.Controls
             get => GetValue(SecondaryHeaderProperty);
             set => SetValue(SecondaryHeaderProperty, value);
         }
+
         public static readonly StyledProperty<object> SecondaryHeaderProperty =
             AvaloniaProperty.Register<CardControl, object>(nameof(SecondaryHeader));
 
@@ -25,6 +21,7 @@ namespace Aura.UI.Controls
             get => GetValue(SecondaryHeaderTemplateProperty);
             set => SetValue(SecondaryHeaderTemplateProperty, value);
         }
+
         public static readonly StyledProperty<ITemplate> SecondaryHeaderTemplateProperty =
             AvaloniaProperty.Register<CardControl, ITemplate>(nameof(SecondaryHeaderTemplate));
 
@@ -33,6 +30,7 @@ namespace Aura.UI.Controls
             get => GetValue(SecondaryBackgroundProperty);
             set => SetValue(SecondaryBackgroundProperty, value);
         }
+
         public static readonly StyledProperty<IBrush> SecondaryBackgroundProperty =
             AvaloniaProperty.Register<CardControl, IBrush>(nameof(SecondaryBackground));
 
@@ -41,6 +39,7 @@ namespace Aura.UI.Controls
             get => GetValue(ScaleOnPointerOverProperty);
             set => SetValue(ScaleOnPointerOverProperty, value);
         }
+
         public static readonly StyledProperty<bool> ScaleOnPointerOverProperty =
             AvaloniaProperty.Register<CardControl, bool>(nameof(ScaleOnPointerOver), true);
 
@@ -49,6 +48,7 @@ namespace Aura.UI.Controls
             get => GetValue(BoxShadowProperty);
             set => SetValue(BoxShadowProperty, value);
         }
+
         public static readonly StyledProperty<BoxShadows> BoxShadowProperty =
             AvaloniaProperty.Register<CardControl, BoxShadows>(nameof(BoxShadow));
 
@@ -57,6 +57,7 @@ namespace Aura.UI.Controls
             get => GetValue(InternalBoxShadowProperty);
             set => SetValue(InternalBoxShadowProperty, value);
         }
+
         public static readonly StyledProperty<BoxShadows> InternalBoxShadowProperty =
             AvaloniaProperty.Register<CardControl, BoxShadows>(nameof(InternalBoxShadow));
 
@@ -68,6 +69,7 @@ namespace Aura.UI.Controls
             get { return GetValue(CornerRadiusProperty); }
             set { SetValue(CornerRadiusProperty, value); }
         }
+
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
 
@@ -79,8 +81,10 @@ namespace Aura.UI.Controls
             get { return GetValue(TopCornerRadiusProperty); }
             set { SetValue(TopCornerRadiusProperty, value); }
         }
+
         public static readonly StyledProperty<CornerRadius> TopCornerRadiusProperty =
-            AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(TopCornerRadius), new CornerRadius(7,0));
+            AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(TopCornerRadius), new CornerRadius(7, 0));
+
         /// <summary>
         /// Defines the Bottom CornerRadius
         /// </summary>
@@ -89,14 +93,16 @@ namespace Aura.UI.Controls
             get { return GetValue(BottomCornerRadiusProperty); }
             set { SetValue(BottomCornerRadiusProperty, value); }
         }
+
         public static readonly StyledProperty<CornerRadius> BottomCornerRadiusProperty =
-            AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(BottomCornerRadius), new CornerRadius(0,7));
+            AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(BottomCornerRadius), new CornerRadius(0, 7));
 
         public CornerRadius InternalCornerRadius
         {
             get { return GetValue(InternalCornerRadiusProperty); }
             set { SetValue(InternalCornerRadiusProperty, value); }
         }
+
         public static readonly StyledProperty<CornerRadius> InternalCornerRadiusProperty =
             AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(InternalCornerRadius), new CornerRadius(7));
 
@@ -105,7 +111,8 @@ namespace Aura.UI.Controls
             get { return GetValue(InternalPaddingProperty); }
             set { SetValue(InternalPaddingProperty, value); }
         }
-        public static readonly StyledProperty<Thickness> InternalPaddingProperty=
+
+        public static readonly StyledProperty<Thickness> InternalPaddingProperty =
             AvaloniaProperty.Register<CardControl, Thickness>(nameof(InternalPadding));
     }
 }

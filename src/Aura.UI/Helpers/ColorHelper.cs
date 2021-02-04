@@ -1,15 +1,12 @@
-﻿using Aura.UI.Exceptions;
-using Aura.UI.Extensions;
+﻿using Aura.UI.Extensions;
 using Avalonia.Media;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Helpers
 {
     public struct HSLStruct
     {
-        public HSLStruct(Color color) 
+        public HSLStruct(Color color)
         {
             var rgb = new RGBStruct(color);
             var hsl = rgb.ToHSL();
@@ -17,6 +14,7 @@ namespace Aura.UI.Helpers
             this.saturation = hsl.ss;
             this.lightness = hsl.ll;
         }
+
         public double hue { get; private set; }
         public double saturation { get; private set; }
         public double lightness { get; private set; }
@@ -31,10 +29,12 @@ namespace Aura.UI.Helpers
             this.b = color.B;
             this.a = color.A;
         }
+
         public byte r { get; private set; }
         public byte g { get; private set; }
         public byte b { get; private set; }
         public byte a { get; private set; }
+
         /// <summary>
         /// Apply lightness to an <see cref="RGBStruct"/>
         /// </summary>
@@ -42,7 +42,7 @@ namespace Aura.UI.Helpers
         /// <param name="lightness">this param should be between 0.0 and 1.0</param>
         /// <returns></returns>
         public static RGBStruct ApplyLightnessToRGB(RGBStruct @rgb, double lightness)
-        {  
+        {
             try
             {
                 var r = rgb.r;
@@ -57,7 +57,7 @@ namespace Aura.UI.Helpers
 
                 return new RGBStruct(new Color(rgb.a, new_r, new_g, new_b));
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception("The lightness is greater than 1 or less than 0", e);
             }

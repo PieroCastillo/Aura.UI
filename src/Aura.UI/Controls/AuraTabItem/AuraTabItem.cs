@@ -1,13 +1,11 @@
-﻿using System;
+﻿using Aura.UI.Attributes;
+using Aura.UI.Controls.Primitives;
+using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
-using Aura.UI.UIExtensions;
-using Aura.UI.Attributes;
-using System.Diagnostics;
-using Aura.UI.Controls.Primitives;
-using Avalonia.Controls.Metadata;
 
 namespace Aura.UI.Controls
 {
@@ -22,7 +20,7 @@ namespace Aura.UI.Controls
         /// <summary>
         /// This button close its AuraTabItem parent
         /// </summary>
-        Button CloseButton;
+        private Button CloseButton;
 
         public AuraTabItem()
         {
@@ -34,13 +32,13 @@ namespace Aura.UI.Controls
 
         static AuraTabItem()
         {
-            CanBeDraggedProperty.Changed.AddClassHandler<AuraTabItem>((x,e) => x.OnCanDraggablePropertyChanged(x,e));
+            CanBeDraggedProperty.Changed.AddClassHandler<AuraTabItem>((x, e) => x.OnCanDraggablePropertyChanged(x, e));
             IsSelectedProperty.Changed.AddClassHandler<AuraTabItem>((x, e) => x.UpdatePseudoClass(x, e));
         }
 
-        void UpdatePseudoClass(AuraTabItem item, AvaloniaPropertyChangedEventArgs e)
+        private void UpdatePseudoClass(AuraTabItem item, AvaloniaPropertyChangedEventArgs e)
         {
-             if(item.IsSelected == false)
+            if (item.IsSelected == false)
             {
                 item.PseudoClasses.Remove(":dragging");
             }
@@ -50,7 +48,7 @@ namespace Aura.UI.Controls
         /// Close now the tab
         /// </summary>
         /// <param name="parameter">Does nothing, only for the requeriments of C# </param>
-        internal void Close(object nevermatter) 
+        internal void Close(object nevermatter)
         {
             var x = this.Parent as TabControl;
             x.CloseTab(this);
@@ -62,7 +60,7 @@ namespace Aura.UI.Controls
         public void Close()
         {
             var e = new RoutedEventArgs(ClosingEvent);
-            RaiseEvent(e); 
+            RaiseEvent(e);
             this.Close(null);
         }
 
@@ -77,12 +75,13 @@ namespace Aura.UI.Controls
                 PseudoClasses.Remove(":lockdrag");
             }
         }
+
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
 
             CloseButton = this.GetControl<Button>(e, "PART_CloseButton");
-            if(this.IsClosable != false)
+            if (this.IsClosable != false)
             {
                 CloseButton.Click += CloseButton_Click;
             }
@@ -91,10 +90,10 @@ namespace Aura.UI.Controls
                 CloseButton.IsVisible = false;
             }
         }
+
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             this.Close();
         }
     }
 }
-

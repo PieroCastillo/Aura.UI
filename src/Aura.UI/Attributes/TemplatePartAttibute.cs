@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Attributes
 {
@@ -12,8 +10,8 @@ namespace Aura.UI.Attributes
     {
         public TemplatePartAttribute()
         {
-
         }
+
         /// <summary>
         ///     Part name used by the class to indentify required element in the style
         /// </summary>

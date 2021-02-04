@@ -1,11 +1,11 @@
-using System;
-using System.Diagnostics;
 using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Layout;
+using System;
+using System.Diagnostics;
 
 namespace Aura.UI.Controls.Thumbs
 {
@@ -32,10 +32,11 @@ namespace Aura.UI.Controls.Thumbs
                             item.Height -= delta_v;
                         }
                         break;
+
                     case VerticalAlignment.Top:
                         delta_v = Math.Min(e.Vector.Y, item.Bounds.Height + item.MinHeight);
                         Rect _r2 = r1.WithY(Canvas.GetTop(item) + delta_v);
-                        if (cvr2.Contains(_r2)) 
+                        if (cvr2.Contains(_r2))
                         {
                             Canvas.SetTop(item, Canvas.GetTop(item) + delta_v);
                             item.Height -= delta_v;
@@ -54,6 +55,7 @@ namespace Aura.UI.Controls.Thumbs
                             item.Width -= delta_h;
                         }
                         break;
+
                     case HorizontalAlignment.Right:
                         delta_h = Math.Min(e.Vector.X, item.Bounds.Width + item.MinWidth);
                         Rect _r4 = r1.WithX(Canvas.GetRight(item) + delta_h);
@@ -64,10 +66,10 @@ namespace Aura.UI.Controls.Thumbs
                         }
                         break;
                 }
-                #if DEBUG
+#if DEBUG
                 Debug.WriteLine($"canvas margin is Top : {Canvas.GetTop(item)}       Left : {Canvas.GetLeft(item)}");
                 Debug.WriteLine($"                 Bottom : {Canvas.GetBottom(item)} Right : {Canvas.GetRight(item)}");
-                #endif
+#endif
             }
         }
     }

@@ -1,13 +1,11 @@
 ﻿using Avalonia.Media;
-using DynamicData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Aura.UI.Helpers
 {
-    public class GradientCalculator 
+    public class GradientCalculator
     {
         /// <summary>
         /// Return a GradientStops with Dynamic Offsets
@@ -28,11 +26,11 @@ namespace Aura.UI.Helpers
                     // {
                     // Gradients[Gradients.Get].Offset = (1 / (Gradients.Count() - 1 )) * i;
                     // }
-                    //} 
+                    //}
                     stop.Offset = (1 / (counter - 1)) * stops.IndexOf(stop);
                 }
             }
-            catch(ArgumentNullException e)
+            catch (ArgumentNullException e)
             {
                 throw new ArgumentNullException(" \"stops\" parameter is null or it does not have GradientStops", e);
             }

@@ -1,13 +1,6 @@
 ﻿using Aura.UI.Attributes;
 using Aura.UI.Controls.Primitives;
-using Aura.UI.UIExtensions;
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
-using Avalonia.Layout;
-using Avalonia.Markup.Xaml;
-using Avalonia.Media;
-using System;
 
 namespace Aura.UI.Controls
 {
@@ -18,6 +11,5 @@ namespace Aura.UI.Controls
     [TemplatePart(Name = "PART_Br_Right", Type = typeof(ExperimentalAcrylicBorder))]
     public partial class ModernSlider : FilledSlider, ICustomCornerRadius
     {
-        
     }
 }
