@@ -2,6 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		 xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
 		xmlns:flex="clr-namespace:Avalonia.Flexbox;assembly=Avalonia.Flexbox"
 		xmlns:pg="using:Aura.UI.ControlsGallery.Pages"
 		xmlns:lpg="using:Aura.UI.ControlsGallery.Pages.LinkerPages"
@@ -14,17 +15,18 @@
 		WindowState="Maximized"
 		WindowStartupLocation="CenterScreen"
 		Icon="avares://Aura.UI.ControlsGallery/Assets/AuraUILogo_icon.png"
+		MinWidth="1171" MinHeight="492"
 		 ExtendClientAreaToDecorationsHint="true"
 		ExtendClientAreaChromeHints="PreferSystemChrome"
 		ExtendClientAreaTitleBarHeightHint="100"
         Title="Aura.UI Controls Gallery">
-	
-	<Grid Margin="{Binding #win.OffScreenMargin}"> 
+	<Grid Margin="{Binding #win.OffScreenMargin}" > 
 		<NavigationView Header="Aura.UI Gallery"  SelectedItem="{Binding #el}"
 			Name="nv"
 			Icon="{DynamicResource Material.Home}"
 			DisplayMode="{Binding #splitmodebox.SelectedItem.Content}">
 			<NavigationViewItem Name="el" Header="What's new?"
+								IsSelected="True"
 								Icon="{DynamicResource Zondicons.Announcement}">
 				<NavigationViewItem.Title>
 					<Grid VerticalAlignment="Top">
@@ -40,48 +42,50 @@
 					</Grid>
 				</NavigationViewItem.Title>
 				<NavigationViewItem.Content>
-					<GroupBox Margin="10" Grid.Row="1"
-								  Header="Recently Added Samples"
-								  TextBlock.FontSize="20">
-							<flex:FlexPanel Direction="Row"
-											Wrap="Wrap"
-											AlignContent="FlexStart"
-											AlignItems="Center"
-											JustifyContent="FlexStart"
-											ColumnSpacing="10"
-											RowSpacing="10">
-								<NavigationViewLinker Icon="{DynamicResource BoxIcons.RegularCodeAlt}"
-													  Title="FloatingButtonBar" LinkTo="{Binding #float_bar_btn}"
-													  Content="A Bar that contains Buttons and can be opened and closed."/>
-								<NavigationViewLinker Icon="{DynamicResource VSImageLib2019.Slider_16x}" 
-													  Title="ModernSlider" LinkTo="{Binding #mslider}"
-													  Content="Slider with AcrylicStyle."/>
-								<NavigationViewLinker Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}" 
-													  Title="ProgressRing" LinkTo="{Binding #pring}"
-													  Content="Shows a Progress or a value of an Application."/>
-								<NavigationViewLinker Icon="{DynamicResource VSImageLib.GroupBox_16x}" 
-													  Title="GroupBox" LinkTo="{Binding #gb}"
-													  Content="Can organize Controls, has a Title and a Content."/>
-								<NavigationViewLinker Icon="{DynamicResource Material.CardsOutline}" 
-													  Title="CardCollection" LinkTo="{Binding #cc}"
-													  Content="Organizes Controls using Cards."/>
-								<NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.tab_desktop_new_page_filled}"
-													  Title="AuraTabView" LinkTo="{Binding #aw}"
-													  Content="A TabControl powered-up, and its Tabs can be dragged."/>
-								<NavigationViewLinker Icon="{DynamicResource FluentIcons.navigation_regular}"
-													  Title="NavigationView" LinkTo="{Binding #nw}"
-													  Content="Common layout for TopLevel User Interfaces."/>
-								<NavigationViewLinker Icon="{DynamicResource VSImageLib.RibbonMenu_16x}" 
-													  Title="Ribbon" LinkTo="{Binding #rb}"
-													  Content="Organizes Controls by Tabs."/>
-								<NavigationViewLinker Icon="{DynamicResource BoxIcons.RegularMessageAltDots}" 
-													  Title="ContentDialog" LinkTo="{Binding #ctndialog}"
-													  Content="A Dialog with Content, has two buttons."/>
-								<NavigationViewLinker Icon="{DynamicResource BoxIcons.SolidMessageAltDots}" 
-													  Title="MessageBox" LinkTo="{Binding #msgbox}"
-													  Content="a Closable-Dialog, recommended to show information to the user."/>
-							</flex:FlexPanel>
-					</GroupBox>
+						<GroupBox Margin="10" Grid.Row="1" 
+								  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+								  HorizontalAlignment="Left"
+									  Header="Recently Added Samples"
+									  TextBlock.FontSize="20">
+								<flex:FlexPanel Direction="Row"
+												Wrap="Wrap"
+												AlignContent="FlexStart"
+												AlignItems="Center"
+												JustifyContent="FlexStart"
+												ColumnSpacing="10"
+												RowSpacing="10">
+									<NavigationViewLinker Icon="{DynamicResource BoxIcons.RegularCodeAlt}"
+														  Title="FloatingButtonBar" LinkTo="{Binding #float_bar_btn}"
+														  Content="A Bar that contains Buttons and can be opened and closed."/>
+									<NavigationViewLinker Icon="{DynamicResource VSImageLib2019.Slider_16x}" 
+														  Title="ModernSlider" LinkTo="{Binding #mslider}"
+														  Content="Slider with AcrylicStyle."/>
+									<NavigationViewLinker Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}" 
+														  Title="ProgressRing" LinkTo="{Binding #pring}"
+														  Content="Shows a Progress or a value of an Application."/>
+									<NavigationViewLinker Icon="{DynamicResource VSImageLib.GroupBox_16x}" 
+														  Title="GroupBox" LinkTo="{Binding #gb}"
+														  Content="Can organize Controls, has a Title and a Content."/>
+									<NavigationViewLinker Icon="{DynamicResource Material.CardsOutline}" 
+														  Title="CardCollection" LinkTo="{Binding #cc}"
+														  Content="Organizes Controls using Cards."/>
+									<NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.tab_desktop_new_page_filled}"
+														  Title="AuraTabView" LinkTo="{Binding #aw}"
+														  Content="A TabControl powered-up, and its Tabs can be dragged."/>
+									<NavigationViewLinker Icon="{DynamicResource FluentIcons.navigation_regular}"
+														  Title="NavigationView" LinkTo="{Binding #nw}"
+														  Content="Common layout for TopLevel User Interfaces."/>
+									<NavigationViewLinker Icon="{DynamicResource VSImageLib.RibbonMenu_16x}" 
+														  Title="Ribbon" LinkTo="{Binding #rb}"
+														  Content="Organizes Controls by Tabs."/>
+									<NavigationViewLinker Icon="{DynamicResource BoxIcons.RegularMessageAltDots}" 
+														  Title="ContentDialog" LinkTo="{Binding #ctndialog}"
+														  Content="A Dialog with Content, has two buttons."/>
+									<NavigationViewLinker Icon="{DynamicResource BoxIcons.SolidMessageAltDots}" 
+														  Title="MessageBox" LinkTo="{Binding #msgbox}"
+														  Content="a Closable-Dialog, recommended to show information to the user."/>
+								</flex:FlexPanel>
+						</GroupBox>
 				</NavigationViewItem.Content>
 			</NavigationViewItem>
 			<Separator/>
@@ -115,13 +119,13 @@
 						<pg:FloatingButtonBarPage/>
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
-				<NavigationViewItem Name="mslider" Header="ModernSlider" 
+				<NavigationViewItem Name="mslider" Header="ModernSlider"  Title="ModernSlider"
 									Icon="{DynamicResource VSImageLib2019.Slider_16x}">
 					<NavigationViewItem.Content>
 						<pg:ModernSliderPage/>
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
-				<NavigationViewItem Name="pring" Header="ProgressRing"
+				<NavigationViewItem Name="pring" Header="ProgressRing" Title="ProgressRing"
 									Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}">
 					<NavigationViewItem.Content>
 						<pg:ProgressRingPage/>
@@ -155,7 +159,7 @@
 						<pg:GroupBoxPage/>
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
-				<NavigationViewItem Name="cc" Header="CardCollection" Title="Card Collection"
+				<NavigationViewItem Name="cc" Header="CardCollection" Title="CardCollection"
 										 Icon="{DynamicResource Material.CardsOutline}">
 					<NavigationViewItem.Content>
 						<pg:CardControlPage/>
@@ -192,13 +196,13 @@
 						<pg:AuraTabViewPage/>
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
-				<NavigationViewItem Name="nw" Header="NavigationView" Title="Herarchical NavigationView"
+				<NavigationViewItem Name="nw" Header="NavigationView" Title="NavigationView"
 										 Icon="{DynamicResource FluentIcons.navigation_regular}">
 					<NavigationViewItem.Content>
 						<pg:NavigationViewPage/>
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
-				<NavigationViewItem Name="rb" Header="Ribbon" Title="Ribbon View"
+				<NavigationViewItem Name="rb" Header="Ribbon" Title="Ribbon"
 										 Icon="{DynamicResource VSImageLib.RibbonMenu_16x}">
 					<NavigationViewItem.Content>
 						<pg:RibbonPage/>
@@ -242,21 +246,25 @@
 		</NavigationView>
 		
 		<Border Background="Transparent" VerticalAlignment="Top" Height="19" PointerPressed="EnableDrag"/>
-		<Grid  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10" ColumnDefinitions="auto,auto">
-			<ComboBox Name="splitmodebox" PlaceholderText="NavigationView Display Mode"
+		<StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+			<ToggleSwitch OnContent="Open" OffContent="Close"
+						  IsChecked="{Binding #nv.IsOpen, Mode=TwoWay}"/>
+			<ComboBox Grid.Column="1"
+				      Name="splitmodebox" PlaceholderText="NavigationView Display Mode"
 					  SelectedItem="{Binding #r}">
 				<ComboBoxItem Name="r">CompactInline</ComboBoxItem>
 				<ComboBoxItem>CompactOverlay</ComboBoxItem>
 				<ComboBoxItem>Inline</ComboBoxItem>
 				<ComboBoxItem>Overlay</ComboBoxItem>
 			</ComboBox>
-			<ComboBox Grid.Column="1" Name="combobox" PlaceholderText="Window Transparency Level" 
+			<ComboBox Grid.Column="2"
+					  Name="combobox" PlaceholderText="Window Transparency Level" 
 					  SelectedItem="{Binding #s}" >
 				<ComboBoxItem>None</ComboBoxItem>
 				<ComboBoxItem>Transparent</ComboBoxItem>
 				<ComboBoxItem>Blur</ComboBoxItem>
 				<ComboBoxItem Name="s">AcrylicBlur</ComboBoxItem>
 			</ComboBox>
-		</Grid>
+		</StackPanel>
 	</Grid>
 </Window>

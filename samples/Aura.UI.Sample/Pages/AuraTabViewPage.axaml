@@ -3,15 +3,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="Aura.UI.ControlsGallery.Pages.AuraTabViewPage">
-	<Decorator Padding="20">
-		<Grid RowDefinitions="auto,20,auto">
-			<AuraTabView Header="View 1" Height="200">
-				<AuraTabItem Header="Tab 1, View 1"/>
-				<AuraTabItem Header="Tab 2, View 1"/>
-				<AuraTabItem Header="Tab 3, View 1"/>
-				<AuraTabItem Header="Tab 4, View 1"/>
-			</AuraTabView>
-		</Grid>
-	</Decorator>
+             x:Class="Aura.UI.ControlsGallery.Pages.AuraTabViewPage"
+             Padding="10">
+  <StackPanel Spacing="10">
+    <TextBlock Text="AuraTabView is a control that can organize Contents by Drag-n-Drop."/>
+    <CodeExample>
+      <AuraTabView ClickOnAddingButton="AddTab"/>
+    </CodeExample>
+    <CodeExample>
+      <AuraTabView ClickOnAddingButton="AddTab"/>
+    </CodeExample>
+  </StackPanel>
 </UserControl>

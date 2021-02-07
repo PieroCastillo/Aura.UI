@@ -15,7 +15,9 @@
 				<RibbonGroup/>
 			</RibbonItem>
 			<RibbonItem Header="Edit">
-				
+        <RibbonGroup>
+          
+        </RibbonGroup>
 			</RibbonItem>
 		</Ribbon> 
 	</Grid>

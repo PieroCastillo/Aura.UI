@@ -2,6 +2,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <None Remove="Assets\20000.jpg" />
@@ -41,7 +42,9 @@
     <AvaloniaResource Include="Assets\75000.jpg" />
     <AvaloniaResource Include="Assets\alonetogheterRM.jpg" />
     <AvaloniaResource Include="Assets\AuraUIBanner_v2.png" />
-    <AvaloniaResource Include="Assets\AuraUILogo_full_icon.png" />
+    <AvaloniaResource Include="Assets\AuraUILogo_full_icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </AvaloniaResource>
     <AvaloniaResource Include="Assets\AuraUILogo_icon.png" />
     <AvaloniaResource Include="Assets\bringtherain.jpg" />
     <AvaloniaResource Include="Assets\dejavu.jpg" />
@@ -88,8 +91,5 @@
     <Compile Update="Pages\GroupBoxPage.axaml.cs">
       <DependentUpon>GroupBoxPage.axaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\LinkerPages\" />
   </ItemGroup>
 </Project>

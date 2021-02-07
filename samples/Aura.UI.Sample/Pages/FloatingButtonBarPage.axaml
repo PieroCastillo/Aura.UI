@@ -4,51 +4,96 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
-             x:Class="Aura.UI.ControlsGallery.Pages.FloatingButtonBarPage">
+             x:Class="Aura.UI.ControlsGallery.Pages.FloatingButtonBarPage"
+			 Padding="20"
+			 HorizontalAlignment="Left">
 	<UserControl.Resources>
 		<sys:Boolean x:Key="value">true</sys:Boolean>
 	</UserControl.Resources>
-	<Grid RowDefinitions="auto,auto,auto">
-		<TextBlock Grid.Row="0">
+
+	<StackPanel Spacing="10">
+		<TextBlock Grid.Row="0" >
 			<x:String>
 				The FloatingButtonBar is a Control that can organize Buttons.
 			</x:String>
 		</TextBlock>
-		<ToggleSwitch Name="check" Grid.Row="1" IsChecked="true" 
-					  OnContent="FloatingButtonBars Opened"
-					  OffContent="FloatingButtonBars Closed"/>
-		<UniformGrid Grid.Row="2" Rows="2" Columns="2" Width="700" Height="700">
-			<FloatingButtonBar IsExpanded="{Binding #check.IsChecked, Mode=TwoWay}" OpenLength="250">
-				<FloatingButton/>
-				<FloatingButton/>
-				<FloatingButton/>
-				<FloatingButton/>
-			</FloatingButtonBar>
-
-			<FloatingButtonBar IsExpanded="{Binding #check.IsChecked, Mode=TwoWay}" OpenLength="250"
-							   ExpandDirection="ToLeft"
-							   UseLayoutRounding="False">
-				<FloatingButton/>
-				<FloatingButton/>
-				<FloatingButton/>
-				<FloatingButton/>
-			</FloatingButtonBar>
-
-			<FloatingButtonBar IsExpanded="{Binding #check.IsChecked, Mode=TwoWay}" OpenLength="250"
-							   ExpandDirection="ToTop">
-				<FloatingButton/>
-				<FloatingButton/>
-				<FloatingButton/>
-				<FloatingButton/>
-			</FloatingButtonBar>
-
-			<FloatingButtonBar IsExpanded="{Binding #check.IsChecked, Mode=TwoWay}" OpenLength="250"
-							   ExpandDirection="ToBottom">
-				<FloatingButton/>
-				<FloatingButton/>
-				<FloatingButton/>
-				<FloatingButton/>
-			</FloatingButtonBar>
-		</UniformGrid>
-	</Grid>
+		<StackPanel Spacing="10">
+			<TextBlock Text="FloatingButtonBar with ExpandDirection=ToRight" 
+					   Margin="20,0"
+					   Classes="ts"/>
+			<CodeExample CSharpVisible="False">
+				<FloatingButtonBar OpenLength="250" ExpandDirection="ToRight">
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+				</FloatingButtonBar>
+				<CodeExample.XAMLText>
+&lt;FloatingButtonBar OpenLength="250" ExpandDirection="ToRight">
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+&lt;/FloatingButtonBar>				
+				</CodeExample.XAMLText>
+			</CodeExample>
+			<TextBlock Text="FloatingButtonBar with ExpandDirection=ToLeft"
+					   Margin="20,0"
+					   Classes="ts"/>
+			<CodeExample CSharpVisible="False">
+				<FloatingButtonBar OpenLength="250" ExpandDirection="ToLeft">
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+				</FloatingButtonBar>
+				<CodeExample.XAMLText>
+&lt;FloatingButtonBar OpenLength="250" ExpandDirection="ToLeft">
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+&lt;/FloatingButtonBar>
+				</CodeExample.XAMLText>
+			</CodeExample>
+			<TextBlock Text="FloatingButtonBar with ExpandDirection=ToTop"
+					   Margin="20,0"
+					   Classes="ts"/>
+			<CodeExample CSharpVisible="False">
+				<FloatingButtonBar OpenLength="250" ExpandDirection="ToTop">
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+				</FloatingButtonBar>
+				<CodeExample.XAMLText>
+&lt;FloatingButtonBar OpenLength="250" ExpandDirection="ToTop">
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+&lt;/FloatingButtonBar>
+				</CodeExample.XAMLText>
+			</CodeExample>
+			<TextBlock Text="FloatingButtonBar with ExpandDirection=ToBottom"
+					Margin="20,0"
+					Classes="ts"/>
+			<CodeExample CSharpVisible="False">
+				<FloatingButtonBar OpenLength="250" ExpandDirection="ToBottom">
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+				</FloatingButtonBar>
+				<CodeExample.XAMLText>
+&lt;FloatingButtonBar OpenLength="250" ExpandDirection="ToBottom">
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+&lt;/FloatingButtonBar>
+				</CodeExample.XAMLText>
+			</CodeExample>
+		</StackPanel>
+	</StackPanel>
 </UserControl>
