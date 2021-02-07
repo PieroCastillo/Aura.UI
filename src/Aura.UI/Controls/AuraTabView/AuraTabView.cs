@@ -21,6 +21,11 @@ namespace Aura.UI.Controls
         private Border b_;
         private Grid g_;
 
+        static AuraTabView()
+        {
+            SelectionModeProperty.OverrideDefaultValue<AuraTabView>(SelectionMode.Single);
+        }
+
         protected void AdderButtonClicked(object sender, RoutedEventArgs e)
         {
             var e_ = new RoutedEventArgs(ClickOnAddingButtonEvent);
@@ -28,10 +33,6 @@ namespace Aura.UI.Controls
             e_.Handled = true;
         }
 
-        static AuraTabView()
-        {
-            SelectionModeProperty.OverrideDefaultValue<AuraTabView>(SelectionMode.Single);
-        }
 
         protected override IItemContainerGenerator CreateItemContainerGenerator()
         {
@@ -74,6 +75,16 @@ namespace Aura.UI.Controls
         {
             WidthRemainingSpace = g_.Bounds.Width;
             HeightRemainingSpace = g_.Bounds.Height;
+        }
+
+        /// <summary>
+        /// Add a <see cref="AuraTabItem"/>
+        /// </summary>
+        /// <param name="ItemToAdd">The Item to Add</param>
+        /// <param name="isSelected"></param>
+        public void AddTab(AuraTabItem ItemToAdd, bool isSelected = true)
+        {
+            TabControlExtensions.AddTab(this, ItemToAdd, isSelected);
         }
     }
 }

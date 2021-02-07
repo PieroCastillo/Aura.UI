@@ -24,6 +24,9 @@ namespace Aura.UI.Dragging
                 var src = sender as TControlItem; // sets the source
                 var target = e.Data.Get(nameof(Control)) as TControlItem;// sets the target to drop
 
+            if (src.Parent != target.Parent)
+                return;
+
             if (!target.Equals(src))//checks it
             {
                 var parent = src.GetSelfAndLogicalAncestors().OfType<TItemsControl>().FirstOrDefault<TItemsControl>(); //gets the parent 

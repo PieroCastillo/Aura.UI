@@ -203,5 +203,19 @@ namespace Aura.UI.Controls
         /// </summary>
         public readonly static StyledProperty<bool> ReorderableTabsProperty =
             AvaloniaProperty.Register<AuraTabView, bool>(nameof(ReorderableTabs), true);
+
+        /// <summary>
+        /// Gets or sets if the DraggableTabsChildren can be dragged Immediate or on PointerReleased only.
+        /// </summary>
+        public bool ImmediateDrag
+        {
+            get => GetValue(ImmediateDragProperty);
+            set => SetValue(ImmediateDragProperty, value);
+        }
+        /// <summary>
+        /// Defines the <see cref="ImmediateDrag"/> property.
+        /// </summary>
+        public static readonly StyledProperty<bool> ImmediateDragProperty =
+            AvaloniaProperty.Register<AuraTabView, bool>(nameof(ImmediateDrag), true);
     }
 }
