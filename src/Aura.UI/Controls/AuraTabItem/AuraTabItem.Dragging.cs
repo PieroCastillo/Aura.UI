@@ -20,10 +20,11 @@ namespace Aura.UI.Controls
             AddHandler(DragDrop.DropEvent, OnDrop);
         }
 
+        /// <inheritdoc/>
         protected override async void OnPointerPressed(PointerPressedEventArgs e)
         {
             base.OnPointerPressed(e);
-            this.IsSelected = true;
+            IsSelected = true;
             var tabitem = (e.Source as ILogical).GetParentTOfLogical<AuraTabItem>(); // sets the source
             if (this.GetParentTOfLogical<AuraTabView>() != null & tabitem != null & CanBeDragged)
             {
@@ -36,6 +37,7 @@ namespace Aura.UI.Controls
             e.Handled = true;
         }
 
+        /// <inheritdoc/>
         protected override void OnPointerReleased(PointerReleasedEventArgs e)
         {
             base.OnPointerReleased(e);
@@ -43,6 +45,7 @@ namespace Aura.UI.Controls
             PseudoClasses.Remove(":dragging");
         }
 
+        /// <inheritdoc/>
         protected override void OnPointerCaptureLost(PointerCaptureLostEventArgs e)
         {
             base.OnPointerCaptureLost(e);
@@ -50,6 +53,7 @@ namespace Aura.UI.Controls
             PseudoClasses.Remove(":dragging");
         }
 
+        /// <inheritdoc/>
         protected override void OnPointerLeave(PointerEventArgs e)
         {
             base.OnPointerLeave(e);
@@ -57,6 +61,7 @@ namespace Aura.UI.Controls
             PseudoClasses.Remove(":dragging");
         }
 
+        /// <inheritdoc/>
         protected override void OnLostFocus(RoutedEventArgs e)
         {
             base.OnLostFocus(e);

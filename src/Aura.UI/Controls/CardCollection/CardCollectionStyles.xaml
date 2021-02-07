@@ -1,8 +1,8 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="CardCollection">
-		<Setter Property="Header" Value="CardCollection"/>
-		<Setter Property="Padding" Value="{DynamicResource CardCollectionPadding}"/>
+		<Setter Property="Header" Value="CardCollection" />
+		<Setter Property="Padding" Value="{DynamicResource CardCollectionPadding}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Padding="{TemplateBinding Padding}">
@@ -10,13 +10,13 @@
 						<ContentPresenter Name="PART_HeaderPresenter"
 											Content="{TemplateBinding Header}"
 											TextBlock.FontWeight="Bold"
-											TextBlock.FontSize="18"/>
+											TextBlock.FontSize="18" />
 						<ScrollViewer Grid.Row="1"
 										HorizontalScrollBarVisibility="Auto"
 									  VerticalScrollBarVisibility="Auto">
-							<ItemsPresenter 
+							<ItemsPresenter
 										Items="{TemplateBinding Items}"
-										ItemsPanel="{TemplateBinding ItemsPanel}"/>
+										ItemsPanel="{TemplateBinding ItemsPanel}" />
 						</ScrollViewer>
 					</Grid>
 				</Border>
@@ -26,14 +26,14 @@
 	<Style Selector="CardCollection[TileMode=HorizontalDisposition]">
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
-				<StackPanel Orientation="Horizontal"/>
+				<StackPanel Orientation="Horizontal" />
 			</ItemsPanelTemplate>
 		</Setter>
 	</Style>
 	<Style Selector="CardCollection[TileMode=VerticalDisposition]">
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
-				<StackPanel Orientation="Vertical"/>
+				<StackPanel Orientation="Vertical" />
 			</ItemsPanelTemplate>
 		</Setter>
 	</Style>
@@ -41,17 +41,17 @@
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
 				<UniformGrid Columns="{Binding $parent[CardCollection].Columns}"
-							 Rows="{Binding $parent[CardCollection].Rows}"/>
+							 Rows="{Binding $parent[CardCollection].Rows}" />
 			</ItemsPanelTemplate>
 		</Setter>
 	</Style>
 	<Design.PreviewWith>
-		<Border Width="300" >
-			<CardCollection TileMode="HorizontalDisposition" >
-				
+		<Border Width="300">
+			<CardCollection TileMode="HorizontalDisposition">
+
 				<CardControl Header="75000"
 						SecondaryHeader="Colbreakz">
-	
+
 					<Border Height="100" Width="100">
 					</Border>
 				</CardControl>

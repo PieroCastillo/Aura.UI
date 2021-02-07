@@ -22,7 +22,7 @@ namespace Aura.UI.Controls
         private Control _layercontrol = new Control();
 
         /// <summary>
-        /// Defines the control what will be inherited its "PointerOver" Event
+        /// Gets or sets the control what will be inherited its "PointerOver" Event
         /// </summary>
         public Control LayerControl
         {
@@ -30,6 +30,9 @@ namespace Aura.UI.Controls
             set => SetAndRaise(LayerControlProperty, ref _layercontrol, value);
         }
 
+        /// <summary>
+        /// Defines the <see cref="LayerControl"/> property.
+        /// </summary>
         public readonly static DirectProperty<Follower, Control> LayerControlProperty =
             AvaloniaProperty.RegisterDirect<Follower, Control>(
                 nameof(LayerControl),
@@ -39,7 +42,7 @@ namespace Aura.UI.Controls
         private Canvas _canvaslayer = new Canvas();
 
         /// <summary>
-        /// You should define this property, without this the Follow event will not work, please,set the Canvas property "IsHitTestVisible" as false
+        /// Gets or sets the Canvas Layer
         /// </summary>
         public Canvas CanvasLayer
         {
@@ -47,6 +50,9 @@ namespace Aura.UI.Controls
             set => SetAndRaise(CanvasLayerProperty, ref _canvaslayer, value);
         }
 
+        /// <summary>
+        /// Defines the <see cref="CanvasLayer"/> property.
+        /// </summary>
         public readonly static DirectProperty<Follower, Canvas> CanvasLayerProperty =
             AvaloniaProperty.RegisterDirect<Follower, Canvas>(
                 nameof(CanvasLayer),

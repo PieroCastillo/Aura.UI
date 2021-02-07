@@ -4,33 +4,33 @@
 		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
 		<Setter Property="Maximum" Value="100" />
 		<Setter Property="Minimum" Value="0" />
-		<Setter Property="Value" Value="40"/>
+		<Setter Property="Value" Value="40" />
 	    <Setter Property="ThumbTemplate">
 			<ControlTemplate TargetType="Thumb">
-				<Border/>
+				<Border />
 			</ControlTemplate>
 		</Setter>
 	</Style>
 	<Style Selector="ModernSlider:horizontal">
-		<Setter Property="Height" Value="50"/>
-		<Setter Property="CornerRadius" Value="10"/>
+		<Setter Property="Height" Value="50" />
+		<Setter Property="Width" Value="300" />
+		<Setter Property="CornerRadius" Value="10" />
 		<Setter Property="Template">
-			<ControlTemplate TargetType="ModernSlider" >
-				<Decorator Name="PART_Decorator" Padding="5">
-					<Border Name="PART_Border" BoxShadow="0 0 3 0 Black" CornerRadius="{TemplateBinding CornerRadius}">
+			<ControlTemplate TargetType="ModernSlider">
+					<Border Name="PART_Border" BoxShadow="0 0 3 0 Black"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Margin="5">
 						<Border CornerRadius="{TemplateBinding CornerRadius}"
-											   ClipToBounds="True">
-							<ExperimentalAcrylicBorder Material="{DynamicResource ThemeAcrylicBackgroundBrush}"
-												    CornerRadius="{TemplateBinding CornerRadius}">
-								<Track Name="PART_Track" Value="{TemplateBinding Value}"
+								ClipToBounds="True">
+							<Track Name="PART_Track" Value="{TemplateBinding Value}"
 									  Orientation="Horizontal"
 									Maximum="{TemplateBinding Maximum}"
-								   Minimum="{TemplateBinding Minimum}" ClipToBounds="True">
+								   Minimum="{TemplateBinding Minimum}">
 									<Track.DecreaseButton>
 										<MaterialButton Name="PART_DecreaseButton" Classes="Repeats"
 												Content="{TemplateBinding LeftContent}"
 												HorizontalContentAlignment="Left"
-												VerticalContentAlignment="Center"/>
+												VerticalContentAlignment="Center" />
 									</Track.DecreaseButton>
 									<Track.IncreaseButton>
 										<MaterialButton Name="PART_IncreaseButton" Classes="Repeats"
@@ -39,103 +39,76 @@
 												VerticalContentAlignment="Center" />
 									</Track.IncreaseButton>
 									<Track.Thumb>
-										<Thumb Template="{TemplateBinding ThumbTemplate}"/>
+										<Thumb Template="{TemplateBinding ThumbTemplate}" />
 									</Track.Thumb>
 								</Track>
-							</ExperimentalAcrylicBorder>
 						</Border>
 					</Border>
-				</Decorator>		
-			</ControlTemplate> 
-		</Setter> 
+			</ControlTemplate>
+		</Setter>
 	</Style>
 	<Style Selector="ModernSlider:vertical">
-		<Setter Property="Width" Value="50"/>
-		<Setter Property="CornerRadius" Value="10"/>
+		<Setter Property="Width" Value="70" />
+		<Setter Property="CornerRadius" Value="10" />
+		<Setter Property="Height" Value="300" />
 		<Setter Property="Template">
-			<ControlTemplate TargetType="ModernSlider" >
-				<Decorator Name="PART_Decorator" Padding="5">
-					<Border Name="PART_Border" BoxShadow="0 0 3 0 Black" CornerRadius="{TemplateBinding CornerRadius}">
+			<ControlTemplate TargetType="ModernSlider">
+					<Border Name="PART_Border" BoxShadow="0 0 3 0 Black"
+							CornerRadius="{TemplateBinding CornerRadius}"
+							Margin="5">
 						<Border CornerRadius="{TemplateBinding CornerRadius}"
-											   ClipToBounds="True">
-							<ExperimentalAcrylicBorder Material="{DynamicResource ThemeAcrylicBackgroundBrush}"
-												    CornerRadius="{TemplateBinding CornerRadius}">
-								<Track Name="PART_Track" Value="{TemplateBinding Value}"
+								ClipToBounds="True">
+							<Track Name="PART_Track" Value="{TemplateBinding Value}"
 									  Orientation="Vertical"
 									Maximum="{TemplateBinding Maximum}"
 								   Minimum="{TemplateBinding Minimum}" ClipToBounds="True">
 									<Track.DecreaseButton>
 										<MaterialButton Name="PART_DecreaseButton" Classes="Repeats"
 												Content="{TemplateBinding LeftContent}"
-												HorizontalContentAlignment="Left"
-												VerticalContentAlignment="Center"/>
+												VerticalContentAlignment="Bottom" />
 									</Track.DecreaseButton>
 									<Track.IncreaseButton>
 										<MaterialButton Name="PART_IncreaseButton" Classes="Repeats"
-												Content="{TemplateBinding RightContent}"
-												HorizontalContentAlignment="Right"
-												VerticalContentAlignment="Center" />
+												Content="{TemplateBinding RightContent}" />
 									</Track.IncreaseButton>
 									<Track.Thumb>
-										<Thumb Template="{TemplateBinding ThumbTemplate}"/>
+										<Thumb Template="{TemplateBinding ThumbTemplate}" />
 									</Track.Thumb>
-								</Track>
-							</ExperimentalAcrylicBorder>
+							</Track>
 						</Border>
 					</Border>
-				</Decorator>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
-		<Setter Property="Material" Value="{AcrylicMaterial TintColor={DynamicResource ThemeControlMidHighColor}, MaterialOpacity=0.5, TintOpacity=0.5}"/> 
-		<!--{DynamicResource ThemeAcrylicControlMidHighBrush}-->		
+		<Setter Property="Material" Value="{DynamicResource ModernSliderIncrease}" />
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_IncreaseButton">
-		<Setter Property="Material" Value="{AcrylicMaterial TintColor={DynamicResource ThemeControlMidColor} , MaterialOpacity=0.5, TintOpacity=0.5}"/>		
+		<Setter Property="Material" Value="{DynamicResource ModernSliderIncreasePointerOver}" />
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_IncreaseButton">
-		<Setter Property="Material" Value="{AcrylicMaterial TintColor={DynamicResource ThemeControlLowColor}, MaterialOpacity=0.5, TintOpacity=0.5}"/>		 
-	</Style>   
-	
-	
-	<Style Selector="ModernSlider /template/ MaterialButton#PART_DecreaseButton">  
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush}"/> 
-	</Style>  
-	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_DecreaseButton">  
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush2}"/>  
-	</Style> 
-	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush}"/> 		  
+		<Setter Property="Material" Value="{DynamicResource ModernSliderIncreasePointerOver}" />
 	</Style>
 
-	<Style Selector="ModernSlider /template/ MaterialButton#PART_IncreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidBrush}"/>
-	</Style>
-	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_IncreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlMidHighBrush}"/>
-	</Style>
-	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_IncreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicControlLowBrush}"/>
-	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush2}"/>
+		<Setter Property="Material" Value="{DynamicResource ModernSliderDecrease}" />
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton:pointerover#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource ThemeAcrylicAccentBrush}"/>
+		<Setter Property="Material" Value="{DynamicResource ModernSliderDecreasePointerOver}" />
 	</Style>
 	<Style Selector="ModernSlider /template/ MaterialButton:pressed:pointerover#PART_DecreaseButton">
-		<Setter Property="Material" Value="{DynamicResource HighlightAcrylicBrush1}"/>
+		<Setter Property="Material" Value="{DynamicResource ModernSliderDecreasePointerOver}" />
 	</Style>
-	
+
 	<Style Selector="MaterialButton.Repeats">
-		<Setter Property="CornerRadius" Value="0"/>
+		<Setter Property="CornerRadius" Value="0" />
 	</Style>
 	<Design.PreviewWith>
-		<Border Padding="10" Background="#AAFFFFFF">  
+		<Border Padding="10" Background="#AAFFFFFF">
 			<StackPanel>
-				<ModernSlider Orientation="Horizontal" Width="150"/>
-				<ModernSlider Orientation="Vertical" Height="150" Width="60"/>
+				<ModernSlider Orientation="Horizontal"
+							  HorizontalAlignment="Center" />
+				<ModernSlider Orientation="Vertical" />
 			</StackPanel>
 		</Border>
 	</Design.PreviewWith>

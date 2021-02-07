@@ -1,62 +1,62 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="RibbonGroup">
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="HorizontalAlignment" Value="Left"/>
-		<Setter Property="VerticalAlignment" Value="Stretch"/>
-		<Setter Property="Header" Value="RibbonGroup"/>
-		<Setter Property="VerticalContentAlignment" Value="Top"/>
-		<Setter Property="Padding" Value="{DynamicResource RibbonGroupPadding}"/>
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="HorizontalAlignment" Value="Left" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Header" Value="RibbonGroup" />
+		<Setter Property="VerticalContentAlignment" Value="Top" />
+		<Setter Property="Padding" Value="{DynamicResource RibbonGroupPadding}" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="RibbonGroup">
 					<Grid Name="PART_Container">
 						<Grid.RowDefinitions>
-							<RowDefinition Height="*"/> 
-							<RowDefinition Height="5"/>
-							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="5" />
+							<RowDefinition Height="Auto" />
 						</Grid.RowDefinitions>
 						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="Auto"/>
-							<ColumnDefinition Width="*"/>
-							<ColumnDefinition Width="Auto"/> 
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
 						</Grid.ColumnDefinitions>
 						<ContentPresenter Grid.Row="0" Grid.Column="1"
-										  Padding="{TemplateBinding Padding}"  
+										  Padding="{TemplateBinding Padding}"
 										  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
 										  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-										  Content="{TemplateBinding Content}"/>
+										  Content="{TemplateBinding Content}" />
 						<Border Grid.Row="1"	Grid.Column="1"
 								Background="{DynamicResource ThemeBorderLowBrush}"
-								CornerRadius="2"/>
-						<Grid Grid.Row="2" Grid.Column="1" 
+								CornerRadius="2" />
+						<Grid Grid.Row="2" Grid.Column="1"
 									VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
 							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="*"/>
-								<ColumnDefinition Width="Auto"/>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="Auto" />
 							</Grid.ColumnDefinitions>
 							<Border Padding="5" HorizontalAlignment="Center">
 								<ContentPresenter Content="{TemplateBinding Header}"
 											  ContentTemplate="{TemplateBinding HeaderTemplate}"
-											  HorizontalAlignment="Stretch" 
+											  HorizontalAlignment="Stretch"
 											  HorizontalContentAlignment="Center"
 											  TextBlock.FontSize="12"
-											  VerticalAlignment="Center"/>
+											  VerticalAlignment="Center" />
 							</Border>
 							<MaterialButton Grid.Column="1"
 											Name="PART_MiniButton" Padding="5"
-											HorizontalAlignment="Right" 
+											HorizontalAlignment="Right"
 											VerticalAlignment="Center" MaterialIsVisible="True">
 									 <Path Fill="{DynamicResource RibbonGroupForeground}">
 										 <Path.Data>M 9.7021647 -0.11328324 0.41351726 -0.0959617 c -0.082331 5.7903e-4 -0.15691694 0.03332856 -0.21086464 0.08646458 -0.0539477 0.05313581 -0.0871794 0.12662389 -0.0866077 0.20742888 L 0.13350952 9.3123619 C 0.13387601 9.4739358 0.26805698 9.6049659 0.43269991 9.6046808 0.5973626 9.6043761 0.73091253 9.4727903 0.73060177 9.3112162 L 0.71313716 0.50170378 1.063147 0.7965991 C 0.9887546 0.89809733 0.9967678 1.0409183 1.088771 1.1322938 l 7.999552 7.9455827 -5.9604757 0.019899 c -0.068886 7.34e-5 -0.1349286 0.027779 -0.1833791 0.07673 -0.1004904 0.1015511 -0.099543 0.2652661 0.00199 0.3657565 0.048591 0.048264 0.1142076 0.07532 0.1826639 0.075156 L 9.713603 9.5930848 c 0.00901 1.6e-5 0.018089 -4.433e-4 0.027056 -0.00144 0.00862 -8.588e-4 0.017117 -0.00224 0.025624 -0.00401 0.048033 -0.00992 0.093828 -0.033461 0.1309853 -0.070861 0.05255 -0.052906 0.077274 -0.122753 0.074726 -0.1918257 L 9.9496662 2.7484848 C 9.9467796 2.6091628 9.834061 2.4972165 9.6947104 2.4952463 9.5518558 2.4932518 9.4344395 2.607491 9.4324533 2.7503458 L 9.452925 8.7108215 1.4533802 0.76525031 C 1.4026985 0.7149109 1.336493 0.68987058 1.2702868 0.69009486 c -0.066206 2.1987e-4 -0.1324674 0.0257623 -0.1828067 0.076444 -0.00874 0.008799 -0.015691 0.0185428 -0.022905 0.0282008 L 0.71313422 0.49884162 v -0.009162 L 9.7033066 0.47264472 C 9.8679687 0.47235108 10.001662 0.34075416 10.001352 0.17918083 10.001047 0.0176066 9.8668237 -0.11358682 9.7021617 -0.11328177 Z</Path.Data>
-									 </Path>			
-							</MaterialButton> 
-						</Grid> 
+									 </Path>
+							</MaterialButton>
+						</Grid>
 					</Grid>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 	<Style Selector="RibbonGroup:disabled /template/ Grid#PART_Container">
-		<Setter Property="Opacity" Value="{DynamicResource RibbonGroupDisabledOpacity}"/>
+		<Setter Property="Opacity" Value="{DynamicResource RibbonGroupDisabledOpacity}" />
 	</Style>
 	<Design.PreviewWith>
 		<Border>
@@ -65,20 +65,20 @@
 					<RibbonPanel>
 						<RibbonGroup Header=":3" Width="300">
 							<StackPanel>
-								<Button Content="Why?"/>
-								<Button Content="Why? v2"/>
-								<Button Content="Why? v3"/>
+								<Button Content="Why?" />
+								<Button Content="Why? v2" />
+								<Button Content="Why? v3" />
 							</StackPanel>
 						</RibbonGroup>
-						<RibbonSeparator/>
+						<RibbonSeparator />
 						<RibbonGroup>
-							<Button Content="Why?" Height="100"/>
+							<Button Content="Why?" Height="100" />
 						</RibbonGroup>
 						<RibbonSeparator></RibbonSeparator>
 						<RibbonGroup></RibbonGroup>
 					</RibbonPanel>
 				</RibbonItem>
-			</Ribbon> 
+			</Ribbon>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

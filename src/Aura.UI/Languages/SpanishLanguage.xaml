@@ -68,7 +68,6 @@
 			<ms:String x:Key="GoldColorText">Amarillo</ms:String>
 			<ms:String x:Key="SilverColorText">Plata</ms:String>
 
-
 			<!--En inglés muchas palabras son verbos y a la vez-->
 			<!--sustantivos, por ello está los recursos "To{Verb}"-->
 			<!--y así también facilitar el uso de la librería para hispanohablantes-->
@@ -98,7 +97,7 @@
 			<ms:String x:Key="ToMoveDownText">Bajar</ms:String>
 			<ms:String x:Key="ToAddText">Agregar</ms:String>
 			<ms:String x:Key="ToAcceptText">Aceptar</ms:String>
-			
+
 			<!--Verbos con Objetos directos-->
 			<ms:String x:Key="ToInsertTextText">Insertar Texto</ms:String>
 			<ms:String x:Key="ToOpenHomePageText">Abrir Página de Inicio</ms:String>
@@ -122,7 +121,7 @@
 			<ms:String x:Key="ToHideLayerText">Ocultar Capa</ms:String>
 			<ms:String x:Key="ToShowLayerText">MostrarCapa</ms:String>
 			<ms:String x:Key="ToRenameLayerText">Renombrar Capa</ms:String>
-			<ms:String x:Key="ToNewLayerText">Nueva Capa</ms:String>			
+			<ms:String x:Key="ToNewLayerText">Nueva Capa</ms:String>
 			<ms:String x:Key="ToRotate90DegreesToRightText">Rotar 90 grados hacia la derecha</ms:String>
 			<ms:String x:Key="ToRotate90DegreesToLeftText">Rotar 90 grados hacia la izquierda</ms:String>
 		</Style.Resources>

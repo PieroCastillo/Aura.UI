@@ -19,8 +19,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public string MainText
         {
-            get { return GetValue(MainTextProperty); }
-            set { SetValue(MainTextProperty, value); }
+            get => GetValue(MainTextProperty);
+            set => SetValue(MainTextProperty, value);
         }
 
         public static readonly StyledProperty<string> MainTextProperty =
@@ -32,8 +32,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public string SecondaryText
         {
-            get { return GetValue(SecondaryTextProperty); }
-            set { SetValue(SecondaryTextProperty, value); }
+            get => GetValue(SecondaryTextProperty);
+            set => SetValue(SecondaryTextProperty, value);
         }
 
         public static readonly StyledProperty<string> SecondaryTextProperty =
@@ -44,8 +44,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public IImage Icon
         {
-            get { return GetValue(IconProperty); }
-            set { SetValue(IconProperty, value); }
+            get => GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
         }
 
         public static readonly StyledProperty<IImage> IconProperty =

@@ -14,7 +14,7 @@ namespace Aura.UI.Controls.Primitives
                 throw new ArgumentNullException("The Owner can't be null.");
             }
 
-            this.Owner = owner;
+            Owner = owner;
         }
 
         public void Show()
@@ -28,7 +28,7 @@ namespace Aura.UI.Controls.Primitives
         public virtual void Close()
         {
             var e = new RoutedEventArgs(ClosingEvent);
-            this.RaiseEvent(e);
+            RaiseEvent(e);
             e.Handled = true;
             ContentDialogService.CloseDialogOn(Owner, this);
         }

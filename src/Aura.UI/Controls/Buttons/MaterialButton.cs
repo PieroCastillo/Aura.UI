@@ -15,8 +15,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public CornerRadius CornerRadius
         {
-            get { return GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
+            get => GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
 
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
@@ -27,8 +27,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public ExperimentalAcrylicMaterial Material
         {
-            get { return GetValue(MaterialProperty); }
-            set { SetValue(MaterialProperty, value); }
+            get => GetValue(MaterialProperty);
+            set => SetValue(MaterialProperty, value);
         }
 
         public static readonly StyledProperty<ExperimentalAcrylicMaterial> MaterialProperty =
@@ -45,8 +45,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public bool MaterialIsVisible
         {
-            get { return GetValue(MaterialIsVisibleProperty); }
-            set { SetValue(MaterialIsVisibleProperty, value); }
+            get => GetValue(MaterialIsVisibleProperty);
+            set => SetValue(MaterialIsVisibleProperty, value);
         }
 
         public static readonly StyledProperty<bool> MaterialIsVisibleProperty =

@@ -2,7 +2,6 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
 using Avalonia.Interactivity;
-using Avalonia.Media;
 using System;
 using System.Diagnostics;
 
@@ -43,6 +42,7 @@ namespace Aura.UI.Controls.Navigation
                         x.OnDeselected(x, e);
                     }
                 });
+            IsOpenProperty.Changed.Subscribe(e => OnIsOpenChanged(e));
         }
 
         protected virtual void OnDeselected(object sender, AvaloniaPropertyChangedEventArgs e)
@@ -61,22 +61,24 @@ namespace Aura.UI.Controls.Navigation
             PseudoClasses.Add(":opened");
         }
 
+        private static void OnIsOpenChanged(AvaloniaPropertyChangedEventArgs<bool> e)
+        {
+            var sender = e.Sender as NavigationViewItem;
+            if (sender != null && e.NewValue.HasValue)
+            {
+                if (sender.IsSelected && sender.Parent is NavigationViewItem nw && nw.Parent is NavigationView nwp)
+                {
+                    nwp.SelectSingleItem(nw);
+                    nw.IsExpanded = false;
+                    Debug.WriteLine($"yeah & {sender.Header}");
+                }
+            }
+        }
+
         protected virtual void OnClosed(object sender, RoutedEventArgs e)
         {
             PseudoClasses.Remove(":opened");
             PseudoClasses.Add(":closed");
-
-            /*if (this.GetParentTOfLogical<Control>() is SuperNavigationView)
-            {
-                return;
-            }
-            else if(this.GetParentTOfLogical<Control>() is SuperNavigationViewItem s)
-            {
-                var p = this.GetParentTOfLogical<SuperNavigationView>();
-
-                s.IsSelected = true;
-                p.SelectedItem = s;
-            }*/
         }
 
         public event EventHandler<RoutedEventArgs> Opened
@@ -96,54 +98,5 @@ namespace Aura.UI.Controls.Navigation
 
         public static readonly RoutedEvent<RoutedEventArgs> ClosedEvent =
             RoutedEvent.Register<NavigationViewItemBase, RoutedEventArgs>(nameof(Closed), RoutingStrategies.Bubble);
-
-        public object Content
-        {
-            get => _content;
-            set => SetAndRaise(ContentProperty, ref _content, value);
-        }
-
-        public static readonly DirectProperty<NavigationViewItemBase, object> ContentProperty =
-            AvaloniaProperty.RegisterDirect<NavigationViewItemBase, object>(
-                nameof(Content),
-                o => o.Content,
-                (o, v) => o.Content = v);
-
-        private IImage _icon;
-
-        public IImage Icon
-        {
-            get => _icon;
-            set => SetAndRaise(IconProperty, ref _icon, value);
-        }
-
-        public readonly static DirectProperty<NavigationViewItemBase, IImage> IconProperty =
-            AvaloniaProperty.RegisterDirect<NavigationViewItemBase, IImage>(
-                nameof(Icon),
-                o => o.Icon,
-                (o, v) => o.Icon = v);
-
-        private object _title = "Title";
-
-        public object Title
-        {
-            get => _title;
-            set => SetAndRaise(TitleProperty, ref _title, value);
-        }
-
-        public static readonly DirectProperty<NavigationViewItemBase, object> TitleProperty =
-            AvaloniaProperty.RegisterDirect<NavigationViewItemBase, object>(
-                nameof(Title),
-                o => o.Title,
-                (o, v) => o.Title = v);
-
-        public bool IsOpen
-        {
-            get => GetValue(IsOpenProperty);
-            set => SetValue(IsOpenProperty, value);
-        }
-
-        public static readonly StyledProperty<bool> IsOpenProperty =
-            AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), true);
     }
 }

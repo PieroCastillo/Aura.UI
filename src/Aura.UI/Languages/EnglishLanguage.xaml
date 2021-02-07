@@ -95,7 +95,7 @@
 			<ms:String x:Key="ToUnGroupText">Ungroup</ms:String>
 			<ms:String x:Key="ToAddText">Add</ms:String>
 			<ms:String x:Key="ToAcceptText">Accept</ms:String>
-            
+
 			<!--Verbs with Direct Objects-->
 			<ms:String x:Key="ToInsertTextText">Insert Text</ms:String>
 			<ms:String x:Key="ToOpenHomePageText">Open Home Page</ms:String>
@@ -128,7 +128,7 @@
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="20">
-			<TextBlock Text="{DynamicResource LangNameText}"></TextBlock> 
+			<TextBlock Text="{DynamicResource LangNameText}"></TextBlock>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

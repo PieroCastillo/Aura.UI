@@ -1,5 +1,4 @@
-﻿using Aura.UI.Attributes;
-using Aura.UI.Controls.Generators;
+﻿using Aura.UI.Controls.Generators;
 using Aura.UI.Controls.Primitives;
 using Aura.UI.UIExtensions;
 using Avalonia;
@@ -14,26 +13,13 @@ namespace Aura.UI.Controls
 {
     /// <summary>
     /// A powered-up TabControl
-    /// For add a new Tab by code use the <see cref="AuraTabView.AdderButton"/>
     /// </summary>
-    [TemplatePart(Name = "PART_AdderButton", Type = typeof(Button))]
-    [TemplatePart(Name = "PART_InternalBorder", Type = typeof(Border))]
     public partial class AuraTabView : TabViewBase, IHeadered, IFootered
     {
-        #region Fiels
-
-        /// <summary>
-        /// This Button add a new TabItem
-        /// </summary>
-        public Button AdderButton;
-
-        public double lastselectindex = 0;
-        protected Border b_;
-        protected Grid g_;
-
-        #endregion Fiels
-
-        #region Methods
+        private Button AdderButton;
+        internal double lastselectindex = 0;
+        private Border b_;
+        private Grid g_;
 
         protected void AdderButtonClicked(object sender, RoutedEventArgs e)
         {
@@ -56,10 +42,10 @@ namespace Aura.UI.Controls
         {
             base.OnPropertyChanged(change);
 
-            if (this.SelectedItem == null)
+            if (SelectedItem == null)
             {
                 double d = ((double)ItemCount / 2);
-                if (this.lastselectindex < d & ItemCount != 0)
+                if (lastselectindex < d & ItemCount != 0)
                 {
                     SelectedItem = (Items as IList).OfType<object>().FirstOrDefault();
                 }
@@ -80,17 +66,14 @@ namespace Aura.UI.Controls
 
             b_ = this.GetControl<Border>(e, "PART_InternalBorder");
             g_ = this.GetControl<Grid>(e, "PART_InternalGrid");
-            //dock_container = this.GetControl<DockPanel>(e, "PART_DockContainer");
 
-            this.PropertyChanged += AuraTabView_PropertyChanged;
+            PropertyChanged += AuraTabView_PropertyChanged;
         }
 
         private void AuraTabView_PropertyChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-            this.WidthRemainingSpace = g_.Bounds.Width;
-            this.HeightRemainingSpace = g_.Bounds.Height;
+            WidthRemainingSpace = g_.Bounds.Width;
+            HeightRemainingSpace = g_.Bounds.Height;
         }
-
-        #endregion Methods
     }
 }

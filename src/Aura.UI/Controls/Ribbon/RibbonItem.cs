@@ -26,13 +26,13 @@ namespace Aura.UI.Controls.Ribbon
 
         private void Btn_cont_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            if (this.IsSelected != false)
+            if (IsSelected != false)
             {
                 this.ToggleRibbonRootState();
             }
             else
             {
-                this.IsSelected = true;
+                IsSelected = true;
             }
         }
 
@@ -41,8 +41,8 @@ namespace Aura.UI.Controls.Ribbon
         /// </summary>
         public ExperimentalAcrylicMaterial Material
         {
-            get { return GetValue(MaterialProperty); }
-            set { SetValue(MaterialProperty, value); }
+            get => GetValue(MaterialProperty);
+            set => SetValue(MaterialProperty, value);
         }
 
         public static readonly StyledProperty<ExperimentalAcrylicMaterial> MaterialProperty =
@@ -59,8 +59,8 @@ namespace Aura.UI.Controls.Ribbon
         /// </summary>
         public bool MaterialIsVisible
         {
-            get { return GetValue(MaterialIsVisibleProperty); }
-            set { SetValue(MaterialIsVisibleProperty, value); }
+            get => GetValue(MaterialIsVisibleProperty);
+            set => SetValue(MaterialIsVisibleProperty, value);
         }
 
         public static readonly StyledProperty<bool> MaterialIsVisibleProperty =

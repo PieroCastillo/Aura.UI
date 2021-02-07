@@ -14,8 +14,8 @@ namespace Aura.UI.Controls.Ribbon
         /// </summary>
         public CornerRadius CornerRadius
         {
-            get { return GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
+            get => GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
 
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =

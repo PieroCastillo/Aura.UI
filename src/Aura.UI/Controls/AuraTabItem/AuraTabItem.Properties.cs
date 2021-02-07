@@ -5,14 +5,17 @@ namespace Aura.UI.Controls
     public partial class AuraTabItem
     {
         /// <summary>
-        /// This property defines if the AuraTabItem can be closed
+        /// This property sets if the AuraTabItem can be closed
         /// </summary>
         public bool IsClosable
         {
-            get { return GetValue(IsClosableProperty); }
-            set { SetValue(IsClosableProperty, value); }
+            get => GetValue(IsClosableProperty);
+            set => SetValue(IsClosableProperty, value);
         }
 
+        /// <summary>
+        /// Defines the <see cref="IsClosable"/> property.
+        /// </summary>
         public static readonly StyledProperty<bool> IsClosableProperty =
             AvaloniaProperty.Register<AuraTabItem, bool>(nameof(IsClosable), true);
 
@@ -27,18 +30,24 @@ namespace Aura.UI.Controls
             private set => SetAndRaise(IsClosingProperty, ref _isclosing, value);
         }
 
+        /// <summary>
+        /// Defines the <see cref="IsClosing"/> property.
+        /// </summary>
         public readonly static DirectProperty<AuraTabItem, bool> IsClosingProperty =
             AvaloniaProperty.RegisterDirect<AuraTabItem, bool>(nameof(IsClosing), o => o.IsClosing);
 
         /// <summary>
-        /// Defines the CornerRadius
+        /// Gets or Sets the CornerRadius
         /// </summary>
         public CornerRadius CornerRadius
         {
-            get { return GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
+            get => GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
 
+        /// <summary>
+        /// Defines the <see cref="CornerRadius"/> property.
+        /// </summary>
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
 
@@ -48,6 +57,9 @@ namespace Aura.UI.Controls
             set => SetValue(CanBeDraggedProperty, value);
         }
 
+        /// <summary>
+        /// Defines the <see cref="CanBeDragged"/> property.
+        /// </summary>
         public static readonly StyledProperty<bool> CanBeDraggedProperty =
             AvaloniaProperty.Register<AuraTabItem, bool>(nameof(CanBeDragged), true);
     }

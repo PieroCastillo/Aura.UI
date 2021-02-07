@@ -14,7 +14,7 @@ namespace Aura.UI.Xaml
                 FallbackColor = FallBackColor,
                 TintOpacity = TintOpacity,
                 MaterialOpacity = MaterialOpacity,
-                BackgroundSource = this.AcrylicBackgroundSource
+                BackgroundSource = AcrylicBackgroundSource
             };
         }
 

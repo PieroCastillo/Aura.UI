@@ -1,5 +1,6 @@
-﻿<Styles  xmlns="https://github.com/avaloniaui"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:rx="http://reactiveui.net">
 	<Style Selector="PagesView">
 		<Setter Property="Template">
 			<ControlTemplate TargetType="PagesView">
@@ -7,25 +8,25 @@
 						BorderBrush="{TemplateBinding BorderBrush}"
 					    Background="{TemplateBinding Background}"
 					    CornerRadius="0">
-				<ContentPresenter Content="{TemplateBinding SelectedItem}"
-				    ContentTemplate="{TemplateBinding ItemTemplate}"
-				    Background="Transparent"></ContentPresenter>
-			    <!--<CarouselPresenter Items="{TemplateBinding Items}"
-                    ItemsPanel="{TemplateBinding ItemsPanel}"
-                    Margin="{TemplateBinding Padding}"
-                    SelectedIndex="{TemplateBinding SelectedIndex}"/>-->
+					<rx:TransitioningContentControl
+						Name="PART_TranstionPresenter"
+						Content="{Binding $parent[PagesView].SelectedItem, Mode=OneWay}" />
 				</Border>
-
 			</ControlTemplate>
 		</Setter>
 	</Style>
-    <Design.PreviewWith> 
-		<Border Padding="10"> 
+	<Style Selector="PagesView /template/ rx|TransitioningContentControl#PART_TranstionPresenter">
+		<Setter Property="PageTransition">
+			<CrossFade />
+		</Setter>
+	</Style>
+    <Design.PreviewWith>
+		<Border Padding="10">
 			<PagesView CanChangeTheWindowTitle="false"
-					   Height="200" Width="400" SelectedItem="{Binding #page}"> 
-				<Page >Test 1</Page>  
-			    <Page Name="page">Test 2</Page> 
-			</PagesView> 
-		</Border> 
+					   Height="200" Width="400" SelectedItem="{Binding #page}">
+				<Page >Test 1</Page>
+			    <Page Name="page" IsSelected="True">Test 2</Page>
+			</PagesView>
+		</Border>
 	</Design.PreviewWith>
 </Styles>

@@ -50,6 +50,7 @@
 		<DynamicResource x:Key="NavigationViewMaterial" ResourceKey="SystemAcrylicAltHighBrush"/>
 		<DynamicResource x:Key="NavigationViewUnFocusMaterial" ResourceKey="SystemAcrylicAltHighUnfocusBrush"/>
 		<!--NavigationViewItem Resources-->
+		<SolidColorBrush x:Key="NavigationViewItemSelectedBrush" Color="{StaticResource SystemAccentColorLight1}"/>
 		<SolidColorBrush x:Key="NavigationViewItemForeground" Color="{StaticResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="NavigationViewItemPointerOver" Color="{StaticResource SystemAltLowColor}" Opacity="0.5"/>
 		<!--NavigationViewLinker Resources-->
@@ -74,6 +75,28 @@
 		<!--RibbonItem Resources-->
 		<!--FilledSlider Resources-->
 		<!--ModernSlider Resources-->
+		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncrease"
+									 TintColor="{StaticResource SystemAccentColor}"
+									 TintOpacity="1"
+									 FallbackColor="{StaticResource SystemAccentColor}"
+									 MaterialOpacity="1"
+									 BackgroundSource="None"/>
+		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncreasePointerOver"
+									 TintColor="{DynamicResource SystemAccentColorLight1}"
+									 TintOpacity="1"
+									 FallbackColor="{DynamicResource SystemAccentColorLight1}"
+									 MaterialOpacity="1"
+									 BackgroundSource="None"/>
+		<ExperimentalAcrylicMaterial x:Key="ModernSliderDecrease"
+									 TintColor="{StaticResource SystemAltHighColor}"
+									 TintOpacity="1" MaterialOpacity="1"
+								 FallbackColor="{StaticResource SystemAltHighColor}"
+								 BackgroundSource="None"/>
+		<ExperimentalAcrylicMaterial x:Key="ModernSliderDecreasePointerOver"
+									 TintColor="{DynamicResource SystemAltMediumColor}"
+									 TintOpacity="1" MaterialOpacity="1"
+								 FallbackColor="{DynamicResource SystemAltMediumColor}"
+								 BackgroundSource="None"/>
 		<!--SuperListBoxItem Resources-->
 		<x:Double x:Key="SuperListBoxItemDisabledOpacity">0.5</x:Double>
 		<SolidColorBrush x:Key="SuperListBoxItemPressedPointerOverBackground" Color="{StaticResource SystemBaseHighColor}"/>

@@ -29,8 +29,8 @@ namespace Aura.UI.Controls.Ribbon
         //[Obsolete("Use the event, maybe this property will be deleted")]
         protected MaterialButton MiniButton
         {
-            get { return GetValue(MiniButtonProperty); }
-            set { SetValue(MiniButtonProperty, value); }
+            get => GetValue(MiniButtonProperty);
+            set => SetValue(MiniButtonProperty, value);
         }
 
         public static readonly StyledProperty<MaterialButton> MiniButtonProperty =
@@ -38,8 +38,8 @@ namespace Aura.UI.Controls.Ribbon
 
         public object MiniButtonContent
         {
-            get { return GetValue(MiniButtonContentProperty); }
-            set { SetValue(MiniButtonContentProperty, value); }
+            get => GetValue(MiniButtonContentProperty);
+            set => SetValue(MiniButtonContentProperty, value);
         }
 
         public static readonly StyledProperty<object> MiniButtonContentProperty =

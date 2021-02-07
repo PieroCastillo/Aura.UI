@@ -1,9 +1,9 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="SuperListBoxItem">
-		<Setter Property="Height" Value="60"/>
-		<Setter Property="Padding" Value="10"/>
-		<Setter Property="Background" Value="Transparent"/>
+		<Setter Property="Height" Value="60" />
+		<Setter Property="Padding" Value="10" />
+		<Setter Property="Background" Value="Transparent" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Name="PART_Container"
@@ -11,33 +11,33 @@
 						Background="{TemplateBinding Background}">
 					<StackPanel Orientation="Horizontal" Spacing="10">
 						<Border Padding="6">
-							<Image Stretch="UniformToFill" Source="{TemplateBinding Icon}"/>
+							<Image Stretch="UniformToFill" Source="{TemplateBinding Icon}" />
 						</Border>
 						<Grid>
 							<Grid.RowDefinitions>
-								<RowDefinition/>
-								<RowDefinition Height="5"/>
-								<RowDefinition/>
+								<RowDefinition />
+								<RowDefinition Height="5" />
+								<RowDefinition />
 							</Grid.RowDefinitions>
-							<TextBlock Text="{TemplateBinding MainText}" FontSize="16"/>
+							<TextBlock Text="{TemplateBinding MainText}" FontSize="16" />
 							<TextBlock	Grid.Row="2"
 										Text="{TemplateBinding SecondaryText}"
-									   Opacity="{DynamicResource SuperListBoxItemDisabledOpacity}"/>
+									   Opacity="{DynamicResource SuperListBoxItemDisabledOpacity}" />
 						</Grid>
 					</StackPanel>
 				</Border>
 			</ControlTemplate>
 		</Setter>
-	</Style> 
+	</Style>
 	<Style Selector="SuperListBoxItem:disabled /template/ Border#PART_Container">
-		<Setter Property="Opacity" Value="{DynamicResource SuperListBoxItemDisabledOpacity}"/> 
+		<Setter Property="Opacity" Value="{DynamicResource SuperListBoxItemDisabledOpacity}" />
 	</Style>
 	<Style Selector="SuperListBoxItem:pressed:pointerover /template/ Border#PART_Container">
-		<Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}"/>
+		<Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}" />
 	</Style>
 	<Style Selector="SuperListBoxItem:pointerover /template/ Border#PART_Container">
-		<Setter Property="Background" Value="{DynamicResource ThemeControlLowBrush}"/>
-	</Style>  
+		<Setter Property="Background" Value="{DynamicResource ThemeControlLowBrush}" />
+	</Style>
 	<Design.PreviewWith>
 		<Border Padding="10">
 			<Border.Styles>
@@ -57,12 +57,12 @@
 				</Style>
 			</Border.Styles>
 			<ListBox>
-				<SuperListBoxItem MainText="Solution1" 
-								  SecondaryText="Solution1/src/Solution1.sln"/>
 				<SuperListBoxItem MainText="Solution1"
-								  SecondaryText="Solution1/src/Solution1.sln"/>
+								  SecondaryText="Solution1/src/Solution1.sln" />
 				<SuperListBoxItem MainText="Solution1"
-								  SecondaryText="Solution1/src/Solution1.sln"/>
+								  SecondaryText="Solution1/src/Solution1.sln" />
+				<SuperListBoxItem MainText="Solution1"
+								  SecondaryText="Solution1/src/Solution1.sln" />
 			</ListBox>
 		</Border>
 	</Design.PreviewWith>

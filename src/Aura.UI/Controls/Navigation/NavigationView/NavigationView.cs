@@ -7,7 +7,6 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
-using Avalonia.VisualTree;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -26,6 +25,7 @@ namespace Aura.UI.Controls.Navigation
             SelectionModeProperty.OverrideDefaultValue<NavigationView>(SelectionMode.Single);
             SelectedItemProperty.Changed.AddClassHandler<NavigationView>((x, e) => x.OnSelectedItemChanged(x, e));
             FocusableProperty.OverrideDefaultValue<NavigationView>(true);
+            IsOpenProperty.Changed.AddClassHandler<NavigationView>((x, e) => x.OnIsOpenChanged(x, e));
         }
 
         public NavigationView()
@@ -67,24 +67,24 @@ namespace Aura.UI.Controls.Navigation
             }
 
             (SelectedItem as ISelectable).IsSelected = false;
+            (item as ISelectable).IsSelected = true;
 
             SelectedItems.Clear();
             SelectedItems.Add(item);
 
-            (item as ISelectable).IsSelected = true;
-
             var item_parents = (item as ILogical).GetLogicalAncestors().OfType<NavigationViewItem>();
 
-            foreach (NavigationViewItem n in item_parents)
+            if (this.IsOpen)
             {
-                n.IsExpanded = true;
+                foreach (NavigationViewItem n in item_parents)
+                {
+                    n.IsExpanded = true;
+                }
             }
 
             Debug.WriteLine($"{item_parents.Count()}");
 
             SelectedItem = item;
-
-            //Sets the items of AutoCompleteBox
         }
 
         protected void OnSelectedItemChanged(object sender, AvaloniaPropertyChangedEventArgs e)
@@ -144,20 +144,20 @@ namespace Aura.UI.Controls.Navigation
             }
         }
 
-        private void OnClose()
-        {
-            var s = SelectedItem as Control;
-            if ((Items as IList<object>).Contains(s))
-            {
-                return;
-            }
-            else
-            {
-                var vs = s.GetVisualAncestors().OfType<NavigationViewItemBase>().LastOrDefault();
-                (s as NavigationViewItemBase).IsSelected = false;
-                SelectedItem = vs;
-            }
-        }
+        //private void OnClose()
+        //{
+        //    var s = SelectedItem as Control;
+        //    if ((Items as IList<object>).Contains(s))
+        //    {
+        //        return;
+        //    }
+        //    else
+        //    {
+        //        var vs = s.GetVisualAncestors().OfType<NavigationViewItemBase>().LastOrDefault();
+        //        (s as NavigationViewItemBase).IsSelected = false;
+        //        SelectedItem = vs;
+        //    }
+        //}
 
         ///<inheritdoc/>
         IAvaloniaList<ILogical> IContentPresenterHost.LogicalChildren => LogicalChildren;
@@ -192,6 +192,10 @@ namespace Aura.UI.Controls.Navigation
         {
             base.OnContainersDematerialized(e);
             UpdateTitleAndSelectedContent();
+        }
+
+        protected virtual void OnIsOpenChanged(object sender, AvaloniaPropertyChangedEventArgs e)
+        {
         }
 
         protected virtual void UpdateTitleAndSelectedContent()

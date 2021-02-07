@@ -17,8 +17,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public bool CanChangeTheWindowTitle
         {
-            get { return GetValue(CanChangeTheWindowTitleProperty); }
-            set { SetValue(CanChangeTheWindowTitleProperty, value); }
+            get => GetValue(CanChangeTheWindowTitleProperty);
+            set => SetValue(CanChangeTheWindowTitleProperty, value);
         }
 
         public static readonly StyledProperty<bool> CanChangeTheWindowTitleProperty =
@@ -39,7 +39,7 @@ namespace Aura.UI.Controls
                     var _index = (Items as IList)[SelectedIndex - 1] as Page;
                     Index = _index;
 
-                    if (this.Items != null)
+                    if (Items != null)
                     {
                         if (Index != null & Index.GetType() == typeof(Page))
                         {
@@ -101,7 +101,7 @@ namespace Aura.UI.Controls
                 {
                     var _index = (Items as IList)[SelectedIndex + 1] as Page;
                     Index = _index;
-                    if (this.Items != null)
+                    if (Items != null)
                     {
                         if (Index != null & Index.GetType() == typeof(Page))
                         {

@@ -4,12 +4,12 @@
         xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
 		xmlns:ms="clr-namespace:System;assembly=netstandard">
 	<Style Selector="RibbonItem">
-		<Setter Property="Material" Value="{DynamicResource NullBrush}"/>
-		<Setter Property="HorizontalContentAlignment" Value="Center"/>
-		<Setter Property="HorizontalAlignment" Value="Stretch"/>
-		<Setter Property="Background" Value="Transparent"/>
-		<Setter Property="MaterialIsVisible" Value="False"/>
-		<Setter Property="Padding" Value="10"/>
+		<Setter Property="Material" Value="{DynamicResource NullBrush}" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="MaterialIsVisible" Value="False" />
+		<Setter Property="Padding" Value="10" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="RibbonItem">
 				<Border Name="PART_Border" Margin="2.5 0">
@@ -17,13 +17,13 @@
 					      VerticalAlignment="{TemplateBinding VerticalAlignment}"
 					      HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
 					      Height="{TemplateBinding Height}">
-					
-						<Grid Margin="0" Height="{TemplateBinding Height}" VerticalAlignment="Stretch">  
-							<Border Background="{TemplateBinding Background}"/>   
+
+						<Grid Margin="0" Height="{TemplateBinding Height}" VerticalAlignment="Stretch">
+							<Border Background="{TemplateBinding Background}" />
 							<ExperimentalAcrylicBorder Height="{TemplateBinding Height}"
 							                           Material="{TemplateBinding Material}"
 							                           VerticalAlignment="Stretch"
-							                           IsVisible="{TemplateBinding MaterialIsVisible}"/>
+							                           IsVisible="{TemplateBinding MaterialIsVisible}" />
 							<Button Name="PART_ButtonContainer" Background="White" Padding="0" Margin="0"
 							        Height="{TemplateBinding Height}"
 							        BorderThickness="1" VerticalAlignment="Stretch">
@@ -32,45 +32,45 @@
 								                  Padding="{TemplateBinding Padding}"
 								                  VerticalAlignment="Stretch"
 								                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-								                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"/>
+								                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
 							</Button>
-						</Grid>		
+						</Grid>
 					</Grid>
 				</Border>
 			</ControlTemplate>
-		</Setter> 
+		</Setter>
 	</Style>
 	<Style Selector="RibbonItem /template/ Button#PART_ButtonContainer">
 		<Setter Property="Template">
 			<ControlTemplate>
 				<ContentPresenter Content="{TemplateBinding Content}"
 								Margin="{TemplateBinding Margin}"
-								BorderBrush="Transparent" 
+								BorderBrush="Transparent"
 								BorderThickness="0"
 								Padding="0"
 								Height="{TemplateBinding Height}"
 								  VerticalContentAlignment="Center"
-								 VerticalAlignment="Stretch"/> 
+								 VerticalAlignment="Stretch" />
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	<Style Selector="RibbonItem:selected"> 
-		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="True"/>
+	<Style Selector="RibbonItem:selected">
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}" />
+		<Setter Property="MaterialIsVisible" Value="True" />
 	</Style>
 	<Style Selector="RibbonItem:selected /template/ Border#PART_Border">
 		<Setter Property="BoxShadow" Value="0 0 5 0 Black"></Setter>
 	</Style>
 	<Style Selector="RibbonItem:pointerover">
-		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="True"/> 
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}" />
+		<Setter Property="MaterialIsVisible" Value="True" />
 	</Style>
 	<Style Selector="RibbonItem:selected:pointerover">
-		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}"/>
-		<Setter Property="MaterialIsVisible" Value="True"/>
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}" />
+		<Setter Property="MaterialIsVisible" Value="True" />
 	</Style>
 	<Style Selector="RibbonItem:disabled /template/ Grid#PART_Container">
-		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}"/>
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
 	</Style>
 
 	<!--Preview-->
@@ -84,13 +84,13 @@
 				<RibbonItem Header="Start">
 					<RibbonPanel>
 						<RibbonGroup Header="Colour">
-							<Border Background="Yellow" Height="90" Width="100"/>
+							<Border Background="Yellow" Height="90" Width="100" />
 						</RibbonGroup>
 						<RibbonSeparator></RibbonSeparator>
 						<RibbonGroup Header="Themes">
 							<StackPanel Orientation="Horizontal">
-								<Border Background="Black" Width="60" Height="100"/>
-								<Border Background="White" Width="60" Height="100"/>
+								<Border Background="Black" Width="60" Height="100" />
+								<Border Background="White" Width="60" Height="100" />
 							</StackPanel>
 						</RibbonGroup>
 						<RibbonSeparator></RibbonSeparator>
@@ -109,5 +109,5 @@
 				</RibbonItem>
 			</Ribbon>
 		</Border>
-	</Design.PreviewWith> 
+	</Design.PreviewWith>
 </Styles>

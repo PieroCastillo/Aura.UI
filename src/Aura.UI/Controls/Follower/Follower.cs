@@ -1,4 +1,3 @@
-using Aura.UI.UIExtensions;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
@@ -22,7 +21,7 @@ namespace Aura.UI.Controls
 
         private void LayerControlOnPointerMoved(object sender, PointerEventArgs e)
         {
-            var cv = OverlayLayer.GetOverlayLayer(this.GetParentTOfVisual<Window>());
+            var cv = CanvasLayer;
 
             double delta_v, delta_h;
             //double delta_vlow, delta_hlow;

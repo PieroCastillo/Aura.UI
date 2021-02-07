@@ -10,6 +10,7 @@ namespace Aura.UI.Controls.Navigation
         static NavigationViewItem()
         {
             SelectableMixin.Attach<NavigationViewItem>(IsSelectedProperty);
+            FocusableProperty.OverrideDefaultValue<NavigationViewItem>(true);
         }
 
         protected override void OnClosed(object sender, RoutedEventArgs e)
@@ -29,13 +30,6 @@ namespace Aura.UI.Controls.Navigation
             {
                 this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
             }
-        }
-
-        protected override void OnPointerMoved(PointerEventArgs e)
-        {
-            base.OnPointerMoved(e);
-
-            e.Handled = true;
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using Aura.UI.Attributes;
-using Aura.UI.Controls.Primitives;
+﻿using Aura.UI.Controls.Primitives;
 using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Controls;
@@ -10,10 +9,8 @@ using Avalonia.Interactivity;
 namespace Aura.UI.Controls
 {
     /// <summary>
-    /// This tabitem is closable
+    ///A Closable & Draggable TabItem
     /// </summary>
-    //[TemplatePart(Name = "PART_Thumb", Type = typeof(Thumb))]
-    [TemplatePart(Name = "PART_CloseButton", Type = typeof(Button))]
     [PseudoClasses(":dragging", ":lockdrag")]
     public partial class AuraTabItem : TabItem, ICustomCornerRadius
     {
@@ -24,10 +21,9 @@ namespace Aura.UI.Controls
 
         public AuraTabItem()
         {
-            this.Closing += OnClosing;
+            Closing += OnClosing;
 
             EnableDragDrop();
-            //tab_parent = this.GetParentTOfLogical<AuraTabView>();
         }
 
         static AuraTabItem()
@@ -44,13 +40,9 @@ namespace Aura.UI.Controls
             }
         }
 
-        /// <summary>
-        /// Close now the tab
-        /// </summary>
-        /// <param name="parameter">Does nothing, only for the requeriments of C# </param>
-        internal void Close(object nevermatter)
+        internal void CloseCore()
         {
-            var x = this.Parent as TabControl;
+            var x = Parent as TabControl;
             x.CloseTab(this);
         }
 
@@ -61,7 +53,7 @@ namespace Aura.UI.Controls
         {
             var e = new RoutedEventArgs(ClosingEvent);
             RaiseEvent(e);
-            this.Close(null);
+            CloseCore();
         }
 
         protected void OnCanDraggablePropertyChanged(object sender, AvaloniaPropertyChangedEventArgs e)
@@ -76,12 +68,13 @@ namespace Aura.UI.Controls
             }
         }
 
+        /// <inheritdoc/>
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
 
             CloseButton = this.GetControl<Button>(e, "PART_CloseButton");
-            if (this.IsClosable != false)
+            if (IsClosable != false)
             {
                 CloseButton.Click += CloseButton_Click;
             }
@@ -93,7 +86,7 @@ namespace Aura.UI.Controls
 
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
     }
 }

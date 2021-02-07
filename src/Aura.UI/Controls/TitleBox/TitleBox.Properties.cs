@@ -9,8 +9,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public object Button1Content
         {
-            get { return GetValue(Button1ContentProperty); }
-            set { SetValue(Button1ContentProperty, value); }
+            get => GetValue(Button1ContentProperty);
+            set => SetValue(Button1ContentProperty, value);
         }
 
         public static readonly StyledProperty<object> Button1ContentProperty =
@@ -21,8 +21,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public object Button2Content
         {
-            get { return GetValue(Button2ContentProperty); }
-            set { SetValue(Button2ContentProperty, value); }
+            get => GetValue(Button2ContentProperty);
+            set => SetValue(Button2ContentProperty, value);
         }
 
         public static readonly StyledProperty<object> Button2ContentProperty =
@@ -33,8 +33,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public bool Button1Active
         {
-            get { return GetValue(Button1ActiveProperty); }
-            set { SetValue(Button1ActiveProperty, value); }
+            get => GetValue(Button1ActiveProperty);
+            set => SetValue(Button1ActiveProperty, value);
         }
 
         public static readonly StyledProperty<bool> Button1ActiveProperty =
@@ -45,8 +45,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public bool Button2Active
         {
-            get { return GetValue(Button2ActiveProperty); }
-            set { SetValue(Button2ActiveProperty, value); }
+            get => GetValue(Button2ActiveProperty);
+            set => SetValue(Button2ActiveProperty, value);
         }
 
         public static readonly StyledProperty<bool> Button2ActiveProperty =
@@ -57,8 +57,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public CornerRadius CornerRadius
         {
-            get { return GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
+            get => GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
 
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =

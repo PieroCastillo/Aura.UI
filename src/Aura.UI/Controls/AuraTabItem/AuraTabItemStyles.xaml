@@ -87,12 +87,11 @@
 											Grid.Column="1" Grid.Row="0" CornerRadius="5"
 											BoxShadow="0 0 2 0 Gray"
 											Width="1" 
-											Background="{DynamicResource ThemeForegroundBrush}"></Border>
+											Background="{DynamicResource AuraTabItemForeground}"></Border>
 										</Grid>
 									</Border>
-
 								</Grid>
-							</Border>
+					</Border>
 				</Decorator>
 			</ControlTemplate>
 		</Setter>		
@@ -167,7 +166,7 @@
 						Grid.Column="0" Grid.Row="0" CornerRadius="5"
 						BoxShadow="0 0 2 0 Gray" HorizontalAlignment="Stretch"
 						Height="1" VerticalAlignment="Bottom"
-						Background="{DynamicResource ThemeForegroundBrush}"></Border>
+						Background="{DynamicResource AuraTabItemForeground}"></Border>
 					</Grid>
 				</Grid>
 			</ControlTemplate>
@@ -236,7 +235,7 @@
 					CornerRadius="5" Grid.Column="1"
 					BoxShadow="0 0 2 0 Gray"
 					Height="1" VerticalAlignment="Bottom"
-					Background="{DynamicResource ThemeForegroundBrush}"></Border>
+					Background="{DynamicResource AuraTabItemForeground}"></Border>
 				</Grid>
 			</ControlTemplate>
 		</Setter>
@@ -295,7 +294,7 @@
 										Grid.Column="1" Grid.Row="0" CornerRadius="5"
 										BoxShadow="0 0 2 0 Gray"
 										Width="1"
-										Background="{DynamicResource ThemeForegroundBrush}"></Border>
+										Background="{DynamicResource AuraTabItemForeground}"></Border>
 									</Grid>
 								</Border>
 							</Grid>

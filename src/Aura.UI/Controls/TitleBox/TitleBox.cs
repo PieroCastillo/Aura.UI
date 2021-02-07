@@ -33,12 +33,12 @@ namespace Aura.UI.Controls
             RaiseEvent(_e);
             _e.Handled = true;
 
-            this.OnClickInButton2();
+            OnClickInButton2();
         }
 
         protected void B1_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            this.OnClickInButton1();
+            OnClickInButton1();
 
             var _e = new RoutedEventArgs(MainButtonClickEvent);
             RaiseEvent(_e);

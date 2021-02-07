@@ -10,9 +10,9 @@ namespace Aura.UI.Helpers
         {
             var rgb = new RGBStruct(color);
             var hsl = rgb.ToHSL();
-            this.hue = hsl.hh;
-            this.saturation = hsl.ss;
-            this.lightness = hsl.ll;
+            hue = hsl.hh;
+            saturation = hsl.ss;
+            lightness = hsl.ll;
         }
 
         public double hue { get; private set; }
@@ -24,10 +24,10 @@ namespace Aura.UI.Helpers
     {
         public RGBStruct(Color color)
         {
-            this.r = color.R;
-            this.g = color.G;
-            this.b = color.B;
-            this.a = color.A;
+            r = color.R;
+            g = color.G;
+            b = color.B;
+            a = color.A;
         }
 
         public byte r { get; private set; }

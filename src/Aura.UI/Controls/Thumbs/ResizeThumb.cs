@@ -15,7 +15,7 @@ namespace Aura.UI.Controls.Thumbs
         {
             base.OnDragDelta(e);
 
-            Control item = this.DataContext as Control;
+            Control item = DataContext as Control;
             if (item != null)
             {
                 double delta_v, delta_h;

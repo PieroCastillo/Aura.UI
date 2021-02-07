@@ -21,7 +21,7 @@ namespace Aura.UI.Controls
             _closebutton = this.GetControl<Button>(e, "PART_ButtonClose");
             _closebutton.Click += (s, e) =>
             {
-                this.Close();
+                Close();
             };
         }
 

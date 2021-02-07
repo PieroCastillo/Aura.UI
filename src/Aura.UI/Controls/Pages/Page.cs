@@ -43,8 +43,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public string Title
         {
-            get { return GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
+            get => GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
         }
 
         public static readonly StyledProperty<string> TitleProperty =
@@ -55,8 +55,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public bool IsSelected
         {
-            get { return GetValue(IsSelectedProperty); }
-            set { SetValue(IsSelectedProperty, value); }
+            get => GetValue(IsSelectedProperty);
+            set => SetValue(IsSelectedProperty, value);
         }
 
         public static readonly StyledProperty<bool> IsSelectedProperty =

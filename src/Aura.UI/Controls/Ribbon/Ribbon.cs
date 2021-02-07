@@ -106,16 +106,16 @@ namespace Aura.UI.Controls.Ribbon
 
         protected void ToggleState()
         {
-            switch (this.ExpansionState)
+            switch (ExpansionState)
             {
                 case ExpansionState.Total:
-                    this.ExpansionState = ExpansionState.Hidden;
+                    ExpansionState = ExpansionState.Hidden;
                     break;
                 //case ExpansionState.Floating:
                 //    this.ExpansionState = ExpansionState.Hidden;
                 //    break;
                 case ExpansionState.Hidden:
-                    this.ExpansionState = ExpansionState.Total;
+                    ExpansionState = ExpansionState.Total;
                     break;
             }
         }
@@ -127,8 +127,8 @@ namespace Aura.UI.Controls.Ribbon
         /// </summary>
         public object LeftContent
         {
-            get { return GetValue(LeftContentProperty); }
-            set { SetValue(LeftContentProperty, value); }
+            get => GetValue(LeftContentProperty);
+            set => SetValue(LeftContentProperty, value);
         }
 
         public static readonly StyledProperty<object> LeftContentProperty =
@@ -139,8 +139,8 @@ namespace Aura.UI.Controls.Ribbon
         /// </summary>
         public object RightContent
         {
-            get { return GetValue(RightContentProperty); }
-            set { SetValue(RightContentProperty, value); }
+            get => GetValue(RightContentProperty);
+            set => SetValue(RightContentProperty, value);
         }
 
         public static readonly StyledProperty<object> RightContentProperty =
@@ -151,8 +151,8 @@ namespace Aura.UI.Controls.Ribbon
         /// </summary>
         public object Header
         {
-            get { return GetValue(HeaderProperty); }
-            set { SetValue(HeaderProperty, value); }
+            get => GetValue(HeaderProperty);
+            set => SetValue(HeaderProperty, value);
         }
 
         public static readonly StyledProperty<object> HeaderProperty =
@@ -163,8 +163,8 @@ namespace Aura.UI.Controls.Ribbon
         /// </summary>
         public ExpansionState ExpansionState
         {
-            get { return GetValue(ExpansionStateProperty); }
-            set { SetValue(ExpansionStateProperty, value); }
+            get => GetValue(ExpansionStateProperty);
+            set => SetValue(ExpansionStateProperty, value);
         }
 
         public static readonly StyledProperty<ExpansionState> ExpansionStateProperty =

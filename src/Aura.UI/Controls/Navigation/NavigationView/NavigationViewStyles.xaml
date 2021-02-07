@@ -94,10 +94,9 @@
 						</SplitView.Pane>
 						<Border Name="PART_Container" BoxShadow="{BoxShadow ShadowColor={StaticResource SystemBaseLowColor}}">
 							<Grid Background="{Binding $parent[NavigationView].Background}">
-								<!--<ScrollViewer VerticalScrollBarVisibility="Auto"
-											  HorizontalContentAlignment="Left"
+								<ScrollViewer HorizontalContentAlignment="Left"
 											  AllowAutoHide="True"
-											  HorizontalScrollBarVisibility="Auto">-->
+											  HorizontalScrollBarVisibility="Disabled">
 									<Grid RowDefinitions="auto,*">
 										<AuraContentPresenter Grid.Row="0"
 														  IsVisible="{Binding !$parent[NavigationView].HideTitle}"
@@ -106,11 +105,10 @@
 															TextBlock.FontWeight="Light"
 															TextBlock.FontSize="30" />
 										<ContentPresenter Grid.Row="1"
-														  ScrollViewer.VerticalScrollBarVisibility="Auto"
 													  Name="PART_SelectedContentPresenter"
 													  Content="{Binding $parent[NavigationView].SelectedContent}" />
 									</Grid>
-								<!--</ScrollViewer>-->
+								</ScrollViewer>
 							</Grid>
 						</Border>
 					</SplitView>

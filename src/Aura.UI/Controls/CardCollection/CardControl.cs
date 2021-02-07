@@ -66,8 +66,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public CornerRadius CornerRadius
         {
-            get { return GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
+            get => GetValue(CornerRadiusProperty);
+            set => SetValue(CornerRadiusProperty, value);
         }
 
         public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
@@ -78,8 +78,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public CornerRadius TopCornerRadius
         {
-            get { return GetValue(TopCornerRadiusProperty); }
-            set { SetValue(TopCornerRadiusProperty, value); }
+            get => GetValue(TopCornerRadiusProperty);
+            set => SetValue(TopCornerRadiusProperty, value);
         }
 
         public static readonly StyledProperty<CornerRadius> TopCornerRadiusProperty =
@@ -90,8 +90,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public CornerRadius BottomCornerRadius
         {
-            get { return GetValue(BottomCornerRadiusProperty); }
-            set { SetValue(BottomCornerRadiusProperty, value); }
+            get => GetValue(BottomCornerRadiusProperty);
+            set => SetValue(BottomCornerRadiusProperty, value);
         }
 
         public static readonly StyledProperty<CornerRadius> BottomCornerRadiusProperty =
@@ -99,8 +99,8 @@ namespace Aura.UI.Controls
 
         public CornerRadius InternalCornerRadius
         {
-            get { return GetValue(InternalCornerRadiusProperty); }
-            set { SetValue(InternalCornerRadiusProperty, value); }
+            get => GetValue(InternalCornerRadiusProperty);
+            set => SetValue(InternalCornerRadiusProperty, value);
         }
 
         public static readonly StyledProperty<CornerRadius> InternalCornerRadiusProperty =
@@ -108,8 +108,8 @@ namespace Aura.UI.Controls
 
         public Thickness InternalPadding
         {
-            get { return GetValue(InternalPaddingProperty); }
-            set { SetValue(InternalPaddingProperty, value); }
+            get => GetValue(InternalPaddingProperty);
+            set => SetValue(InternalPaddingProperty, value);
         }
 
         public static readonly StyledProperty<Thickness> InternalPaddingProperty =

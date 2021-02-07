@@ -3,16 +3,12 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
 using Avalonia.Media;
-using Avalonia.Styling;
 using Avalonia.Threading;
-using System;
 
 namespace Aura.UI.Controls.Colouring
 {
-    public class Arc : Control, IStyleable
+    public class Arc : Control
     {
-        Type IStyleable.StyleKey { get => typeof(Arc); }
-
         static Arc()
         {
             AffectsRender<Arc>(ArcColorProperty,

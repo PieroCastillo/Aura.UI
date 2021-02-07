@@ -1,17 +1,17 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="ShadowButton">
-		<Setter Property="HorizontalContentAlignment" Value="Center"/>
-		<Setter Property="VerticalContentAlignment" Value="Center"/>
-		<Setter Property="Padding" Value="10"/>
-		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterial}"/>
-		<Setter Property="CornerRadius" Value="5"/>
-		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=3, ShadowColor={StaticResource SystemBaseMediumColor}}"/><!--0 0 3 0 Black-->
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="VerticalContentAlignment" Value="Center" />
+		<Setter Property="Padding" Value="10" />
+		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterial}" />
+		<Setter Property="CornerRadius" Value="5" />
+		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=3, ShadowColor={StaticResource SystemBaseMediumColor}}" /><!--0 0 3 0 Black-->
 		<Setter Property="ShadowPadding" Value="5"></Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
 					<Border BoxShadow="{TemplateBinding BoxShadow}"
-							BorderThickness="{TemplateBinding BorderThickness}" 
+							BorderThickness="{TemplateBinding BorderThickness}"
 					        CornerRadius="{TemplateBinding CornerRadius}"
 							Margin="{TemplateBinding ShadowPadding}"
 							Background="{TemplateBinding Background}">
@@ -27,21 +27,21 @@
 							                  TextBlock.Foreground="{TemplateBinding Foreground}"
 							                  Padding="{TemplateBinding Padding}"
 							                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-							                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"/>
+							                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
 						</Grid>
 					</Border>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 	<Style Selector="ShadowButton:pointerover">
-		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterialPointerOver}"/>
+		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterialPointerOver}" />
 	</Style>
 	<Style Selector="ShadowButton:pressed">
-		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterialPressed}"/>
+		<Setter Property="Material" Value="{StaticResource ShadowButtonMaterialPressed}" />
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="10">
-			<ShadowButton Content="xd" Width="50"/>
+			<ShadowButton Content="xd" Width="50" />
 		</Border>
 	</Design.PreviewWith>
 </Styles>

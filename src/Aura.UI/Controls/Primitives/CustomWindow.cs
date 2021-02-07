@@ -72,7 +72,7 @@ namespace Aura.UI.Controls.Primitives
         {
             control.PointerPressed += (s, e) =>
             {
-                this.BeginMoveDrag(e);
+                BeginMoveDrag(e);
             };
         }
 
@@ -84,7 +84,7 @@ namespace Aura.UI.Controls.Primitives
                 ctl.Cursor = new Cursor(cursorType);
                 ctl.PointerPressed += (s, e_) =>
                 {
-                    this.BeginResizeDrag(edge, e_);
+                    BeginResizeDrag(edge, e_);
                 };
             }
             else
@@ -102,7 +102,7 @@ namespace Aura.UI.Controls.Primitives
             {
                 ctl.PointerPressed -= (s, e_) =>
                 {
-                    this.BeginResizeDrag(edge, e_);
+                    BeginResizeDrag(edge, e_);
                 };
             }
             else

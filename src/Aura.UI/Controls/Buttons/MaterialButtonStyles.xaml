@@ -1,47 +1,46 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="MaterialButton">
-		<Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-		<Setter Property="VerticalContentAlignment" Value="Stretch"/>
-		<Setter Property="Padding" Value="10"/>
-		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterial}"/>
-		<Setter Property="CornerRadius" Value="5"/>
+		<Setter Property="HorizontalContentAlignment" Value="Stretch" />
+		<Setter Property="VerticalContentAlignment" Value="Stretch" />
+		<Setter Property="Padding" Value="10" />
+		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterial}" />
+		<Setter Property="CornerRadius" Value="5" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="MaterialButton">
 				<Decorator Padding="0">
 						<Grid Background="{TemplateBinding Background}">
-							
+
 							<ExperimentalAcrylicBorder Material="{TemplateBinding Material}"
 													   CornerRadius="{TemplateBinding CornerRadius}"
-													   IsVisible="{TemplateBinding MaterialIsVisible}">															
+													   IsVisible="{TemplateBinding MaterialIsVisible}">
 							</ExperimentalAcrylicBorder>
 							<ContentPresenter Name="PART_ContentPresenter"
 							BorderBrush="{TemplateBinding BorderBrush}"
-							BorderThickness="{TemplateBinding BorderThickness}" 
+							BorderThickness="{TemplateBinding BorderThickness}"
 							ContentTemplate="{TemplateBinding ContentTemplate}"
 							CornerRadius="{TemplateBinding CornerRadius}"
 							Content="{TemplateBinding Content}"
 							Padding="{TemplateBinding Padding}"
 							TextBlock.Foreground="{TemplateBinding Foreground}"
 							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>	
-						
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
 						</Grid>
 				</Decorator>
-			</ControlTemplate>  
+			</ControlTemplate>
 		</Setter>
-	</Style> 
+	</Style>
 	<Style Selector="MaterialButton:pointerover">
-		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterialPointerOver}"/>
+		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterialPointerOver}" />
 	</Style>
 	<Style Selector="MaterialButton:pressed">
-		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterialPressed}"/>
+		<Setter Property="Material" Value="{StaticResource MaterialButtonMaterialPressed}" />
 	</Style>
 	<Design.PreviewWith>
 		<Border Padding="20">
 				<MaterialButton CornerRadius="0">
 					xd
-				</MaterialButton> 
+				</MaterialButton>
 		</Border>
 	</Design.PreviewWith>
 </Styles>

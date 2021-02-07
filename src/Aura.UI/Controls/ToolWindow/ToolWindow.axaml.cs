@@ -9,7 +9,7 @@ namespace Aura.UI.Controls
     {
         public ToolWindow()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 #if DEBUG
             this.AttachDevTools();
 #endif
@@ -22,10 +22,10 @@ namespace Aura.UI.Controls
             var close_b = this.Find<Button>("PART_CloseButton");
             close_b.Click += (s, e) =>
             {
-                this.Close();
+                Close();
             };
             var drag = this.Find<Border>("PART_DragBorder");
-            this.MakeWindowDragger(drag);
+            MakeWindowDragger(drag);
         }
     }
 }

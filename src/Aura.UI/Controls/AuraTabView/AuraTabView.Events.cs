@@ -14,6 +14,9 @@ namespace Aura.UI.Controls
             remove => RemoveHandler(ClickOnAddingButtonEvent, value);
         }
 
+        /// <summary>
+        /// Defines the <see cref="ClickOnAddingButton"/> event.
+        /// </summary>
         public static readonly RoutedEvent<RoutedEventArgs> ClickOnAddingButtonEvent =
             RoutedEvent.Register<AuraTabView, RoutedEventArgs>(nameof(ClickOnAddingButton), RoutingStrategies.Bubble);
     }

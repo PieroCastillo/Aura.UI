@@ -35,6 +35,7 @@
 						</Grid>
 						<ContentPresenter Name="PART_TopContentPresenter"
 										  Grid.Column="2"
+										  CornerRadius="0,2.5,0,2.5"
 										  Background="{DynamicResource NavigationViewLinkerTitleTopContentBackground}"
 										  TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleTopContentForeground}"
 										  Padding="5"

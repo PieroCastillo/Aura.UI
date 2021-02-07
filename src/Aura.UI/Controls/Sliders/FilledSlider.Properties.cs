@@ -10,8 +10,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public IControlTemplate ThumbTemplate
         {
-            get { return GetValue(ThumbTemplateProperty); }
-            set { SetValue(ThumbTemplateProperty, value); }
+            get => GetValue(ThumbTemplateProperty);
+            set => SetValue(ThumbTemplateProperty, value);
         }
 
         public static readonly StyledProperty<IControlTemplate> ThumbTemplateProperty =
@@ -22,8 +22,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public object RightContent
         {
-            get { return GetValue(RightContentProperty); }
-            set { SetValue(RightContentProperty, value); }
+            get => GetValue(RightContentProperty);
+            set => SetValue(RightContentProperty, value);
         }
 
         public static readonly StyledProperty<object> RightContentProperty =
@@ -34,8 +34,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public object LeftContent
         {
-            get { return GetValue(LeftContentProperty); }
-            set { SetValue(LeftContentProperty, value); }
+            get => GetValue(LeftContentProperty);
+            set => SetValue(LeftContentProperty, value);
         }
 
         public static readonly StyledProperty<object> LeftContentProperty =
