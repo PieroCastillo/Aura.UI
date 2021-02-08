@@ -6,14 +6,14 @@
 		<sys:Double x:Key="AuraTabItemDraggingOpacity">0.5</sys:Double>
 		<sys:Double x:Key="AuraTabItemDisabledOpacity">0.6</sys:Double>
 		<sys:Double x:Key="AuraTabItemFontSize">12</sys:Double>
-		<SolidColorBrush x:Key="AuraTabItemForeground" Color="{StaticResource SystemBaseHighColor}"/>
-		<SolidColorBrush x:Key="AuraTabItemPointerOverBackground" Color="{StaticResource SystemAltHighColor}"/>
-		<SolidColorBrush x:Key="AuraTabItemPointerOverBorderBrush" Color="{StaticResource SystemBaseHighColor}"/>
-		<SolidColorBrush x:Key="AuraTabItemIsSelectedBackground" Color="{StaticResource SystemAltHighColor}"/>
-		<SolidColorBrush x:Key="AuraTabItemIsSelectedBorderBrush" Color="{StaticResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="AuraTabItemForeground" Color="{DynamicResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="AuraTabItemPointerOverBackground" Color="{DynamicResource SystemAltHighColor}"/>
+		<SolidColorBrush x:Key="AuraTabItemPointerOverBorderBrush" Color="{DynamicResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="AuraTabItemIsSelectedBackground" Color="{DynamicResource SystemAltHighColor}"/>
+		<SolidColorBrush x:Key="AuraTabItemIsSelectedBorderBrush" Color="{DynamicResource SystemBaseHighColor}"/>
 		<!--AuraTabView Resources-->
-		<SolidColorBrush x:Key="AuraTabViewBackground" Color="{StaticResource SystemBaseLowColor}"/>
-		<SolidColorBrush x:Key="AuraTabViewForeground" Color="{StaticResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="AuraTabViewBackground" Color="{DynamicResource SystemBaseLowColor}"/>
+		<SolidColorBrush x:Key="AuraTabViewForeground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<!--MaterialButton Resources-->
 		<DynamicResource x:Key="MaterialButtonMaterial" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicBackgroundBrush-->
 		<DynamicResource x:Key="MaterialButtonMaterialPointerOver" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicControlMidBrush-->
@@ -25,60 +25,59 @@
 		<!--CardCollection Resources-->
 		<Thickness x:Key="CardCollectionPadding">10</Thickness>
 		<!--CardControl Resources-->
-		<SolidColorBrush x:Key="CardControlSecondaryBackground" Color="{StaticResource SystemAltMediumHighColor}"/>
-		<SolidColorBrush x:Key="CardControlBackground" Color="{StaticResource SystemAltHighColor}"/>
+		<SolidColorBrush x:Key="CardControlSecondaryBackground" Color="{DynamicResource SystemAltMediumHighColor}"/>
+		<SolidColorBrush x:Key="CardControlBackground" Color="{DynamicResource SystemAltHighColor}"/>
 		<!--ContentDialog Resources-->
-		<SolidColorBrush x:Key="ContentDialogBackground" Color="{StaticResource SystemChromeLowColor}"/>
+		<SolidColorBrush x:Key="ContentDialogBackground" Color="{DynamicResource SystemChromeLowColor}"/>
 		<!--FloatingButton Resources-->
 		<!--FloatingButtonBar Resources-->
 		<x:Double x:Key="FloatingButtonSize">45</x:Double>
 		<!--GroupBox Resources-->
 		<Thickness x:Key="GroupBoxPadding">5</Thickness>
 		<CornerRadius x:Key="GroupBoxCornerRadius">10</CornerRadius>
-		<SolidColorBrush x:Key="GroupBoxBackground" Color="{StaticResource SystemChromeLowColor}"/>
-		<SolidColorBrush x:Key="GroupBoxBorderBrush" Color="{StaticResource SystemChromeGrayColor}"/>
+		<SolidColorBrush x:Key="GroupBoxBackground" Color="{DynamicResource SystemChromeLowColor}"/>
+		<SolidColorBrush x:Key="GroupBoxBorderBrush" Color="{DynamicResource SystemChromeGrayColor}"/>
 		<!--MessageDialog Resources-->
-		<SolidColorBrush x:Key="MessageDialogBackground" Color="{StaticResource SystemAltMediumHighColor}"/>
-		<SolidColorBrush x:Key="MessageDialogForeground" Color="{StaticResource SystemAltMediumHighColor}"/>
-		<SolidColorBrush x:Key="MessageDialogErrorBrush" Color="{StaticResource SystemErrorTextColor}"/>
+		<SolidColorBrush x:Key="MessageDialogBackground" Color="{DynamicResource SystemAltMediumHighColor}"/>
+		<SolidColorBrush x:Key="MessageDialogForeground" Color="{DynamicResource SystemAltMediumHighColor}"/>
+		<SolidColorBrush x:Key="MessageDialogErrorBrush" Color="{DynamicResource SystemErrorTextColor}"/>
 		<!--NavigationView Resources-->
-		<SolidColorBrush x:Key="NavigationViewForeground" Color="{StaticResource SystemBaseHighColor}"/>
-		<SolidColorBrush x:Key="NavigationViewSeparatorBackground" Color="{StaticResource SystemBaseMediumLowColor}"/>
-		<SolidColorBrush x:Key="NavigationViewBackground" Color="{StaticResource SystemAltHighColor}"/>
+		<SolidColorBrush x:Key="NavigationViewForeground" Color="{DynamicResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="NavigationViewSeparatorBackground" Color="{DynamicResource SystemBaseMediumLowColor}"/>
+		<SolidColorBrush x:Key="NavigationViewBackground" Color="{DynamicResource SystemAltHighColor}"/>
 		<x:Double x:Key="NavigationViewCompactPaneLength">50</x:Double>
 		<x:Double x:Key="NavigationViewOpenPaneLength">250</x:Double>
 		<DynamicResource x:Key="NavigationViewMaterial" ResourceKey="SystemAcrylicAltHighBrush"/>
 		<DynamicResource x:Key="NavigationViewUnFocusMaterial" ResourceKey="SystemAcrylicAltHighUnfocusBrush"/>
 		<!--NavigationViewItem Resources-->
-		<SolidColorBrush x:Key="NavigationViewItemSelectedBrush" Color="{StaticResource SystemAccentColorLight1}"/>
-		<SolidColorBrush x:Key="NavigationViewItemForeground" Color="{StaticResource SystemBaseHighColor}"/>
-		<SolidColorBrush x:Key="NavigationViewItemPointerOver" Color="{StaticResource SystemAltLowColor}" Opacity="0.5"/>
+		<SolidColorBrush x:Key="NavigationViewItemSelectedBrush" Color="{DynamicResource SystemAccentColorLight1}"/>
+		<SolidColorBrush x:Key="NavigationViewItemForeground" Color="{DynamicResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="NavigationViewItemPointerOver" Color="{DynamicResource SystemAltLowColor}" Opacity="0.5"/>
 		<!--NavigationViewLinker Resources-->
 		<CornerRadius x:Key="NavigationViewLinkerTitleCornerRadius">5</CornerRadius>
-		<SolidColorBrush x:Key="NavigationViewLinkerTitleForeground" Color="{StaticResource SystemAccentColor}"/>
-		<SolidColorBrush x:Key="NavigationViewLinkerTitleForegroundLow" Color="{StaticResource SystemBaseMediumLowColor}"/>
-		<SolidColorBrush x:Key="NavigationViewLinkerTitleTopContentForeground" Color="{StaticResource SystemBaseHighColor}"/>
-		<SolidColorBrush x:Key="NavigationViewLinkerTitleTopContentBackground" Color="{StaticResource SystemAccentColorLight1}"/>
-		<SolidColorBrush x:Key="NavigationViewLinkerPointerOver" Color="{StaticResource SystemBaseMediumLowColor}"/>
-		<SolidColorBrush x:Key="NavigationViewLinkerBackground" Color="{StaticResource SystemBaseLowColor}" Opacity="0.8"/>
+		<SolidColorBrush x:Key="NavigationViewLinkerTitleForeground" Color="{DynamicResource SystemAccentColor}"/>
+		<SolidColorBrush x:Key="NavigationViewLinkerTitleForegroundLow" Color="{DynamicResource SystemBaseMediumLowColor}"/>
+		<SolidColorBrush x:Key="NavigationViewLinkerTitleTopContentForeground" Color="{DynamicResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="NavigationViewLinkerTitleTopContentBackground" Color="{DynamicResource SystemAccentColorLight1}"/>
+		<SolidColorBrush x:Key="NavigationViewLinkerPointerOver" Color="{DynamicResource SystemBaseMediumLowColor}"/>
+		<SolidColorBrush x:Key="NavigationViewLinkerBackground" Color="{DynamicResource SystemBaseLowColor}" Opacity="0.8"/>
 		<!--Page Resources-->
 		<!--PageView Resources-->
 		<!--ProgressRing-->
-		<StaticResource x:Key="ProgressRingForegroundColor" ResourceKey="SystemAccentColorLight1"/>
-		<StaticResource x:Key="ProgressRingBackgroundColor" ResourceKey="SystemChromeHighColor"/>
+		<DynamicResource x:Key="ProgressRingForegroundColor" ResourceKey="SystemAccentColorLight1"/>
+		<DynamicResource x:Key="ProgressRingBackgroundColor" ResourceKey="SystemChromeHighColor"/>
 		<!--Ribbon Resources-->
-		<StaticResource x:Key="RibbonMaterial" ResourceKey="DefaultAcrylicRibbonBrush"/>
+		<DynamicResource x:Key="RibbonMaterial" ResourceKey="DefaultAcrylicRibbonBrush"/>
 		<!--RibbonGroup Resources-->
 		<sys:Double x:Key="RibbonGroupDisabledOpacity">0.6</sys:Double>
-		<SolidColorBrush x:Key="RibbonGroupForeground" Color="{StaticResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="RibbonGroupForeground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<Thickness x:Key="RibbonGroupPadding">10</Thickness>
 		<!--RibbonItem Resources-->
-		<!--FilledSlider Resources-->
 		<!--ModernSlider Resources-->
 		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncrease"
-									 TintColor="{StaticResource SystemAccentColor}"
+									 TintColor="{DynamicResource SystemAccentColor}"
 									 TintOpacity="1"
-									 FallbackColor="{StaticResource SystemAccentColor}"
+									 FallbackColor="{DynamicResource SystemAccentColor}"
 									 MaterialOpacity="1"
 									 BackgroundSource="None"/>
 		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncreasePointerOver"
@@ -88,9 +87,9 @@
 									 MaterialOpacity="1"
 									 BackgroundSource="None"/>
 		<ExperimentalAcrylicMaterial x:Key="ModernSliderDecrease"
-									 TintColor="{StaticResource SystemAltHighColor}"
+									 TintColor="{DynamicResource SystemAltHighColor}"
 									 TintOpacity="1" MaterialOpacity="1"
-								 FallbackColor="{StaticResource SystemAltHighColor}"
+								 FallbackColor="{DynamicResource SystemAltHighColor}"
 								 BackgroundSource="None"/>
 		<ExperimentalAcrylicMaterial x:Key="ModernSliderDecreasePointerOver"
 									 TintColor="{DynamicResource SystemAltMediumColor}"
@@ -99,7 +98,9 @@
 								 BackgroundSource="None"/>
 		<!--SuperListBoxItem Resources-->
 		<x:Double x:Key="SuperListBoxItemDisabledOpacity">0.5</x:Double>
-		<SolidColorBrush x:Key="SuperListBoxItemPressedPointerOverBackground" Color="{StaticResource SystemBaseHighColor}"/>
-		<SolidColorBrush x:Key="SuperListBoxItemPointerOverBackground" Color="{StaticResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="SuperListBoxItemPressedPointerOverBackground" Color="{DynamicResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="SuperListBoxItemPointerOverBackground" Color="{DynamicResource SystemBaseHighColor}"/>
+    <!--TitleBox Resources-->
+    <SolidColorBrush x:Key="TitleBoxBorderBrush" Color="{DynamicResource SystemAccentColorLight1}"/>
 	</Styles.Resources>
 </Styles>

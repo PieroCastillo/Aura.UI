@@ -9,9 +9,8 @@
 		<Setter Property="Width" Value="50" />
 		<Setter Property="Height" Value="50" />
 		<Setter Property="StrokeWidth" Value="7" />
-		<Setter Property="ForegroundColor" Value="{DynamicResource ProgressRingForegroundColor}" />
-		<Setter Property="BackgroundColor" Value="{DynamicResource ProgressRingBackgroundColor}" />
-		<!--<Setter Property="Foreground" Value="{DynamicResource }" />-->
+		<Setter Property="ForegroundColor" Value="{StaticResource ProgressRingForegroundColor}" />
+		<Setter Property="BackgroundColor" Value="{StaticResource ProgressRingBackgroundColor}" />
 	</Style>
 	<Style Selector="ProgressRing[IsIndeterminate=False]">
 		<Setter Property="Template">

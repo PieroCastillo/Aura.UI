@@ -10,8 +10,6 @@ namespace Aura.UI.Controls
     /// <summary>
     /// It's similar to <see cref="GroupBox"/>, but has a Two button on the TopRight
     /// </summary>
-    [TemplatePart(Name = "PART_B1", Type = typeof(Button))]
-    [TemplatePart(Name = "PART_B2", Type = typeof(Button))]
     public partial class TitleBox : HeaderedContentControl, ICustomCornerRadius
     {
         private Button B1;
