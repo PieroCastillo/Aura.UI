@@ -1,12 +1,10 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="Aura.UI.ControlsGallery.App">
-    <Application.Styles>
+  <Application.Styles>
         <!--<StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>-->
-		<FluentTheme Mode="Light"/>
-		
+		<!--<FluentTheme Mode="Dark"/>-->
 		<StyleInclude Source="avares://AvaloniaEdit/AvaloniaEdit.xaml"/>
-		<StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>
 		<StyleInclude Source="/Controls/CodeExample.xaml"/>		
 		<Style Selector="TextBlock">
 			<Setter Property="TextWrapping" Value="Wrap"/>
@@ -23,7 +21,10 @@
         <Setter Property="FontSize" Value="16"/>
         <Setter Property="FontWeight" Value="Bold"/>
       </Style>
-    </Application.Styles>
+      <Style Selector=":is(UserControl).us_c">
+        <Setter Property="Padding" Value="20"/>
+      </Style>
+  </Application.Styles>
 	<Application.Resources>
 		<ResourceDictionary>
 			<ResourceDictionary.MergedDictionaries>

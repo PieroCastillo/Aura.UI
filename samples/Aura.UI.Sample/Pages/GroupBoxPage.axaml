@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Aura.UI.ControlsGallery.Pages.GroupBoxPage"
-						 Padding="10" 
+						 Classes="us_c"
              HorizontalAlignment="Left">
 	<StackPanel Spacing="20">
 		<TextBlock Text="The GroupBox shows information to the user with a Header and a Content."/>

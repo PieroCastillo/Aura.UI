@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Aura.UI.ControlsGallery.Pages.AuraTabViewPage"
-             Padding="10">
+             Classes="us_c">
   <StackPanel Spacing="10">
     <TextBlock Text="AuraTabView is a control that can organize Contents by Drag-n-Drop."/>
     <CodeExample>
