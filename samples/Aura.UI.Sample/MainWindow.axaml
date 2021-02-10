@@ -4,9 +4,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 				xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
 				xmlns:flex="clr-namespace:Avalonia.Flexbox;assembly=Avalonia.Flexbox"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:l="using:System.Collections"
 				xmlns:pg="using:Aura.UI.ControlsGallery.Pages"
 				mc:Ignorable="d"
-				Width="800" Height="450"
 				x:Name="win"
 				x:Class="Aura.UI.ControlsGallery.MainWindow"
 				TransparencyLevelHint="{Binding #combobox.SelectedItem.Content}"
@@ -17,7 +18,7 @@
 				MinWidth="1171" MinHeight="492"
 				ExtendClientAreaToDecorationsHint="true"
 				ExtendClientAreaChromeHints="PreferSystemChrome"
-				ExtendClientAreaTitleBarHeightHint="100"
+				ExtendClientAreaTitleBarHeightHint="-1"
 				Title="Aura.UI Controls Gallery"
         Classes="us_c">
 	<Grid Margin="{Binding #win.OffScreenMargin}" > 
@@ -244,30 +245,43 @@
 				</NavigationViewItem>
 			</NavigationViewItem>
 		</NavigationView>
-		
 		<Border Background="Transparent" VerticalAlignment="Top" Height="19" PointerPressed="EnableDrag"/>
-		<StackPanel  HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-			<ToggleSwitch OnContent="Open" OffContent="Close"
-						  IsChecked="{Binding #nv.IsOpen, Mode=TwoWay}"/>
-			<ComboBox Name="splitmodebox" PlaceholderText="NavigationView Display Mode"
-					  SelectedItem="{Binding #r}">
-				<ComboBoxItem Name="r">CompactInline</ComboBoxItem>
-				<ComboBoxItem>CompactOverlay</ComboBoxItem>
-				<ComboBoxItem>Inline</ComboBoxItem>
-				<ComboBoxItem>Overlay</ComboBoxItem>
-			</ComboBox>
-			<ComboBox 
-						Name="combobox" PlaceholderText="Window Transparency Level" 
-					  SelectedItem="{Binding #s}" >
-				<ComboBoxItem>None</ComboBoxItem>
-				<ComboBoxItem>Transparent</ComboBoxItem>
-				<ComboBoxItem>Blur</ComboBoxItem>
-				<ComboBoxItem Name="s">AcrylicBlur</ComboBoxItem>
-			</ComboBox>
-      <ComboBox x:Name="Themes" SelectedIndex="0">
-        <ComboBoxItem>FluentLight</ComboBoxItem>
-        <ComboBoxItem>FluentDark</ComboBoxItem>
+    <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+      <StackPanel.Styles>
+        <Style Selector="ComboBox">
+          <Setter Property="VirtualizationMode" Value="Simple"/>
+        </Style>
+      </StackPanel.Styles>
+      <ToggleSwitch OnContent="Open" OffContent="Close"
+              IsChecked="{Binding #nv.IsOpen, Mode=TwoWay}"/>
+      <ComboBox Name="splitmodebox" PlaceholderText="NavigationView Display Mode"
+            SelectedItem="{Binding #r}">
+        <ComboBoxItem Name="r">CompactInline</ComboBoxItem>
+        <ComboBoxItem>CompactOverlay</ComboBoxItem>
+        <ComboBoxItem>Inline</ComboBoxItem>
+        <ComboBoxItem>Overlay</ComboBoxItem>
       </ComboBox>
-		</StackPanel>
+      <ComboBox SelectedIndex="0"
+                VirtualizationMode="None"
+                SelectionChanged="ChangeTheme">
+        <ComboBox.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding .}"/>
+          </DataTemplate> 
+        </ComboBox.ItemTemplate>
+        <l:ArrayList>
+          <sys:String>Fluent Light</sys:String>
+          <sys:String>Fluent Dark</sys:String>
+        </l:ArrayList>
+      </ComboBox>
+      <ComboBox
+            Name="combobox" PlaceholderText="Window Transparency Level"
+            SelectedItem="{Binding #s}" >
+        <ComboBoxItem>None</ComboBoxItem>
+        <ComboBoxItem>Transparent</ComboBoxItem>
+        <ComboBoxItem>Blur</ComboBoxItem>
+        <ComboBoxItem Name="s">AcrylicBlur</ComboBoxItem>
+      </ComboBox>
+    </StackPanel>
 	</Grid>
-</Window>
+</Window> 

@@ -11,7 +11,6 @@ namespace Aura.UI.ControlsGallery
     {
         public override void Initialize()
         {
-            Styles.Insert(0, FluentLight);
             AvaloniaXamlLoader.Load(this);
         }
 
@@ -25,7 +24,7 @@ namespace Aura.UI.ControlsGallery
             base.OnFrameworkInitializationCompleted();
         }
 
-        public static Styles FluentDark = new Styles
+        public readonly static Styles FluentDark = new Styles
         {
             new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
             {
@@ -37,7 +36,7 @@ namespace Aura.UI.ControlsGallery
             }
         };
 
-        public static Styles FluentLight = new Styles
+        public readonly static Styles FluentLight = new Styles
         {
             new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
             {
