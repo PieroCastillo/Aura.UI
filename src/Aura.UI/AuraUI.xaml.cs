@@ -5,9 +5,6 @@ namespace Aura.UI
 {
     public class AuraUITheme : Styles
     {
-        public AuraUITheme()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+    
     }
 }

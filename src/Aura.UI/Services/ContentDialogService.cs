@@ -7,11 +7,12 @@ using Avalonia.Threading;
 using System;
 using System.Diagnostics;
 
+#nullable enable
 namespace Aura.UI.Services
 {
     public static partial class ContentDialogService
     {
-        internal static void ShowDialogOn(WindowBase window, Control dialog)
+        internal static void ShowDialogOn(Control window, Control dialog)
         {
             Dispatcher.UIThread.Post(() =>
             {
@@ -24,11 +25,10 @@ namespace Aura.UI.Services
                 };
                 var layer = OverlayLayer.GetOverlayLayer(window);
                 layer.Children.Add(dialog);
-                Debug.WriteLine("dialog added");
             });
         }
 
-        internal static void CloseDialogOn(WindowBase window, Control dialog)
+        internal static void CloseDialogOn(Control window, Control dialog)
         {
             Dispatcher.UIThread.Post(() =>
             {
@@ -37,7 +37,6 @@ namespace Aura.UI.Services
                 {
                     layer.Children.Remove(dialog);
                 }
-                Debug.WriteLine("dialog closed");
             });
         }
 
