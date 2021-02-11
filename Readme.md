@@ -16,7 +16,7 @@ Aura.UI
 
 # Overview
 
-| Controls Availables |  | 
+| Available Controls |  | 
 | -----------------  | --- | 
 | FloatingButtonBar | ModernSlider |
 | ProgressRing | GroupBox |
