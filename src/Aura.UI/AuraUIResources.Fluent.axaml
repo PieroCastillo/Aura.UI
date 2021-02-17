@@ -1,11 +1,12 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		xmlns:sys="clr-namespace:System;assembly=mscorlib">
+	<Design.PreviewWith>
+		<Button></Button>
+	</Design.PreviewWith>
+	<StyleInclude Source="/AuraUIResources.Common.axaml"/>
 	<Styles.Resources>
 		<!--AuraTabItem Resources-->
-		<sys:Double x:Key="AuraTabItemDraggingOpacity">0.5</sys:Double>
-		<sys:Double x:Key="AuraTabItemDisabledOpacity">0.6</sys:Double>
-		<sys:Double x:Key="AuraTabItemFontSize">12</sys:Double>
 		<SolidColorBrush x:Key="AuraTabItemForeground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="AuraTabItemPointerOverBackground" Color="{DynamicResource SystemAltHighColor}"/>
 		<SolidColorBrush x:Key="AuraTabItemPointerOverBorderBrush" Color="{DynamicResource SystemBaseHighColor}"/>
@@ -23,7 +24,6 @@
 		<DynamicResource x:Key="ShadowButtonMaterialPointerOver" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicControlMidBrush-->
 		<DynamicResource x:Key="ShadowButtonMaterialPressed" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicControlLowBrush-->
 		<!--CardCollection Resources-->
-		<Thickness x:Key="CardCollectionPadding">10</Thickness>
 		<!--CardControl Resources-->
 		<SolidColorBrush x:Key="CardControlSecondaryBackground" Color="{DynamicResource SystemAltMediumHighColor}"/>
 		<SolidColorBrush x:Key="CardControlBackground" Color="{DynamicResource SystemAltHighColor}"/>
@@ -31,12 +31,10 @@
 		<SolidColorBrush x:Key="ContentDialogBackground" Color="{DynamicResource SystemChromeLowColor}"/>
 		<!--FloatingButton Resources-->
 		<!--FloatingButtonBar Resources-->
-		<x:Double x:Key="FloatingButtonSize">45</x:Double>
 		<!--GroupBox Resources-->
-		<Thickness x:Key="GroupBoxPadding">5</Thickness>
-		<CornerRadius x:Key="GroupBoxCornerRadius">10</CornerRadius>
 		<SolidColorBrush x:Key="GroupBoxBackground" Color="{DynamicResource SystemChromeLowColor}"/>
-		<SolidColorBrush x:Key="GroupBoxBorderBrush" Color="{DynamicResource SystemChromeGrayColor}"/>
+		<SolidColorBrush x:Key="GroupBoxBorderBrush" Color="{DynamicResource SystemChromeGrayColor
+		}"/>
 		<!--MessageDialog Resources-->
 		<SolidColorBrush x:Key="MessageDialogBackground" Color="{DynamicResource SystemAltMediumHighColor}"/>
 		<SolidColorBrush x:Key="MessageDialogForeground" Color="{DynamicResource SystemAltMediumHighColor}"/>
@@ -45,8 +43,6 @@
 		<SolidColorBrush x:Key="NavigationViewForeground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="NavigationViewSeparatorBackground" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<SolidColorBrush x:Key="NavigationViewBackground" Color="{DynamicResource SystemAltHighColor}"/>
-		<x:Double x:Key="NavigationViewCompactPaneLength">50</x:Double>
-		<x:Double x:Key="NavigationViewOpenPaneLength">250</x:Double>
 		<DynamicResource x:Key="NavigationViewMaterial" ResourceKey="SystemAcrylicAltHighBrush"/>
 		<DynamicResource x:Key="NavigationViewUnFocusMaterial" ResourceKey="SystemAcrylicAltHighUnfocusBrush"/>
 		<!--NavigationViewItem Resources-->
@@ -54,7 +50,6 @@
 		<SolidColorBrush x:Key="NavigationViewItemForeground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="NavigationViewItemPointerOver" Color="{DynamicResource SystemAltLowColor}" Opacity="0.5"/>
 		<!--NavigationViewLinker Resources-->
-		<CornerRadius x:Key="NavigationViewLinkerTitleCornerRadius">5</CornerRadius>
 		<SolidColorBrush x:Key="NavigationViewLinkerTitleForeground" Color="{DynamicResource SystemAccentColor}"/>
 		<SolidColorBrush x:Key="NavigationViewLinkerTitleForegroundLow" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<SolidColorBrush x:Key="NavigationViewLinkerTitleTopContentForeground" Color="{DynamicResource SystemBaseHighColor}"/>
@@ -69,9 +64,7 @@
 		<!--Ribbon Resources-->
 		<DynamicResource x:Key="RibbonMaterial" ResourceKey="DefaultAcrylicRibbonBrush"/>
 		<!--RibbonGroup Resources-->
-		<sys:Double x:Key="RibbonGroupDisabledOpacity">0.6</sys:Double>
 		<SolidColorBrush x:Key="RibbonGroupForeground" Color="{DynamicResource SystemBaseHighColor}"/>
-		<Thickness x:Key="RibbonGroupPadding">10</Thickness>
 		<!--RibbonItem Resources-->
 		<!--ModernSlider Resources-->
 		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncrease"
@@ -97,7 +90,6 @@
 								 FallbackColor="{DynamicResource SystemAltMediumColor}"
 								 BackgroundSource="None"/>
 		<!--SuperListBoxItem Resources-->
-		<x:Double x:Key="SuperListBoxItemDisabledOpacity">0.5</x:Double>
 		<SolidColorBrush x:Key="SuperListBoxItemPressedPointerOverBackground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="SuperListBoxItemPointerOverBackground" Color="{DynamicResource SystemBaseHighColor}"/>
     <!--TitleBox Resources-->
