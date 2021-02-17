@@ -1,11 +1,13 @@
 ﻿using Aura.UI.Controls.Primitives;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.Controls
 {
-    public class ToolWindow : CustomWindow
+    // ReSharper disable once ClassNeverInstantiated.Global
+    public partial class ToolWindow : CustomWindow
     {
         public ToolWindow()
         {
@@ -13,19 +15,13 @@ namespace Aura.UI.Controls
 #if DEBUG
             this.AttachDevTools();
 #endif
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-
-            var close_b = this.Find<Button>("PART_CloseButton");
-            close_b.Click += (s, e) =>
+            
+            PART_CloseButton.Click += delegate
             {
                 Close();
             };
-            var drag = this.Find<Border>("PART_DragBorder");
-            MakeWindowDragger(drag);
+            
+            MakeWindowDragger(PART_DragBorder);
         }
     }
 }
