@@ -5,12 +5,12 @@
 	                             TintColor="#00000000"
 	                             FallbackColor="#00000000"></ExperimentalAcrylicMaterial>
 		<ExperimentalAcrylicMaterial x:Key="OnlyNoiseBrush"  MaterialOpacity="0.5" TintOpacity="0"
-							 TintColor="{DynamicResource ThemeBackgroundColor}"
-							 FallbackColor="{DynamicResource ThemeBackgroundColor}"
+							 TintColor="{DynamicResource SystemAltHighColor}"
+							 FallbackColor="{DynamicResource SystemAltHighColor}"
 									 BackgroundSource="Digger" />
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrush"  MaterialOpacity="0" TintOpacity="0.5"
-									 TintColor="{DynamicResource ThemeBackgroundColor}"
-								 FallbackColor="{DynamicResource ThemeBackgroundColor}"
+									 TintColor="{DynamicResource SystemAltHighColor}"
+								 FallbackColor="{DynamicResource SystemAltHighColor}"
 								 BackgroundSource="Digger" />
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderLowBrush"   MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeBorderLowColor}"
@@ -57,12 +57,12 @@
 							 FallbackColor="{DynamicResource ThemeControlHighlightHighColor}"
 								 BackgroundSource="Digger" />
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundBrush"	MaterialOpacity="0" TintOpacity="0.5"
-									 TintColor="{DynamicResource ThemeForegroundColor}"
-							 FallbackColor="{DynamicResource ThemeForegroundColor}"
+									 TintColor="{DynamicResource SystemBaseHighColor}"
+							 FallbackColor="{DynamicResource SystemBaseHighColor}"
 								 BackgroundSource="Digger" />
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundLowBrush"	MaterialOpacity="0" TintOpacity="0.5"
-									 TintColor="{DynamicResource ThemeForegroundLowColor}"
-							 FallbackColor="{DynamicResource ThemeForegroundLowColor}"
+									 TintColor="{DynamicResource SystemBaseMediumLowColor}"
+							 FallbackColor="{DynamicResource SystemBaseMediumLowColor}"
 								 BackgroundSource="Digger" />
 
 		<ExperimentalAcrylicMaterial x:Key="HighlightAcrylicBrush"	MaterialOpacity="0" TintOpacity="0.5"
@@ -90,8 +90,8 @@
 						 FallbackColor="{DynamicResource ThemeAccentColor4}"
 								 BackgroundSource="Digger" />
 		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicBrush"	MaterialOpacity="0" TintOpacity="0.5"
-									 TintColor="{DynamicResource ErrorColor}"
-						 FallbackColor="{DynamicResource ErrorColor}"
+									 TintColor="{DynamicResource SystemErrorTextColor}"
+						 FallbackColor="{DynamicResource SystemErrorTextColor}"
 								 BackgroundSource="Digger" />
 		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicLowBrush"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ErrorLowColor}"
@@ -120,12 +120,12 @@
 												  TintColor="#00000000"
 										 FallbackColor="#00000000"></ExperimentalAcrylicMaterial>
 		<ExperimentalAcrylicMaterial x:Key="OnlyNoiseBrushNoDigger"  MaterialOpacity="0.5" TintOpacity="0"
-							 TintColor="{DynamicResource ThemeBackgroundColor}"
-							 FallbackColor="{DynamicResource ThemeBackgroundColor}"
+							 TintColor="{DynamicResource SystemAltHighColor}"
+							 FallbackColor="{DynamicResource SystemAltHighColor}"
 									 BackgroundSource="None" />
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBackgroundBrushNoDigger"  MaterialOpacity="0" TintOpacity="0.5"
-									 TintColor="{DynamicResource ThemeBackgroundColor}"
-								 FallbackColor="{DynamicResource ThemeBackgroundColor}"
+									 TintColor="{DynamicResource SystemAltHighColor}"
+								 FallbackColor="{DynamicResource SystemAltHighColor}"
 								 BackgroundSource="None" />
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicBorderLowBrushNoDigger"   MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ThemeBorderLowColor}"
@@ -172,12 +172,12 @@
 							 FallbackColor="{DynamicResource ThemeControlHighlightHighColor}"
 								 BackgroundSource="None" />
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundBrushNoDigger"	MaterialOpacity="0" TintOpacity="0.5"
-									 TintColor="{DynamicResource ThemeForegroundColor}"
-							 FallbackColor="{DynamicResource ThemeForegroundColor}"
+									 TintColor="{DynamicResource SystemBaseHighColor}"
+							 FallbackColor="{DynamicResource SystemBaseHighColor}"
 								 BackgroundSource="None" />
 		<ExperimentalAcrylicMaterial x:Key="ThemeAcrylicForegroundLowBrushNoDigger"	MaterialOpacity="0" TintOpacity="0.5"
-									 TintColor="{DynamicResource ThemeForegroundLowColor}"
-							 FallbackColor="{DynamicResource ThemeForegroundLowColor}"
+									 TintColor="{DynamicResource SystemBaseMediumLowColor}"
+							 FallbackColor="{DynamicResource SystemBaseMediumLowColor}"
 								 BackgroundSource="None" />
 
 		<ExperimentalAcrylicMaterial x:Key="HighlightAcrylicBrushNoDigger"	MaterialOpacity="0" TintOpacity="0.5"
@@ -205,8 +205,8 @@
 						 FallbackColor="{DynamicResource ThemeAccentColor4}"
 								 BackgroundSource="None" />
 		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicBrushNoDigger"	MaterialOpacity="0" TintOpacity="0.5"
-									 TintColor="{DynamicResource ErrorColor}"
-						 FallbackColor="{DynamicResource ErrorColor}"
+									 TintColor="{DynamicResource SystemErrorTextColor}"
+						 FallbackColor="{DynamicResource SystemErrorTextColor}"
 								 BackgroundSource="None" />
 		<ExperimentalAcrylicMaterial x:Key="ErrorAcrylicLowBrushNoDigger"	MaterialOpacity="0" TintOpacity="0.5"
 									 TintColor="{DynamicResource ErrorLowColor}"

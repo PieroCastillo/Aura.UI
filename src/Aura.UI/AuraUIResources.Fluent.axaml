@@ -33,8 +33,7 @@
 		<!--FloatingButtonBar Resources-->
 		<!--GroupBox Resources-->
 		<SolidColorBrush x:Key="GroupBoxBackground" Color="{DynamicResource SystemChromeLowColor}"/>
-		<SolidColorBrush x:Key="GroupBoxBorderBrush" Color="{DynamicResource SystemChromeGrayColor
-		}"/>
+		<SolidColorBrush x:Key="GroupBoxBorderBrush" Color="{DynamicResource SystemChromeGrayColor}"/>
 		<!--MessageDialog Resources-->
 		<SolidColorBrush x:Key="MessageDialogBackground" Color="{DynamicResource SystemAltMediumHighColor}"/>
 		<SolidColorBrush x:Key="MessageDialogForeground" Color="{DynamicResource SystemAltMediumHighColor}"/>
