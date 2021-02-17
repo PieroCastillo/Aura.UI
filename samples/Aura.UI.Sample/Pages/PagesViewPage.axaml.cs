@@ -4,16 +4,11 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
-    public class PagesViewPage : UserControl
+    public partial class PagesViewPage : UserControl
     {
         public PagesViewPage()
         {
-            this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
+            InitializeComponent();
         }
     }
 }

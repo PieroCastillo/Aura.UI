@@ -4,16 +4,12 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
-    public class XamlExtensionsPage : UserControl
+    public partial class XamlExtensionsPage : UserControl
     {
         public XamlExtensionsPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

@@ -76,5 +76,20 @@ namespace Aura.UI.ControlsGallery.Controls
         }
         public static readonly StyledProperty<bool> XAMLVisibleProperty =
             AvaloniaProperty.Register<CodeExample, bool>(nameof(XAMLVisible));
+
+        public string Title
+        {
+            get => GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
+        }
+        public static readonly StyledProperty<string> TitleProperty = 
+            AvaloniaProperty.Register<CodeExample, string>(nameof(Title));
+        public string TitleTwo
+        {
+            get => GetValue(TitleTwoProperty);
+            set => SetValue(TitleTwoProperty, value);
+        }
+        public static readonly StyledProperty<string> TitleTwoProperty =
+            AvaloniaProperty.Register<CodeExample, string>(nameof(TitleTwo));
     }
 }

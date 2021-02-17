@@ -6,16 +6,11 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
-    public class MessageDialogPage : UserControl
+    public partial class MessageDialogPage : UserControl
     {
         public MessageDialogPage()
         {
-            this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
+            InitializeComponent();
         }
 
         public void ShowMessageDialog(object sender, RoutedEventArgs e)

@@ -3,16 +3,12 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
-    public class FloatingButtonBarPage : UserControl
+    public partial class FloatingButtonBarPage : UserControl
     {
         public FloatingButtonBarPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

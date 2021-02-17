@@ -4,16 +4,11 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
-    public class ModernSliderPage : UserControl
+    public partial class ModernSliderPage : UserControl
     {
         public ModernSliderPage()
         {
             this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
     }
 }

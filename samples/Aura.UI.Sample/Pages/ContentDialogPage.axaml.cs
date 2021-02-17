@@ -7,7 +7,7 @@ using Aura.UI.Services;
 
 namespace Aura.UI.ControlsGallery.Pages
 {
-    public class ContentDialogPage : UserControl
+    public partial class ContentDialogPage : UserControl
     {
         public ContentDialogPage()
         {
