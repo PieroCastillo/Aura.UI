@@ -20,16 +20,6 @@ namespace Aura.UI.Controls.Primitives
     /// Name = "PART_BottomLeftBorder", Type = typeof(Border))<br/>
     /// Name = "PART_BottomRightBorder", Type = typeof(Border))<br/>
     /// </summary>
-    // sides
-    [TemplatePart(Name = "PART_LeftBorder", Type = typeof(Border))]
-    [TemplatePart(Name = "PART_RightBorder", Type = typeof(Border))]
-    [TemplatePart(Name = "PART_TopBorder", Type = typeof(Border))]
-    [TemplatePart(Name = "PART_BottomBorder", Type = typeof(Border))]
-    //corners
-    [TemplatePart(Name = "PART_TopLeftBorder", Type = typeof(Border))]
-    [TemplatePart(Name = "PART_TopRightBorder", Type = typeof(Border))]
-    [TemplatePart(Name = "PART_BottomLeftBorder", Type = typeof(Border))]
-    [TemplatePart(Name = "PART_BottomRightBorder", Type = typeof(Border))]
     public class CustomWindow : Window
     {
         public CustomWindow()

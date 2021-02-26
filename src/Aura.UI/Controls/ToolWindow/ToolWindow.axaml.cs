@@ -6,22 +6,18 @@ using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.Controls
 {
-    // ReSharper disable once ClassNeverInstantiated.Global
     public partial class ToolWindow : CustomWindow
     {
         public ToolWindow()
         {
-            InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
-            
+            AvaloniaXamlLoader.Load(this);
+            Button PART_CloseButton = this.Find<Button>("PART_CloseButton");
             PART_CloseButton.Click += delegate
             {
                 Close();
             };
             
-            MakeWindowDragger(PART_DragBorder);
+            MakeWindowDragger(this.Find<Border>("PART_DragBorder"));
         }
     }
 }
