@@ -23,6 +23,7 @@ using System;
 	</Styles.Resources>
 	<Style Selector="CodeExample">
 		<Setter Property="XAMLVisible" Value="True"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="CSharpVisible" Value="True"/>
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -50,10 +51,10 @@ using System;
 						</StackPanel.Styles>
             <WrapPanel>
               <TextBlock Text="{TemplateBinding Title}"
-                       FontSize="20" FontWeight="SemiBold"/>
+                       FontSize="16" FontWeight="SemiBold"/>
               <TextBlock Text=" "/>
               <TextBlock Text="{TemplateBinding TitleTwo}"
-                       FontSize="20" FontWeight="Normal"/>
+                       FontSize="16" FontWeight="Normal"/>
             </WrapPanel>
 						<ScrollViewer HorizontalScrollBarVisibility="Auto" 
 										VerticalScrollBarVisibility="Disabled">

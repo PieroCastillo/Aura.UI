@@ -29,6 +29,7 @@
 		<SolidColorBrush x:Key="CardControlBackground" Color="{DynamicResource SystemAltHighColor}"/>
 		<!--ContentDialog Resources-->
 		<SolidColorBrush x:Key="ContentDialogBackground" Color="{DynamicResource SystemChromeLowColor}"/>
+    <SolidColorBrush x:Key="ContentDialogBorderBrush" Color="{DynamicResource SystemBaseHighColor}"/>
 		<!--FloatingButton Resources-->
 		<!--FloatingButtonBar Resources-->
 		<!--GroupBox Resources-->
@@ -64,6 +65,7 @@
 		<DynamicResource x:Key="RibbonMaterial" ResourceKey="DefaultAcrylicRibbonBrush"/>
 		<!--RibbonGroup Resources-->
 		<SolidColorBrush x:Key="RibbonGroupForeground" Color="{DynamicResource SystemBaseHighColor}"/>
+    <SolidColorBrush x:Key="RibbonGroupSeparatorBrush" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<!--RibbonItem Resources-->
 		<!--ModernSlider Resources-->
 		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncrease"

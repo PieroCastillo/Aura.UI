@@ -43,6 +43,7 @@ namespace Aura.UI.Controls
         {
             base.OnPropertyChanged(change);
 
+
             if (SelectedItem == null)
             {
                 double d = ((double)ItemCount / 2);

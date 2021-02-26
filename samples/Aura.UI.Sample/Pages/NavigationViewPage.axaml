@@ -5,5 +5,16 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Aura.UI.ControlsGallery.Pages.NavigationViewPage"
              Classes="us_c">
-    Welcome to Avalonia!
+  <StackPanel Spacing="20">
+    <TextBlock>The NavigationView is a control that organizes pages as TreeViewItem, also can be opened and closed.</TextBlock>
+    <CodeExample Title="NavigationView"
+                 TitleTwo="Default"
+                 HorizontalAlignment="Stretch">
+      <NavigationView>
+        <NavigationViewItem>
+          
+        </NavigationViewItem>
+      </NavigationView>
+    </CodeExample>
+  </StackPanel>
 </UserControl>

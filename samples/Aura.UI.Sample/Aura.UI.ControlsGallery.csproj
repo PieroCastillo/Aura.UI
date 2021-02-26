@@ -82,7 +82,7 @@
     <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
     <PackageReference Include="jp2masa.Avalonia.Flexbox" Version="0.2.0" />
-    <PackageReference Include="XamlNameReferenceGenerator" Version="0.4.1" />
+    <PackageReference Include="XamlNameReferenceGenerator" Version="0.5.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />

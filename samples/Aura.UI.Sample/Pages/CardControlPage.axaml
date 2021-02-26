@@ -4,21 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Aura.UI.ControlsGallery.Pages.CardControlPage"
-             Classes="us_c"><!---->
+             Classes="us_c">
 	<UserControl.Styles>
-		<Style Selector="TextBlock.titles">
-			<Setter Property="Padding" Value="10"/>
-			<Setter Property="FontSize" Value="20"/>
-			<Setter Property="FontWeight" Value="Bold"/>
-		</Style>
 		<Style Selector="CodeExample">
 			<Setter Property="CSharpVisible" Value="False"/>
 		</Style>
 	</UserControl.Styles>
 	<Grid RowDefinitions="auto,10,auto,auto,20,auto,auto,20,auto,auto">
-		<TextBlock Grid.Row="0" Text="The recommended use of CardControl is shows MultimediaMedia information, like Music, Movies, Books, etc."/>
-		<TextBlock Grid.Row="2" Classes="titles" Text="CardControl in Horizontal Disposition"/> 
-		<CodeExample Grid.Row="3">
+		<TextBlock Grid.Row="0" Text="The recommended use of CardControl is shows MultimediaMedia information, like Music, Movies, Books, etc."/> 
+		<CodeExample Title="CardControl in Horizontal Disposition" Grid.Row="3">
 			<CodeExample.Control>
 				<Grid RowDefinitions="*,*,*">
 					<Grid.Styles>
@@ -171,8 +165,7 @@
 &lt;/Grid&gt;
 			</CodeExample.XAMLText>
 		</CodeExample>
-		<TextBlock Grid.Row="5" Classes="titles" Text="CardControl in Vertical Disposition"/>
-		<CodeExample Grid.Row="6">
+		<CodeExample Title="CardControl in Vertical Disposition" Grid.Row="6">
 			<CodeExample.Control>
 				<Grid ColumnDefinitions="*,*">
 					<Grid.Styles>
@@ -299,8 +292,7 @@
 &lt;/Grid&gt;
 			</CodeExample.XAMLText>
 		</CodeExample>
-		<TextBlock Grid.Row="8" Classes="titles" Text="CardControl in Uniform Disposition"/>
-		<CodeExample Grid.Row="9">
+		<CodeExample Title="CardControl in Uniform Disposition" Grid.Row="9">
 			<CodeExample.Control>
 			<Grid>
 				<Grid.Styles>

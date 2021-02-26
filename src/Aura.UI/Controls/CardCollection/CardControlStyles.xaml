@@ -9,8 +9,8 @@
 	</Design.PreviewWith>
 	<Style Selector="CardControl">
 		<Setter Property="Padding" Value="10" />
-		<Setter Property="BoxShadow" Value="{BoxShadow ShadowColor={StaticResource SystemBaseHighColor}, BlurRadius=7}" /><!--0 0 7 0 Black-->
-		<Setter Property="InternalBoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor={StaticResource SystemBaseHighColor}}" /><!--0 0 5 0 Black-->
+		<Setter Property="BoxShadow" Value="{BoxShadow ShadowColor=Black, BlurRadius=7}" /><!--0 0 7 0 Black-->
+		<Setter Property="InternalBoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor=Black}" /><!--0 0 5 0 Black-->
 		<Setter Property="InternalCornerRadius" Value="7" />
 		<Setter Property="CornerRadius" Value="7" />
 		<Setter Property="InternalPadding" Value="20" />

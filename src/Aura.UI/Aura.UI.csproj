@@ -15,7 +15,15 @@
 		</AvaloniaResource>
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="XamlNameReferenceGenerator" Version="0.4.1" />
+	  <None Remove="AuraUIFluent.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="XamlNameReferenceGenerator" Version="0.5.1" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AvaloniaResource Update="AuraUIFluent.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </AvaloniaResource>
 	</ItemGroup>
 	<Import Project="..\..\build\base.props" />
 	<Import Project="..\..\build\version.props" />

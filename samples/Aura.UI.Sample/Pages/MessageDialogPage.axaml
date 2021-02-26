@@ -15,7 +15,7 @@ this.NewMessageDialog("Your Message Title","Your Message Content", null);
 		<TextBlock TextWrapping="Wrap">
 			<x:String>The MessageDialog is a Dialog Control that just can be closed, it does not have an Buttons, its principal use is shows information to the user.</x:String>
 		</TextBlock>
-		<CodeExample XAMLVisible="False" HorizontalAlignment="Center">
+		<CodeExample Title="MessageDialog" XAMLVisible="False" HorizontalAlignment="Center">
 			<CodeExample.Control>
 				<Button Content="Show MessageDialog" HorizontalAlignment="Center"
 				Click="ShowMessageDialog" Margin="40"/>

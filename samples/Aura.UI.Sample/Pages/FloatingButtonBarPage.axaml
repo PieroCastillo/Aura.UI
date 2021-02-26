@@ -5,8 +5,7 @@
 							xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d"
              x:Class="Aura.UI.ControlsGallery.Pages.FloatingButtonBarPage"
-             Classes="us_c"
-					 HorizontalAlignment="Left">
+             Classes="us_c">
 	<UserControl.Resources>
 		<sys:Boolean x:Key="value">true</sys:Boolean>
 	</UserControl.Resources>
@@ -18,10 +17,7 @@
 			</x:String>
 		</TextBlock>
 		<StackPanel Spacing="10">
-			<TextBlock Text="FloatingButtonBar with ExpandDirection=ToRight" 
-					   Margin="20,0"
-					   Classes="ts"/>
-			<CodeExample CSharpVisible="False">
+			<CodeExample Title="FloatingButtonBar with ExpandDirection=ToRight" CSharpVisible="False">
 				<FloatingButtonBar OpenLength="250" ExpandDirection="ToRight">
 					<FloatingButton/>
 					<FloatingButton/>
@@ -37,10 +33,7 @@
 &lt;/FloatingButtonBar>				
 				</CodeExample.XAMLText>
 			</CodeExample>
-			<TextBlock Text="FloatingButtonBar with ExpandDirection=ToLeft"
-					   Margin="20,0"
-					   Classes="ts"/>
-			<CodeExample CSharpVisible="False">
+			<CodeExample Title="FloatingButtonBar with ExpandDirection=ToLeft" CSharpVisible="False">
 				<FloatingButtonBar OpenLength="250" ExpandDirection="ToLeft">
 					<FloatingButton/>
 					<FloatingButton/>
@@ -56,10 +49,7 @@
 &lt;/FloatingButtonBar>
 				</CodeExample.XAMLText>
 			</CodeExample>
-			<TextBlock Text="FloatingButtonBar with ExpandDirection=ToTop"
-					   Margin="20,0"
-					   Classes="ts"/>
-			<CodeExample CSharpVisible="False">
+			<CodeExample Title="FloatingButtonBar with ExpandDirection=ToTop" CSharpVisible="False">
 				<FloatingButtonBar OpenLength="250" ExpandDirection="ToTop">
 					<FloatingButton/>
 					<FloatingButton/>
@@ -75,10 +65,7 @@
 &lt;/FloatingButtonBar>
 				</CodeExample.XAMLText>
 			</CodeExample>
-			<TextBlock Text="FloatingButtonBar with ExpandDirection=ToBottom"
-					Margin="20,0"
-					Classes="ts"/>
-			<CodeExample CSharpVisible="False">
+			<CodeExample Title="FloatingButtonBar with ExpandDirection=ToBottom" CSharpVisible="False">
 				<FloatingButtonBar OpenLength="250" ExpandDirection="ToBottom">
 					<FloatingButton/>
 					<FloatingButton/>

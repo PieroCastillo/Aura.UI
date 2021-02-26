@@ -1,6 +1,7 @@
 ﻿using Aura.UI.Attributes;
 using Aura.UI.UIExtensions;
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using System;
@@ -10,14 +11,13 @@ namespace Aura.UI.Controls.Ribbon
     /// <summary>
     /// This control is to organize the Ribbon
     /// </summary>
-    [TemplatePart(Name = "PART_MiniButton", Type = typeof(MaterialButton))]
     public class RibbonGroup : HeaderedContentControl
     {
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
 
-            MiniButton = this.GetControl<MaterialButton>(e, "PART_MiniButton");
+            var MiniButton = this.GetControl<Button>(e, "PART_MiniButton");
             MiniButton.Click += (s, _) =>
             {
                 var e = new RoutedEventArgs(MiniButtonClickEvent);
@@ -25,16 +25,6 @@ namespace Aura.UI.Controls.Ribbon
                 e.Handled = true;
             };
         }
-
-        //[Obsolete("Use the event, maybe this property will be deleted")]
-        protected MaterialButton MiniButton
-        {
-            get => GetValue(MiniButtonProperty);
-            set => SetValue(MiniButtonProperty, value);
-        }
-
-        public static readonly StyledProperty<MaterialButton> MiniButtonProperty =
-            AvaloniaProperty.Register<RibbonGroup, MaterialButton>(nameof(MiniButton), new MaterialButton());
 
         public object MiniButtonContent
         {

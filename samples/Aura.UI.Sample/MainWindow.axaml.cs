@@ -37,7 +37,7 @@ namespace Aura.UI.ControlsGallery
                         Application.Current.Styles[0] = App.FluentLight;
                         break;
                     case 1:
-                        Application.Current.Styles.Replace(App.FluentLight, App.FluentDark);
+                        Application.Current.Styles[0] = App.FluentDark;
                         break;
                 }
             }, (DispatcherPriority)1);

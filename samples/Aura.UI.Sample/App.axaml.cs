@@ -33,6 +33,10 @@ namespace Aura.UI.ControlsGallery
             },
             new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
             {
+                Source = new Uri("avares://Aura.UI/AuraUIFluent.xaml")
+            },
+            new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+            {
                 Source = new Uri("avares://Aura.UI/AuraUI.xaml")
             }
         };
@@ -45,8 +49,52 @@ namespace Aura.UI.ControlsGallery
             },
             new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
             {
+                Source = new Uri("avares://Aura.UI/AuraUIFluent.xaml")
+            },
+            new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+            {
                 Source = new Uri("avares://Aura.UI/AuraUI.xaml")
             }
         };
+
+        //public readonly static Styles SimpleDark = new Styles
+        //{
+        //    new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+        //    {
+        //        Source = new Uri("avares://Avalonia.Themes.Default/Accents/BaseLight.xaml")
+        //    },
+        //    new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+        //    {
+        //        Source = new Uri("avares://Avalonia.Themes.Default/DefaultTheme.xaml")
+        //    },
+        //    new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+        //    {
+        //        Source = new Uri("avares://Aura.UI/AuraUIDefault.xaml")
+        //    },
+        //    new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+        //    {
+        //        Source = new Uri("avares://Aura.UI/AuraUI.xaml")
+        //    }
+        //};
+
+        //public readonly static Styles SimpleLight = new Styles
+        //{
+        //    new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+        //    {
+        //        Source = new Uri("avares://Avalonia.Themes.Default/Accents/BaseDark.xaml")
+        //    },
+        //    new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+        //    {
+        //        Source = new Uri("avares://Avalonia.Themes.Default/DefaultTheme.xaml")
+        //    },
+        //    new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+        //    {
+        //        Source = new Uri("avares://Aura.UI/AuraUIDefault.xaml")
+        //    },
+        //    new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+        //    {
+        //        Source = new Uri("avares://Aura.UI/AuraUI.xaml")
+        //    }
+        //};
     }
 }

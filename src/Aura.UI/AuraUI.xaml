@@ -1,16 +1,13 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		x:Class="Aura.UI.AuraUITheme">
-	<StyleInclude Source="/AuraUIResources.Common.axaml"></StyleInclude>
-	<StyleInclude Source="/AuraAcrylicBase.Fluent.xaml"></StyleInclude>
-	<StyleInclude Source="/AuraUIResources.Fluent.axaml"></StyleInclude>
 	<StyleInclude Source="/Controls/AuraTabItem/AuraTabItemStyles.xaml" />
 	<StyleInclude Source="/Controls/AuraTabView/AuraTabViewStyles.xaml" />
 	<StyleInclude Source="/Controls/Buttons/MaterialButtonStyles.xaml" />
 	<StyleInclude Source="/Controls/Buttons/ShadowButtonStyles.xaml" />
 	<StyleInclude Source="/Controls/CardCollection/CardCollectionStyles.xaml" />
 	<StyleInclude Source="/Controls/CardCollection/CardControlStyles.xaml" />
-	<StyleInclude Source="/Controls/ContentDialog/ContentlDialogStyles.xaml" />
+	<StyleInclude Source="/Controls/ContentDialog/ContentDialogStyles.xaml" />
 	<StyleInclude Source="/Controls/FloatingButtonBar/FloatingButton.xaml" />
 	<StyleInclude Source="/Controls/FloatingButtonBar/FloatingButtonBar.xaml" />
 	<StyleInclude Source="/Controls/GroupBox/GroupBoxStyles.xaml" />

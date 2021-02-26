@@ -4,12 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Aura.UI.ControlsGallery.Pages.GroupBoxPage"
-						 Classes="us_c"
-             HorizontalAlignment="Left">
+						 Classes="us_c">
 	<StackPanel Spacing="20">
 		<TextBlock Text="The GroupBox shows information to the user with a Header and a Content."/>
-		<TextBlock Text="Standard GroupBox" Classes="ts"/>
-    <CodeExample CSharpVisible="False">
+    <CodeExample Title="Standard GroupBox" CSharpVisible="False" HorizontalAlignment="Center">
 			<GroupBox Header="Hello!" Content="I'm a GroupBox"/>
       <CodeExample.XAMLText>
  &lt;GroupBox Header="Hello!" Content="I'm a GroupBox"/>        

@@ -39,7 +39,7 @@
 	<Design.PreviewWith>
 		<Border Padding="20">
 				<MaterialButton CornerRadius="0">
-					xd
+					abcd
 				</MaterialButton>
 		</Border>
 	</Design.PreviewWith>

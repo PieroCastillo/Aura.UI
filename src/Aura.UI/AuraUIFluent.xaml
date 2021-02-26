@@ -1,0 +1,5 @@
+<Styles xmlns="https://github.com/avaloniaui">
+  <StyleInclude Source="/AuraUIResources.Common.axaml"/>
+  <StyleInclude Source="/AuraAcrylicBase.Fluent.xaml"/>
+  <StyleInclude Source="/AuraUIResources.Fluent.axaml"/>
+</Styles>

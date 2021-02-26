@@ -195,7 +195,7 @@
 
 	<Style Selector=":is(NavigationViewItemBase):selected /template/ Border#PART_SelectionBorder">
 		<Setter Property="Background" Value="{DynamicResource NavigationViewItemSelectedBrush}" />
-		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=.5, ShadowColor={StaticResource SystemBaseMediumColor}}" /><!--0 0 .5 0 Black-->
+		<Setter Property="BoxShadow" Value="{BoxShadow BlurRadius=.5, ShadowColor=Gray}" /><!--0 0 .5 0 Black-->
 	</Style>
 	<Style Selector=":is(NavigationViewItemBase):empty /template/ ToggleButton">
 		<Setter Property="Opacity" Value="0" />

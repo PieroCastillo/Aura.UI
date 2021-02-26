@@ -5,10 +5,11 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Aura.UI.ControlsGallery.Pages.ModernSliderPage"
 						Classes="us_c">
-	<StackPanel Spacing="10" HorizontalAlignment="Left"
-				Width="500">
+	<StackPanel Spacing="10">
 		<TextBlock Text="The ModernSlider is a Slider with Acrylic-Style."/>
-		<CodeExample CSharpVisible="False">
+		<CodeExample Title="ModernSlider" TitleTwo="Orientation Horizontal"
+								CSharpVisible="False" Width="450" 
+                 HorizontalAlignment="Center">
 			<CodeExample.XAMLText>
 				&lt;ModernSlider Orientation="Horizontal"/>
 			</CodeExample.XAMLText>
@@ -23,7 +24,8 @@
 						 VerticalAlignment="Center"/>
 			</StackPanel>
 		</CodeExample>
-		<CodeExample CSharpVisible="False">
+    <CodeExample Title="ModernSlider" TitleTwo="Orientation Vertical"
+								CSharpVisible="False" Width="450" HorizontalAlignment="Center">
 			<CodeExample.XAMLText>
 				&lt;ModernSlider Orientation="Vertical"/>
 			</CodeExample.XAMLText>

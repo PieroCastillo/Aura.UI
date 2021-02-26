@@ -92,7 +92,7 @@
 							</Grid>
 						</ExperimentalAcrylicBorder>
 						</SplitView.Pane>
-						<Border Name="PART_Container" BoxShadow="{BoxShadow ShadowColor={StaticResource SystemBaseLowColor}}">
+						<Border Name="PART_Container" BoxShadow="{BoxShadow ShadowColor=LightGray}">
 							<Grid Background="{Binding $parent[NavigationView].Background}">
 								<ScrollViewer HorizontalContentAlignment="Left"
 											  AllowAutoHide="True"
