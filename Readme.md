@@ -47,7 +47,7 @@ Aura.UI.
 
 Open the terminal on the root folder of your project and write <br/>
 ```cmd
-dotnet package Aura.UI --version 0.1.3-rc1
+dotnet package Aura.UI --version 0.1.3-rc2
 ```
  Do it like this:
 
@@ -56,15 +56,30 @@ dotnet package Aura.UI --version 0.1.3-rc1
 
 # Preparation
 
-Add Styles to App.xaml
+For Fluent Theme add these Styles to App.xaml
 
 ```xml
   <Application  xmlns="https://github.com/avaloniaui"
                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                 x:Class="YourApp.App">
     <Application.Styles>
-    	<FluentMode Mode="Light"/>
+    	<FluenTheme Mode="Light"/>
     	<StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>
+	</Application.Styles> 
+   </Application>
+```
+
+And for Default Theme add these Styles to App.xaml
+
+```xml
+  <Application  xmlns="https://github.com/avaloniaui"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                x:Class="YourApp.App">
+    <Application.Styles>
+      <StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseLight.xaml"/>
+    	<StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>     
+      <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
+      <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
 	</Application.Styles> 
    </Application>
 ```
