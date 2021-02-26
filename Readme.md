@@ -59,29 +59,29 @@ dotnet package Aura.UI --version 0.1.3-rc2
 For Fluent Theme add these Styles to App.xaml
 
 ```xml
-  <Application  xmlns="https://github.com/avaloniaui"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                x:Class="YourApp.App">
-    <Application.Styles>
-    	<FluenTheme Mode="Light"/>
-    	<StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="YourApp.App">
+   <Application.Styles>
+      <FluenTheme Mode="Light"/>
+      <StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>
 	</Application.Styles> 
-   </Application>
+</Application>
 ```
 
 And for Default Theme add these Styles to App.xaml
 
 ```xml
-  <Application  xmlns="https://github.com/avaloniaui"
-                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                x:Class="YourApp.App">
-    <Application.Styles>
+<Application  xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              x:Class="YourApp.App">
+   <Application.Styles>
       <StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseLight.xaml"/>
-    	<StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>     
+      <StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>
       <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
       <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
-	</Application.Styles> 
-   </Application>
+   </Application.Styles> 
+</Application>
 ```
 
 # About Aura.UI
