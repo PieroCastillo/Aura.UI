@@ -20,7 +20,7 @@ Aura.UI
 | -----------------  | --- | 
 | FloatingButtonBar | ModernSlider |
 | ProgressRing | GroupBox |
-|CardCollection | AuratTabView |
+|CardCollection | AuraTabView |
 | NavigationView | Ribbon |
 | ContentDialog | MessageDialog |
 
