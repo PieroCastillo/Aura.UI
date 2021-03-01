@@ -7,6 +7,6 @@
 	<Import Project="..\..\build\dragging.props" />
 	<Import Project="..\..\build\version.props" />
 	<ItemGroup>
-	  <None Include="Assets\AuraUILogo_full_icon.png" Pack="true" PackagePath="\"/>
+	  <None Include="Assets\AuraUILogo_full_icon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 </Project>
