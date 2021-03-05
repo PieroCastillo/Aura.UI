@@ -1,4 +1,5 @@
 ﻿using Aura.UI.Attributes;
+using Aura.UI.Dragging.Controls.Iteming;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
@@ -8,10 +9,7 @@ namespace Aura.UI.Controls
     /// <summary>
     /// This item shows a Icon, Maintext and secondarytext for the <see cref="ListBox"/> control
     /// </summary>
-    [Experimental]
-    [TemplatePart(Name = "PART_PrincipalText", Type = typeof(TextBlock))]
-    [TemplatePart(Name = "PART_SecondaryText", Type = typeof(TextBlock))]
-    public class SuperListBoxItem : ListBoxItem
+    public partial class SuperListBoxItem : DraggableListBoxItem
     {
         //Text 1
         /// <summary>
