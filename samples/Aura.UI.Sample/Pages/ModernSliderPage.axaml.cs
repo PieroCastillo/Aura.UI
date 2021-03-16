@@ -8,7 +8,7 @@ namespace Aura.UI.ControlsGallery.Pages
     {
         public ModernSliderPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
     }
 }

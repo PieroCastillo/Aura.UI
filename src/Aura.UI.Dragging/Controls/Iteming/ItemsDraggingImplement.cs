@@ -11,7 +11,7 @@ namespace Aura.UI.Dragging.Controls.Iteming
         public static void Implement<T>(Control control, DragDropEffects effect = DragDropEffects.None, double opacityPreview = 0.5, bool selectItem = true) where T : Control
         {
             DragDrop.SetAllowDrop(control, true);
-            DragDrop.DropEvent.AddClassHandler<T>((x,e) => { OnDrop(control, e) });
+            DragDrop.DropEvent.AddClassHandler<T>((x,e) => { OnDrop(control, e); });
 
 
             control.PointerPressed += (s, e) =>

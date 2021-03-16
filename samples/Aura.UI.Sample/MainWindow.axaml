@@ -244,7 +244,13 @@
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
 			</NavigationViewItem>
-		</NavigationView>
+      <NavigationViewItem Header="Settings" Title="Settings" VerticalAlignment="Bottom"
+                          Icon="{DynamicResource EvaIcons.Settings2Outline}">
+        <NavigationViewItem.Content>
+          <pg:SettingsPage/>
+        </NavigationViewItem.Content>
+      </NavigationViewItem>
+    </NavigationView>
 		<Border Background="Transparent" VerticalAlignment="Top" Height="19" PointerPressed="EnableDrag"/>
     <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
       <StackPanel.Styles>
@@ -261,7 +267,7 @@
         <ComboBoxItem>Inline</ComboBoxItem>
         <ComboBoxItem>Overlay</ComboBoxItem>
       </ComboBox>
-      <ComboBox SelectedIndex="0"
+      <!--<ComboBox SelectedIndex="0"
                 VirtualizationMode="None"
                 SelectionChanged="ChangeTheme">
         <ComboBox.ItemTemplate>
@@ -273,7 +279,7 @@
           <sys:String>Fluent Light</sys:String>
           <sys:String>Fluent Dark</sys:String>
         </l:ArrayList>
-      </ComboBox>
+      </ComboBox>-->
       <ComboBox
             Name="combobox" PlaceholderText="Window Transparency Level"
             SelectedItem="{Binding #s}" >

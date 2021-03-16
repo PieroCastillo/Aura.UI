@@ -7,12 +7,7 @@ namespace Aura.UI.ControlsGallery.Pages
     {
         public CardControlPage()
         {
-            this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
+            InitializeComponent();
         }
     }
 }

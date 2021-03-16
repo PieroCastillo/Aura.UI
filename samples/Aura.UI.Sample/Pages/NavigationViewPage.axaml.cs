@@ -8,7 +8,7 @@ namespace Aura.UI.ControlsGallery.Pages
     {
         public NavigationViewPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
     }
 }

@@ -2,40 +2,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <AvaloniaNameGeneratorBehavior>InitializeComponent</AvaloniaNameGeneratorBehavior>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Assets\20000.jpg" />
-    <None Remove="Assets\40000.jpg" />
-    <None Remove="Assets\75000.jpg" />
-    <None Remove="Assets\alonetogheterRM.jpg" />
-    <None Remove="Assets\AuraUIBanner_v2.png" />
-    <None Remove="Assets\AuraUILogo_full_icon.png" />
-    <None Remove="Assets\AuraUILogo_icon.png" />
-    <None Remove="Assets\bringtherain.jpg" />
-    <None Remove="Assets\dejavu.jpg" />
-    <None Remove="Assets\funny.jpg" />
-    <None Remove="Assets\greenlights.jpg" />
-    <None Remove="Assets\hourglass.jpg" />
-    <None Remove="Assets\howyouloveme.jpg" />
-    <None Remove="Assets\ignite.jpg" />
-    <None Remove="Assets\in2thefire.jpg" />
-    <None Remove="Assets\interface.png" />
-    <None Remove="Assets\levels.jpg" />
-    <None Remove="Assets\morethanyouknow.jpg" />
-    <None Remove="Assets\nana.jpg" />
-    <None Remove="Assets\nerve.jpg" />
-    <None Remove="Assets\noguarantee.jpg" />
-    <None Remove="Assets\staythenight.jpg" />
-    <None Remove="Assets\summerashes.jpg" />
-    <None Remove="Assets\summershesvip.jpg" />
-    <None Remove="Assets\th2cdyro.jpg" />
-    <None Remove="Assets\tonight.jpg" />
-    <None Remove="Assets\tonightvip.png" />
-    <None Remove="Assets\virus.jpg" />
-    <None Remove="Assets\younme.jpg" />
-    <None Remove="Controls\CodeExample.xaml" />
-  </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\20000.jpg" />
     <AvaloniaResource Include="Assets\40000.jpg" />
@@ -75,6 +44,8 @@
     </AvaloniaXaml>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="XamlNameReferenceGenerator" Version="1.1.1" PrivateAssets="all" />
+    <PackageReference Include="AuraUtilities" Version="0.1.0" />
     <PackageReference Include="Avalonia" Version="0.10.0" />
     <PackageReference Include="Avalonia.AvaloniaEdit" Version="0.10.0" />
     <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
@@ -82,15 +53,9 @@
     <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
     <PackageReference Include="jp2masa.Avalonia.Flexbox" Version="0.2.0" />
-    <PackageReference Include="XamlNameReferenceGenerator" Version="0.5.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Pages\GroupBoxPage.axaml.cs">
-      <DependentUpon>GroupBoxPage.axaml</DependentUpon>
-    </Compile>
   </ItemGroup>
 </Project>

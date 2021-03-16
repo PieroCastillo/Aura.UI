@@ -5,6 +5,7 @@
 	 <PackageIcon>AuraUILogo_full_icon.png</PackageIcon>
    </PropertyGroup>
    <ItemGroup>
+	 <None Include="..\..\.editorconfig" Link=".editorconfig" />
 	 <None Include="AuraUILogo_full_icon.png" Pack="true" PackagePath="\" />
    </ItemGroup>
 	<ItemGroup>

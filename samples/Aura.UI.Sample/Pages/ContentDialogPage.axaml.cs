@@ -11,12 +11,7 @@ namespace Aura.UI.ControlsGallery.Pages
     {
         public ContentDialogPage()
         {
-            this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
+            InitializeComponent();
         }
 
         public void OnClikedButton(object sender, RoutedEventArgs e)

@@ -10,12 +10,7 @@ namespace Aura.UI.ControlsGallery.Pages
     {
         public AuraTabViewPage()
         {
-            this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
+            InitializeComponent();
         }
 
         public void AddTab(object sender, RoutedEventArgs e)

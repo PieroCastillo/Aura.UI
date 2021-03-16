@@ -1,0 +1,13 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             Classes="us_c"
+             x:Class="Aura.UI.ControlsGallery.Pages.SettingsPage">
+  <StackPanel>
+    <TextBlock Text="Theme" FontSize="20" Classes="ts"/>
+    <RadioButton Name="PART_LightOption" GroupName="theme" Content="Light" IsChecked="true"/>
+    <RadioButton Name="PART_DarkOption" GroupName="theme" Content="Dark"/>
+  </StackPanel>
+</UserControl>
