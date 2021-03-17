@@ -22,10 +22,11 @@
 				Title="Aura.UI Controls Gallery"
         Classes="us_c">
 	<Grid Margin="{Binding #win.OffScreenMargin}" > 
-		<NavigationView Header="Aura.UI Gallery"  SelectedItem="{Binding #el}"
+		<NavigationView Header="Aura.UI Gallery" 
+                    AlwaysOpen="True"
+                    SelectedItem="{Binding #el}"
 			Name="nv"
-			Icon="{DynamicResource Material.Home}"
-			DisplayMode="{Binding #splitmodebox.SelectedItem.Content}">
+			Icon="{DynamicResource Material.Home}">
 			<NavigationViewItem Name="el" Header="What's new?"
 								IsSelected="True"
 								Icon="{DynamicResource Zondicons.Announcement}">
@@ -258,28 +259,6 @@
           <Setter Property="VirtualizationMode" Value="Simple"/>
         </Style>
       </StackPanel.Styles>
-      <ToggleSwitch OnContent="Open" OffContent="Close"
-              IsChecked="{Binding #nv.IsOpen, Mode=TwoWay}"/>
-      <ComboBox Name="splitmodebox" PlaceholderText="NavigationView Display Mode"
-            SelectedItem="{Binding #r}">
-        <ComboBoxItem Name="r">CompactInline</ComboBoxItem>
-        <ComboBoxItem>CompactOverlay</ComboBoxItem>
-        <ComboBoxItem>Inline</ComboBoxItem>
-        <ComboBoxItem>Overlay</ComboBoxItem>
-      </ComboBox>
-      <!--<ComboBox SelectedIndex="0"
-                VirtualizationMode="None"
-                SelectionChanged="ChangeTheme">
-        <ComboBox.ItemTemplate>
-          <DataTemplate>
-            <TextBlock Text="{Binding .}"/>
-          </DataTemplate> 
-        </ComboBox.ItemTemplate>
-        <l:ArrayList>
-          <sys:String>Fluent Light</sys:String>
-          <sys:String>Fluent Dark</sys:String>
-        </l:ArrayList>
-      </ComboBox>-->
       <ComboBox
             Name="combobox" PlaceholderText="Window Transparency Level"
             SelectedItem="{Binding #s}" >

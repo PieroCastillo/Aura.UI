@@ -15,11 +15,21 @@ namespace Aura.UI.ControlsGallery
     {
         public override void Initialize()
         {
-            Styles.Insert(0, App.FluentLight);
-            AvaloniaXamlLoader.Load(this);
-
             var settings_prov = new SettingsProvider();
             Settings = settings_prov.Load<AppSettings>();
+
+            switch (Settings.Theme)
+            {
+                case Theme.Light: 
+                    Styles.Insert(0, App.FluentLight);
+                    break;
+
+                case Theme.Dark:
+                    Styles.Insert(0, App.FluentDark);
+                    break;
+            }
+            
+            AvaloniaXamlLoader.Load(this);
         }
 
         public override void OnFrameworkInitializationCompleted()
@@ -41,6 +51,7 @@ namespace Aura.UI.ControlsGallery
             get;
             set;
         }
+        public Theme GetTheme() => Settings.Theme;
 
         public async Task SetTheme(Theme theme)
         {

@@ -11,6 +11,21 @@ namespace Aura.UI.ControlsGallery.Pages
         {
             InitializeComponent();
 
+            if(Application.Current is App app)
+            {
+                switch (app.GetTheme())
+                {
+                    case Theme.Light: 
+                        PART_DarkOption.IsChecked = false;
+                        PART_LightOption.IsChecked = true;
+                        break;
+                    case Theme.Dark:
+                        PART_DarkOption.IsChecked = true;
+                        PART_LightOption.IsChecked =  false;
+                        break;
+                }
+            }
+
             PART_DarkOption.Checked += (s, e) =>
             {
                 if(Application.Current is App app)

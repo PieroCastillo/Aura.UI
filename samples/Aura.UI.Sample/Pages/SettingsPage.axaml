@@ -7,7 +7,7 @@
              x:Class="Aura.UI.ControlsGallery.Pages.SettingsPage">
   <StackPanel>
     <TextBlock Text="Theme" FontSize="20" Classes="ts"/>
-    <RadioButton Name="PART_LightOption" GroupName="theme" Content="Light" IsChecked="true"/>
+    <RadioButton Name="PART_LightOption" GroupName="theme" Content="Light"/>
     <RadioButton Name="PART_DarkOption" GroupName="theme" Content="Dark"/>
   </StackPanel>
 </UserControl>
