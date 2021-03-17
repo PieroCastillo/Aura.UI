@@ -30,7 +30,7 @@ namespace Aura.UI.Controls
             if (this.GetParentTOfLogical<AuraTabView>() != null & tabitem != null & CanBeDragged)
             {
                 var n = new ControlObject(tabitem);
-                await DragDrop.DoDragDrop(e, n, DragDropEffects.Move);
+                await DragDrop.DoDragDrop(e, n, (DragDropEffects)3);
 
                 Debug.WriteLine("Drag started");
                 //PseudoClasses.Add(":dragging");

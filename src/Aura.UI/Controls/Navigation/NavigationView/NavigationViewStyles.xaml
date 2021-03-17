@@ -161,13 +161,13 @@
 		<Setter Property="IsOpen" Value="{Binding #split.IsPaneOpen}" />
 	</Style>
 
-	<Style Selector="NavigationView[IsOpen=false] > SplitView">
+	<!--<Style Selector="NavigationView[IsOpen=false] > SplitView">
 		<Setter Property="IsPaneOpen" Value="False" />
 	</Style>
 
 	<Style Selector="NavigationView[IsOpen=true] > SplitView">
 		<Setter Property="IsPaneOpen" Value="True" />
-	</Style>
+	</Style>-->
 
 	<Style Selector="NavigationViewItemBase.header /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.FontWeight" Value="SemiBold" />
