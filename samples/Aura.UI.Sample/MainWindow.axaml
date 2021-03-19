@@ -245,6 +245,13 @@
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
 			</NavigationViewItem>
+      <NavigationViewItem Header="AudioPlayer">
+        <NavigationViewItem.Content>
+          <AudioPlayer Path="C:\Users\User\OneDrive\Escritorio\InYourBed.mp3" Volume="5"/>
+        </NavigationViewItem.Content>
+      </NavigationViewItem>
+      
+      
       <NavigationViewItem Header="Settings" Title="Settings" VerticalAlignment="Bottom"
                           Icon="{DynamicResource EvaIcons.Settings2Outline}">
         <NavigationViewItem.Content>

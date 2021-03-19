@@ -6,6 +6,15 @@
 	</Design.PreviewWith>
 	<StyleInclude Source="/AuraUIResources.Common.axaml"/>
 	<Styles.Resources>
+    <!--AudioPlayer Resources-->
+    <SolidColorBrush x:Key="AudioPlayerBackground" Color="{DynamicResource SystemAltHighColor}"/>
+    <SolidColorBrush x:Key="AudioPlayerForeground" Color="{DynamicResource SystemBaseHighColor}"/>
+    <DrawingImage x:Key="FontAwesome.PlaySolid">
+      <GeometryDrawing  Brush="{DynamicResource SystemBaseHighColor}" Geometry="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"   />
+    </DrawingImage>
+    <DrawingImage x:Key="Typicons.MediaPause">
+      <GeometryDrawing  Brush="{DynamicResource SystemBaseHighColor}" Geometry="F1M375,-550C398.333343505859,-550 418,-542 434,-526 450,-510 458,-490.333343505859 458,-467L458,-133C458,-109.666664123535 450,-90 434,-74 418,-58 398.333343505859,-50 375,-50 351.666656494141,-50 332,-58 316,-74 300,-90 292,-109.666664123535 292,-133L292,-467C292,-490.333343505859 300,-510 316,-526 332,-542 351.666656494141,-550 375,-550z M83,-550C106.333335876465,-550 126.166664123535,-541.833312988281 142.5,-525.5 158.83332824707,-509.166656494141 167,-489.666656494141 167,-467L167,-133C167,-110.333335876465 158.83332824707,-90.8333358764648 142.5,-74.5 126.166664123535,-58.1666679382324 106.333335876465,-50 83,-50 59.6666679382324,-50 40,-58 23.9999980926514,-74 8,-90 0,-109.666664123535 -2.89082527160645E-06,-133L-2.89082527160645E-06,-467C0,-490.333343505859 8,-510 23.9999980926514,-526 40,-542 59.6666679382324,-550 83,-550z"   />
+    </DrawingImage>
 		<!--AuraTabItem Resources-->
 		<SolidColorBrush x:Key="AuraTabItemForeground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="AuraTabItemPointerOverBackground" Color="{DynamicResource SystemAltHighColor}"/>

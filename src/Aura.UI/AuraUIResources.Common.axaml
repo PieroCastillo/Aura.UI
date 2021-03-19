@@ -5,6 +5,8 @@
 		<Button></Button>
 	</Design.PreviewWith>
 	<Styles.Resources>
+    <!--AudioPlayer Resources-->
+    <CornerRadius x:Key="AudioPlayerCornerRadius">25</CornerRadius>
 		<!--AuraTabItem Resources-->
 		<sys:Double x:Key="AuraTabItemDraggingOpacity">0.5</sys:Double>
 		<sys:Double x:Key="AuraTabItemDisabledOpacity">0.6</sys:Double>

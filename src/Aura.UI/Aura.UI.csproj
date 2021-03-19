@@ -16,4 +16,21 @@
 	</ItemGroup>
 	<Import Project="..\..\build\base.props" />
 	<Import Project="..\..\build\version.props" />
+	<ItemGroup>
+	  <None Remove="Controls\AudioPlayer\AudioPlayer.xaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="SharpAudio" Version="1.0.27-beta" />
+	  <PackageReference Include="SharpAudio.ALBinding" Version="1.0.27-beta" />
+	  <PackageReference Include="SharpAudio.Codec" Version="1.0.27-beta" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AvaloniaResource Update="Controls\AudioPlayer\AudioPlayer.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </AvaloniaResource>
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Update="MathNet.Numerics" Version="4.15.0" />
+	  <PackageReference Update="ReactiveUI" Version="13.2.2" />
+	</ItemGroup>
 </Project>
