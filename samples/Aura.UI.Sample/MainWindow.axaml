@@ -245,11 +245,11 @@
 					</NavigationViewItem.Content>
 				</NavigationViewItem>
 			</NavigationViewItem>
-      <NavigationViewItem Header="AudioPlayer">
+      <!--<NavigationViewItem Header="AudioPlayer">
         <NavigationViewItem.Content>
           <AudioPlayer Path="C:\Users\User\OneDrive\Escritorio\InYourBed.mp3" Volume="5"/>
         </NavigationViewItem.Content>
-      </NavigationViewItem>
+      </NavigationViewItem>-->
       
       
       <NavigationViewItem Header="Settings" Title="Settings" VerticalAlignment="Bottom"
