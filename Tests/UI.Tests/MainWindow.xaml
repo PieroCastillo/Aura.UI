@@ -2,31 +2,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:ms="clr-namespace:System;assembly=netstandard"
-		xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
-        mc:Ignorable="d" 
-		SizeToContent="WidthAndHeight"
-		CanResize="False"
+		    xmlns:ms="clr-namespace:System;assembly=netstandard"
+		    xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
+        mc:Ignorable="d"
         x:Class="UI.Tests.MainWindow"
-		Background="{x:Null}"
-		Padding="20"
+		    Background="{x:Null}"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
-	<StackPanel Spacing="20">
-		<StackPanel Orientation="Horizontal"
-					Spacing="20" HorizontalAlignment="Center">
-			<ProgressRing  Value="{Binding #num.Value, Mode=TwoWay}"
-						   IsIndeterminate="{Binding #tg.IsChecked}"
-					   Maximum="{Binding #max.Text}"
-					   Minimum="{Binding #min.Text}"/>
-			<ToggleSwitch Name="tg" OnContent="Indeterminate"
-						  OffContent="Normal"/>
-		</StackPanel>
-		<NumericUpDown Name="num" Width="210"
-					   Maximum="{Binding #max.Text}"
-					   Minimum="{Binding #min.Text}"/>
-		<TextBox Name="min" Watermark="Minimum" Text="0"
-				 UseFloatingWatermark="True"/>
-		<TextBox Name="max" Watermark="Maximum" Text="100"
-				 UseFloatingWatermark="True"/>
-	</StackPanel>
+  <Grid>
+    <Image Source="C://download.jpg" Height="100" Width="200">
+      <Image.OpacityMask>
+        <BlurryImage BlurLevel="20" Height="100" Width="200"/>
+      </Image.OpacityMask>
+    </Image>
+  </Grid>
 </Window>
