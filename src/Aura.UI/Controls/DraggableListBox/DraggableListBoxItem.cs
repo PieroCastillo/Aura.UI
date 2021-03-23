@@ -2,9 +2,6 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls
 {
@@ -30,7 +27,7 @@ namespace Aura.UI.Controls
         {
             var lst_item = sender as DraggableListBoxItem;
 
-            if(lst_item == null)
+            if (lst_item == null)
             {
                 e.DragEffects = DragDropEffects.None;
                 return;
@@ -38,6 +35,7 @@ namespace Aura.UI.Controls
 
             Opacity = Opacity * 0.5;
         }
+
         protected virtual void OnDragMove(object sender, DragEventArgs e)
         {
             var lst_item = sender as DraggableListBoxItem;
@@ -47,16 +45,15 @@ namespace Aura.UI.Controls
                 e.DragEffects = DragDropEffects.None;
                 return;
             }
-
-
         }
+
         protected virtual void OnDragLeave(object sender, RoutedEventArgs e)
         {
             Opacity = Opacity / 0.5;
         }
-        protected virtual void OnDrop(object sender, DragEventArgs e) 
-        {
 
+        protected virtual void OnDrop(object sender, DragEventArgs e)
+        {
         }
     }
 }

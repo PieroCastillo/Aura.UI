@@ -1,10 +1,10 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Style Selector="TitleBox">
-		<Setter Property="BorderBrush" Value="{DynamicResource TitleBoxBorderBrush}"/>
-		<Setter Property="BorderThickness" Value="5"/>
-		<Setter Property="Button1Active" Value="false"/>
-		<Setter Property="Button2Active" Value="false"/>
+		<Setter Property="BorderBrush" Value="{DynamicResource TitleBoxBorderBrush}" />
+		<Setter Property="BorderThickness" Value="5" />
+		<Setter Property="Button1Active" Value="false" />
+		<Setter Property="Button2Active" Value="false" />
 		<Setter Property="CornerRadius" Value="3" />
 		<Setter Property="Template">
 			<ControlTemplate TargetType="TitleBox">
@@ -35,7 +35,7 @@
 										TextBlock.FontWeight="ExtraBold" />
 								<MaterialButton Grid.Column="2"
 										Content="{TemplateBinding Button1Content}" Margin="0"
-										Name="PART_B1" 
+										Name="PART_B1"
 										IsVisible="{Binding $parent[TitleBox].Button1Active}"
 										VerticalAlignment="Center"
 										Classes="Buttons" />

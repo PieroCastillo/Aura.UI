@@ -1,6 +1,4 @@
-﻿using Aura.UI.Attributes;
-using Aura.UI.Dragging.Controls.Iteming;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 

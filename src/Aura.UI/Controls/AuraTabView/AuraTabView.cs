@@ -33,7 +33,6 @@ namespace Aura.UI.Controls
             e_.Handled = true;
         }
 
-
         protected override IItemContainerGenerator CreateItemContainerGenerator()
         {
             return new AuraTabItemContainerGenerator(this);
@@ -42,7 +41,6 @@ namespace Aura.UI.Controls
         protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
         {
             base.OnPropertyChanged(change);
-
 
             if (SelectedItem == null)
             {

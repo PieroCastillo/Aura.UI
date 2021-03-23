@@ -1,18 +1,15 @@
-﻿using Avalonia.Controls.Primitives;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using Avalonia;
+using Avalonia.Controls.Metadata;
+using Avalonia.Controls.Primitives;
+using Avalonia.Interactivity;
 using SharpAudio;
 using SharpAudio.Codec;
-using System.Threading;
-using Avalonia;
-using System.Diagnostics;
-using Avalonia.Controls.Metadata;
+using System;
+using System.IO;
 
 namespace Aura.UI.Controls
 {
-    [PseudoClasses(":paused",":playing",":extended")]
+    [PseudoClasses(":paused", ":playing", ":extended")]
     public class AudioPlayer : TemplatedControl
     {
         private float _volume;
@@ -30,7 +27,7 @@ namespace Aura.UI.Controls
 
         ~AudioPlayer()
         {
-            if(engine != null & soundStream != null)
+            if (engine != null & soundStream != null)
             {
                 engine.Dispose();
                 soundStream.Dispose();
@@ -48,23 +45,36 @@ namespace Aura.UI.Controls
             control.Load();
         }
 
-
         public void Load()
         {
-            if(Path != null & File.Exists(Path))
+            if (Path != null & File.Exists(Path))
             {
-                Debug.WriteLine("Path exist");
-                engine = AudioEngine.CreateDefault();
-                soundStream = new SoundStream(File.OpenRead(Path), engine);
-                Debug.WriteLine("Loaded correctly");
-                return;
+                //Debug.WriteLine("Path exist");
+                //engine = AudioEngine.CreateDefault();
+                //soundStream = new SoundStream(File.OpenRead(Path), engine);
+                //Debug.WriteLine("Loaded correctly");
+                //return;
             }
-        }  
+        }
 
         private void ChangeVolume(float new_volume)
         {
             if (soundStream != null)
                 soundStream.Volume = new_volume;
+        }
+
+        public void ButtonClick(object sender, RoutedEventArgs e)
+        {
+            switch (this.CurrentState)
+            {
+                case AudioPlayerState.Paused:
+                    Play();
+                    break;
+
+                case AudioPlayerState.Playing:
+                    Pause();
+                    break;
+            }
         }
 
         public void Play()
@@ -83,8 +93,8 @@ namespace Aura.UI.Controls
 
             PseudoClasses.Remove(":playing");
             PseudoClasses.Add(":paused");
-        }  
-        
+        }
+
         public void Stop()
         {
             if (soundStream != null)
@@ -95,6 +105,7 @@ namespace Aura.UI.Controls
         }
 
         #region Properties
+
         public float Volume
         {
             get => _volume;
@@ -108,9 +119,9 @@ namespace Aura.UI.Controls
         public string Path
         {
             get => _path;
-            set 
+            set
             {
-                SetAndRaise(PathProperty, ref _path, value); 
+                SetAndRaise(PathProperty, ref _path, value);
             }
         }
 
@@ -132,24 +143,28 @@ namespace Aura.UI.Controls
             private set => SetAndRaise(DurationTimeProperty, ref _durationTime, value);
         }
 
-
-        #endregion
+        #endregion Properties
 
         #region Static Fields
+
         //direct properties
         public readonly static DirectProperty<AudioPlayer, float> VolumeProperty =
             AvaloniaProperty.RegisterDirect<AudioPlayer, float>(nameof(Volume), o => o.Volume, (o, v) => o.Volume = v, unsetValue: 10);
+
         public readonly static DirectProperty<AudioPlayer, string> PathProperty =
             AvaloniaProperty.RegisterDirect<AudioPlayer, string>(nameof(PathProperty), o => o.Path, (o, v) => o.Path = v);
 
         //readonly properties
         public readonly static DirectProperty<AudioPlayer, AudioPlayerState> CurrentStateProperty =
             AvaloniaProperty.RegisterDirect<AudioPlayer, AudioPlayerState>(nameof(CurrentState), o => o.CurrentState);
+
         public readonly static DirectProperty<AudioPlayer, TimeSpan> CurrentTimeProperty =
             AvaloniaProperty.RegisterDirect<AudioPlayer, TimeSpan>(nameof(CurrentTime), o => o.CurrentTime);
-        public static readonly DirectProperty<AudioPlayer, TimeSpan> DurationTimeProperty = 
+
+        public static readonly DirectProperty<AudioPlayer, TimeSpan> DurationTimeProperty =
             AvaloniaProperty.RegisterDirect<AudioPlayer, TimeSpan>(nameof(DurationTime), o => o.DurationTime);
-        #endregion
+
+        #endregion Static Fields
     }
 
     [Serializable]

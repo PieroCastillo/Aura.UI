@@ -20,6 +20,14 @@
       <SubType>Designer</SubType>
     </AvaloniaResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assets\avalonia-512.png" />
+    <None Remove="Assets\bringtherain.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AvaloniaResource Include="Assets\avalonia-512.png" />
+    <AvaloniaResource Include="Assets\bringtherain.jpg" />
+  </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Avalonia" Version="0.10.0" />
 		<PackageReference Include="Avalonia.Desktop" Version="0.10.0" />

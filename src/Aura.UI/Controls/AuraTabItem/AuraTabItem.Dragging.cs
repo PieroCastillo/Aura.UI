@@ -1,6 +1,5 @@
 ﻿using Aura.UI.Dragging;
 using Aura.UI.UIExtensions;
-using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
@@ -88,7 +87,7 @@ namespace Aura.UI.Controls
 
         protected virtual void OnDragLeave(object sender, RoutedEventArgs e)
         {
-            if(Parent is AuraTabView atw && atw.ImmediateDrag)
+            if (Parent is AuraTabView atw && atw.ImmediateDrag)
             {
                 PseudoClasses.Remove(":dragging");
             }
@@ -96,7 +95,7 @@ namespace Aura.UI.Controls
 
         protected virtual void OnDrop(object sender, DragEventArgs e)
         {
-            TransportItem(sender, e);   
+            TransportItem(sender, e);
         }
 
         private void TransportItem(object sender, DragEventArgs e)
@@ -116,7 +115,7 @@ namespace Aura.UI.Controls
                 });
             //Debug.WriteLine("Drag completed");
             //Debug.WriteLine($"Selected Index: {this.GetParentTOfLogical<AuraTabView>().SelectedIndex}");
-            //Debug.WriteLine($"Tab Index: {(this.GetParentTOfLogical<AuraTabView>().Items as IList).IndexOf(this)}"); 
+            //Debug.WriteLine($"Tab Index: {(this.GetParentTOfLogical<AuraTabView>().Items as IList).IndexOf(this)}");
         }
     }
 }

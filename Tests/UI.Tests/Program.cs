@@ -1,12 +1,9 @@
 ﻿using Avalonia;
-using Avalonia.Dialogs;
-using Avalonia.Controls.ApplicationLifetimes;
 using System;
-using Avalonia.ReactiveUI;
 
 namespace UI.Tests
 {
-    class Program
+    internal class Program
     {
         // Initialization code. Don't use any Avalonia, third-party APIs or any
         // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
@@ -20,6 +17,5 @@ namespace UI.Tests
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .LogToTrace();
-               
     }
 }

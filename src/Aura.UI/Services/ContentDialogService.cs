@@ -5,9 +5,9 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
 using System;
-using System.Diagnostics;
 
 #nullable enable
+
 namespace Aura.UI.Services
 {
     public static partial class ContentDialogService

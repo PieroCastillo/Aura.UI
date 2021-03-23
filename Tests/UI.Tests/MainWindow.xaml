@@ -1,4 +1,4 @@
-﻿<Window xmlns="https://github.com/avaloniaui" 
+﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8,11 +8,13 @@
         x:Class="UI.Tests.MainWindow"
 		    Background="{x:Null}"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
-  <Grid>
-    <Image Source="C://download.jpg" Height="100" Width="200">
-      <Image.OpacityMask>
-        <BlurryImage BlurLevel="20" Height="100" Width="200"/>
-      </Image.OpacityMask>
-    </Image>
+  <Grid ColumnDefinitions="auto,auto">
+    <BlurryImage Name="br"
+                 Source="avares://UI.Tests/Assets/avalonia-512.png"
+                 HorizontalAlignment="Center"
+                 Stretch="Uniform" />
+    <NumericUpDown Grid.Column="1" Minimum="0" Maximum="20"
+                   Value="{Binding #br.BlurLevel, Mode=TwoWay}"
+                   VerticalAlignment="Center" />
   </Grid>
 </Window>

@@ -212,6 +212,7 @@ namespace Aura.UI.Controls
             get => GetValue(ImmediateDragProperty);
             set => SetValue(ImmediateDragProperty, value);
         }
+
         /// <summary>
         /// Defines the <see cref="ImmediateDrag"/> property.
         /// </summary>

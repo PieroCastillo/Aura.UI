@@ -25,12 +25,12 @@
 												  Content="{TemplateBinding Content}"
 												  ContentTemplate="{TemplateBinding ContentTemplate}" />
 								<DockPanel Grid.Row="2">
-									<Button Name="PART_CancelButton" 
+									<Button Name="PART_CancelButton"
                           Content="{TemplateBinding CancelButtonContent}"
-													Margin="5,0,0,0" 
+													Margin="5,0,0,0"
                           HorizontalAlignment="Right"
 												DockPanel.Dock="Right" />
-									<Button Name="PART_OkButton" 
+									<Button Name="PART_OkButton"
                           Content="{TemplateBinding OkButtonContent}"
                           HorizontalAlignment="Right" />
 								</DockPanel>
