@@ -96,6 +96,11 @@ This library is possible thanks to the follow projects:
    * [Math.NET Numerics](https://github.com/mathnet/mathnet-numerics) by Math.NET Team.
 
 
+## To Do
+
+- Documentation
+
+
 # How To Collaborate
 
 Just enter to the follow Gitter chat! 

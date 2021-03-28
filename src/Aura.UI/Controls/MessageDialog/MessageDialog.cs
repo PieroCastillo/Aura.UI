@@ -25,36 +25,19 @@ namespace Aura.UI.Controls
             };
         }
 
-        private object _title = "Title";
-
         /// <summary>
         /// Gets or Sets the title
         /// </summary>
         public object Title
         {
-            get => _title;
-            set => SetAndRaise(TitleProperty, ref _title, value);
+            get => GetValue(TitleProperty);
+            set => SetValue(TitleProperty, value);
         }
 
         /// <summary>
         /// Defines <see cref="Title"/>
         /// </summary>
-        public readonly static DirectProperty<MessageDialog, object> TitleProperty =
-            AvaloniaProperty.RegisterDirect<MessageDialog, object>(
-                nameof(Title),
-                o => o.Title,
-                (o, v) => o.Title = v);
-
-        public override void Close()
-        {
-            var t = new DispatcherTimer();
-            t.Interval = new TimeSpan(0, 0, 0, 0, 500);
-            t.Start();
-            PseudoClasses.Add(":closing");
-            t.Tick += (s, e) =>
-            {
-                base.Close();
-            };
-        }
+        public readonly static StyledProperty<object> TitleProperty =
+            AvaloniaProperty.Register<MessageDialog, object>(nameof(Title), "Title");
     }
 }

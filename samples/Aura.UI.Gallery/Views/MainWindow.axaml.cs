@@ -25,24 +25,6 @@ namespace Aura.UI.Gallery.Views
             AvaloniaXamlLoader.Load(this);
         }
 
-        //public async void ChangeTheme(object sender, SelectionChangedEventArgs e)
-        //{
-        //    var themes = sender as SelectingItemsControl;
-        //    Debug.WriteLine("attached");
-        //    await Dispatcher.UIThread.InvokeAsync(() =>
-        //    {
-        //        switch (themes.SelectedIndex)
-        //        {
-        //            case 0:
-        //                Application.Current.Styles[0] = App.FluentLight;
-        //                break;
-        //            case 1:
-        //                Application.Current.Styles[0] = App.FluentDark;
-        //                break;
-        //        }
-        //    }, (DispatcherPriority)1);
-        //}
-
         public void EnableDrag(object sender, PointerPressedEventArgs e)
         {
             BeginMoveDrag(e);

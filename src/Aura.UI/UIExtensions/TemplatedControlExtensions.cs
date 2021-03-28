@@ -14,9 +14,10 @@ namespace Aura.UI.UIExtensions
         /// <param name="e">The TemplateAppliedEventArgs</param>
         /// <param name="name">The Name of the Control to return</param>
         /// <returns>a control with the indicated params</returns>
-        public static T GetControl<T>(this TemplatedControl templatedControl, TemplateAppliedEventArgs e, string name) where T : AvaloniaObject
-        {
-            return e.NameScope.Find<T>(name);
-        }
+        public static T GetControl<T>(this TemplatedControl templatedControl,
+                                    TemplateAppliedEventArgs e,
+                                    string name) 
+            where T : AvaloniaObject
+            => e.NameScope.Find<T>(name);
     }
 }

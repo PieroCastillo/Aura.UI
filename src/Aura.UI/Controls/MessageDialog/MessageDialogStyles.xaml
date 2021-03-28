@@ -61,7 +61,8 @@
 		</Setter>
 	</Style>
 
-	<Style Selector="MessageDialog /template/ Border#PART_Border">
+  <!--this animation is some strange...-->
+	<!--<Style Selector="MessageDialog /template/ Border#PART_Border">
 		<Style.Animations>
 			<Animation Duration="0:0:.5" Easing="ExponentialEaseIn">
 				<KeyFrame Cue="0%">
@@ -92,7 +93,7 @@
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
-	</Style>
+	</Style>-->
 
 	<Style Selector="MessageDialog /template/ Button#PART_ButtonClose">
 		<Setter Property="Background" Value="{DynamicResource MessageDialogErrorBrush}" />
