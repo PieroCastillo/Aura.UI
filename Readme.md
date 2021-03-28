@@ -23,6 +23,7 @@ Aura.UI
 |CardCollection | AuraTabView |
 | NavigationView | Ribbon |
 | ContentDialog | MessageDialog |
+| BlurryImage |
 
 # Install
 
