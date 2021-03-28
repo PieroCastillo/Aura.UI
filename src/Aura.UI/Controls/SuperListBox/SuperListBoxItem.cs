@@ -7,7 +7,7 @@ namespace Aura.UI.Controls
     /// <summary>
     /// This item shows a Icon, Maintext and secondarytext for the <see cref="ListBox"/> control
     /// </summary>
-    public partial class SuperListBoxItem : DraggableListBoxItem
+    public partial class SuperListBoxItem :ListBoxItem 
     {
         //Text 1
         /// <summary>

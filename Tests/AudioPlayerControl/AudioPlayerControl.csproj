@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="AudioPlayer.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="AudioPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </AvaloniaResource>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
+    <PackageReference Include="Avalonia" Version="0.10.0" />
+    <PackageReference Include="SharpAudio" Version="1.0.27-beta" />
+    <PackageReference Include="SharpAudio.ALBinding" Version="1.0.27-beta" />
+    <PackageReference Include="SharpAudio.Codec" Version="1.0.27-beta" />
+  </ItemGroup>
+</Project>

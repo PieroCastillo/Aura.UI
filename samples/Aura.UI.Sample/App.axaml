@@ -1,6 +1,6 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="Aura.UI.ControlsGallery.App">
+             x:Class="Aura.UI.Gallery.App">
   <Application.Styles>
         <!--<StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>-->
 		<!--<FluentTheme Mode="Dark"/>-->

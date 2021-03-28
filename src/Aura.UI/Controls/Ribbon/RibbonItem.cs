@@ -1,4 +1,4 @@
-﻿using Aura.UI.Attributes;
+﻿
 using Aura.UI.Controls.Primitives;
 using Aura.UI.UIExtensions;
 using Avalonia;
@@ -11,7 +11,6 @@ namespace Aura.UI.Controls.Ribbon
     /// <summary>
     /// Defines a Item for the <see cref="Ribbon"/>
     /// </summary>
-    [TemplatePart(Name = "PART_ButtonContainer", Type = typeof(Button))]
     public class RibbonItem : TabItem, IMaterial
     {
         private Button btn_cont;

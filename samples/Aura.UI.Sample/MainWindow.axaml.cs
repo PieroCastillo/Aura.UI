@@ -8,7 +8,7 @@ using DynamicData;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-namespace Aura.UI.ControlsGallery
+namespace Aura.UI.Gallery
 {
     public partial class MainWindow : Window
     {

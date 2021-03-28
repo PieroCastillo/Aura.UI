@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using System.Diagnostics;
 
-namespace Aura.UI.ControlsGallery.Pages
+namespace Aura.UI.Gallery.Pages
 {
     public partial class SettingsPage : UserControl
     {

@@ -2,7 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using System;
 
-namespace Aura.UI.ControlsGallery
+namespace Aura.UI.Gallery
 {
     class Program
     {

@@ -2,15 +2,9 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <IsPackable>true</IsPackable>
-    <LangVersion>8</LangVersion>
+    <LangVersion>9</LangVersion>
     <Nullable>enable</Nullable>
     <TargetFrameworks>net5.0</TargetFrameworks>
-    
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugType>full</DebugType>
-    <DocumentationFile>bin\Debug\UI.Tests.xml</DocumentationFile>
-    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="**\*.xaml.cs">
@@ -19,10 +13,6 @@
     <AvaloniaResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="Assets\avalonia-512.png" />
-    <None Remove="Assets\bringtherain.jpg" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaResource Include="Assets\avalonia-512.png" />
@@ -36,6 +26,6 @@
 		<PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
 	</ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
+    <ProjectReference Include="..\AudioPlayerControl\AudioPlayerControl.csproj" />
   </ItemGroup>
 </Project>

@@ -9,7 +9,7 @@ using ReactiveUI;
 using System;
 using System.Threading.Tasks;
 
-namespace Aura.UI.ControlsGallery
+namespace Aura.UI.Gallery
 {
     public class App : Application
     {
@@ -72,15 +72,15 @@ namespace Aura.UI.ControlsGallery
 
         public readonly static Styles FluentDark = new Styles
         {
-            new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
             {
                 Source = new Uri("avares://Avalonia.Themes.Fluent/FluentDark.xaml")
             },
-            new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
             {
                 Source = new Uri("avares://Aura.UI/AuraUIFluent.xaml")
             },
-            new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
             {
                 Source = new Uri("avares://Aura.UI/AuraUI.xaml")
             }
@@ -88,15 +88,15 @@ namespace Aura.UI.ControlsGallery
 
         public readonly static Styles FluentLight = new Styles
         {
-            new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
             {
                 Source = new Uri("avares://Avalonia.Themes.Fluent/FluentLight.xaml")
             },
-            new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
             {
                 Source = new Uri("avares://Aura.UI/AuraUIFluent.xaml")
             },
-            new StyleInclude(new Uri("avares://Aura.UI.ControlsGallery/Styles"))
+            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
             {
                 Source = new Uri("avares://Aura.UI/AuraUI.xaml")
             }

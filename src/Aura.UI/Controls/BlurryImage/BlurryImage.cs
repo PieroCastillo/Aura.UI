@@ -15,6 +15,8 @@ namespace Aura.UI.Controls
             AffectsRender<BlurryImage>(BlurLevelProperty, SourceProperty, StretchDirectionProperty, StretchProperty);
             AffectsMeasure<BlurryImage>(BlurLevelProperty, SourceProperty, StretchDirectionProperty, StretchProperty);
             AffectsArrange<BlurryImage>(BlurLevelProperty, SourceProperty, StretchDirectionProperty, StretchProperty);
+
+            ClipToBoundsProperty.OverrideDefaultValue<BlurryImage>(true);
         }
 
         public override void Render(DrawingContext context)

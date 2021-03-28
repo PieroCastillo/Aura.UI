@@ -9,12 +9,6 @@
 		    Background="{x:Null}"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
   <Grid ColumnDefinitions="auto,auto">
-    <BlurryImage Name="br"
-                 Source="avares://UI.Tests/Assets/avalonia-512.png"
-                 HorizontalAlignment="Center"
-                 Stretch="Uniform" />
-    <NumericUpDown Grid.Column="1" Minimum="0" Maximum="20"
-                   Value="{Binding #br.BlurLevel, Mode=TwoWay}"
-                   VerticalAlignment="Center" />
+    <AudioPlayer Path="C:\Users\User\OneDrive\Escritorio\InYourBed.mp3" Volume="5" />
   </Grid>
 </Window>

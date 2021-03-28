@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Aura.UI.Gallery.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Aura.UI.Gallery.Pages.BlurryImagePage"
+             Classes="us_c">
+  <UserControl.DataContext>
+    <vm:BlurImagePageViewModel/>
+  </UserControl.DataContext>
+  <StackPanel>
+    <UniformGrid>
+      <CodeExample Margin="10" Title="BlurryImage" CSharpVisible="False">
+        <BlurryImage BlurLevel="{Binding BlurValue, Mode=TwoWay}"
+                     Height="150"
+                     Source="/Assets/20000.jpg"/>
+        <CodeExample.XAMLText>
+&lt;BlurryImage Source="/Assets/20000.jpg"/>
+        </CodeExample.XAMLText>
+      </CodeExample>
+    </UniformGrid>
+    <Grid ColumnDefinitions="*,10,auto">
+      <Slider IsSnapToTickEnabled="True"
+              TickFrequency="1"
+              Minimum="0"
+              Maximum="20"
+              Value="{Binding BlurValue, Mode=TwoWay}"/>
+      <TextBox Grid.Column="2" VerticalAlignment="Center"
+                 Text="{Binding BlurValue, Mode=TwoWay}"/>
+    </Grid>
+  </StackPanel>
+</UserControl>
