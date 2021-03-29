@@ -63,10 +63,10 @@
                         Content="{Binding Descriptions.GroupBox}"/>
             <NavigationViewLinker Icon="{DynamicResource Material.CardsOutline}"
                         Title="{Binding Titles.CardCollection}" LinkTo="{Binding #cc}"
-                        Content="{Binding Descriptions.CardControl}"/>
+                        Content="{Binding Descriptions.CardCollection}"/>
             <NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.tab_desktop_new_page_filled}"
                         Title="{Binding Titles.AuraTabView}" LinkTo="{Binding #aw}"
-                        Content="{Binding Descriptions.CardControl}"/>
+                        Content="{Binding Descriptions.AuraTabView}"/>
             <NavigationViewLinker Icon="{DynamicResource FluentIcons.navigation_regular}"
                         Title="{Binding Titles.NavigationView}" LinkTo="{Binding #nw}"
                         Content="{Binding Descriptions.NavigationView}"/>
@@ -77,7 +77,7 @@
                         Title="{Binding Titles.ContentDialog}" LinkTo="{Binding #ctndialog}"
                         Content="{Binding Descriptions.ContentDialog}"/>
             <NavigationViewLinker Icon="{DynamicResource BoxIcons.SolidMessageAltDots}"
-                        Title="{Binding Titles.MessageBox}" LinkTo="{Binding #msgbox}"
+                        Title="{Binding Titles.MessageDialog}" LinkTo="{Binding #msgbox}"
                         Content="{Binding Descriptions.MessageDialog}"/>
             <NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.image_filled}"
                         Title="{Binding Titles.BlurryImage}" LinkTo="{Binding #blurryimg_pg}"
@@ -147,7 +147,7 @@
                           Content="{Binding Descriptions.GroupBox}"/>
             <NavigationViewLinker Icon="{DynamicResource Material.CardsOutline}"
                         Title="{Binding Titles.CardCollection}" LinkTo="{Binding #cc}"
-                        Content="{Binding Descriptions.CardControl}"/>
+                        Content="{Binding Descriptions.CardCollection}"/>
           </flex:FlexPanel>
         </GroupBox>
       </NavigationViewItem.Content>
@@ -223,7 +223,7 @@
                         Title="{Binding Titles.ContentDialog}" LinkTo="{Binding #ctndialog}"
                         Content="{Binding Descriptions.ContentDialog}"/>
             <NavigationViewLinker Icon="{DynamicResource BoxIcons.SolidMessageAltDots}"
-                        Title="{Binding Titles.MessageBox}" LinkTo="{Binding #msgbox}"
+                        Title="{Binding Titles.MessageDialog}" LinkTo="{Binding #msgbox}"
                         Content="{Binding Descriptions.MessageDialog}"/>
           </flex:FlexPanel>
         </GroupBox>

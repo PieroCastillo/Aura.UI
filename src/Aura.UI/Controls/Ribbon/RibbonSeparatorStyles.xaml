@@ -9,7 +9,7 @@
 					<Border
 						Height="{TemplateBinding Height}"
 						CornerRadius="{TemplateBinding CornerRadius}"
-						Background="{DynamicResource ThemeBorderMidBrush}"></Border>
+						Background="{DynamicResource RibbonSeparatorBackgroundBrush}"></Border>
 				</Grid>
 			</ControlTemplate>
 		</Setter>

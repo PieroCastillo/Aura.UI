@@ -13,10 +13,10 @@
     <UniformGrid>
       <CodeExample Margin="10" Title="BlurryImage" CSharpVisible="False">
         <BlurryImage BlurLevel="{Binding BlurValue, Mode=TwoWay}"
-                     Height="150"
-                     Source="/Assets/20000.jpg"/>
+                     Height="200"
+                     Source="/Assets/alonetogheterRM.jpg"/>
         <CodeExample.XAMLText>
-&lt;BlurryImage Source="/Assets/20000.jpg"/>
+&lt;BlurryImage Source="/Assets/alonetogheterRM.jpg"/>
         </CodeExample.XAMLText>
       </CodeExample>
     </UniformGrid>

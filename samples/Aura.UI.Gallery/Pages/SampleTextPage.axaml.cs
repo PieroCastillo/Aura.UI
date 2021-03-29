@@ -1,15 +1,14 @@
-﻿using Avalonia;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
 namespace Aura.UI.Gallery.Pages
 {
-    public partial class XamlExtensionsPage : UserControl
+    public partial class SampleTextPage : UserControl
     {
-        public XamlExtensionsPage()
+        public SampleTextPage()
         {
             InitializeComponent();
         }
-
     }
 }

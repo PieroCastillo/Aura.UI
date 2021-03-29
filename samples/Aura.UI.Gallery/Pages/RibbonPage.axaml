@@ -5,20 +5,60 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Aura.UI.Gallery.Pages.RibbonPage"
 						 Classes="us_c">
-	<Grid>
-		<Ribbon>
-			<Ribbon.Header>
-				<Image Source="/Assets/AuraUILogo_icon.png"
-					   Height="20"/>
-			</Ribbon.Header>
-			<RibbonItem Header="Start">
-				<RibbonGroup/>
-			</RibbonItem>
-			<RibbonItem Header="Edit">
-        <RibbonGroup>
-          
-        </RibbonGroup>
-			</RibbonItem>
-		</Ribbon> 
-	</Grid>
+	<StackPanel Spacing="20" HorizontalAlignment="Stretch">
+    <TextBlock>Ribbon is a control that order items by tabs and use an animation in them; fully recommended in MS Office-like apps.</TextBlock>
+    <CodeExample CSharpVisible="False"
+                 Title="Ribbon" HorizontalAlignment="Stretch">
+      <Ribbon>
+        <Ribbon.Header>
+          <Image Source="/Assets/AuraUILogo_icon.png"
+               Height="20"/>
+        </Ribbon.Header>
+        <RibbonItem Header="Lorem ipsum.">
+          <RibbonPanel>
+            <RibbonGroup/>
+            <RibbonSeparator/>
+            <RibbonGroup/>
+            <RibbonSeparator/>
+            <RibbonGroup/>
+          </RibbonPanel>
+        </RibbonItem>
+        <RibbonItem Header="Lorem ipsum.">
+          <RibbonPanel>
+            <RibbonGroup/>
+            <RibbonSeparator/>
+            <RibbonGroup/>
+            <RibbonSeparator/>
+            <RibbonGroup/>
+          </RibbonPanel>
+        </RibbonItem>
+      </Ribbon>
+      <CodeExample.XAMLText>
+&lt;Ribbon>
+  &lt;Ribbon.Header>
+    &lt;Image Source="/Assets/AuraUILogo_icon.png"
+         Height="20"/>
+  &lt;/Ribbon.Header>
+  &lt;RibbonItem Header="Lorem ipsum.">
+    &lt;RibbonPanel>
+      &lt;RibbonGroup/>
+      &lt;RibbonSeparator/>
+      &lt;RibbonGroup/>
+      &lt;RibbonSeparator/>
+      &lt;RibbonGroup/>
+    &lt;/RibbonPanel>
+  &lt;/RibbonItem>
+  &lt;RibbonItem Header="Lorem ipsum.">
+    &lt;RibbonPanel>
+      &lt;RibbonGroup/>
+      &lt;RibbonSeparator/>
+      &lt;RibbonGroup/>
+      &lt;RibbonSeparator/>
+      &lt;RibbonGroup/>
+    &lt;/RibbonPanel>
+  &lt;/RibbonItem>
+&lt;/Ribbon>       
+      </CodeExample.XAMLText>
+    </CodeExample>
+	</StackPanel>
 </UserControl>

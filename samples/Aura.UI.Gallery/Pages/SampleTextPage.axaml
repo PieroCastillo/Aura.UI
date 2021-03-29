@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Aura.UI.Gallery.Pages.SampleTextPage">
+   Lorem ipsum dolor sit amet consectetur, adipiscing elit taciti in curae turpis, potenti tincidunt varius nunc. Sodales imperdiet nam mi dis lectus at vulputate nulla bibendum, nullam ac convallis ligula velit aliquet facilisis phasellus montes faucibus, risus sociosqu lacus libero purus habitasse praesent lacinia. Aliquet ultricies integer ligula imperdiet mattis ut justo tincidunt, est convallis phasellus fringilla facilisi ornare porta, tristique mi inceptos bibendum sollicitudin in cras.
+
+  Ornare in parturient cursus congue lectus arcu integer sed, dignissim sociosqu interdum eu lobortis hendrerit cubilia, cum faucibus leo litora pellentesque euismod accumsan. Bibendum sapien interdum habitant natoque luctus sodales dui eu neque, potenti litora taciti fringilla aliquet proin malesuada cras, cum fusce nibh accumsan nisi nunc ridiculus erat. Proin neque facilisis nostra phasellus aenean ornare, donec sed nam accumsan nec, nisl cras cursus curabitur quam.
+
+  Pellentesque placerat rutrum sed morbi vel tincidunt, viverra ad nisi at malesuada justo montes, natoque dis nunc est ullamcorper. Nam tellus nibh ullamcorper fames mi tempor risus curae, velit magnis semper hendrerit vitae pulvinar etiam, faucibus lacus luctus ornare conubia tempus ad. Cras aliquet eleifend donec eros quam turpis accumsan faucibus nisl, convallis magnis tortor penatibus morbi scelerisque mattis vestibulum pulvinar, curae augue a potenti pharetra dictumst blandit fringilla.
+
+  Volutpat non laoreet senectus mattis natoque porta mi aenean, sodales arcu augue nisi mauris tincidunt dignissim eros, turpis maecenas sollicitudin risus aliquet elementum dui. Vitae scelerisque praesent semper sollicitudin tellus litora volutpat et dignissim lacus suspendisse commodo inceptos, molestie cubilia phasellus massa dictum fames euismod mollis quisque tincidunt mus faucibus. Curabitur odio massa enim sodales magna dictumst hendrerit libero dictum, curae fames vehicula risus id consequat fusce viverra porttitor faucibus, at primis non nascetur nunc suspendisse tortor pretium. Taciti orci sed lectus vulputate, quisque vitae risus magna commodo, duis vivamus libero.
+
+  Facilisi feugiat taciti cursus enim ante duis pretium fermentum pulvinar, suspendisse morbi nisl nisi montes consequat gravida habitasse, venenatis nascetur class in tellus habitant potenti integer. Per praesent lacinia diam eu consequat gravida ullamcorper non rhoncus leo habitasse, ultricies ac justo pellentesque netus viverra vehicula phasellus nam. Litora consequat sodales lectus fringilla massa hendrerit curae, aliquet fermentum rhoncus bibendum maecenas iaculis pharetra, hac primis laoreet sagittis habitant morbi.
+
+  Nec faucibus vulputate convallis posuere ad molestie donec proin commodo sociis metus pharetra mauris morbi a, mi ac enim scelerisque velit leo sapien habitant imperdiet dictumst tortor hendrerit senectus. Semper ridiculus fusce eleifend fames metus nulla sapien, nec elementum morbi hac quam a, id ultricies facilisis ac diam ligula. Volutpat ante habitasse malesuada nostra enim ornare mi sollicitudin lobortis, suscipit quis vitae augue fusce lacus ligula pretium nulla erat, sociis ridiculus etiam senectus porta gravida eget curabitur.
+</UserControl>

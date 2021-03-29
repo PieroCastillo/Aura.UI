@@ -26,19 +26,7 @@
 						 UseFloatingWatermark="True"/>
 			</StackPanel>
 			<CodeExample.XAMLText>
-&lt;StackPanel Spacing="20"
-	&lt;VerticalAlignment="Center">
-	&lt;ProgressRing Value="{Binding #num.Value, Mode=TwoWay}"
-					 Maximum="{Binding #max.Text}"
-				     Minimum="{Binding #min.Text}"/>
-	&lt;NumericUpDown Name="num"
-					  Maximum="{Binding #max.Text}"
-					  Minimum="{Binding #min.Text}"/>
-	&lt;TextBox Name="min" Watermark="Minimum" Text="0"
-			    UseFloatingWatermark="True"/>
-	&lt;TextBox Name="max" Watermark="Maximum" Text="100"
-				UseFloatingWatermark="True"/>
-&lt;/StackPanel>
+&lt;ProgressRing Value="50" Maximum="100" Minimum="0"/>
 			</CodeExample.XAMLText>
 		</CodeExample>
 		<CodeExample Title="ProgressRing" TitleTwo="IsIndeterminate" CSharpVisible="False" HorizontalAlignment="Center">

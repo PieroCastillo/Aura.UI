@@ -44,8 +44,12 @@ namespace Aura.UI.Gallery
                 };
                 desktop.Exit += (s, e) =>
                 {
-                    new SettingsProvider().Save<AppSettings>(Settings);
+                    new SettingsProvider().Save(Settings);
                 };
+            }
+            else if(ApplicationLifetime is ISingleViewApplicationLifetime single)
+            {
+                single.MainView = new MainView();
             }
 
             base.OnFrameworkInitializationCompleted();

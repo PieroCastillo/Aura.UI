@@ -76,6 +76,8 @@
 		<SolidColorBrush x:Key="RibbonGroupForeground" Color="{DynamicResource SystemBaseHighColor}"/>
     <SolidColorBrush x:Key="RibbonGroupSeparatorBrush" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<!--RibbonItem Resources-->
+    <!--RibbonSeparator Resources-->
+    <SolidColorBrush x:Key="RibbonSeparatorBackgroundBrush" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<!--ModernSlider Resources-->
 		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncrease"
 									 TintColor="{DynamicResource SystemAccentColor}"

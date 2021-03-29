@@ -86,9 +86,6 @@
     <Compile Update="Pages\NavigationViewPage.axaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
-    <Compile Update="Pages\PagesViewPage.axaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
     <Compile Update="Pages\ProgressRingPage.axaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
@@ -99,15 +96,6 @@
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
     <Compile Update="Pages\SuperListBoxItemPage.axaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\TitleBoxPage.axaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\ToolWindowPage.axaml.cs">
-      <DependentUpon>%(Filename)</DependentUpon>
-    </Compile>
-    <Compile Update="Pages\XamlExtensionsPage.axaml.cs">
       <DependentUpon>%(Filename)</DependentUpon>
     </Compile>
   </ItemGroup>

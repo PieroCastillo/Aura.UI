@@ -39,10 +39,10 @@
 		<CornerRadius x:Key="ToggleRadius">3</CornerRadius>
 		<ms:Double x:Key="DefaultRibbonContainerHeight">150</ms:Double>
 		<DrawingImage x:Key="Octicons.TriangleUp">
-			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M12 11L6 5l-6 6h12z" />
+			<GeometryDrawing  Brush="{DynamicResource RibbonGroupForeground}" Geometry="M12 11L6 5l-6 6h12z" />
 		</DrawingImage>
 		<DrawingImage x:Key="Octicons.TriangleDown">
-			<GeometryDrawing  Brush="{DynamicResource ThemeForegroundBrush}" Geometry="M0 5l6 6 6-6H0z" />
+			<GeometryDrawing  Brush="{DynamicResource RibbonGroupForeground}" Geometry="M0 5l6 6 6-6H0z" />
 		</DrawingImage>
  	</Styles.Resources>
 	<Style Selector="Ribbon">
