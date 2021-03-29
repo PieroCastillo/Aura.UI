@@ -42,19 +42,14 @@ Install Aura.UI with Visual Studio or dotnetCLI:
 Open the Nuget Packages Manager on your project and search 
 Aura.UI.
 
-<img src="Pictures\vs_aura_ui.png" ></img>
+<img src="Pictures\aura.ui stb 1.3 vs.png" ></img>
 
 <h3>Dotnet CLI</h3>
 
 Open the terminal on the root folder of your project and write <br/>
 ```cmd
-dotnet package Aura.UI --version 0.1.3-rc2
+dotnet package Aura.UI --version 0.1.3
 ```
- Do it like this:
-
-<img src="Pictures/cli_aura_ui.png"></img>
-
-
 # Preparation
 
 For Fluent Theme add these Styles to App.xaml
