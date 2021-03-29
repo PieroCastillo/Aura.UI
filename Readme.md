@@ -80,6 +80,57 @@ And for Default Theme add these Styles to App.xaml
 </Application>
 ```
 
+# Gallery
+
+## Sample
+<img src="./screenshots/aura.ui_sample_light.png" width="500">
+<img src="./screenshots/aura.ui_sample_dark.png" width="500">
+
+## AuraTabView
+<img src="./screenshots/auratabview_light.png" width="500">
+<img src="./screenshots/auratabview_dark.png" width="500">
+
+## BlurryImage
+<img src="./screenshots/blurryimage_neutral.gif" width="500">
+
+## CardCollection 
+<img src="./screenshots/cardcollection_light.png" width="500">
+<img src="./screenshots/cardcollection_dark.png" width="500">
+
+## ContentDialog
+<img src="./screenshots/contentdialog_light.png" width="500">
+<img src="./screenshots/contentdialog_dark.png" width="500">
+
+## FloatingButtonBar
+<img src="./screenshots/floatingbuttonbar_light.gif" width="500">
+<img src="./screenshots/floatingbuttonbar_dark.gif" width="500">
+
+## GroupBox
+<img src="./screenshots/groupbox_light.png" width="500">
+<img src="./screenshots/groupbox_dark.png" width="500">
+
+## MessageDialog
+<img src="./screenshots/messagedialog_light.png" width="500">
+<img src="./screenshots/messagedialog_dark.png" width="500">
+
+## ModernSlider 
+<img src="./screenshots/modernslider_light.gif" width="500">
+<img src="./screenshots/modernslider_dark.gif" width="500">
+
+## NavigationView 
+<img src="./screenshots/navigationview_light.png" width="500">
+<img src="./screenshots/navigationview_dark.png" width="500">
+
+## ProgressRing
+<div>
+<img src="./screenshots/progressring_light.gif" width="500">
+<img src="./screenshots/progressring_dark.gif" width="500">
+</div>
+<div>
+<img src="./screenshots/progressring_indeterminate_light.gif" width="500">
+<img src="./screenshots/progressring_indeterminate_dark.gif" width="500">
+</div>
+
 # About Aura.UI
 
 This library is open source and free, in a few months come out the first stable version,for now, Aura.UI is a beta. 
