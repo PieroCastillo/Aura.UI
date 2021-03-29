@@ -2,9 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Aura.UI.Gallery.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="Aura.UI.Gallery.Pages.ModernSliderPage"
 						Classes="us_c">
+  <UserControl.DataContext>
+    <vm:ModernSliderPageViewModel/>
+  </UserControl.DataContext>
 	<StackPanel Spacing="10">
 		<TextBlock Text="The ModernSlider is a Slider with Acrylic-Style."/>
 		<CodeExample Title="ModernSlider" TitleTwo="Orientation Horizontal"
@@ -16,11 +20,11 @@
 			<StackPanel Orientation="Horizontal"
 						HorizontalAlignment="Center"
 						Spacing="20">
-				<ModernSlider Name="md_h"
+				<ModernSlider Value="{Binding HorizontalValue}"
 							  Orientation="Horizontal"
 							  TickFrequency="1" 
 							  IsSnapToTickEnabled="True"/>
-				<TextBox Text="{Binding #md_h.Value}"
+				<TextBox Text="{Binding HorizontalValue}"
 						 VerticalAlignment="Center"/>
 			</StackPanel>
 		</CodeExample>
@@ -32,11 +36,11 @@
 			<StackPanel Orientation="Horizontal"
 						HorizontalAlignment="Center"
 						Spacing="20">
-				<ModernSlider Name="md_v" Height="200"
+				<ModernSlider Value="{Binding VerticalValue}" Height="200"
 							  Orientation="Vertical"
 							  TickFrequency="1"
 							  IsSnapToTickEnabled="True"/>
-				<TextBox Text="{Binding #md_v.Value}"
+				<TextBox Text="{Binding VerticalValue}"
 						 VerticalAlignment="Center"/>
 			</StackPanel>
 		</CodeExample>
