@@ -47,12 +47,12 @@ namespace Aura.UI.Controls.Navigation
 
         protected virtual void OnDeselected(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-            Debug.WriteLine("I'm deselected");
+            // Debug.WriteLine("I'm deselected");
         }
 
         protected virtual void OnSelected(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-            Debug.WriteLine("I'm selected");
+            // Debug.WriteLine("I'm selected");
         }
 
         protected virtual void OnOpened(object sender, RoutedEventArgs e)
@@ -70,7 +70,7 @@ namespace Aura.UI.Controls.Navigation
                 {
                     nwp.SelectSingleItem(nw);
                     nw.IsExpanded = false;
-                    Debug.WriteLine($"yeah & {sender.Header}");
+                    // Debug.WriteLine($"yeah & {sender.Header}");
                 }
             }
         }

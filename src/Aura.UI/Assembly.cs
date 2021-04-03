@@ -7,3 +7,4 @@
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Xaml")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Colouring")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Presenters")]
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Windows")]

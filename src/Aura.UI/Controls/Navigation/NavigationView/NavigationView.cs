@@ -7,6 +7,7 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
+using DynamicData;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -19,6 +20,11 @@ namespace Aura.UI.Controls.Navigation
     {
         private NavigationViewItemBase _headeritem;
         private AutoCompleteBox _completeBox;
+        //public Dictionary<int, object> History
+        //{
+        //    get;
+        //    private set;
+        //}
 
         static NavigationView()
         {
@@ -31,6 +37,7 @@ namespace Aura.UI.Controls.Navigation
         public NavigationView()
         {
             PseudoClasses.Add(":normal");
+            //History = new();
         }
 
         protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -49,16 +56,16 @@ namespace Aura.UI.Controls.Navigation
                 if (nav.Header != null)
                 {
                     l.Add(nav.Header.ToString());  //sets the strings
-                    Debug.WriteLine(nav.Header);
+                    // Debug.WriteLine(nav.Header);
                 }
             }
-            Debug.WriteLine($"(in strings processing) there are {items.Count()} strings");
+            // Debug.WriteLine($"(in strings processing) there are {items.Count()} strings");
 
             ItemsAsStrings = l;
             return ItemsAsStrings; // returns the list
         }
 
-        internal void SelectSingleItem(object item)
+        internal void SelectSingleItemCore(object item)
         {
             if (SelectedItem != item)
             {
@@ -81,17 +88,71 @@ namespace Aura.UI.Controls.Navigation
                     n.IsExpanded = true;
                 }
             }
-
-            Debug.WriteLine($"{item_parents.Count()}");
+            // Debug.WriteLine($"{item_parents.Count()}");
 
             SelectedItem = item;
         }
+        internal void SelectSingleItem(object item)
+        {
+            SelectSingleItemCore(item);
+            //History.Add(History.Count + 1, item);
+            //HistoryChanged();
+        }
+
+        //private void HistoryChanged()
+        //{
+        //    //foreach (NavigationViewItem item in History)
+        //    //{
+        //    //    Debug.WriteLine("\"" + item.Header.ToString() + "\"" + " in History");
+        //    //}
+        //    //Debug.WriteLine("-----------------------------------------------------------");
+
+        //    var canGoB = History.Count <= 1 | History[0] == SelectedItem;
+        //    var canGoF = History.Count <= 1 | History.Values.Last() == SelectedItem;
+
+        //    switch (!canGoB)
+        //    {
+        //        case true:
+        //            CanGoBack = true;
+        //            break;
+        //        case false:
+        //            CanGoBack = false;
+        //            break;
+        //    }
+        //    switch (!canGoF)
+        //    {
+        //        case true:
+        //            CanGoForward = true;
+        //            break;
+        //        case false:
+        //            CanGoForward = false;
+        //            break;
+        //    }
+        //}
+
+        //public void GoBack()
+        //{
+        //    if (CanGoBack)
+        //    {
+        //        var selectedHistoryIndex = History.Values.IndexOf(SelectedItem) + 1;
+        //        SelectSingleItemCore(History[selectedHistoryIndex - 1]);
+        //    }
+        //}
+
+        //public void GoForward()
+        //{
+        //    if (CanGoForward)
+        //    {
+        //        var selectedHistoryIndex = History.Values.IndexOf(SelectedItem) + 1;
+        //        SelectSingleItemCore(History[selectedHistoryIndex + 1]);
+        //    }
+        //}
 
         protected void OnSelectedItemChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
             UpdateTitleAndSelectedContent();
 
-            Debug.WriteLine("Item changed");
+            // Debug.WriteLine("Item changed");
         }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -137,7 +198,7 @@ namespace Aura.UI.Controls.Navigation
 
             var val_c = val.FirstOrDefault(); // converts to NavigationViewItem
             //
-            Debug.WriteLine($"there are {val.Count()} strings"); //prints the count
+            // Debug.WriteLine($"there are {val.Count()} strings"); //prints the count
             if (val_c != null) //checks it
             {
                 SelectSingleItem(val_c); //select it

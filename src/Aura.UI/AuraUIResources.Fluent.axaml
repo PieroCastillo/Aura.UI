@@ -49,6 +49,7 @@
 		<SolidColorBrush x:Key="MessageDialogForeground" Color="{DynamicResource SystemAltMediumHighColor}"/>
 		<SolidColorBrush x:Key="MessageDialogErrorBrush" Color="{DynamicResource SystemErrorTextColor}"/>
 		<!--NavigationView Resources-->
+    <SolidColorBrush x:Key="NavigationViewAccent" Color="{DynamicResource SystemAccentColor}"/>
 		<SolidColorBrush x:Key="NavigationViewForeground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="NavigationViewSeparatorBackground" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<SolidColorBrush x:Key="NavigationViewBackground" Color="{DynamicResource SystemAltHighColor}"/>
@@ -106,5 +107,7 @@
 		<SolidColorBrush x:Key="SuperListBoxItemPointerOverBackground" Color="{DynamicResource SystemBaseHighColor}"/>
     <!--TitleBox Resources-->
     <SolidColorBrush x:Key="TitleBoxBorderBrush" Color="{DynamicResource SystemAccentColorLight1}"/>
-	</Styles.Resources>
+		<!--Tool Window-->
+    <SolidColorBrush x:Key="ToolWindowBorderBrush" Color="{DynamicResource SystemAccentColorLight1}"/>
+  </Styles.Resources>
 </Styles>

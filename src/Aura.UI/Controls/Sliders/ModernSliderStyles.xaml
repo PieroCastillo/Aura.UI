@@ -5,6 +5,8 @@
 		<Setter Property="Maximum" Value="100" />
 		<Setter Property="Minimum" Value="0" />
 		<Setter Property="Value" Value="40" />
+    <Setter Property="ToolTip.Placement"  Value="Pointer"/>
+    <Setter Property="ToolTip.Tip" Value="{Binding $self.Value}"/> 
 	    <Setter Property="ThumbTemplate">
 			<ControlTemplate TargetType="Thumb">
 				<Border />
