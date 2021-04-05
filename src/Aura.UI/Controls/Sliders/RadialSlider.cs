@@ -25,18 +25,40 @@ namespace Aura.UI.Controls
             AffectsRender<RadialSlider>(XAngleProperty, YAngleProperty);
         }
 
+        bool pressed;
+
+        protected override void OnPointerMoved(PointerEventArgs e)
+        {
+            base.OnPointerMoved(e);
+
+            if (pressed != true)
+                return;
+
+            var p = e.GetCurrentPoint(null);
+            UpdateValueFromPoint(p.Position);
+        }
+
         protected override void OnPointerPressed(PointerPressedEventArgs e)
         {
             base.OnPointerPressed(e);
+            pressed = true;
+        }
 
-            var p = e.GetCurrentPoint(null);
-            var yAngle = Helpers.Maths.DegreesBetweenPointAndCenter(p.Position, Bounds.Center);
-            Debug.WriteLine(p.Position.ToString() + " :current position");
-            Debug.WriteLine(Bounds.Center.ToString() + " :center");
-            Debug.WriteLine(yAngle.ToString() + " :degrees");
-            Value = Helpers.Maths.ValueFromMinMaxAngle(yAngle, Minimum, Maximum, Value);
-            Debug.WriteLine(Value.ToString() + " :value");
-            Debug.WriteLine("===================================================");
+        protected override void OnPointerReleased(PointerReleasedEventArgs e)
+        {
+            base.OnPointerReleased(e);
+            pressed = false;
+        }
+
+        private void UpdateValueFromPoint(Point p)
+        {
+            var yAngle = Helpers.Maths.DegreesBetweenPointAndCenter(p, Bounds.Center);
+            Value = Helpers.Maths.ValueFromMinMaxAngle(yAngle, Minimum, Maximum);
+            //Debug.WriteLine(p.ToString() + " :current position");
+            //Debug.WriteLine(Bounds.Center.ToString() + " :center");
+            //Debug.WriteLine(yAngle.ToString() + " :degrees");
+            //Debug.WriteLine(Value.ToString() + " :value");
+            //Debug.WriteLine("===================================================");
         }
 
         private static void CalibrateAngles(AvaloniaPropertyChangedEventArgs<double> e)
@@ -47,6 +69,8 @@ namespace Aura.UI.Controls
             {
                 pr.XAngle = -90;
                 pr.YAngle = Helpers.Maths.Calibrate(pr.Value, pr.Minimum, pr.Maximum, pr.Value) * 180;
+
+                pr.InvalidateVisual();
             }
         }
 

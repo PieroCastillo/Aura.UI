@@ -9,8 +9,6 @@ namespace Aura.UI.Helpers
             => centesimalDegrees * 180 / 200;
 
         public static double Calibrate(double value, double min, double max, double old_value)
-        /*=> Math.Abs(value * 100 /
-            -Math.Abs(max + min));*/
         {
             double range = max - min;
             //double fromProgress = (old_value - min) / range;//fromProgress;
@@ -19,13 +17,14 @@ namespace Aura.UI.Helpers
             //return value + old_value - (2 * min) / (max - min);
         }
 
-        public static double ValueFromMinMaxAngle(double angle, double min, double max, double old_value)
+        public static double ValueFromMinMaxAngle(double angle, double min, double max)
         {
-            double range = max - min;
-            double proportion = angle / range;
-            double value = proportion - old_value + 180 - 180*(2 * -min);
-
-            return value / 180;
+            //example: max:100 min:-100 angle:180 expected value:0
+            double range = max - min; //max - min = 100 - (-100) = 200
+            double angle_percent = PercentageOf(360, angle);//percentage:50%
+            double percentage_resolved = ValueByPercentage(range, angle_percent); //percent(200,50) = 100
+            double value = min + percentage_resolved;//-100 + 100 = 0! the expected value
+            return value;
         }
 
         public static bool CircleContainsPoint(Point point, Point circleCenter, double radius)

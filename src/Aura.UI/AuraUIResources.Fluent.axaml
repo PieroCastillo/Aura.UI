@@ -102,6 +102,9 @@
 									 TintOpacity="1" MaterialOpacity="1"
 								 FallbackColor="{DynamicResource SystemAltMediumColor}"
 								 BackgroundSource="None"/>
+    <!--RadialSlider Resources-->
+    <DynamicResource x:Key="RadialSliderForegroundColor" ResourceKey="SystemAccentColorLight1"/>
+    <DynamicResource x:Key="RadialSliderBackgroundColor" ResourceKey="SystemChromeHighColor"/>
 		<!--SuperListBoxItem Resources-->
 		<SolidColorBrush x:Key="SuperListBoxItemPressedPointerOverBackground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="SuperListBoxItemPointerOverBackground" Color="{DynamicResource SystemBaseHighColor}"/>
