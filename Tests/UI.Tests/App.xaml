@@ -3,7 +3,6 @@
              x:Class="UI.Tests.App">
     <Application.Styles>
 		<FluentTheme Mode="Light" />
-    <StyleInclude Source="avares://AudioPlayerControl/AudioPlayer.xaml"/>
-		<!--<StyleInclude Source="avares://Aura.UI/AuraDark.xaml" />-->
+		<StyleInclude Source="avares://Aura.UI/AuraUI.xaml" />
 	</Application.Styles>
 </Application>

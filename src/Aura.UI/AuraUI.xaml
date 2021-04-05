@@ -25,6 +25,7 @@
 	<StyleInclude Source="/Controls/Ribbon/RibbonStyles.xaml" />
 	<StyleInclude Source="/Controls/Sliders/FilledSliderStyles.xaml" />
 	<StyleInclude Source="/Controls/Sliders/ModernSliderStyles.xaml" />
+  <StyleInclude Source="/Controls/Sliders/RadialSlider.xaml"/>
 	<StyleInclude Source="/Controls/SuperListBox/SuperListBoxItemStyles.xaml" />
 	<StyleInclude Source="/Controls/TitleBox/TitleBoxStyles.xaml" />
 </Styles>  

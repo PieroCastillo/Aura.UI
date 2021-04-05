@@ -8,7 +8,7 @@
         x:Class="UI.Tests.MainWindow"
 		    Background="{x:Null}"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
-  <Grid ColumnDefinitions="auto,auto">
-    <AudioPlayer Path="C:\Users\User\OneDrive\Escritorio\InYourBed.mp3" Volume="5" />
-  </Grid>
+  <Border Padding="20">
+    <RadialSlider/>
+  </Border>
 </Window>

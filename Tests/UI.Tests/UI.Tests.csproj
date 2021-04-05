@@ -26,6 +26,6 @@
 		<PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
 	</ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AudioPlayerControl\AudioPlayerControl.csproj" />
+    <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
   </ItemGroup>
 </Project>

@@ -133,7 +133,7 @@
 								                  TextBlock.FontSize="15"
 								                  TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
 								                  VerticalContentAlignment="Center"
-								                  Margin="5,0" Background="Black"
+								                  Margin="5,0"
 								                  DockPanel.Dock="Right" HorizontalAlignment="Right"></ContentPresenter>
 							</Grid>
 							<Border Name="PART_BoxShadow" Background="Transparent" Height="5" BoxShadow="inset 0 -5 3 -5 Black" VerticalAlignment="Bottom"/>
