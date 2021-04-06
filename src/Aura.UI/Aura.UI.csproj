@@ -17,9 +17,13 @@
 	<Import Project="..\..\build\base.props" />
 	<Import Project="..\..\build\version.props" />
 	<ItemGroup>
+	  <None Remove="Controls\AuraColorPicker\RadialColorSlider.xaml" />
 	  <None Remove="Controls\Sliders\RadialSlider.xaml" />
 	</ItemGroup>
 	<ItemGroup>
+	  <AvaloniaResource Update="Controls\AuraColorPicker\Components\RadialColorSlider.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </AvaloniaResource>
 	  <AvaloniaResource Update="Controls\Sliders\RadialSlider.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </AvaloniaResource>

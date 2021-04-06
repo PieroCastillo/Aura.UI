@@ -16,6 +16,12 @@ namespace Aura.UI.Rendering
 
         public float StrokeWidth { get; }
 
+        public override bool HitTest(Point p) => true;
+        //{
+        //    return Helpers.Maths.CircleContainsPoint(p, Bounds.Center, (Bounds.Width / 2) - StrokeWidth) & 
+        //        !Helpers.Maths.CircleContainsPoint(p, Bounds.Center, Bounds.Width / 2);
+        //}
+
         public override void Render(IDrawingContextImpl context)
         {
             // converts the impl to SKCanvas
@@ -41,6 +47,8 @@ namespace Aura.UI.Rendering
                     }
 
                     SKPoint center = new SKPoint(info.Rect.MidX, info.Rect.MidY); // creates the center
+
+                    paint.IsAntialias = true;
 
                     // Create sweep gradient based on center of canvas
                     paint.Shader = SKShader.CreateSweepGradient(center, colors, null);

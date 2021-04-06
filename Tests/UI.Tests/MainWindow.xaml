@@ -4,11 +4,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		    xmlns:ms="clr-namespace:System;assembly=netstandard"
 		    xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
+        xmlns:comp="using:Aura.UI.Controls.Components"
         mc:Ignorable="d"
         x:Class="UI.Tests.MainWindow"
 		    Background="{x:Null}"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
-  <Border Padding="20">
-    <RadialSlider/>
-  </Border>
+  <Window.Styles>
+    <StyleInclude Source="avares://Aura.UI/Controls/AuraColorPicker/Components/RadialColorSlider.xaml"/>
+  </Window.Styles>
+  <StackPanel Margin="20" Spacing="20">
+    <comp:RadialColorSlider Name="PART_s" Maximum="360"/>
+    <TextBlock Text="{Binding #PART_s.Value}"/>
+  </StackPanel>
 </Window>
