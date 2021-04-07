@@ -18,6 +18,10 @@ namespace Aura.UI.Controls
             MinimumProperty.Changed.Subscribe(CalibrateAngles);
             ValueProperty.Changed.Subscribe(CalibrateAngles);
 
+            BoundsProperty.Changed.Subscribe(UpdateRadius);
+            StrokeWidthProperty.Changed.Subscribe(UpdateRadius);
+
+
             MaximumProperty.OverrideMetadata<RadialSlider>(new DirectPropertyMetadata<double>(100));
             MinimumProperty.OverrideMetadata<RadialSlider>(new DirectPropertyMetadata<double>(0));
             ValueProperty.OverrideMetadata<RadialSlider>(new DirectPropertyMetadata<double>(25));
@@ -61,6 +65,15 @@ namespace Aura.UI.Controls
             //Debug.WriteLine("===================================================");
         }
 
+        private static void UpdateRadius(AvaloniaPropertyChangedEventArgs e)
+        {
+            if(e.Sender is RadialSlider r)
+            {
+                r.Radius = (r.Bounds.Width - (r.StrokeWidth * 2)) / 2;
+                Debug.WriteLine("radius updated");
+            }
+        }
+
         private static void CalibrateAngles(AvaloniaPropertyChangedEventArgs<double> e)
         {
             var pr = e.Sender as RadialSlider;
@@ -73,6 +86,15 @@ namespace Aura.UI.Controls
                 pr.InvalidateVisual();
             }
         }
+
+        private double _radius;
+        public double Radius
+        {
+            get => _radius;
+            private set => SetAndRaise(RadiusProperty, ref _radius, value);
+        }
+        public static readonly DirectProperty<RadialSlider, double> RadiusProperty =
+            AvaloniaProperty.RegisterDirect<RadialSlider, double>(nameof(Radius), o => o.Radius);
 
         public int StrokeWidth
         {

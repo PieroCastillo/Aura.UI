@@ -12,8 +12,23 @@
   <Window.Styles>
     <StyleInclude Source="avares://Aura.UI/Controls/AuraColorPicker/Components/RadialColorSlider.xaml"/>
   </Window.Styles>
-  <StackPanel Margin="20" Spacing="20">
-    <comp:RadialColorSlider Name="PART_s" Maximum="360"/>
-    <TextBlock Text="{Binding #PART_s.Value}"/>
-  </StackPanel>
+  <Grid RowDefinitions="*,10,auto" Margin="20">
+    <Border Background="Yellow"/>
+    <comp:RadialColorSlider Name="PART_s"
+                        Width="200"
+                        Height="200"
+                        Maximum="360">
+      <comp:TrianglePicker VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           ColorParent="{Binding #PART_s}">
+        <comp:TrianglePicker.RenderTransform>
+          <TransformGroup>
+            <TranslateTransform Y="-21"/>
+            <RotateTransform Angle="{Binding #PART_s.Value}"/>
+          </TransformGroup>
+        </comp:TrianglePicker.RenderTransform>
+      </comp:TrianglePicker>
+    </comp:RadialColorSlider>
+    <TextBlock Grid.Row="2" Text="{Binding #PART_s.Value}"/>
+  </Grid>
 </Window>

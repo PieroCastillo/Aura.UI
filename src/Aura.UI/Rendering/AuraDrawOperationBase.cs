@@ -23,7 +23,7 @@ namespace Aura.UI.Rendering
 
         public virtual bool Equals(ICustomDrawOperation other) => false;
 
-        public virtual bool HitTest(Point p) => false;
+        public virtual bool HitTest(Point p) => true;
 
         public virtual void Render(IDrawingContextImpl context)
         {

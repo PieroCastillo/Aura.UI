@@ -82,5 +82,14 @@ namespace Aura.UI.Helpers
 
         public static double PercentageOf(double total, double value) => value * 100 / total;
         public static double ValueByPercentage(double total, double percentage) => total * percentage / 100;
+
+        public static double Pitagoras(double AB, double BC)
+            => Math.Sqrt(Math.Pow(AB, 2) + Math.Pow(BC, 2));
+
+        public static double TriangleSideByRadius(double r)
+            => Math.Sqrt(4 * (Math.Pow(r, 2) - Math.Pow(r/2, 2)));
+
+        public static double TriangleHeightBySide(double side)
+            => Math.Sqrt(3) * side / 2;
     }
 }

@@ -30,6 +30,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aura.UI.Gallery", "samples\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UI.Tests", "Tests\UI.Tests\UI.Tests.csproj", "{6CF093BC-AF26-4F69-9EB1-370CE0CC4E67}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "snippets", "snippets", "{0CC59F23-101A-4E16-8E44-F6F0A3FFF6A5}"
+	ProjectSection(SolutionItems) = preProject
+		StyledPropertySnippet.xml = StyledPropertySnippet.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

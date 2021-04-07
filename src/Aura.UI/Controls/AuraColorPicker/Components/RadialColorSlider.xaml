@@ -1,20 +1,33 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
         xmlns:comp="using:Aura.UI.Controls.Components">
   <Design.PreviewWith>
-    <comp:RadialColorSlider/>
+    <comp:RadialColorSlider Name="PART_s"
+                            Width="200"
+                            Height="200"
+                            Maximum="360">
+      <comp:TrianglePicker VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           ColorParent="{Binding #PART_s}">
+        <comp:TrianglePicker.RenderTransform>
+          <TransformGroup>
+            <TranslateTransform Y="-21"/>
+            <RotateTransform Angle="{Binding #PART_s.Value}"/>
+          </TransformGroup>
+        </comp:TrianglePicker.RenderTransform>
+      </comp:TrianglePicker>
+    </comp:RadialColorSlider>
   </Design.PreviewWith>
   <Style Selector="comp|RadialColorSlider">
     <Setter Property="Width" Value="150" />
     <Setter Property="Height" Value="150" />
-    <Setter Property="StrokeWidth" Value="7" />
+    <Setter Property="StrokeWidth" Value="15"/>
   </Style>
   <Style Selector="comp|RadialColorSlider">
     <Setter Property="Template">
       <ControlTemplate>
         <Grid>
-          <ColorWheel StrokeWidth="10"/>
-          <ContentControl Width="10"
-                          Height="{Binding $parent[RadialSlider].Width}"
+          <ColorWheel StrokeWidth="{Binding $parent[RadialSlider].StrokeWidth}"/>
+          <ContentControl Height="{Binding $parent[RadialSlider].Width}"
                           VerticalAlignment="Top"
                           HorizontalAlignment="Center">
             <ContentControl.RenderTransform>
@@ -23,12 +36,16 @@
             <Ellipse Stroke="Black" 
                      StrokeThickness="1" 
                      Fill="#99FFFFFF"
-                     Width="10" 
-                     Height="10"
+                     Width="{Binding $parent[RadialSlider].StrokeWidth}" 
+                     Height="{Binding $parent[RadialSlider].StrokeWidth}"
                      HorizontalAlignment="Right"
                      VerticalAlignment="Top">
             </Ellipse>
           </ContentControl>
+            <ContentPresenter Name="PART_ContentPresenter" 
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              Content="{TemplateBinding Content}"/>
         </Grid>
       </ControlTemplate>
     </Setter>

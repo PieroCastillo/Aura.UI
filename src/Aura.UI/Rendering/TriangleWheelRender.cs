@@ -11,7 +11,7 @@ namespace Aura.UI.Rendering
 {
     public class TriangleWheelRender : AuraDrawOperationBase
     {
-        public TriangleWheelRender(Rect bounds, Color hue, double lateralSize, IFormattedTextImpl noSkia) : base(bounds, noSkia)
+        public TriangleWheelRender(Rect bounds, Color hue, IFormattedTextImpl noSkia) : base(bounds, noSkia)
         {
             Hue = hue;
         }
@@ -41,9 +41,7 @@ namespace Aura.UI.Rendering
                 using (SKPaint paint = new SKPaint())
                 {
                     paint.IsAntialias = true;
-                    //SKColor[] colors = { SKColors.Red, SKColors.Transparent};
                     paint.Color = Hue.ToSKColor();
-                    var rect = SKRect.Create(width, height);
 
                     canvas.DrawPath(path, paint);
                 }
@@ -52,11 +50,7 @@ namespace Aura.UI.Rendering
                 {
                     paint.IsAntialias = true;
                     SKColor[] colors = { SKColors.White, SKColors.Transparent };
-
                     paint.Shader = SKShader.CreateRadialGradient(new SKPoint(0, height), width, colors, SKShaderTileMode.Clamp);
-                    //paint.Color = SKColors.White;
-
-                    var rect = SKRect.Create(width, height);
 
                     canvas.DrawPath(path, paint);
                 }
@@ -65,10 +59,7 @@ namespace Aura.UI.Rendering
                 {
                     paint.IsAntialias = true;
                     SKColor[] colors = { SKColors.Black, SKColors.Transparent };
-
                     paint.Shader = SKShader.CreateRadialGradient(new SKPoint(width, height), height, colors, SKShaderTileMode.Clamp);
-
-                    var rect = SKRect.Create(width, height);
 
                     canvas.DrawPath(path, paint);
                 }
