@@ -2,6 +2,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 		x:Class="Aura.UI.AuraUITheme">
 	<StyleInclude Source="/AuraUIFluent.xaml" />
+  <StyleInclude Source="/Controls/AuraColorPicker/Components/TrianglePicker.xaml"/>
+  <StyleInclude Source="/Controls/AuraColorPicker/Components/RadialColorSlider.xaml"/>
 	<StyleInclude Source="/Controls/AuraTabItem/AuraTabItemStyles.xaml" />
 	<StyleInclude Source="/Controls/AuraTabView/AuraTabViewStyles.xaml" />
 	<StyleInclude Source="/Controls/Buttons/MaterialButtonStyles.xaml" />

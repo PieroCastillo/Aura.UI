@@ -11,7 +11,7 @@
         <comp:TrianglePicker.RenderTransform>
           <TransformGroup>
             <TranslateTransform Y="-21"/>
-            <RotateTransform Angle="{Binding #PART_s.Value}"/>
+            <!--<RotateTransform Angle="{Binding #PART_s.Value}"/>-->
           </TransformGroup>
         </comp:TrianglePicker.RenderTransform>
       </comp:TrianglePicker>

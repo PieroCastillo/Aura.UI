@@ -1,0 +1,41 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:comp="using:Aura.UI.Controls.Components">
+  <Design.PreviewWith>
+    <comp:RadialColorSlider Name="PART_s"
+                            Width="200"
+                            Height="200"
+                            Maximum="360">
+      <comp:TrianglePicker VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           ColorParent="{Binding #PART_s}">
+        <comp:TrianglePicker.RenderTransform>
+          <TransformGroup>
+            <TranslateTransform Y="-21"/>
+            <RotateTransform Angle="{Binding #PART_s.Value}"/>
+          </TransformGroup>
+        </comp:TrianglePicker.RenderTransform>
+      </comp:TrianglePicker>
+    </comp:RadialColorSlider>
+  </Design.PreviewWith>
+  <Style Selector="comp|TrianglePicker">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid Name="grid">
+          <TriangleColorWheel Color="{TemplateBinding Hue}"/>
+          <Ellipse Name="thumb"
+                   Height="7" 
+                   Width="7" 
+                   Stroke="Black"
+                   StrokeThickness="1"
+                   Fill="White"
+                   Opacity="0.7">
+            <Ellipse.RenderTransform>
+              <TranslateTransform/>
+            </Ellipse.RenderTransform>
+          </Ellipse>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

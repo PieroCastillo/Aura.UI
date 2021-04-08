@@ -35,7 +35,7 @@ namespace Aura.UI.Controls
         {
             base.OnPointerMoved(e);
 
-            if (pressed != true)
+            if (pressed != true || IsEnabled == false)
                 return;
 
             var p = e.GetCurrentPoint(null);
@@ -54,7 +54,7 @@ namespace Aura.UI.Controls
             pressed = false;
         }
 
-        private void UpdateValueFromPoint(Point p)
+        internal void UpdateValueFromPoint(Point p)
         {
             var yAngle = Helpers.Maths.DegreesBetweenPointAndCenter(p, Bounds.Center);
             Value = Helpers.Maths.ValueFromMinMaxAngle(yAngle, Minimum, Maximum);
