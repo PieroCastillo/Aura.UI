@@ -16,10 +16,10 @@ namespace Aura.UI.Rendering
             Hue = hue;
         }
 
-        public override bool HitTest(Point p)
-        {
-            return !Helpers.Maths.TriangleContains(new(0.5f * Bounds.Width, 0), new(0f, Bounds.Height), new(Bounds.Width, Bounds.Height), p);
-        }
+        public override bool HitTest(Point p) => true;
+        //{
+        //    return Helpers.Maths.TriangleContains(new(0.5f * Bounds.Width, 0), new(0f, Bounds.Height), new(Bounds.Width, Bounds.Height), p);
+        //}
 
         Color Hue { get; }
 

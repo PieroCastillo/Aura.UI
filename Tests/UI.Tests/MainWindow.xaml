@@ -12,7 +12,7 @@
         SizeToContent="WidthAndHeight">
 
   <Grid RowDefinitions="*,10,auto" Margin="20">
-    <comp:RadialColorSlider Name="PART_s"
+    <!--<comp:RadialColorSlider Name="PART_s"
                             Width="200"
                             Height="200"
                             Maximum="360">
@@ -37,6 +37,7 @@
       <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding #PART_s.Value}"/>
       <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding #PART_t.Saturation}"/>
       <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding #PART_t.ValueColor}"/>
-    </Grid>
+    </Grid>-->
+    <RadialSlider/>
   </Grid>
 </Window>

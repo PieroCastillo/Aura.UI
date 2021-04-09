@@ -17,7 +17,7 @@ namespace Aura.UI.Rendering
         public float StrokeWidth { get; }
 
 
-    public override void Render(IDrawingContextImpl context)
+        public override void Render(IDrawingContextImpl context)
         {
             // converts the impl to SKCanvas
             var canvas = (context as ISkiaDrawingContextImpl)?.SkCanvas;

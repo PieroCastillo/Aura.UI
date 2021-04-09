@@ -106,7 +106,6 @@ namespace Aura.UI.Controls.Components
 
             if (ColorParent is not null)
                 ColorParent.UnLock();
-            e.Handled = true;
         }
 
         protected override void OnPointerReleased(PointerReleasedEventArgs e)
@@ -116,8 +115,6 @@ namespace Aura.UI.Controls.Components
 
             if (ColorParent is not null)
                 ColorParent.UnLock();
-
-            e.Handled = true;
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)
@@ -127,7 +124,6 @@ namespace Aura.UI.Controls.Components
 
             if (ColorParent is not null)
                 ColorParent.Lock();
-            e.Handled = true;
         }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
