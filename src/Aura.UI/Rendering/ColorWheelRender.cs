@@ -16,10 +16,6 @@ namespace Aura.UI.Rendering
 
         public float StrokeWidth { get; }
 
-        //public override bool HitTest(Point p)
-        //{
-        //    return Helpers.Maths.CircularCrownContainsPoint(p, Bounds.Center, (Bounds.Width / 2 - StrokeWidth), Bounds.Width / 2);
-        //}
 
     public override void Render(IDrawingContextImpl context)
         {
@@ -28,12 +24,12 @@ namespace Aura.UI.Rendering
             //Checks if that is valid
             if (canvas == null)
             {
-                context.Clear(Colors.White);
-                context.DrawText(new SolidColorBrush(Colors.Black), new Point(), NoSkia);
+                //context.DrawText(new SolidColorBrush(Colors.Black), new Point(), NoSkia);
             }
             else // when it's valid to this
             {
                 var info = new SKImageInfo((int)Bounds.Width, (int)Bounds.Height); // creates the image info
+                canvas.RotateDegrees(-90, (float)Bounds.Center.X, (float)Bounds.Center.Y);
 
                 using (SKPaint paint = new SKPaint()) // creates the paint
                 {

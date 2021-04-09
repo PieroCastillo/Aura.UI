@@ -1,4 +1,5 @@
-﻿using Aura.UI.Helpers;
+﻿using Aura.UI.Extensions;
+using Aura.UI.Helpers;
 using Aura.UI.Rendering;
 using Aura.UI.UIExtensions;
 using Avalonia;
@@ -6,9 +7,13 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Shapes;
 using Avalonia.Input;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Aura.UI.Controls.Components
@@ -22,17 +27,59 @@ namespace Aura.UI.Controls.Components
         {
             AffectsMeasure<TrianglePicker>(ColorParentProperty);
             RadialColorSlider.RadiusProperty.Changed.AddClassHandler<TrianglePicker>((x, e) => x.InvalidateMeasure());
+            ClipToBoundsProperty.OverrideDefaultValue<TrianglePicker>(false);
+            //IsPointerOverProperty.Changed.Subscribe(IspointreroverChg);
+        }
+
+        private static void IspointreroverChg(AvaloniaPropertyChangedEventArgs<bool> e)
+        {
+            if(e.Sender is TrianglePicker t)
+            {
+                switch (e.NewValue.Value && t._pressed)
+                {
+                    case true:
+                        if(t.ColorParent is not null)
+                        {
+                            t.ColorParent.Lock();
+                        }
+                        break;
+                    case false:
+                        if (t.ColorParent is not null)
+                        {
+                            t.ColorParent.UnLock();
+                        }
+
+                        break;
+                }
+            }
         }
 
         private void UpdateValuesFromPoint(Point p)
         {
+            if (!Helpers.Maths.TriangleContains(new(0.5f * Bounds.Width, 0), new(0f, Bounds.Height), new(Bounds.Width, Bounds.Height), p))
+                return;
 
+            Point p1 = new(0.5f * Bounds.Width, 0);
+            Point p2 = new(0f, Bounds.Height); 
+            Point p3 = new(Bounds.Width, Bounds.Height);
+
+            var saturationD = Helpers.Maths.DistanceBetweenTwoPoints(p1, p2);
+            var valueD = Helpers.Maths.DistanceBetweenTwoPoints(p1, p3);
+
+            var saturationAD = Helpers.Maths.DistanceBetweenTwoPoints(p, p2);
+            var valueAD = Helpers.Maths.DistanceBetweenTwoPoints(p, p3);
+
+            var perSat = Helpers.Maths.PercentageOf(saturationD, saturationAD);
+            var perVal = Helpers.Maths.PercentageOf(valueD, valueAD);
+
+            Saturation = Math.Clamp(perSat, 0, 100);
+            ValueColor = Math.Clamp(perVal, 0, 100);
         }
 
         private void UpdateSelectorPosition(Point p)
         {
             if (!Helpers.Maths.TriangleContains(new(0.5f * Bounds.Width, 0), new(0f, Bounds.Height), new(Bounds.Width, Bounds.Height), p))
-                return;
+              return;
 
             if(_thumb is not null && _thumb.RenderTransform is TranslateTransform tt)
             {
@@ -46,9 +93,20 @@ namespace Aura.UI.Controls.Components
             base.OnPointerMoved(e);
             if (_pressed)
             {
-                UpdateValuesFromPoint(e.GetCurrentPoint(this).Position);
-                UpdateSelectorPosition(e.GetCurrentPoint(this).Position);
+                var p = e.GetCurrentPoint(this).Position;
+                UpdateValuesFromPoint(p);
+                UpdateSelectorPosition(p);
             }
+        }
+
+        protected override void OnPointerLeave(PointerEventArgs e)
+        {
+            base.OnPointerLeave(e);
+            _pressed = false;
+
+            if (ColorParent is not null)
+                ColorParent.UnLock();
+            e.Handled = true;
         }
 
         protected override void OnPointerReleased(PointerReleasedEventArgs e)
@@ -57,7 +115,9 @@ namespace Aura.UI.Controls.Components
             _pressed = false;
 
             if (ColorParent is not null)
-                ColorParent.IsEnabled = true;
+                ColorParent.UnLock();
+
+            e.Handled = true;
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)
@@ -66,7 +126,8 @@ namespace Aura.UI.Controls.Components
             _pressed = true;
 
             if (ColorParent is not null)
-                ColorParent.IsEnabled = false;
+                ColorParent.Lock();
+            e.Handled = true;
         }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -99,12 +160,6 @@ namespace Aura.UI.Controls.Components
             {
                 return base.MeasureOverride(availableSize);
             }
-        }
-
-        protected override Size ArrangeOverride(Size finalSize)
-        {
-            InvalidateMeasure();
-            return base.ArrangeOverride(finalSize);
         }
 
         public Color Hue

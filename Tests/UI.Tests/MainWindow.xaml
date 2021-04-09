@@ -8,17 +8,16 @@
         mc:Ignorable="d"
         x:Class="UI.Tests.MainWindow"
 		    Background="{x:Null}"
-        Title="UI.Tests" WindowStartupLocation="CenterScreen">
-  <Window.Styles>
-    <StyleInclude Source="avares://Aura.UI/Controls/AuraColorPicker/Components/RadialColorSlider.xaml"/>
-  </Window.Styles>
+        Title="UI.Tests" WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight">
+
   <Grid RowDefinitions="*,10,auto" Margin="20">
-    <Border Background="Yellow"/>
     <comp:RadialColorSlider Name="PART_s"
-                        Width="200"
-                        Height="200"
-                        Maximum="360">
-      <comp:TrianglePicker VerticalAlignment="Center"
+                            Width="200"
+                            Height="200"
+                            Maximum="360">
+      <comp:TrianglePicker Name="PART_t"
+                           VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            ColorParent="{Binding #PART_s}">
         <comp:TrianglePicker.RenderTransform>
@@ -29,6 +28,15 @@
         </comp:TrianglePicker.RenderTransform>
       </comp:TrianglePicker>
     </comp:RadialColorSlider>
-    <TextBlock Grid.Row="2" Text="{Binding #PART_s.Value}"/>
+    <Grid Grid.Row="2"
+          ColumnDefinitions="auto,10,auto"
+          RowDefinitions="auto,auto,auto">
+      <TextBlock Grid.Column="0" Grid.Row="0" Text="H"/>
+      <TextBlock Grid.Column="0" Grid.Row="1" Text="S"/>
+      <TextBlock Grid.Column="0" Grid.Row="2" Text="V"/>
+      <TextBlock Grid.Column="2" Grid.Row="0" Text="{Binding #PART_s.Value}"/>
+      <TextBlock Grid.Column="2" Grid.Row="1" Text="{Binding #PART_t.Saturation}"/>
+      <TextBlock Grid.Column="2" Grid.Row="2" Text="{Binding #PART_t.ValueColor}"/>
+    </Grid>
   </Grid>
 </Window>

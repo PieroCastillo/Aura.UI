@@ -3,6 +3,7 @@ using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Skia;
 using SkiaSharp;
+using System.Diagnostics;
 
 namespace Aura.UI.Rendering
 {
@@ -48,6 +49,9 @@ namespace Aura.UI.Rendering
                 }
 
                 canvas.Restore();
+
+                Debug.WriteLine(StrokeColor.ToString());
+                Debug.WriteLine("Arc rendered");
             }
         }
 

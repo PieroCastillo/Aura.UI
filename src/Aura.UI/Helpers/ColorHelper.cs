@@ -20,6 +20,20 @@ namespace Aura.UI.Helpers
         public double lightness { get; private set; }
     }
 
+    public struct HSVStruct
+    {
+        public HSVStruct(Color color)
+        {
+            color.ToHSV(out float _Hue, out byte _Saturation, out byte _Value);
+            Hue = _Hue;
+            Saturation = _Saturation;
+            Value = _Value;
+        }
+        public float Hue { get; }
+        public byte Saturation { get; }
+        public byte Value { get; }
+    }
+
     public struct RGBStruct
     {
         public RGBStruct(Color color)

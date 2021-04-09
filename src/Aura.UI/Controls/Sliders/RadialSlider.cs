@@ -30,16 +30,24 @@ namespace Aura.UI.Controls
         }
 
         bool pressed;
+        private bool _locked = false;
+        public void Lock()
+        {
+            _locked = true;
+            Debug.WriteLine("triangle picker locked");
+        }
+
+        public void UnLock()
+        {
+            _locked = false;
+            Debug.WriteLine("triangle picker unlocked");
+        }
 
         protected override void OnPointerMoved(PointerEventArgs e)
         {
             base.OnPointerMoved(e);
 
-            if (pressed != true || IsEnabled == false)
-                return;
-
-            var p = e.GetCurrentPoint(null);
-            UpdateValueFromPoint(p.Position);
+            UpdateValueFromPoint(e.GetCurrentPoint(null).Position);
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)
@@ -56,8 +64,11 @@ namespace Aura.UI.Controls
 
         internal void UpdateValueFromPoint(Point p)
         {
-            var yAngle = Helpers.Maths.DegreesBetweenPointAndCenter(p, Bounds.Center);
-            Value = Helpers.Maths.ValueFromMinMaxAngle(yAngle, Minimum, Maximum);
+            if (_locked == false & this.pressed)
+            {
+                var yAngle = Helpers.Maths.DegreesBetweenPointAndCenter(p, Bounds.Center);
+                Value = Helpers.Maths.ValueFromMinMaxAngle(yAngle, Minimum, Maximum);
+            }
             //Debug.WriteLine(p.ToString() + " :current position");
             //Debug.WriteLine(Bounds.Center.ToString() + " :center");
             //Debug.WriteLine(yAngle.ToString() + " :degrees");
@@ -103,7 +114,7 @@ namespace Aura.UI.Controls
         }
 
         public static readonly StyledProperty<int> StrokeWidthProperty =
-            AvaloniaProperty.Register<ProgressRing, int>(nameof(StrokeWidth), 20);
+            AvaloniaProperty.Register<RadialSlider, int>(nameof(StrokeWidth), 20);
 
         public Color ForegroundColor
         {
@@ -112,7 +123,7 @@ namespace Aura.UI.Controls
         }
 
         public readonly static StyledProperty<Color> ForegroundColorProperty =
-            AvaloniaProperty.Register<ProgressRing, Color>(nameof(ForegroundColor));
+            AvaloniaProperty.Register<RadialSlider, Color>(nameof(ForegroundColor));
 
         public Color BackgroundColor
         {
@@ -121,7 +132,7 @@ namespace Aura.UI.Controls
         }
 
         public readonly static StyledProperty<Color> BackgroundColorProperty =
-            AvaloniaProperty.Register<ProgressRing, Color>(nameof(BackgroundColor));
+            AvaloniaProperty.Register<RadialSlider, Color>(nameof(BackgroundColor));
 
         private double x_angle;
 
@@ -131,8 +142,8 @@ namespace Aura.UI.Controls
             private set => SetAndRaise(XAngleProperty, ref x_angle, value);
         }
 
-        private readonly static DirectProperty<ProgressRing, double> XAngleProperty =
-            AvaloniaProperty.RegisterDirect<ProgressRing, double>(nameof(XAngle), o => o.XAngle);
+        private readonly static DirectProperty<RadialSlider, double> XAngleProperty =
+            AvaloniaProperty.RegisterDirect<RadialSlider, double>(nameof(XAngle), o => o.XAngle);
 
         private double y_angle;
 
@@ -142,7 +153,7 @@ namespace Aura.UI.Controls
             private set => SetAndRaise(YAngleProperty, ref y_angle, value);
         }
 
-        private readonly static DirectProperty<ProgressRing, double> YAngleProperty =
-            AvaloniaProperty.RegisterDirect<ProgressRing, double>(nameof(YAngle), o => o.YAngle);
+        private readonly static DirectProperty<RadialSlider, double> YAngleProperty =
+            AvaloniaProperty.RegisterDirect<RadialSlider, double>(nameof(YAngle), o => o.YAngle);
     }
 }
