@@ -27,7 +27,6 @@ namespace Aura.UI.Controls.Components
                 }
             });
         }
-
         protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
         {
             base.OnAttachedToVisualTree(e);
@@ -55,5 +54,18 @@ namespace Aura.UI.Controls.Components
 
         public static readonly DirectProperty<RadialColorSlider, double> InternalWidthProperty =
             AvaloniaProperty.RegisterDirect<RadialColorSlider, double>(nameof(InternalWidth), o => o.InternalWidth);
+
+
+        private bool _IsLocked;
+        public bool IsLocked
+        {
+            get => _IsLocked;
+            set => SetAndRaise(IsLockedProperty, ref _IsLocked, value);
+        }
+
+        public static readonly DirectProperty<RadialColorSlider, bool> IsLockedProperty =
+            AvaloniaProperty.RegisterDirect<RadialColorSlider, bool>(nameof(IsLocked), o => o.IsLocked, (o, v) => o.IsLocked = v);
+
+
     }
 }

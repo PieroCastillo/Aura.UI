@@ -5,14 +5,14 @@ namespace Aura.UI.Controls
 {
     public class CardCollection : HeaderedItemsControl
     {
-        public TileMode TileMode
+        public CardCollectionTileMode TileMode
         {
             get => GetValue(TileModeProperty);
             set => SetValue(TileModeProperty, value);
         }
 
-        public static readonly StyledProperty<TileMode> TileModeProperty =
-            AvaloniaProperty.Register<CardCollection, TileMode>(nameof(TileMode), TileMode.UniformDisposition);
+        public static readonly StyledProperty<CardCollectionTileMode> TileModeProperty =
+            AvaloniaProperty.Register<CardCollection, CardCollectionTileMode>(nameof(TileMode), CardCollectionTileMode.UniformDisposition);
 
         public bool ShowHeader
         {
@@ -42,7 +42,7 @@ namespace Aura.UI.Controls
             AvaloniaProperty.Register<CardCollection, int>(nameof(Columns));
     }
 
-    public enum TileMode
+    public enum CardCollectionTileMode
     {
         HorizontalDisposition,
         VerticalDisposition,

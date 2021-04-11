@@ -5,16 +5,6 @@
                             Width="200"
                             Height="200"
                             Maximum="360">
-      <comp:TrianglePicker VerticalAlignment="Center"
-                           HorizontalAlignment="Center"
-                           ColorParent="{Binding #PART_s}">
-        <comp:TrianglePicker.RenderTransform>
-          <TransformGroup>
-            <TranslateTransform Y="-21"/>
-            <!--<RotateTransform Angle="{Binding #PART_s.Value}"/>-->
-          </TransformGroup>
-        </comp:TrianglePicker.RenderTransform>
-      </comp:TrianglePicker>
     </comp:RadialColorSlider>
   </Design.PreviewWith>
   <Style Selector="comp|RadialColorSlider">
@@ -33,14 +23,13 @@
             <ContentControl.RenderTransform>
                 <RotateTransform Angle="{Binding $parent[RadialSlider].YAngle}"/>
             </ContentControl.RenderTransform>
-            <Ellipse Stroke="Black" 
-                     StrokeThickness="1" 
+            <Ellipse Stroke="Black"
+                     StrokeThickness="1"
                      Fill="#99FFFFFF"
-                     Width="{Binding $parent[RadialSlider].StrokeWidth}" 
+                     Width="{Binding $parent[RadialSlider].StrokeWidth}"
                      Height="{Binding $parent[RadialSlider].StrokeWidth}"
                      HorizontalAlignment="Right"
-                     VerticalAlignment="Top">
-            </Ellipse>
+                     VerticalAlignment="Top"/>
           </ContentControl>
             <ContentPresenter Name="PART_ContentPresenter" 
                               VerticalAlignment="Center"

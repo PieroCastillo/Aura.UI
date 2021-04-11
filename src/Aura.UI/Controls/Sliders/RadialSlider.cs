@@ -62,9 +62,9 @@ namespace Aura.UI.Controls
             pressed = false;
         }
 
-        internal void UpdateValueFromPoint(Point p)
+        protected virtual void UpdateValueFromPoint(Point p)
         {
-            if (_locked == false & this.pressed)
+            if (pressed)
             {
                 var yAngle = Helpers.Maths.DegreesBetweenPointAndCenter(p, Bounds.Center);
                 Value = Helpers.Maths.ValueFromMinMaxAngle(yAngle, Minimum, Maximum);

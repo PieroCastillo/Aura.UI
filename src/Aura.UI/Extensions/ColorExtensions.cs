@@ -219,7 +219,10 @@ namespace Aura.UI.Extensions
             return hue;
         }
 
-        public static Color FromHSV(this Color color, float hue, byte saturation, byte value)
+        public static Color FromHSV(HSVStruct hsv)
+            => FromHSV(hsv.Hue, hsv.Saturation, hsv.Value);
+
+        public static Color FromHSV(float hue, byte saturation, byte value)
         {
             saturation /= 100;
             value /= 100;

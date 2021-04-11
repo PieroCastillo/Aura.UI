@@ -10,12 +10,13 @@ namespace Aura.UI.Controls
 {
     public class ColorChangedEventArgs : RoutedEventArgs
     {
-        public ColorChangedEventArgs(Color prevColor, Color oldColor, Color newColor)
+        public ColorChangedEventArgs(Color prevColor, Color oldColor, Color newColor, UpdatedColorReason reason)
         {
             PreviewColor = prevColor;
             OldColor = oldColor;
             NewColor = newColor;
             NewColorAsHSV = new HSVStruct(newColor);
+            Reason = reason;
         }
 
         public Color PreviewColor { get; }
@@ -23,13 +24,19 @@ namespace Aura.UI.Controls
         public Color NewColor { get; }
 
         public HSVStruct NewColorAsHSV { get; }
+        public UpdatedColorReason Reason { get; }
     }
 
     public enum UpdatedColorReason
     {
-        HueChanged,
-        SaturationChanged,
         ValueChanged,
-        
+        HueAndSaturationChanged,
+        AlphaChanged,
+        ColorStringChanged,
+        RChanged,
+        GChanged,
+        BChanged,
+        AChanged,
+        HexChanged,
     }
 }

@@ -1,4 +1,5 @@
-﻿using Aura.UI.Extensions;
+﻿using Aura.UI.Controls.Primitives;
+using Aura.UI.Extensions;
 using Aura.UI.Helpers;
 using Aura.UI.Rendering;
 using Aura.UI.UIExtensions;
@@ -6,6 +7,7 @@ using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Shapes;
 using Avalonia.Input;
+using Avalonia.Input.Platform;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
@@ -18,7 +20,7 @@ using System.Text;
 
 namespace Aura.UI.Controls.Components
 {
-    public class TrianglePicker : TemplatedControl
+    public class TrianglePicker : HuePickerBase, IHuePicker
     {
         private Ellipse _thumb;
         private bool _pressed;
@@ -28,30 +30,6 @@ namespace Aura.UI.Controls.Components
             AffectsMeasure<TrianglePicker>(ColorParentProperty);
             RadialColorSlider.RadiusProperty.Changed.AddClassHandler<TrianglePicker>((x, e) => x.InvalidateMeasure());
             ClipToBoundsProperty.OverrideDefaultValue<TrianglePicker>(false);
-            //IsPointerOverProperty.Changed.Subscribe(IspointreroverChg);
-        }
-
-        private static void IspointreroverChg(AvaloniaPropertyChangedEventArgs<bool> e)
-        {
-            if(e.Sender is TrianglePicker t)
-            {
-                switch (e.NewValue.Value && t._pressed)
-                {
-                    case true:
-                        if(t.ColorParent is not null)
-                        {
-                            t.ColorParent.Lock();
-                        }
-                        break;
-                    case false:
-                        if (t.ColorParent is not null)
-                        {
-                            t.ColorParent.UnLock();
-                        }
-
-                        break;
-                }
-            }
         }
 
         private void UpdateValuesFromPoint(Point p)
@@ -93,6 +71,9 @@ namespace Aura.UI.Controls.Components
             base.OnPointerMoved(e);
             if (_pressed)
             {
+                if (ColorParent is not null)
+                    ColorParent.IsHitTestVisible = true;
+                
                 var p = e.GetCurrentPoint(this).Position;
                 UpdateValuesFromPoint(p);
                 UpdateSelectorPosition(p);
@@ -105,25 +86,22 @@ namespace Aura.UI.Controls.Components
             _pressed = false;
 
             if (ColorParent is not null)
-                ColorParent.UnLock();
+                ColorParent.IsHitTestVisible = true;
+            
         }
 
         protected override void OnPointerReleased(PointerReleasedEventArgs e)
         {
             base.OnPointerReleased(e);
             _pressed = false;
-
-            if (ColorParent is not null)
-                ColorParent.UnLock();
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)
         {
             base.OnPointerPressed(e);
             _pressed = true;
-
             if (ColorParent is not null)
-                ColorParent.Lock();
+                ColorParent.IsHitTestVisible = false;
         }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -131,7 +109,6 @@ namespace Aura.UI.Controls.Components
             base.OnApplyTemplate(e);
 
             _thumb = this.GetControl<Ellipse>(e, "thumb");
-
         }
 
         protected override Size MeasureOverride(Size availableSize)
@@ -140,16 +117,9 @@ namespace Aura.UI.Controls.Components
             {
                 var r = ColorParent.Radius;
                 var side = Helpers.Maths.TriangleSideByRadius(r);
-                var w = side;// * 0.85;
-                var h = Helpers.Maths.TriangleHeightBySide(side);// * 0.85;
-                Debug.WriteLine(r + " :radius");
-                Debug.WriteLine(w.ToString() + " :width");
-                Debug.WriteLine(h.ToString() + " :height");
-
+                var w = side;
+                var h = Helpers.Maths.TriangleHeightBySide(side);
                 var sz = new Size(w, h);
-
-                Debug.WriteLine(availableSize + " :available size");
-                Debug.WriteLine(sz + " :new size");
                 return sz;
             }
             else
@@ -158,12 +128,6 @@ namespace Aura.UI.Controls.Components
             }
         }
 
-        public Color Hue
-        {
-            get => GetValue(HueProperty);
-            set => SetValue(HueProperty, value);
-        }
-        public static readonly StyledProperty<Color> HueProperty = AvaloniaProperty.Register<TrianglePicker, Color>(nameof(Hue), Colors.Red);
 
         private RadialColorSlider _colorparent;
         public RadialColorSlider ColorParent
@@ -173,24 +137,6 @@ namespace Aura.UI.Controls.Components
         }
         public static readonly DirectProperty<TrianglePicker, RadialColorSlider> ColorParentProperty =
             AvaloniaProperty.RegisterDirect<TrianglePicker, RadialColorSlider>(nameof(ColorParent), o => o.ColorParent, (o,v) => o.ColorParent = v);
-
-        public double Saturation
-        {
-            get => GetValue(SaturationProperty);
-            set => SetValue(SaturationProperty, value);
-        }
-
-        public static readonly StyledProperty<double> SaturationProperty =
-            AvaloniaProperty.Register<RadialColorSlider, double>(nameof(Saturation));
-
-        public double ValueColor
-        {
-            get => GetValue(ValueColorProperty);
-            set => SetValue(ValueColorProperty, value);
-        }
-
-        public static readonly StyledProperty<double> ValueColorProperty =
-            AvaloniaProperty.Register<RadialColorSlider, double>(nameof(ValueColor));
 
 
         private double _XPosition;
