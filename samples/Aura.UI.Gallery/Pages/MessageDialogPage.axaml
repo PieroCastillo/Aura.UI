@@ -22,7 +22,7 @@ this.NewMessageDialog("Your Message Title","Your Message Content", null);
 			</CodeExample.Control>
 			<CodeExample.CSharpText>
 				<x:String>
-//where "this" is a Window
+//where "this" is a Control
 this.NewMessageDialog("Your Message Title","Your Message Content", null);
 				</x:String>
 			</CodeExample.CSharpText>

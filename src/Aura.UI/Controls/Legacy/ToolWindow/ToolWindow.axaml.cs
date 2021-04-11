@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace Aura.UI.Controls
+namespace Aura.UI.Controls.Legacy
 {
     public partial class ToolWindow : CustomWindow
     {

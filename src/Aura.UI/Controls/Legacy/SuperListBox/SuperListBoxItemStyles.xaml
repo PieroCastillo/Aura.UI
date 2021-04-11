@@ -1,0 +1,42 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:legacy="using:Aura.UI.Controls.Legacy">
+	<Style Selector="legacy|SuperListBoxItem">
+		<Setter Property="Height" Value="60" />
+		<Setter Property="Padding" Value="10" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border Name="PART_Container"
+						Padding="{TemplateBinding Padding}"
+						Background="{TemplateBinding Background}">
+					<StackPanel Orientation="Horizontal" Spacing="10">
+						<Border Padding="6">
+							<Image Stretch="UniformToFill" Source="{TemplateBinding Icon}" />
+						</Border>
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition />
+								<RowDefinition Height="5" />
+								<RowDefinition />
+							</Grid.RowDefinitions>
+							<TextBlock Text="{TemplateBinding MainText}" FontSize="16" />
+							<TextBlock	Grid.Row="2"
+										Text="{TemplateBinding SecondaryText}"
+									   Opacity="{DynamicResource SuperListBoxItemDisabledOpacity}" />
+						</Grid>
+					</StackPanel>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="legacy|SuperListBoxItem:disabled /template/ Border#PART_Container">
+		<Setter Property="Opacity" Value="{DynamicResource SuperListBoxItemDisabledOpacity}" />
+	</Style>
+	<Style Selector="legacy|SuperListBoxItem:pressed:pointerover /template/ Border#PART_Container">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlMidBrush}" />
+	</Style>
+	<Style Selector="legacy|SuperListBoxItem:pointerover /template/ Border#PART_Container">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlLowBrush}" />
+	</Style>
+</Styles>

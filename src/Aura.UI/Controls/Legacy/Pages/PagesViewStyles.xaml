@@ -1,0 +1,24 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:legacy="using:Aura.UI.Controls.Legacy"
+				xmlns:rx="http://reactiveui.net">
+	<Style Selector="legacy|PagesView">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+					    Background="{TemplateBinding Background}"
+					    CornerRadius="0">
+					<rx:TransitioningContentControl
+						Name="PART_TranstionPresenter"
+						Content="{Binding $parent[legacy|PagesView].SelectedItem, Mode=OneWay}" />
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="legacy|PagesView /template/ rx|TransitioningContentControl#PART_TranstionPresenter">
+		<Setter Property="PageTransition">
+			<CrossFade />
+		</Setter>
+	</Style>
+</Styles>

@@ -1,6 +1,6 @@
 ﻿using Avalonia;
 
-namespace Aura.UI.Controls
+namespace Aura.UI.Controls.Legacy
 {
     public partial class TitleBox
     {

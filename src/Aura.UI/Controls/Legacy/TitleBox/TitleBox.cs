@@ -4,7 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 
-namespace Aura.UI.Controls
+namespace Aura.UI.Controls.Legacy
 {
     /// <summary>
     /// It's similar to <see cref="GroupBox"/>, but has a Two button on the TopRight

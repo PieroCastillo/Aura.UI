@@ -7,7 +7,7 @@ namespace Aura.UI.Controls.Primitives
 {
     public partial class ContentDialogBase : ContentControl
     {
-        public void SetOwner(WindowBase owner)
+        public void SetOwner(Control owner)
         {
             if (owner == null)
             {
@@ -51,7 +51,7 @@ namespace Aura.UI.Controls.Primitives
         public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
             RoutedEvent.Register<ContentDialogBase, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
 
-        private WindowBase Owner
+        private Control Owner
         {
             get;
             set;

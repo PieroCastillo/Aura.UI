@@ -7,12 +7,12 @@ namespace Aura.UI.Services
 {
     public static class MessageDialogService
     {
-        public static void NewMessageDialog(this WindowBase owner,
+        public static void NewMessageDialog(this Control owner,
                                             object title,
                                             object content,
                                             Action<object, RoutedEventArgs>? OnClosing) => NewMessageDialog<MessageDialog>(owner, title, content, OnClosing);
 
-        public static void NewMessageDialog<TMessageDialog>(this WindowBase owner,
+        public static void NewMessageDialog<TMessageDialog>(this Control owner,
                                             object title,
                                             object content,
                                             Action<object, RoutedEventArgs>? OnClosing)

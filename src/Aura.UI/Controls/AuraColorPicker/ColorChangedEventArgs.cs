@@ -10,7 +10,7 @@ namespace Aura.UI.Controls
 {
     public class ColorChangedEventArgs : RoutedEventArgs
     {
-        public ColorChangedEventArgs(Color prevColor, Color oldColor, Color newColor, UpdatedColorReason reason)
+        public ColorChangedEventArgs(RoutedEvent routedEvent, Color prevColor, Color oldColor, Color newColor, UpdatedColorReason reason) : base(routedEvent)
         {
             PreviewColor = prevColor;
             OldColor = oldColor;
@@ -29,14 +29,16 @@ namespace Aura.UI.Controls
 
     public enum UpdatedColorReason
     {
-        ValueChanged,
-        HueAndSaturationChanged,
-        AlphaChanged,
-        ColorStringChanged,
+        HueChanged,
+        ValueAndSaturationChanged,
+        
         RChanged,
         GChanged,
         BChanged,
         AChanged,
+        
         HexChanged,
+
+        ColorPickerInitializated
     }
 }

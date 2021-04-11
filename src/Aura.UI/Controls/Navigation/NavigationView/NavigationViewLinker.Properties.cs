@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using Aura.UI.Controls.Legacy;
+using Avalonia;
 using Avalonia.Media;
 
 namespace Aura.UI.Controls.Navigation

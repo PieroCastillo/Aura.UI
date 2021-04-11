@@ -5,6 +5,7 @@ namespace Aura.UI.Controls
 {
     public partial class AuraColorPicker
     {
+        private Color _PreviewColor;
         private Color _SelectedColor;
         private double _R;
         private double _G;
@@ -14,7 +15,8 @@ namespace Aura.UI.Controls
         private double _S;
         private double _V;
         private string _Hexadecimal;
-       
+
+        public static readonly DirectProperty<AuraColorPicker, Color> PreviewColorProperty = AvaloniaProperty.RegisterDirect<AuraColorPicker, Color>(nameof(PreviewColor), o => o.SelectedColor, (o,v) => o.PreviewColor = v);
         public static readonly DirectProperty<AuraColorPicker, Color> SelectedColorProperty = AvaloniaProperty.RegisterDirect<AuraColorPicker, Color>(nameof(SelectedColor), o => o.SelectedColor);
         public static readonly DirectProperty<AuraColorPicker, double> RProperty = AvaloniaProperty.RegisterDirect<AuraColorPicker, double>(nameof(R), o => o.R, (o, v) => o.R = v);
         public static readonly DirectProperty<AuraColorPicker, double> GProperty = AvaloniaProperty.RegisterDirect<AuraColorPicker, double>(nameof(G), o => o.G, (o, v) => o.G = v);
@@ -25,7 +27,11 @@ namespace Aura.UI.Controls
         public static readonly DirectProperty<AuraColorPicker, double> VProperty = AvaloniaProperty.RegisterDirect<AuraColorPicker, double>(nameof(V), o => o.V, (o, v) => o.V = v);
         public static readonly DirectProperty<AuraColorPicker, string> HexadecimalProperty = AvaloniaProperty.RegisterDirect<AuraColorPicker, string>(nameof(Hexadecimal), o => o.Hexadecimal, (o, v) => o.Hexadecimal = v);
         
-
+        public Color PreviewColor
+        {
+            get => _PreviewColor;
+            set => SetAndRaise(PreviewColorProperty, ref _PreviewColor, value);
+        }
         public Color SelectedColor
         {
             get => _SelectedColor;

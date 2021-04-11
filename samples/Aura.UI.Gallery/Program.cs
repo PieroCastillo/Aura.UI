@@ -20,7 +20,7 @@ namespace Aura.UI.Gallery
                 .UsePlatformDetect()
                 .UseSkia()
                 .UseReactiveUI()                
-                .With(new Win32PlatformOptions() { AllowEglInitialization = true, OverlayPopups = true })
+                .With(new Win32PlatformOptions() { AllowEglInitialization = true })
                 .LogToTrace();
     }
 }

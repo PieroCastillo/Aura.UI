@@ -15,8 +15,8 @@ namespace Aura.UI.Gallery.Pages
 
         public void ShowMessageDialog(object sender, RoutedEventArgs e)
         {
-            var win = this.GetParentTOfVisual<Window>();
-            win.NewMessageDialog("Your Message Title", "Your Message Content", null);
+            //var win = this.GetParentTOfVisual<Window>();
+            this.NewMessageDialog("Your Message Title", "Your Message Content", null);
         }
     }
 }

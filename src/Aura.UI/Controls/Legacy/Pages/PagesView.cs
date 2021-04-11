@@ -3,7 +3,7 @@ using Avalonia;
 using Avalonia.Controls.Primitives;
 using System.Collections;
 
-namespace Aura.UI.Controls
+namespace Aura.UI.Controls.Legacy
 {
     /// <summary>
     /// Show a collection of <see cref="Page"/>

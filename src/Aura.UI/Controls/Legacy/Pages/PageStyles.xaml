@@ -1,8 +1,9 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Style Selector="Page">
+				xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:legacy="using:Aura.UI.Controls.Legacy">
+    <Style Selector="legacy|Page">
 		<Setter Property="Template">
-			<ControlTemplate TargetType="Page">
+			<ControlTemplate>
 				<Border BorderThickness="{TemplateBinding BorderThickness}"
 						BorderBrush="{TemplateBinding BorderBrush}">
 					<ContentPresenter Content="{TemplateBinding Content}"
@@ -13,9 +14,4 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-    <Design.PreviewWith>
-		<Border>
-			<Page>Test</Page>
-		</Border>
-	</Design.PreviewWith>
 </Styles>

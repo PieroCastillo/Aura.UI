@@ -16,14 +16,14 @@ namespace Aura.UI.Services
         {
             Dispatcher.UIThread.Post(() =>
             {
-                dialog.Width = window.Bounds.Width;
-                dialog.Height = window.Bounds.Height;
+                var layer = OverlayLayer.GetOverlayLayer(window);
+                dialog.Width = layer.Bounds.Width;
+                dialog.Height =  layer.Bounds.Height;
                 window.PropertyChanged += (s, e) =>
                 {
-                    dialog.Width = window.Bounds.Width;
-                    dialog.Height = window.Bounds.Height;
+                    dialog.Width = layer.Bounds.Width;
+                    dialog.Height = layer.Bounds.Height;
                 };
-                var layer = OverlayLayer.GetOverlayLayer(window);
                 layer.Children.Add(dialog);
             });
         }

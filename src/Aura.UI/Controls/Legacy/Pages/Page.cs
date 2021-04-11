@@ -2,7 +2,7 @@
 using Avalonia;
 using Avalonia.Controls;
 
-namespace Aura.UI.Controls
+namespace Aura.UI.Controls.Legacy
 {
     /// <summary>
     /// This control shows a content but has to be whitin <see cref="PagesView"/>

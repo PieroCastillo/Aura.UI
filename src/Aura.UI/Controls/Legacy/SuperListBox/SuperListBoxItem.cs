@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Media;
 
-namespace Aura.UI.Controls
+namespace Aura.UI.Controls.Legacy
 {
     /// <summary>
     /// This item shows a Icon, Maintext and secondarytext for the <see cref="ListBox"/> control

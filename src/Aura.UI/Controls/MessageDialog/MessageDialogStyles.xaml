@@ -1,8 +1,10 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
-		<MessageDialog Width="500"
-					   Height="400" Title="About" Content="This project is developed &#10; by PieroCastillo" />
+		<!--<MessageDialog Width="500"
+					   Height="400" Title="About" Content="This project is developed &#10; by PieroCastillo" />-->
+    <MessageDialog Width="800"
+					   Height="300" Title="Test" Content="Test" />
 	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="EvaIcons.CloseOutline">
