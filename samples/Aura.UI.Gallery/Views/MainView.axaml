@@ -15,12 +15,10 @@
     <vm:MainViewViewModel/>
   </UserControl.DataContext>
   <NavigationView Header="Aura.UI Gallery"
-                    AlwaysOpen="True"
-                    SelectedItem="{Binding #el}"
-			Name="nv"
-			Icon="{DynamicResource Material.Home}">
-    <NavigationViewItem Name="el" Header="What's new?"
-              IsSelected="True"
+                  AlwaysOpen="True"
+                  Name="nv"
+			            Icon="{DynamicResource Material.Home}">
+    <NavigationViewItem  Header="What's new?"
               Icon="{DynamicResource Zondicons.Announcement}">
       <NavigationViewItem.Title>
         <Grid VerticalAlignment="Top">
