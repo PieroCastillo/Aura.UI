@@ -8,6 +8,7 @@ using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using DynamicData;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
@@ -73,7 +74,9 @@ namespace Aura.UI.Controls.Navigation
                 PseudoClasses.Add(":normal");
             }
 
-            (SelectedItem as ISelectable).IsSelected = false;
+            if(SelectedItem is not null)
+                (SelectedItem as ISelectable).IsSelected = false;
+
             (item as ISelectable).IsSelected = true;
 
             SelectedItems.Clear();
@@ -188,6 +191,14 @@ namespace Aura.UI.Controls.Navigation
 
             UpdateTitleAndSelectedContent();
             ProcessString();
+        }
+
+        protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
+        {
+            base.OnAttachedToLogicalTree(e);
+
+            if ((Items as IList)[0] is ISelectable s)
+                SelectSingleItem(s);
         }
 
         private void CompleteBoxItemSelected(object sender, SelectionChangedEventArgs e)
