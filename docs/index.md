@@ -6,8 +6,6 @@
 ![Size](https://img.shields.io/github/repo-size/PieroCastillo/Aura.UI)
 
 <h1 align="center">
-<img src="../DesignSources/AuraUILogo_full_icon.png" width="256"/> 
-<br/><br/>
 Aura.UI
 </h1>
 
@@ -41,8 +39,6 @@ Install Aura.UI with Visual Studio or dotnetCLI:
 
 Open the Nuget Packages Manager on your project and search 
 Aura.UI.
-
-<img src="Pictures\aura.ui stb 1.3 vs.png" ></img>
 
 <h3>Dotnet CLI</h3>
 
