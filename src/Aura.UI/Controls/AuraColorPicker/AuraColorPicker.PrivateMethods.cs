@@ -8,51 +8,18 @@ namespace Aura.UI.Controls
     {
         private void UpdateHueSlider()
         {
-            HueSlider.Value = SelectedColor.GetHue();
+            HueSlider.Value = SelectedColor.ToHSV().H;
         }
         private void UpdateSaturationValuePicker()
         {
-            SelectedColor.ToHSV(out _, out byte saturation, out byte value);
-            ValueSaturationPicker.Saturation = saturation;
-            ValueSaturationPicker.ValueColor = value;
-            ValueSaturationPicker.Hue = SelectedColor;
+            ValueSaturationPicker.Saturation = S;
+            ValueSaturationPicker.ValueColor = V;
+            ValueSaturationPicker.Hue = new HSV(H, 1,1).ToColor();
         }
         private void UpdateAlphaSlider()
         {
             AlphaSlider.Value = SelectedColor.A;
         }
-        private void UpdateRedSlider()
-        {
-            RedSlider.Value = SelectedColor.R;
-        }
-
-        private void UpdateGreenSlider()
-        {
-            GreenSlider.Value = SelectedColor.G;
-        }
-
-        private void UpdateBlueSlider()
-        {
-            BlueSlider.Value = SelectedColor.B;
-        }
-        /*private void UpdateAlphaTextBox()
-        {
-            AlphaTextBox.Text = SelectedColor.A.ToString();
-        }
-        private void UpdateRedTextBox()
-        {
-            RedTextBox.Text = SelectedColor.R.ToString();
-        }
-
-        private void UpdateGreenTextBox()
-        {
-            GreenTextBox.Text = SelectedColor.G.ToString();
-        }
-
-        private void UpdateBlueTextBox()
-        {
-            BlueTextBox.Text = SelectedColor.B.ToString();
-        }*/
         private void UpdateHexText()
         {
             HexTextBox.Text = SelectedColor.ToString();

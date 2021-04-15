@@ -2,8 +2,8 @@
         xmlns:comp="using:Aura.UI.Controls.Components">
   <Design.PreviewWith>
     <comp:RadialColorSlider Name="PART_s"
-                            Width="200"
-                            Height="200"
+                            Width="500"
+                            Height="500"
                             Maximum="360">
     </comp:RadialColorSlider>
   </Design.PreviewWith>

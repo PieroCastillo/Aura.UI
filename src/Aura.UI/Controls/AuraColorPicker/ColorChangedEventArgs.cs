@@ -15,7 +15,7 @@ namespace Aura.UI.Controls
             PreviewColor = prevColor;
             OldColor = oldColor;
             NewColor = newColor;
-            NewColorAsHSV = new HSVStruct(newColor);
+            NewColorAsHSV = newColor.ToHSV();
             Reason = reason;
         }
 
@@ -23,7 +23,7 @@ namespace Aura.UI.Controls
         public Color OldColor { get; }
         public Color NewColor { get; }
 
-        public HSVStruct NewColorAsHSV { get; }
+        public HSV NewColorAsHSV { get; }
         public UpdatedColorReason Reason { get; }
     }
 

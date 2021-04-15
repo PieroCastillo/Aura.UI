@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using Avalonia.Input;
 using Avalonia.Layout;
 using Avalonia.LogicalTree;
+using Avalonia.Media;
 using Avalonia.Metadata;
 
 namespace Aura.UI.Controls.Components
@@ -24,6 +26,14 @@ namespace Aura.UI.Controls.Components
                 if(x.Sender is RadialColorSlider r)
                 {
                     r.InternalWidth = r.Bounds.Width - (r.StrokeWidth * 2);
+                }
+            });
+
+            ValueProperty.Changed.Subscribe(x =>
+            {
+                if(x.Sender is RadialColorSlider r)
+                {
+                    r.HueColor = new HSV(r.Value, 1, 1).ToColor();
                 }
             });
         }
@@ -65,6 +75,16 @@ namespace Aura.UI.Controls.Components
 
         public static readonly DirectProperty<RadialColorSlider, bool> IsLockedProperty =
             AvaloniaProperty.RegisterDirect<RadialColorSlider, bool>(nameof(IsLocked), o => o.IsLocked, (o, v) => o.IsLocked = v);
+
+        private Color _HueColor;
+        public Color HueColor
+        {
+            get => _HueColor;
+            private set => SetAndRaise(HueColorProperty, ref _HueColor, value);
+        }
+
+        public static readonly DirectProperty<RadialColorSlider, Color> HueColorProperty =
+            AvaloniaProperty.RegisterDirect<RadialColorSlider, Color>(nameof(HueColor), o => o.HueColor, unsetValue: Colors.Red);
 
 
     }

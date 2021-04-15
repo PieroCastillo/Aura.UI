@@ -47,11 +47,16 @@ namespace Aura.UI.Controls.Components
             var saturationAD = Helpers.Maths.DistanceBetweenTwoPoints(p, p2);
             var valueAD = Helpers.Maths.DistanceBetweenTwoPoints(p, p3);
 
-            var perSat = Helpers.Maths.PercentageOf(saturationD, saturationAD);
-            var perVal = Helpers.Maths.PercentageOf(valueD, valueAD);
+            var perSat = Helpers.Maths.PercentageOf(saturationD, saturationAD) / 100;
+            var perVal = Helpers.Maths.PercentageOf(valueD, valueAD) / 100;
 
-            Saturation = Math.Clamp(perSat, 0, 100);
-            ValueColor = Math.Clamp(perVal, 0, 100);
+            Saturation = Math.Clamp(perSat, 0, 1);
+            ValueColor = Math.Clamp(perVal, 0, 1);
+            
+            var h = Hue.ToHSV().H;
+            var s = Saturation;
+            var v = ValueColor;
+            TransformedColor = new HSV(h, s, v).ToColor();
         }
 
         private void UpdateSelectorPosition(Point p)
@@ -138,6 +143,16 @@ namespace Aura.UI.Controls.Components
         public static readonly DirectProperty<TrianglePicker, RadialColorSlider> ColorParentProperty =
             AvaloniaProperty.RegisterDirect<TrianglePicker, RadialColorSlider>(nameof(ColorParent), o => o.ColorParent, (o,v) => o.ColorParent = v);
 
+        private Color _TransformedColor;
+        public Color TransformedColor
+        {
+            get => _TransformedColor;
+            private set => SetAndRaise(TransformedColorProperty, ref _TransformedColor, value);
+        }
+
+        public static readonly DirectProperty<TrianglePicker, Color> TransformedColorProperty =
+            AvaloniaProperty.RegisterDirect<TrianglePicker, Color>(nameof(TransformedColor), o => o.TransformedColor);
+
 
         private double _XPosition;
         public double XPosition
@@ -159,7 +174,5 @@ namespace Aura.UI.Controls.Components
 
         public static readonly DirectProperty<TrianglePicker, double> YPositionProperty =
             AvaloniaProperty.RegisterDirect<TrianglePicker, double>(nameof(YPosition), o => o.YPosition);
-
-
     }
 }

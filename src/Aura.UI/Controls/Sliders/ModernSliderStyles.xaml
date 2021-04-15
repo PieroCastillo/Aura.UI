@@ -6,8 +6,8 @@
 		<Setter Property="Minimum" Value="0" />
 		<Setter Property="Value" Value="40" />
     <Setter Property="ToolTip.Placement"  Value="Pointer"/>
-    <Setter Property="ToolTip.Tip" Value="{Binding $self.Value}"/> 
-	    <Setter Property="ThumbTemplate">
+    <!--<Setter Property="ToolTip.Tip" Value="{Binding $self.Value}"/>--> 
+	  <Setter Property="ThumbTemplate">
 			<ControlTemplate TargetType="Thumb">
 				<Border />
 			</ControlTemplate>
@@ -26,8 +26,8 @@
 								ClipToBounds="True">
 							<Track Name="PART_Track" Value="{TemplateBinding Value}"
 									  Orientation="Horizontal"
-									Maximum="{TemplateBinding Maximum}"
-								   Minimum="{TemplateBinding Minimum}">
+										Maximum="{TemplateBinding Maximum}"
+										Minimum="{TemplateBinding Minimum}">
 									<Track.DecreaseButton>
 										<MaterialButton Name="PART_DecreaseButton" Classes="Repeats"
 												Content="{TemplateBinding LeftContent}"

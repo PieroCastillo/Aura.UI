@@ -1,4 +1,5 @@
-﻿using Aura.UI.UIExtensions;
+﻿using Aura.UI.Controls.Generators;
+using Aura.UI.UIExtensions;
 using Avalonia;
 using Avalonia.Collections;
 using Avalonia.Controls;
@@ -21,11 +22,6 @@ namespace Aura.UI.Controls.Navigation
     {
         private NavigationViewItemBase _headeritem;
         private AutoCompleteBox _completeBox;
-        //public Dictionary<int, object> History
-        //{
-        //    get;
-        //    private set;
-        //}
 
         static NavigationView()
         {
@@ -38,7 +34,6 @@ namespace Aura.UI.Controls.Navigation
         public NavigationView()
         {
             PseudoClasses.Add(":normal");
-            //History = new();
         }
 
         protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -98,64 +93,10 @@ namespace Aura.UI.Controls.Navigation
         internal void SelectSingleItem(object item)
         {
             SelectSingleItemCore(item);
-            //History.Add(History.Count + 1, item);
-            //HistoryChanged();
         }
-
-        //private void HistoryChanged()
-        //{
-        //    //foreach (NavigationViewItem item in History)
-        //    //{
-        //    //    Debug.WriteLine("\"" + item.Header.ToString() + "\"" + " in History");
-        //    //}
-        //    //Debug.WriteLine("-----------------------------------------------------------");
-
-        //    var canGoB = History.Count <= 1 | History[0] == SelectedItem;
-        //    var canGoF = History.Count <= 1 | History.Values.Last() == SelectedItem;
-
-        //    switch (!canGoB)
-        //    {
-        //        case true:
-        //            CanGoBack = true;
-        //            break;
-        //        case false:
-        //            CanGoBack = false;
-        //            break;
-        //    }
-        //    switch (!canGoF)
-        //    {
-        //        case true:
-        //            CanGoForward = true;
-        //            break;
-        //        case false:
-        //            CanGoForward = false;
-        //            break;
-        //    }
-        //}
-
-        //public void GoBack()
-        //{
-        //    if (CanGoBack)
-        //    {
-        //        var selectedHistoryIndex = History.Values.IndexOf(SelectedItem) + 1;
-        //        SelectSingleItemCore(History[selectedHistoryIndex - 1]);
-        //    }
-        //}
-
-        //public void GoForward()
-        //{
-        //    if (CanGoForward)
-        //    {
-        //        var selectedHistoryIndex = History.Values.IndexOf(SelectedItem) + 1;
-        //        SelectSingleItemCore(History[selectedHistoryIndex + 1]);
-        //    }
-        //}
-
         protected void OnSelectedItemChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
             UpdateTitleAndSelectedContent();
-
-            // Debug.WriteLine("Item changed");
         }
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
@@ -197,7 +138,7 @@ namespace Aura.UI.Controls.Navigation
         {
             base.OnAttachedToLogicalTree(e);
 
-            if ((Items as IList)[0] is ISelectable s)
+            if (Items is IList l && l.Count >= 1 && l[0] is ISelectable s)
                 SelectSingleItem(s);
         }
 
@@ -216,21 +157,6 @@ namespace Aura.UI.Controls.Navigation
             }
         }
 
-        //private void OnClose()
-        //{
-        //    var s = SelectedItem as Control;
-        //    if ((Items as IList<object>).Contains(s))
-        //    {
-        //        return;
-        //    }
-        //    else
-        //    {
-        //        var vs = s.GetVisualAncestors().OfType<NavigationViewItemBase>().LastOrDefault();
-        //        (s as NavigationViewItemBase).IsSelected = false;
-        //        SelectedItem = vs;
-        //    }
-        //}
-
         ///<inheritdoc/>
         IAvaloniaList<ILogical> IContentPresenterHost.LogicalChildren => LogicalChildren;
 
@@ -240,6 +166,9 @@ namespace Aura.UI.Controls.Navigation
         {
             return RegisterContentPresenter(presenter);
         }
+
+        protected override IItemContainerGenerator CreateItemContainerGenerator()
+            => new NavigationViewContainerGenerator(this, NavigationViewItem.ContentProperty, NavigationViewItem.ItemsProperty, NavigationViewItem.HeaderProperty, NavigationViewItem.TitleProperty, NavigationViewItem.IsExpandedProperty);
 
         ///<inheritdoc/>
         protected virtual bool RegisterContentPresenter(IContentPresenter presenter)

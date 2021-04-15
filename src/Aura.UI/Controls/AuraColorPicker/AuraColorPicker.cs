@@ -1,82 +1,72 @@
 ﻿using Aura.UI.Controls.Components;
 using Aura.UI.Controls.Primitives;
+using Aura.UI.Extensions;
+using Aura.UI.Helpers;
 using Aura.UI.UIExtensions;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 
 namespace Aura.UI.Controls
 {
     public partial class AuraColorPicker : TemplatedControl
     {
-        private Slider AlphaSlider, RedSlider, BlueSlider, GreenSlider;
+        private Slider AlphaSlider;
         private TextBox HexTextBox; //AlphaTextBox, RedTextBox, BlueTextBox, GreenTextBox, ;
         private IHuePicker ValueSaturationPicker;
         private RadialColorSlider HueSlider;
 
         protected void SelectNewColor(Color color, UpdatedColorReason reason)
         {
+            var hsv = color.ToHSV();
+
+            H = hsv.H;
+            S = hsv.S;
+            V = hsv.V;
+
+            R = color.R;
+            G = color.G;
+            B = color.B;
+            A = color.A;
+
+            Debug.WriteLine(hsv.ToString());
+
             var oldColor = SelectedColor;
 
             SelectedColor = color;
 
             switch (reason)
             {
-                case UpdatedColorReason.RChanged:
-                    UpdateGreenSlider();
-                    UpdateBlueSlider();
-                    UpdateHueSlider();
-                    UpdateHexText();
-                    UpdateSaturationValuePicker();
-                    break;
-                case UpdatedColorReason.GChanged:
-                    UpdateRedSlider();
-                    UpdateBlueSlider();
-                    UpdateHueSlider();
-                    UpdateHexText();
-                    UpdateSaturationValuePicker(); break;
-                case UpdatedColorReason.BChanged:
-                    UpdateRedSlider();
-                    UpdateGreenSlider();
-                    UpdateHueSlider();
-                    UpdateHexText();
-                    UpdateSaturationValuePicker(); break;
                 case UpdatedColorReason.AChanged:
                     UpdateHexText();
+                    Debug.WriteLine("alpha changed");
                     break;
                 case UpdatedColorReason.HueChanged:
-                    UpdateRedSlider();
-                    UpdateGreenSlider();
-                    UpdateBlueSlider();
-                    UpdateSaturationValuePicker();
                     UpdateHexText();
+                    Debug.WriteLine("hue changed");
                     break;
                 case UpdatedColorReason.ValueAndSaturationChanged:
-                    UpdateRedSlider();
-                    UpdateGreenSlider();
-                    UpdateBlueSlider();
                     UpdateHexText();
+                    Debug.WriteLine("value or saturation changed");
                     break;
                 case UpdatedColorReason.HexChanged:
-                    UpdateRedSlider();
-                    UpdateGreenSlider();
-                    UpdateBlueSlider();
                     UpdateAlphaSlider();
                     UpdateHueSlider();
                     UpdateSaturationValuePicker();
+                    Debug.WriteLine("hex changed");
                     break;
 
                 case UpdatedColorReason.ColorPickerInitializated:
-                    UpdateRedSlider();
-                    UpdateGreenSlider();
-                    UpdateBlueSlider();
+                    UpdateHexText();
                     UpdateAlphaSlider();
                     UpdateHueSlider();
                     UpdateSaturationValuePicker();
-                    UpdateHexText();
+                    Debug.WriteLine("Initalized Correctly");
                     break;
             }
 
@@ -88,17 +78,8 @@ namespace Aura.UI.Controls
         {
             base.OnApplyTemplate(e);
 
-            //gets sliders
+            //gets slider
             AlphaSlider = this.GetControl<Slider>(e, "PART_AlphaSlider");
-            RedSlider = this.GetControl<Slider>(e, "PART_AlphaSlider");
-            BlueSlider = this.GetControl<Slider>(e, "PART_AlphaSlider");
-            GreenSlider = this.GetControl<Slider>(e, "PART_AlphaSlider");
-
-            //gets textboxs
-            /*AlphaTextBox = this.GetControl<TextBox>(e, "PART_AlphaTextBox");
-            RedTextBox = this.GetControl<TextBox>(e, "PART_AlphaTextBox");
-            BlueTextBox = this.GetControl<TextBox>(e, "PART_AlphaTextBox");
-            GreenTextBox = this.GetControl<TextBox>(e, "PART_AlphaTextBox");*/
 
             HexTextBox = this.GetControl<TextBox>(e, "PART_HexTextBox");
 
@@ -106,56 +87,31 @@ namespace Aura.UI.Controls
 
             HueSlider = this.GetControl<RadialColorSlider>(e, "PART_HueSlider");
 
-            RadialColorSlider.ValueProperty.Changed.Subscribe(x => 
+            SelectNewColor(PreviewColor, UpdatedColorReason.ColorPickerInitializated);
+            
+            RadialColorSlider.ValueProperty.Changed.AddClassHandler<RadialColorSlider>((x, e) =>
             {
-                if(e.Source == HueSlider)
+                if (e.Sender == HueSlider)
                 {
-                    SelectNewColor(Extensions.ColorExtensions.FromHSV((float)HueSlider.Value, (byte)S, (byte)V), UpdatedColorReason.HexChanged);
+                    SelectNewColor(new HSV(HueSlider.Value, S, V).ToColor(), UpdatedColorReason.HueChanged);
                 }
             });
-            HuePickerBase.ValueColorProperty.Changed.Subscribe(x =>
+            HuePickerBase.ValueColorProperty.Changed.AddClassHandler<HuePickerBase>((x, e) =>
             {
-                if (e.Source == ValueSaturationPicker)
+                if (e.Sender == ValueSaturationPicker)
                 {
-                    SelectNewColor(Extensions.ColorExtensions.FromHSV((float)H, (byte)S, (byte)ValueSaturationPicker.ValueColor), UpdatedColorReason.ValueAndSaturationChanged);
+                    SelectNewColor(new HSV(H, (byte)ValueSaturationPicker.Saturation, (byte)ValueSaturationPicker.ValueColor).ToColor(), UpdatedColorReason.ValueAndSaturationChanged);
                 }
             });
-            HuePickerBase.SaturationProperty.Changed.Subscribe(x =>
+            Slider.ValueProperty.Changed.AddClassHandler<Slider>((x, e) =>
             {
-                if (e.Source == ValueSaturationPicker)
+                if (e.Sender == AlphaSlider)
                 {
-                    SelectNewColor(Extensions.ColorExtensions.FromHSV((float)H, (byte)ValueSaturationPicker.Saturation, (byte)V), UpdatedColorReason.ValueAndSaturationChanged);
+                    SelectNewColor(Color.FromArgb((byte)A , (byte)R, (byte)G , (byte)B), UpdatedColorReason.AChanged);
                 }
             });
-            Slider.ValueProperty.Changed.Subscribe(x =>
-            {
-                if(e.Source == AlphaSlider)
-                {
-                    SelectNewColor(Color.FromArgb((byte)AlphaSlider.Value, (byte)R, (byte)G, (byte)B), UpdatedColorReason.AChanged);
-                }
-            });
-            Slider.ValueProperty.Changed.Subscribe(x =>
-            {
-                if (e.Source == RedSlider)
-                {
-                    SelectNewColor(Color.FromArgb((byte)A, (byte)RedSlider.Value, (byte)G, (byte)B), UpdatedColorReason.RChanged);
-                }
-            });
-            Slider.ValueProperty.Changed.Subscribe(x =>
-            {
-                if (e.Source == GreenSlider)
-                {
-                    SelectNewColor(Color.FromArgb((byte)A, (byte)R, (byte)GreenSlider.Value, (byte)B), UpdatedColorReason.GChanged);
-                }
-            });
-            Slider.ValueProperty.Changed.Subscribe(x =>
-            {
-                if (e.Source == BlueSlider)
-                {
-                    SelectNewColor(Color.FromArgb((byte)A, (byte)R, (byte)G, (byte)BlueSlider.Value), UpdatedColorReason.BChanged);
-                }
-            });
-            HexTextBox.LostFocus += delegate
+            
+            HexTextBox.TextInput += delegate
             {
                 var isValid = Color.TryParse(HexTextBox.Text, out Color color);
                 if (isValid)
@@ -168,7 +124,6 @@ namespace Aura.UI.Controls
                 }
             };
 
-            SelectNewColor(PreviewColor, UpdatedColorReason.ColorPickerInitializated);
         }
     }
 }

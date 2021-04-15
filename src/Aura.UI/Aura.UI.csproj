@@ -17,11 +17,23 @@
 	<Import Project="..\..\build\base.props" />
 	<Import Project="..\..\build\version.props" />
 	<ItemGroup>
+	  <None Remove="Assets\squares.png" />
+	  <None Remove="Controls\AuraColorPicker\AuraColorPicker.xaml" />
+	  <None Remove="Controls\AuraColorPicker\AuraColorPickerComponents.xaml" />
 	  <None Remove="Controls\AuraColorPicker\Components\TrianglePicker.xaml" />
 	  <None Remove="Controls\AuraColorPicker\RadialColorSlider.xaml" />
 	  <None Remove="Controls\Sliders\RadialSlider.xaml" />
 	</ItemGroup>
 	<ItemGroup>
+	  <AvaloniaResource Include="Assets\squares.png" />
+	</ItemGroup>
+	<ItemGroup>
+	  <AvaloniaResource Update="Controls\AuraColorPicker\AuraColorPicker.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </AvaloniaResource>
+	  <AvaloniaResource Update="Controls\AuraColorPicker\AuraColorPickerComponents.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </AvaloniaResource>
 	  <AvaloniaResource Update="Controls\AuraColorPicker\Components\RadialColorSlider.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </AvaloniaResource>

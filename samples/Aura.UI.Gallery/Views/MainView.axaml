@@ -5,6 +5,7 @@
              xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
 				     xmlns:flex="clr-namespace:Avalonia.Flexbox;assembly=Avalonia.Flexbox"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
              xmlns:l="using:System.Collections"
 				     xmlns:pg="using:Aura.UI.Gallery.Pages"
              xmlns:vm="using:Aura.UI.Gallery.ViewModels"
@@ -16,7 +17,6 @@
   </UserControl.DataContext>
   <NavigationView Header="Aura.UI Gallery"
                   AlwaysOpen="True"
-                  Name="nv"
 			            Icon="{DynamicResource Material.Home}">
     <NavigationViewItem  Header="What's new?"
               Icon="{DynamicResource Zondicons.Announcement}">
@@ -29,7 +29,6 @@
                  Foreground="White"
                  Padding="20"
                  FontSize="30"/>
-          <!--{DynamicResource SystemControlForegroundAltHighBrush}-->
           <Border Background="Transparent"
               BoxShadow="inset 0 5 20 0 White"/>
         </Grid>
@@ -263,8 +262,6 @@
         </NavigationViewItem.Content>
       </NavigationViewItem>
     </NavigationViewItem>
-
-    <!--Bottom-->
     <NavigationViewItem Header="Settings" Title="Settings" VerticalAlignment="Bottom"
                         Icon="{DynamicResource EvaIcons.Settings2Outline}">
       <NavigationViewItem.Content>
