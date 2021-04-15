@@ -1,37 +1,90 @@
-## Welcome to GitHub Pages
+[![Build Status](https://dev.azure.com/PieroCastillo/Aura.UI/_apis/build/status/PieroCastillo.Aura.UI)](https://dev.azure.com/PieroCastillo/AuraUI/_build/latest)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AuraDevCommunity/Aura-UI)
+[![NuGet](https://img.shields.io/nuget/v/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI/0.1.3.1)
+[![downloads](https://img.shields.io/nuget/dt/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI) 
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
+![Size](https://img.shields.io/github/repo-size/PieroCastillo/Aura.UI)
 
-You can use the [editor on GitHub](https://github.com/PieroCastillo/Aura.UI/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+<h1 align="center">
+<img src="../DesignSources/AuraUILogo_full_icon.png" width="256"/> 
+<br/><br/>
+Aura.UI
+</h1>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+<h2 align="center">Control's Library for Avalonia</h2>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+# Overview
 
-```markdown
-Syntax highlighted code block
+| Available Controls |  | 
+| -----------------  | --- | 
+| FloatingButtonBar | ModernSlider |
+| ProgressRing | GroupBox |
+|CardCollection | AuraTabView |
+| NavigationView | Ribbon |
+| ContentDialog | MessageDialog |
+| BlurryImage |
 
-# Header 1
-## Header 2
-### Header 3
+# Install
 
-- Bulleted
-- List
+Now the library is available in Nuget.org.
 
-1. Numbered
-2. List
+<h2>First Step</h2>
 
-**Bold** and _Italic_ and `Code` text
+Go to the next link: https://www.nuget.org/packages/Aura.UI .
 
-[Link](url) and ![Image](src)
+<h2>Second Step</h2>
+
+Install Aura.UI with Visual Studio or dotnetCLI:
+
+<h3>Visual Studio</h3>
+
+Open the Nuget Packages Manager on your project and search 
+Aura.UI.
+
+<img src="Pictures\aura.ui stb 1.3 vs.png" ></img>
+
+<h3>Dotnet CLI</h3>
+
+Open the terminal on the root folder of your project and write <br/>
+```cmd
+dotnet package Aura.UI --version 0.1.3
+```
+# Preparation
+
+For Fluent Theme add these Styles to App.xaml
+
+```xml
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="YourApp.App">
+   <Application.Styles>
+      <FluenTheme Mode="Light"/>
+      <StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>
+	</Application.Styles> 
+</Application>
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+And for Default Theme add these Styles to App.xaml
 
-### Jekyll Themes
+```xml
+<Application  xmlns="https://github.com/avaloniaui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              x:Class="YourApp.App">
+   <Application.Styles>
+      <StyleInclude Source="avares://Avalonia.Themes.Fluent/Accents/BaseLight.xaml"/>
+      <StyleInclude Source="avares://Aura.UI/AuraUI.xaml"/>
+      <StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>
+      <StyleInclude Source="avares://Avalonia.Themes.Default/DefaultTheme.xaml"/>
+   </Application.Styles> 
+</Application>
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/PieroCastillo/Aura.UI/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
+# How To Collaborate
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Just enter to the follow Gitter chat! 
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AuraDevCommunity/Aura-UI) 
+
+Or make a pull request! All pull request are welcome!
