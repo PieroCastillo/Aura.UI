@@ -159,3 +159,7 @@ Just enter to the follow Gitter chat!
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AuraDevCommunity/Aura-UI) 
 
 Or make a pull request! All pull request are welcome!
+
+# Special thanks to
+
+<a href="https://jb.gg/OpenSource"><img height="200" src="logos/jetbrains-variant-2.svg"><a>
