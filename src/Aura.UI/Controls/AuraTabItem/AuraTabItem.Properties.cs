@@ -1,9 +1,24 @@
 ﻿using Avalonia;
+using Avalonia.Media;
 
 namespace Aura.UI.Controls
 {
     public partial class AuraTabItem
     {
+        /// <summary>
+        /// Icon of the AuraTabItem
+        /// </summary>
+        public IImage Icon
+        {
+            get => GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
+        }
+
+        /// <summary>
+        /// Defines the <see cref="Icon"/> property.
+        /// </summary>
+        public static readonly StyledProperty<IImage> IconProperty;
+        
         /// <summary>
         /// This property sets if the AuraTabItem can be closed
         /// </summary>

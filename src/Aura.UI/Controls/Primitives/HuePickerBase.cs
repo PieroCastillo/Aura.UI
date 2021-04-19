@@ -1,5 +1,4 @@
-﻿using Aura.UI.Controls.Components;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using System;

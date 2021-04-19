@@ -56,7 +56,7 @@ using System;
               <TextBlock Text="{TemplateBinding TitleTwo}"
                        FontSize="16" FontWeight="Normal"/>
             </WrapPanel>
-						<ScrollViewer HorizontalScrollBarVisibility="Auto" 
+						<ScrollViewer HorizontalScrollBarVisibility="Disabled" 
 										VerticalScrollBarVisibility="Disabled">
 							<ContentPresenter Name="PART_ContentPresenter"
                                 Padding="10"

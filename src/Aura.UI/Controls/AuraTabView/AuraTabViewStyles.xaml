@@ -47,8 +47,8 @@
 	<Style Selector="AuraTabView[TabStripPlacement=Top]">
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
-				<UniformGrid Rows="1"/>
-				<!-- <UniformGrid Rows="1" ></UniformGrid> -->
+				<!-- <StackPanel Orientation="Horizontal"></StackPanel> -->
+				<UniformGrid Rows="1" ></UniformGrid>
 			</ItemsPanelTemplate>
 		</Setter>
 		<Setter Property="ItemsMargin" Value="0 5 0 0"/>
