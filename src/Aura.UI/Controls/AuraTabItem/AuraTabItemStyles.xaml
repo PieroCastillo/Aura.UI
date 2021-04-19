@@ -1,24 +1,7 @@
 ﻿<Styles  xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
-		<Border>
-			<Grid>
-				<Border VerticalAlignment="Top"
-						Height="30" Background="Blue"
-						HorizontalAlignment="Right" />
-				<AuraTabView TabStripPlacement="Top"
-								 SelectedIndex="0" Width="900" Height="600"
-								 SecondaryBackground="{DynamicResource ThemeAccentBrush4}">
-					<AuraTabItem Header="Settings" IsClosable="False">
-						<Border Background="Yellow" Width="30"
-								HorizontalAlignment="Right" />
-					</AuraTabItem>
-					<AuraTabItem Header="Another Tab" Name="tab">._.XD</AuraTabItem>
-					<AuraTabItem Header="Another Tab">._.XD</AuraTabItem>
-					<AuraTabItem Header="Another Tab" IsEnabled="False">._.XD</AuraTabItem>
-				</AuraTabView>
-			</Grid>
-		</Border>
+		<AuraTabItem Header="Hello" Height="50" IsClosable="True" Width="30"></AuraTabItem>
 	</Design.PreviewWith>
 	<Styles.Resources>
 		<DrawingImage x:Key="Ionicons.CloseMD">

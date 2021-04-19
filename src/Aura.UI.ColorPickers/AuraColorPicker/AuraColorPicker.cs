@@ -107,7 +107,7 @@ namespace Aura.UI.Controls
             {
                 if (e.Sender == AlphaSlider)
                 {
-                    SelectNewColor(Color.FromArgb((byte)A , (byte)R, (byte)G , (byte)B), UpdatedColorReason.AChanged);
+                    SelectNewColor(Color.FromArgb((byte)AlphaSlider.Value , (byte)R, (byte)G , (byte)B), UpdatedColorReason.AChanged);
                 }
             });
             

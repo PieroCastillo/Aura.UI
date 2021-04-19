@@ -43,6 +43,10 @@
       </ControlTemplate>
     </Setter>
   </Style>
+  <Style Selector="Slider:vertical.auracolorpicker">
+    <Setter Property="Maximum" Value="255"/>
+    <Setter Property="Minimum" Value="0"/>
+  </Style>
   <Style Selector="Slider /template/ Button.sliderbuttons">
     <Setter Property="Template">
       <ControlTemplate>

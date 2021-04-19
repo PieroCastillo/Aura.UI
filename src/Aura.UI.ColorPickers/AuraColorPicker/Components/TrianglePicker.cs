@@ -133,7 +133,6 @@ namespace Aura.UI.Controls.Components
             }
         }
 
-
         private RadialColorSlider _colorparent;
         public RadialColorSlider ColorParent
         {

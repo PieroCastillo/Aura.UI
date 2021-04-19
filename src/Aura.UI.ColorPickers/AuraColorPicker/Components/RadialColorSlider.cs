@@ -22,8 +22,8 @@ namespace Aura.UI.Controls.Components
             MaximumProperty.OverrideMetadata<RadialColorSlider>(new DirectPropertyMetadata<double>(360));
 
             BoundsProperty.Changed.Subscribe(x =>
-            { 
-                if(x.Sender is RadialColorSlider r)
+            {
+                if (x.Sender is RadialColorSlider r)
                 {
                     r.InternalWidth = r.Bounds.Width - (r.StrokeWidth * 2);
                 }
@@ -33,17 +33,52 @@ namespace Aura.UI.Controls.Components
             {
                 if(x.Sender is RadialColorSlider r)
                 {
-                    r.HueColor = new HSV(r.Value, 1, 1).ToColor();
+                    r.HueColor = new HSV(r.Value, 1, 1).ToColor(); 
                 }
             });
         }
+
+        protected override void OnPointerMoved(PointerEventArgs e)
+        {
+            //if (Helpers.Maths.CircularCrownContainsPoint(e.GetPosition(null), Bounds.Center, (Bounds.Width - StrokeWidth) / 2, Bounds.Width / 2))
+            //{
+                base.OnPointerMoved(e);
+            //}
+        }
+
+        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+        {
+            base.OnPropertyChanged(change);
+
+            if (Content is TrianglePicker t && (change.Property == BoundsProperty))
+            {
+                Debug.WriteLine(InternalWidth.ToString());
+                Debug.WriteLine(Bounds.Height.ToString());
+                YTranslation = (InternalWidth - (t.Bounds.Width));
+                Debug.WriteLine(YTranslation.ToString());
+            }
+        }
+
         protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
         {
             base.OnAttachedToVisualTree(e);
 
             if (Content is Control c)
+            {
                 c.InvalidateMeasure();
+            }
         }
+
+
+        private double _YTranslation;
+        public double YTranslation
+        {
+            get => _YTranslation;
+            private set => SetAndRaise(YTranslationProperty, ref _YTranslation, value);
+        }
+
+        public static readonly DirectProperty<RadialColorSlider, double> YTranslationProperty =
+            AvaloniaProperty.RegisterDirect<RadialColorSlider, double>(nameof(YTranslation), o => o.YTranslation);
 
         [Content]
         public object Content
