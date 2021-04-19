@@ -6,34 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Controls/HSVTrianglePicker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/RenderControls/ColorSquare/ColorSquare.Properties.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/RenderControls/ColorSquare/ColorSquare.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/RenderControls/ColorWheel/ColorWheel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/RenderControls/TriangleColorWheel/TriangleColorWheel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Rendering/ColorHSVWheelRender.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Rendering/ColorSquareRender.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Rendering/ColorWheelRender.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Rendering/TriangleWheelRender.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Aura.UI.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.UI.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/AuraColorPicker.Events.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/AuraColorPicker.Events.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/AuraColorPicker.PrivateMethods.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/AuraColorPicker.PrivateMethods.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/AuraColorPicker.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/AuraColorPicker.Properties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/AuraColorPicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/AuraColorPicker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/AuraColorPicker.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/AuraColorPicker.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/AuraColorPickerComponents.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/AuraColorPickerComponents.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/ColorChangedEventArgs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/ColorChangedEventArgs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/Components/RadialColorSlider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/Components/RadialColorSlider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/Components/RadialColorSlider.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/Components/RadialColorSlider.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/Components/TrianglePicker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/Components/TrianglePicker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraColorPicker/Components/TrianglePicker.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/Components/TrianglePicker.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Properties.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabViewStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/HuePickerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/HuePickerBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +100,7 @@
       <updated>1618588800419</updated>
       <workItem from="1618588804947" duration="1996000" />
       <workItem from="1618594000848" duration="2766000" />
-      <workItem from="1618793760076" duration="4836000" />
+      <workItem from="1618793760076" duration="4852000" />
     </task>
     <servers />
   </component>
