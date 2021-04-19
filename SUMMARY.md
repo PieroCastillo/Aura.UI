@@ -1,4 +1,16 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Welcome](README.md)
+
+## Documentation
+
+* [Untitled](documentation/untitled.md)
+
+## Tutorials
+
+* [Untitled](tutorials/untitled.md)
+
+## Misc
+
+* [Untitled](misc/untitled.md)
 
