@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+					xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+					xmlns:svg="using:Avalonia.Svg">
 	<DrawingImage x:Key="Material.Home">
 		<GeometryDrawing  Brush="{DynamicResource SystemBaseHighColor}" Geometry="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z"   />
 	</DrawingImage>
@@ -142,4 +143,5 @@
       <GeometryDrawing Brush="{DynamicResource SystemAccentColorLight1}" Geometry="F1M7,7.4341L8.599,8.5001 7,9.5651z M6,11.4341L10.401,8.5001 6,5.5661z" />
     </DrawingGroup>
   </DrawingImage>
+	<svg:SvgImage x:Key="ReactiveUILogo" Source="/Assets/reactiveuiLogo.svg"/>
 </ResourceDictionary>

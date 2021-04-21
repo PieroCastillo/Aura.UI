@@ -37,6 +37,8 @@
     <AvaloniaResource Include="Assets\tonightvip.png" />
     <AvaloniaResource Include="Assets\virus.jpg" />
     <AvaloniaResource Include="Assets\younme.jpg" />
+    <None Remove="Assets\reactiveuiLogo.svg" />
+    <AvaloniaResource Include="Assets\reactiveuiLogo.svg" />
   </ItemGroup>
   <ItemGroup>
     <AvaloniaXaml Include="Controls\CodeExample.xaml">
@@ -44,6 +46,7 @@
     </AvaloniaXaml>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Avalonia.Svg" Version="0.10.0" />
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.1.2" PrivateAssets="all" />
     <PackageReference Include="AuraUtilities" Version="0.1.0" />
     <PackageReference Include="Avalonia" Version="0.10.0" />

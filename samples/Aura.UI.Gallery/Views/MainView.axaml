@@ -262,6 +262,8 @@
         </NavigationViewItem.Content>
       </NavigationViewItem>
     </NavigationViewItem>
+    <NavigationViewItem Header="MVVM" Title="{Binding Titles.MVVM}" 
+                        Icon="{DynamicResource ReactiveUILogo}"></NavigationViewItem>
     <NavigationViewItem Header="Settings" Title="Settings" VerticalAlignment="Bottom"
                         Icon="{DynamicResource EvaIcons.Settings2Outline}">
       <NavigationViewItem.Content>
