@@ -11,7 +11,7 @@
 					    CornerRadius="0">
 					<rx:TransitioningContentControl
 						Name="PART_TranstionPresenter"
-						Content="{Binding $parent[legacy|PagesView].SelectedItem, Mode=OneWay}" />
+						Content="{Binding $parent[legacy:PagesView].SelectedItem, Mode=OneWay}" />
 				</Border>
 			</ControlTemplate>
 		</Setter>
