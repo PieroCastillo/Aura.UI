@@ -1,118 +1,117 @@
-﻿using Avalonia;
+﻿using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Input;
+using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using Avalonia.Data;
+using Avalonia.Input;
+using Avalonia.LogicalTree;
 using Avalonia.Media;
 using Avalonia.Styling;
+using Avalonia.VisualTree;
+using JetBrains.Annotations;
 
 namespace Aura.UI.Controls
 {
-    public class CardControl : HeaderedContentControl
+    public partial class CardControl : HeaderedContentControl, ICommandSource
     {
-        public object SecondaryHeader
+        private bool _commandCanExecute = false;
+        
+        static CardControl()
         {
-            get => GetValue(SecondaryHeaderProperty);
-            set => SetValue(SecondaryHeaderProperty, value);
+            CommandProperty.Changed.Subscribe(CommandChanged);
+            CommandParameterProperty.Changed.Subscribe(CommandParameterChanged);
         }
 
-        public static readonly StyledProperty<object> SecondaryHeaderProperty =
-            AvaloniaProperty.Register<CardControl, object>(nameof(SecondaryHeader));
-
-        public ITemplate SecondaryHeaderTemplate
+        static void CommandChanged(AvaloniaPropertyChangedEventArgs e)
         {
-            get => GetValue(SecondaryHeaderTemplateProperty);
-            set => SetValue(SecondaryHeaderTemplateProperty, value);
+            if (e.Sender is CardControl c)
+            {
+                if (((ILogical) c).IsAttachedToLogicalTree)
+                {
+                    if (e.OldValue is ICommand oldCommand)
+                    {
+                        oldCommand.CanExecuteChanged -= c.CanExecuteChanged;
+                    }
+
+                    if (e.NewValue is ICommand newCommand)
+                    {
+                        newCommand.CanExecuteChanged += c.CanExecuteChanged;
+                    }
+                }
+                
+                c.CanExecuteChanged(c, EventArgs.Empty);
+            }
         }
 
-        public static readonly StyledProperty<ITemplate> SecondaryHeaderTemplateProperty =
-            AvaloniaProperty.Register<CardControl, ITemplate>(nameof(SecondaryHeaderTemplate));
-
-        public IBrush SecondaryBackground
+        static void CommandParameterChanged(AvaloniaPropertyChangedEventArgs<object> e)
         {
-            get => GetValue(SecondaryBackgroundProperty);
-            set => SetValue(SecondaryBackgroundProperty, value);
+            if (e.Sender is CardControl c)
+            {
+                c.CanExecuteChanged(c, EventArgs.Empty);
+            }
         }
 
-        public static readonly StyledProperty<IBrush> SecondaryBackgroundProperty =
-            AvaloniaProperty.Register<CardControl, IBrush>(nameof(SecondaryBackground));
-
-        public bool ScaleOnPointerOver
+        protected override void OnPointerPressed(PointerPressedEventArgs e)
         {
-            get => GetValue(ScaleOnPointerOverProperty);
-            set => SetValue(ScaleOnPointerOverProperty, value);
+            base.OnPointerPressed(e);
+
+            if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed && 
+                ClickMode == ClickMode.Press )
+            {
+                OnClick();
+            }
         }
 
-        public static readonly StyledProperty<bool> ScaleOnPointerOverProperty =
-            AvaloniaProperty.Register<CardControl, bool>(nameof(ScaleOnPointerOver), true);
-
-        public BoxShadows BoxShadow
+        protected override void OnPointerReleased(PointerReleasedEventArgs e)
         {
-            get => GetValue(BoxShadowProperty);
-            set => SetValue(BoxShadowProperty, value);
+            base.OnPointerReleased(e);
+
+            if (e.InitialPressMouseButton == MouseButton.Left && 
+                ClickMode == ClickMode.Release && 
+                this.GetVisualsAt(e.GetPosition(this)).Any(c => this == c || this.IsVisualAncestorOf(c)))
+            {
+                OnClick();
+            }
         }
 
-        public static readonly StyledProperty<BoxShadows> BoxShadowProperty =
-            AvaloniaProperty.Register<CardControl, BoxShadows>(nameof(BoxShadow));
-
-        public BoxShadows InternalBoxShadow
+        void CanExecuteChanged(object sender, EventArgs e)
         {
-            get => GetValue(InternalBoxShadowProperty);
-            set => SetValue(InternalBoxShadowProperty, value);
+            var canExecute = Command == null || Command.CanExecute(CommandParameter);
+
+            if (canExecute != _commandCanExecute)
+            {
+                _commandCanExecute = canExecute;
+                UpdateIsEffectivelyEnabled();
+            }
         }
 
-        public static readonly StyledProperty<BoxShadows> InternalBoxShadowProperty =
-            AvaloniaProperty.Register<CardControl, BoxShadows>(nameof(InternalBoxShadow));
-
-        /// <summary>
-        /// Defines the Uniform CornerRadius
-        /// </summary>
-        public CornerRadius CornerRadius
+        protected virtual void OnClick()
         {
-            get => GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
+            if (Command?.CanExecute(CommandParameter) == true)
+            {
+                Command.Execute(CommandParameter);
+            }
         }
 
-        public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
-            AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
-
-        /// <summary>
-        /// Defines the Top CornerRadius
-        /// </summary>
-        public CornerRadius TopCornerRadius
+        protected override void UpdateDataValidation<T>(AvaloniaProperty<T> property, BindingValue<T> value)
         {
-            get => GetValue(TopCornerRadiusProperty);
-            set => SetValue(TopCornerRadiusProperty, value);
+            base.UpdateDataValidation(property, value);
+            if (property == CommandProperty)
+            {
+                if (value.Type == BindingValueType.BindingError)
+                {
+                    if (_commandCanExecute)
+                    {
+                        _commandCanExecute = false;
+                        UpdateIsEffectivelyEnabled();
+                    }
+                }
+            }
         }
 
-        public static readonly StyledProperty<CornerRadius> TopCornerRadiusProperty =
-            AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(TopCornerRadius), new CornerRadius(7, 0));
-
-        /// <summary>
-        /// Defines the Bottom CornerRadius
-        /// </summary>
-        public CornerRadius BottomCornerRadius
-        {
-            get => GetValue(BottomCornerRadiusProperty);
-            set => SetValue(BottomCornerRadiusProperty, value);
-        }
-
-        public static readonly StyledProperty<CornerRadius> BottomCornerRadiusProperty =
-            AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(BottomCornerRadius), new CornerRadius(0, 7));
-
-        public CornerRadius InternalCornerRadius
-        {
-            get => GetValue(InternalCornerRadiusProperty);
-            set => SetValue(InternalCornerRadiusProperty, value);
-        }
-
-        public static readonly StyledProperty<CornerRadius> InternalCornerRadiusProperty =
-            AvaloniaProperty.Register<CardControl, CornerRadius>(nameof(InternalCornerRadius), new CornerRadius(7));
-
-        public Thickness InternalPadding
-        {
-            get => GetValue(InternalPaddingProperty);
-            set => SetValue(InternalPaddingProperty, value);
-        }
-
-        public static readonly StyledProperty<Thickness> InternalPaddingProperty =
-            AvaloniaProperty.Register<CardControl, Thickness>(nameof(InternalPadding));
+        void ICommandSource.CanExecuteChanged(object sender, EventArgs e) => CanExecuteChanged(sender, e);
     }
 }
