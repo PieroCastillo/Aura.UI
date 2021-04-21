@@ -47,7 +47,7 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Update="MathNet.Numerics" Version="4.15.0" />
-	  <PackageReference Update="ReactiveUI" Version="13.2.2" />
+	  <PackageReference Update="ReactiveUI" Version="13.2.18" />
 	  <PackageReference Update="SkiaSharp" Version="2.80.2" />
 	</ItemGroup>
 	<ItemGroup>

@@ -5,13 +5,11 @@
     <projectFile>Tests/UI.Tests/UI.Tests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="CardControl MVVM support [WIP]">
-      <change afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Assets/reactiveuiLogo.svg" afterDir="false" />
+    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="mvvm page to sample app">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/base.props" beforeDir="false" afterPath="$PROJECT_DIR$/build/base.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MainViewViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MainViewViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Aura.UI.ColorPickers.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Aura.UI.ColorPickers.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ED712718-B448-429D-B1A0-66DF3C6D3608/1/Win32Platform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/AuraDev/Aura.UI/src/Aura.UI/Controls/CardCollection/CardControl.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -51,6 +50,9 @@
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MainViewViewModel.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
+      <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Aura.UI.ColorPickers.csproj" />
+      <option value="$PROJECT_DIR$/build/base.props" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
@@ -122,7 +124,7 @@
       <workItem from="1618932295891" duration="14000" />
       <workItem from="1618932325198" duration="250000" />
       <workItem from="1618932663708" duration="3864000" />
-      <workItem from="1618964285292" duration="2736000" />
+      <workItem from="1618964285292" duration="3244000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>
@@ -152,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618965516051</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mvvm page to sample app">
+      <created>1618981688144</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618981688144</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,7 +186,8 @@
     <MESSAGE value="..." />
     <MESSAGE value="test" />
     <MESSAGE value="CardControl MVVM support [WIP]" />
-    <option name="LAST_COMMIT_MESSAGE" value="CardControl MVVM support [WIP]" />
+    <MESSAGE value="mvvm page to sample app" />
+    <option name="LAST_COMMIT_MESSAGE" value="mvvm page to sample app" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
