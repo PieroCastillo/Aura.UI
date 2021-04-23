@@ -47,6 +47,34 @@ namespace Aura.UI.Gallery.ViewModels
                     },
                     Command = ReactiveCommand.Create<object,Unit>(Do),
                     CommandParameter = "hello"
+                },
+                new CardControlViewModel()
+                {
+                    Header = "Virus",
+                    SecondaryHeader = "Martin Garrix",
+                    Content = new Border()
+                    {
+                        Child = new Image
+                        {
+                            Source = new Bitmap(aL.Open(new Uri($"avares://Aura.UI.Gallery/Assets/virus.jpg")))
+                        }
+                    },
+                    Command = ReactiveCommand.Create<object,Unit>(Do),
+                    CommandParameter = "hello"
+                },
+                new CardControlViewModel()
+                {
+                    Header = "Greenlights",
+                    SecondaryHeader = "Krewella",
+                    Content = new Border()
+                    {
+                        Child = new Image
+                        {
+                            Source = new Bitmap(aL.Open(new Uri($"avares://Aura.UI.Gallery/Assets/greenlights.jpg")))
+                        }
+                    },
+                    Command = ReactiveCommand.Create<object,Unit>(Do),
+                    CommandParameter = "hello"
                 }
             };
         }
