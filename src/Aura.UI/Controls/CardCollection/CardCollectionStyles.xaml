@@ -16,7 +16,9 @@
 									  VerticalScrollBarVisibility="Auto">
 							<ItemsPresenter
 										Items="{TemplateBinding Items}"
-										ItemsPanel="{TemplateBinding ItemsPanel}" />
+										ItemsPanel="{TemplateBinding ItemsPanel}" 
+										ItemTemplate="{TemplateBinding ItemTemplate}"
+										VirtualizationMode="{TemplateBinding VirtualizationMode}"/>
 						</ScrollViewer>
 					</Grid>
 				</Border>

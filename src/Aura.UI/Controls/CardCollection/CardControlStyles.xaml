@@ -9,6 +9,8 @@
 	</Design.PreviewWith>
 	<Style Selector="CardControl">
 		<Setter Property="Padding" Value="10" />
+		<Setter Property="Width" Value="200"/>
+		<Setter Property="Height" Value="260"/>
 		<Setter Property="BoxShadow" Value="{BoxShadow ShadowColor=Black, BlurRadius=7}" /><!--0 0 7 0 Black-->
 		<Setter Property="InternalBoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor=Black}" /><!--0 0 5 0 Black-->
 		<Setter Property="InternalCornerRadius" Value="7" />
@@ -33,6 +35,7 @@
 							<Grid Grid.Row="0" RowDefinitions="*">
 								<ContentPresenter  Name="PART_ContentPresenter"
 											  Content="{TemplateBinding Content}"
+											  ContentTemplate="{TemplateBinding ContentTemplate}"
 											  CornerRadius="{TemplateBinding TopCornerRadius}"
 											 Padding="{TemplateBinding InternalPadding}" />
 							</Grid>
@@ -46,6 +49,7 @@
 														  Grid.Row="1"
 														Name="PART_HeaderPresenter"
 														Content="{TemplateBinding Header}"
+														  ContentTemplate="{TemplateBinding HeaderTemplate}"
 														TextBlock.FontSize="18" />
 										<ContentPresenter Grid.Column="1"
 														  Grid.Row="3"

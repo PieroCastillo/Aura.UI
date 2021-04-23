@@ -23,8 +23,14 @@ namespace Aura.UI.Controls
         {
             CommandProperty.Changed.Subscribe(CommandChanged);
             CommandParameterProperty.Changed.Subscribe(CommandParameterChanged);
+            ClickModeProperty.OverrideDefaultValue<CardControl>(ClickMode.Release);
         }
 
+        public CardControl()
+        {
+            
+        }
+        
         static void CommandChanged(AvaloniaPropertyChangedEventArgs e)
         {
             if (e.Sender is CardControl c)

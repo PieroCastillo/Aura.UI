@@ -37,12 +37,12 @@
 								<MaterialButton Grid.Column="2"
 										Content="{TemplateBinding Button1Content}" Margin="0"
 										Name="PART_B1"
-										IsVisible="{Binding $parent[TitleBox].Button1Active}"
+										IsVisible="{Binding $parent[legacy:TitleBox].Button1Active}"
 										VerticalAlignment="Center"
 										Classes="Buttons" />
 								<MaterialButton Grid.Column="3"
 										Content="{TemplateBinding Button2Content}" Margin="0"
-										Name="PART_B2" IsVisible="{Binding $parent[TitleBox].Button2Active}"
+										Name="PART_B2" IsVisible="{Binding $parent[legacy:TitleBox].Button2Active}"
 										VerticalAlignment="Center"
 										Classes="Buttons" />
 							</Grid>

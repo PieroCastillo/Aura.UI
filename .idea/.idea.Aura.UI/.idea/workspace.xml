@@ -5,7 +5,23 @@
     <projectFile>Tests/UI.Tests/UI.Tests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="upsate to Avalonia 0.10.1" />
+    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveCardCollectionPage.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/CardControlViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/ReactiveCardCollectionPageViewModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollection.Properties.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/CardCollectionItemContainerGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Data/ICardControlTemplate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollection.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollectionStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollectionStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBoxStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBoxStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/ToolWindow/ToolWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/ToolWindow/ToolWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Data/ICardCollectionTemplate.cs" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +31,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/76A47633-C1FE-4701-BC16-72785573E19C/4/AvaloniaObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C5DCFCBB-1175-46AB-A2CE-E7B281D6F25C/B5/HeaderedContentControl.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/ED712718-B448-429D-B1A0-66DF3C6D3608/1/Win32Platform.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://D:/AuraDev/Aura.UI/src/Aura.UI/Controls/CardCollection/CardControl.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -38,16 +56,37 @@
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/AuraTabViewPage.axaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Data/CardCollectionTemplate.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Data/ICardCollectionTemplate.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.Properties.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MainViewViewModel.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
       <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Aura.UI.ColorPickers.csproj" />
       <option value="$PROJECT_DIR$/build/base.props" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Ribbon/RibbonItemStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/Pages/PagesViewStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBoxStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/ToolWindow/ToolWindow.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Data/ICardCollectionTemplate.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/CardControlPage.axaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MVVMPage/CardControlViewModel.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MVVMPage.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/MvvmPages/ReactiveCardControl.axaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveCardCollection.axaml.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveCardCollection.axaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MVVMPageViewModel.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveCardCollectionPage.axaml.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollection.Properties.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollectionStyles.xaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveCardCollectionPage.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollection.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/ReactiveCardCollectionPageViewModel.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Data/ICardControlTemplate.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/CardControlViewModel.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/CardCollectionItemContainerGenerator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
@@ -119,7 +158,9 @@
       <workItem from="1618932295891" duration="14000" />
       <workItem from="1618932325198" duration="250000" />
       <workItem from="1618932663708" duration="3864000" />
-      <workItem from="1618964285292" duration="3555000" />
+      <workItem from="1618964285292" duration="6964000" />
+      <workItem from="1619039363929" duration="10037000" />
+      <workItem from="1619148027429" duration="2661000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>
@@ -163,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619017584438</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="update to avalonia 0.10.1">
+      <created>1619019793040</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619019793040</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,7 +238,8 @@
     <MESSAGE value="CardControl MVVM support [WIP]" />
     <MESSAGE value="mvvm page to sample app" />
     <MESSAGE value="upsate to Avalonia 0.10.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="upsate to Avalonia 0.10.1" />
+    <MESSAGE value="update to avalonia 0.10.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="update to avalonia 0.10.1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
