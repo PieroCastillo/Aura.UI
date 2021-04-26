@@ -17,7 +17,8 @@ namespace Aura.UI.Controls
         /// <summary>
         /// Defines the <see cref="Icon"/> property.
         /// </summary>
-        public static readonly StyledProperty<IImage> IconProperty;
+        public static readonly StyledProperty<IImage> IconProperty =
+            AvaloniaProperty.Register<AuraTabItem, IImage>(nameof(Icon));
         
         /// <summary>
         /// This property sets if the AuraTabItem can be closed

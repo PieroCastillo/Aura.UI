@@ -35,7 +35,7 @@
 	<Style Selector="FloatingButton:pointerover">
 		<Setter Property="Transitions">
 			<Transitions>
-				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2" />
+				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
 			</Transitions>
 		</Setter>
 		<Setter Property="RenderTransform" Value="scale(1.2)" />

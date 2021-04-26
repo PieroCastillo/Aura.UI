@@ -1,50 +1,50 @@
-﻿using Avalonia.Controls;
+﻿using Aura.UI.Data;
+using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.Generators;
 using Avalonia.Controls.Primitives;
+using Avalonia.Data;
 
 namespace Aura.UI.Controls.Generators
 {
     public class AuraTabItemContainerGenerator : ItemContainerGenerator<AuraTabItem>
     {
-        public AuraTabItemContainerGenerator(AuraTabView owner) : base(owner, ContentControl.ContentProperty, ContentControl.ContentTemplateProperty)
+        public AuraTabItemContainerGenerator(AuraTabView owner,
+            AvaloniaProperty contentProperty,
+            AvaloniaProperty contentTemplateProperty,
+            AvaloniaProperty headerProperty,
+            AvaloniaProperty iconProperty,
+            AvaloniaProperty<bool> isClosableProperty) : base(owner, contentProperty, contentTemplateProperty)
         {
-            Owner = owner;
+            HeaderProperty = headerProperty;
+            IconProperty = iconProperty;
+            IsClosableProperty = isClosableProperty;
         }
 
-        public new AuraTabView Owner { get; }
+        private AvaloniaProperty HeaderProperty, IsClosableProperty, IconProperty;
+
 
         protected override IControl CreateContainer(object item)
         {
-            var tabItem = (AuraTabItem)base.CreateContainer(item);
-
-            tabItem[~TabControl.TabStripPlacementProperty] = Owner[~TabControl.TabStripPlacementProperty];
-
-            if (tabItem.HeaderTemplate == null)
+            var container = item as AuraTabItem;
+            if (item is not null)
             {
-                tabItem[~HeaderedContentControl.HeaderTemplateProperty] = Owner[~ItemsControl.ItemTemplateProperty];
+                return container;
             }
-
-            if (tabItem.Header == null)
+            else if (item is IAuraTabItemTemplate temp)
             {
-                if (item is IHeadered headered)
-                {
-                    tabItem.Header = headered.Header;
-                }
-                else
-                {
-                    if (!(tabItem.DataContext is IControl))
-                    {
-                        tabItem.Header = tabItem.DataContext;
-                    }
-                }
-            }
+                var tab = new AuraTabItem();
+                tab.SetValue(HeaderProperty, temp.Header, BindingPriority.Style);
+                tab.SetValue(IconProperty, temp.Icon, BindingPriority.Style);
+                tab.SetValue(ContentProperty, temp.Content);
+                tab.SetValue(IsClosableProperty, temp.IsClosable);
 
-            if (!(tabItem.Content is IControl))
+                return tab;
+            }
+            else
             {
-                tabItem[~ContentControl.ContentTemplateProperty] = Owner[~AuraTabView.ContentTemplateProperty];
+                return new AuraTabItem();
             }
-
-            return tabItem;
         }
     }
 }

@@ -16,15 +16,12 @@
 		<Setter Property="InternalCornerRadius" Value="7" />
 		<Setter Property="CornerRadius" Value="7" />
 		<Setter Property="InternalPadding" Value="20" />
+		<Setter Property="ScaleOnPointerOver" Value="True"/>
 		<Setter Property="Background" Value="{DynamicResource CardControlSecondaryBackground}" /><!--ThemeControlHighBrush-->
 		<Setter Property="SecondaryBackground" Value="{DynamicResource CardControlBackground}" /><!--ThemeControlMidBrush-->
-		<Setter Property="Transitions">
-			<Transitions>
-				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseIn" Duration="0:0:0.2"/>
-			</Transitions>
+		<Setter Property="RenderTransform">
+			<ScaleTransform/>
 		</Setter>
-	</Style>
-	<Style Selector="CardControl">
 		<Setter Property="Template">
 			<ControlTemplate>
 					<Border BoxShadow="{TemplateBinding BoxShadow}"
@@ -63,10 +60,16 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-	<Style Selector="CardControl[ScaleOnPointerOver=true]:pointerover">
+	<!-- <Style Selector="CardControl[ScaleOnPointerOver=true]"> -->
+	<!-- 	<Setter Property="ScaleTransform.ScaleX" Value="1"/> -->
+	<!-- 	<Setter Property="ScaleTransform.ScaleY" Value="1"/> -->
+	<!-- </Style> -->
+	<Style Selector="CardControl[ScaleOnPointerOver=True]:pointerover">
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
+			</Transitions>
+		</Setter>
 		<Setter Property="RenderTransform" Value="scale(1.05)" />
 	</Style>
-	<!-- <Style Selector="CardControl[ScaleOnPointerOver=true]:pointerover"> -->
-	<!-- 	<Setter Property="RenderTransform" Value="scale(1)" /> -->
-	<!-- </Style> -->
 </Styles>

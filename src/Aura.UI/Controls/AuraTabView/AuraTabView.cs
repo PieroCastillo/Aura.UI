@@ -33,10 +33,16 @@ namespace Aura.UI.Controls
             e_.Handled = true;
         }
 
+        /// <inheritdoc/>
         protected override IItemContainerGenerator CreateItemContainerGenerator()
-        {
-            return new AuraTabItemContainerGenerator(this);
-        }
+            => new AuraTabItemContainerGenerator(
+                this,
+                AuraTabItem.ContentProperty, 
+                AuraTabItem.ContentTemplateProperty, 
+                AuraTabItem.HeaderProperty, 
+                AuraTabItem.IconProperty,
+                AuraTabItem.IsClosableProperty);
+        
 
         protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
         {

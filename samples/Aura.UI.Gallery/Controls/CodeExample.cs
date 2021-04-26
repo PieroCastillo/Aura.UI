@@ -11,21 +11,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Avalonia.Collections;
+using Avalonia.Layout;
 using Avalonia.LogicalTree;
 
 namespace Aura.UI.Gallery.Controls
 {
     public class CodeExample : TemplatedControl, ILogical
     {
-        //static CodeExample()
-        //{
-        //    CSharpTextProperty.Changed.AddClassHandler<CodeExample>(null);
-        //    XAMLTextProperty.Changed.AddClassHandler<CodeExample>(null);
-        //}
+        static CodeExample()
+        {
+            ControlProperty.Changed.Subscribe(ControlChildChanged);
+        }
         private TextEditor xaml_edit;
         private TextEditor c_edit;
         private IAvaloniaReadOnlyList<ILogical> _logicalChildren1;
 
+        private static void ControlChildChanged(AvaloniaPropertyChangedEventArgs e)
+        {
+            if (e.Sender is CodeExample ce && ce.LogicalChildren is AvaloniaList<ILogical> lc)
+            {
+                if (e.OldValue is ILogical oldChild)
+                {
+                    lc.Remove(oldChild);
+                }
+
+                if (e.NewValue is ILogical newChild)
+                {
+                    lc.Add(newChild);
+                }
+            }
+        }
+        
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);

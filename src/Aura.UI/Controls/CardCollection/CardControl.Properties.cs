@@ -42,7 +42,7 @@ namespace Aura.UI.Controls
         }
 
         public static readonly StyledProperty<bool> ScaleOnPointerOverProperty =
-            AvaloniaProperty.Register<CardControl, bool>(nameof(ScaleOnPointerOver), true);
+            AvaloniaProperty.Register<CardControl, bool>(nameof(ScaleOnPointerOver));
 
         public BoxShadows BoxShadow
         {
