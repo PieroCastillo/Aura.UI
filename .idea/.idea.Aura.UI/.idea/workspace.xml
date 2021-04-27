@@ -6,15 +6,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Data/IAuraTabItemTemplate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/DraggingContentControl/DraggingContentControl.axaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/DraggingContentControl/DraggingContentControl.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.cs" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Properties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.Properties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/FloatingButtonBar/FloatingButton.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/FloatingButtonBar/FloatingButton.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/AuraTabItemContainerGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/AuraTabItemContainerGenerator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,13 +40,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/RenderControls/ColorSquare/ColorSquare.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/RenderControls/ColorWheel/ColorWheel.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/HuePickerBase.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Rendering/TriangleWheelRender.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Rendering/ColorWheelRender.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Rendering/ColorSquareRender.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/AuraColorPicker.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabViewStyles.xaml" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" />
@@ -88,12 +78,19 @@
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabView.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Properties.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/AuraTabItemContainerGenerator.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/CardCollectionItemContainerGenerator.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.Properties.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/FloatingButtonBar/FloatingButton.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" />
+      <option value="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/PositionerPanel/PositionerPanel.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/MoveThumb.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/DraggingContentControl/DraggingContentControl.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/AuraUI.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/DraggingContentControl/DraggingContentControl.cs" />
+      <option value="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/AuraTabItemContainerGenerator.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
@@ -173,7 +170,8 @@
       <workItem from="1619296881052" duration="207000" />
       <workItem from="1619377664481" duration="470000" />
       <workItem from="1619378334718" duration="1386000" />
-      <workItem from="1619395118582" duration="2612000" />
+      <workItem from="1619395118582" duration="4818000" />
+      <workItem from="1619469406191" duration="5679000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>
@@ -238,7 +236,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619153540023</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="backup">
+      <created>1619415586303</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1619415586303</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +273,8 @@
     <MESSAGE value="update to avalonia 0.10.1" />
     <MESSAGE value="CardCollection Mvvm Support is done!" />
     <MESSAGE value="cardCollection mvvm initial support" />
-    <option name="LAST_COMMIT_MESSAGE" value="cardCollection mvvm initial support" />
+    <MESSAGE value="backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -29,6 +29,7 @@ namespace Aura.UI.Controls.Generators
             var container = item as AuraTabItem;
             if (item is not null)
             {
+                container.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
                 return container;
             }
             else if (item is IAuraTabItemTemplate temp)
@@ -39,11 +40,15 @@ namespace Aura.UI.Controls.Generators
                 tab.SetValue(ContentProperty, temp.Content);
                 tab.SetValue(IsClosableProperty, temp.IsClosable);
 
+                tab.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
+                
                 return tab;
             }
             else
             {
-                return new AuraTabItem();
+                var tb = new AuraTabItem();
+                tb.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
+                return tb;
             }
         }
     }

@@ -3,16 +3,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		    xmlns:ms="clr-namespace:System;assembly=netstandard"
-		    xmlns:l="clr-namespace:UI.Tests.Views;assembly=UI.Tests"
-        xmlns:comp="using:Aura.UI.Controls.Components"
-        xmlns:conv="using:Aura.UI.Converters"
         mc:Ignorable="d"
         x:Class="UI.Tests.MainWindow"
 		    Background="{x:Null}"
         Title="UI.Tests" WindowStartupLocation="CenterScreen"
         SizeToContent="WidthAndHeight">
-  <Window.Styles>
-    <StyleInclude Source="avares://Aura.UI/Controls/AuraColorPicker/AuraColorPicker.xaml"/>
-  </Window.Styles>
-  <AuraColorPicker PreviewColor="Green"/>
+	<Canvas>
+		<DraggingContentControl>
+			<TextBlock>xd</TextBlock>
+		</DraggingContentControl>
+	</Canvas>
 </Window>

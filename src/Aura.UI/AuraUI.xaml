@@ -9,6 +9,7 @@
 	<StyleInclude Source="/Controls/CardCollection/CardCollectionStyles.xaml" />
 	<StyleInclude Source="/Controls/CardCollection/CardControlStyles.xaml" />
 	<StyleInclude Source="/Controls/ContentDialog/ContentDialogStyles.xaml" />
+	<StyleInclude Source="/Controls/DraggingContentControl/DraggingContentControl.axaml"/>
 	<StyleInclude Source="/Controls/FloatingButtonBar/FloatingButton.xaml" />
 	<StyleInclude Source="/Controls/FloatingButtonBar/FloatingButtonBar.xaml" />
 	<StyleInclude Source="/Controls/GroupBox/GroupBoxStyles.xaml" />
@@ -25,7 +26,7 @@
 	<StyleInclude Source="/Controls/Ribbon/RibbonStyles.xaml" />
 	<StyleInclude Source="/Controls/Sliders/FilledSliderStyles.xaml" />
 	<StyleInclude Source="/Controls/Sliders/ModernSliderStyles.xaml" />
-  <StyleInclude Source="/Controls/Sliders/RadialSlider.xaml"/>
+	<StyleInclude Source="/Controls/Sliders/RadialSlider.xaml"/>
 	<StyleInclude Source="/Controls/Legacy/SuperListBox/SuperListBoxItemStyles.xaml" />
 	<StyleInclude Source="/Controls/Legacy/TitleBox/TitleBoxStyles.xaml" />
 </Styles>  

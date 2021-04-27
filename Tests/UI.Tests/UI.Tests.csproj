@@ -19,11 +19,11 @@
     <AvaloniaResource Include="Assets\bringtherain.jpg" />
   </ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Avalonia" Version="0.10.0" />
-		<PackageReference Include="Avalonia.Desktop" Version="0.10.0" />
-		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.0" />
-		<PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.0" />
-		<PackageReference Include="Avalonia.ReactiveUI" Version="0.10.0" />
+		<PackageReference Include="Avalonia" Version="0.10.1" />
+		<PackageReference Include="Avalonia.Desktop" Version="0.10.1" />
+		<PackageReference Include="Avalonia.Diagnostics" Version="0.10.1" />
+		<PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.1" />
+		<PackageReference Include="Avalonia.ReactiveUI" Version="0.10.1" />
 	</ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
