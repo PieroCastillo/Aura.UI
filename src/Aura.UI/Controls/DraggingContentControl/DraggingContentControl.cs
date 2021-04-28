@@ -134,12 +134,30 @@ namespace Aura.UI.Controls
 
         protected override void OnDragDelta(VectorEventArgs e)
         {
-            base.OnDragDelta(e);
+            //base.OnDragDelta(e);
             
             double delta_v, delta_h;
-            delta_v = Math.Min(e.Vector.Y, Bounds.Height - MinHeight);
+
+            switch(e.Vector.Y < Bounds.Height - MinHeight)
+            {
+                case true:
+                    delta_v = e.Vector.Y;
+                    break;
+                case false:
+                    delta_v = Bounds.Height - MinHeight;
+                    break;
+            }
+            switch(e.Vector.X < Bounds.Width + MinWidth)
+            {
+                case true:
+                    delta_h = e.Vector.X;
+                    break;
+                case false:
+                    delta_h = Bounds.Width - MinWidth;
+                    break;
+            }
+            
             Canvas.SetTop(this, Canvas.GetTop(this) + delta_v);
-            delta_h = Math.Min(e.Vector.X, Bounds.Width + MinWidth);
             Canvas.SetLeft(this, Canvas.GetLeft(this) + delta_h);
         }
     }
