@@ -4,7 +4,9 @@
 		xmlns:s="using:System">
 	<Design.PreviewWith>
 		<Border>
-			<CodeExample Title="NavigationView" TitleTwo="Opened" CSharpVisible="True" XAMLVisible="True">
+			<CodeExample Title="NavigationView" TitleTwo="Opened" CSharpVisible="True" XAMLVisible="True"
+			             XAMLText="lorem ipsum xaml"
+			             CSharpText="lorem ipsum c#">
 				<CodeExample.Control>
 					<Button Content="HI:D" Width="200" Height="100"/>
 				</CodeExample.Control>
@@ -28,73 +30,40 @@ using System;
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Padding="2.5" 
-                CornerRadius="5" 
                 BorderThickness="2.5"
                 BorderBrush="{DynamicResource SystemControlHighlightChromeHighBrush}"
                 Background="{DynamicResource SystemControlHighlightChromeHighBrush}">
-					<StackPanel Spacing="10">
-						<StackPanel.Styles>
-							<Style Selector="Border.br">
-								<Setter Property="Padding" Value="10"/>
-								<Setter Property="TextBlock.FontSize" Value="16"/>
-								<Setter Property="TextBlock.FontWeight" Value="SemiBold"/>
-								<Setter Property="CornerRadius" Value="10 10 0 0"/>
-								<Setter Property="Background" Value="{DynamicResource SystemControlHighlightAccent2RevealBackgroundBrush}"/>
-							</Style>
-							<Style Selector="ExperimentalAcrylicBorder.st">
-								<Setter Property="CornerRadius" Value="0 0 10 10"/>
-							</Style>
-							<Style Selector="Border.bx">
-								<Setter Property="CornerRadius" Value="10"/>
-								<Setter Property="BoxShadow" Value="{BoxShadow ShadowColor={StaticResource SystemBaseMediumColor}}"/>
-							</Style>
-						</StackPanel.Styles>
-            <WrapPanel>
-              <TextBlock Text="{TemplateBinding Title}"
-                       FontSize="16" FontWeight="SemiBold"/>
-              <TextBlock Text=" "/>
-              <TextBlock Text="{TemplateBinding TitleTwo}"
-                       FontSize="16" FontWeight="Normal"/>
-            </WrapPanel>
+					<StackPanel>
+			            <WrapPanel>
+			              <TextBlock Text="{TemplateBinding Title}"
+			                       FontSize="16" FontWeight="SemiBold"/>
+			              <TextBlock Text=" "/>
+			              <TextBlock Text="{TemplateBinding TitleTwo}"
+			                       FontSize="16" FontWeight="Normal"/>
+			            </WrapPanel>
 						<ScrollViewer HorizontalScrollBarVisibility="Disabled" 
 										VerticalScrollBarVisibility="Disabled">
 							<ContentPresenter Name="PART_ContentPresenter"
                                 Padding="10"
-                                CornerRadius="5"
                                 Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
 											Content="{TemplateBinding Control}"/>
 						</ScrollViewer>
-						<Border Grid.Row="1" Classes="bx" IsVisible="{TemplateBinding CSharpVisible}">
-							<Grid RowDefinitions="auto,*">
-								<Border Grid.Row="0" Classes="br">
-									<TextBlock Text="C# Code"/>
-								</Border>
-								<ExperimentalAcrylicBorder Grid.Row="1" IsVisible="{TemplateBinding CSharpVisible}"
-															 Material="{AcrylicMaterial TintOpacity=1, TintColor={DynamicResource SystemAltHighColor}, MaterialOpacity=0.4, AcrylicBackgroundSource=None}"
-															 Classes="st">
-									<ae:TextEditor Name="editor_csharp" SyntaxHighlighting="C#"
-													 HorizontalScrollBarVisibility="Auto"
-													 VerticalScrollBarVisibility="Visible"
-													 Background="Transparent"
-													 ShowLineNumbers="True" IsReadOnly="True"/>
-								</ExperimentalAcrylicBorder>
-							</Grid>
-						</Border>
-						<Border Grid.Row="3" Classes="bx"  IsVisible="{TemplateBinding XAMLVisible}">
-							<Grid RowDefinitions="auto,*">
-								<Border Classes="br">
-									<TextBlock Text="XAML Code"/>
-								</Border>
-								<ExperimentalAcrylicBorder Grid.Row="1"
-										 Material="{AcrylicMaterial TintOpacity=1, TintColor={DynamicResource SystemAltHighColor}, MaterialOpacity=0.4, AcrylicBackgroundSource=None}" Classes="st">
-									<ae:TextEditor Name="editor_xaml" SyntaxHighlighting="XML"
-													 HorizontalScrollBarVisibility="Auto"
-													 VerticalScrollBarVisibility="Visible"
-													 Background="Transparent"
-													 ShowLineNumbers="True" IsReadOnly="True"/>
-								</ExperimentalAcrylicBorder>
-							</Grid>
-						</Border>
+						<ExperimentalAcrylicBorder IsVisible="{TemplateBinding XAMLVisible}"
+						                           Material="{AcrylicMaterial TintOpacity=1, TintColor={DynamicResource SystemAltHighColor}, MaterialOpacity=0.4, AcrylicBackgroundSource=None}" Classes="st">
+							<ae:TextEditor Name="editor_xaml" SyntaxHighlighting="XML"
+							               HorizontalScrollBarVisibility="Auto"
+							               VerticalScrollBarVisibility="Visible"
+							               Background="Transparent"
+							               ShowLineNumbers="True" IsReadOnly="True"/>
+						</ExperimentalAcrylicBorder>
+						<ExperimentalAcrylicBorder IsVisible="{TemplateBinding CSharpVisible}"
+						                           Material="{AcrylicMaterial TintOpacity=1, TintColor={DynamicResource SystemAltHighColor}, MaterialOpacity=0.4, AcrylicBackgroundSource=None}">
+							<ae:TextEditor Name="editor_csharp" SyntaxHighlighting="C#"
+							               HorizontalScrollBarVisibility="Auto"
+							               VerticalScrollBarVisibility="Visible"
+							               Background="Transparent"
+							               ShowLineNumbers="True" IsReadOnly="True"/>
+						</ExperimentalAcrylicBorder>
 					</StackPanel>
 				</Border>
 			</ControlTemplate>
