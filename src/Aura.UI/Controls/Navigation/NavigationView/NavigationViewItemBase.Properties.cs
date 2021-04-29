@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Media;
 
 namespace Aura.UI.Controls.Navigation
@@ -52,6 +53,24 @@ namespace Aura.UI.Controls.Navigation
         }
 
         public static readonly StyledProperty<bool> IsOpenProperty =
-            AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), true);
+            AvaloniaProperty.Register<NavigationViewItemBase, bool>(nameof(IsOpen), true);
+
+        public bool SelectOnClose
+        {
+            get => GetValue(SelectOnCloseProperty);
+            set => SetValue(SelectOnCloseProperty, value);
+        }
+
+        public static readonly StyledProperty<bool> SelectOnCloseProperty =
+            AvaloniaProperty.Register<NavigationViewItemBase, bool>(nameof(SelectOnClose), false);
+
+        public ClickMode ClickMode
+        {
+            get => GetValue(ClickModeProperty);
+            set => SetValue(ClickModeProperty, value);
+        }
+
+        public static readonly StyledProperty<ClickMode> ClickModeProperty =
+            Button.ClickModeProperty.AddOwner<NavigationViewItemBase>();
     }
 }

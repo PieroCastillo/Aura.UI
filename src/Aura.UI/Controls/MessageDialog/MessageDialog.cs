@@ -6,6 +6,7 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 using Avalonia.Threading;
 using System;
+using Avalonia.Media;
 
 namespace Aura.UI.Controls
 {
@@ -35,9 +36,24 @@ namespace Aura.UI.Controls
         }
 
         /// <summary>
-        /// Defines <see cref="Title"/>
+        /// Defines <see cref="Title"/> Property
         /// </summary>
         public readonly static StyledProperty<object> TitleProperty =
             AvaloniaProperty.Register<MessageDialog, object>(nameof(Title), "Title");
+
+        /// <summary>
+        /// The Icon of the MessageDialog
+        /// </summary>
+        public IImage Icon
+        {
+            get => GetValue(IconProperty);
+            set => SetValue(IconProperty, value);
+        }
+
+        /// <summary>
+        /// Defines <see cref="Icon"/> Property
+        /// </summary>
+        public readonly static StyledProperty<IImage> IconProperty =
+            AuraTabItem.IconProperty.AddOwner<MessageDialog>();
     }
 }

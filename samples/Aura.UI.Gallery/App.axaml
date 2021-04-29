@@ -23,6 +23,7 @@
     </Style>
     <Style Selector=":is(UserControl).us_c">
       <Setter Property="Padding" Value="20"/>
+      <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
   </Application.Styles>
   <Application.Resources>

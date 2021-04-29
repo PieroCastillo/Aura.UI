@@ -36,7 +36,72 @@
 		<converters:MarginMultiplierConverter Indent="16" Left="True"
 											  x:Key="LevelConv" />
 	</Styles.Resources>
-	<Style Selector="NavigationViewItemBase">
+	<!-- <Style Selector="NavigationViewItemBase"> -->
+	<!-- 	<Setter Property="Padding" Value="0 5" /> -->
+	<!-- 	<Setter Property="MinWidth" Value="0" /> -->
+	<!-- 	<Setter Property="DockPanel.Dock" Value="Top" /> -->
+	<!-- 	<Setter Property="VerticalAlignment" Value="Top" /> -->
+	<!-- 	<Setter Property="Background" Value="Transparent" /> -->
+	<!-- 	<Setter Property="ItemsPanel"> -->
+	<!-- 		<ItemsPanelTemplate> -->
+	<!-- 			<StackPanel Orientation="Vertical" /> -->
+	<!-- 		</ItemsPanelTemplate> -->
+	<!-- 	</Setter> -->
+	<!-- 	<Setter Property="Template"> -->
+	<!-- 		<ControlTemplate> -->
+	<!-- 			<Border Name="PART_Border" -->
+	<!-- 			        BorderThickness="{TemplateBinding BorderThickness}"> -->
+	<!-- 				<Grid RowDefinitions="5,*,5,*"> -->
+	<!-- 					<Grid Grid.Row="1"  -->
+	<!-- 					      ColumnDefinitions="auto,*" -->
+	<!-- 					      Name="PART_Grid"  -->
+	<!-- 					      Background="{TemplateBinding Background}"> -->
+	<!-- 						~1~<Border Width="{Binding $parent[:is(NavigationViewItemBase)].LateralWidth}" />@1@ -->
+	<!-- 						<Grid Grid.Column="1" ColumnDefinitions="5,auto,10,auto,10,*,5,auto,5"> -->
+	<!-- 							<Border Grid.Column="2" Name="PART_SelectionBorder" Width="2.5" CornerRadius="5" /> -->
+	<!-- 							<Image Grid.Column="3" Name="PART_ImgT" Source="{TemplateBinding Icon}" -->
+	<!-- 							       Stretch="Uniform" Width="16" -->
+	<!-- 							       HorizontalAlignment="Left" -->
+	<!-- 							       VerticalAlignment="Center" /> -->
+	<!-- 							<Border Grid.Column="5" Name="PART_ContainerBorder"> -->
+	<!-- 								<Border.Transitions> -->
+	<!-- 									<Transitions> -->
+	<!-- 										<DoubleTransition Property="Opacity" -->
+	<!-- 										                  Duration="0:0:0.4" -->
+	<!-- 										                  Easing="ExponentialEaseOut" /> -->
+	<!-- 									</Transitions> -->
+	<!-- 								</Border.Transitions> -->
+	<!-- 								<ContentPresenter Name="PART_ContentPresenter" -->
+	<!-- 								                  Content="{TemplateBinding Header}" -->
+	<!-- 								                  TextBlock.FontSize="14" -->
+	<!-- 								                  TextBlock.FontFamily="Segoe UI" -->
+	<!-- 								                  VerticalAlignment="Center" /> -->
+	<!-- 							</Border> -->
+	<!-- 							<ToggleButton Grid.Column="7" -->
+	<!-- 							              Padding="2.5,2.5" Margin="5" -->
+	<!-- 							              Classes=".togglenav" -->
+	<!-- 							              VerticalAlignment="Center" -->
+	<!-- 							              HorizontalAlignment="Right" -->
+	<!-- 							              IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}" -->
+	<!-- 							              Background="Transparent"> -->
+	<!-- 								<Image Name="PART_Img" Height="15" Width="15" -->
+	<!-- 								       Source="{DynamicResource Entypo+.ChevronThinDown}"> -->
+	<!-- 									<Image.Transitions> -->
+	<!-- 										<Transitions> -->
+	<!-- 											<DoubleTransition Property="RotateTransform.Angle" -->
+	<!-- 											                  Duration="0:0:1" /> -->
+	<!-- 										</Transitions> -->
+	<!-- 									</Image.Transitions> -->
+	<!-- 								</Image> -->
+	<!-- 							</ToggleButton> -->
+	<!-- 						</Grid> -->
+	<!-- 					</Grid> -->
+	<!-- 				</Grid> -->
+	<!-- 			</Border> -->
+	<!-- 		</ControlTemplate> -->
+	<!-- 	</Setter> -->
+	<!-- </Style> -->
+	<Style Selector=":is(NavigationViewItemBase)">
 		<Setter Property="Padding" Value="0 5" />
 		<Setter Property="MinWidth" Value="0" />
 		<Setter Property="DockPanel.Dock" Value="Top" />
@@ -49,82 +114,31 @@
 		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
-					<Border Name="PART_Border"
-					  BorderThickness="{TemplateBinding BorderThickness}">
-						<Grid RowDefinitions="5,*,5,*">
-							<Grid Grid.Row="1" ColumnDefinitions="auto,*"
-								  Name="PART_Grid"  Background="{TemplateBinding Background}">
-								<!--<Border Width="{Binding $parent[:is(NavigationViewItemBase)].LateralWidth}" />-->
-								<Grid Grid.Column="1" ColumnDefinitions="5,auto,10,auto,10,*,5,auto,5">
-									<Border Grid.Column="2" Name="PART_SelectionBorder" Width="2.5" CornerRadius="5" />
-									<Image Grid.Column="3" Name="PART_ImgT" Source="{TemplateBinding Icon}"
-										   Stretch="Uniform" Width="16"
-										   HorizontalAlignment="Left"
-										   VerticalAlignment="Center" />
-									<Border Grid.Column="5" Name="PART_ContainerBorder">
-										<Border.Transitions>
-											<Transitions>
-												<DoubleTransition Property="Opacity" Duration="0:0:0.4"
-																  Easing="ExponentialEaseOut" />
-											</Transitions>
-										</Border.Transitions>
-										<ContentPresenter Name="PART_ContentPresenter"
-													Content="{TemplateBinding Header}"
-													TextBlock.FontSize="14"
-													TextBlock.FontFamily="Segoe UI"
-													VerticalAlignment="Center" />
-									</Border>
-									<ToggleButton Grid.Column="7"
-												  Padding="2.5,2.5" Margin="5"
-												  Classes=".togglenav"
-												  VerticalAlignment="Center"
-												  HorizontalAlignment="Right"
-												  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
-												  Background="Transparent">
-										<Image Name="PART_Img" Height="15" Width="15"
-											   Source="{DynamicResource Entypo+.ChevronThinDown}">
-											<Image.Transitions>
-												<Transitions>
-													<DoubleTransition Property="RotateTransform.Angle"
-																	  Duration="0:0:1" />
-												</Transitions>
-											</Image.Transitions>
-										</Image>
-									</ToggleButton>
-								</Grid>
-							</Grid>
-						</Grid>
-					</Border>
-			</ControlTemplate>
-		</Setter>
-	</Style>
-	<Style Selector=":is(NavigationViewItem)">
-		<Setter Property="Padding" Value="0 5" />
-		<Setter Property="MinWidth" Value="0" />
-		<Setter Property="DockPanel.Dock" Value="Top" />
-		<Setter Property="VerticalAlignment" Value="Top" />
-		<Setter Property="Background" Value="Transparent" />
-		<Setter Property="ItemsPanel">
-			<ItemsPanelTemplate>
-				<StackPanel Orientation="Vertical" />
-			</ItemsPanelTemplate>
-		</Setter>
-		<Setter Property="Template">
-			<ControlTemplate>
-					<Border Name="PART_Border"
-					  BorderThickness="{TemplateBinding BorderThickness}">
-						<Grid RowDefinitions="*,auto">
-							<Grid Grid.Row="0" ColumnDefinitions="auto,*"
-								  Name="PART_Grid" Background="{TemplateBinding Background}">
-								<!--<Border Width="{Binding $parent[:is(NavigationViewItemBase)].LateralWidth}" />-->
-								<Grid Grid.Column="1"
-									  ColumnDefinitions="5,auto,10,auto,10,*,5,auto,5"
-									  RowDefinitions="5,auto,5"
-								      Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource LevelConv}}">
-									<Border Grid.Column="2" Grid.Row="1"
-											Name="PART_SelectionBorder"
-											Width="2.5"
-											CornerRadius="5" />
+				<Border Name="PART_Border"
+				        BorderThickness="{TemplateBinding BorderThickness}">
+					<Grid RowDefinitions="*,auto">
+						<Grid.Styles>
+							<Style Selector="PressedGrid:pressed#PART_Grid">
+								<Setter Property="RenderTransform" Value="scale(0.98)"/>
+							</Style>
+						</Grid.Styles>
+						<PressedGrid Grid.Row="0"
+						      ColumnDefinitions="auto,*"
+						      Name="PART_Grid" 
+						      Background="{TemplateBinding Background}">
+							<PressedGrid.Transitions>
+								<Transitions>
+									<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" />
+								</Transitions>
+							</PressedGrid.Transitions>
+							<Grid Grid.Column="1"
+							      ColumnDefinitions="5,auto,10,auto,10,*,5,auto,5"
+							      RowDefinitions="5,auto,5"
+							      Margin="{TemplateBinding Level, Mode=OneWay, Converter={StaticResource LevelConv}}">
+								<Border Grid.Column="2" Grid.Row="1"
+								        Name="PART_SelectionBorder"
+								        Width="2.5"
+								        CornerRadius="5" />
 									<Image Grid.Column="3" Grid.Row="1"
 										   Name="PART_ImgT"
 										   Source="{TemplateBinding Icon}"
@@ -164,18 +178,18 @@
 										</Image>
 									</ToggleButton>
 								</Grid>
-							</Grid>
-							<Border Grid.Row="1" Grid.Column="1" Name="PART_BottomBorder">
-								<ItemsPresenter Name="PART_ItemsPresenter"
-												Items="{TemplateBinding Items}"
-												ItemsPanel="{TemplateBinding ItemsPanel}" />
-							</Border>
-						</Grid>
-					</Border>
+						</PressedGrid>
+						<Border Grid.Row="1" Grid.Column="1" Name="PART_BottomBorder">
+							<ItemsPresenter Name="PART_ItemsPresenter"
+							                Items="{TemplateBinding Items}"
+							                ItemsPanel="{TemplateBinding ItemsPanel}" />
+						</Border>
+					</Grid>
+				</Border>
 			</ControlTemplate>
 		</Setter>
 	</Style>
-
+	
 	<Style Selector="NavigationViewItem[IsOpen=false]">
 		<Setter Property="ToolTip.Tip" Value="{Binding $self.Header}" />
 	</Style>
@@ -243,7 +257,7 @@
 		<Setter Property="Opacity" Value="0" />
 	</Style>
 
-	<Style Selector="NavigationViewItem /template/ Grid#PART_Grid:pointerover">
+	<Style Selector="NavigationViewItem /template/ PressedGrid#PART_Grid:pointerover">
 		<Setter Property="Background" Value="{DynamicResource NavigationViewItemPointerOver}" />
 	</Style>
 

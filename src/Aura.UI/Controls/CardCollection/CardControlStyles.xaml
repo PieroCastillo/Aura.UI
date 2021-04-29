@@ -19,8 +19,10 @@
 		<Setter Property="ScaleOnPointerOver" Value="True"/>
 		<Setter Property="Background" Value="{DynamicResource CardControlSecondaryBackground}" /><!--ThemeControlHighBrush-->
 		<Setter Property="SecondaryBackground" Value="{DynamicResource CardControlBackground}" /><!--ThemeControlMidBrush-->
-		<Setter Property="RenderTransform">
-			<ScaleTransform/>
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
+			</Transitions>
 		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -65,11 +67,6 @@
 	<!-- 	<Setter Property="ScaleTransform.ScaleY" Value="1"/> -->
 	<!-- </Style> -->
 	<Style Selector="CardControl[ScaleOnPointerOver=True]:pointerover">
-		<Setter Property="Transitions">
-			<Transitions>
-				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
-			</Transitions>
-		</Setter>
 		<Setter Property="RenderTransform" Value="scale(1.05)" />
 	</Style>
 </Styles>

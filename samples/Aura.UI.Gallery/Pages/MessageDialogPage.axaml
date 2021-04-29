@@ -15,7 +15,7 @@ this.NewMessageDialog("Your Message Title","Your Message Content", null);
 		<TextBlock TextWrapping="Wrap">
 			<x:String>The MessageDialog is a Dialog Control that just can be closed, it does not have an Buttons, its principal use is shows information to the user.</x:String>
 		</TextBlock>
-		<CodeExample Title="MessageDialog" XAMLVisible="False" HorizontalAlignment="Center">
+		<CodeExample Title="MessageDialog" XAMLVisible="False">
 			<CodeExample.Control>
 				<Button Content="Show MessageDialog" HorizontalAlignment="Center"
 				Click="ShowMessageDialog" Margin="40"/>
@@ -23,7 +23,7 @@ this.NewMessageDialog("Your Message Title","Your Message Content", null);
 			<CodeExample.CSharpText>
 				<x:String>
 //where "this" is a Control
-this.NewMessageDialog("Your Message Title","Your Message Content", null);
+this.NewMessageDialog("Your Message Title","Your Message Content", null, (DrawingImage)this.FindResource("VSCodeDark.warning"));
 				</x:String>
 			</CodeExample.CSharpText>
 		</CodeExample>

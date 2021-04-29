@@ -25,47 +25,38 @@ using System;
 	</Styles.Resources>
 	<Style Selector="CodeExample">
 		<Setter Property="XAMLVisible" Value="True"/>
-    <Setter Property="HorizontalAlignment" Value="Center"/>
 		<Setter Property="CSharpVisible" Value="True"/>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Border Padding="2.5" 
-                BorderThickness="2.5"
-                BorderBrush="{DynamicResource SystemControlHighlightChromeHighBrush}"
-                Background="{DynamicResource SystemControlHighlightChromeHighBrush}">
+				<StackPanel Spacing="10">
+					<WrapPanel>
+						<TextBlock Text="{TemplateBinding Title}"
+						           FontSize="18" FontWeight="SemiBold"/>
+						<TextBlock Text=" "/>
+						<TextBlock Text="{TemplateBinding TitleTwo}"
+						           FontSize="18" FontWeight="Normal"/>
+					</WrapPanel>
 					<StackPanel>
-			            <WrapPanel>
-			              <TextBlock Text="{TemplateBinding Title}"
-			                       FontSize="16" FontWeight="SemiBold"/>
-			              <TextBlock Text=" "/>
-			              <TextBlock Text="{TemplateBinding TitleTwo}"
-			                       FontSize="16" FontWeight="Normal"/>
-			            </WrapPanel>
-						<ScrollViewer HorizontalScrollBarVisibility="Disabled" 
-										VerticalScrollBarVisibility="Disabled">
-							<ContentPresenter Name="PART_ContentPresenter"
-                                Padding="10"
-                                Background="{DynamicResource SystemControlBackgroundAltHighBrush}"
-											Content="{TemplateBinding Control}"/>
-						</ScrollViewer>
-						<ExperimentalAcrylicBorder IsVisible="{TemplateBinding XAMLVisible}"
-						                           Material="{AcrylicMaterial TintOpacity=1, TintColor={DynamicResource SystemAltHighColor}, MaterialOpacity=0.4, AcrylicBackgroundSource=None}" Classes="st">
+						<ContentPresenter Name="PART_ContentPresenter"
+						                  BorderBrush="{DynamicResource SystemControlHighlightBaseLowBrush}"
+						                  BorderThickness="1" Padding="15"
+						                  Content="{TemplateBinding Control}"/>
+						<StackPanel Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
 							<ae:TextEditor Name="editor_xaml" SyntaxHighlighting="XML"
 							               HorizontalScrollBarVisibility="Auto"
-							               VerticalScrollBarVisibility="Visible"
 							               Background="Transparent"
-							               ShowLineNumbers="True" IsReadOnly="True"/>
-						</ExperimentalAcrylicBorder>
-						<ExperimentalAcrylicBorder IsVisible="{TemplateBinding CSharpVisible}"
-						                           Material="{AcrylicMaterial TintOpacity=1, TintColor={DynamicResource SystemAltHighColor}, MaterialOpacity=0.4, AcrylicBackgroundSource=None}">
+							               IsVisible="{TemplateBinding XAMLVisible}"
+							               IsReadOnly="True"
+							               Padding="15"/>
 							<ae:TextEditor Name="editor_csharp" SyntaxHighlighting="C#"
 							               HorizontalScrollBarVisibility="Auto"
-							               VerticalScrollBarVisibility="Visible"
 							               Background="Transparent"
-							               ShowLineNumbers="True" IsReadOnly="True"/>
-						</ExperimentalAcrylicBorder>
+							               IsVisible="{TemplateBinding CSharpVisible}"
+							               IsReadOnly="True"
+							               Padding="15"/>
+						</StackPanel>
 					</StackPanel>
-				</Border>
+				</StackPanel>
 			</ControlTemplate>
 		</Setter>
 	</Style>

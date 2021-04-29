@@ -14,7 +14,7 @@
 					<Border Name="PART_BorderShadow"
 							VerticalAlignment="Center"
 							HorizontalAlignment="Center"
-							BoxShadow="0 0 5 0 Black"
+							BoxShadow="0 5 30 0 #99000000"
 							Background="{TemplateBinding Background}"
               BorderBrush="{DynamicResource ContentDialogBorderBrush}"
               BorderThickness="1"

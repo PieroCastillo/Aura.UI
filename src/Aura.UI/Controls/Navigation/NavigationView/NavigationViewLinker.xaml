@@ -12,54 +12,64 @@
 		<Setter Property="BorderBrush" Value="{DynamicResource NavigationViewLinkerBackground}" />
 		<Setter Property="Template">
 			<ControlTemplate>
-					<Border Name="PART_Border" 
-                  Background="{TemplateBinding Background}"
-									CornerRadius="{DynamicResource NavigationViewLinkerTitleCornerRadius}"
-									BorderThickness="{TemplateBinding BorderThickness}"
-									BorderBrush="{TemplateBinding BorderBrush}"
-                  Margin="{TemplateBinding Padding}">
-						<Grid ColumnDefinitions="auto,*,auto">
-							<Image Name="PART_Image"
-									 Source="{TemplateBinding Icon}"
-									 Height="25"
-									 Margin="15"
-									VerticalAlignment="Top" />
-							<Grid Grid.Column="1"
-									RowDefinitions="auto,*">
-								<ContentPresenter Content="{TemplateBinding Title}"
-													Padding="10,15,10,0"
-													TextBlock.FontSize="20"
-													TextBlock.FontWeight="Medium"
-													TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleForeground}" />
-								<ContentPresenter Content="{TemplateBinding Content}"
-													Grid.Row="1"
-													Padding="10"
-													TextBlock.FontSize="14"
-													TextBlock.FontWeight="Medium"
-													TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleForegroundLow}" />
-							</Grid>
-							<ContentPresenter Name="PART_TopContentPresenter"
-												Grid.Column="2"
-												CornerRadius="0,2.5,0,2.5"
-												Background="{DynamicResource NavigationViewLinkerTitleTopContentBackground}"
-												TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleTopContentForeground}"
-												Padding="5"
-												TextBlock.FontSize="14"
-												VerticalAlignment="Top"
-												Content="{TemplateBinding TopContent}" />
+				<Border Name="PART_Border" 
+				        Background="{TemplateBinding Background}"
+				        CornerRadius="{DynamicResource NavigationViewLinkerTitleCornerRadius}"
+				        BorderThickness="{TemplateBinding BorderThickness}"
+				        BorderBrush="{TemplateBinding BorderBrush}"
+				        Margin="{TemplateBinding Padding}">
+					<Border.Transitions>
+						<Transitions>
+							<TransformOperationsTransition Property="RenderTransform" 
+							                               Duration="0:0:.075" 
+							                               Easing="ExponentialEaseOut"/>
+						</Transitions>
+					</Border.Transitions>
+					<Grid ColumnDefinitions="auto,*,auto">
+						<Image Name="PART_Image"
+						       Source="{TemplateBinding Icon}"
+						       Height="25"
+						       Margin="15"
+						       VerticalAlignment="Top" />
+						<Grid Grid.Column="1"
+						      RowDefinitions="auto,*">
+							<ContentPresenter Content="{TemplateBinding Title}"
+							                  Padding="10,15,10,0"
+							                  TextBlock.FontSize="20"
+							                  TextBlock.FontWeight="Medium"
+							                  TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleForeground}" />
+							<ContentPresenter Content="{TemplateBinding Content}"
+							                  Grid.Row="1"
+							                  Padding="10"
+							                  TextBlock.FontSize="14"
+							                  TextBlock.FontWeight="Medium"
+							                  TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleForegroundLow}" />
 						</Grid>
-					</Border>
+						<ContentPresenter Name="PART_TopContentPresenter"
+						                  Grid.Column="2"
+						                  CornerRadius="0,2.5,0,2.5"
+						                  Background="{DynamicResource NavigationViewLinkerTitleTopContentBackground}"
+						                  TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleTopContentForeground}"
+						                  Padding="5"
+						                  TextBlock.FontSize="14"
+						                  VerticalAlignment="Top"
+						                  Content="{TemplateBinding TopContent}" />
+					</Grid>
+				</Border>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 
-  <Style Selector="NavigationViewLinker Border#PART_Border">
-    <Setter Property="BoxShadow" Value="0 0 2.5 0 Black"/>
-  </Style>
-  <Style Selector="NavigationViewLinker Border#PART_Border:pointerover">
-    <Setter Property="BoxShadow" Value="0 0 2.5 0 Black"/>
-    <Setter Property="BoxShadow" Value="0 0 5 0 Black"/>
-  </Style>
+	<Style Selector="NavigationViewLinker Border#PART_Border">
+	    <Setter Property="BoxShadow" Value="0 0 2.5 0 Black"/>
+	</Style>
+	<Style Selector="NavigationViewLinker:pressed /template/ Border#PART_Border">
+		<Setter Property="RenderTransform" Value="scale(0.98)"/>
+	</Style>
+	<Style Selector="NavigationViewLinker Border#PART_Border:pointerover">
+	    <Setter Property="BoxShadow" Value="0 0 2.5 0 Black"/>
+	    <Setter Property="BoxShadow" Value="0 0 5 0 Black"/>
+	</Style>
 	<Style Selector="NavigationViewLinker:pointerover">
 		<Setter Property="BorderBrush" Value="{DynamicResource NavigationViewLinkerPointerOver}" />
 	</Style>

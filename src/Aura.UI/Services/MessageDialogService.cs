@@ -2,6 +2,8 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using System;
+using Avalonia.Media;
+using JetBrains.Annotations;
 
 namespace Aura.UI.Services
 {
@@ -10,12 +12,12 @@ namespace Aura.UI.Services
         public static void NewMessageDialog(this Control owner,
                                             object title,
                                             object content,
-                                            Action<object, RoutedEventArgs>? OnClosing) => NewMessageDialog<MessageDialog>(owner, title, content, OnClosing);
+                                            Action<object, RoutedEventArgs>? OnClosing, [CanBeNull] IImage icon = null) => NewMessageDialog<MessageDialog>(owner, title, content, OnClosing, icon);
 
         public static void NewMessageDialog<TMessageDialog>(this Control owner,
                                             object title,
                                             object content,
-                                            Action<object, RoutedEventArgs>? OnClosing)
+                                            Action<object, RoutedEventArgs>? OnClosing, [CanBeNull] IImage icon = null)
             where TMessageDialog : MessageDialog, new()
         {
             var m = new TMessageDialog();
@@ -23,6 +25,8 @@ namespace Aura.UI.Services
 
             m.Content = content;
             m.Title = title;
+            if (icon != null)
+                m.Icon = icon;
 
             if (OnClosing != null)
             {

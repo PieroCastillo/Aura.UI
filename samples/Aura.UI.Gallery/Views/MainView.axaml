@@ -18,7 +18,8 @@
   </UserControl.DataContext>
   <NavigationView Header="Aura.UI Gallery"
                   AlwaysOpen="True"
-			            Icon="{DynamicResource Material.Home}">
+			            Icon="{DynamicResource Material.Home}"
+                  OpenPaneLength="300">
     <NavigationViewItem  Header="What's new?"
               Icon="{DynamicResource Zondicons.Announcement}">
       <NavigationViewItem.Title>

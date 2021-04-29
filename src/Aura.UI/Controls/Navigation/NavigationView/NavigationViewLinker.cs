@@ -3,11 +3,14 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 using System;
+using Avalonia.Controls.Metadata;
 
 namespace Aura.UI.Controls.Navigation
 {
+    [PseudoClasses(":pressed")]
     public partial class NavigationViewLinker : ContentControl
     {
+        private bool _pointerOver;
         static NavigationViewLinker()
         {
             TopContentIsNullProperty.Changed.Subscribe(SetTopContentIsNull);
@@ -31,6 +34,7 @@ namespace Aura.UI.Controls.Navigation
             }
         }
 
+        /// <inheritdoc/>
         protected override void OnPointerReleased(PointerReleasedEventArgs e)
         {
             base.OnPointerReleased(e);
@@ -38,11 +42,27 @@ namespace Aura.UI.Controls.Navigation
             {
                 var parent = this.GetParentTOfVisual<NavigationView>();
 
-                if (parent != null & IsPointerOver)
+                if (parent != null & this.PointerEffectivelyOver(e))
                 {
                     parent.SelectSingleItem(LinkTo);
                 }
             }
+
+            PseudoClasses.Remove(":pressed");
+        }
+
+        /// <inheritdoc/>
+        protected override void OnPointerPressed(PointerPressedEventArgs e)
+        {
+            base.OnPointerPressed(e);
+            PseudoClasses.Add(":pressed");
+        }
+
+        /// <inheritdoc/>
+        protected override void OnPointerLeave(PointerEventArgs e)
+        {
+            base.OnPointerLeave(e);
+            _pointerOver = false;
         }
     }
 }

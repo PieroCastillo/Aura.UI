@@ -1,8 +1,13 @@
-﻿using Aura.UI.Services;
+﻿using System;
+using Aura.UI.Services;
 using Aura.UI.UIExtensions;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Avalonia.Media;
+using Avalonia.Media.Imaging;
+using Avalonia.Platform;
 
 namespace Aura.UI.Gallery.Pages
 {
@@ -15,8 +20,7 @@ namespace Aura.UI.Gallery.Pages
 
         public void ShowMessageDialog(object sender, RoutedEventArgs e)
         {
-            //var win = this.GetParentTOfVisual<Window>();
-            this.NewMessageDialog("Your Message Title", "Your Message Content", null);
+            this.NewMessageDialog("Your Message Title", "Your Message Content", null, (DrawingImage)this.FindResource("VSCodeDark.warning"));
         }
     }
 }
