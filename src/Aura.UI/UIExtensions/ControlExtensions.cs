@@ -1,3 +1,4 @@
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 
@@ -31,5 +32,8 @@ namespace Aura.UI.UIExtensions
             left = Canvas.GetLeft(control);
             right = Canvas.GetRight(control);
         }
+
+        public static bool PointerEffectivelyOver(this Control control, PointerEventArgs e)
+            => new Rect(control.Bounds.Size).Contains(e.GetPosition(control));
     }
 }

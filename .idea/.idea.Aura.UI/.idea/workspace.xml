@@ -6,11 +6,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveAuraTabViewPage.axaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/ReactiveAuraTabViewPage.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/PressedGrid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/base.props" beforeDir="false" afterPath="$PROJECT_DIR$/build/base.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/dragging.props" beforeDir="false" afterPath="$PROJECT_DIR$/build/dragging.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/App.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/DraggingContentControl/DraggingContentControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/DraggingContentControl/DraggingContentControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/MessageDialogPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/MessageDialogPage.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/MessageDialogPage.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/MessageDialogPage.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/ContentDialog/ContentDialogStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/ContentDialog/ContentDialogStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialog.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/HuePickerBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.ColorPickers/HuePickerBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Services/MessageDialogService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Services/MessageDialogService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/UIExtensions/ControlExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/UIExtensions/ControlExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,30 +60,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MainViewViewModel.cs" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
-      <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/Aura.UI.ColorPickers.csproj" />
-      <option value="$PROJECT_DIR$/build/base.props" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Ribbon/RibbonItemStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/Pages/PagesViewStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBoxStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/ToolWindow/ToolWindow.axaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Data/ICardCollectionTemplate.cs" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/CardControlPage.axaml" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MVVMPage/CardControlViewModel.cs" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MVVMPage.cs" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/MvvmPages/ReactiveCardControl.axaml" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveCardCollection.axaml.cs" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveCardCollection.axaml" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/MVVMPageViewModel.cs" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveCardCollectionPage.axaml.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollection.Properties.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollectionStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Data/ICardControlTemplate.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/CardControlViewModel.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardCollection.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/ReactiveCardCollectionPageViewModel.cs" />
@@ -77,7 +73,6 @@
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControl.Properties.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/FloatingButtonBar/FloatingButton.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" />
       <option value="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/PositionerPanel/PositionerPanel.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Thumbs/MoveThumb.cs" />
@@ -90,7 +85,32 @@
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveAuraTabViewPage.axaml.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ViewModels/ReactiveAuraTabViewPage.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/ReactivePages/ReactiveAuraTabViewPage.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.xaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/App.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI.ColorPickers/AuraColorPicker/Components/TrianglePicker.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/PressedGrid.cs" />
+      <option value="$PROJECT_DIR$/build/dragging.props" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" />
+      <option value="$PROJECT_DIR$/build/base.props" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItem.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/ControlExtensions.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainWindow.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ContentDialog/ContentDialogStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialog.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Services/MessageDialogService.cs" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/MessageDialogPage.axaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/MessageDialogPage.axaml.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
@@ -172,7 +192,7 @@
       <workItem from="1619378334718" duration="1386000" />
       <workItem from="1619395118582" duration="4818000" />
       <workItem from="1619469406191" duration="7223000" />
-      <workItem from="1619557783789" duration="4788000" />
+      <workItem from="1619557783789" duration="25985000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>
