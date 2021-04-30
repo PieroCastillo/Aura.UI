@@ -9,7 +9,10 @@ using Avalonia.Styling;
 using Avalonia.Threading;
 using ReactiveUI;
 using System;
+using System.Diagnostics;
+using System.Reactive;
 using System.Threading.Tasks;
+using Avalonia.Controls;
 
 namespace Aura.UI.Gallery
 {
@@ -38,10 +41,12 @@ namespace Aura.UI.Gallery
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                desktop.MainWindow = new MainWindow
+                
+                desktop.MainWindow = new MainWindow 
                 {
                     DataContext = new MainWindowViewModel()
                 };
+                
                 desktop.Exit += (s, e) =>
                 {
                     new SettingsProvider().Save(Settings);

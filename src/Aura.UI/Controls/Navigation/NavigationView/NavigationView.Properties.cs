@@ -38,6 +38,9 @@ namespace Aura.UI.Controls.Navigation
         public readonly static StyledProperty<bool> IsOpenProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), true);
 
+        public readonly static StyledProperty<bool> DynamicDisplayModeProperty =
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(DynamicDisplayMode), true);
+
         public readonly static StyledProperty<bool> HideTitleProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(HideTitle), false);
         public static readonly StyledProperty<SplitViewDisplayMode> DisplayModeProperty =
@@ -146,6 +149,11 @@ namespace Aura.UI.Controls.Navigation
             }
         }
 
+        public bool DynamicDisplayMode
+        {
+            get => GetValue(DynamicDisplayModeProperty);
+            set => SetValue(DynamicDisplayModeProperty, value);
+        }
 
         //public bool CanGoBack
         //{

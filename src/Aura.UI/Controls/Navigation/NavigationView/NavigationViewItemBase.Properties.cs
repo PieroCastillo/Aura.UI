@@ -72,5 +72,17 @@ namespace Aura.UI.Controls.Navigation
 
         public static readonly StyledProperty<ClickMode> ClickModeProperty =
             Button.ClickModeProperty.AddOwner<NavigationViewItemBase>();
+
+        private int _NavigationViewDistance;
+
+        public new int NavigationViewDistance
+        {
+            get => _NavigationViewDistance;
+            protected set => SetAndRaise(LevelProperty, ref _NavigationViewDistance, value);
+        }
+
+        public static readonly DirectProperty<NavigationViewItemBase, int> NavigationViewDistanceProperty =
+            AvaloniaProperty.RegisterDirect<NavigationViewItemBase, int>(nameof(NavigationViewDistance), o => o.Level);
+        
     }
 }

@@ -12,6 +12,8 @@
              xmlns:rpg="using:Aura.UI.Gallery.ReactivePages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              Background="{x:Null}"
+             BorderBrush="Black"
+             BorderThickness="0.7"
              x:Class="Aura.UI.Gallery.Views.MainView">
   <UserControl.DataContext>
     <vm:MainViewViewModel/>

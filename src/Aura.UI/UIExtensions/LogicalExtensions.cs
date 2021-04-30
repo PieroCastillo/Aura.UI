@@ -25,5 +25,18 @@ namespace Aura.UI.UIExtensions
         {
             return logical.GetSelfAndLogicalAncestors().OfType<T>().FirstOrDefault<T>();
         }
+        
+        internal static int CalculateDistanceFromLogicalParent<T>(ILogical logical, int @default = -1) where T : class, ILogical
+        {
+            var result = 0;
+
+            while (logical != null && !(logical is T))
+            {
+                ++result;
+                logical = logical.LogicalParent;
+            }
+
+            return logical != null ? result : @default;
+        }
     }
 }

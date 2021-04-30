@@ -9,6 +9,7 @@ using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
 using DynamicData;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -34,6 +35,15 @@ namespace Aura.UI.Controls.Navigation
         public NavigationView()
         {
             PseudoClasses.Add(":normal");
+            this.GetObservable(BoundsProperty).Subscribe(OnBoundsChanged);
+        }
+
+        protected virtual void OnBoundsChanged(Rect rect)
+        {
+            if (DynamicDisplayMode)
+            {
+                var isLittle = rect.Width <= 1000;
+            }
         }
 
         protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)

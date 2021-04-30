@@ -4,6 +4,7 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Interactivity;
 using System;
 using System.Diagnostics;
+using Avalonia.LogicalTree;
 
 namespace Aura.UI.Controls.Navigation
 {
@@ -44,41 +45,61 @@ namespace Aura.UI.Controls.Navigation
                 });
             IsOpenProperty.Changed.Subscribe(e => OnIsOpenChanged(e));
         }
-
-        protected virtual void OnDeselected(object sender, AvaloniaPropertyChangedEventArgs e)
-        {
-            // Debug.WriteLine("I'm deselected");
-        }
-
-        protected virtual void OnSelected(object sender, AvaloniaPropertyChangedEventArgs e)
-        {
-            // Debug.WriteLine("I'm selected");
-        }
-
-        protected virtual void OnOpened(object sender, RoutedEventArgs e)
-        {
-            PseudoClasses.Remove(":closed");
-            PseudoClasses.Add(":opened");
-        }
-
+        
         private static void OnIsOpenChanged(AvaloniaPropertyChangedEventArgs<bool> e)
         {
-            var sender = e.Sender as NavigationViewItem;
-            if (sender != null && e.NewValue.HasValue)
-            {
+            var sender = e.Sender as NavigationViewItem; 
+            if (sender != null && e.NewValue.HasValue) 
+            { 
                 if (sender.IsSelected && sender.Parent is NavigationViewItem nw && nw.Parent is NavigationView nwp)
                 {
                     nwp.SelectSingleItem(nw);
                     nw.IsExpanded = false;
-                    // Debug.WriteLine($"yeah & {sender.Header}");
                 }
             }
         }
 
+        public NavigationViewItemBase()
+        {
+            NavigationViewDistance = 0;
+            this.GetObservable(ItemCountProperty).Subscribe(onNext: x =>
+            {
+                
+            });
+        }
+
+        protected virtual void OnDeselected(object sender, AvaloniaPropertyChangedEventArgs e)
+        {
+            
+        }
+
+        protected virtual void OnSelected(object sender, AvaloniaPropertyChangedEventArgs e)
+        {
+            
+        }
+
+        protected virtual void OnOpened(object sender, RoutedEventArgs e)
+        {
+            UpdatePseudoClasses(IsOpen);
+        }
+
         protected virtual void OnClosed(object sender, RoutedEventArgs e)
         {
-            PseudoClasses.Remove(":opened");
-            PseudoClasses.Add(":closed");
+            UpdatePseudoClasses(IsOpen);
+        }
+
+        private void UpdatePseudoClasses(bool isOpen)
+        {
+            if (isOpen)
+            {
+                PseudoClasses.Remove(":closed");
+                PseudoClasses.Add(":opened");
+            }
+            else
+            {
+                PseudoClasses.Remove(":opened");
+                PseudoClasses.Add(":closed");
+            }
         }
 
         public event EventHandler<RoutedEventArgs> Opened

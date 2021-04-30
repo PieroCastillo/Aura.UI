@@ -7,6 +7,7 @@ using Avalonia.Threading;
 using DynamicData;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using Avalonia.Interactivity;
 
 namespace Aura.UI.Gallery.Views
 {
@@ -28,6 +29,19 @@ namespace Aura.UI.Gallery.Views
         public void EnableDrag(object sender, PointerPressedEventArgs e)
         {
             BeginMoveDrag(e);
+        }
+        
+        public void DoubleTappedTitleBar(object sender, RoutedEventArgs e)
+        {
+            switch (WindowState)
+            {
+                case WindowState.Maximized: 
+                    WindowState = WindowState.Normal;
+                    break;
+                case WindowState.Normal:
+                    WindowState = WindowState.Maximized;
+                    break;
+            }
         }
     }
 }
