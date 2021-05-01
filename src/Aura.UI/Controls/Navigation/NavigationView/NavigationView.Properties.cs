@@ -46,7 +46,7 @@ namespace Aura.UI.Controls.Navigation
         public static readonly StyledProperty<SplitViewDisplayMode> DisplayModeProperty =
             AvaloniaProperty.Register<NavigationView, SplitViewDisplayMode>(nameof(DisplayMode), SplitViewDisplayMode.CompactInline);
         public readonly static StyledProperty<bool> AlwaysOpenProperty =
-            AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), false);
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(AlwaysOpen), false);
         public readonly static StyledProperty<bool> AutoCompleteBoxIsVisibleProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(AutoCompleteBoxIsVisible), true);
         public readonly static DirectProperty<NavigationView, IEnumerable<string>> ItemsAsStringsProperty =

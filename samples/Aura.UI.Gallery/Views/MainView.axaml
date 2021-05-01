@@ -19,7 +19,7 @@
     <vm:MainViewViewModel/>
   </UserControl.DataContext>
   <NavigationView Header="Aura.UI Gallery"
-                  AlwaysOpen="True"
+                  AlwaysOpen="False"
 			            Icon="{DynamicResource Material.Home}"
                   OpenPaneLength="300">
     <NavigationViewItem  Header="What's new?"

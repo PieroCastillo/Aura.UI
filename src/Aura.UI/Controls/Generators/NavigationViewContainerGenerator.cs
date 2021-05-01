@@ -4,7 +4,9 @@ using Avalonia.Controls;
 using Avalonia.Controls.Generators;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
+using Avalonia.Data;
 
 namespace Aura.UI.Controls.Generators
 {
@@ -30,7 +32,14 @@ namespace Aura.UI.Controls.Generators
 
         protected override IControl CreateContainer(object item)
         {
-            var navviewitem = (NavigationViewItem)base.CreateContainer(item);
+            ///var navviewitem = (NavigationViewItem)base.CreateContainer(item);
+            var navviewitem = item as NavigationViewItem;
+            if (item is NavigationViewItemBase nv)
+            {
+                nv.Bind(NavigationViewItemBase.IsOpenProperty, Owner.GetObservable(NavigationView.IsOpenProperty), BindingPriority.Style);
+                Debug.WriteLine("pased" + navviewitem.Header.ToString());
+                return navviewitem;
+            }
 
             navviewitem.Bind(NavigationViewItem.HeaderProperty, navviewitem.GetBindingObservable(Header));
             navviewitem.Bind(NavigationViewItem.ContentProperty, navviewitem.GetBindingObservable(Content));

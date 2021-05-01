@@ -148,18 +148,10 @@
 	<Style Selector="NavigationView[IsOpen=false] /template/ ExperimentalAcrylicBorder#PART_AcrylicBorder">
 		<Setter Property="Width" Value="{Binding $parent[NavigationView].CompactPaneLength}" />
 	</Style>
-
-	<Style Selector="NavigationView[IsOpen=false] :is(NavigationViewItemBase)">
-		<Setter Property="IsOpen" Value="False" />
-	</Style>
-
-	<Style Selector="NavigationView[IsOpen=true] :is(NavigationViewItemBase)">
-		<Setter Property="IsOpen" Value="true" />
-	</Style>
-
-	<Style Selector="SplitView#split > :is(NavigationViewItemBase)">
-		<Setter Property="IsOpen" Value="{Binding #split.IsPaneOpen}" />
-	</Style>
+	
+	<!-- <Style Selector="SplitView#split > :is(NavigationViewItemBase)"> -->
+	<!-- 	<Setter Property="IsOpen" Value="{Binding #split.IsPaneOpen}" /> -->
+	<!-- </Style> -->
 
 	<!--<Style Selector="NavigationView[IsOpen=false] > SplitView">
 		<Setter Property="IsPaneOpen" Value="False" />

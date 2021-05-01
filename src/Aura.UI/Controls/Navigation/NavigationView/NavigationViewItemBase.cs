@@ -62,10 +62,6 @@ namespace Aura.UI.Controls.Navigation
         public NavigationViewItemBase()
         {
             NavigationViewDistance = 0;
-            this.GetObservable(ItemCountProperty).Subscribe(onNext: x =>
-            {
-                
-            });
         }
 
         protected virtual void OnDeselected(object sender, AvaloniaPropertyChangedEventArgs e)

@@ -11,12 +11,12 @@
 				WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         Icon="avares://Aura.UI.Gallery/Assets/AuraUILogo_icon.png"
-        MinWidth="1171" MinHeight="492"
+        MinHeight="492"
 		    ExtendClientAreaToDecorationsHint="true"
         ExtendClientAreaChromeHints="PreferSystemChrome"
         ExtendClientAreaTitleBarHeightHint="-1"
         Title="Aura.UI Gallery"
-        Classes="us_c">
+        Classes="us_c"> <!-- MinWidth="1171"  -->
   <Grid Margin="{Binding #win.OffScreenMargin}" >
     <vw:MainView/>
     <Border Background="Transparent" 

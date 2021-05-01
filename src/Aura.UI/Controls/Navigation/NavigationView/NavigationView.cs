@@ -15,6 +15,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Aura.UI.Controls.Navigation
 {
@@ -35,40 +36,44 @@ namespace Aura.UI.Controls.Navigation
         public NavigationView()
         {
             PseudoClasses.Add(":normal");
-            this.GetObservable(BoundsProperty).Subscribe(OnBoundsChanged);
+            this.GetObservable(BoundsProperty).Subscribe(async (bounds)=>
+            {
+                OnBoundsChanged(bounds);
+            });
         }
 
-        protected virtual void OnBoundsChanged(Rect rect)
+        protected virtual async Task OnBoundsChanged(Rect rect)
         {
             if (DynamicDisplayMode)
             {
-                var isLittle = rect.Width <= 1000;
-            }
-        }
+                var isLittle = rect.Width <= 1000 && 700 > rect.Width;
+                var isVeryLittle = rect.Width <= 700;
+                var isOpen = IsOpen;
 
-        protected override void ItemsCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            base.ItemsCollectionChanged(sender, e);
-
-            ProcessString();//Sets the items of AutoCompleteBox
-        }
-
-        protected virtual IEnumerable<string> ProcessString()
-        {
-            var l = new AvaloniaList<string>(); // create a list
-            var items = this.GetLogicalDescendants().OfType<NavigationViewItem>(); //gets the NavigationViewItem descendants
-            foreach (NavigationViewItem nav in items)
-            {
-                if (nav.Header != null)
+                if (!isLittle)
                 {
-                    l.Add(nav.Header.ToString());  //sets the strings
-                    // Debug.WriteLine(nav.Header);
+                    DisplayMode = SplitViewDisplayMode.CompactInline;
+
+                    if (isOpen || (DisplayMode == (SplitViewDisplayMode.Overlay | SplitViewDisplayMode.CompactOverlay)))
+                    {
+                        IsOpen = true;
+                    }
+                    else
+                    {
+                        IsOpen = false;
+                    }
+                }
+                else if(isLittle && !isVeryLittle)
+                {
+                    DisplayMode = SplitViewDisplayMode.CompactOverlay;
+                    IsOpen = false;
+                }
+                else
+                {
+                    DisplayMode = SplitViewDisplayMode.Overlay;
+                    IsOpen = false;
                 }
             }
-            // Debug.WriteLine($"(in strings processing) there are {items.Count()} strings");
-
-            ItemsAsStrings = l;
-            return ItemsAsStrings; // returns the list
         }
 
         internal void SelectSingleItemCore(object item)
@@ -115,7 +120,6 @@ namespace Aura.UI.Controls.Navigation
 
             _headeritem = this.GetControl<NavigationViewItemBase>(e, "PART_HeaderItem");
             _completeBox = this.GetControl<AutoCompleteBox>(e, "PART_AutoCompleteBox");
-            _completeBox.SelectionChanged += CompleteBoxItemSelected;
 
             _headeritem.PointerPressed += (s, e_) =>
             {
@@ -139,9 +143,9 @@ namespace Aura.UI.Controls.Navigation
                     IsOpen = true;
                 }
             };
+            _headeritem.Bind(NavigationViewItemBase.IsOpenProperty, this.GetObservable(IsOpenProperty));
 
             UpdateTitleAndSelectedContent();
-            ProcessString();
         }
 
         protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
@@ -151,21 +155,7 @@ namespace Aura.UI.Controls.Navigation
             if (Items is IList l && l.Count >= 1 && l[0] is ISelectable s)
                 SelectSingleItem(s);
         }
-
-        private void CompleteBoxItemSelected(object sender, SelectionChangedEventArgs e)
-        {
-            var n = (sender as AutoCompleteBox).SelectedItem; //gets the header string
-            var val = this.GetLogicalDescendants()
-                            .OfType<NavigationViewItem>().Where(x => x.Header == n); //select the nav-item by type and header
-
-            var val_c = val.FirstOrDefault(); // converts to NavigationViewItem
-            //
-            // Debug.WriteLine($"there are {val.Count()} strings"); //prints the count
-            if (val_c != null) //checks it
-            {
-                SelectSingleItem(val_c); //select it
-            }
-        }
+        
 
         ///<inheritdoc/>
         IAvaloniaList<ILogical> IContentPresenterHost.LogicalChildren => LogicalChildren;
@@ -176,7 +166,6 @@ namespace Aura.UI.Controls.Navigation
         {
             return RegisterContentPresenter(presenter);
         }
-
         protected override IItemContainerGenerator CreateItemContainerGenerator()
             => new NavigationViewContainerGenerator(this, NavigationViewItem.ContentProperty, NavigationViewItem.ItemsProperty, NavigationViewItem.HeaderProperty, NavigationViewItem.TitleProperty, NavigationViewItem.IsExpandedProperty);
 

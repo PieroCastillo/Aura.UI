@@ -265,8 +265,11 @@
 		<Setter Property="Opacity" Value="0" />
 	</Style>
 
-	<Style Selector="NavigationViewItem /template/ PressedGrid#PART_Grid:pointerover">
+	<Style Selector=":is(NavigationViewItemBase) /template/ PressedGrid#PART_Grid:pointerover">
 		<Setter Property="Background" Value="{DynamicResource NavigationViewItemPointerOver}" />
+	</Style>
+	<Style Selector=":is(NavigationViewItemBase).header /template/ PressedGrid#PART_Grid:pointerover">
+		<Setter Property="Background" Value="Transparent" />
 	</Style>
 
 	<Style Selector=":is(NavigationViewItemBase)[IsExpanded=False] /template/ :is(Control)#PART_BottomBorder">
