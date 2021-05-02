@@ -26,12 +26,13 @@
 		<CornerRadius x:Key="GroupBoxCornerRadius">10</CornerRadius>
 		<!--MessageDialog Resources-->
 		<!--NavigationView Resources-->
-		<x:Double x:Key="NavigationViewCompactPaneLength">50</x:Double>
+		<x:Double x:Key="NavigationViewCompactPaneLength">40</x:Double>
 		<x:Double x:Key="NavigationViewOpenPaneLength">250</x:Double>
 		<!--NavigationViewItem Resources-->
+    <Thickness x:Key="NavigationViewItemIconMargin">12.5</Thickness>
 		<!--NavigationViewLinker Resources-->
 		<CornerRadius x:Key="NavigationViewLinkerTitleCornerRadius">5</CornerRadius>
-		<!--Page Resources-->
+    <!--Page Resources-->
 		<!--PageView Resources-->
 		<!--ProgressRing-->
 		<!--Ribbon Resources-->

@@ -24,6 +24,8 @@ namespace Aura.UI.Controls.Navigation
     {
         private NavigationViewItemBase _headeritem;
         private AutoCompleteBox _completeBox;
+        private const double LittleWidth = 1005;
+        private const double VeryLittleWidth = 650;
 
         static NavigationView()
         {
@@ -46,29 +48,22 @@ namespace Aura.UI.Controls.Navigation
         {
             if (DynamicDisplayMode)
             {
-                var isLittle = rect.Width <= 1000 && 700 > rect.Width;
-                var isVeryLittle = rect.Width <= 700;
-                var isOpen = IsOpen;
+                var isLittle = rect.Width <= LittleWidth;
+                var isVeryLittle = rect.Width <= VeryLittleWidth;
 
-                if (!isLittle)
+                if (!isLittle && !isVeryLittle)
                 {
                     DisplayMode = SplitViewDisplayMode.CompactInline;
-
-                    if (isOpen || (DisplayMode == (SplitViewDisplayMode.Overlay | SplitViewDisplayMode.CompactOverlay)))
-                    {
-                        IsOpen = true;
-                    }
-                    else
-                    {
-                        IsOpen = false;
-                    }
+                    //if (DisplayMode == (SplitViewDisplayMode.Overlay | SplitViewDisplayMode.CompactOverlay)))
+                    IsOpen = true;
+                    
                 }
                 else if(isLittle && !isVeryLittle)
                 {
                     DisplayMode = SplitViewDisplayMode.CompactOverlay;
                     IsOpen = false;
                 }
-                else
+                else if(isLittle && isVeryLittle)
                 {
                     DisplayMode = SplitViewDisplayMode.Overlay;
                     IsOpen = false;
@@ -166,8 +161,8 @@ namespace Aura.UI.Controls.Navigation
         {
             return RegisterContentPresenter(presenter);
         }
-        protected override IItemContainerGenerator CreateItemContainerGenerator()
-            => new NavigationViewContainerGenerator(this, NavigationViewItem.ContentProperty, NavigationViewItem.ItemsProperty, NavigationViewItem.HeaderProperty, NavigationViewItem.TitleProperty, NavigationViewItem.IsExpandedProperty);
+        //protected override IItemContainerGenerator CreateItemContainerGenerator()
+          //  => new NavigationViewContainerGenerator(this, NavigationViewItem.ContentProperty, NavigationViewItem.ItemsProperty, NavigationViewItem.HeaderProperty, NavigationViewItem.TitleProperty, NavigationViewItem.IsExpandedProperty);
 
         ///<inheritdoc/>
         protected virtual bool RegisterContentPresenter(IContentPresenter presenter)

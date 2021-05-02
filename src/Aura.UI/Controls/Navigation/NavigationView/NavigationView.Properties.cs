@@ -32,9 +32,9 @@ namespace Aura.UI.Controls.Navigation
                 nameof(SelectedContent),
                 o => o.SelectedContent);
         public readonly static StyledProperty<double> CompactPaneLengthProperty =
-            AvaloniaProperty.Register<NavigationView, double>(nameof(CompactPaneLength), 50);
+            AvaloniaProperty.Register<NavigationView, double>(nameof(CompactPaneLength));
         public readonly static StyledProperty<double> OpenPaneLengthProperty =
-            AvaloniaProperty.Register<NavigationView, double>(nameof(OpenPaneLength), 200);
+            AvaloniaProperty.Register<NavigationView, double>(nameof(OpenPaneLength));
         public readonly static StyledProperty<bool> IsOpenProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), true);
 

@@ -80,9 +80,35 @@ namespace Aura.UI.Controls.Navigation
             get => _NavigationViewDistance;
             protected set => SetAndRaise(LevelProperty, ref _NavigationViewDistance, value);
         }
-
         public static readonly DirectProperty<NavigationViewItemBase, int> NavigationViewDistanceProperty =
             AvaloniaProperty.RegisterDirect<NavigationViewItemBase, int>(nameof(NavigationViewDistance), o => o.Level);
-        
+
+        public double CompactPaneLength
+        {
+            get => GetValue(CompactPaneLengthProperty);
+            set => SetValue(CompactPaneLengthProperty, value);
+        }
+        public readonly static StyledProperty<double> CompactPaneLengthProperty =
+            AvaloniaProperty.Register<NavigationViewItemBase, double>(nameof(CompactPaneLength));
+
+        public double OpenPaneLength
+        {
+            get => GetValue(OpenPaneLengthProperty);
+            set => SetValue(OpenPaneLengthProperty, value);
+        }
+        public readonly static StyledProperty<double> OpenPaneLengthProperty =
+            AvaloniaProperty.Register<NavigationViewItemBase, double>(nameof(OpenPaneLength));
+
+        private double _ExternalLength;
+        public double ExternalLength 
+        {
+            get => _ExternalLength;
+            private set => SetAndRaise(ExternalLengthProperty, ref _ExternalLength, value);
+        }
+
+        public static readonly DirectProperty<NavigationViewItemBase, double> ExternalLengthProperty =
+            AvaloniaProperty.RegisterDirect<NavigationViewItemBase, double>(nameof(ExternalLength),
+                o => o.ExternalLength);
+
     }
 }

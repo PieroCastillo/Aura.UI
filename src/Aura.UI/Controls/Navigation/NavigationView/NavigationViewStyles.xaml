@@ -70,27 +70,27 @@
 						<SplitView.Pane>
 							<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
 												   Padding="0,0">
-							<Grid RowDefinitions="auto,auto,auto,*">
-								<NavigationViewItemBase Grid.Row="1" Name="PART_HeaderItem"
-								                        Classes="header"
-								                        Icon="{Binding $parent[NavigationView].Icon}"
-								                        Header="{Binding $parent[NavigationView].Header}" />
-								<Border Grid.Row="2" IsVisible="{Binding $parent[NavigationView].IsOpen}"
-										Padding="5">
-									<AutoCompleteBox Name="PART_AutoCompleteBox" Watermark="Search" FilterMode="Contains"
-													 Items="{Binding $parent[NavigationView].ItemsAsStrings}"
-													 IsVisible="{Binding $parent[NavigationView].AutoCompleteBoxIsVisible}" />
-								</Border>
-								<DockPanel Grid.Row="3">
-									<ScrollViewer DockPanel.Dock="Top">
-										<ItemsPresenter Name="PART_ItemsPresenter"
-														Items="{Binding $parent[NavigationView].Items}"
-														ItemTemplate="{Binding $parent[NavigationView].ItemTemplate}"
-														ItemsPanel="{Binding $parent[NavigationView].ItemsPanel}" />
-									</ScrollViewer>
-								</DockPanel>
-							</Grid>
-						</ExperimentalAcrylicBorder>
+								<Grid RowDefinitions="auto,auto,auto,*">
+									<NavigationViewItemBase Grid.Row="1" Name="PART_HeaderItem"
+									                        Classes="header"
+									                        Icon="{Binding $parent[NavigationView].Icon}"
+									                        Header="{Binding $parent[NavigationView].Header}" />
+									<Border Grid.Row="2" IsVisible="{Binding $parent[NavigationView].IsOpen}"
+											Padding="5">
+										<AutoCompleteBox Name="PART_AutoCompleteBox" Watermark="Search" FilterMode="Contains"
+														 Items="{Binding $parent[NavigationView].ItemsAsStrings}"
+														 IsVisible="{Binding $parent[NavigationView].AutoCompleteBoxIsVisible}" />
+									</Border>
+									<DockPanel Grid.Row="3">
+										<ScrollViewer DockPanel.Dock="Top">
+											<ItemsPresenter Name="PART_ItemsPresenter"
+															Items="{Binding $parent[NavigationView].Items}"
+															ItemTemplate="{Binding $parent[NavigationView].ItemTemplate}"
+															ItemsPanel="{Binding $parent[NavigationView].ItemsPanel}" />
+										</ScrollViewer>
+									</DockPanel>
+								</Grid>
+							</ExperimentalAcrylicBorder>
 						</SplitView.Pane>
 						<Border Name="PART_Container" BoxShadow="{BoxShadow ShadowColor=LightGray}">
 							<Grid Background="{Binding $parent[NavigationView].Background}">
@@ -148,18 +148,6 @@
 	<Style Selector="NavigationView[IsOpen=false] /template/ ExperimentalAcrylicBorder#PART_AcrylicBorder">
 		<Setter Property="Width" Value="{Binding $parent[NavigationView].CompactPaneLength}" />
 	</Style>
-	
-	<!-- <Style Selector="SplitView#split > :is(NavigationViewItemBase)"> -->
-	<!-- 	<Setter Property="IsOpen" Value="{Binding #split.IsPaneOpen}" /> -->
-	<!-- </Style> -->
-
-	<!--<Style Selector="NavigationView[IsOpen=false] > SplitView">
-		<Setter Property="IsPaneOpen" Value="False" />
-	</Style>
-
-	<Style Selector="NavigationView[IsOpen=true] > SplitView">
-		<Setter Property="IsPaneOpen" Value="True" />
-	</Style>-->
 
 	<Style Selector="NavigationViewItemBase.header /template/ ContentPresenter#PART_ContentPresenter">
 		<Setter Property="TextBlock.FontWeight" Value="SemiBold" />

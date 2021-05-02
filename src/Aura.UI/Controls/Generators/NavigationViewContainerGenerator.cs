@@ -32,19 +32,13 @@ namespace Aura.UI.Controls.Generators
 
         protected override IControl CreateContainer(object item)
         {
-            ///var navviewitem = (NavigationViewItem)base.CreateContainer(item);
-            var navviewitem = item as NavigationViewItem;
-            if (item is NavigationViewItemBase nv)
-            {
-                nv.Bind(NavigationViewItemBase.IsOpenProperty, Owner.GetObservable(NavigationView.IsOpenProperty), BindingPriority.Style);
+            var navviewitem = (NavigationViewItem)base.CreateContainer(item);
+            navviewitem.Bind(NavigationViewItem.IsOpenProperty, (Owner as NavigationView).GetObservable(NavigationView.IsOpenProperty), BindingPriority.LocalValue);
                 Debug.WriteLine("pased" + navviewitem.Header.ToString());
-                return navviewitem;
-            }
-
-            navviewitem.Bind(NavigationViewItem.HeaderProperty, navviewitem.GetBindingObservable(Header));
-            navviewitem.Bind(NavigationViewItem.ContentProperty, navviewitem.GetBindingObservable(Content));
-            navviewitem.Bind(NavigationViewItem.ItemsProperty, navviewitem.GetBindingObservable(Items));
-            navviewitem.Bind(NavigationViewItem.TitleProperty, navviewitem.GetBindingObservable(Title));
+            //navviewitem.Bind(NavigationViewItem.HeaderProperty, navviewitem.GetBindingObservable(Header));
+            //navviewitem.Bind(NavigationViewItem.ContentProperty, navviewitem.GetBindingObservable(Content));
+            //navviewitem.Bind(NavigationViewItem.ItemsProperty, navviewitem.GetBindingObservable(Items));
+            //navviewitem.Bind(NavigationViewItem.TitleProperty, navviewitem.GetBindingObservable(Title));
 
             return navviewitem;
         }

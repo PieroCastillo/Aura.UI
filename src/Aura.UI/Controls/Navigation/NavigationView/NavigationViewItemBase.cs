@@ -12,7 +12,6 @@ namespace Aura.UI.Controls.Navigation
     public partial class NavigationViewItemBase : TreeViewItem, IHeadered
     {
         private object _content = "Content";
-
         static NavigationViewItemBase()
         {
             IsExpandedProperty.Changed.AddClassHandler<NavigationViewItemBase>(
@@ -44,8 +43,18 @@ namespace Aura.UI.Controls.Navigation
                     }
                 });
             IsOpenProperty.Changed.Subscribe(e => OnIsOpenChanged(e));
+            OpenPaneLengthProperty.Changed.Subscribe(OnPaneSizesChanged);
+            CompactPaneLengthProperty.Changed.Subscribe(OnPaneSizesChanged);
         }
-        
+
+        private static void OnPaneSizesChanged(AvaloniaPropertyChangedEventArgs<double> e)
+        {
+            if (e.Sender is NavigationViewItemBase n)
+            {
+                n.ExternalLength = n.OpenPaneLength - n.CompactPaneLength;
+            }
+        }
+
         private static void OnIsOpenChanged(AvaloniaPropertyChangedEventArgs<bool> e)
         {
             var sender = e.Sender as NavigationViewItem; 
