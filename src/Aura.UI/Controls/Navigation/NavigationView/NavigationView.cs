@@ -16,14 +16,16 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Avalonia.VisualTree;
 
 namespace Aura.UI.Controls.Navigation
 {
     [PseudoClasses(":normal")]
     public partial class NavigationView : TreeView, IItemsPresenterHost, IContentPresenterHost, IHeadered
     {
-        private NavigationViewItemBase _headeritem;
+        private Button _headeritem;
         private AutoCompleteBox _completeBox;
+        private SplitView _splitVw;
         private const double LittleWidth = 1005;
         private const double VeryLittleWidth = 650;
 
@@ -54,9 +56,8 @@ namespace Aura.UI.Controls.Navigation
                 if (!isLittle && !isVeryLittle)
                 {
                     DisplayMode = SplitViewDisplayMode.CompactInline;
-                    //if (DisplayMode == (SplitViewDisplayMode.Overlay | SplitViewDisplayMode.CompactOverlay)))
-                    IsOpen = true;
-                    
+                    //if (DisplayMode == (SplitViewDisplayMode.Overlay | SplitViewDisplayMode.CompactOverlay))
+
                 }
                 else if(isLittle && !isVeryLittle)
                 {
@@ -113,10 +114,11 @@ namespace Aura.UI.Controls.Navigation
         {
             base.OnApplyTemplate(e);
 
-            _headeritem = this.GetControl<NavigationViewItemBase>(e, "PART_HeaderItem");
+            _headeritem = this.GetControl<Button>(e, "PART_HeaderItem");
             _completeBox = this.GetControl<AutoCompleteBox>(e, "PART_AutoCompleteBox");
+            _splitVw = this.GetControl<SplitView>(e,"split");
 
-            _headeritem.PointerPressed += (s, e_) =>
+            _headeritem.Click += (s, e_) =>
             {
                 var e = IsOpen;
                 var a = AlwaysOpen;

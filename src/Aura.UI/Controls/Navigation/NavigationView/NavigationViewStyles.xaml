@@ -1,11 +1,10 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
-		<NavigationView Width="1000" CompactPaneLength="50" IsOpen="True"
-							 Height="600" SelectedItem="{Binding #st}">
+		<NavigationView Width="700" DisplayMode="CompactOverlay">
 			<NavigationViewItem Header="Header" Title="Item Title"
 								Content="Item Content">
-				<NavigationViewItem Name="st" Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
+				<NavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
 					<NavigationViewItem Header="SubItem 2" Title="SubItem 2 Title" Content="SubItem 2 Content" />
 					<NavigationViewItem Header="SubItem 3" Title="SubItem 3 Title" Content="SubItem 3 Content" />
 				</NavigationViewItem>
@@ -28,16 +27,17 @@
 		</NavigationView>
 	</Design.PreviewWith>
 	<Styles.Resources>
-		<DrawingImage x:Key="Microns.Menu">
-			<GeometryDrawing  Brush="{DynamicResource NavigationViewForeground}"
-							  Geometry="M64 96L448 96 448 144 64 144 64 96ZM64 232L448 232 448 280 64 280 64 232ZM64 368L448 368 448 416 64 416 64 368Z" />
+		<DrawingImage x:Key="line_horizontal_3_regular">
+			<GeometryDrawing Brush="{DynamicResource NavigationViewForeground}">
+				<StreamGeometry>M2 4.5C2 4.22386 2.22386 4 2.5 4H17.5C17.7761 4 18 4.22386 18 4.5C18 4.77614 17.7761 5 17.5 5H2.5C2.22386 5 2 4.77614 2 4.5Z M2 9.5C2 9.22386 2.22386 9 2.5 9H17.5C17.7761 9 18 9.22386 18 9.5C18 9.77614 17.7761 10 17.5 10H2.5C2.22386 10 2 9.77614 2 9.5Z M2.5 14C2.22386 14 2 14.2239 2 14.5C2 14.7761 2.22386 15 2.5 15H17.5C17.7761 15 18 14.7761 18 14.5C18 14.2239 17.7761 14 17.5 14H2.5Z</StreamGeometry>
+			</GeometryDrawing>
 		</DrawingImage>
 		<DrawingImage x:Key="Material.Home">
 			<GeometryDrawing  Brush="{DynamicResource SystemBaseHighColor}" Geometry="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
 		</DrawingImage>
 	</Styles.Resources>
 
-	<Style Selector="NavigationView Separator">
+	<Style Selector="NavigationView > Separator">
 		<Setter Property="DockPanel.Dock" Value="Top" />
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -53,7 +53,7 @@
 		<Setter Property="CompactPaneLength" Value="{DynamicResource NavigationViewCompactPaneLength}" />
 		<Setter Property="OpenPaneLength" Value="{DynamicResource NavigationViewOpenPaneLength}" />
 		<Setter Property="Background" Value="{DynamicResource NavigationViewBackground}" />
-		<Setter Property="Icon" Value="{DynamicResource Microns.Menu}" />
+		<Setter Property="Icon" Value="{DynamicResource line_horizontal_3_regular}" />
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
 				<DockPanel />
@@ -63,55 +63,66 @@
 			<ControlTemplate>
 				<SplitView Name="split"
 					IsPaneOpen="{Binding $parent[NavigationView].IsOpen, Mode=TwoWay}"
-						   UseLightDismissOverlayMode="True" UseLayoutRounding="True"
-							   CompactPaneLength="{Binding $parent[NavigationView].CompactPaneLength}"
-							   OpenPaneLength="{Binding $parent[NavigationView].OpenPaneLength}"
-							   DisplayMode="{Binding $parent[NavigationView].DisplayMode}">
-						<SplitView.Pane>
+					CompactPaneLength="{Binding $parent[NavigationView].CompactPaneLength}"
+					OpenPaneLength="{Binding $parent[NavigationView].OpenPaneLength}"
+					DisplayMode="{Binding $parent[NavigationView].DisplayMode}">
+					<SplitView.Pane>
+						<Border Name="PART_ShadowBorder">
 							<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
-												   Padding="0,0">
+						                           Padding="0,0">
 								<Grid RowDefinitions="auto,auto,auto,*">
-									<NavigationViewItemBase Grid.Row="1" Name="PART_HeaderItem"
-									                        Classes="header"
-									                        Icon="{Binding $parent[NavigationView].Icon}"
-									                        Header="{Binding $parent[NavigationView].Header}" />
+									<Button Grid.Row="1" 
+									        Name="PART_HeaderItem"
+									        Classes="header"
+									        Width="{Binding $parent[NavigationView].CompactPaneLength}"
+									        Height="{Binding $parent[NavigationView].CompactPaneLength}">
+										<Image Source="{Binding $parent[NavigationView].Icon}"/>
+									</Button>
+									                        <!-- Icon="" -->
+									                        <!-- Header="{Binding $parent[NavigationView].Header}" /> -->
 									<Border Grid.Row="2" IsVisible="{Binding $parent[NavigationView].IsOpen}"
-											Padding="5">
+									        Padding="5">
 										<AutoCompleteBox Name="PART_AutoCompleteBox" Watermark="Search" FilterMode="Contains"
-														 Items="{Binding $parent[NavigationView].ItemsAsStrings}"
-														 IsVisible="{Binding $parent[NavigationView].AutoCompleteBoxIsVisible}" />
+										                 Items="{Binding $parent[NavigationView].ItemsAsStrings}"
+										                 IsVisible="{Binding $parent[NavigationView].AutoCompleteBoxIsVisible}" />
 									</Border>
 									<DockPanel Grid.Row="3">
 										<ScrollViewer DockPanel.Dock="Top">
 											<ItemsPresenter Name="PART_ItemsPresenter"
-															Items="{Binding $parent[NavigationView].Items}"
-															ItemTemplate="{Binding $parent[NavigationView].ItemTemplate}"
-															ItemsPanel="{Binding $parent[NavigationView].ItemsPanel}" />
+											                Items="{Binding $parent[NavigationView].Items}"
+											                ItemTemplate="{Binding $parent[NavigationView].ItemTemplate}"
+											                ItemsPanel="{Binding $parent[NavigationView].ItemsPanel}" />
 										</ScrollViewer>
 									</DockPanel>
 								</Grid>
 							</ExperimentalAcrylicBorder>
-						</SplitView.Pane>
-						<Border Name="PART_Container" BoxShadow="{BoxShadow ShadowColor=LightGray}">
-							<Grid Background="{Binding $parent[NavigationView].Background}">
-								<ScrollViewer HorizontalContentAlignment="Left"
-											  AllowAutoHide="True"
-											  HorizontalScrollBarVisibility="Disabled">
-									<Grid RowDefinitions="auto,*">
-										<AuraContentPresenter Grid.Row="0"
-														  IsVisible="{Binding !$parent[NavigationView].HideTitle}"
-														  Name="PART_TitlePresenter"
-														  Content="{Binding $parent[NavigationView].Title}"
-															TextBlock.FontWeight="Light"
-															TextBlock.FontSize="30" />
-										<ContentPresenter Grid.Row="1"
-													  Name="PART_SelectedContentPresenter"
-													  Content="{Binding $parent[NavigationView].SelectedContent}" />
-									</Grid>
-								</ScrollViewer>
-							</Grid>
 						</Border>
-					</SplitView>
+					</SplitView.Pane>
+					<Border Name="PART_Container" 
+					        Background="{Binding $parent[NavigationView].Background}">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="auto" MinHeight="75"/>
+								<RowDefinition />
+							</Grid.RowDefinitions>
+							<AuraContentPresenter Grid.Row="0"
+							                      IsVisible="{Binding !$parent[NavigationView].HideTitle}"
+							                      Name="PART_TitlePresenter"
+							                      Content="{Binding $parent[NavigationView].Title}"
+							                      TextBlock.FontWeight="UltraLight"
+							                      TextBlock.FontSize="25"/>
+							<ScrollViewer Grid.Row="1" HorizontalContentAlignment="Left"
+							              AllowAutoHide="True"
+							              HorizontalScrollBarVisibility="Disabled">
+								<Grid RowDefinitions="auto,*">
+									<ContentPresenter Grid.Row="1"
+									                  Name="PART_SelectedContentPresenter"
+									                  Content="{Binding $parent[NavigationView].SelectedContent}" />
+								</Grid>
+							</ScrollViewer>
+						</Grid>
+					</Border>
+				</SplitView>
 			</ControlTemplate>
 		</Setter>
 	</Style>
@@ -132,15 +143,15 @@
 			</Animation>
 		</Style.Animations>
 	</Style>
+	
+	<Style Selector="NavigationView /template/ Border#PART_ShadowBorder">
+		<Setter Property="BoxShadow" Value="0 0 50 0 Black"/>
+	</Style>
 
 	<Style Selector="NavigationView ExperimentalAcrylicBorder#PART_AcrylicBorder">
 		<Setter Property="Material" Value="{StaticResource NavigationViewMaterial}" />
 	</Style>
-
-	<!--<Style Selector="NavigationView[IsFocused=false] ExperimentalAcrylicBorder#PART_AcrylicBorder">
-		<Setter Property="Material" Value="{StaticResource NavigationViewUnFocusMaterial}" />
-	</Style>-->
-
+	
 	<Style Selector="NavigationView[IsOpen=true] /template/ ExperimentalAcrylicBorder#PART_AcrylicBorder">
 		<Setter Property="Width" Value="{Binding $parent[NavigationView].OpenPaneLength}" />
 	</Style>

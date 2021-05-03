@@ -5,15 +5,10 @@
     <projectFile>Tests/UI.Tests/UI.Tests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="backup">
+    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Common.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Common.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemStyles.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +36,11 @@
     <setting file="file://$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B8EF69D3-A481-43FE-8568-E981A8FFA98B/7e/fe1b3923/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B8EF69D3-A481-43FE-8568-E981A8FFA98B/2B3/CastHelpers.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/AuraDev/Aura.UI/src/Aura.UI/AuraUIResources.Common.axaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/76A47633-C1FE-4701-BC16-72785573E19C/4/AvaloniaObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/C5DCFCBB-1175-46AB-A2CE-E7B281D6F25C/B5/HeaderedContentControl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/AuraDev/Aura.UI/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" root0="SKIP_HIGHLIGHTING" />
@@ -94,15 +92,15 @@
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Program.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/CardCollection/CardControlStyles.xaml" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainWindow.axaml" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Common.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" />
+      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
@@ -190,7 +188,7 @@
       <workItem from="1619724635825" duration="8004000" />
       <workItem from="1619794717924" duration="4718000" />
       <workItem from="1619835034837" duration="179000" />
-      <workItem from="1619899388776" duration="9509000" />
+      <workItem from="1619899388776" duration="17637000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>
@@ -297,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619899409689</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="backup, navviewitem redesign, navview dynamic splitmode(incompleted)">
+      <created>1619932732312</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1619932732312</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +335,8 @@
     <MESSAGE value="AuraTabItem initial mvvm support done" />
     <MESSAGE value="refresh styles for Aura.UI &amp; Aura.UI.Gallery" />
     <MESSAGE value="backup" />
-    <option name="LAST_COMMIT_MESSAGE" value="backup" />
+    <MESSAGE value="backup, navviewitem redesign, navview dynamic splitmode(incompleted)" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup, navviewitem redesign, navview dynamic splitmode(incompleted)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
