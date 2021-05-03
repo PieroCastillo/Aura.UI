@@ -90,7 +90,7 @@ namespace Aura.UI.Controls
             if (canExecute != _commandCanExecute)
             {
                 _commandCanExecute = canExecute;
-                UpdateIsEffectivelyEnabled();
+                //UpdateIsEffectivelyEnabled();
             }
         }
 
@@ -112,7 +112,7 @@ namespace Aura.UI.Controls
                     if (_commandCanExecute)
                     {
                         _commandCanExecute = false;
-                        UpdateIsEffectivelyEnabled();
+                        //UpdateIsEffectivelyEnabled();
                     }
                 }
             }
