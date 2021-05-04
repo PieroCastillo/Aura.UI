@@ -20,7 +20,7 @@ using Avalonia.VisualTree;
 
 namespace Aura.UI.Controls.Navigation
 {
-    [PseudoClasses(":normal")]
+    [PseudoClasses(":normal",":compact")]
     public partial class NavigationView : TreeView, IItemsPresenterHost, IContentPresenterHost, IHeadered
     {
         private Button _headeritem;
@@ -35,6 +35,11 @@ namespace Aura.UI.Controls.Navigation
             SelectedItemProperty.Changed.AddClassHandler<NavigationView>((x, e) => x.OnSelectedItemChanged(x, e));
             FocusableProperty.OverrideDefaultValue<NavigationView>(true);
             IsOpenProperty.Changed.AddClassHandler<NavigationView>((x, e) => x.OnIsOpenChanged(x, e));
+            IsFloatingHeaderProperty.Changed.Subscribe(x =>
+            {
+                if(x.Sender is NavigationView nw)
+                    nw.UpdateHeaderVisibility();
+            });
         }
 
         public NavigationView()
@@ -55,19 +60,28 @@ namespace Aura.UI.Controls.Navigation
 
                 if (!isLittle && !isVeryLittle)
                 {
+                    UpdatePseudoClasses(false);
                     DisplayMode = SplitViewDisplayMode.CompactInline;
-                    //if (DisplayMode == (SplitViewDisplayMode.Overlay | SplitViewDisplayMode.CompactOverlay))
-
                 }
                 else if(isLittle && !isVeryLittle)
                 {
+                    UpdatePseudoClasses(false);
                     DisplayMode = SplitViewDisplayMode.CompactOverlay;
                     IsOpen = false;
+                    foreach (var navigationViewItemBase in this.GetLogicalDescendants().OfType<NavigationViewItemBase>())
+                    {
+                        navigationViewItemBase.IsExpanded = false;
+                    }
                 }
                 else if(isLittle && isVeryLittle)
                 {
+                    UpdatePseudoClasses(true);
                     DisplayMode = SplitViewDisplayMode.Overlay;
                     IsOpen = false;
+                    foreach (var navigationViewItemBase in this.GetLogicalDescendants().OfType<NavigationViewItemBase>())
+                    {
+                        navigationViewItemBase.IsExpanded = false;
+                    }
                 }
             }
         }
@@ -105,6 +119,9 @@ namespace Aura.UI.Controls.Navigation
         {
             SelectSingleItemCore(item);
         }
+
+        private void UpdateHeaderVisibility() => HeaderVisible = IsOpen | IsFloatingHeader;
+        
         protected void OnSelectedItemChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
             UpdateTitleAndSelectedContent();
@@ -118,7 +135,7 @@ namespace Aura.UI.Controls.Navigation
             _completeBox = this.GetControl<AutoCompleteBox>(e, "PART_AutoCompleteBox");
             _splitVw = this.GetControl<SplitView>(e,"split");
 
-            _headeritem.Click += (s, e_) =>
+            _headeritem.Click += delegate
             {
                 var e = IsOpen;
                 var a = AlwaysOpen;
@@ -140,7 +157,6 @@ namespace Aura.UI.Controls.Navigation
                     IsOpen = true;
                 }
             };
-            _headeritem.Bind(NavigationViewItemBase.IsOpenProperty, this.GetObservable(IsOpenProperty));
 
             UpdateTitleAndSelectedContent();
         }
@@ -193,6 +209,20 @@ namespace Aura.UI.Controls.Navigation
 
         protected virtual void OnIsOpenChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
+            UpdateHeaderVisibility();
+        }
+
+        private void UpdatePseudoClasses(bool isCompact)
+        {
+            switch (isCompact)
+            {
+                case true:
+                    PseudoClasses.Add(":compact");
+                    break;
+                case false:
+                    PseudoClasses.Remove("compact");
+                    break;
+            }
         }
 
         protected virtual void UpdateTitleAndSelectedContent()

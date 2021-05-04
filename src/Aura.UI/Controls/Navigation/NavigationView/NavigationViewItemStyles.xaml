@@ -35,6 +35,7 @@
 		</DrawingImage>
 		<converters:MarginMultiplierConverter Indent="16" Left="True"
 											  x:Key="LevelConv" />
+		
 	</Styles.Resources>
 	<Style Selector="NavigationViewItemBase">
 		<Setter Property="Padding" Value="0 5" />

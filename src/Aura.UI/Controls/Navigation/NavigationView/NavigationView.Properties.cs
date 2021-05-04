@@ -13,6 +13,7 @@ namespace Aura.UI.Controls.Navigation
         private object _title;
         private object _selectedcontent;
         private IEnumerable<string> _itemsasstrings;
+        private bool _HeaderVisible;
         //private bool _canGoBack;
         //private bool _canGoForward;
 
@@ -52,6 +53,12 @@ namespace Aura.UI.Controls.Navigation
         public readonly static DirectProperty<NavigationView, IEnumerable<string>> ItemsAsStringsProperty =
             AvaloniaProperty.RegisterDirect<NavigationView, IEnumerable<string>>(nameof(ItemsAsStrings),
                                                                                  o => o.ItemsAsStrings);
+
+        public readonly static StyledProperty<bool> IsFloatingHeaderProperty =
+            AvaloniaProperty.Register<NavigationView, bool>(nameof(IsFloatingHeader));
+
+        public readonly static DirectProperty<NavigationView, bool> HeaderVisibleProperty =
+            AvaloniaProperty.RegisterDirect<NavigationView, bool>(nameof(HeaderVisible), o => o.HeaderVisible);
         //public readonly static DirectProperty<NavigationView, bool> CanGoBackProperty =
         //    AvaloniaProperty.RegisterDirect<NavigationView, bool>(nameof(CanGoBack),
         //                                                          o => o.CanGoBack, unsetValue: false);
@@ -155,6 +162,18 @@ namespace Aura.UI.Controls.Navigation
             set => SetValue(DynamicDisplayModeProperty, value);
         }
 
+        public bool IsFloatingHeader
+        {
+            get => GetValue(IsFloatingHeaderProperty);
+            set => SetValue(IsFloatingHeaderProperty, value);
+        }
+
+        public bool HeaderVisible
+        {
+            get => _HeaderVisible;
+            private set => SetAndRaise(HeaderVisibleProperty, ref _HeaderVisible, value);
+        }
+        
         //public bool CanGoBack
         //{
         //    get => _canGoBack;

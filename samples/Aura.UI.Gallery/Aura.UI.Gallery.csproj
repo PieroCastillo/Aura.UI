@@ -61,4 +61,8 @@
     <ProjectReference Include="..\..\src\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="ReactivePages\ReactiveAuraTabViewPage.axaml" />
+    <UpToDateCheckInput Remove="ReactivePages\ReactiveCardCollectionPage.axaml" />
+  </ItemGroup>
 </Project>

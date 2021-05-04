@@ -4,11 +4,13 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Interactivity;
 using System;
 using System.Diagnostics;
+using Avalonia.Controls.Primitives;
+using Avalonia.Input;
 using Avalonia.LogicalTree;
 
 namespace Aura.UI.Controls.Navigation
 {
-    [PseudoClasses(":opened", ":closed", ":selected")]
+    [PseudoClasses(":opened", ":closed", ":selected", ":compact")]
     public partial class NavigationViewItemBase : TreeViewItem, IHeadered
     {
         private object _content = "Content";
@@ -60,7 +62,7 @@ namespace Aura.UI.Controls.Navigation
             var sender = e.Sender as NavigationViewItem; 
             if (sender != null && e.NewValue.HasValue) 
             { 
-                if (sender.IsSelected && sender.Parent is NavigationViewItem nw && nw.Parent is NavigationView nwp)
+                if (sender.IsSelected && sender.Parent is NavigationViewItem nw && nw.Parent is NavigationView nwp && nw.SelectOnClose)
                 {
                     nwp.SelectSingleItem(nw);
                     nw.IsExpanded = false;

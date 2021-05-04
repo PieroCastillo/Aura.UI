@@ -1,7 +1,9 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:lconverters="using:Aura.UI.Converters">
 	<Design.PreviewWith>
-		<NavigationView Width="700" DisplayMode="CompactOverlay">
+		<NavigationView Width="700" DisplayMode="CompactOverlay" Header="Nice"
+		                IsFloatingHeader="True">
 			<NavigationViewItem Header="Header" Title="Item Title"
 								Content="Item Content">
 				<NavigationViewItem Header="Sub Item" IsExpanded="True" Title="SubItem Title" Content="SubItem Content">
@@ -35,6 +37,7 @@
 		<DrawingImage x:Key="Material.Home">
 			<GeometryDrawing  Brush="{DynamicResource SystemBaseHighColor}" Geometry="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" />
 		</DrawingImage>
+		<lconverters:IntToColumnDefinitionWidthConverter x:Key="WidthConverter"/>
 	</Styles.Resources>
 
 	<Style Selector="NavigationView > Separator">
@@ -61,71 +64,97 @@
 		</Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
-				<SplitView Name="split"
-					IsPaneOpen="{Binding $parent[NavigationView].IsOpen, Mode=TwoWay}"
-					CompactPaneLength="{Binding $parent[NavigationView].CompactPaneLength}"
-					OpenPaneLength="{Binding $parent[NavigationView].OpenPaneLength}"
-					DisplayMode="{Binding $parent[NavigationView].DisplayMode}">
-					<SplitView.Pane>
-						<Border Name="PART_ShadowBorder">
-							<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
-						                           Padding="0,0">
-								<Grid RowDefinitions="auto,auto,auto,*">
-									<Button Grid.Row="1" 
-									        Name="PART_HeaderItem"
-									        Classes="header"
-									        Width="{Binding $parent[NavigationView].CompactPaneLength}"
-									        Height="{Binding $parent[NavigationView].CompactPaneLength}">
-										<Image Source="{Binding $parent[NavigationView].Icon}"/>
-									</Button>
-									                        <!-- Icon="" -->
-									                        <!-- Header="{Binding $parent[NavigationView].Header}" /> -->
-									<Border Grid.Row="2" IsVisible="{Binding $parent[NavigationView].IsOpen}"
-									        Padding="5">
-										<AutoCompleteBox Name="PART_AutoCompleteBox" Watermark="Search" FilterMode="Contains"
-										                 Items="{Binding $parent[NavigationView].ItemsAsStrings}"
-										                 IsVisible="{Binding $parent[NavigationView].AutoCompleteBoxIsVisible}" />
-									</Border>
-									<DockPanel Grid.Row="3">
-										<ScrollViewer DockPanel.Dock="Top">
-											<ItemsPresenter Name="PART_ItemsPresenter"
-											                Items="{Binding $parent[NavigationView].Items}"
-											                ItemTemplate="{Binding $parent[NavigationView].ItemTemplate}"
-											                ItemsPanel="{Binding $parent[NavigationView].ItemsPanel}" />
-										</ScrollViewer>
-									</DockPanel>
-								</Grid>
-							</ExperimentalAcrylicBorder>
+				<Grid>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="{Binding $parent[NavigationView].CompactPaneLength, Converter={StaticResource WidthConverter}}" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<SplitView
+						Name="split"
+						Grid.ColumnSpan="2"
+						IsPaneOpen="{Binding $parent[NavigationView].IsOpen, Mode=TwoWay}"
+						CompactPaneLength="{Binding $parent[NavigationView].CompactPaneLength}"
+						OpenPaneLength="{Binding $parent[NavigationView].OpenPaneLength}"
+						DisplayMode="{Binding $parent[NavigationView].DisplayMode}">
+						<SplitView.Pane>
+							<Border Name="PART_ShadowBorder">
+								<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
+							                           Padding="0,0">
+									<Grid RowDefinitions="auto,auto,auto,*">
+										<Border Grid.Row="1" 
+										        Width="{Binding $parent[NavigationView].CompactPaneLength}"
+										        Height="{Binding $parent[NavigationView].CompactPaneLength}"></Border>
+										<Border Grid.Row="2" IsVisible="{Binding $parent[NavigationView].IsOpen}"
+										        Padding="5">
+											<AutoCompleteBox Name="PART_AutoCompleteBox" Watermark="Search" FilterMode="Contains"
+											                 Items="{Binding $parent[NavigationView].ItemsAsStrings}"
+											                 IsVisible="{Binding $parent[NavigationView].AutoCompleteBoxIsVisible}" />
+										</Border>
+										<DockPanel Grid.Row="3">
+											<ScrollViewer DockPanel.Dock="Top">
+												<ItemsPresenter Name="PART_ItemsPresenter"
+												                Items="{Binding $parent[NavigationView].Items}"
+												                ItemTemplate="{Binding $parent[NavigationView].ItemTemplate}"
+												                ItemsPanel="{Binding $parent[NavigationView].ItemsPanel}" />
+											</ScrollViewer>
+										</DockPanel>
+									</Grid>
+								</ExperimentalAcrylicBorder>
+							</Border>
+						</SplitView.Pane>
+						<Border Name="PART_Container" 
+						        Background="{Binding $parent[NavigationView].Background}">
+							<Grid>
+								<Grid.RowDefinitions>
+									<RowDefinition Height="auto" MinHeight="75"/>
+									<RowDefinition />
+								</Grid.RowDefinitions>
+								<AuraContentPresenter Grid.Row="0"
+								                      IsVisible="{Binding !$parent[NavigationView].HideTitle}"
+								                      Name="PART_TitlePresenter"
+								                      Margin="20 0 0 0"
+								                      Padding="0"
+								                      VerticalAlignment="Bottom"
+								                      Content="{Binding $parent[NavigationView].Title}"
+								                      TextBlock.FontWeight="UltraLight"
+								                      TextBlock.FontSize="25"/>
+								<ScrollViewer Grid.Row="1" HorizontalContentAlignment="Left"
+								              AllowAutoHide="True"
+								              HorizontalScrollBarVisibility="Disabled">
+									<Grid RowDefinitions="auto,*">
+										<ContentPresenter Grid.Row="1"
+										                  Name="PART_SelectedContentPresenter"
+										                  Content="{Binding $parent[NavigationView].SelectedContent}" />
+									</Grid>
+								</ScrollViewer>
+							</Grid>
 						</Border>
-					</SplitView.Pane>
-					<Border Name="PART_Container" 
-					        Background="{Binding $parent[NavigationView].Background}">
-						<Grid>
-							<Grid.RowDefinitions>
-								<RowDefinition Height="auto" MinHeight="75"/>
-								<RowDefinition />
-							</Grid.RowDefinitions>
-							<AuraContentPresenter Grid.Row="0"
-							                      IsVisible="{Binding !$parent[NavigationView].HideTitle}"
-							                      Name="PART_TitlePresenter"
-							                      Content="{Binding $parent[NavigationView].Title}"
-							                      TextBlock.FontWeight="UltraLight"
-							                      TextBlock.FontSize="25"/>
-							<ScrollViewer Grid.Row="1" HorizontalContentAlignment="Left"
-							              AllowAutoHide="True"
-							              HorizontalScrollBarVisibility="Disabled">
-								<Grid RowDefinitions="auto,*">
-									<ContentPresenter Grid.Row="1"
-									                  Name="PART_SelectedContentPresenter"
-									                  Content="{Binding $parent[NavigationView].SelectedContent}" />
-								</Grid>
-							</ScrollViewer>
-						</Grid>
-					</Border>
-				</SplitView>
+					</SplitView>
+					<Button
+					        Name="PART_HeaderItem"
+					        Background="Transparent"
+					        Width="{Binding $parent[NavigationView].CompactPaneLength}"
+					        Height="{Binding $parent[NavigationView].CompactPaneLength}"
+					        VerticalContentAlignment="Center"
+					        HorizontalContentAlignment="Center"
+					        ClickMode="Release"
+					        VerticalAlignment="Top">
+						<Image Source="{Binding $parent[NavigationView].Icon}"/>
+					</Button>
+					<ContentPresenter
+						Grid.Column="1"
+						IsVisible="{Binding $parent[NavigationView].HeaderVisible}"
+						Name="PART_HeaderPresenter"
+						HorizontalAlignment="Left"
+						Content="{Binding $parent[NavigationView].Header}"
+						Margin="{StaticResource NavigationViewHeaderMargin}"
+						TextBlock.FontSize="14"
+						TextBlock.FontFamily="Segoe UI"/>
+				</Grid>
 			</ControlTemplate>
 		</Setter>
 	</Style>
+	
 	<Style Selector="NavigationView /template/ AuraContentPresenter#PART_TitlePresenter[ContentIsString=true]">
 		<Setter Property="Padding" Value="20" />
 	</Style>

@@ -20,22 +20,11 @@
   </UserControl.DataContext>
   <NavigationView Header="Aura.UI Gallery"
                   AlwaysOpen="False"
+                  IsFloatingHeader="True"
                   OpenPaneLength="300">
     <NavigationViewItem  Header="What's new?"
-              Icon="{DynamicResource Zondicons.Announcement}">
-      <NavigationViewItem.Title>
-        <Grid VerticalAlignment="Top">
-          <Grid.Background>
-            <SolidColorBrush Color="{DynamicResource SystemAccentColorLight2}"/>
-          </Grid.Background>
-          <TextBlock Text="What's New?"
-                 Foreground="White"
-                 Padding="20"
-                 FontSize="30"/>
-          <Border Background="Transparent"
-              BoxShadow="inset 0 5 20 0 White"/>
-        </Grid>
-      </NavigationViewItem.Title>
+              Icon="{DynamicResource Zondicons.Announcement}"
+              Title="What's new">
       <NavigationViewItem.Content>
         <GroupBox Margin="10" Grid.Row="1"
               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
@@ -265,15 +254,15 @@
         </NavigationViewItem.Content>
       </NavigationViewItem>
     </NavigationViewItem>
-    <NavigationViewItem Header="MVVM" Title="{Binding Titles.MVVM}" 
-                        Icon="{DynamicResource ReactiveUILogo}">
-      <NavigationViewItem Header="{Binding Titles.CardCollection}" Title="{Binding Titles.CardCollection}"
-                          Icon="{DynamicResource Material.CardsOutline}">
-        <NavigationViewItem.Content>
-          <rpg:ReactiveCardCollectionPage/>
-        </NavigationViewItem.Content>
-      </NavigationViewItem>
-    </NavigationViewItem>
+    <!-- <NavigationViewItem Header="MVVM" Title="{Binding Titles.MVVM}"  -->
+    <!--                     Icon="{DynamicResource ReactiveUILogo}"> -->
+    <!--   <NavigationViewItem Header="{Binding Titles.CardCollection}" Title="{Binding Titles.CardCollection}" -->
+    <!--                       Icon="{DynamicResource Material.CardsOutline}"> -->
+    <!--     <NavigationViewItem.Content> -->
+    <!--       <rpg:ReactiveCardCollectionPage/> -->
+    <!--     </NavigationViewItem.Content> -->
+    <!--   </NavigationViewItem> -->
+    <!-- </NavigationViewItem> -->
     <NavigationViewItem Header="Settings" Title="Settings" VerticalAlignment="Bottom"
                         Icon="{DynamicResource EvaIcons.Settings2Outline}">
       <NavigationViewItem.Content>

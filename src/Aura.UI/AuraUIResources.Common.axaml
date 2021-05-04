@@ -28,6 +28,7 @@
 		<!--NavigationView Resources-->
 		<x:Double x:Key="NavigationViewCompactPaneLength">40</x:Double>
 		<x:Double x:Key="NavigationViewOpenPaneLength">250</x:Double>
+    <Thickness x:Key="NavigationViewHeaderMargin">20 10 0 0</Thickness>
 		<!--NavigationViewItem Resources-->
     <Thickness x:Key="NavigationViewItemIconMargin">12.5</Thickness>
 		<!--NavigationViewLinker Resources-->
