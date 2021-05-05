@@ -28,7 +28,6 @@
       <NavigationViewItem.Content>
         <GroupBox Margin="10" Grid.Row="1"
               ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-              HorizontalAlignment="Left"
                 Header="Recently Added Samples"
                 TextBlock.FontSize="20">
           <flex:FlexPanel Direction="Row"

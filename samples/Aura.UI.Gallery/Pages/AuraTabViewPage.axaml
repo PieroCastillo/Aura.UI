@@ -10,7 +10,10 @@
   <StackPanel Spacing="10">
     <TextBlock Text="AuraTabView is a control that can organize Contents by Drag-n-Drop."/>
     <CodeExample Title="AuraTabView" TitleTwo="Default">
-      <AuraTabView ClickOnAddingButton="AddTab"/>
+      <AuraTabView ClickOnAddingButton="AddTab">
+        <AuraTabItem Header="header">
+        </AuraTabItem>
+      </AuraTabView>
       <CodeExample.XAMLText>
 &lt;AuraTabView ClickOnAddingButton="AddTab"/>       
       </CodeExample.XAMLText>

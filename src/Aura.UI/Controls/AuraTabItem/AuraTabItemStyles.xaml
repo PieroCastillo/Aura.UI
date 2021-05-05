@@ -1,5 +1,7 @@
 ﻿<Styles  xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:i="using:Avalonia.Xaml.Interactivity"
+        xmlns:b="using:Aura.UI.Behaviors">        
 	<Design.PreviewWith>
 		<AuraTabView TabStripPlacement="Bottom">
 			<AuraTabItem Header="Hello" 
@@ -36,10 +38,23 @@
 		<Setter Property="Padding" Value="10 0" />
 		<Setter Property="VerticalContentAlignment" Value="Center" />
 		<Setter Property="Foreground" Value="{DynamicResource AuraTabItemForeground}" />
+		<Setter Property="ZIndex" Value="0"/>
+	</Style>
+	<Style Selector="AuraTabItem:pressed">
+		<Setter Property="ZIndex" Value="1" />
 	</Style>
 
 	<Style Selector="AuraTabItem[TabStripPlacement=Top]">
 		<Setter Property="CornerRadius" Value="7,7,0,0" />
+		<Setter Property="(i:Interaction.Behaviors)">
+			<b:SharedContentTemplate>
+				<b:SharedContent>
+					<i:BehaviorCollection>
+						<b:ItemDragBehavior Orientation="Horizontal"/>
+					</i:BehaviorCollection>
+				</b:SharedContent>
+			</b:SharedContentTemplate>
+		</Setter> 
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Decorator Padding="2 2 2 0">
@@ -95,7 +110,16 @@
 		</Setter>
 	</Style>
 	<Style Selector="AuraTabItem[TabStripPlacement=Left]">
-		<Setter Property="CornerRadius" Value="7,0,0,7" />
+		<Setter Property="CornerRadius" Value="7,0,0,7" />		
+		<Setter Property="(i:Interaction.Behaviors)">
+			<b:SharedContentTemplate>
+				<b:SharedContent>
+					<i:BehaviorCollection>
+						<b:ItemDragBehavior Orientation="Vertical"/>
+					</i:BehaviorCollection>
+				</b:SharedContent>
+			</b:SharedContentTemplate>
+		</Setter> 
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid ColumnDefinitions="*,auto">
@@ -150,7 +174,16 @@
 		</Setter>
 	</Style>
 	<Style Selector="AuraTabItem[TabStripPlacement=Right]">
-		<Setter Property="CornerRadius" Value="0,7,7,0" />
+		<Setter Property="CornerRadius" Value="0,7,7,0" />	
+		<Setter Property="(i:Interaction.Behaviors)">
+			<b:SharedContentTemplate>
+				<b:SharedContent>
+					<i:BehaviorCollection>
+						<b:ItemDragBehavior Orientation="Vertical"/>
+					</i:BehaviorCollection>
+				</b:SharedContent>
+			</b:SharedContentTemplate>
+		</Setter> 
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid ColumnDefinitions="auto,*">
@@ -218,7 +251,16 @@
 		</Setter>
 	</Style>
 	<Style Selector="AuraTabItem[TabStripPlacement=Bottom]">
-		<Setter Property="CornerRadius" Value="0,0,7,7" />
+		<Setter Property="CornerRadius" Value="0,0,7,7" />		
+		<Setter Property="(i:Interaction.Behaviors)">
+			<b:SharedContentTemplate>
+				<b:SharedContent>
+					<i:BehaviorCollection>
+						<b:ItemDragBehavior Orientation="Horizontal"/>
+					</i:BehaviorCollection>
+				</b:SharedContent>
+			</b:SharedContentTemplate>
+		</Setter> 
 		<Setter Property="Template">
 			<ControlTemplate TargetType="AuraTabItem">
 					<Decorator Padding="2 2 2 0">

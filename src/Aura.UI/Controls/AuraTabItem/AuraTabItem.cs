@@ -5,6 +5,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
+using System;
 
 namespace Aura.UI.Controls
 {
@@ -22,16 +23,20 @@ namespace Aura.UI.Controls
         public AuraTabItem()
         {
             Closing += OnClosing;
-
-            EnableDragDrop();
+            //EnableDragDrop();
         }
 
         static AuraTabItem()
         {
             CanBeDraggedProperty.Changed.AddClassHandler<AuraTabItem>((x, e) => x.OnCanDraggablePropertyChanged(x, e));
             IsSelectedProperty.Changed.AddClassHandler<AuraTabItem>((x, e) => x.UpdatePseudoClass(x, e));
+            RenderTransformProperty.Changed.Subscribe(onNext: e =>
+            {
+                if(e.Sender is AuraTabItem t)
+                    t.InvalidateArrange();
+            });
         }
-
+        
         private void UpdatePseudoClass(AuraTabItem item, AvaloniaPropertyChangedEventArgs e)
         {
             if (item.IsSelected == false)

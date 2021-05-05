@@ -2,7 +2,7 @@
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<Design.PreviewWith>
 		<Border Background="White">
-			<NavigationViewLinker Title="ProgressRing" />
+			<NavigationViewLinker Title="ProgressRing" Content="progressringdffsdfsdfdsfsgffsgsgggsdgdsgsfdfdsssdgfsdfsdgfgfds"/>
 		</Border>
 	</Design.PreviewWith>
 	<Style Selector="NavigationViewLinker">
@@ -10,6 +10,7 @@
 		<Setter Property="Icon" Value="{DynamicResource Material.Home}"/>
 		<Setter Property="Background" Value="{DynamicResource NavigationViewLinkerBackground}"/>
 		<Setter Property="BorderBrush" Value="{DynamicResource NavigationViewLinkerBackground}" />
+    <Setter Property="MaxWidth" Value="370"></Setter>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Border Name="PART_Border" 
