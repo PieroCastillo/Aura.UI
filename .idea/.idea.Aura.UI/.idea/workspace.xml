@@ -6,24 +6,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Behaviors/CanvasDragBehavior.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Behaviors/ItemDragBehavior.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Behaviors/ObjectTemplate.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Behaviors/SelectionAdorner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Behaviors/SharedContent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI/Behaviors/SharedContentTemplate.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI.PropertyGrid/Assets/AuraUILogo_full_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI.PropertyGrid/Assets/AuraUILogo_icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/base.props" beforeDir="false" afterPath="$PROJECT_DIR$/build/base.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/AuraTabViewPage.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/AuraTabViewPage.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Dragging.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.Dragging.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aura.UI.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.UI.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,10 +50,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/ControlExtensions.cs" />
-      <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ContentDialog/ContentDialogStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialog.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Services/MessageDialogService.cs" />
@@ -115,6 +97,10 @@
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Behaviors/ItemDragBehavior.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/PropertyGrid/PropertyGrid.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI.PropertyGrid/Class1.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI.Dragging/Aura.UI.Dragging.csproj" />
+      <option value="$PROJECT_DIR$/src/Aura.UI.PropertyGrid/Aura.UI.PropertyGrid.csproj" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
