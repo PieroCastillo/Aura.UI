@@ -15,9 +15,6 @@ namespace Aura.UI.Controls
     [PseudoClasses(":dragging", ":lockdrag")]
     public partial class AuraTabItem : TabItem, ICustomCornerRadius
     {
-        /// <summary>
-        /// This button close its AuraTabItem parent
-        /// </summary>
         private Button CloseButton;
 
         public AuraTabItem()
@@ -30,10 +27,12 @@ namespace Aura.UI.Controls
         {
             CanBeDraggedProperty.Changed.AddClassHandler<AuraTabItem>((x, e) => x.OnCanDraggablePropertyChanged(x, e));
             IsSelectedProperty.Changed.AddClassHandler<AuraTabItem>((x, e) => x.UpdatePseudoClass(x, e));
-            RenderTransformProperty.Changed.Subscribe(onNext: e =>
+            IsClosableProperty.Changed.Subscribe(e =>
             {
-                if(e.Sender is AuraTabItem t)
-                    t.InvalidateArrange();
+                if (e.Sender is AuraTabItem a)
+                {
+                    a.CloseButton.IsVisible = a.IsClosable;
+                }
             });
         }
         
@@ -56,8 +55,7 @@ namespace Aura.UI.Controls
         /// </summary>
         public void Close()
         {
-            var e = new RoutedEventArgs(ClosingEvent);
-            RaiseEvent(e);
+            RaiseEvent(new RoutedEventArgs(ClosingEvent));
             CloseCore();
         }
 
@@ -91,6 +89,7 @@ namespace Aura.UI.Controls
 
         private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
+            RaiseEvent(new RoutedEventArgs(CloseButtonClickEvent));
             Close();
         }
     }
