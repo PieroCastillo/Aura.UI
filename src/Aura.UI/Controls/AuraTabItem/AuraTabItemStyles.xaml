@@ -33,6 +33,7 @@
 		</DrawingImage>
 	</Styles.Resources>
 	<Style Selector="AuraTabItem">
+		<Setter Property="Icon" Value="{DynamicResource FluentIconsFilled.tab_desktop_new_page_filled}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 		<Setter Property="FontSize" Value="{DynamicResource AuraTabItemFontSize}" />
 		<Setter Property="Padding" Value="10 0" />
