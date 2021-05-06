@@ -3,9 +3,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ms="clr-namespace:System;assembly=netstandard"
+        xmlns:props="using:Aura.UI"
         mc:Ignorable="d"
         x:Class="UI.Tests.MainWindow"
         Background="{x:Null}"
         Title="UI.Tests" WindowStartupLocation="CenterScreen">
-
+        <!-- <StackPanel Spacing="10">
+                <TextBlock props:AuraProperties.HeaderType="H1">H1</TextBlock>
+                <TextBlock props:AuraProperties.HeaderType="H2">H2</TextBlock>
+                <TextBlock props:AuraProperties.HeaderType="H3">H3</TextBlock>
+                <TextBlock props:AuraProperties.HeaderType="H4">H4</TextBlock>
+                <TextBlock props:AuraProperties.HeaderType="H5">H5</TextBlock>
+                <TextBlock props:AuraProperties.HeaderType="H6">H6</TextBlock>
+        </StackPanel> -->
 </Window>

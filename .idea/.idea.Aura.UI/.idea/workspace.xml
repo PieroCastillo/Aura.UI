@@ -5,7 +5,12 @@
     <projectFile>Tests/UI.Tests/UI.Tests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="" />
+    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="backup">
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/AuraProperties/AuraProperties.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/AuraProperties/HeaderType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,8 +50,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/ControlExtensions.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ContentDialog/ContentDialogStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialog.cs" />
@@ -79,7 +82,6 @@
       <option value="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Fluent.axaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ListView/ListView.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ListView/ListViewItem.cs" />
-      <option value="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" />
       <option value="$PROJECT_DIR$/build/base.props" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Behaviors/SharedContentTemplate.cs" />
@@ -96,6 +98,9 @@
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Behaviors/ItemDragBehavior.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/AuraProperties/AuraProperties.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/AuraProperties/HeaderType.cs" />
+      <option value="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
@@ -116,7 +121,7 @@
     <property name="settings.editor.selected.configurable" value="me.fornever.avaloniarider.idea.settings.AvaloniaSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Aura.UI.Gallery">
+  <component name="RunManager" selected=".NET Project.UI.Tests">
     <configuration name="Aura.UI.Gallery" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -329,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620097332094</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="backup">
+      <created>1620260089625</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1620260089625</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,11 +374,11 @@
     <MESSAGE value="AuraTabItem initial mvvm support done" />
     <MESSAGE value="refresh styles for Aura.UI &amp; Aura.UI.Gallery" />
     <MESSAGE value="backup, navviewitem redesign, navview dynamic splitmode(incompleted)" />
-    <MESSAGE value="backup" />
     <MESSAGE value="CardControl Animation Dixed" />
     <MESSAGE value="CardControl Animation Fixed" />
     <MESSAGE value="NavigationView Restyled" />
-    <option name="LAST_COMMIT_MESSAGE" value="NavigationView Restyled" />
+    <MESSAGE value="backup" />
+    <option name="LAST_COMMIT_MESSAGE" value="backup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
