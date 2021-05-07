@@ -17,11 +17,20 @@ namespace Aura.UI.Controls
 
         public event EventHandler<RoutedEventArgs> Closing
         {
-            add { AddHandler(ClosingEvent, value); }
-            remove { RemoveHandler(ClosingEvent, value); }
+            add => AddHandler(ClosingEvent, value);
+            remove => RemoveHandler(ClosingEvent, value);
         }
 
         public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
             RoutedEvent.Register<AuraTabItem, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
+
+        public event EventHandler<RoutedEventArgs> CloseButtonClick
+        {
+            add => AddHandler(CloseButtonClickEvent, value);
+            remove => RemoveHandler(CloseButtonClickEvent, value);
+        }
+
+        public static readonly RoutedEvent<RoutedEventArgs> CloseButtonClickEvent =
+            RoutedEvent.Register<AuraTabItem, RoutedEventArgs>(nameof(CloseButtonClick), RoutingStrategies.Bubble);
     }
 }
