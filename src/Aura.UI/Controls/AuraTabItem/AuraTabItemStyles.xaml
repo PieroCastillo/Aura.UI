@@ -3,7 +3,7 @@
         xmlns:i="using:Avalonia.Xaml.Interactivity"
         xmlns:b="using:Aura.UI.Behaviors">        
 	<Design.PreviewWith>
-		<AuraTabView TabStripPlacement="Bottom">
+		<AuraTabView TabStripPlacement="Right">
 			<AuraTabItem Header="Hello" 
 			             Height="50"
 			             IsClosable="True"
@@ -23,16 +23,17 @@
 			<GeometryDrawing  Brush="{DynamicResource AuraTabItemForeground}" Geometry="M405 136.798L375.202 107 256 226.202 136.798 107 107 136.798 226.202 256 107 375.202 136.798 405 256 285.798 375.202 405 405 375.202 285.798 256z" />
 		</DrawingImage>
 		<DrawingImage x:Key="FluentIconsFilled.tab_desktop_new_page_filled">
-			<DrawingGroup   >
+			<DrawingGroup>
 				<GeometryDrawing Brush="#00000000" Geometry="M0,0 20,0 20,20 0,20" />
-				<GeometryDrawing Brush="#FF000000" Geometry="M7 12C7.55228 12 8 11.5523 8 11C8 10.4477 7.55228 10 7 10C6.44772 10 6 10.4477 6 11C6 11.5523 6.44772 12 7 12Z" />
-				<GeometryDrawing Brush="#FF000000" Geometry="M11 11C11 11.5523 10.5523 12 10 12C9.44772 12 9 11.5523 9 11C9 10.4477 9.44772 10 10 10C10.5523 10 11 10.4477 11 11Z" />
-				<GeometryDrawing Brush="#FF000000" Geometry="M13 12C13.5523 12 14 11.5523 14 11C14 10.4477 13.5523 10 13 10C12.4477 10 12 10.4477 12 11C12 11.5523 12.4477 12 13 12Z" />
-				<GeometryDrawing Brush="#FF000000" Geometry="M3 5.5C3 4.11929 4.11929 3 5.5 3H14.5C15.8807 3 17 4.11929 17 5.5V14.5C17 15.8807 15.8807 17 14.5 17H5.5C4.11929 17 3 15.8807 3 14.5V5.5ZM5.5 4C4.67157 4 4 4.67157 4 5.5V14.5C4 15.3284 4.67157 16 5.5 16H14.5C15.3284 16 16 15.3284 16 14.5V7H9.5C8.67157 7 8 6.32843 8 5.5V4H5.5ZM16 5.5C16 4.67157 15.3284 4 14.5 4H9V5.5C9 5.77614 9.22386 6 9.5 6H16V5.5Z" />
+				<GeometryDrawing Brush="{DynamicResource AuraTabItemForeground}" Geometry="M7 12C7.55228 12 8 11.5523 8 11C8 10.4477 7.55228 10 7 10C6.44772 10 6 10.4477 6 11C6 11.5523 6.44772 12 7 12Z" />
+				<GeometryDrawing Brush="{DynamicResource AuraTabItemForeground}" Geometry="M11 11C11 11.5523 10.5523 12 10 12C9.44772 12 9 11.5523 9 11C9 10.4477 9.44772 10 10 10C10.5523 10 11 10.4477 11 11Z" />
+				<GeometryDrawing Brush="{DynamicResource AuraTabItemForeground}" Geometry="M13 12C13.5523 12 14 11.5523 14 11C14 10.4477 13.5523 10 13 10C12.4477 10 12 10.4477 12 11C12 11.5523 12.4477 12 13 12Z" />
+				<GeometryDrawing Brush="{DynamicResource AuraTabItemForeground}" Geometry="M3 5.5C3 4.11929 4.11929 3 5.5 3H14.5C15.8807 3 17 4.11929 17 5.5V14.5C17 15.8807 15.8807 17 14.5 17H5.5C4.11929 17 3 15.8807 3 14.5V5.5ZM5.5 4C4.67157 4 4 4.67157 4 5.5V14.5C4 15.3284 4.67157 16 5.5 16H14.5C15.3284 16 16 15.3284 16 14.5V7H9.5C8.67157 7 8 6.32843 8 5.5V4H5.5ZM16 5.5C16 4.67157 15.3284 4 14.5 4H9V5.5C9 5.77614 9.22386 6 9.5 6H16V5.5Z" />
 			</DrawingGroup>
 		</DrawingImage>
 	</Styles.Resources>
 	<Style Selector="AuraTabItem">
+		<Setter Property="Icon" Value="{DynamicResource FluentIconsFilled.tab_desktop_new_page_filled}"/>
 		<Setter Property="HorizontalContentAlignment" Value="Left" />
 		<Setter Property="FontSize" Value="{DynamicResource AuraTabItemFontSize}" />
 		<Setter Property="Padding" Value="10 0" />
@@ -44,6 +45,7 @@
 		<Setter Property="ZIndex" Value="1" />
 	</Style>
 
+	<!--Templates-->
 	<Style Selector="AuraTabItem[TabStripPlacement=Top]">
 		<Setter Property="CornerRadius" Value="7,7,0,0" />
 		<Setter Property="(i:Interaction.Behaviors)">
@@ -109,6 +111,63 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
+	<Style Selector="AuraTabItem[TabStripPlacement=Bottom]">
+		<Setter Property="CornerRadius" Value="0,0,7,7" />		
+		<Setter Property="(i:Interaction.Behaviors)">
+			<b:SharedContentTemplate>
+				<b:SharedContent>
+					<i:BehaviorCollection>
+						<b:ItemDragBehavior Orientation="Horizontal"/>
+					</i:BehaviorCollection>
+				</b:SharedContent>
+			</b:SharedContentTemplate>
+		</Setter> 
+		<Setter Property="Template">
+			<ControlTemplate>
+					<Decorator Padding="2 2 2 0">
+						<Border Name="PART_Container"
+								Background="{TemplateBinding Background}"
+								BorderBrush="{TemplateBinding BorderBrush}"
+								CornerRadius="{TemplateBinding CornerRadius}" Margin="2.5 -2 2.5 2.5">
+							<Grid RowDefinitions="*, auto">
+								<Border Padding="10 5 0 0">
+									<Grid Background="Transparent" RowDefinitions="*,3" ColumnDefinitions="*,Auto">
+										<Grid Grid.Column="0" ColumnDefinitions="auto,*,20">
+											<Image 
+												Name="PART_Icon"
+												Source="{TemplateBinding Icon}"/>
+											<ContentPresenter Grid.Column="1"
+											                  Name="PART_ContentPresenter"
+											                  Background="Transparent"
+											                  BorderThickness="{TemplateBinding BorderThickness}"
+											                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+											                  Content="{TemplateBinding Header}"
+											                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											                  Margin="{TemplateBinding Margin}"
+											                  Padding="{TemplateBinding Padding}"
+											                  TextBlock.Foreground="{TemplateBinding Foreground}" />
+											<Button Name="PART_CloseButton" Width="14" Height="14"
+											        Grid.Column="2" Background="Transparent"
+											        Padding="3" BorderThickness="0" VerticalAlignment="Center"
+											        VerticalContentAlignment="Center"
+											        Foreground="{TemplateBinding Foreground}">
+												<Image Source="{DynamicResource Ionicons.CloseMD}" />
+											</Button>
+										</Grid>
+										<Border Name="PART_Separator"
+										        Grid.Column="1" Grid.Row="0" CornerRadius="5"
+										        BoxShadow="0 0 1 0 Black"
+										        Width="1"
+										        Background="{DynamicResource AuraTabItemForeground}"></Border>
+									</Grid>
+								</Border>
+							</Grid>
+						</Border>
+					</Decorator>
+			</ControlTemplate>
+		</Setter>
+	</Style>
 	<Style Selector="AuraTabItem[TabStripPlacement=Left]">
 		<Setter Property="CornerRadius" Value="7,0,0,7" />		
 		<Setter Property="(i:Interaction.Behaviors)">
@@ -129,38 +188,44 @@
 					        BorderBrush="{TemplateBinding BorderBrush}"
 					        CornerRadius="{TemplateBinding CornerRadius}"
 					        Margin="2.5 2.5 -1 2.5">
-									<Grid RowDefinitions="*, auto">
-										<Border Padding="10 5 0 0">
-											<Grid Background="Transparent" 
-											      RowDefinitions="*,3"
-											      ColumnDefinitions="*,Auto">
-												<Grid Grid.Column="0"
-												      ColumnDefinitions="*,20">
-													<Grid>
-														<ContentPresenter Grid.Column="0"
-														                  Name="PART_ContentPresenter"
-														                  Background="Transparent"
-														                  BorderThickness="{TemplateBinding BorderThickness}"
-														                  ContentTemplate="{TemplateBinding HeaderTemplate}"
-														                  Content="{TemplateBinding Header}"
-														                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-														                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-														                  Margin="{TemplateBinding Margin}"
-														                  Padding="{TemplateBinding Padding}"
-														                  TextBlock.Foreground="{TemplateBinding Foreground}" />
-													</Grid>
-													<Button Name="PART_CloseButton" Width="14" Height="14"
-															Grid.Column="1" Background="Transparent"
-															Padding="3" BorderThickness="0" VerticalAlignment="Center"
-															VerticalContentAlignment="Center"
-															Foreground="{TemplateBinding Foreground}">
-														<Image Source="{DynamicResource Ionicons.CloseMD}" />
-													</Button>
-												</Grid>
-											</Grid>
-										</Border>
+						<Grid RowDefinitions="*, auto">
+							<Border Padding="10 5 0 0">
+								<Grid Background="Transparent" 
+								      RowDefinitions="*,3"
+								      ColumnDefinitions="*,Auto">
+									<Grid Grid.Column="0"
+									      ColumnDefinitions="auto,*,20">
+										<Image 
+														Name="PART_Icon"
+														Source="{TemplateBinding Icon}"/>
+										<ContentPresenter Grid.Column="1"
+										                  Name="PART_ContentPresenter"
+										                  Background="Transparent"
+										                  BorderThickness="{TemplateBinding BorderThickness}"
+										                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+										                  Content="{TemplateBinding Header}"
+										                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+										                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+										                  Margin="{TemplateBinding Margin}"
+										                  Padding="{TemplateBinding Padding}"
+										                  TextBlock.Foreground="{TemplateBinding Foreground}" />
+										<Button Grid.Column="2"
+										        Name="PART_CloseButton" 
+										        Width="14" 
+										        Height="14"
+										        Background="Transparent"
+										        Padding="3" 
+										        BorderThickness="0"
+										        VerticalAlignment="Center"
+										        VerticalContentAlignment="Center"
+										        Foreground="{TemplateBinding Foreground}">
+											<Image Source="{DynamicResource Ionicons.CloseMD}" />
+										</Button>
 									</Grid>
-								</Border>
+								</Grid>
+							</Border>
+						</Grid>
+					</Border>
 					<Border Grid.Column="0"
 					        Name="PART_Separator"
 					        CornerRadius="5"
@@ -195,40 +260,32 @@
 								Margin="-2 2.5 2.5 2.5">
 							<Grid RowDefinitions="*">
 								<Border Padding="10 5 0 0">
-									<Grid Background="Transparent">
-										<Grid.RowDefinitions>
-											<RowDefinition Height="*"></RowDefinition>
-											<RowDefinition Height="3"></RowDefinition>
-										</Grid.RowDefinitions>
-										<Grid.ColumnDefinitions>
-											<ColumnDefinition Width="*"></ColumnDefinition>
-											<ColumnDefinition Width="Auto"></ColumnDefinition>
-										</Grid.ColumnDefinitions>
-										<Grid Grid.Column="0">
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition Width="*"></ColumnDefinition>
-												<ColumnDefinition Width="20"></ColumnDefinition>
-											</Grid.ColumnDefinitions>
-											<Grid>
-												<ContentPresenter Grid.Column="0"
-												 Name="PART_ContentPresenter"
-												Background="Transparent"
-												BorderThickness="{TemplateBinding BorderThickness}"
-												ContentTemplate="{TemplateBinding HeaderTemplate}"
-												Content="{TemplateBinding Header}"
-												HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-												VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-												Margin="{TemplateBinding Margin}"
-												Padding="{TemplateBinding Padding}"
-												TextBlock.Foreground="{TemplateBinding Foreground}" />
-											</Grid>
-											<Button Name="PART_CloseButton" Width="14" Height="14"
-										Grid.Column="1" Background="Transparent"
-										Padding="3" BorderThickness="0" VerticalAlignment="Center"
-										VerticalContentAlignment="Center"
-										Foreground="{TemplateBinding Foreground}">
-												<!--<Path Fill="{TemplateBinding Foreground}" Name="PART_Path" Stretch="UniformToFill"
-											Data="m 27.98948 90.95866 33.967068 33.88371 c 1.10342 1.10071 1.105616 2.8878 0.0049 3.99122 l -33.883709 33.96706 c -5.503567 5.51711 -5.492597 14.45254 0.02452 19.95612 5.517115 5.50357 14.452541 5.49259 19.956109 -0.0245 l 33.883712 -33.96707 c 1.100713 -1.10343 2.887796 -1.10561 3.991218 -0.005 l 33.967066 33.88372 c 5.51711 5.50356 14.45255 5.49259 19.95612 -0.0245 5.50357 -5.51712 5.49259 -14.45254 -0.0245 -19.95611 l -33.96707 -33.88371 c -1.10343 -1.10071 -1.10561 -2.8878 -0.005 -3.99122 L 139.7437 90.821366 c 5.50356 -5.517107 5.49259 -14.452533 -0.0245 -19.956108 -5.51712 -5.503575 -14.45254 -5.492591 -19.95611 0.02452 L 85.879357 104.85684 c -1.100714 1.10343 -2.887797 1.10561 -3.991219 0.005 L 47.921071 70.978036 c -5.517107 -5.503568 -14.452533 -5.492598 -19.956108 0.02452 -5.503568 5.517108 -5.49259 14.452541 0.02452 19.956108 z m 0 0"></Path>-->
+									<Grid Background="Transparent" RowDefinitions="*,3" ColumnDefinitions="*,auto">
+										<Grid Grid.Column="0" ColumnDefinitions="auto,*,20">
+											<Image 
+												Name="PART_Icon"
+												Source="{TemplateBinding Icon}"/>
+											<ContentPresenter Grid.Column="1"
+											                  Name="PART_ContentPresenter"
+											                  Background="Transparent"
+											                  BorderThickness="{TemplateBinding BorderThickness}"
+											                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+											                  Content="{TemplateBinding Header}"
+											                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+											                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+											                  Margin="{TemplateBinding Margin}"
+											                  Padding="{TemplateBinding Padding}"
+											                  TextBlock.Foreground="{TemplateBinding Foreground}" />
+											<Button Grid.Column="2" 
+											        Name="PART_CloseButton" 
+											        Width="14" 
+											        Height="14"
+											        Background="Transparent"
+											        Padding="3"
+											        BorderThickness="0"
+											        VerticalAlignment="Center"
+											        VerticalContentAlignment="Center"
+											        Foreground="{TemplateBinding Foreground}">
 												<Image Source="{DynamicResource Ionicons.CloseMD}" />
 											</Button>
 										</Grid>
@@ -247,77 +304,6 @@
 					Height="1" VerticalAlignment="Bottom"
 					Background="{DynamicResource AuraTabItemForeground}"></Border>
 				</Grid>
-			</ControlTemplate>
-		</Setter>
-	</Style>
-	<Style Selector="AuraTabItem[TabStripPlacement=Bottom]">
-		<Setter Property="CornerRadius" Value="0,0,7,7" />		
-		<Setter Property="(i:Interaction.Behaviors)">
-			<b:SharedContentTemplate>
-				<b:SharedContent>
-					<i:BehaviorCollection>
-						<b:ItemDragBehavior Orientation="Horizontal"/>
-					</i:BehaviorCollection>
-				</b:SharedContent>
-			</b:SharedContentTemplate>
-		</Setter> 
-		<Setter Property="Template">
-			<ControlTemplate TargetType="AuraTabItem">
-					<Decorator Padding="2 2 2 0">
-						<Border Name="PART_Container"
-								Background="{TemplateBinding Background}"
-								BorderBrush="{TemplateBinding BorderBrush}"
-								CornerRadius="{TemplateBinding CornerRadius}" Margin="2.5 -2 2.5 2.5">
-							<Grid RowDefinitions="*, auto">
-								<Border Padding="10 5 0 0">
-									<Grid Background="Transparent">
-										<Grid.RowDefinitions>
-											<RowDefinition Height="*"></RowDefinition>
-											<RowDefinition Height="3"></RowDefinition>
-										</Grid.RowDefinitions>
-										<Grid.ColumnDefinitions>
-											<ColumnDefinition Width="*"></ColumnDefinition>
-											<ColumnDefinition Width="Auto"></ColumnDefinition>
-										</Grid.ColumnDefinitions>
-										<Grid Grid.Column="0">
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition Width="*"></ColumnDefinition>
-												<ColumnDefinition Width="20"></ColumnDefinition>
-											</Grid.ColumnDefinitions>
-											<Grid>
-												<ContentPresenter Grid.Column="0"
-															Name="PART_ContentPresenter"
-															Background="Transparent"
-															BorderThickness="{TemplateBinding BorderThickness}"
-															ContentTemplate="{TemplateBinding HeaderTemplate}"
-															Content="{TemplateBinding Header}"
-															HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-															VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-															Margin="{TemplateBinding Margin}"
-															Padding="{TemplateBinding Padding}"
-															TextBlock.Foreground="{TemplateBinding Foreground}" />
-											</Grid>
-											<Button Name="PART_CloseButton" Width="14" Height="14"
-															Grid.Column="1" Background="Transparent"
-															Padding="3" BorderThickness="0" VerticalAlignment="Center"
-															VerticalContentAlignment="Center"
-															Foreground="{TemplateBinding Foreground}">
-												<!--<Path Fill="{TemplateBinding Foreground}" Name="PART_Path" Stretch="UniformToFill"
-											Data="m 27.98948 90.95866 33.967068 33.88371 c 1.10342 1.10071 1.105616 2.8878 0.0049 3.99122 l -33.883709 33.96706 c -5.503567 5.51711 -5.492597 14.45254 0.02452 19.95612 5.517115 5.50357 14.452541 5.49259 19.956109 -0.0245 l 33.883712 -33.96707 c 1.100713 -1.10343 2.887796 -1.10561 3.991218 -0.005 l 33.967066 33.88372 c 5.51711 5.50356 14.45255 5.49259 19.95612 -0.0245 5.50357 -5.51712 5.49259 -14.45254 -0.0245 -19.95611 l -33.96707 -33.88371 c -1.10343 -1.10071 -1.10561 -2.8878 -0.005 -3.99122 L 139.7437 90.821366 c 5.50356 -5.517107 5.49259 -14.452533 -0.0245 -19.956108 -5.51712 -5.503575 -14.45254 -5.492591 -19.95611 0.02452 L 85.879357 104.85684 c -1.100714 1.10343 -2.887797 1.10561 -3.991219 0.005 L 47.921071 70.978036 c -5.517107 -5.503568 -14.452533 -5.492598 -19.956108 0.02452 -5.503568 5.517108 -5.49259 14.452541 0.02452 19.956108 z m 0 0"></Path>-->
-												<Image Source="{DynamicResource Ionicons.CloseMD}" />
-											</Button>
-										</Grid>
-
-										<Border Name="PART_Separator"
-										Grid.Column="1" Grid.Row="0" CornerRadius="5"
-										BoxShadow="0 0 1 0 Black"
-										Width="1"
-										Background="{DynamicResource AuraTabItemForeground}"></Border>
-									</Grid>
-								</Border>
-							</Grid>
-						</Border>
-					</Decorator>
 			</ControlTemplate>
 		</Setter>
 	</Style>
@@ -361,14 +347,6 @@
 				</KeyFrame>
 			</Animation>
 		</Style.Animations>
-	</Style>
-
-	<Style Selector="TabControl AuraTabItem">
-		<Setter Property="DragDrop.AllowDrop" Value="False"></Setter>
-	</Style>
-
-	<Style Selector="AuraTabView AuraTabItem">
-		<Setter Property="DragDrop.AllowDrop" Value="True"></Setter>
 	</Style>
 
 	<Style Selector="AuraTabItem[IsSelected=False]:pointerover">
