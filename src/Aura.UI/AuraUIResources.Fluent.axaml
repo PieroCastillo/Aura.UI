@@ -38,7 +38,7 @@
 		<SolidColorBrush x:Key="CardControlBackground" Color="{DynamicResource SystemAltHighColor}"/>
 		<!--ContentDialog Resources-->
 		<SolidColorBrush x:Key="ContentDialogBackground" Color="{DynamicResource SystemChromeLowColor}"/>
-    <SolidColorBrush x:Key="ContentDialogBorderBrush" Color="{DynamicResource SystemBaseHighColor}"/>
+		<SolidColorBrush x:Key="ContentDialogBorderBrush" Color="{DynamicResource SystemBaseHighColor}"/>
 		<!--FloatingButton Resources-->
 		<!--FloatingButtonBar Resources-->
 		<!--GroupBox Resources-->
@@ -48,8 +48,9 @@
 		<SolidColorBrush x:Key="MessageDialogBackground" Color="{DynamicResource SystemAltMediumHighColor}"/>
 		<SolidColorBrush x:Key="MessageDialogForeground" Color="{DynamicResource SystemAltMediumHighColor}"/>
 		<SolidColorBrush x:Key="MessageDialogErrorBrush" Color="{DynamicResource SystemErrorTextColor}"/>
+		<SolidColorBrush x:Key="MessageDialogBorderBrush" Color="{DynamicResource SystemBaseHighColor}"/>
 		<!--NavigationView Resources-->
-    <SolidColorBrush x:Key="NavigationViewAccent" Color="{DynamicResource SystemAccentColor}"/>
+		<SolidColorBrush x:Key="NavigationViewAccent" Color="{DynamicResource SystemAccentColor}"/>
 		<SolidColorBrush x:Key="NavigationViewForeground" Color="{DynamicResource SystemBaseHighColor}"/>
 		<SolidColorBrush x:Key="NavigationViewSeparatorBackground" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<SolidColorBrush x:Key="NavigationViewBackground" Color="{DynamicResource SystemAltHighColor}"/>
@@ -75,10 +76,10 @@
 		<DynamicResource x:Key="RibbonMaterial" ResourceKey="DefaultAcrylicRibbonBrush"/>
 		<!--RibbonGroup Resources-->
 		<SolidColorBrush x:Key="RibbonGroupForeground" Color="{DynamicResource SystemBaseHighColor}"/>
-    <SolidColorBrush x:Key="RibbonGroupSeparatorBrush" Color="{DynamicResource SystemBaseMediumLowColor}"/>
+		<SolidColorBrush x:Key="RibbonGroupSeparatorBrush" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<!--RibbonItem Resources-->
-    <!--RibbonSeparator Resources-->
-    <SolidColorBrush x:Key="RibbonSeparatorBackgroundBrush" Color="{DynamicResource SystemBaseMediumLowColor}"/>
+	    <!--RibbonSeparator Resources-->
+	    <SolidColorBrush x:Key="RibbonSeparatorBackgroundBrush" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<!--ModernSlider Resources-->
 		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncrease"
 									 TintColor="{DynamicResource SystemAccentColor}"

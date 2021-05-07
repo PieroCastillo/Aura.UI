@@ -20,6 +20,7 @@
 	</Styles.Resources>
 	<Style Selector="MessageDialog">
 		<Setter Property="Background" Value="{DynamicResource MessageDialogBackground}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource MessageDialogBorderBrush}"/>
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid ColumnDefinitions="auto,*,auto"
@@ -29,6 +30,8 @@
 							Grid.Column="1" Grid.Row="1"
 							BoxShadow="0 5 30 0 #99000000"
 							Background="{TemplateBinding Background}"
+							BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="0.5"
 							VerticalAlignment="Center"
 							HorizontalAlignment="Center"
 							CornerRadius="5"><!--0 0 5 1 Black-->

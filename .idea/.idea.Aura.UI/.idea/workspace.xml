@@ -5,8 +5,10 @@
     <projectFile>Tests/UI.Tests/UI.Tests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Aura.UI.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Aura.UI.sln" afterDir="false" />
+    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="initial csproj">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Fluent.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Fluent.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,6 @@
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ContentDialog/ContentDialogStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialog.cs" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Services/MessageDialogService.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Icons.axaml" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/MessageDialogPage.axaml.cs" />
@@ -81,7 +82,6 @@
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/AuraTabViewPage.axaml" />
       <option value="$PROJECT_DIR$/Tests/UI.Tests/UI.Tests.csproj" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Fluent.axaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ListView/ListView.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ListView/ListViewItem.cs" />
       <option value="$PROJECT_DIR$/Tests/UI.Tests/MainWindow.xaml" />
@@ -101,6 +101,8 @@
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabItem/AuraTabItem.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Behaviors/ItemDragBehavior.cs" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Fluent.axaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
