@@ -59,13 +59,22 @@ namespace Aura.UI.Controls.Navigation
 
         private static void OnIsOpenChanged(AvaloniaPropertyChangedEventArgs<bool> e)
         {
-            var sender = e.Sender as NavigationViewItem; 
-            if (sender != null && e.NewValue.HasValue) 
+            if (e.Sender is NavigationViewItem sender) 
             { 
                 if (sender.IsSelected && sender.Parent is NavigationViewItem nw && nw.Parent is NavigationView nwp && nw.SelectOnClose)
                 {
                     nwp.SelectSingleItem(nw);
-                    nw.IsExpanded = false;
+                }
+                
+                switch (sender.IsOpen)
+                {
+                    case true:
+                        sender.RaiseEvent(new RoutedEventArgs(OpenedEvent));
+                        break;
+                    case false:
+                        sender.IsExpanded = false;
+                        sender.RaiseEvent(new RoutedEventArgs(ClosedEvent));
+                        break;
                 }
             }
         }
@@ -75,9 +84,15 @@ namespace Aura.UI.Controls.Navigation
             NavigationViewDistance = 0;
         }
 
+        protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
+        {
+            base.OnApplyTemplate(e);
+            UpdatePseudoClasses();
+        }
+
         protected virtual void OnDeselected(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-            
+           
         }
 
         protected virtual void OnSelected(object sender, AvaloniaPropertyChangedEventArgs e)
@@ -87,17 +102,18 @@ namespace Aura.UI.Controls.Navigation
 
         protected virtual void OnOpened(object sender, RoutedEventArgs e)
         {
-            UpdatePseudoClasses(IsOpen);
+            UpdatePseudoClasses();
         }
 
         protected virtual void OnClosed(object sender, RoutedEventArgs e)
         {
-            UpdatePseudoClasses(IsOpen);
+            IsExpanded = false;
+            UpdatePseudoClasses();
         }
 
-        private void UpdatePseudoClasses(bool isOpen)
+        private void UpdatePseudoClasses()
         {
-            if (isOpen)
+            if (IsOpen)
             {
                 PseudoClasses.Remove(":closed");
                 PseudoClasses.Add(":opened");

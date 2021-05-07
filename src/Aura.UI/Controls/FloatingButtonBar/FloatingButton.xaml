@@ -15,6 +15,12 @@
 				</Border>
 			</ControlTemplate>
 		</Setter>
+		<Setter Property="RenderTransform" Value="none"/>
+		<Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
+			</Transitions>
+		</Setter>
 	</Style>
 	<Style Selector="FloatingButtonBar /template/ ToggleButton#PART_Button">
 		<Setter Property="Height" Value="{DynamicResource FloatingButtonSize}" />
@@ -33,11 +39,6 @@
 		</Setter>
 	</Style>
 	<Style Selector="FloatingButton:pointerover">
-		<Setter Property="Transitions">
-			<Transitions>
-				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
-			</Transitions>
-		</Setter>
 		<Setter Property="RenderTransform" Value="scale(1.2)" />
 	</Style>
 </Styles>

@@ -7,8 +7,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="initial csproj">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Fluent.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Fluent.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/FloatingButtonBar/FloatingButton.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/FloatingButtonBar/FloatingButton.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +49,10 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/E80E7F6E-636C-46B8-8DD8-5FFCD1CCDD74/33/IStyleable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/AuraDev/Aura.UI/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://D:/AuraDev/Aura.UI/src/Aura.UI/Controls/AuraTabItem/AuraTabItemStyles.xaml" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/AuraDev/Aura.UI/src/Aura.UI/AuraUIResources.Fluent.axaml" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/UIExtensions/ControlExtensions.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Controls/CodeExample.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/ContentDialog/ContentDialogStyles.xaml" />
@@ -77,7 +77,6 @@
       <option value="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Common.axaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewStyles.xaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemStyles.xaml" />
-      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" />
       <option value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Pages/AuraTabViewPage.axaml" />
@@ -103,6 +102,8 @@
       <option value="$PROJECT_DIR$/src/Aura.UI/Behaviors/ItemDragBehavior.cs" />
       <option value="$PROJECT_DIR$/src/Aura.UI/AuraUIResources.Fluent.axaml" />
       <option value="$PROJECT_DIR$/src/Aura.UI/Controls/MessageDialog/MessageDialogStyles.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/FloatingButtonBar/FloatingButton.xaml" />
+      <option value="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1rG3rPuRjZQkrguHTZ7BZKRjkrR" />
