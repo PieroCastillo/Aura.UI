@@ -1,0 +1,42 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:comp="using:Aura.UI.Controls.Components">
+  <Design.PreviewWith>
+    <comp:RadialColorSlider Name="PART_s"
+                            Width="500"
+                            Height="500"
+                            Maximum="360">
+    </comp:RadialColorSlider>
+  </Design.PreviewWith>
+  <Style Selector="comp|RadialColorSlider">
+    <Setter Property="Width" Value="150" />
+    <Setter Property="Height" Value="150" />
+    <Setter Property="StrokeWidth" Value="15"/>
+  </Style>
+  <Style Selector="comp|RadialColorSlider">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <ColorWheel StrokeWidth="{Binding $parent[RadialSlider].StrokeWidth}"/>
+          <ContentControl Height="{Binding $parent[RadialSlider].Width}"
+                          VerticalAlignment="Top"
+                          HorizontalAlignment="Center">
+            <ContentControl.RenderTransform>
+                <RotateTransform Angle="{Binding $parent[RadialSlider].YAngle}"/>
+            </ContentControl.RenderTransform>
+            <Ellipse Stroke="Black"
+                     StrokeThickness="1"
+                     Fill="#99FFFFFF"
+                     Width="{Binding $parent[RadialSlider].StrokeWidth}"
+                     Height="{Binding $parent[RadialSlider].StrokeWidth}"
+                     HorizontalAlignment="Right"
+                     VerticalAlignment="Top"/>
+          </ContentControl>
+            <ContentPresenter Name="PART_ContentPresenter" 
+                              VerticalAlignment="Center"
+                              HorizontalAlignment="Center"
+                              Content="{TemplateBinding Content}"/>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

@@ -1,0 +1,74 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <!--<Slider Height="200" Orientation="Vertical" Classes="auracolorpicker"/>-->
+    <Slider Orientation="Vertical" Classes="auracolorpicker"/>
+  </Design.PreviewWith>
+  <Styles.Resources>
+    <SolidColorBrush x:Key="AuraColorPickerForeground" Color="{DynamicResource SystemAccentColorLight1}"/>
+  </Styles.Resources>
+  <Style Selector="Slider:horizontal.auracolorpicker">
+    <Setter Property="Width" Value="200"/>
+    <Setter Property="Maximum" Value="255"/>
+    <Setter Property="Minimum" Value="0"/>
+    <Setter Property="Background" Value="{DynamicResource AuraColorPickerForeground}"/>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border Name="PART_Border" BoxShadow="0 0 3 0 Black"
+							  CornerRadius="999"
+							  Margin="5"
+                Background="{TemplateBinding Background}">
+          <Track Name="PART_Track" 
+                 Value="{TemplateBinding Value}"
+                 Orientation="Horizontal"
+                 Maximum="{TemplateBinding Maximum}"
+                 Minimum="{TemplateBinding Minimum}">
+            <Track.DecreaseButton>
+              <Button Name="PART_DecreaseButton" 
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Classes="sliderbuttons"/>
+            </Track.DecreaseButton>
+            <Track.IncreaseButton>
+              <Button Name="PART_IncreaseButton"
+                      HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch"
+                      Classes="sliderbuttons"/>
+            </Track.IncreaseButton>
+            <Track.Thumb>
+              <Thumb Classes="aurasliderthumb"/>
+            </Track.Thumb>
+          </Track>
+        </Border>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+  <Style Selector="Slider:vertical.auracolorpicker">
+    <Setter Property="Maximum" Value="255"/>
+    <Setter Property="Minimum" Value="0"/>
+  </Style>
+  <Style Selector="Slider /template/ Button.sliderbuttons">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <ContentPresenter Name="PART_ContentPresenter"
+                          Background="Transparent"/>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+  <Style Selector="Slider /template/ Thumb.aurasliderthumb">
+    <Setter Property="Background" Value="White"/>
+    <Setter Property="Transitions">
+      <Transitions>
+        <DoubleTransition Duration="0:0:0.3" Property="Opacity" Easing="QuadraticEaseOut"/> 
+      </Transitions>
+    </Setter>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Ellipse Fill="{TemplateBinding Background}" Width="20" Height="20"/>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+  <Style Selector="Slider /template/ Thumb.aurasliderthumb:pointerover">
+    <Setter Property="Opacity" Value="0.7"/>
+  </Style>
+</Styles>
