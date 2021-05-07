@@ -9,7 +9,6 @@
              xmlns:l="using:System.Collections"
 				     xmlns:pg="using:Aura.UI.Gallery.Pages"
              xmlns:vm="using:Aura.UI.Gallery.ViewModels"
-             xmlns:rpg="using:Aura.UI.Gallery.ReactivePages"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              Background="{x:Null}"
              BorderBrush="Black"
