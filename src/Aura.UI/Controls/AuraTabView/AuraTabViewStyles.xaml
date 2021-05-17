@@ -297,7 +297,7 @@
 							<Grid Grid.Column="0" RowDefinitions="auto,auto,*,auto"
 								   Background="{TemplateBinding SecondaryBackground}"
 								   Name="PART_DockContainer"
-								Height="{TemplateBinding Height}">
+								Height="{Binding $parent[AuraTabView].Bounds.Height}">
 								<!--Header-->
 								<ContentPresenter Content="{TemplateBinding Header}"
 								                  ContentTemplate="{TemplateBinding HeaderTemplate}"
@@ -310,20 +310,23 @@
 								<Grid Grid.Row="1" Margin="{TemplateBinding ItemsMargin}"
 									  DockPanel.Dock="Top" 
 									  RowDefinitions="*,auto">
-									<ItemsPresenter Grid.Row="0"
-									  Name="PART_ItemsPresenter"
-									 Items="{TemplateBinding Items}"
-									 ItemsPanel="{TemplateBinding ItemsPanel}"
-									 ItemTemplate="{TemplateBinding ItemTemplate}"
-									 HorizontalAlignment="Left" VerticalAlignment="Top"
-									  MaxHeight="{TemplateBinding MaxWidthOfItemsPresenter}">
-										<ItemsPresenter.Transitions>
-											<Transitions>
-												<DoubleTransition Property="Height" Duration="0:0:0.3"
-															  Easing="CubicEaseIn"/>
-											</Transitions>
-										</ItemsPresenter.Transitions>
-									</ItemsPresenter>
+									<ScrollViewer >
+										<ItemsPresenter Grid.Row="0"
+										                ScrollViewer.VerticalScrollBarVisibility="Visible"
+									                Name="PART_ItemsPresenter"
+									                Items="{TemplateBinding Items}"
+									                ItemsPanel="{TemplateBinding ItemsPanel}"
+									                ItemTemplate="{TemplateBinding ItemTemplate}"
+									                HorizontalAlignment="Left" VerticalAlignment="Top"
+									                MaxHeight="{TemplateBinding MaxWidthOfItemsPresenter}">
+											<ItemsPresenter.Transitions>
+												<Transitions>
+													<DoubleTransition Property="Height" Duration="0:0:0.3"
+																  Easing="CubicEaseIn"/>
+												</Transitions>
+											</ItemsPresenter.Transitions>
+										</ItemsPresenter>
+									</ScrollViewer>
 									<Button Grid.Row="1"
 										Name="PART_AdderButton" Padding="9" Background="Transparent"
 										IsVisible="{TemplateBinding AdderButtonIsVisible}" Width="35">
