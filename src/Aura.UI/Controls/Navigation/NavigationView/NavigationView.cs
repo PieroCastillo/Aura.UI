@@ -24,7 +24,6 @@ namespace Aura.UI.Controls.Navigation
     public partial class NavigationView : TreeView, IItemsPresenterHost, IContentPresenterHost, IHeadered
     {
         private Button _headeritem;
-        private AutoCompleteBox _completeBox;
         private SplitView _splitVw;
         private const double LittleWidth = 1005;
         private const double VeryLittleWidth = 650;
@@ -132,7 +131,6 @@ namespace Aura.UI.Controls.Navigation
             base.OnApplyTemplate(e);
 
             _headeritem = this.GetControl<Button>(e, "PART_HeaderItem");
-            _completeBox = this.GetControl<AutoCompleteBox>(e, "PART_AutoCompleteBox");
             _splitVw = this.GetControl<SplitView>(e,"split");
 
             _headeritem.Click += delegate
@@ -179,8 +177,6 @@ namespace Aura.UI.Controls.Navigation
         {
             return RegisterContentPresenter(presenter);
         }
-        //protected override IItemContainerGenerator CreateItemContainerGenerator()
-          //  => new NavigationViewContainerGenerator(this, NavigationViewItem.ContentProperty, NavigationViewItem.ItemsProperty, NavigationViewItem.HeaderProperty, NavigationViewItem.TitleProperty, NavigationViewItem.IsExpandedProperty);
 
         ///<inheritdoc/>
         protected virtual bool RegisterContentPresenter(IContentPresenter presenter)

@@ -5,10 +5,6 @@
     <projectFile>Tests/UI.Tests/UI.Tests.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d17b79d9-0ae3-4cd8-abf2-883de7f54cc0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/AuraTabView/AuraTabViewStyles.xaml" afterDir="false" />
-    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

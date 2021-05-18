@@ -14,8 +14,7 @@ namespace Aura.UI.Controls.Navigation
         private object _selectedcontent;
         private IEnumerable<string> _itemsasstrings;
         private bool _HeaderVisible;
-        //private bool _canGoBack;
-        //private bool _canGoForward;
+        private AutoCompleteBox _autoCompleteBox;
 
         public readonly static StyledProperty<object> HeaderProperty =
             AvaloniaProperty.Register<NavigationView, object>(nameof(Header), "Header");
@@ -34,8 +33,10 @@ namespace Aura.UI.Controls.Navigation
                 o => o.SelectedContent);
         public readonly static StyledProperty<double> CompactPaneLengthProperty =
             AvaloniaProperty.Register<NavigationView, double>(nameof(CompactPaneLength));
+
         public readonly static StyledProperty<double> OpenPaneLengthProperty =
             AvaloniaProperty.Register<NavigationView, double>(nameof(OpenPaneLength));
+
         public readonly static StyledProperty<bool> IsOpenProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(IsOpen), true);
 
@@ -44,32 +45,27 @@ namespace Aura.UI.Controls.Navigation
 
         public readonly static StyledProperty<bool> HideTitleProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(HideTitle), false);
+
         public static readonly StyledProperty<SplitViewDisplayMode> DisplayModeProperty =
             AvaloniaProperty.Register<NavigationView, SplitViewDisplayMode>(nameof(DisplayMode), SplitViewDisplayMode.CompactInline);
+
         public readonly static StyledProperty<bool> AlwaysOpenProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(AlwaysOpen), false);
+
         public readonly static StyledProperty<bool> AutoCompleteBoxIsVisibleProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(AutoCompleteBoxIsVisible), true);
+
         public readonly static DirectProperty<NavigationView, IEnumerable<string>> ItemsAsStringsProperty =
-            AvaloniaProperty.RegisterDirect<NavigationView, IEnumerable<string>>(nameof(ItemsAsStrings),
-                                                                                 o => o.ItemsAsStrings);
+            AvaloniaProperty.RegisterDirect<NavigationView, IEnumerable<string>>(nameof(ItemsAsStrings), o => o.ItemsAsStrings);
 
         public readonly static StyledProperty<bool> IsFloatingHeaderProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(IsFloatingHeader));
 
         public readonly static DirectProperty<NavigationView, bool> HeaderVisibleProperty =
             AvaloniaProperty.RegisterDirect<NavigationView, bool>(nameof(HeaderVisible), o => o.HeaderVisible);
-        //public readonly static DirectProperty<NavigationView, bool> CanGoBackProperty =
-        //    AvaloniaProperty.RegisterDirect<NavigationView, bool>(nameof(CanGoBack),
-        //                                                          o => o.CanGoBack, unsetValue: false);
-        //public readonly static DirectProperty<NavigationView, bool> CanGoForwardProperty =
-        //    AvaloniaProperty.RegisterDirect<NavigationView, bool>(nameof(CanGoForward),
-        //                                                          o => o.CanGoForward, unsetValue: false);
-        //public readonly static StyledProperty<bool> ShowGoForwardProperty =
-        //    AvaloniaProperty.Register<NavigationView, bool>(nameof(ShowGoBack), true);
-        //public readonly static StyledProperty<bool> ShowGoBackProperty =
-        //    AvaloniaProperty.Register<NavigationView, bool>(nameof(ShowGoBack), true);
 
+        public readonly static DirectProperty<NavigationView, AutoCompleteBox> AutoCompleteBoxProperty =
+            AvaloniaProperty.RegisterDirect<NavigationView, AutoCompleteBox>(nameof(AutoCompleteBox), o => o.AutoCompleteBox, (o, v) => o.AutoCompleteBox = v);
 
         public object Header
         {
@@ -173,30 +169,11 @@ namespace Aura.UI.Controls.Navigation
             get => _HeaderVisible;
             private set => SetAndRaise(HeaderVisibleProperty, ref _HeaderVisible, value);
         }
-        
-        //public bool CanGoBack
-        //{
-        //    get => _canGoBack;
-        //    private set => SetAndRaise(CanGoBackProperty, ref _canGoBack, value);
-        //}
 
-        //public bool CanGoForward
-        //{
-        //    get => _canGoForward;
-        //    private set => SetAndRaise(CanGoForwardProperty, ref _canGoForward, value);
-        //}
-
-        //public bool ShowGoForward
-        //{
-        //    get => GetValue(ShowGoForwardProperty);
-        //    set => SetValue(ShowGoForwardProperty, value);
-        //}
-
-        //public bool ShowGoBack
-        //{
-        //    get => GetValue(ShowGoBackProperty);
-        //    set => SetValue(ShowGoBackProperty, value);
-        //}
-
+        public AutoCompleteBox AutoCompleteBox
+        {
+            get => _autoCompleteBox;
+            set => SetAndRaise(AutoCompleteBoxProperty, ref _autoCompleteBox, value);
+        }
     }
 }
