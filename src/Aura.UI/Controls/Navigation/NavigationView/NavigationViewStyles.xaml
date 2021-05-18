@@ -84,12 +84,8 @@
 										<Border Grid.Row="1" 
 										        Width="{Binding $parent[NavigationView].CompactPaneLength}"
 										        Height="{Binding $parent[NavigationView].CompactPaneLength}"></Border>
-										<Border Grid.Row="2" IsVisible="{Binding $parent[NavigationView].IsOpen}"
-										        Padding="5">
-											<AutoCompleteBox Name="PART_AutoCompleteBox" Watermark="Search" FilterMode="Contains"
-											                 Items="{Binding $parent[NavigationView].ItemsAsStrings}"
-											                 IsVisible="{Binding $parent[NavigationView].AutoCompleteBoxIsVisible}" />
-										</Border>
+										<Border Grid.Row="2" IsVisible="{Binding $parent[NavigationView].AutoCompleteBoxIsVisible}"
+										        Padding="5" Child="{Binding $parent[NavigationView].AutoCompleteBox}"/>
 										<DockPanel Grid.Row="3">
 											<ScrollViewer DockPanel.Dock="Top">
 												<ItemsPresenter Name="PART_ItemsPresenter"
