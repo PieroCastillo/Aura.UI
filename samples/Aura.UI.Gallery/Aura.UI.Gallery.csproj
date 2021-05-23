@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+    <TargetFramework>net5.0</TargetFramework>
     <LangVersion>9.0</LangVersion>
     <Nullable>enable</Nullable>
   </PropertyGroup>
@@ -48,13 +48,13 @@
   <ItemGroup>
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.1.2" PrivateAssets="all" />
     <PackageReference Include="AuraUtilities" Version="0.1.0" />
-    <PackageReference Include="Avalonia" Version="0.10.4" />
+    <PackageReference Include="Avalonia" Version="0.10.5" />
     <PackageReference Include="Avalonia.AvaloniaEdit" Version="0.10.4" />
-    <PackageReference Include="Avalonia.Desktop" Version="0.10.4" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.4" />
-    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.4" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.4" />
-    <PackageReference Include="Avalonia.Svg" Version="0.10.4" />
+    <PackageReference Include="Avalonia.Desktop" Version="0.10.5" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="0.10.5" />
+    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.5" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.5" />
+    <PackageReference Include="Avalonia.Svg" Version="0.10.5" />
     <PackageReference Include="jp2masa.Avalonia.Flexbox" Version="0.2.0" />
   </ItemGroup>
   <ItemGroup>

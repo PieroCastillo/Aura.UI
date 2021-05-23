@@ -25,14 +25,14 @@ namespace Aura.UI.Controls.Ribbon
             };
         }
 
-        public object MiniButtonContent
+        public bool MiniButtonIsVisible
         {
-            get => GetValue(MiniButtonContentProperty);
-            set => SetValue(MiniButtonContentProperty, value);
+            get => GetValue(MiniButtonIsVisibleProperty);
+            set => SetValue(MiniButtonIsVisibleProperty, value);
         }
 
-        public static readonly StyledProperty<object> MiniButtonContentProperty =
-            AvaloniaProperty.Register<RibbonGroup, object>(nameof(MiniButtonContent), "L");
+        public static readonly StyledProperty<bool> MiniButtonIsVisibleProperty =
+            AvaloniaProperty.Register<RibbonGroup, bool>(nameof(MiniButtonIsVisible), true);
 
         public event EventHandler<RoutedEventArgs> MiniButtonClick
         {

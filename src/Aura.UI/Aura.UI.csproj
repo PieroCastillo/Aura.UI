@@ -26,8 +26,15 @@
 	  </AvaloniaResource>
 	</ItemGroup>
 	<ItemGroup>
+	  <PackageReference Update="Avalonia" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.Desktop" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.Diagnostics" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.Markup.Xaml.Loader" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.ReactiveUI" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.Xaml.Behaviors" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.Xaml.Interactivity" Version="0.10.5" />
 	  <PackageReference Update="MathNet.Numerics" Version="4.15.0" />
-	  <PackageReference Update="ReactiveUI" Version="13.2.18" />
+	  <PackageReference Update="ReactiveUI" Version="13.3.2" />
 	  <PackageReference Update="SkiaSharp" Version="2.80.2" />
 	  <PackageReference Include="System.Reactive" Version="5.0.0" />
 	</ItemGroup>
