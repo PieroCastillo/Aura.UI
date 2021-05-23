@@ -133,6 +133,19 @@ namespace Aura.UI.Controls.Ribbon
 
         public static readonly StyledProperty<object> LeftContentProperty =
              AvaloniaProperty.Register<Ribbon, object>(nameof(LeftContent), "Left");
+        
+        /// <summary>
+        /// Gets or Sets if the Left content is visible.
+        /// </summary>
+        public bool LeftContentVisible
+        {
+            get => GetValue(LeftContentVisibleProperty);
+            set => SetValue(LeftContentVisibleProperty, value);
+        }
+
+        public static readonly StyledProperty<bool> LeftContentVisibleProperty =
+             AvaloniaProperty.Register<Ribbon, bool>(nameof(LeftContent));
+
 
         /// <summary>
         /// RightContent of the the Ribbon
@@ -145,6 +158,18 @@ namespace Aura.UI.Controls.Ribbon
 
         public static readonly StyledProperty<object> RightContentProperty =
             AvaloniaProperty.Register<Ribbon, object>(nameof(RightContent), "Right");
+
+        /// <summary>
+        /// Gets or Sets if the Right content is visible.
+        /// </summary>
+        public bool RightContentVisible
+        {
+            get => GetValue(RightContentVisibleProperty);
+            set => SetValue(RightContentVisibleProperty, value);
+        }
+
+        public static readonly StyledProperty<bool> RightContentVisibleProperty =
+             AvaloniaProperty.Register<Ribbon, bool>(nameof(RightContent));
 
         /// <summary>
         /// Header of the the Ribbon

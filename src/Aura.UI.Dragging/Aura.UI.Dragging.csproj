@@ -9,4 +9,11 @@
 	<ItemGroup>
 	  <None Include="Assets\AuraUILogo_full_icon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Update="Avalonia" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.Desktop" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.Diagnostics" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.Markup.Xaml.Loader" Version="0.10.5" />
+	  <PackageReference Update="Avalonia.ReactiveUI" Version="0.10.5" />
+	</ItemGroup>
 </Project>

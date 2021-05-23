@@ -4,13 +4,13 @@
     <Authors>Piero Castillo</Authors>
   </PropertyGroup>
   <ItemGroup>
-      <PackageReference Include="Avalonia" Version="0.10.4" />
-     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.4" />
-	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.4" />
-	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.4" />
-      <PackageReference Include="Avalonia.Desktop" Version="0.10.4" />
-      <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.4" />
-      <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.4" />
+      <PackageReference Include="Avalonia" Version="0.10.5" />
+     <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.5" />
+	 <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.5" />
+	 <PackageReference Include="Avalonia.Diagnostics" Version="0.10.5" />
+      <PackageReference Include="Avalonia.Desktop" Version="0.10.5" />
+      <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.5" />
+      <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.5" />
 	 <PackageReference Include="Microsoft.Toolkit.Parsers" Version="7.0.0-preview4" />
 	 <PackageReference Include="MathNet.Numerics" Version="4.12.0" />
 	 <PackageReference Include="ReactiveUI" Version="13.2.18" />

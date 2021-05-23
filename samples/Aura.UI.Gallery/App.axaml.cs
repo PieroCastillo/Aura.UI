@@ -13,6 +13,7 @@ using System.Diagnostics;
 using System.Reactive;
 using System.Threading.Tasks;
 using Avalonia.Controls;
+using System.Threading;
 
 namespace Aura.UI.Gallery
 {
@@ -81,8 +82,11 @@ namespace Aura.UI.Gallery
                         break;
                 }
             }, (DispatcherPriority)1);
+
             Settings.Theme = theme;
         }
+
+
 
         public readonly static Styles FluentDark = new Styles
         {

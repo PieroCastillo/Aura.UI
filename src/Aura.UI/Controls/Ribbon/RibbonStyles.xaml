@@ -80,6 +80,7 @@
 								<ShadowButton Grid.Column="1"
 								                Name="PART_LeftButton"
 								                Content="{TemplateBinding LeftContent}"
+                              IsVisible="{TemplateBinding LeftContentVisible}"
 								                Classes="BorderButtons"
 								                CornerRadius="0" />
 								<ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Auto"
