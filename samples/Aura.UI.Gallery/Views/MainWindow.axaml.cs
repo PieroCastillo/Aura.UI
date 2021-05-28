@@ -19,29 +19,10 @@ namespace Aura.UI.Gallery.Views
 #if DEBUG
             this.AttachDevTools();
 #endif
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
-
-        public void EnableDrag(object sender, PointerPressedEventArgs e)
-        {
-            BeginMoveDrag(e);
-        }
-        
-        public void DoubleTappedTitleBar(object sender, RoutedEventArgs e)
-        {
-            switch (WindowState)
+            DragBorder.PointerPressed += (s, e) =>
             {
-                case WindowState.Maximized: 
-                    WindowState = WindowState.Normal;
-                    break;
-                case WindowState.Normal:
-                    WindowState = WindowState.Maximized;
-                    break;
-            }
+                BeginMoveDrag(e);
+            };
         }
     }
 }

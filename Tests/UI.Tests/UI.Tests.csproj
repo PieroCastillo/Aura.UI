@@ -5,6 +5,7 @@
     <LangVersion>9</LangVersion>
     <Nullable>enable</Nullable>
     <TargetFrameworks>net5.0</TargetFrameworks>
+    <IsPackable>false</IsPackable>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="**\*.xaml.cs">

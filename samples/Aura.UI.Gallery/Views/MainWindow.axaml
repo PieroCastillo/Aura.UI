@@ -19,11 +19,10 @@
         Classes="us_c"> <!-- MinWidth="1171"  -->
   <Grid Margin="{Binding #win.OffScreenMargin}" >
     <vw:MainView/>
-    <Border Background="Transparent" 
+    <Border Name="DragBorder"
+            Background="Transparent" 
             VerticalAlignment="Top" 
-            Height="19"
-            PointerPressed="EnableDrag"
-            DoubleTapped="DoubleTappedTitleBar"/>
+            Height="19"/>
     <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
       <StackPanel.Styles>
         <Style Selector="ComboBox">
