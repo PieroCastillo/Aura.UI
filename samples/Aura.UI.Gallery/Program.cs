@@ -19,8 +19,10 @@ namespace Aura.UI.Gallery
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .UseSkia()
-                .UseReactiveUI()                
-                .With(new Win32PlatformOptions() { AllowEglInitialization = true })
+                .UseReactiveUI()
+                .With(new X11PlatformOptions() { UseDeferredRendering = true})
+                .With(new MacOSPlatformOptions() { ShowInDock = true})
+                .With(new Win32PlatformOptions() {  AllowEglInitialization = true, UseDeferredRendering = true, UseWindowsUIComposition = true })
                 .LogToTrace();
     }
 }
