@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using Aura.UI.UIExtensions;
+using Aura.UI.Extensions;
 using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Controls.Mixins;
@@ -36,7 +36,7 @@ namespace Aura.UI.Controls.Navigation
         protected override void OnAttachedToLogicalTree(LogicalTreeAttachmentEventArgs e)
         {
             base.OnAttachedToLogicalTree(e);
-            NavigationViewDistance = UIExtensions.LogicalExtensions.CalculateDistanceFromLogicalParent<NavigationView>(this) - 1;
+            NavigationViewDistance = Extensions.LogicalExtensions.CalculateDistanceFromLogicalParent<NavigationView>(this) - 1;
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)

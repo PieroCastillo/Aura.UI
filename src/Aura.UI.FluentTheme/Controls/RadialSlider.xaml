@@ -1,0 +1,34 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="0" ClipToBounds="False">
+      <RadialSlider Value="50"/>
+    </Border>
+  </Design.PreviewWith>
+  <Style Selector="RadialSlider">
+    <Setter Property="Width" Value="100" />
+    <Setter Property="Height" Value="100" />
+    <Setter Property="StrokeWidth" Value="7" />
+    <Setter Property="ForegroundColor" Value="{StaticResource RadialSliderForegroundColor}" />
+    <Setter Property="BackgroundColor" Value="{StaticResource RadialSliderBackgroundColor}" />
+  </Style>
+  <Style Selector="RadialSlider">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid Margin="1">
+          <Arc Stroke="{Binding $parent[RadialSlider].StrokeWidth}"
+						 ArcColor="{Binding $parent[RadialSlider].BackgroundColor}"
+						 Classes="stable" />
+          <Arc Stroke="{Binding $parent[RadialSlider].StrokeWidth}"
+						 ArcColor="{Binding $parent[RadialSlider].ForegroundColor}"
+						 StartAngle="{Binding $parent[RadialSlider].XAngle}"
+						 SweepAngle="{Binding $parent[RadialSlider].YAngle}" />
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+  <Style Selector="RadialSlider /template/ Arc.stable">
+    <Setter Property="StartAngle" Value="0" />
+    <Setter Property="SweepAngle"  Value="360" />
+  </Style>
+</Styles>

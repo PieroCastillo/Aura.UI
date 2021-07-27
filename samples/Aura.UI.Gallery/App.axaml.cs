@@ -96,11 +96,7 @@ namespace Aura.UI.Gallery
             },
             new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
             {
-                Source = new Uri("avares://Aura.UI/AuraUIFluent.xaml")
-            },
-            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
-            {
-                Source = new Uri("avares://Aura.UI/AuraUI.xaml")
+                Source = new Uri("avares://Aura.UI.FluentTheme/AuraUI.xaml")
             }
         };
 
@@ -112,11 +108,7 @@ namespace Aura.UI.Gallery
             },
             new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
             {
-                Source = new Uri("avares://Aura.UI/AuraUIFluent.xaml")
-            },
-            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
-            {
-                Source = new Uri("avares://Aura.UI/AuraUI.xaml")
+                Source = new Uri("avares://Aura.UI.FluentTheme/AuraUI.xaml")
             }
         };
     }

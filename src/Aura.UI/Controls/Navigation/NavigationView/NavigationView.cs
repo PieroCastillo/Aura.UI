@@ -1,5 +1,5 @@
 ﻿using Aura.UI.Controls.Generators;
-using Aura.UI.UIExtensions;
+using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Collections;
 using Avalonia.Controls;

@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Metadata;
 using AvaloniaEdit;
-using Aura.UI.UIExtensions;
+using Aura.UI.Extensions;
 using AvaloniaEdit.Indentation.CSharp;
 using System;
 using System.Collections.Generic;

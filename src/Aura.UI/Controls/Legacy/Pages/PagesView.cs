@@ -1,4 +1,4 @@
-﻿using Aura.UI.UIExtensions;
+﻿using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Controls.Primitives;
 using System.Collections;

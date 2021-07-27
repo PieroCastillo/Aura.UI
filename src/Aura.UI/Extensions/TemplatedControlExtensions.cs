@@ -2,7 +2,7 @@
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 
-namespace Aura.UI.UIExtensions
+namespace Aura.UI.Extensions
 {
     public static class TemplatedControlExtensions
     {

@@ -1,9 +1,9 @@
 ﻿using Aura.UI.Controls.Primitives;
-using Aura.UI.Exceptions;
-using Aura.UI.UIExtensions;
+using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
+using System;
 using System.Collections;
 
 namespace Aura.UI.Controls.Ribbon
@@ -46,9 +46,9 @@ namespace Aura.UI.Controls.Ribbon
                     (Items as IList).Remove(ribbonItemToClose);
                 }
             }
-            catch (AuraException<Ribbon> e)
+            catch (Exception e)
             {
-                throw new AuraException<Ribbon>("The RibbonItem inserted does not exist", e);
+                throw new Exception("The RibbonItem inserted does not exist", e);
             }
         }
 
@@ -63,11 +63,11 @@ namespace Aura.UI.Controls.Ribbon
             {
                 (Items as IList).RemoveAt(index);
             }
-            catch (AuraException<Ribbon> e)
+            catch (Exception e)
             {
                 if (showException != false)
                 {
-                    throw new AuraException<Ribbon>("The RibbonItem indexed does not exist", e);
+                    throw new Exception("The RibbonItem indexed does not exist", e);
                 }
             }
         }

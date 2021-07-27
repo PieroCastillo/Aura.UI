@@ -1,0 +1,74 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border>
+			<CardControl Header="75000"
+			             SecondaryHeader="Colbreakz">
+			</CardControl>
+		</Border>
+	</Design.PreviewWith>
+	<Style Selector="CardControl">
+		<Setter Property="Padding" Value="10" />
+		<Setter Property="Width" Value="200"/>
+		<Setter Property="Height" Value="260"/>
+		<Setter Property="BoxShadow" Value="{BoxShadow ShadowColor=Black, BlurRadius=7}" /><!--0 0 7 0 Black-->
+		<Setter Property="InternalBoxShadow" Value="{BoxShadow BlurRadius=5, ShadowColor=Black}" /><!--0 0 5 0 Black-->
+		<Setter Property="InternalCornerRadius" Value="7" />
+		<Setter Property="CornerRadius" Value="7" />
+		<Setter Property="InternalPadding" Value="20" />
+		<Setter Property="ScaleOnPointerOver" Value="True"/>
+		<Setter Property="Background" Value="{DynamicResource CardControlSecondaryBackground}" /><!--ThemeControlHighBrush-->
+		<Setter Property="SecondaryBackground" Value="{DynamicResource CardControlBackground}" /><!--ThemeControlMidBrush-->
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Border BoxShadow="{TemplateBinding BoxShadow}"
+				        CornerRadius="{TemplateBinding CornerRadius}"
+				        Background="{TemplateBinding Background}"
+				        Margin="{TemplateBinding Padding}">
+					<Grid RowDefinitions="*, Auto">
+						<Grid Grid.Row="0" RowDefinitions="*">
+							<ContentPresenter  Name="PART_ContentPresenter"
+							                   Content="{TemplateBinding Content}"
+							                   ContentTemplate="{TemplateBinding ContentTemplate}"
+							                   CornerRadius="{TemplateBinding TopCornerRadius}"
+							                   Padding="{TemplateBinding InternalPadding}" />
+						</Grid>
+						<Border Grid.Row="1" ClipToBounds="false"
+						        Background="{TemplateBinding SecondaryBackground}"
+						        CornerRadius="{TemplateBinding BottomCornerRadius}">
+							<ExperimentalAcrylicBorder Material="{DynamicResource SystemAcrylicAltHighBrush}"
+							                           CornerRadius="{TemplateBinding BottomCornerRadius}">
+								<Grid ColumnDefinitions="20,*,20" RowDefinitions="20,*,10,*,20">
+									<ContentPresenter Grid.Column="1"
+									                  Grid.Row="1"
+									                  Name="PART_HeaderPresenter"
+									                  Content="{TemplateBinding Header}"
+									                  ContentTemplate="{TemplateBinding HeaderTemplate}"
+									                  TextBlock.FontSize="18" />
+									<ContentPresenter Grid.Column="1"
+									                  Grid.Row="3"
+									                  Content="{TemplateBinding SecondaryHeader}"
+									                  TextBlock.Foreground="{DynamicResource SystemControlBackgroundBaseMediumHighBrush}" />
+								</Grid>
+							</ExperimentalAcrylicBorder>
+						</Border>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter><Setter Property="Transitions">
+			<Transitions>
+				<TransformOperationsTransition Property="RenderTransform" Easing="ExponentialEaseOut" Duration="0:0:0.2"/>
+			</Transitions>
+		</Setter>
+	</Style>
+	<!-- <Style Selector="CardControl[ScaleOnPointerOver=true]"> -->
+	<!-- 	<Setter Property="ScaleTransform.ScaleX" Value="1"/> -->
+	<!-- 	<Setter Property="ScaleTransform.ScaleY" Value="1"/> -->
+	<!-- </Style> -->
+	<Style Selector="CardControl[ScaleOnPointerOver=True]">
+		<Setter Property="RenderTransform" Value="scale(1)" />
+	</Style>
+	<Style Selector="CardControl[ScaleOnPointerOver=True]:pointerover">
+		<Setter Property="RenderTransform" Value="scale(1.05)" />
+	</Style>
+</Styles>

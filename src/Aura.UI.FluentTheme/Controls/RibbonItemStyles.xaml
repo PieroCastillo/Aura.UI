@@ -1,0 +1,108 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:ms="clr-namespace:System;assembly=netstandard">
+	<Style Selector="RibbonItem">
+		<Setter Property="Material" Value="{DynamicResource NullBrush}" />
+		<Setter Property="HorizontalContentAlignment" Value="Center" />
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="Background" Value="Transparent" />
+		<Setter Property="MaterialIsVisible" Value="False" />
+		<Setter Property="Padding" Value="10" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="RibbonItem">
+				<Border Name="PART_Border" Margin="2.5 0">
+					<Grid Name="PART_Container" Margin="0"
+					      VerticalAlignment="{TemplateBinding VerticalAlignment}"
+					      HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+					      Height="{TemplateBinding Height}">
+
+						<Grid Margin="0" Height="{TemplateBinding Height}" VerticalAlignment="Stretch">
+							<Border Background="{TemplateBinding Background}" />
+							<ExperimentalAcrylicBorder Height="{TemplateBinding Height}"
+							                           Material="{TemplateBinding Material}"
+							                           VerticalAlignment="Stretch"
+							                           IsVisible="{TemplateBinding MaterialIsVisible}" />
+							<Button Name="PART_ButtonContainer" Background="White" Padding="0" Margin="0"
+							        Height="{TemplateBinding Height}"
+							        BorderThickness="1" VerticalAlignment="Stretch">
+								<ContentPresenter Height="{TemplateBinding Height}"
+								                  Content="{TemplateBinding Header}"
+								                  Padding="{TemplateBinding Padding}"
+								                  VerticalAlignment="Stretch"
+								                  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+								                  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" />
+							</Button>
+						</Grid>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="RibbonItem /template/ Button#PART_ButtonContainer">
+		<Setter Property="Template">
+			<ControlTemplate>
+				<ContentPresenter Content="{TemplateBinding Content}"
+								Margin="{TemplateBinding Margin}"
+								BorderBrush="Transparent"
+								BorderThickness="0"
+								Padding="0"
+								Height="{TemplateBinding Height}"
+								  VerticalContentAlignment="Center"
+								 VerticalAlignment="Stretch" />
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="RibbonItem:selected">
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}" />
+		<Setter Property="MaterialIsVisible" Value="True" />
+	</Style>
+	<Style Selector="RibbonItem:pointerover">
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}" />
+		<Setter Property="MaterialIsVisible" Value="True" />
+	</Style>
+	<Style Selector="RibbonItem:selected:pointerover">
+		<Setter Property="Material" Value="{DynamicResource DefaultAcrylicRibbonBrush}" />
+		<Setter Property="MaterialIsVisible" Value="True" />
+	</Style>
+	<Style Selector="RibbonItem:disabled /template/ Grid#PART_Container">
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
+	</Style>
+
+	<!--Preview-->
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<Border.Resources>
+				<ms:Double x:Key="DefaultRibbonContainerHeight">170</ms:Double>
+			</Border.Resources>
+			<Ribbon Header="HeaderTest" LeftContent="File" RightContent="Settings"
+					ExpansionState="Total">
+				<RibbonItem Header="Start">
+					<RibbonPanel>
+						<RibbonGroup Header="Colour">
+							<Border Background="Yellow" Height="90" Width="100" />
+						</RibbonGroup>
+						<RibbonSeparator></RibbonSeparator>
+						<RibbonGroup Header="Themes">
+							<StackPanel Orientation="Horizontal">
+								<Border Background="Black" Width="60" Height="100" />
+								<Border Background="White" Width="60" Height="100" />
+							</StackPanel>
+						</RibbonGroup>
+						<RibbonSeparator></RibbonSeparator>
+						<RibbonGroup Header="Fonts">
+							<StackPanel Spacing="10">
+								<TextBlock FontSize="20">Ribbon</TextBlock>
+								<TextBlock FontSize="14">Ribbon</TextBlock>
+								<TextBlock FontSize="10">Ribbon</TextBlock>
+							</StackPanel>
+						</RibbonGroup>
+					</RibbonPanel>
+				</RibbonItem>
+				<RibbonItem Header="Edit">
+					<RibbonPanel>
+					</RibbonPanel>
+				</RibbonItem>
+			</Ribbon>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

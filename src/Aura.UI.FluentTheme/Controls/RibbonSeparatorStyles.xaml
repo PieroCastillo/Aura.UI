@@ -1,0 +1,24 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Style Selector="RibbonSeparator">
+		<Setter Property="Width" Value="4" />
+		<Setter Property="CornerRadius" Value="5" />
+		<Setter Property="Template">
+			<ControlTemplate TargetType="RibbonSeparator">
+				<Grid>
+					<Border
+						Height="{TemplateBinding Height}"
+						CornerRadius="{TemplateBinding CornerRadius}"
+						Background="{DynamicResource RibbonSeparatorBackgroundBrush}"></Border>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="10">
+			<Grid>
+				<RibbonSeparator Height="60" />
+			</Grid>
+		</Border>
+	</Design.PreviewWith>
+</Styles>

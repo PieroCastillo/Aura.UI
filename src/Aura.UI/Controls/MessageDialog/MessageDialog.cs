@@ -1,5 +1,5 @@
 ﻿using Aura.UI.Controls.Primitives;
-using Aura.UI.UIExtensions;
+using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Metadata;

@@ -1,0 +1,47 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<Design.PreviewWith>
+		<Border>
+			<GroupBox Header="{x:Null}" Height="200" Width="300" Padding="0">
+				<Button />
+			</GroupBox>
+		</Border>
+	</Design.PreviewWith>
+	<Style Selector="GroupBox">
+		<Setter Property="CornerRadius" Value="{DynamicResource GroupBoxCornerRadius}" />
+		<Setter Property="Padding" Value="{DynamicResource GroupBoxPadding}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource GroupBoxBorderBrush}" /> <!---->
+		<Setter Property="Template">
+			<ControlTemplate TargetType="GroupBox">
+				<Grid Margin="{TemplateBinding Margin}">
+					<Border
+                        HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+						CornerRadius="{TemplateBinding CornerRadius}">
+						<Grid RowDefinitions="auto,2.5,*">
+							<ContentPresenter Grid.Row="0"
+							Margin="{TemplateBinding Padding}"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+					        Content="{TemplateBinding Header, Mode=OneWay}"
+							ContentTemplate="{TemplateBinding HeaderTemplate}"
+							TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}" />
+							<Border Name="PART_BorderSeparator"
+									Grid.Row="1"
+									Background="{TemplateBinding BorderBrush}"
+									CornerRadius="5" />
+							<ContentPresenter Grid.Row="2"
+								Name="PART_ContentPresenter"
+						              Margin="{TemplateBinding Padding}"
+									  Content="{TemplateBinding Content}"
+									  ContentTemplate="{TemplateBinding ContentTemplate}" />
+						</Grid>
+					</Border>
+				</Grid>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+</Styles>

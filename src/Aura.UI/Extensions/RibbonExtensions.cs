@@ -1,6 +1,6 @@
 ﻿using Aura.UI.Controls.Ribbon;
 
-namespace Aura.UI.UIExtensions
+namespace Aura.UI.Extensions
 {
     public static class RibbonExtensions
     {

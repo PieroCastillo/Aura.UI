@@ -1,6 +1,6 @@
 ﻿using System;
 using Aura.UI.Services;
-using Aura.UI.UIExtensions;
+using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;

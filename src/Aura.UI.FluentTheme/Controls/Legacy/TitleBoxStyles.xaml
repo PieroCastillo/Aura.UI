@@ -1,0 +1,73 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:legacy="using:Aura.UI.Controls.Legacy">
+	<Style Selector="legacy|TitleBox">
+		<Setter Property="BorderBrush" Value="{DynamicResource TitleBoxBorderBrush}" />
+		<Setter Property="BorderThickness" Value="5" />
+		<Setter Property="Button1Active" Value="false" />
+		<Setter Property="Button2Active" Value="false" />
+		<Setter Property="CornerRadius" Value="3" />
+		<Setter Property="Template">
+			<ControlTemplate>
+				<Decorator Padding="5">
+					<Border BorderBrush="{TemplateBinding BorderBrush}"
+							BorderThickness="{TemplateBinding BorderThickness}"
+							BoxShadow="0 0 5 0 Black" CornerRadius="{TemplateBinding CornerRadius}">
+						<Grid>
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="*" />
+							</Grid.RowDefinitions>
+							<Grid Grid.Row="0"
+								Background="{TemplateBinding BorderBrush}">
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition Width="*"></ColumnDefinition>
+									<ColumnDefinition Width="*"></ColumnDefinition>
+									<ColumnDefinition Width="Auto" ></ColumnDefinition>
+									<ColumnDefinition Width="Auto" ></ColumnDefinition>
+								</Grid.ColumnDefinitions>
+								<ContentPresenter Grid.Column="0" Grid.Row="0"
+										Content="{TemplateBinding Header}"
+										ContentTemplate="{TemplateBinding ContentTemplate}"
+										VerticalAlignment="Center"
+										HorizontalAlignment="Left"
+										Padding="2.5"
+										TextBlock.FontSize="14"
+										TextBlock.FontWeight="ExtraBold" />
+								<MaterialButton Grid.Column="2"
+										Content="{TemplateBinding Button1Content}" Margin="0"
+										Name="PART_B1"
+										IsVisible="{Binding $parent[legacy:TitleBox].Button1Active}"
+										VerticalAlignment="Center"
+										Classes="Buttons" />
+								<MaterialButton Grid.Column="3"
+										Content="{TemplateBinding Button2Content}" Margin="0"
+										Name="PART_B2" IsVisible="{Binding $parent[legacy:TitleBox].Button2Active}"
+										VerticalAlignment="Center"
+										Classes="Buttons" />
+							</Grid>
+							<Border Grid.Row="1"
+									BoxShadow="inset 0 0 1 0 Black"
+									HorizontalAlignment="Stretch"
+									VerticalAlignment="Stretch">
+								<ContentPresenter Background="Transparent" BorderThickness="0" Padding="0"
+										Content="{TemplateBinding Content}"
+										HorizontalAlignment="Stretch"
+										VerticalAlignment="Stretch"></ContentPresenter>
+							</Border>
+						</Grid>
+					</Border>
+				</Decorator>
+			</ControlTemplate>
+	    </Setter>
+	</Style>
+	<Style Selector="legacy|TitleBox /template/ MaterialButton.Buttons">
+		<Setter Property="CornerRadius" Value="0" />
+	</Style>
+	<Style Selector="legacy|TitleBox /template/ MaterialButton.Buttons">
+		<Setter Property="Height" Value="20" />
+	</Style>
+	<Style Selector="legacy|TitleBox /template/ MaterialButton.Buttons">
+		<Setter Property="Padding" Value="5" />
+	</Style>
+</Styles>

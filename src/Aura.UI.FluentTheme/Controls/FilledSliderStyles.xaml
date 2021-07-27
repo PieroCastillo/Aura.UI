@@ -1,0 +1,162 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:sys="clr-namespace:System;assembly=netstandard">
+	<Styles.Resources>
+		<SolidColorBrush x:Key="HorizontalSliderTrackNormalBackground" Color="#FFE7EAEA" />
+		<LinearGradientBrush x:Key="HorizontalSliderTrackNormalBorder" EndPoint="0%,100%" StartPoint="0%,0%">
+			<GradientStop Color="#FFAEB1AF" Offset="0.1" />
+			<GradientStop Color="White" Offset="0.9" />
+		</LinearGradientBrush>
+	</Styles.Resources>
+	<Style Selector="FilledSlider">
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeBorderHighBrush}" />
+		<Setter Property="BorderThickness" Value="0" />
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+		<Setter Property="ThumbTemplate">
+			<ControlTemplate TargetType="Thumb">
+				<Ellipse Fill="{DynamicResource ThemeAccentBrush}" Height="20" Width="20" StrokeThickness="1"
+						 Stroke="{DynamicResource ThemeAccentBrush}" ></Ellipse>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="FilledSlider:horizontal">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="FilledSlider">
+				<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}">
+					<Grid>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="*" />
+							<RowDefinition Height="Auto" />
+							<RowDefinition Height="*" />
+						</Grid.RowDefinitions>
+						<Grid Grid.Row="2">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="*" />
+							</Grid.ColumnDefinitions>
+						</Grid>
+						<TickBar Name="TopTick" Fill="{TemplateBinding Foreground}" Placement="Top" Height="4" Grid.Row="0">
+						</TickBar>
+						<TickBar Name="BottomTick" Fill="{TemplateBinding Foreground}" Placement="Bottom" Height="4" Grid.Row="2" />
+						<Border Name="TrackBackground"
+                                Background="{DynamicResource ThemeControlLowBrush}"
+                                BorderBrush="{DynamicResource ThemeControlLowBrush}"
+                                BorderThickness="1" CornerRadius="1"
+								Margin="5,0" VerticalAlignment="Center" Height="4.0" Grid.Row="1" />
+						<Track Name="PART_Track" Grid.Row="1" Value="{TemplateBinding Value}"
+							   Orientation="Horizontal" Maximum="{TemplateBinding Maximum}"
+							   Minimum="{TemplateBinding Minimum}">
+							<Track.DecreaseButton>
+								<Button Name="PART_DecreaseButton" Classes="Repeats"
+											  Background="{DynamicResource ThemeAccentBrush}" />
+							</Track.DecreaseButton>
+							<Track.IncreaseButton>
+								<Button Name="PART_IncreaseButton" Classes="Repeats" />
+							</Track.IncreaseButton>
+							<Track.Thumb>
+								<Thumb Template="{TemplateBinding ThumbTemplate}" />
+							</Track.Thumb>
+						</Track>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="FilledSlider:vertical">
+		<Setter Property="Template">
+			<ControlTemplate TargetType="FilledSlider">
+				<Border Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="{TemplateBinding BorderThickness}">
+					<Grid Name="PART_Container">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="*" />
+							<ColumnDefinition Width="Auto" />
+							<ColumnDefinition Width="*" />
+						</Grid.ColumnDefinitions>
+						<TickBar Name="TopTick" Fill="{TemplateBinding Foreground}" Placement="Left" Width="4" Grid.Column="0">
+						</TickBar>
+						<TickBar Name="BottomTick" Fill="{TemplateBinding Foreground}" Placement="Right" Width="4" Grid.Column="2" />
+						<Border Name="TrackBackground"
+                                BorderThickness="1" CornerRadius="1"
+								Height="{TemplateBinding Height}"
+								Margin="5,0" VerticalAlignment="Center" Width="4.0" Grid.Column="1" />
+						<Track Name="PART_Track" Grid.Column="1" Value="{TemplateBinding Value}"
+							   Orientation="Vertical" Maximum="{TemplateBinding Maximum}"
+							   Minimum="{TemplateBinding Minimum}">
+							<Track.DecreaseButton>
+								<Button Name="PART_DecreaseButton" Classes="Repeats"
+									    Background="{DynamicResource ThemeAccentBrush}" />
+							</Track.DecreaseButton>
+							<Track.IncreaseButton>
+								<Button Name="PART_IncreaseButton" Classes="Repeats" />
+							</Track.IncreaseButton>
+							<Track.Thumb>
+								<Thumb Template="{TemplateBinding ThumbTemplate}" />
+							</Track.Thumb>
+						</Track>
+					</Grid>
+				</Border>
+			</ControlTemplate>
+		</Setter>
+	</Style>
+	<Style Selector="Slider:disabled /template/ Grid#PART_Container">
+		<Setter Property="Opacity" Value="{DynamicResource ThemeDisabledOpacity}" />
+	</Style>
+	<Style Selector="Button.Repeats">
+		<Setter Property="Focusable" Value="False" />
+		<Setter Property="Template">
+			<Setter.Value>
+				<ControlTemplate TargetType="Button">
+					<Grid Height="{TemplateBinding Height}"
+						  Width="{TemplateBinding Width}">
+						<ContentPresenter Name="PART_ContentPresenter"
+										  Background="{TemplateBinding Background}"
+				  BorderBrush="{TemplateBinding BorderBrush}"
+				  BorderThickness="{TemplateBinding BorderThickness}"
+				  ContentTemplate="{TemplateBinding ContentTemplate}"
+				  Content="{TemplateBinding Content}"
+				  Padding="{TemplateBinding Padding}"
+				  TextBlock.Foreground="{TemplateBinding Foreground}"
+				  HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+				  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" />
+					</Grid>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style Selector="FilledSlider /template/ Border#TrackBackground">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlLowBrush}" />
+		<Setter Property="BorderBrush" Value="{DynamicResource ThemeControlLowBrush}" />
+	</Style>
+	<Style Selector="FilledSlider:horizontal /template/ Button.Repeats">
+		<Setter Property="HorizontalAlignment" Value="Stretch" />
+		<Setter Property="VerticalAlignment" Value="Center" />
+		<Setter Property="Height" Value="6" />
+	</Style>
+	<Style Selector="FilledSlider:vertical /template/ Button.Repeats">
+		<Setter Property="HorizontalAlignment" Value="Center" />
+		<Setter Property="VerticalAlignment" Value="Stretch" />
+		<Setter Property="Width" Value="6" />
+	</Style>
+	<Style Selector="FilledSlider /template/ Button#PART_IncreaseButton">
+		<Setter Property="Background" Value="{DynamicResource ThemeControlLowBrush}" />
+ 	</Style>
+	<Style Selector="FilledSlider /template/ Button#PART_DecreaseButton:pointerover">
+ 		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush2}" />
+	</Style>
+	<Style Selector="FilledSlider /template/ Button#PART_DecreaseButton:pressed:pointerover">
+ 		<Setter Property="Background" Value="{DynamicResource ThemeAccentBrush3}" />
+	</Style>
+	<Design.PreviewWith>
+		<Border Padding="20" Background="Yellow">
+			<StackPanel Background="{DynamicResource SystemAltLowColor}">
+				<FilledSlider Orientation="Horizontal" Width="100" Height="20"></FilledSlider>
+				<FilledSlider Orientation="Vertical" Width="20" Height="100"></FilledSlider>
+			</StackPanel>
+		</Border>
+	</Design.PreviewWith>
+</Styles> 

@@ -2,7 +2,7 @@
 using System;
 using System.Collections;
 
-namespace Aura.UI.UIExtensions
+namespace Aura.UI.Extensions
 {
     public static class TabControlExtensions
     {

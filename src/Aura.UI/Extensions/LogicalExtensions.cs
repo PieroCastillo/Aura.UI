@@ -2,7 +2,7 @@
 using Avalonia.LogicalTree;
 using System.Linq;
 
-namespace Aura.UI.UIExtensions
+namespace Aura.UI.Extensions
 {
     public static class LogicalExtensions
     {

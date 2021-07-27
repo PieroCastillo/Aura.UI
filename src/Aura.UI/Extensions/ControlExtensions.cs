@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
 
-namespace Aura.UI.UIExtensions
+namespace Aura.UI.Extensions
 {
     public static class ControlExtensions
     {
