@@ -198,5 +198,10 @@ namespace Aura.UI.Extensions
 			=> RGBToHSV(color.ToRGB());
 		public static Color ToColor(this RGB rgb) => Color.FromRgb(rgb.R, rgb.G, rgb.B);
 		public static Color ToColor(this HSV hsv) => HSVToRGB(hsv).ToColor();
-    }
+
+		public static Color WithAlpha(this Color color, byte alpha) => Color.FromArgb(alpha, color.R, color.G, color.B);
+		public static Color WithRed(this Color color, byte red) => Color.FromArgb(color.A, red, color.G, color.B);
+		public static Color WithGreen(this Color color, byte green) => Color.FromArgb(color.A, color.R, green, color.B);
+		public static Color WithBlue(this Color color, byte blue) => Color.FromArgb(color.A, color.R, color.G, blue);
+	}
 }
