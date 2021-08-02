@@ -55,6 +55,9 @@ namespace Aura.UI.Controls.Navigation
         public readonly static StyledProperty<bool> AutoCompleteBoxIsVisibleProperty =
             AvaloniaProperty.Register<NavigationView, bool>(nameof(AutoCompleteBoxIsVisible), true);
 
+        public readonly static StyledProperty<ExperimentalAcrylicMaterial> PanelMaterialProperty =
+            AvaloniaProperty.Register<NavigationView, ExperimentalAcrylicMaterial>(nameof(PanelMaterial));
+
         public readonly static DirectProperty<NavigationView, IEnumerable<string>> ItemsAsStringsProperty =
             AvaloniaProperty.RegisterDirect<NavigationView, IEnumerable<string>>(nameof(ItemsAsStrings), o => o.ItemsAsStrings);
 
@@ -77,6 +80,12 @@ namespace Aura.UI.Controls.Navigation
         {
             get => GetValue(IconProperty);
             set => SetValue(IconProperty, value);
+        }
+
+        public ExperimentalAcrylicMaterial PanelMaterial
+        {
+            get => GetValue(PanelMaterialProperty);
+            set => SetValue(PanelMaterialProperty, value);
         }
 
 

@@ -56,6 +56,7 @@
 		<Setter Property="CompactPaneLength" Value="{DynamicResource NavigationViewCompactPaneLength}" />
 		<Setter Property="OpenPaneLength" Value="{DynamicResource NavigationViewOpenPaneLength}" />
 		<Setter Property="Background" Value="{DynamicResource NavigationViewBackground}" />
+    <Setter Property="PanelMaterial" Value="{StaticResource NavigationViewMaterial}"/>
 		<Setter Property="Icon" Value="{DynamicResource line_horizontal_3_regular}" />
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
@@ -79,7 +80,8 @@
 						<SplitView.Pane>
 							<Border Name="PART_ShadowBorder">
 								<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
-							                           Padding="0,0">
+																					 Padding="0,0"
+                                           Material="{Binding $parent[NavigationView].PanelMaterial}">
 									<Grid RowDefinitions="auto,auto,auto,*">
 										<Border Grid.Row="1" 
 										        Width="{Binding $parent[NavigationView].CompactPaneLength}"
@@ -171,10 +173,6 @@
 	
 	<Style Selector="NavigationView /template/ Border#PART_ShadowBorder">
 		<Setter Property="BoxShadow" Value="0 0 50 0 Black"/>
-	</Style>
-
-	<Style Selector="NavigationView ExperimentalAcrylicBorder#PART_AcrylicBorder">
-		<Setter Property="Material" Value="{StaticResource NavigationViewMaterial}" />
 	</Style>
 	
 	<Style Selector="NavigationView[IsOpen=true] /template/ ExperimentalAcrylicBorder#PART_AcrylicBorder">
