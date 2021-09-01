@@ -27,21 +27,21 @@ namespace Aura.UI.Gallery.Pages
                 }
             }
 
-            PART_DarkOption.Checked += (s, e) =>
+            PART_DarkOption.Checked += async (s, e) =>
             {
                 if(Application.Current is App app)
                 {
                     Debug.WriteLine("dark checked");
-                    _ = app.SetTheme(Theme.Dark);
+                    await app.SetTheme(Theme.Dark);
                 }
             };
 
-            PART_LightOption.Checked += (s, e) =>
+            PART_LightOption.Checked += async (s, e) =>
             {
                 if (Application.Current is App app)
                 {
                     Debug.WriteLine("light checked");
-                    _ = app.SetTheme(Theme.Light);
+                    await app.SetTheme(Theme.Light);
                 }
             };
             

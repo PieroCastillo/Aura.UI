@@ -19,16 +19,16 @@
 	<Import Project="..\..\build\version.props" />
 	<ItemGroup>
 	  <PackageReference Include="Avalonia" Version="0.10.6" />
-	  <PackageReference Include="Avalonia.Desktop" Version="0.10.6" />
-	  <PackageReference Include="Avalonia.Diagnostics" Version="0.10.6" />
-	  <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.6" />
-	  <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.6" />
-	  <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.6.10" />
-	  <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.6.10" />
+	  <PackageReference Include="Avalonia.Desktop" Version="0.10.7" />
+	  <PackageReference Include="Avalonia.Diagnostics" Version="0.10.7" />
+	  <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.7" />
+	  <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.7" />
+	  <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.7" />
+	  <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.7" />
 	  <PackageReference Include="MathNet.Numerics" Version="4.15.0" />
-	  <PackageReference Include="ReactiveUI" Version="14.1.1" />
+	  <PackageReference Include="ReactiveUI" Version="16.2.1" />
 	  <PackageReference Include="SkiaSharp" Version="2.80.3" />
-	  <PackageReference Include="Avalonia" Version="0.10.6" />
+	  <PackageReference Include="Avalonia" Version="0.10.7" />
 	  <PackageReference Include="System.Reactive" Version="5.0.0" />
 	</ItemGroup>
 </Project>

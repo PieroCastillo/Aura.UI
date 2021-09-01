@@ -70,20 +70,27 @@ namespace Aura.UI.Gallery
 
         public async Task SetTheme(Theme theme)
         {
-            await Dispatcher.UIThread.InvokeAsync(() =>
+            try
             {
-                switch (theme)
+                await Dispatcher.UIThread.InvokeAsync(() =>
                 {
-                    case Theme.Light:
-                        Application.Current.Styles[0] = App.FluentLight;
-                        break;
-                    case Theme.Dark:
-                        Application.Current.Styles[0] = App.FluentDark;
-                        break;
-                }
-            }, (DispatcherPriority)1);
+                    switch (theme)
+                    {
+                        case Theme.Light:
+                            Application.Current.Styles[0] = App.FluentLight;
+                            break;
+                        case Theme.Dark:
+                            Application.Current.Styles[0] = App.FluentDark;
+                            break;
+                    }
+                }, (DispatcherPriority)1);
 
-            Settings.Theme = theme;
+                Settings.Theme = theme;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine($"some error has executed");
+            }
         }
 
 

@@ -81,24 +81,24 @@
 	    <!--RibbonSeparator Resources-->
 	    <SolidColorBrush x:Key="RibbonSeparatorBackgroundBrush" Color="{DynamicResource SystemBaseMediumLowColor}"/>
 		<!--ModernSlider Resources-->
-		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncrease"
+		<ExperimentalAcrylicMaterial x:Key="ModernSliderDecrease"
 									 TintColor="{DynamicResource SystemAccentColor}"
 									 TintOpacity="1"
 									 FallbackColor="{DynamicResource SystemAccentColor}"
 									 MaterialOpacity="1"
 									 BackgroundSource="None"/>
-		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncreasePointerOver"
+		<ExperimentalAcrylicMaterial x:Key="ModernSliderDecreasePointerOver"
 									 TintColor="{DynamicResource SystemAccentColorLight1}"
 									 TintOpacity="1"
 									 FallbackColor="{DynamicResource SystemAccentColorLight1}"
 									 MaterialOpacity="1"
 									 BackgroundSource="None"/>
-		<ExperimentalAcrylicMaterial x:Key="ModernSliderDecrease"
+		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncrease"
 									 TintColor="{DynamicResource SystemAltHighColor}"
 									 TintOpacity="1" MaterialOpacity="1"
 								 FallbackColor="{DynamicResource SystemAltHighColor}"
 								 BackgroundSource="None"/>
-		<ExperimentalAcrylicMaterial x:Key="ModernSliderDecreasePointerOver"
+		<ExperimentalAcrylicMaterial x:Key="ModernSliderIncreasePointerOver"
 									 TintColor="{DynamicResource SystemAltMediumColor}"
 									 TintOpacity="1" MaterialOpacity="1"
 								 FallbackColor="{DynamicResource SystemAltMediumColor}"

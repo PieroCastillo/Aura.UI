@@ -22,7 +22,7 @@ namespace Aura.UI.Gallery
                 .UseReactiveUI()
                 .With(new X11PlatformOptions() { UseDeferredRendering = true})
                 .With(new MacOSPlatformOptions() { ShowInDock = true})
-                .With(new Win32PlatformOptions() {  AllowEglInitialization = true, UseDeferredRendering = true, UseWindowsUIComposition = true })
+                .With(new Win32PlatformOptions() {  AllowEglInitialization = true, UseDeferredRendering = true })
                 .LogToTrace();
     }
 }
