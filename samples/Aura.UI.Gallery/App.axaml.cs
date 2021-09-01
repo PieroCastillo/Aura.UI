@@ -21,7 +21,7 @@ namespace Aura.UI.Gallery
     {
         public override void Initialize()
         {
-            var settings_prov = new SettingsProvider();
+            var settings_prov = new SettingsProvider(); 
             Settings = settings_prov.Load<AppSettings>();
 
             switch (Settings.Theme)
