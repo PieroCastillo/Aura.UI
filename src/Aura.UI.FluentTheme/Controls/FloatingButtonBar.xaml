@@ -18,16 +18,20 @@
 			</Grid>
 		</Border>
 	</Design.PreviewWith>
-	<Styles.Resources>
-		<DrawingImage x:Key="FluentIconsFilled.add_filled">
-			<DrawingGroup>
-				<GeometryDrawing Brush="Transparent" Geometry="M0,0 28,0 28,28 0,28" />
-				<GeometryDrawing Brush="{DynamicResource SystemControlHighlightBaseHighBrush}" Geometry="M14.5,13 L14.5,3.75378577 C14.5,3.33978577 14.164,3.00378577 13.75,3.00378577 C13.336,3.00378577 13,3.33978577 13,3.75378577 L13,13 L3.75387573,13 C3.33987573,13 3.00387573,13.336 3.00387573,13.75 C3.00387573,14.164 3.33987573,14.5 3.75387573,14.5 L13,14.5 L13,23.7523651 C13,24.1663651 13.336,24.5023651 13.75,24.5023651 C14.164,24.5023651 14.5,24.1663651 14.5,23.7523651 L14.5,14.5 L23.7498262,14.5030754 C24.1638262,14.5030754 24.4998262,14.1670754 24.4998262,13.7530754 C24.4998262,13.3390754 24.1638262,13.0030754 23.7498262,13.0030754 L14.5,13 Z" />
-			</DrawingGroup>
-		</DrawingImage>
-	</Styles.Resources>
+	
 	<Style Selector="FloatingButtonBar">
 		<Setter Property="ExpandDirection" Value="ToRight" />
+		<Setter Property="Icon">
+			<Setter.Value>
+				<Template>
+					<Path Fill="{Binding $parent[ToggleButton].Foreground}" Stretch="Uniform" Data="M14.5,13 L14.5,3.75378577 C14.5,3.33978577 14.164,3.00378577 13.75,3.00378577 C13.336,3.00378577 13,3.33978577 13,3.75378577 L13,13 L3.75387573,13 C3.33987573,13 3.00387573,13.336 3.00387573,13.75 C3.00387573,14.164 3.33987573,14.5 3.75387573,14.5 L13,14.5 L13,23.7523651 C13,24.1663651 13.336,24.5023651 13.75,24.5023651 C14.164,24.5023651 14.5,24.1663651 14.5,23.7523651 L14.5,14.5 L23.7498262,14.5030754 C24.1638262,14.5030754 24.4998262,14.1670754 24.4998262,13.7530754 C24.4998262,13.3390754 24.1638262,13.0030754 23.7498262,13.0030754 L14.5,13 Z" />
+				</Template>
+			</Setter.Value>
+		</Setter>
+		<Setter Property="IconForeground" Value="{DynamicResource SystemControlHighlightBaseHighBrush}" />
+		<Setter Property="IconBackground" Value="{DynamicResource SystemControlBackgroundAccentBrush}" />
+		<Setter Property="IconMargin" Value="2" />
+		<Setter Property="HorizontalIconAlignment" Value="Center" />
 	</Style>
 
 	<Style Selector="FloatingButtonBar[ExpandDirection=ToRight]">
@@ -36,15 +40,21 @@
 				<UniformGrid Rows="1" />
 			</ItemsPanelTemplate>
 		</Setter>
-		<Setter Property="Icon" Value="{DynamicResource FluentIconsFilled.add_filled}" />
 		<Setter Property="Template">
-			<ControlTemplate>
+			<ControlTemplate TargetType="FloatingButtonBar">
 				<Grid ColumnDefinitions="auto,auto">
-					<ToggleButton Name="PART_Button" IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}">
+					<ToggleButton Name="PART_Button" 
+								  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
+								  Content="{TemplateBinding Icon}"
+								  ContentTemplate="{TemplateBinding IconTemplate}"
+								  Foreground="{TemplateBinding IconForeground}"
+								  Background="{TemplateBinding IconBackground}"
+								  HorizontalContentAlignment="{TemplateBinding HorizontalIconAlignment}"
+								  VerticalContentAlignment="{TemplateBinding VerticalIconAlignment}"
+								  Padding="{TemplateBinding IconMargin}">
 						<ToggleButton.RenderTransform>
 							<RotateTransform />
 						</ToggleButton.RenderTransform>
-						<Image Name="PART_Image" Source="{TemplateBinding Icon}" />
 					</ToggleButton>
 					<ItemsPresenter Grid.Column="1"
 									Name="PART_ItemsPresenter"
@@ -96,7 +106,6 @@
 			</ItemsPanelTemplate>
 		</Setter>
 		<Setter Property="HorizontalAlignment" Value="Right" />
-		<Setter Property="Icon" Value="{DynamicResource FluentIconsFilled.add_filled}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid ColumnDefinitions="*,auto">
@@ -110,12 +119,19 @@
 							</Transitions>
 						</ItemsPresenter.Transitions>-->
 					</ItemsPresenter>
-					<ToggleButton Grid.Column="1" Name="PART_Button"
-								  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}">
+					<ToggleButton Name="PART_Button"
+								  Grid.Column="1" 
+								  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
+								  Content="{TemplateBinding Icon}"
+								  ContentTemplate="{TemplateBinding IconTemplate}"
+								  Foreground="{TemplateBinding IconForeground}"
+								  Background="{TemplateBinding IconBackground}"
+								  HorizontalContentAlignment="{TemplateBinding HorizontalIconAlignment}"
+								  VerticalContentAlignment="{TemplateBinding VerticalIconAlignment}"
+								  Padding="{TemplateBinding IconMargin}">
 						<ToggleButton.RenderTransform>
 							<RotateTransform />
 						</ToggleButton.RenderTransform>
-						<Image Name="PART_Image" Source="{TemplateBinding Icon}" />
 					</ToggleButton>
 				</Grid>
 			</ControlTemplate>
@@ -158,7 +174,6 @@
 		</Setter>
 		<Setter Property="VerticalAlignment" Value="Bottom" />
 		<Setter Property="HorizontalAlignment" Value="Left" />
-		<Setter Property="Icon" Value="{DynamicResource FluentIconsFilled.add_filled}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid RowDefinitions="*,auto" ColumnDefinitions="auto">
@@ -171,12 +186,19 @@
 							</Transitions>
 						</ItemsPresenter.Transitions>-->
 					</ItemsPresenter>
-					<ToggleButton Grid.Row="1" Name="PART_Button"
-								  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}">
+					<ToggleButton Name="PART_Button"
+								  Grid.Row="1" 
+								  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
+								  Content="{TemplateBinding Icon}"
+								  ContentTemplate="{TemplateBinding IconTemplate}"
+								  Foreground="{TemplateBinding IconForeground}"
+								  Background="{TemplateBinding IconBackground}"
+								  HorizontalContentAlignment="{TemplateBinding HorizontalIconAlignment}"
+								  VerticalContentAlignment="{TemplateBinding VerticalIconAlignment}"
+								  Padding="{TemplateBinding IconMargin}">
 						<ToggleButton.RenderTransform>
 							<RotateTransform />
 						</ToggleButton.RenderTransform>
-						<Image Name="PART_Image" Source="{TemplateBinding Icon}" />
 					</ToggleButton>
 				</Grid>
 			</ControlTemplate>
@@ -219,16 +241,21 @@
 		</Setter>
 		<Setter Property="VerticalAlignment" Value="Top" />
 		<Setter Property="HorizontalAlignment" Value="Right" />
-		<Setter Property="Icon" Value="{DynamicResource FluentIconsFilled.add_filled}" />
 		<Setter Property="Template">
 			<ControlTemplate>
 				<Grid RowDefinitions="*,auto" ColumnDefinitions="auto">
 					<ToggleButton Name="PART_Button"
-								  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}">
+								  IsChecked="{TemplateBinding IsExpanded, Mode=TwoWay}"
+								  Content="{TemplateBinding Icon}"
+								  ContentTemplate="{TemplateBinding IconTemplate}"
+								  Foreground="{TemplateBinding IconForeground}"
+								  Background="{TemplateBinding IconBackground}"
+								  HorizontalContentAlignment="{TemplateBinding HorizontalIconAlignment}"
+								  VerticalContentAlignment="{TemplateBinding VerticalIconAlignment}"
+								  Padding="{TemplateBinding IconMargin}">
 						<ToggleButton.RenderTransform>
 							<RotateTransform />
 						</ToggleButton.RenderTransform>
-						<Image Name="PART_Image" Source="{TemplateBinding Icon}" />
 					</ToggleButton>
 					<ItemsPresenter Grid.Row="1" Name="PART_ItemsPresenter"
 									Items="{TemplateBinding Items}"
