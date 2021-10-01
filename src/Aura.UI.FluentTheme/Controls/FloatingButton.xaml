@@ -32,6 +32,9 @@
 						CornerRadius="20" Padding="7" Margin="5" BoxShadow="{BoxShadow BlurRadius=5, ShadowColor={StaticResource SystemBaseMediumColor}}">
 					<ContentPresenter Name="PART_ContentPresenter"
 									  Content="{TemplateBinding Content}"
+									  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									  VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+									  Margin="{TemplateBinding Padding}"
 									  Background="Transparent"
 									  ContentTemplate="{TemplateBinding ContentTemplate}" />
 				</Border>
