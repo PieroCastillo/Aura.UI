@@ -81,6 +81,24 @@
 &lt;/FloatingButtonBar>
 				</CodeExample.XAMLText>
 			</CodeExample>
+
+			<CodeExample Title="FloatingButtonBar with custom Icon" CSharpVisible="False">
+				<FloatingButtonBar Icon="#" IconForeground="White" IconBackground="DarkGreen" OpenLength="250" ExpandDirection="ToRight">
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+					<FloatingButton/>
+				</FloatingButtonBar>
+				<CodeExample.XAMLText>
+					&lt;FloatingButtonBar Icon="#" IconForeground="White" IconBackground="DarkGreen" OpenLength="250" ExpandDirection="ToBottom">
+					&lt;FloatingButton/>
+					&lt;FloatingButton/>
+					&lt;FloatingButton/>
+					&lt;FloatingButton/>
+					&lt;/FloatingButtonBar>
+				</CodeExample.XAMLText>
+			</CodeExample>
+			
 		</StackPanel>
 	</StackPanel>
 </UserControl>
