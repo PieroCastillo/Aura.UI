@@ -90,12 +90,12 @@
 					<FloatingButton/>
 				</FloatingButtonBar>
 				<CodeExample.XAMLText>
-					&lt;FloatingButtonBar Icon="#" IconForeground="White" IconBackground="DarkGreen" OpenLength="250" ExpandDirection="ToRight">
-					&lt;FloatingButton/>
-					&lt;FloatingButton/>
-					&lt;FloatingButton/>
-					&lt;FloatingButton/>
-					&lt;/FloatingButtonBar>
+&lt;FloatingButtonBar Icon="#" IconForeground="White" IconBackground="DarkGreen" OpenLength="250" ExpandDirection="ToRight">
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+	&lt;FloatingButton/>
+&lt;/FloatingButtonBar>
 				</CodeExample.XAMLText>
 			</CodeExample>
 			

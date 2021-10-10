@@ -12,7 +12,7 @@
 	  <PackageReference Include="Avalonia" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Update="Avalonia" Version="0.10.7" />
+	  <PackageReference Update="Avalonia" Version="0.10.8" />
 	  <PackageReference Update="Avalonia.Desktop" Version="0.10.6" />
 	  <PackageReference Update="Avalonia.Diagnostics" Version="0.10.6" />
 	  <PackageReference Update="Avalonia.Markup.Xaml.Loader" Version="0.10.6" />

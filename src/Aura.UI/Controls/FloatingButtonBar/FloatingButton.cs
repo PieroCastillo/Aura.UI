@@ -8,5 +8,9 @@ namespace Aura.UI.Controls
     /// </summary>
     public class FloatingButton : Button
     {
+        static FloatingButton()
+        {
+            ClipToBoundsProperty.OverrideDefaultValue<FloatingButton>(false);
+        }
     }
 }

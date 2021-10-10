@@ -1,13 +1,21 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Primitives;
 using Avalonia.Controls.Templates;
 using Avalonia.Layout;
+using Avalonia.LogicalTree;
 using Avalonia.Media;
+using System;
 
 namespace Aura.UI.Controls
 {
     public class FloatingButtonBar : ItemsControl
     {
+        static FloatingButtonBar()
+        {
+            FocusableProperty.OverrideDefaultValue<FloatingButtonBar>(false);
+        }
+
         public bool IsExpanded
         {
             get => GetValue(IsExpandedProperty);
