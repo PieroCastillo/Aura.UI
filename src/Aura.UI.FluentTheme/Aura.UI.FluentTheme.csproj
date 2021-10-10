@@ -1,119 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+		<TargetFramework>netstandard2.1</TargetFramework>
+    <Description>Aura.UI's Fluent Theme</Description>
+    <PackageIcon>AuraUILogo_full_icon.png</PackageIcon>
   </PropertyGroup>
-
-
   <ItemGroup>
+		<None Include="AuraUILogo_full_icon.png" Pack="true" PackagePath="\" />
     <ProjectReference Include="..\Aura.UI\Aura.UI.csproj" />
     <AvaloniaResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
   </ItemGroup>
-
-
-  <ItemGroup>
-    <AvaloniaResource Remove="Controls\DraggingContentControl.xaml" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <None Remove="Controls\DraggingContentControl.xaml" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <AvaloniaXaml Include="Controls\DraggingContentControl.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </AvaloniaXaml>
-  </ItemGroup>
-
-
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.8" />
   </ItemGroup>
-
-
-  <ItemGroup>
-    <None Update="Controls\AuraTabItemStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\AuraTabViewStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\CardCollectionStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\CardControlStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\ContentDialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\FilledSliderStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\FloatingButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\FloatingButtonBar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\GroupBoxStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\Legacy\PageStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\Legacy\PagesViewStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\Legacy\SuperListBoxItemStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\Legacy\TitleBoxStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\MaterialButtonStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\MessageDialogStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\ModernSliderStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\NavigationViewItemStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\NavigationViewLinker.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\NavigationViewStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\ProgressRing.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\RadialSlider.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\RibbonGroupStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\RibbonItemStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\RibbonSeparatorStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\RibbonStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Controls\ShadowButtonStyles.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-  </ItemGroup>
-
+	<Import Project="..\..\build\version.props" />
 </Project>

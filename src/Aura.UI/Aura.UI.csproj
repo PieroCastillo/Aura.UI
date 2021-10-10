@@ -10,7 +10,7 @@
 		<None Include="AuraUILogo_full_icon.png" Pack="true" PackagePath="\" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />
+   
 		<AvaloniaResource Include="**\*.xaml">
 			<SubType>Designer</SubType>
 		</AvaloniaResource>

@@ -58,7 +58,6 @@
     <PackageReference Include="jp2masa.Avalonia.Flexbox" Version="0.2.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Aura.UI.Dragging\Aura.UI.Dragging.csproj" />
     <ProjectReference Include="..\..\src\Aura.UI.FluentTheme\Aura.UI.FluentTheme.csproj" />
     <ProjectReference Include="..\..\src\Aura.UI\Aura.UI.csproj" />
   </ItemGroup>
