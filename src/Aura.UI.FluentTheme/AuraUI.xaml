@@ -4,6 +4,7 @@
 	<StyleInclude Source="/AuraUIFluent.xaml" />
 	<StyleInclude Source="/Controls/AuraTabItemStyles.xaml" />
 	<StyleInclude Source="/Controls/AuraTabViewStyles.xaml" />
+  <StyleInclude Source="/Controls/Badge.axaml"/>
 	<StyleInclude Source="/Controls/MaterialButtonStyles.xaml" />
 	<StyleInclude Source="/Controls/ShadowButtonStyles.xaml" />
 	<StyleInclude Source="/Controls/CardCollectionStyles.xaml" />

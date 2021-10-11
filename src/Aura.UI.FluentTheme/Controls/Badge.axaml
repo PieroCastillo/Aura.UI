@@ -1,0 +1,43 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <Badge BadgePosition="RightTop" BadgeContent="9+">
+        <Button Content="Hello Badge!" Width="100" Height="50"/>
+      </Badge>
+    </Border>
+  </Design.PreviewWith>
+  <Style Selector="Badge">
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="BadgeContentTemplate">
+      <DataTemplate>
+        <Panel>
+          <Ellipse Fill="{DynamicResource BadgeFill}"
+                   Stroke="{DynamicResource BadgeStroke}"
+                   StrokeThickness="{DynamicResource BadgeStrokeThickness}"
+                   Width="20"
+                   Height="20"/>
+          <TextBlock Text="{Binding $parent[Badge].BadgeContent}"
+                     FontSize="10"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"/>
+        </Panel>
+      </DataTemplate>
+    </Setter>
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid Margin="{TemplateBinding Margin}">
+          <ContentPresenter Name="PART_ContentPresenter"
+                            Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"/>
+          <ContentPresenter Name="PART_BadgePresenter"
+                            Content="{TemplateBinding BadgeContent}"
+                            ContentTemplate="{TemplateBinding BadgeContentTemplate}"
+                            VerticalAlignment="{Binding $parent[Badge].BadgeVerticalAlignment}"
+                            HorizontalAlignment="{Binding $parent[Badge].BadgeHorizontalAlignment}"
+                            Margin="{Binding $parent[Badge].BadgeThickness}"/>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>

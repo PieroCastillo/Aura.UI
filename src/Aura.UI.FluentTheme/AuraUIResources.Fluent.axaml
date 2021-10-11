@@ -24,6 +24,11 @@
 		<!--AuraTabView Resources-->
 		<SolidColorBrush x:Key="AuraTabViewBackground" Color="{DynamicResource SystemBaseLowColor}"/>
 		<SolidColorBrush x:Key="AuraTabViewForeground" Color="{DynamicResource SystemBaseHighColor}"/>
+    <!--Badge Resources-->
+    <SolidColorBrush x:Key="BadgeFill" Color="{DynamicResource SystemAccentColorLight2}"/>
+    <SolidColorBrush x:Key="BadgeStroke" Color="{DynamicResource SystemAccentColorLight1}"/>
+    <SolidColorBrush x:Key="BadgeForeground" Color="{DynamicResource SystemBaseHighColor}"/>
+    <sys:Double x:Key="BadgeStrokeThickness">2.5</sys:Double>
 		<!--MaterialButton Resources-->
 		<DynamicResource x:Key="MaterialButtonMaterial" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicBackgroundBrush-->
 		<DynamicResource x:Key="MaterialButtonMaterialPointerOver" ResourceKey="ThemeAcrylicBackgroundBrush"/><!--ThemeAcrylicControlMidBrush-->
