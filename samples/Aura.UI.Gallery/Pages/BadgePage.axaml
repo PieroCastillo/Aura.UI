@@ -1,0 +1,123 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Aura.UI.Gallery.Pages.BadgePage"
+             Classes="us_c">
+  <StackPanel Spacing="10">
+    <TextBlock Text="Badge control displays a Badge overlay its content."/>
+    <CodeExample Title="Badge" TitleTwo="Top" CSharpVisible="False">
+      <Badge BadgePosition="Top" BadgeContent="9+">
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="Top" BadgeContent="9+">
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+    <CodeExample Title="Badge" TitleTwo="Bottom" CSharpVisible="False">
+      <Badge BadgePosition="Bottom" BadgeContent="9+">
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="Bottom" BadgeContent="9+">
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+    <CodeExample Title="Badge" TitleTwo="Left" CSharpVisible="False">
+      <Badge BadgePosition="Left" BadgeContent="9+">
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="Left" BadgeContent="9+">
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+    <CodeExample Title="Badge" TitleTwo="Right" CSharpVisible="False">
+      <Badge BadgePosition="Right" BadgeContent="9+">
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="Right" BadgeContent="9+">
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+    <CodeExample Title="Badge" TitleTwo="RightTop" CSharpVisible="False">
+      <Badge BadgePosition="RightTop" BadgeContent="9+">
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="RightTop" BadgeContent="9+">
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+    <CodeExample Title="Badge" TitleTwo="RightBottom" CSharpVisible="False">
+      <Badge BadgePosition="RightBottom" BadgeContent="9+">
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="RightBottom" BadgeContent="9+">
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+    <CodeExample Title="Badge" TitleTwo="LeftTop" CSharpVisible="False">
+      <Badge BadgePosition="LeftTop" BadgeContent="9+">
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="LeftTop" BadgeContent="9+">
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+    <CodeExample Title="Badge" TitleTwo="LeftBottom" CSharpVisible="False">
+      <Badge BadgePosition="LeftBottom" BadgeContent="9+">
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="LeftBottom" BadgeContent="9+">
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+    <CodeExample Title="Badge" TitleTwo="With Custom DataTemplate" CSharpVisible="False">
+      <Badge BadgePosition="RightTop" BadgeContent="99+">
+        <Badge.BadgeContentTemplate>
+          <DataTemplate>
+            <Panel>
+              <Rectangle Width="20" Height="20" Fill="LightGreen" RenderTransform="rotate(45deg)"/>
+              <ContentPresenter HorizontalAlignment="Center" 
+                                VerticalAlignment="Center"
+                                TextBlock.FontSize="10"
+                                Content="{Binding $parent[Badge].BadgeContent}"/>
+            </Panel>
+          </DataTemplate>
+        </Badge.BadgeContentTemplate>
+        <Button Content="Messages"/>
+      </Badge>
+      <CodeExample.XAMLText>
+&lt;Badge BadgePosition="RightTop" BadgeContent="99+">
+  &lt;Badge.BadgeContentTemplate>
+    &lt;DataTemplate>
+      &lt;Panel>
+        &lt;Rectangle Width="20" Height="20" Fill="LightGreen" RenderTransform="rotate(45deg)"/>
+        &lt;ContentPresenter HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          TextBlock.FontSize="10"
+                          Content="{Binding $parent[Badge].BadgeContent}"/>
+      &lt;/Panel>
+    &lt;/DataTemplate>
+  &lt;/Badge.BadgeContentTemplate>
+  &lt;Button Content="Messages"/>
+&lt;/Badge>
+      </CodeExample.XAMLText>
+    </CodeExample>
+  </StackPanel>
+</UserControl>

@@ -54,7 +54,8 @@
 						                  Padding="5"
 						                  TextBlock.FontSize="14"
 						                  VerticalAlignment="Top"
-						                  Content="{TemplateBinding TopContent}" />
+						                  Content="{TemplateBinding TopContent}"
+                              IsVisible="{Binding $parent[NavigationViewLinker].TopContentVisible}"/>
 					</Grid>
 				</Border>
 			</ControlTemplate>
@@ -73,11 +74,5 @@
 	</Style>
 	<Style Selector="NavigationViewLinker:pointerover">
 		<Setter Property="BorderBrush" Value="{DynamicResource NavigationViewLinkerPointerOver}" />
-	</Style>
-	<Style Selector="NavigationViewLinker[TopContentIsNull=false] /template/ ContentPresenter#PART_TopContentPresenter">
-		<Setter Property="IsVisible" Value="true" />
-	</Style>
-	<Style Selector="NavigationViewLinker[TopContentIsNull=true] /template/ ContentPresenter#PART_TopContentPresenter">
-		<Setter Property="IsVisible" Value="false" />
 	</Style>
 </Styles>

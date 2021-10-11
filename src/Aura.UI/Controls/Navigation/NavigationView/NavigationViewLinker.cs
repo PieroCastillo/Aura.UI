@@ -10,27 +10,22 @@ namespace Aura.UI.Controls.Navigation
     [PseudoClasses(":pressed")]
     public partial class NavigationViewLinker : ContentControl
     {
-        private bool _pointerOver;
-        static NavigationViewLinker()
+        private bool _pointerOver; 
+
+        public NavigationViewLinker()
         {
-            TopContentIsNullProperty.Changed.Subscribe(SetTopContentIsNull);
+            TopContentProperty.Changed.Subscribe(SetTopContentIsNull);
         }
 
-        private static void SetTopContentIsNull(AvaloniaPropertyChangedEventArgs<bool> e)
+        private void SetTopContentIsNull(AvaloniaPropertyChangedEventArgs<object> e)
         {
-            var c = e.Sender as NavigationViewLinker;
-
-            if (c != null)
+            if (TopContent is null)
             {
-                if (c.TopContent != null)
-                {
-                    c.TopContentIsNull = false;
-                }
-
-                if (c.TopContent is null)
-                {
-                    c.TopContentIsNull = true;
-                }
+                TopContentVisible = false;
+            }
+            else
+            {
+                TopContentVisible = true;
             }
         }
 

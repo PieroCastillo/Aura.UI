@@ -38,7 +38,7 @@
                   RowSpacing="10">
             <NavigationViewLinker Icon="{DynamicResource BoxIcons.RegularCodeAlt}"
                         Title="{Binding Titles.FloattingButtonBar}" LinkTo="{Binding #float_bar_btn}"
-                        Content="{Binding Descriptions.FloattingButtonBar}"/>
+                        Content="{Binding Descriptions.FloattingButtonBar}" TopContent="Updated"/>
             <NavigationViewLinker Icon="{DynamicResource VSImageLib2019.Slider_16x}"
                         Title="{Binding Titles.ModernSlider}" LinkTo="{Binding #mslider}"
                         Content="{Binding Descriptions.ModernSlider}"/>
@@ -53,10 +53,10 @@
                         Content="{Binding Descriptions.CardCollection}"/>
             <NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.tab_desktop_new_page_filled}"
                         Title="{Binding Titles.AuraTabView}" LinkTo="{Binding #aw}"
-                        Content="{Binding Descriptions.AuraTabView}"/>
+                        Content="{Binding Descriptions.AuraTabView}" TopContent="Updated"/>
             <NavigationViewLinker Icon="{DynamicResource FluentIcons.navigation_regular}"
                         Title="{Binding Titles.NavigationView}" LinkTo="{Binding #nw}"
-                        Content="{Binding Descriptions.NavigationView}"/>
+                        Content="{Binding Descriptions.NavigationView}" TopContent="Updated"/>
             <NavigationViewLinker Icon="{DynamicResource VSImageLib.RibbonMenu_16x}"
                         Title="Ribbon" LinkTo="{Binding #rb}"
                         Content="{Binding Descriptions.Ribbon}"/>
@@ -68,7 +68,10 @@
                         Content="{Binding Descriptions.MessageDialog}"/>
             <NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.image_filled}"
                         Title="{Binding Titles.BlurryImage}" LinkTo="{Binding #blurryimg_pg}"
-                        Content="{Binding Descriptions.BlurryImage}"/>
+                        Content="{Binding Descriptions.BlurryImage}" TopContent="Updated"/>
+            <NavigationViewLinker Icon="{DynamicResource FluentIcons.badge_regular}"
+                        Title="{Binding Titles.Badge}" LinkTo="{Binding #badge}"
+                        Content="{Binding Descriptions.Badge}" TopContent="New"/>
           </flex:FlexPanel>
         </GroupBox>
       </NavigationViewItem.Content>
@@ -95,6 +98,9 @@
             <NavigationViewLinker Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}"
                         Title="{Binding Titles.ProgressRing}" LinkTo="{Binding #pring}"
                         Content="{Binding Descriptions.ProgressRing}"/>
+            <NavigationViewLinker Icon="{DynamicResource FluentIcons.badge_regular}"
+                        Title="{Binding Titles.Badge}" LinkTo="{Binding #badge}"
+                        Content="{Binding Descriptions.Badge}"/>
           </flex:FlexPanel>
         </GroupBox>
       </NavigationViewItem.Content>
@@ -114,6 +120,12 @@
                 Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}">
         <NavigationViewItem.Content>
           <pg:ProgressRingPage/>
+        </NavigationViewItem.Content>
+      </NavigationViewItem>
+      <NavigationViewItem Name="badge" Header="{Binding Titles.Badge}" Title="{Binding Titles.Badge}"
+                          Icon="{DynamicResource FluentIcons.badge_regular}">
+        <NavigationViewItem.Content>
+          <pg:BadgePage/>
         </NavigationViewItem.Content>
       </NavigationViewItem>
     </NavigationViewItem>
