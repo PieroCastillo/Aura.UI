@@ -4,12 +4,18 @@ using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Media.Imaging;
 using Avalonia.Threading;
+using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace Aura.UI.Controls
 {
     public class BlurryImage : Control
     {
+        Rect srcRect;
+        Rect dstRect;
+        MemoryStream stream = new();
+
         static BlurryImage()
         {
             AffectsRender<BlurryImage>(BlurLevelProperty, SourceProperty, StretchDirectionProperty, StretchProperty);
@@ -19,29 +25,57 @@ namespace Aura.UI.Controls
             ClipToBoundsProperty.OverrideDefaultValue<BlurryImage>(true);
         }
 
+        public BlurryImage()
+        {
+            BoundsProperty.Changed.Subscribe(BoundsChanged);
+            SourceProperty.Changed.Subscribe(SourceChanged);
+        }
+
+        void SourceChanged(object obj)
+        {
+            if(Source is not null)
+            {
+                Source.Save(stream);
+            }
+        }
+
+        void BoundsChanged(object @obj)
+        {
+            Rect viewPort = new Rect(Bounds.Size);
+            Size sourceSize = Source.Size;
+
+            Vector scale = Stretch.CalculateScaling(Bounds.Size, sourceSize, StretchDirection);
+            Size scaledSize = sourceSize * scale;
+            dstRect = viewPort
+                .CenterRect(new Rect(scaledSize))
+                .Intersect(viewPort);
+            srcRect = new Rect(sourceSize)
+                .CenterRect(new Rect(dstRect.Size / scale));
+        }
+
         public override void Render(DrawingContext context)
         {
-            var source = Source;
-            var mem = new MemoryStream();
-            Source.Save(mem);
+            //var source = Source;
+            //var mem = new MemoryStream();
+            //Source.Save(mem);
 
-            if (source != null && mem.Length > 0 && Bounds.Width > 0 && Bounds.Height > 0)
-            {
-                Rect viewPort = new Rect(Bounds.Size);
-                Size sourceSize = source.Size;
+            //if (source != null && mem.Length > 0 && Bounds.Width > 0 && Bounds.Height > 0)
+            //{
+            //    Rect viewPort = new Rect(Bounds.Size);
+            //    Size sourceSize = source.Size;
 
-                Vector scale = Stretch.CalculateScaling(Bounds.Size, sourceSize, StretchDirection);
-                Size scaledSize = sourceSize * scale;
-                Rect destRect = viewPort
-                    .CenterRect(new Rect(scaledSize))
-                    .Intersect(viewPort);
-                Rect sourceRect = new Rect(sourceSize)
-                    .CenterRect(new Rect(destRect.Size / scale));
+            //    Vector scale = Stretch.CalculateScaling(Bounds.Size, sourceSize, StretchDirection);
+            //    Size scaledSize = sourceSize * scale;
+            //    Rect destRect = viewPort
+            //        .CenterRect(new Rect(scaledSize))
+            //        .Intersect(viewPort);
+            //    Rect sourceRect = new Rect(sourceSize)
+            //        .CenterRect(new Rect(destRect.Size / scale));
 
-                var interpolationMode = RenderOptions.GetBitmapInterpolationMode(this);
-                context.Custom(new BlurImageRender(mem, destRect, sourceRect, BlurLevel, BlurLevel, null));
+            //    var interpolationMode = RenderOptions.GetBitmapInterpolationMode(this);
+            context.Custom(new BlurImageRender(stream, dstRect, srcRect, BlurLevel, BlurLevel, null));
                // Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
-            }
+            //}
         }
 
         ///<inheritdoc/>
