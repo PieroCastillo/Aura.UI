@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using Aura.UI.Helpers;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
@@ -17,6 +18,7 @@ namespace Aura.UI.Controls
             MaximumProperty.Changed.Subscribe(CalibrateAngles);
             MinimumProperty.Changed.Subscribe(CalibrateAngles);
             ValueProperty.Changed.Subscribe(CalibrateAngles);
+            ClipToBoundsProperty.OverrideDefaultValue<RadialSlider>(false);
 
             BoundsProperty.Changed.Subscribe(UpdateRadius);
             StrokeWidthProperty.Changed.Subscribe(UpdateRadius);
@@ -31,23 +33,22 @@ namespace Aura.UI.Controls
 
         bool pressed;
         private bool _locked = false;
+        private double rawAngle = 0;
         public void Lock()
         {
             _locked = true;
-            Debug.WriteLine("triangle picker locked");
         }
 
         public void UnLock()
         {
             _locked = false;
-            Debug.WriteLine("triangle picker unlocked");
         }
 
         protected override void OnPointerMoved(PointerEventArgs e)
         {
             base.OnPointerMoved(e);
 
-            UpdateValueFromPoint(e.GetCurrentPoint(null).Position);
+            UpdateValueFromPoint(e.GetCurrentPoint(this).Position);
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)
@@ -66,14 +67,11 @@ namespace Aura.UI.Controls
         {
             if (pressed)
             {
-                var yAngle = Helpers.Maths.DegreesBetweenPointAndCenter(p, Bounds.Center);
-                Value = Helpers.Maths.ValueFromMinMaxAngle(yAngle, Minimum, Maximum);
+                var angle = Maths.AngleOf(p, Radius);
+                rawAngle = 0;
+                Console.WriteLine($"angle: {angle}");
+                Value = Math.Round((Maximum - Minimum) * angle/(2 * Math.PI), RoundDigits);
             }
-            //Debug.WriteLine(p.ToString() + " :current position");
-            //Debug.WriteLine(Bounds.Center.ToString() + " :center");
-            //Debug.WriteLine(yAngle.ToString() + " :degrees");
-            //Debug.WriteLine(Value.ToString() + " :value");
-            //Debug.WriteLine("===================================================");
         }
 
         private static void UpdateRadius(AvaloniaPropertyChangedEventArgs e)
@@ -92,7 +90,8 @@ namespace Aura.UI.Controls
             if (pr != null)
             {
                 pr.XAngle = -90;
-                pr.YAngle = Helpers.Maths.Calibrate(pr.Value, pr.Minimum, pr.Maximum, pr.Value) * 180;
+                pr.YAngle = pr.rawAngle; //Maths.GetAngle(pr.Value, pr.Maximum, pr.Minimum); /*Maths.Calibrate(pr.Value, pr.Minimum, pr.Maximum, pr.Value) * 360*/;
+                Console.WriteLine($"calculated angle: {pr.YAngle}");
 
                 pr.InvalidateVisual();
             }
@@ -155,5 +154,14 @@ namespace Aura.UI.Controls
 
         private readonly static DirectProperty<RadialSlider, double> YAngleProperty =
             AvaloniaProperty.RegisterDirect<RadialSlider, double>(nameof(YAngle), o => o.YAngle);
+
+        public int RoundDigits
+        {
+            get => GetValue(RoundDigitsProperty);
+            set => SetValue(RoundDigitsProperty, value);
+        }
+
+        public static readonly StyledProperty<int> RoundDigitsProperty =
+            AvaloniaProperty.Register<RadialSlider, int>(nameof(RoundDigits), 0);
     }
 }

@@ -5,8 +5,10 @@ namespace Aura.UI.Helpers
 {
     public static class Maths
     {
-        public static double ToSexagesimalDegrees(double centesimalDegrees)
+        public static double ToSexagesimalDegrees(this double centesimalDegrees)
             => centesimalDegrees * 180 / 200;
+
+        public static double ToDegrees(this double radians) => 180 * radians / Math.PI;
 
         public static double Calibrate(double value, double min, double max, double old_value)
         {
@@ -64,20 +66,33 @@ namespace Aura.UI.Helpers
                 return false;
         }
 
-        public static double DegreesBetweenPointAndCenter(Point p, Point center)
+        //Source: https://social.msdn.microsoft.com/Forums/en-US/02681c52-a491-4fde-a6e7-3d5e81c3cdad/radial-slider-implementation-in-xaml?forum=wpf
+        public static double AngleOf(Point pos, double radius)
         {
-            var radian = Math.Atan2(p.Y - center.Y, p.X - center.X);
-            var angle = radian * (180 / Math.PI);
-            angle += 90;
-            if (angle < 0.0)
-                angle += 360.0;
-            else if (angle > 360)
-                angle -= 360;
+            Point center = new Point(radius, radius);
+            double xDiff = center.X - pos.X;
+            double yDiff = center.Y - pos.Y;
+            double r = Math.Sqrt(xDiff * xDiff + yDiff * yDiff);
 
-            //var module = (center.Y - p.Y) / (center.X - p.X);
-            //var angle = Math.Atan(module) * 180 / Math.PI;
+            //Calculate the angle
+            double angle = Math.Acos((center.Y - pos.Y) / r);
+            if (pos.X < radius)
+                angle = 2 * Math.PI - angle;
+            if (double.IsNaN(angle))
+                return 0.0;
+            else
+                return angle;
+        }
 
-            return angle;
+        public static double GetAngle(double value, double maximum, double minimum)
+        {
+            double current = (value / (maximum - minimum)) * 360;
+            if (current == 360)
+                current = 359.999;
+
+            return current;
+
+            //return 360 * (value + minimum) / (maximum - minimum);
         }
 
         public static double PercentageOf(double total, double value) => value * 100 / total;

@@ -66,6 +66,9 @@
             <NavigationViewLinker Icon="{DynamicResource BoxIcons.SolidMessageAltDots}"
                         Title="{Binding Titles.MessageDialog}" LinkTo="{Binding #msgbox}"
                         Content="{Binding Descriptions.MessageDialog}"/>
+            <NavigationViewLinker Icon="{DynamicResource Material.CircleSlice}"
+                        Title="{Binding Titles.RadialSlider}" LinkTo="{Binding #radialSlider}"
+                        Content="{Binding Descriptions.RadialSlider}" TopContent="Updated"/>
             <NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.image_filled}"
                         Title="{Binding Titles.BlurryImage}" LinkTo="{Binding #blurryimg_pg}"
                         Content="{Binding Descriptions.BlurryImage}" TopContent="Updated"/>
@@ -98,9 +101,12 @@
             <NavigationViewLinker Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}"
                         Title="{Binding Titles.ProgressRing}" LinkTo="{Binding #pring}"
                         Content="{Binding Descriptions.ProgressRing}"/>
+            <NavigationViewLinker Icon="{DynamicResource Material.CircleSlice}"
+                        Title="{Binding Titles.RadialSlider}" LinkTo="{Binding #radialSlider}"
+                        Content="{Binding Descriptions.RadialSlider}" TopContent="Updated"/>
             <NavigationViewLinker Icon="{DynamicResource FluentIcons.badge_regular}"
                         Title="{Binding Titles.Badge}" LinkTo="{Binding #badge}"
-                        Content="{Binding Descriptions.Badge}"/>
+                        Content="{Binding Descriptions.Badge}" TopContent="New"/>
           </flex:FlexPanel>
         </GroupBox>
       </NavigationViewItem.Content>
@@ -120,6 +126,12 @@
                 Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}">
         <NavigationViewItem.Content>
           <pg:ProgressRingPage/>
+        </NavigationViewItem.Content>
+      </NavigationViewItem>
+      <NavigationViewItem Name="radialSlider" Header="{Binding Titles.RadialSlider}" Title="{Binding Titles.RadialSlider}" 
+                          Icon="{DynamicResource Material.CircleSlice}">
+        <NavigationViewItem.Content>
+          <pg:RadialSliderPage/>
         </NavigationViewItem.Content>
       </NavigationViewItem>
       <NavigationViewItem Name="badge" Header="{Binding Titles.Badge}" Title="{Binding Titles.Badge}"

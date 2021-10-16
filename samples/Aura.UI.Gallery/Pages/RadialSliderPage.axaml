@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Aura.UI.Gallery.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="Aura.UI.Gallery.Pages.RadialSliderPage"
+             Classes="us_c">
+  <UserControl.DataContext>
+    <vm:RadialSliderViewModel/>
+  </UserControl.DataContext>
+  <StackPanel Spacing="10">
+    <TextBlock Text="Selects a numeric value on a circular display."/>
+    <CodeExample Title="RadialSlider" TitleTwo="Default" CSharpVisible="False">
+      <StackPanel Spacing="20"
+				VerticalAlignment="Center">
+        <RadialSlider Value="{Binding CurrentValue}"
+							   Maximum="{Binding Maximum, Mode=TwoWay}"
+							   Minimum="{Binding Minimum, Mode=TwoWay}"/>
+        <NumericUpDown Value="{Binding CurrentValue}"
+							   Maximum="{Binding Maximum, Mode=TwoWay}"
+							   Minimum="{Binding Minimum, Mode=TwoWay}"/>
+        <TextBox Watermark="Minimum" Text="{Binding Minimum, Mode=TwoWay}"
+						 UseFloatingWatermark="True"/>
+        <TextBox Watermark="Maximum" Text="{Binding Maximum, Mode=TwoWay}"
+						 UseFloatingWatermark="True"/>
+      </StackPanel>
+      <CodeExample.XAMLText>
+&lt;RadialSlider Value="50" Maximum="100" Minimum="0"/>
+      </CodeExample.XAMLText>
+    </CodeExample>
+  </StackPanel>
+</UserControl>

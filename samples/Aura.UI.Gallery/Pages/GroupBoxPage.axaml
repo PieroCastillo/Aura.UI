@@ -7,7 +7,7 @@
 						 Classes="us_c">
 	<StackPanel Spacing="20">
 		<TextBlock Text="The GroupBox shows information to the user with a Header and a Content."/>
-    <CodeExample Title="Standard GroupBox" CSharpVisible="False" HorizontalAlignment="Center">
+    <CodeExample Title="Standard GroupBox" CSharpVisible="False">
 			<GroupBox Header="Hello!" Content="I'm a GroupBox"/>
       <CodeExample.XAMLText>
  &lt;GroupBox Header="Hello!" Content="I'm a GroupBox"/>        

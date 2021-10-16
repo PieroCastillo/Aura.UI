@@ -42,6 +42,7 @@ namespace Aura.UI.Gallery.ViewModels
         public string Ribbon => "Organizes Controls by Tabs.";
         public string ContentDialog => "A Dialog with Content, has two buttons.";
         public string MessageDialog => "A Closable-Dialog, recommended to show information to the user.";
+        public string RadialSlider => "Selects a numeric value on a circular display.";
         public string BlurryImage => "A Image with a nice Blur.";
         public string Badge => "Badge control displays a Badge overlay its content.";
     }
@@ -61,6 +62,7 @@ namespace Aura.UI.Gallery.ViewModels
         public string BlurryImage => GetTitle();
         public string MVVM => GetTitle();
         public string Badge => GetTitle();
+        public string RadialSlider => GetTitle();
 
         public string GetTitle([CallerMemberName]string title = "title") => title;
     }

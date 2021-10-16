@@ -9,17 +9,16 @@
   <UserControl.DataContext>
     <vm:BlurImagePageViewModel/>
   </UserControl.DataContext>
-  <StackPanel>
-    <UniformGrid>
-      <CodeExample Margin="10" Title="BlurryImage" CSharpVisible="False">
-        <BlurryImage BlurLevel="{Binding BlurValue, Mode=TwoWay}"
-                     Height="200"
-                     Source="/Assets/alonetogheterRM.jpg"/>
-        <CodeExample.XAMLText>
+  <StackPanel Spacing="10">
+    <TextBlock Text="A Image with a nice Blur."/>
+    <CodeExample Title="BlurryImage" CSharpVisible="False">
+      <BlurryImage BlurLevel="{Binding BlurValue, Mode=TwoWay}"
+                   Height="200"
+                   Source="/Assets/alonetogheterRM.jpg"/>
+      <CodeExample.XAMLText>
 &lt;BlurryImage Source="/Assets/alonetogheterRM.jpg"/>
-        </CodeExample.XAMLText>
-      </CodeExample>
-    </UniformGrid>
+      </CodeExample.XAMLText>
+    </CodeExample>
     <Grid ColumnDefinitions="*,10,auto">
       <Slider IsSnapToTickEnabled="True"
               TickFrequency="1"

@@ -153,4 +153,8 @@
 	<DrawingImage x:Key="VSCodeDark.warning">
 		<GeometryDrawing  Brush="#FFCC00" Geometry="M8.44 1H7.56L1 13.26L1.44 14H14.54L14.98 13.26L8.44 1ZM2.28 13L8 2.28L13.7 13H2.28ZM7.5 6H8.5V10H7.5V6ZM7.5 11H8.5V12H7.5V11Z"   />
 	</DrawingImage>
+
+  <DrawingImage x:Key="Material.CircleSlice">
+    <GeometryDrawing  Brush="{DynamicResource SystemBaseHighColor}" Geometry="M12 2C17.5 2 22 6.5 22 12C22 17.5 17.5 22 12 22C6.5 22 2 17.5 2 12C2 6.5 6.5 2 12 2M12 4C7.58 4 4 7.58 4 12C4 16.42 7.58 20 12 20C16.42 20 20 16.42 20 12C20 7.58 16.42 4 12 4M12 5C13.93 5 15.68 5.78 16.95 7.05L12 12V5Z"   />
+  </DrawingImage>
 </ResourceDictionary>
