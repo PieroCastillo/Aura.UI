@@ -11,6 +11,13 @@ namespace Aura.UI.Helpers
         public static double ToDegrees(this double radians) => 180 * radians / Math.PI;
         public static double ToRadians(this double degrees) => degrees * Math.PI / 180;
 
+        public static byte ToByte(this double d) => (byte)d;
+
+        public static float ToFloat(this double d) => (float)d;
+
+        public static byte FromFloat(float d)
+            => (d < 0 || d > 1) ? throw new ArgumentOutOfRangeException($"the numbre {d} is less than 0 or greater than 1") : (byte)(d * 255);
+
         public static double ValueFromMinMaxAngle(double angle, double min, double max)
         {
             //example: max:100 min:-100 angle:180 expected value:0

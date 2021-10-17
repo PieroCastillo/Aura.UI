@@ -4,14 +4,15 @@ using Avalonia.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static Aura.UI.Extensions.NumberExtensions;
+using Aura.UI.Helpers;
 
+/*
 namespace Aura.UI.Controls.Neumorphism
 {
     public class Neumor : Control
     {
         public Color First = Colors.Black;
-        public Color Second = Colors.White.WithAlpha(FromFloat(.5f));
+        public Color Second = Colors.White.WithAlpha(Maths.FromFloat(.5f));
         public IBrush Background = Brushes.Black;
         public NeumorphismShape Shape = NeumorphismShape.Flat;
 
@@ -55,3 +56,4 @@ namespace Aura.UI.Controls.Neumorphism
         BottomLeft = 4,
     }
 }
+*/

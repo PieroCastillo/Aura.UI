@@ -3,7 +3,8 @@ using Avalonia.Media;
 using System;
 
 namespace Aura.UI.Extensions
-{	public struct RGB
+{
+	public struct RGB
 	{
 		private byte _r;
 		private byte _g;

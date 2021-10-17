@@ -70,7 +70,7 @@ namespace Aura.UI.Extensions
         {
             try
             {
-                //Thanks to Grooky this is possible
+                //Thanks to Grokys this is possible
                 ((IList)tabControl.Items).Add(TabItemToAdd);
                 switch (Focus)
                 {
