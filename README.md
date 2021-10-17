@@ -1,6 +1,6 @@
 [![Build Status](https://dev.azure.com/PieroCastillo/Aura.UI/_apis/build/status/PieroCastillo.Aura.UI)](https://dev.azure.com/PieroCastillo/AuraUI/_build/latest)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AuraDevCommunity/Aura-UI)
-[![NuGet](https://img.shields.io/nuget/v/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI/0.1.4)
+[![NuGet](https://img.shields.io/nuget/v/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI/0.1.4.1)
 [![downloads](https://img.shields.io/nuget/dt/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI) 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
 ![Size](https://img.shields.io/github/repo-size/PieroCastillo/Aura.UI)
