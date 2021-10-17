@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls.Primitives;
 using System;
+using Aura.UI.Helpers;
 
 namespace Aura.UI.Controls
 {
@@ -26,7 +27,7 @@ namespace Aura.UI.Controls
             if (pr != null)
             {
                 pr.XAngle = -90;
-                pr.YAngle = Helpers.Maths.Calibrate(pr.Value, pr.Minimum, pr.Maximum, pr.Value) * 180;
+                pr.YAngle = Maths.AngleFromMinMaxValue(pr.Value, pr.Minimum, pr.Maximum);
             }
         }
     }

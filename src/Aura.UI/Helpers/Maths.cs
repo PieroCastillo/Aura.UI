@@ -9,15 +9,7 @@ namespace Aura.UI.Helpers
             => centesimalDegrees * 180 / 200;
 
         public static double ToDegrees(this double radians) => 180 * radians / Math.PI;
-
-        public static double Calibrate(double value, double min, double max, double old_value)
-        {
-            double range = max - min;
-            //double fromProgress = (old_value - min) / range;//fromProgress;
-            //return ((value - min) / range) + ((old_value - min) / range);
-            return (value + old_value + (2 * -min)) / range;
-            //return value + old_value - (2 * min) / (max - min);
-        }
+        public static double ToRadians(this double degrees) => degrees * Math.PI / 180;
 
         public static double ValueFromMinMaxAngle(double angle, double min, double max)
         {
@@ -26,7 +18,14 @@ namespace Aura.UI.Helpers
             double angle_percent = PercentageOf(360, angle);//percentage:50%
             double percentage_resolved = ValueByPercentage(range, angle_percent); //percent(200,50) = 100
             double value = min + percentage_resolved;//-100 + 100 = 0! the expected value
-            return value;
+            return value;// * 180 / Math.PI;
+        }
+
+        public static double AngleFromMinMaxValue(double value, double min, double max)
+        {
+            var range = max - min;
+            var vm = value - min;
+            return 360 * vm / range;
         }
 
         public static bool CircleContainsPoint(Point point, Point circleCenter, double radius)
@@ -82,17 +81,6 @@ namespace Aura.UI.Helpers
                 return 0.0;
             else
                 return angle;
-        }
-
-        public static double GetAngle(double value, double maximum, double minimum)
-        {
-            double current = (value / (maximum - minimum)) * 360;
-            if (current == 360)
-                current = 359.999;
-
-            return current;
-
-            //return 360 * (value + minimum) / (maximum - minimum);
         }
 
         public static double PercentageOf(double total, double value) => value * 100 / total;

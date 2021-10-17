@@ -67,10 +67,8 @@ namespace Aura.UI.Controls
         {
             if (pressed)
             {
-                var angle = Maths.AngleOf(p, Radius);
-                rawAngle = 0;
-                Console.WriteLine($"angle: {angle}");
-                Value = Math.Round((Maximum - Minimum) * angle/(2 * Math.PI), RoundDigits);
+                var angle = Maths.AngleOf(p, Radius).ToDegrees();
+                Value = Maths.ValueFromMinMaxAngle(angle, Minimum, Maximum);
             }
         }
 
@@ -90,8 +88,7 @@ namespace Aura.UI.Controls
             if (pr != null)
             {
                 pr.XAngle = -90;
-                pr.YAngle = pr.rawAngle; //Maths.GetAngle(pr.Value, pr.Maximum, pr.Minimum); /*Maths.Calibrate(pr.Value, pr.Minimum, pr.Maximum, pr.Value) * 360*/;
-                Console.WriteLine($"calculated angle: {pr.YAngle}");
+                pr.YAngle = Maths.AngleFromMinMaxValue(pr.Value, pr.Minimum, pr.Maximum);
 
                 pr.InvalidateVisual();
             }
