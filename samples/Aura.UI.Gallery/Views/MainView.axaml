@@ -44,7 +44,7 @@
                         Content="{Binding Descriptions.ModernSlider}"/>
             <NavigationViewLinker Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}"
                         Title="{Binding Titles.ProgressRing}" LinkTo="{Binding #pring}"
-                        Content="{Binding Descriptions.ProgressRing}"/>
+                        Content="{Binding Descriptions.ProgressRing}" TopContent="Updated"/>
             <NavigationViewLinker Icon="{DynamicResource VSImageLib.GroupBox_16x}"
                         Title="GroupBox" LinkTo="{Binding #gb}"
                         Content="{Binding Descriptions.GroupBox}"/>
@@ -100,7 +100,7 @@
                         Content="{Binding Descriptions.ModernSlider}"/>
             <NavigationViewLinker Icon="{DynamicResource VSImageLib2019.ShapeArcRing_16x}"
                         Title="{Binding Titles.ProgressRing}" LinkTo="{Binding #pring}"
-                        Content="{Binding Descriptions.ProgressRing}"/>
+                        Content="{Binding Descriptions.ProgressRing}" TopContent="Updated"/>
             <NavigationViewLinker Icon="{DynamicResource Material.CircleSlice}"
                         Title="{Binding Titles.RadialSlider}" LinkTo="{Binding #radialSlider}"
                         Content="{Binding Descriptions.RadialSlider}" TopContent="Updated"/>

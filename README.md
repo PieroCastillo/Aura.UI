@@ -20,10 +20,11 @@ Aura.UI
 | -----------------  | --- | 
 | FloatingButtonBar | ModernSlider |
 | ProgressRing | GroupBox |
-|CardCollection | AuraTabView |
+| CardCollection | AuraTabView |
 | NavigationView | Ribbon |
 | ContentDialog | MessageDialog |
-| BlurryImage |
+| BlurryImage | Badge |
+| RadialSlider
 
 # Install
 
@@ -97,6 +98,12 @@ And for Default Theme add these Styles to App.xaml
 <img src="./screenshots/auratabview_light.png" width="500">
 <img src="./screenshots/auratabview_dark.png" width="500">
 
+## Badge
+<div>
+<img src="./screenshots/badge_light.png" width="250">
+<img src="./screenshots/badge_dark.png" width="250">
+</div>
+
 ## BlurryImage
 <img src="./screenshots/blurryimage_neutral.gif" width="500">
 
@@ -138,13 +145,19 @@ And for Default Theme add these Styles to App.xaml
 <img src="./screenshots/progressring_indeterminate_dark.gif" width="500">
 </div>
 
+## RadialSlider
+<div>
+<img src="./screenshots/radialslider_light.gif" width="500">
+<img src="./screenshots/radialslider_dark.gif" width="500">
+</div>
+
 ## Ribbon
 <img src="./screenshots/ribbon_light.png" width="500">
 <img src="./screenshots/ribbon_dark.png" width="500">
 
-# About Aura.UI
+# Aura.UI License
 
-This library is open source and free, in a few months come out the first stable version,for now, Aura.UI is a beta. 
+Aura.UI is an Open Source controls library with MIT license, so, feel free to use it in Non-Commercial and Commercial Projects.  
 
 ## Credits 
 
