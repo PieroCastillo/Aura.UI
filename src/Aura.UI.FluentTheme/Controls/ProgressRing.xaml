@@ -15,7 +15,7 @@
 	<Style Selector="ProgressRing[IsIndeterminate=False]">
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid>
+				<Grid Margin="1">
 					<Arc Stroke="{Binding $parent[ProgressRing].StrokeWidth}"
 						 ArcColor="{Binding $parent[ProgressRing].BackgroundColor}"
 						 Classes="stable" />
@@ -30,7 +30,7 @@
 	<Style Selector="ProgressRing[IsIndeterminate=True]">
 		<Setter Property="Template">
 			<ControlTemplate>
-				<Grid>
+        <Grid Margin="1">
 					<Arc Stroke="{Binding $parent[ProgressRing].StrokeWidth}"
 						 ArcColor="{Binding $parent[ProgressRing].BackgroundColor}"
 						 Classes="stable" />
