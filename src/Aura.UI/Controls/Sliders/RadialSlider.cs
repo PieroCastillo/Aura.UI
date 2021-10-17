@@ -33,7 +33,6 @@ namespace Aura.UI.Controls
 
         bool pressed;
         private bool _locked = false;
-        private double rawAngle = 0;
         public void Lock()
         {
             _locked = true;
@@ -68,7 +67,7 @@ namespace Aura.UI.Controls
             if (pressed)
             {
                 var angle = Maths.AngleOf(p, Radius).ToDegrees();
-                Value = Maths.ValueFromMinMaxAngle(angle, Minimum, Maximum);
+                Value = Math.Round(Maths.ValueFromMinMaxAngle(angle, Minimum, Maximum), RoundDigits);
             }
         }
 
