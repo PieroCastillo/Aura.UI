@@ -4,6 +4,7 @@
 		<AssemblyVersion>0.1.4.1</AssemblyVersion>
 		<Version>0.1.4.1</Version>
     <LangVersion>9.0</LangVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/PieroCastillo/Aura.UI</RepositoryUrl>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
