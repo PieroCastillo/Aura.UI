@@ -24,5 +24,14 @@ namespace MathsForUI.Test
         {
             Assert.Equal(expectedAngle, AngleFromMinMaxValue(value, minimum, maximum));
         }
+        
+        [Theory]
+        [InlineData(7,19,16,167)]
+        [InlineData(7,8 ,19,235)]
+        [InlineData(221,44, 185, 312)]
+        public void HueFromColor(double r, double g, double b, double h)
+        {
+            Assert.Equal(h, GetHue(r, g, b));
+        }
     }
 }

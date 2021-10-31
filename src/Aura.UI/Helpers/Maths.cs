@@ -1,4 +1,5 @@
 ﻿using Avalonia;
+using Avalonia.Media;
 using System;
 
 namespace Aura.UI.Helpers
@@ -110,6 +111,53 @@ namespace Aura.UI.Helpers
             double y2 = p2.Y;
 
             return ((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+        }
+
+        private static void MinMaxRgb(out double min, out double max, double r, double g, double b)
+        {
+            if (r > g)
+            {
+                max = r;
+                min = g;
+            }
+            else
+            {
+                max = g;
+                min = r;
+            }
+            if (b > max)
+            {
+                max = b;
+            }
+            else if (b < min)
+            {
+                min = b;
+            }
+        }
+
+        public static double GetHue(double r, double g, double b)
+        {
+
+            if (r == g && g == b)
+                return 0f;
+
+            MinMaxRgb(out double min, out double max, r, g, b);
+
+            double delta = max - min;
+            double hue;
+
+            if (r == max)
+                hue = (g - b) / delta;
+            else if (g == max)
+                hue = (b - r) / delta + 2f;
+            else
+                hue = (r - g) / delta + 4f;
+
+            hue *= 60f;
+            if (hue < 0f)
+                hue += 360f;
+
+            return hue;
         }
     }
 }

@@ -30,4 +30,6 @@
 	<StyleInclude Source="/Controls/RadialSlider.xaml"/>
 	<StyleInclude Source="/Controls/Legacy/SuperListBoxItemStyles.xaml" />
 	<StyleInclude Source="/Controls/Legacy/TitleBoxStyles.xaml" />
+  
+  <StyleInclude Source="/Controls/HueColorSelector.axaml"/>
 </Styles>  

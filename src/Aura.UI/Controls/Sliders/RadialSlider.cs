@@ -46,8 +46,10 @@ namespace Aura.UI.Controls
         protected override void OnPointerMoved(PointerEventArgs e)
         {
             base.OnPointerMoved(e);
-
-            UpdateValueFromPoint(e.GetCurrentPoint(this).Position);
+            if (pressed)
+            {
+                UpdateValueFromPoint(e.GetCurrentPoint(this).Position);
+            }
         }
 
         protected override void OnPointerPressed(PointerPressedEventArgs e)
@@ -64,11 +66,8 @@ namespace Aura.UI.Controls
 
         protected virtual void UpdateValueFromPoint(Point p)
         {
-            if (pressed)
-            {
-                var angle = Maths.AngleOf(p, Radius).ToDegrees();
-                Value = Math.Round(Maths.ValueFromMinMaxAngle(angle, Minimum, Maximum), RoundDigits);
-            }
+            var angle = Maths.AngleOf(p, Radius).ToDegrees();
+            Value = Math.Round(Maths.ValueFromMinMaxAngle(angle, Minimum, Maximum), RoundDigits);
         }
 
         private static void UpdateRadius(AvaloniaPropertyChangedEventArgs e)
@@ -134,7 +133,7 @@ namespace Aura.UI.Controls
         public double XAngle
         {
             get => x_angle;
-            private set => SetAndRaise(XAngleProperty, ref x_angle, value);
+            protected set => SetAndRaise(XAngleProperty, ref x_angle, value);
         }
 
         private readonly static DirectProperty<RadialSlider, double> XAngleProperty =
@@ -145,7 +144,7 @@ namespace Aura.UI.Controls
         public double YAngle
         {
             get => y_angle;
-            private set => SetAndRaise(YAngleProperty, ref y_angle, value);
+            protected set => SetAndRaise(YAngleProperty, ref y_angle, value);
         }
 
         private readonly static DirectProperty<RadialSlider, double> YAngleProperty =

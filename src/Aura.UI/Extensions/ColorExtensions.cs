@@ -193,6 +193,11 @@ namespace Aura.UI.Extensions
             b = color.B;
         }
 
+		public static double GetHue(this Color color)
+        {
+			return Maths.GetHue(color.R, color.G, color.B);
+        }
+
 		public static RGB ToRGB(this Color color) 
 			=> new RGB(color.R, color.G, color.B);
 		public static HSV ToHSV(this Color color)
