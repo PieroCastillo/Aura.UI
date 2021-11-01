@@ -103,13 +103,10 @@ namespace Aura.UI.Helpers
         public static double TriangleHeightBySide(double side)
             => Math.Sqrt(3) * side / 2;
 
-        public static double DistanceBetweenTwoPoints(Point p1, Point p2)
-        {
-            double x1 = p1.X;
-            double x2 = p2.X;
-            double y1 = p1.Y;
-            double y2 = p2.Y;
+        public static double DistanceBetweenTwoPoints(Point p1, Point p2) => DistanceBetweenTwoPoints(p1.X, p2.X, p1.Y, p2.Y);
 
+        public static double DistanceBetweenTwoPoints(double x1, double x2, double y1, double y2)
+        {
             return ((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
         }
 

@@ -1,0 +1,40 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="using:Aura.UI.Converters">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <Border.Resources>
+        <conv:SideByWidthConverter x:Key="heightConverter"/>
+      </Border.Resources>
+      <StackPanel>
+        <SaturationValueColorSelector Name="svc" Width="100" Height="{Binding $self.Width, Converter={StaticResource heightConverter}}"/>
+        <TextBlock Text="{Binding #svc.Value}"/>
+        <TextBlock Text="{Binding #svc.Saturation}"/>
+      </StackPanel>
+    </Border>
+  </Design.PreviewWith>
+
+  <Styles.Resources>
+    <conv:SideByWidthConverter x:Key="heightConverter"/>
+  </Styles.Resources>  
+  <Style Selector="SaturationValueColorSelector">
+    <!--<Setter Property="Height" Value="{Binding $parent[SaturationValueColorSelector].Width, Converter={StaticResource heightConverter}}"/>-->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid>
+          <TriangleColorWheel Color="{TemplateBinding ColorToShow}"/>
+          <Ellipse Width="10" Height="10" Fill="SkyBlue" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Ellipse.RenderTransform>
+              <TransformGroup>
+                <TranslateTransform 
+                  X="{Binding $parent[SaturationValueColorSelector].XPosition}"
+                  Y="{Binding $parent[SaturationValueColorSelector].YPosition}"/>
+                <TranslateTransform X="-5" Y="-5"/>
+              </TransformGroup>
+            </Ellipse.RenderTransform>
+          </Ellipse>
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
