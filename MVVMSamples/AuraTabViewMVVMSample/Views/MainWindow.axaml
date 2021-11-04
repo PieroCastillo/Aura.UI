@@ -12,5 +12,41 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <AuraTabView Items="{Binding Tabs}" />
+  <TabControl>
+    <TabItem Header="Simple Item Displaying">
+      <AuraTabView Items="{Binding Tabs}">
+        <AuraTabView.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding Header}"/>
+          </DataTemplate>
+        </AuraTabView.ItemTemplate>
+        <AuraTabView.ContentTemplate>
+          <DataTemplate>
+            <StackPanel>
+              <TextBlock Text="{Binding Content}"/>
+            </StackPanel>
+          </DataTemplate>
+        </AuraTabView.ContentTemplate>
+      </AuraTabView>
+    </TabItem>
+    <TabItem IsSelected="true" Header="Item Displaying with Data Templates">
+      <AuraTabView Items="{Binding Tabs2}">
+        <AuraTabView.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding Header}"/>
+          </DataTemplate>
+        </AuraTabView.ItemTemplate>
+        <AuraTabView.ContentTemplate>
+          <DataTemplate DataType="{x:Type vm:TabItemVM}">
+            <Grid ColumnDefinitions="auto,auto" RowDefinitions="auto,auto">
+              <TextBlock Grid.Column="0" Grid.Row="0" Text="Name: "/>
+              <TextBlock Grid.Column="0" Grid.Row="1" Text="Age:"/>
+              <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Content.Name}"/>
+              <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Content.Age}"/>
+            </Grid>
+          </DataTemplate>
+        </AuraTabView.ContentTemplate>
+      </AuraTabView>
+    </TabItem>
+  </TabControl>
 </Window>

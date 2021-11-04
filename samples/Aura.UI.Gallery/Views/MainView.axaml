@@ -21,6 +21,12 @@
                   AlwaysOpen="False"
                   IsFloatingHeader="True"
                   OpenPaneLength="300">
+    <NavigationView.PanelMaterial>
+      <ExperimentalAcrylicMaterial BackgroundSource="Digger" 
+                                   TintColor="Blue" 
+                                   TintOpacity="0.5"
+                                   MaterialOpacity="0.4"/>
+    </NavigationView.PanelMaterial>
     <NavigationViewItem  Header="What's new?"
               Icon="{DynamicResource Zondicons.Announcement}"
               Title="What's new">
