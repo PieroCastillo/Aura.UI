@@ -10,22 +10,33 @@ using System.Reactive;
 using System.Collections.Generic;
 using System.Text;
 using Avalonia.Media;
+using Aura.UI.Controls.Painting;
 
-namespace Aura.UI.Controls
+namespace Aura.UI.Controls.Painting
 {
     public class SaturationValueColorSelector : TemplatedControl
     {
         bool pressed;
+        Point a, b, c;
 
         public SaturationValueColorSelector()
         {
             this.GetObservable(SaturationProperty).Subscribe(UpdatePositionsFromValues);
             this.GetObservable(ValueProperty).Subscribe(UpdatePositionsFromValues);
+            this.GetObservable(BoundsProperty).Subscribe(OnBoundsChanged);
         }
 
         static SaturationValueColorSelector()
         {
             ClipToBoundsProperty.OverrideDefaultValue<SaturationValueColorSelector>(false);
+        }
+
+        protected virtual void OnBoundsChanged(Rect @object)
+        {
+            a = new(Bounds.Width / 2, StrokeWidth);
+            var center = new Point(Bounds.Width / 2, Bounds.Height / 2);
+            b = a.Rotate(center, 120);
+            c = b.Rotate(center, 120);
         }
 
         protected override void OnPointerMoved(PointerEventArgs e)
@@ -73,7 +84,7 @@ namespace Aura.UI.Controls
 
         private void UpdatePositionsCore(double x, double y)
         {
-            if(Maths.TriangleContains(new Point(Bounds.Width / 2,0), Bounds.BottomLeft, Bounds.BottomRight, new Point(x, y)))
+            if (Maths.TriangleContains(a,b,c, new Point(x, y)))
             {
                 XPosition = x;
                 YPosition = y;
@@ -128,5 +139,15 @@ namespace Aura.UI.Controls
 
         public static readonly StyledProperty<Color> ColorToShowProperty =
             AvaloniaProperty.Register<SaturationValueColorSelector, Color>(nameof(ColorToShow), Colors.Red);
+
+
+        public double StrokeWidth
+        {
+            get => GetValue(StrokeWidthProperty);
+            set => SetValue(StrokeWidthProperty, value);
+        }
+
+        public static readonly StyledProperty<double> StrokeWidthProperty =
+            AuraColorPicker.StrokeWidthProperty.AddOwner<SaturationValueColorSelector>();
     }
 }

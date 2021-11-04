@@ -22,7 +22,7 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid>
-          <TriangleColorWheel Color="{TemplateBinding ColorToShow}"/>
+          <TriangleColorWheel Color="{TemplateBinding ColorToShow}" StrokeWidth="{TemplateBinding StrokeWidth}"/>
           <Ellipse Width="10" Height="10" Fill="SkyBlue" VerticalAlignment="Top" HorizontalAlignment="Left">
             <Ellipse.RenderTransform>
               <TransformGroup>

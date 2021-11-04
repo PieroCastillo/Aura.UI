@@ -5,21 +5,31 @@ using Avalonia.Skia;
 using SkiaSharp;
 using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace Aura.UI.Rendering
 {
     public class TriangleWheelRender : AuraDrawOperationBase
     {
-        public TriangleWheelRender(Rect bounds, Color hue, IFormattedTextImpl noSkia) : base(bounds, noSkia)
+        public TriangleWheelRender(Rect bounds, Color hue, IFormattedTextImpl noSkia, float strokeWidth) : base(bounds, noSkia)
         {
             Hue = hue;
+            StrokeWidth = strokeWidth;
+            info = new SKImageInfo((int)bounds.Width, (int)bounds.Height);
+                // Create the path
+            var center = new SKPoint(info.Width / 2, info.Height / 2);
+            a = new(info.Width / 2, StrokeWidth);
+            b = a.Rotate(center, 120);
+            c = b.Rotate(center, 120);
         }
 
-        public override bool HitTest(Point p) => Helpers.Maths.TriangleContains(new(0.5f * Bounds.Width, 0), new(0f, Bounds.Height), new(Bounds.Width, Bounds.Height), p);
-       
+        public override bool HitTest(Point p) => SKMaths.TriangleContains(a, b, c, p.ToSKPoint());
 
         Color Hue { get; }
+        float StrokeWidth { get; }
+        SKPoint a, b, c;
+        SKImageInfo info;
 
         public override void Render(IDrawingContextImpl drw_context)
         {
@@ -32,13 +42,10 @@ namespace Aura.UI.Rendering
                 int width = (int)Bounds.Width;
                 int height = (int)Bounds.Height;
 
-                var info = new SKImageInfo(width, height);
-                // Create the path
                 SKPath path = new SKPath();
-
-                path.MoveTo(0.5f * info.Width, 0);
-                path.LineTo(0f, info.Height);
-                path.LineTo(info.Width, info.Height);
+                path.MoveTo(a);
+                path.LineTo(b);
+                path.LineTo(c);
                 path.Close();
 
                 using (SKPaint paint = new SKPaint())
@@ -53,7 +60,7 @@ namespace Aura.UI.Rendering
                 {
                     paint.IsAntialias = true;
                     SKColor[] colors = { SKColors.White, SKColors.Transparent };
-                    paint.Shader = SKShader.CreateRadialGradient(new SKPoint(0, height), width, colors, SKShaderTileMode.Clamp);
+                    paint.Shader = SKShader.CreateRadialGradient(b, width, colors, SKShaderTileMode.Clamp);
 
                     canvas.DrawPath(path, paint);
                 }
@@ -62,7 +69,7 @@ namespace Aura.UI.Rendering
                 {
                     paint.IsAntialias = true;
                     SKColor[] colors = { SKColors.Black, SKColors.Transparent };
-                    paint.Shader = SKShader.CreateRadialGradient(new SKPoint(width, height), height, colors, SKShaderTileMode.Clamp);
+                    paint.Shader = SKShader.CreateRadialGradient(c, height, colors, SKShaderTileMode.Clamp);
 
                     canvas.DrawPath(path, paint);
                 }

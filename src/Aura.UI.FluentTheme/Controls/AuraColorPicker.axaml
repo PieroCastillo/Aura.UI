@@ -1,0 +1,43 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:conv="using:Aura.UI.Converters">
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <AuraColorPicker Width="300" Height="300"/>
+        </Border>
+    </Design.PreviewWith>
+
+  <Styles.Resources>
+    <conv:HSVToColorConverter x:Key="hsv"/>
+  </Styles.Resources>
+  
+  <Style Selector="AuraColorPicker">
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid RowDefinitions="*,60">
+          <HueColorSelector Name="PART_Hue" Maximum="360" StrokeWidth="{TemplateBinding StrokeWidth}"/>
+          <SaturationValueColorSelector 
+            Name="PART_SV"
+            StrokeWidth="{TemplateBinding StrokeWidth}">
+            <SaturationValueColorSelector.RenderTransform>
+              <RotateTransform Angle="{Binding #PART_Hue.Value}"/>
+            </SaturationValueColorSelector.RenderTransform>
+          </SaturationValueColorSelector>
+          <Border Grid.Row="1">
+            <Border.Background>
+              <SolidColorBrush>
+                <SolidColorBrush.Color>
+                  <MultiBinding Converter="{StaticResource hsv}">
+                    <Binding Path="Hue" ElementName="PART_Hue"/>
+                    <Binding Path="Saturation" ElementName="PART_SV"/>
+                    <Binding Path="Value" ElementName="PART_SV"/>
+                  </MultiBinding>
+                </SolidColorBrush.Color>
+              </SolidColorBrush>
+            </Border.Background>
+          </Border>
+        </Grid>
+      </ControlTemplate>
+    </Setter> 
+  </Style>
+</Styles>

@@ -17,7 +17,7 @@ namespace Aura.UI.Controls.Colouring
 
         public override void Render(DrawingContext context)
         {
-            context.Custom(new TriangleWheelRender(Bounds, Color, null));
+            context.Custom(new TriangleWheelRender(Bounds, Color, null, (float)StrokeWidth));
             base.Render(context);
         }
 
@@ -29,5 +29,18 @@ namespace Aura.UI.Controls.Colouring
 
         public static readonly StyledProperty<Color> ColorProperty =
             AvaloniaProperty.Register<TriangleColorWheel, Color>(nameof(Color));
+
+
+
+        public double StrokeWidth
+        {
+            get => GetValue(StrokeWidthProperty);
+            set => SetValue(StrokeWidthProperty, value);
+        }
+
+        public static readonly StyledProperty<double> StrokeWidthProperty =
+            AvaloniaProperty.Register<TriangleColorWheel, double>(nameof(StrokeWidth), 20);
+
+
     }
 }

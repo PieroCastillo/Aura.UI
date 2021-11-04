@@ -32,4 +32,6 @@
 	<StyleInclude Source="/Controls/Legacy/TitleBoxStyles.xaml" />
   
   <StyleInclude Source="/Controls/HueColorSelector.axaml"/>
+  <StyleInclude Source="/Controls/SaturationValueColorSelector.axaml"/>
+  <StyleInclude Source="/Controls/AuraColorPicker.axaml"/>
 </Styles>  

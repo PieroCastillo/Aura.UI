@@ -1,3 +1,4 @@
+using Aura.UI.Helpers;
 using Avalonia;
 using System;
 using Xunit;
@@ -7,6 +8,7 @@ namespace MathsForUI.Test
 {
     public class MathTests
     {
+
         [Theory]
         [InlineData(0,     100, 180,   50)]
         [InlineData(-100,  100, 180,    0)]
@@ -32,6 +34,15 @@ namespace MathsForUI.Test
         public void HueFromColor(double r, double g, double b, double h)
         {
             Assert.Equal(h, GetHue(r, g, b));
+        }
+
+        [Theory]
+        [InlineData(200,200,0,20)]
+        public void ThicknessTests(double width, double height, double p, double strokeWidth)
+        {
+            var size = new Size(width,height);
+            var padding = new Thickness(p);
+            var r = size.WithHeight(Maths.TriangleHeightBySide(size.Width)).Inflate(padding + new Thickness(strokeWidth));
         }
     }
 }

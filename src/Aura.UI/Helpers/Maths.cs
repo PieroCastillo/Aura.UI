@@ -103,6 +103,18 @@ namespace Aura.UI.Helpers
         public static double TriangleHeightBySide(double side)
             => Math.Sqrt(3) * side / 2;
 
+        public static Point Rotate(this Point pointToRotate, Point centerPoint, double angleInDegrees)
+        {
+            double angleInRadians = angleInDegrees * (Math.PI / 180);
+            double cosTheta = Math.Cos(angleInRadians);
+            double sinTheta = Math.Sin(angleInRadians);
+            return new Point(
+                    (cosTheta * (pointToRotate.X - centerPoint.X) -
+                    sinTheta * (pointToRotate.Y - centerPoint.Y) + centerPoint.X),
+                    (sinTheta * (pointToRotate.X - centerPoint.X) +
+                    cosTheta * (pointToRotate.Y - centerPoint.Y) + centerPoint.Y));
+        }
+
         public static double DistanceBetweenTwoPoints(Point p1, Point p2) => DistanceBetweenTwoPoints(p1.X, p2.X, p1.Y, p2.Y);
 
         public static double DistanceBetweenTwoPoints(double x1, double x2, double y1, double y2)
