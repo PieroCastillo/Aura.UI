@@ -29,7 +29,7 @@ namespace Aura.UI.Controls
             IsSelectedProperty.Changed.AddClassHandler<AuraTabItem>((x, e) => x.UpdatePseudoClass(x, e));
             IsClosableProperty.Changed.Subscribe(e =>
             {
-                if (e.Sender is AuraTabItem a)
+                if (e.Sender is AuraTabItem a && a.CloseButton != null)
                 {
                     a.CloseButton.IsVisible = a.IsClosable;
                 }

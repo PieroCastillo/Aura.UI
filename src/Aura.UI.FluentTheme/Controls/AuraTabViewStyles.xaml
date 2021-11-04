@@ -158,8 +158,8 @@
 					  </Grid>
 					 </Border>
 				  </Grid>
-		  </Border>		  
-	  </ControlTemplate> 
+				</Border>		  
+			</ControlTemplate> 
 		</Setter>
 	</Style>
 	<Style Selector="AuraTabView[TabStripPlacement=Bottom]">
