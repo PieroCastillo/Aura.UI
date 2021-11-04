@@ -27,12 +27,8 @@ namespace Aura.UI.Controls.Generators
         protected override IControl CreateContainer(object item)
         {
             var container = item as AuraTabItem;
-            if (item is not null)
-            {
-                container.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
-                return container;
-            }
-            else if (item is IAuraTabItemTemplate temp)
+            
+            if (item is IAuraTabItemTemplate temp)
             {
                 var tab = new AuraTabItem();
                 tab.SetValue(HeaderProperty, temp.Header, BindingPriority.Style);
@@ -43,6 +39,11 @@ namespace Aura.UI.Controls.Generators
                 tab.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
                 
                 return tab;
+            }
+            else if (item is not null)
+            {
+                container.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
+                return container;
             }
             else
             {

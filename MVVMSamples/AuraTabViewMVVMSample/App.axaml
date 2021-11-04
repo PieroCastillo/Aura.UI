@@ -1,0 +1,13 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="using:AuraTabViewMVVMSample"
+             x:Class="AuraTabViewMVVMSample.App">
+  <Application.DataTemplates>
+    <local:ViewLocator/>
+  </Application.DataTemplates>
+
+  <Application.Styles>
+    <FluentTheme Mode="Light"/>
+    <StyleInclude Source="avares://Aura.UI.FluentTheme/AuraUI.xaml"/>
+  </Application.Styles>
+</Application>
