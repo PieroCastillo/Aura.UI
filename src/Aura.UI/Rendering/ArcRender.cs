@@ -45,6 +45,7 @@ namespace Aura.UI.Rendering
                     paint.StrokeWidth = stroke;
                     paint.IsAntialias = true;
                     paint.Color = StrokeColor.ToSKColor();
+                    paint.StrokeCap = SKStrokeCap.Round;
                     canvas.DrawArc(rect, _angle1, _angle2, false, paint);
                 }
 
