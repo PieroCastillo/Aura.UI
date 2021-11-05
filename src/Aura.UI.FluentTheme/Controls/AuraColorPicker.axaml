@@ -3,7 +3,7 @@
         xmlns:conv="using:Aura.UI.Converters">
     <Design.PreviewWith>
         <Border Padding="20">
-            <AuraColorPicker Width="300" Height="300"/>
+            <AuraColorPicker Width="300" Height="300" StrokeWidth="10"/>
         </Border>
     </Design.PreviewWith>
 
@@ -15,15 +15,15 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid RowDefinitions="*,60">
-          <HueColorSelector Name="PART_Hue" Maximum="360" StrokeWidth="{TemplateBinding StrokeWidth}"/>
+          <HueColorSelector Name="PART_Hue" Maximum="360" StrokeWidth="{Binding $parent[AuraColorPicker].StrokeWidth}"/>
           <SaturationValueColorSelector 
             Name="PART_SV"
-            StrokeWidth="{TemplateBinding StrokeWidth}">
+            StrokeWidth="{Binding $parent[AuraColorPicker].StrokeWidth}">
             <SaturationValueColorSelector.RenderTransform>
               <RotateTransform Angle="{Binding #PART_Hue.Value}"/>
             </SaturationValueColorSelector.RenderTransform>
           </SaturationValueColorSelector>
-          <Border Grid.Row="1">
+          <!--<Border Grid.Row="1">
             <Border.Background>
               <SolidColorBrush>
                 <SolidColorBrush.Color>
@@ -35,7 +35,15 @@
                 </SolidColorBrush.Color>
               </SolidColorBrush>
             </Border.Background>
-          </Border>
+          </Border>-->
+          <Grid Grid.Row="1" ColumnDefinitions="100,auto" RowDefinitions="auto,auto,auto">
+            <TextBlock Grid.Column="0" Grid.Row="0" Text="Hue"/>
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Saturation"/>
+            <TextBlock Grid.Column="0" Grid.Row="2" Text="Value"/>
+            <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding #PART_Hue.Value}"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding #PART_SV.Saturation}"/>
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding #PART_SV.Value}"/>
+          </Grid>
         </Grid>
       </ControlTemplate>
     </Setter> 

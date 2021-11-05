@@ -103,31 +103,6 @@ namespace Aura.UI.Controls.Generators
             }
 
             return tabItem;
-
-            //if (item is IAuraTabItemTemplate temp)
-            //{
-            //    var tab = new AuraTabItem();
-                
-            //    tab.SetValue(HeaderProperty, temp.Header, BindingPriority.Style);
-            //    tab.SetValue(IconProperty, temp.Icon, BindingPriority.Style);
-            //    tab.SetValue(ContentProperty, temp.Content);
-            //    tab.SetValue(IsClosableProperty, temp.IsClosable);
-
-            //    tab.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
-                
-            //    return tab;
-            //}
-            //else if (item is not null)
-            //{
-            //    container.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
-            //    return container;
-            //}
-            //else
-            //{
-            //    var tb = new AuraTabItem();
-            //    tb.Bind(AuraTabItem.TabStripPlacementProperty, Owner.GetObservable(AuraTabView.TabStripPlacementProperty), BindingPriority.Style);
-            //    return tb;
-            //}
         }
 
         private class OwnerBinding<T> : SingleSubscriberObservableBase<T>

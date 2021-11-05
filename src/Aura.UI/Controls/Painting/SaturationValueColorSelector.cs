@@ -63,11 +63,12 @@ namespace Aura.UI.Controls.Painting
 
         protected virtual void UpdateValuesFromPoint(Point point)
         {
-            if (Maths.TriangleContains(new Point(Bounds.Width / 2, 0), Bounds.BottomLeft, Bounds.BottomRight, point))
+
+            if (Maths.TriangleContains(a, b, c, point))
             {
-                var valueDistance = Bounds.BottomLeft.DistanceWith(point);
-                var saturationDistance = Bounds.BottomRight.DistanceWith(point);
-                var totalDistance = Bounds.Width;
+                var valueDistance = b.DistanceWith(point);
+                var saturationDistance = c.DistanceWith(point);
+                var totalDistance = b.DistanceWith(c);
 
                 Value = valueDistance / totalDistance / 100;
                 Saturation =saturationDistance / totalDistance / 100;

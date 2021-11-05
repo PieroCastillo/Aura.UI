@@ -44,19 +44,30 @@ namespace Aura.UI.Controls
             }
         }
 
-        internal void CloseCore()
+        internal bool CloseCore()
         {
-            var x = Parent as TabControl;
-            x.CloseTab(this);
+            if(Parent is TabControl x)
+            { 
+                try
+                {
+                    x.CloseTab(this);
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+            return false;
         }
 
         /// <summary>
         /// Close the Tab
         /// </summary>
-        public void Close()
+        public bool Close()
         {
             RaiseEvent(new RoutedEventArgs(ClosingEvent));
-            CloseCore();
+            return CloseCore();
         }
 
         protected void OnCanDraggablePropertyChanged(object sender, AvaloniaPropertyChangedEventArgs e)
