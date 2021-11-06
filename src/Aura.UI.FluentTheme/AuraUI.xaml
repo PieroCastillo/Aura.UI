@@ -34,4 +34,5 @@
   <StyleInclude Source="/Controls/HueColorSelector.axaml"/>
   <StyleInclude Source="/Controls/SaturationValueColorSelector.axaml"/>
   <StyleInclude Source="/Controls/AuraColorPicker.axaml"/>
+  <StyleInclude Source="/Controls/HSVViewer.axaml"/>
 </Styles>  

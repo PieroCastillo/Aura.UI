@@ -14,25 +14,26 @@
     </Border>
   </Design.PreviewWith>
 
-  <Styles.Resources>
-    <conv:SideByWidthConverter x:Key="heightConverter"/>
-  </Styles.Resources>  
   <Style Selector="SaturationValueColorSelector">
     <!--<Setter Property="Height" Value="{Binding $parent[SaturationValueColorSelector].Width, Converter={StaticResource heightConverter}}"/>-->
     <Setter Property="Template">
       <ControlTemplate>
         <Grid>
           <TriangleColorWheel Color="{TemplateBinding ColorToShow}" StrokeWidth="{TemplateBinding StrokeWidth}"/>
-          <Ellipse Width="10" Height="10" Fill="SkyBlue" VerticalAlignment="Top" HorizontalAlignment="Left">
-            <Ellipse.RenderTransform>
+          <TemplatedControl Width="10" 
+                            Height="10" 
+                            VerticalAlignment="Top" 
+                            HorizontalAlignment="Left"
+                            Template="{TemplateBinding ThumbTemplate}">
+            <TemplatedControl.RenderTransform>
               <TransformGroup>
                 <TranslateTransform 
                   X="{Binding $parent[SaturationValueColorSelector].XPosition}"
                   Y="{Binding $parent[SaturationValueColorSelector].YPosition}"/>
                 <TranslateTransform X="-5" Y="-5"/>
               </TransformGroup>
-            </Ellipse.RenderTransform>
-          </Ellipse>
+            </TemplatedControl.RenderTransform>
+          </TemplatedControl>
         </Grid>
       </ControlTemplate>
     </Setter>

@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Text;
 using Avalonia.Media;
 using Aura.UI.Controls.Painting;
+using Avalonia.Markup.Xaml.Templates;
+using System.Diagnostics;
 
 namespace Aura.UI.Controls.Painting
 {
@@ -66,21 +68,25 @@ namespace Aura.UI.Controls.Painting
 
             if (Maths.TriangleContains(a, b, c, point))
             {
-                var valueDistance = b.DistanceWith(point);
-                var saturationDistance = c.DistanceWith(point);
+                var valueDistance = c.DistanceWith(point);
+                var saturationDistance = b.DistanceWith(point);
                 var totalDistance = b.DistanceWith(c);
 
-                Value = valueDistance / totalDistance / 100;
-                Saturation =saturationDistance / totalDistance / 100;
+                Value = valueDistance / totalDistance;
+                Saturation = saturationDistance / totalDistance;
             }
         }
         protected virtual void UpdatePositionsFromPoint(Point point) => UpdatePositionsCore(point.X, point.Y);
 
-        protected virtual void UpdatePositionsFromValues(double @object)
+        protected internal virtual void UpdatePositionsFromValues(double @object)
         {
-            var totalDistance = Bounds.Width;
+            var totalDistance = a.DistanceWith(c);
 
-            UpdatePositionsCore(totalDistance * Value, totalDistance * Saturation);
+            var x = totalDistance * Saturation;
+            var y = totalDistance * Value;
+            Debug.WriteLine($"x : {x}");
+            Debug.WriteLine($"y : {y}");
+            UpdatePositionsCore(x, y);
         }
 
         private void UpdatePositionsCore(double x, double y)
@@ -150,5 +156,14 @@ namespace Aura.UI.Controls.Painting
 
         public static readonly StyledProperty<double> StrokeWidthProperty =
             AuraColorPicker.StrokeWidthProperty.AddOwner<SaturationValueColorSelector>();
+
+        public ControlTemplate ThumbTemplate
+        {
+            get => GetValue(ThumbTemplateProperty);
+            set => SetValue(ThumbTemplateProperty, value);
+        }
+
+        public static readonly StyledProperty<ControlTemplate> ThumbTemplateProperty =
+            AvaloniaProperty.Register<SaturationValueColorSelector, ControlTemplate>(nameof(ThumbTemplate));
     }
 }

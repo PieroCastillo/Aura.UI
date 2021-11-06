@@ -12,10 +12,11 @@
         <Grid>
           <ColorWheel StrokeWidth="{TemplateBinding StrokeWidth}"/>
           <ContentControl Width="{TemplateBinding StrokeWidth}">
-            <Ellipse
+            <TemplatedControl
               Width="{TemplateBinding StrokeWidth}"
-              Height="{TemplateBinding StrokeWidth}" 
-              Fill="White" VerticalAlignment="Top"/>
+              Height="{TemplateBinding StrokeWidth}"
+              VerticalAlignment="Top"
+              Template="{TemplateBinding ThumbTemplate}"/>
             <ContentControl.RenderTransform>
               <RotateTransform Angle="{Binding $parent[HueColorSelector].YAngle}"/>
             </ContentControl.RenderTransform>

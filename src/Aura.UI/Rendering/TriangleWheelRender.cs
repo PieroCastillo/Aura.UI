@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using Aura.UI.Helpers;
+using Avalonia;
 using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Skia;
@@ -17,11 +18,12 @@ namespace Aura.UI.Rendering
             Hue = hue;
             StrokeWidth = strokeWidth;
             info = new SKImageInfo((int)bounds.Width, (int)bounds.Height);
-                // Create the path
+            // Create the path
             var center = new SKPoint(info.Width / 2, info.Height / 2);
             a = new(info.Width / 2, StrokeWidth);
             b = a.Rotate(center, 120);
             c = b.Rotate(center, 120);
+            r = SKMaths.DistanceBetweenTwoPoints(a,b) / 100;
         }
 
         public override bool HitTest(Point p) => SKMaths.TriangleContains(a, b, c, p.ToSKPoint());
@@ -30,6 +32,7 @@ namespace Aura.UI.Rendering
         float StrokeWidth { get; }
         SKPoint a, b, c;
         SKImageInfo info;
+        float r;
 
         public override void Render(IDrawingContextImpl drw_context)
         {
@@ -51,7 +54,8 @@ namespace Aura.UI.Rendering
                 using (SKPaint paint = new SKPaint())
                 {
                     paint.IsAntialias = true;
-                    paint.Color = Hue.ToSKColor();
+                    SKColor[] colors = { SKColors.White, SKColors.Transparent };
+                    paint.Shader = SKShader.CreateRadialGradient(b, r, colors, SKShaderTileMode.Clamp);
 
                     canvas.DrawPath(path, paint);
                 }
@@ -59,8 +63,8 @@ namespace Aura.UI.Rendering
                 using (SKPaint paint = new SKPaint())
                 {
                     paint.IsAntialias = true;
-                    SKColor[] colors = { SKColors.White, SKColors.Transparent };
-                    paint.Shader = SKShader.CreateRadialGradient(b, width, colors, SKShaderTileMode.Clamp);
+                    SKColor[] colors = { Hue.ToSKColor(), SKColors.Transparent };
+                    paint.Shader = SKShader.CreateRadialGradient(a, r, colors, SKShaderTileMode.Clamp);
 
                     canvas.DrawPath(path, paint);
                 }
@@ -69,7 +73,7 @@ namespace Aura.UI.Rendering
                 {
                     paint.IsAntialias = true;
                     SKColor[] colors = { SKColors.Black, SKColors.Transparent };
-                    paint.Shader = SKShader.CreateRadialGradient(c, height, colors, SKShaderTileMode.Clamp);
+                    paint.Shader = SKShader.CreateRadialGradient(c, r, colors, SKShaderTileMode.Clamp);
 
                     canvas.DrawPath(path, paint);
                 }

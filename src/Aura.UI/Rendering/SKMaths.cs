@@ -42,5 +42,13 @@ namespace Aura.UI.Rendering
             else
                 return false;
         }
+
+        public static float DistanceBetweenTwoPoints(SKPoint p1, SKPoint p2) => DistanceBetweenTwoPoints(p1.X, p2.X, p1.Y, p2.Y);
+
+        public static float DistanceBetweenTwoPoints(float x1, float x2, float y1, float y2)
+        {
+            return ((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2));
+        }
+
     }
 }
