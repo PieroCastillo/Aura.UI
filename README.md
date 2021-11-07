@@ -1,13 +1,14 @@
 [![Build Status](https://dev.azure.com/PieroCastillo/Aura.UI/_apis/build/status/PieroCastillo.Aura.UI)](https://dev.azure.com/PieroCastillo/AuraUI/_build/latest)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/AuraDevCommunity/Aura-UI)
-[![NuGet](https://img.shields.io/nuget/v/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI/0.1.4.1)
+[![NuGet](https://img.shields.io/nuget/v/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI/)
+[![MyGet](https://img.shields.io/myget/auraui/vpre/Aura.UI.svg?label=myget)](https://www.myget.org/feed/auraui/package/nuget/Aura.UI)
 [![downloads](https://img.shields.io/nuget/dt/Aura.UI.svg)](https://www.nuget.org/packages/Aura.UI) 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) 
 ![Size](https://img.shields.io/github/repo-size/PieroCastillo/Aura.UI)
 
 <h1 align="center">
 <img src="DesignSources/AuraUILogo_full_icon.png" width="256"/> 
-<br/><br/>
+<br/><br/> 
 Aura.UI
 </h1>
 
@@ -28,8 +29,6 @@ Aura.UI
 
 # Install
 
-Now the library is available in Nuget.org.
-
 <h2>First Step</h2>
 
 Go to the next link: https://www.nuget.org/packages/Aura.UI .
@@ -49,12 +48,12 @@ Aura.UI.
 
 Open the terminal on the root folder of your project and write <br/>
 ```cmd
-dotnet package Aura.UI --version 0.1.4
+dotnet package Aura.UI --version 0.1.4.2
 ```
 
 And don't forget install the Styles
 ```cmd
-dotnet package Aura.UI.FluentTheme --version 0.1.4
+dotnet package Aura.UI.FluentTheme --version 0.1.4.2
 ```
 
 
@@ -69,7 +68,7 @@ For Fluent Theme add these Styles to App.xaml
    <Application.Styles>
       <FluenTheme Mode="Light"/>
       <StyleInclude Source="avares://Aura.UI.FluentTheme/AuraUI.xaml"/>
-	</Application.Styles> 
+   </Application.Styles> 
 </Application>
 ```
 
@@ -155,6 +154,14 @@ And for Default Theme add these Styles to App.xaml
 <img src="./screenshots/ribbon_light.png" width="500">
 <img src="./screenshots/ribbon_dark.png" width="500">
 
+# Nightly Versions
+
+When you want to install unstable versions, add the next link to Nuget Sources:
+
+```
+https://www.myget.org/F/auraui/api/v3/index.json
+```
+
 # Aura.UI License
 
 Aura.UI is an Open Source controls library with MIT license, so, feel free to use it in Non-Commercial and Commercial Projects.  
@@ -163,9 +170,6 @@ Aura.UI is an Open Source controls library with MIT license, so, feel free to us
 
 This library is possible thanks to the follow projects:
    * [Avalonia](http://avaloniaui.net/) by the AvaloniaUI Team.
-   * [ColorPicker](http://github.com/MikeCodesDotNET/ColorPicker) by MikeCodesDotNet.
-   * [Math.NET Numerics](https://github.com/mathnet/mathnet-numerics) by Math.NET Team.
-
 
 ## To Do
 
