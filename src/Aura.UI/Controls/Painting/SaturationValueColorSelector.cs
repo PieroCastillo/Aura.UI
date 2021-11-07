@@ -65,7 +65,6 @@ namespace Aura.UI.Controls.Painting
 
         protected virtual void UpdateValuesFromPoint(Point point)
         {
-
             if (Maths.TriangleContains(a, b, c, point))
             {
                 var valueDistance = c.DistanceWith(point);
@@ -81,6 +80,9 @@ namespace Aura.UI.Controls.Painting
         protected internal virtual void UpdatePositionsFromValues(double @object)
         {
             var totalDistance = a.DistanceWith(c);
+
+            var vD = totalDistance * Value;
+            var sD = totalDistance * Saturation;
 
             var x = totalDistance * Saturation;
             var y = totalDistance * Value;
