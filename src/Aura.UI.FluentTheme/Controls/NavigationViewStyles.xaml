@@ -56,11 +56,11 @@
 		<Setter Property="CompactPaneLength" Value="{DynamicResource NavigationViewCompactPaneLength}" />
 		<Setter Property="OpenPaneLength" Value="{DynamicResource NavigationViewOpenPaneLength}" />
 		<Setter Property="Background" Value="{DynamicResource NavigationViewBackground}" />
-    <Setter Property="PanelMaterial" Value="{StaticResource NavigationViewMaterial}"/>
+		<Setter Property="PanelMaterial" Value="{StaticResource NavigationViewMaterial}"/>
 		<Setter Property="Icon" Value="{DynamicResource line_horizontal_3_regular}" />
 		<Setter Property="ItemsPanel">
 			<ItemsPanelTemplate>
-				<DockPanel />
+				<DockPanel/>
 			</ItemsPanelTemplate>
 		</Setter>
 		<Setter Property="Template">
@@ -68,7 +68,7 @@
 				<Grid>
 					<Grid.ColumnDefinitions>
 						<ColumnDefinition Width="{Binding $parent[NavigationView].CompactPaneLength, Converter={StaticResource WidthConverter}}" />
-						<ColumnDefinition Width="*" />
+						<ColumnDefinition Width="*"/>
 					</Grid.ColumnDefinitions>
 					<SplitView
 						Name="split"
@@ -80,8 +80,8 @@
 						<SplitView.Pane>
 							<Border Name="PART_ShadowBorder">
 								<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
-																					 Padding="0,0"
-                                           Material="{Binding $parent[NavigationView].PanelMaterial}">
+								                           Padding="0,0"
+								                           Material="{Binding $parent[NavigationView].PanelMaterial}">
 									<Grid RowDefinitions="auto,auto,auto,*">
 										<Border Grid.Row="1" 
 										        Width="{Binding $parent[NavigationView].CompactPaneLength}"
@@ -104,14 +104,15 @@
 						        Background="{Binding $parent[NavigationView].Background}">
 							<Grid>
 								<Grid.RowDefinitions>
-									<RowDefinition Height="auto" MinHeight="75"/>
-									<RowDefinition />
+									<RowDefinition Height="auto"/>
+									<RowDefinition Height="*"/>
 								</Grid.RowDefinitions>
 								<AuraContentPresenter Grid.Row="0"
 								                      IsVisible="{Binding !$parent[NavigationView].HideTitle}"
 								                      Name="PART_TitlePresenter"
 								                      Margin="20 0 0 0"
 								                      Padding="0"
+								                      MinHeight="75"
 								                      VerticalAlignment="Bottom"
 								                      Content="{Binding $parent[NavigationView].Title}"
 								                      TextBlock.FontWeight="UltraLight"

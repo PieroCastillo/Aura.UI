@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="src/Aura.UI.FluentTheme/Controls/NavigationViewItemStyles.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
+        <entry key="src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
