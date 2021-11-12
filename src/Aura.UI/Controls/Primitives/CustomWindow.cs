@@ -19,7 +19,7 @@ namespace Aura.UI.Controls.Primitives
     /// Name = "PART_BottomLeftBorder", Type = typeof(Border))<br/>
     /// Name = "PART_BottomRightBorder", Type = typeof(Border))<br/>
     /// </summary>
-    public class CustomWindow : Window
+    public class stomWindow : Window
     {
         public CustomWindow()
         {

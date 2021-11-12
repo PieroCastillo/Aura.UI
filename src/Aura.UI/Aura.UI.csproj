@@ -31,4 +31,11 @@
 	  <PackageReference Include="Avalonia" Version="0.10.10" />
 	  <PackageReference Include="System.Reactive" Version="5.0.0" />
 	</ItemGroup>
+	<ItemGroup>
+	  <UpToDateCheckInput Remove="Controls\Legacy\ToolWindow\ToolWindow.axaml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="Controls\Primitives\CustomWindow.cs" />
+	  <Compile Remove="Controls\Primitives\WindowButtons.cs" />
+	</ItemGroup>
 </Project>

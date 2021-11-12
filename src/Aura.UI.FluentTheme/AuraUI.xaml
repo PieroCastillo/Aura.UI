@@ -18,8 +18,6 @@
 	<StyleInclude Source="/Controls/NavigationViewLinker.xaml" />
 	<StyleInclude Source="/Controls/NavigationViewItemStyles.xaml" />
 	<StyleInclude Source="/Controls/NavigationViewStyles.xaml" />
-	<StyleInclude Source="/Controls/Legacy/PageStyles.xaml" />
-	<StyleInclude Source="/Controls/Legacy/PagesViewStyles.xaml" />
 	<StyleInclude Source="/Controls/ProgressRing.xaml" />
 	<StyleInclude Source="/Controls/RibbonGroupStyles.xaml" />
 	<StyleInclude Source="/Controls/RibbonItemStyles.xaml" />
@@ -28,8 +26,6 @@
 	<StyleInclude Source="/Controls/FilledSliderStyles.xaml" />
 	<StyleInclude Source="/Controls/ModernSliderStyles.xaml" />
 	<StyleInclude Source="/Controls/RadialSlider.xaml"/>
-	<StyleInclude Source="/Controls/Legacy/SuperListBoxItemStyles.xaml" />
-	<StyleInclude Source="/Controls/Legacy/TitleBoxStyles.xaml" />
   
   <StyleInclude Source="/Controls/HueColorSelector.axaml"/>
   <StyleInclude Source="/Controls/SaturationValueColorSelector.axaml"/>

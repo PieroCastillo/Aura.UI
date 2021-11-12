@@ -3,8 +3,12 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="src/Aura.UI.FluentTheme/AuraUI.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
+        <entry key="src/Aura.UI.FluentTheme/AuraUIResources.Fluent.axaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
         <entry key="src/Aura.UI.FluentTheme/Controls/NavigationViewItemStyles.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
         <entry key="src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
+        <entry key="src/Aura.UI.FluentTheme/Controls/ProgressRing.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
+        <entry key="src/Aura.UI.FluentTheme/Controls/RadialSlider.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
       </map>
     </option>
   </component>

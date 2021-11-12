@@ -14,5 +14,11 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.10" />
   </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Controls\Legacy\PageStyles.xaml" />
+    <UpToDateCheckInput Remove="Controls\Legacy\PagesViewStyles.xaml" />
+    <UpToDateCheckInput Remove="Controls\Legacy\SuperListBoxItemStyles.xaml" />
+    <UpToDateCheckInput Remove="Controls\Legacy\TitleBoxStyles.xaml" />
+  </ItemGroup>
 	<Import Project="..\..\build\version.props" />
 </Project>

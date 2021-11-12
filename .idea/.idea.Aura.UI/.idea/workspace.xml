@@ -11,10 +11,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4768f5d-5d56-4362-acaa-745aed13edae" name="Changes" comment="">
+    <list default="true" id="e4768f5d-5d56-4362-acaa-745aed13edae" name="Changes" comment="fix NavigationView Title Bug">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Aura.UI.FluentTheme.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Aura.UI.FluentTheme.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/AuraUI.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/AuraUI.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/Legacy/PageStyles.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/Legacy/PagesViewStyles.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/Legacy/SuperListBoxItemStyles.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/Legacy/TitleBoxStyles.xaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/ProgressRing.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/ProgressRing.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/RadialSlider.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/RadialSlider.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Colouring/Arc/Arc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Colouring/Arc/Arc.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/Pages/Page.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/Pages/PagesView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/SuperListBox/SuperListBoxItem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBox.Events.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBox.Properties.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBox.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/ToolWindow/ToolWindow.axaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/ToolWindow/ToolWindow.axaml.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.Properties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/CustomWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/CustomWindow.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +55,8 @@
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/WindowButtons.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/CustomWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -246,7 +267,7 @@
       <workItem from="1636406535719" duration="736000" />
       <workItem from="1636580967966" duration="769000" />
       <workItem from="1636642509481" duration="594000" />
-      <workItem from="1636689552085" duration="1523000" />
+      <workItem from="1636689552085" duration="3193000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>
@@ -388,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1620097332094</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="fix NavigationView Title Bug">
+      <created>1636693466648</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1636693466648</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +454,8 @@
     <MESSAGE value="CardControl Animation Dixed" />
     <MESSAGE value="CardControl Animation Fixed" />
     <MESSAGE value="NavigationView Restyled" />
-    <option name="LAST_COMMIT_MESSAGE" value="NavigationView Restyled" />
+    <MESSAGE value="fix NavigationView Title Bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix NavigationView Title Bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

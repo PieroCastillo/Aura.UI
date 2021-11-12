@@ -7,11 +7,11 @@ using Avalonia.Threading;
 
 namespace Aura.UI.Controls.Colouring
 {
-    public class Arc : Control
+    public class AuraArc : Control
     {
-        static Arc()
+        static AuraArc()
         {
-            AffectsRender<Arc>(ArcColorProperty,
+            AffectsRender<AuraArc>(ArcColorProperty,
                               StrokeProperty,
                               StartAngleProperty,
                               SweepAngleProperty);
@@ -24,7 +24,7 @@ namespace Aura.UI.Controls.Colouring
         }
 
         public readonly static StyledProperty<Color> ArcColorProperty =
-            AvaloniaProperty.Register<Arc, Color>(nameof(ArcColor), Colors.SkyBlue, inherits: true, defaultBindingMode: BindingMode.TwoWay);
+            AvaloniaProperty.Register<AuraArc, Color>(nameof(ArcColor), Colors.SkyBlue, inherits: true, defaultBindingMode: BindingMode.TwoWay);
 
         public int Stroke
         {
@@ -33,7 +33,7 @@ namespace Aura.UI.Controls.Colouring
         }
 
         public readonly static StyledProperty<int> StrokeProperty =
-            AvaloniaProperty.Register<Arc, int>(nameof(Stroke), 10, inherits: true, defaultBindingMode: BindingMode.TwoWay);
+            AvaloniaProperty.Register<AuraArc, int>(nameof(Stroke), 10, inherits: true, defaultBindingMode: BindingMode.TwoWay);
 
         public double StartAngle
         {
@@ -42,7 +42,7 @@ namespace Aura.UI.Controls.Colouring
         }
 
         public readonly static StyledProperty<double> StartAngleProperty =
-            AvaloniaProperty.Register<Arc, double>(nameof(StartAngle), -90, inherits: true, defaultBindingMode: BindingMode.TwoWay);
+            AvaloniaProperty.Register<AuraArc, double>(nameof(StartAngle), -90, inherits: true, defaultBindingMode: BindingMode.TwoWay);
 
         public double SweepAngle
         {
@@ -51,7 +51,7 @@ namespace Aura.UI.Controls.Colouring
         }
 
         public static readonly StyledProperty<double> SweepAngleProperty =
-            AvaloniaProperty.Register<Arc, double>(nameof(SweepAngle), 180, inherits: true, defaultBindingMode: BindingMode.TwoWay);
+            AvaloniaProperty.Register<AuraArc, double>(nameof(SweepAngle), 180, inherits: true, defaultBindingMode: BindingMode.TwoWay);
 
         public override void Render(DrawingContext context)
         {

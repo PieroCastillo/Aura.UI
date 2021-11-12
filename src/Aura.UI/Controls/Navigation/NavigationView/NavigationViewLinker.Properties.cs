@@ -1,5 +1,4 @@
-﻿using Aura.UI.Controls.Legacy;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Media;
 
 namespace Aura.UI.Controls.Navigation
@@ -13,7 +12,7 @@ namespace Aura.UI.Controls.Navigation
         }
 
         public readonly static StyledProperty<IImage> IconProperty =
-            SuperListBoxItem.IconProperty.AddOwner<NavigationViewLinker>();
+            AuraTabItem.IconProperty.AddOwner<NavigationViewLinker>();
 
         public string Title
         {

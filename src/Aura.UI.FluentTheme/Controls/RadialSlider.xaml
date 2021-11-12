@@ -16,10 +16,10 @@
     <Setter Property="Template">
       <ControlTemplate>
         <Grid Margin="1">
-          <Arc Stroke="{Binding $parent[RadialSlider].StrokeWidth}"
+          <AuraArc Stroke="{Binding $parent[RadialSlider].StrokeWidth}"
 						 ArcColor="{Binding $parent[RadialSlider].BackgroundColor}"
 						 Classes="stable" />
-          <Arc Stroke="{Binding $parent[RadialSlider].StrokeWidth}"
+          <AuraArc Stroke="{Binding $parent[RadialSlider].StrokeWidth}"
 						 ArcColor="{Binding $parent[RadialSlider].ForegroundColor}"
 						 StartAngle="{Binding $parent[RadialSlider].XAngle}"
 						 SweepAngle="{Binding $parent[RadialSlider].YAngle}" />
@@ -27,7 +27,7 @@
       </ControlTemplate>
     </Setter>
   </Style>
-  <Style Selector="RadialSlider /template/ Arc.stable">
+  <Style Selector="RadialSlider /template/ AuraArc.stable">
     <Setter Property="StartAngle" Value="0" />
     <Setter Property="SweepAngle"  Value="360" />
   </Style>
