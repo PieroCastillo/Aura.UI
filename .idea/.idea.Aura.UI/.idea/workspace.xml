@@ -11,29 +11,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e4768f5d-5d56-4362-acaa-745aed13edae" name="Changes" comment="fix NavigationView Title Bug">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" afterDir="false" />
+    <list default="true" id="e4768f5d-5d56-4362-acaa-745aed13edae" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Aura.UI/ExtensionProperties/ButtonExts.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Aura.UI.FluentTheme.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Aura.UI.FluentTheme.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/AuraUI.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/AuraUI.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/Legacy/PageStyles.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/Legacy/PagesViewStyles.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/Legacy/SuperListBoxItemStyles.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/Legacy/TitleBoxStyles.xaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/ProgressRing.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/ProgressRing.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/RadialSlider.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/RadialSlider.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/version.props" beforeDir="false" afterPath="$PROJECT_DIR$/build/version.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Colouring/Arc/Arc.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Colouring/Arc/Arc.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/Pages/Page.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/Pages/PagesView.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/SuperListBox/SuperListBoxItem.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBox.Events.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBox.Properties.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/TitleBox/TitleBox.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/ToolWindow/ToolWindow.axaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Legacy/ToolWindow/ToolWindow.axaml.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewLinker.Properties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/CustomWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/CustomWindow.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +120,10 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Project.Aura.UI.Gallery">
+    <configuration name="Publish Aura.UI to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
+      <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$USER_HOME$/OneDrive/Escritorio/Aura.UI bins" target_framework="netstandard2.1" uuid_high="1393117735389119030" uuid_low="-5517372887645688254" />
+      <method v="2" />
+    </configuration>
     <configuration name="AuraTabViewMVVMSample" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -267,7 +253,10 @@
       <workItem from="1636406535719" duration="736000" />
       <workItem from="1636580967966" duration="769000" />
       <workItem from="1636642509481" duration="594000" />
-      <workItem from="1636689552085" duration="3193000" />
+      <workItem from="1636689552085" duration="3259000" />
+      <workItem from="1636752174586" duration="1349000" />
+      <workItem from="1636761840113" duration="212000" />
+      <workItem from="1636774357823" duration="853000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>
@@ -416,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636693466648</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="delete legacy controls, change Arc -&gt; AuraArc">
+      <created>1636737581260</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1636737581260</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +451,8 @@
     <MESSAGE value="CardControl Animation Fixed" />
     <MESSAGE value="NavigationView Restyled" />
     <MESSAGE value="fix NavigationView Title Bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix NavigationView Title Bug" />
+    <MESSAGE value="delete legacy controls, change Arc -&gt; AuraArc" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete legacy controls, change Arc -&gt; AuraArc" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

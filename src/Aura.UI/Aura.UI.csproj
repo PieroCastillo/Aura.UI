@@ -18,6 +18,7 @@
 	</ItemGroup>
 	<Import Project="..\..\build\version.props" />
 	<ItemGroup>
+	  <PackageReference Include="AuraUtilities" Version="0.1.5" />
 	  <PackageReference Include="Avalonia" Version="0.10.10" />
 	  <PackageReference Include="Avalonia.Desktop" Version="0.10.10" />
 	  <PackageReference Include="Avalonia.Diagnostics" Version="0.10.10" />
