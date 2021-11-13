@@ -13,7 +13,17 @@
   </Design.DataContext>
 
   <StackPanel Margin="20">
-    <AuraColorPicker SelectedColor="Red" Name="cp" Width="300" Height="300" StrokeWidth="20"/>
-    <TextBlock Height="50" Foreground="Black" Text="{Binding #cp.SelectedColor}"/>
+    <StackPanel.Styles>
+      <Style Selector="Button">
+        <Setter Property="ClickMode" Value="Release"/>
+      </Style>
+    </StackPanel.Styles>
+    <!-- <AuraColorPicker SelectedColor="Red" Name="cp" Width="300" Height="300" StrokeWidth="20"/> -->
+    <!-- <TextBlock Height="50" Foreground="Black" Text="{Binding #cp.SelectedColor}"/> -->
+    <Button Content="Youtube.com" ButtonExts.Url="https://youtube.com"/>
+    <Button Content="Google.com" ButtonExts.Url="https://Google.com"/>
+    <Button Content="Wikipedia.org" ButtonExts.Url="https://wikipedia.org"/>
+    <Button Content="StackOverflow.com" ButtonExts.Url="https://stackOverflow.com"/>
+    <Button Content="Avaloniaui.net" ButtonExts.Url="https://avaloniaui.net"/>
   </StackPanel>
 </Window>

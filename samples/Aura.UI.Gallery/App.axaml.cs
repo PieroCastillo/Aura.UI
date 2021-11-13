@@ -121,15 +121,13 @@ namespace Aura.UI.Gallery
     }
 
     [Serializable]
-    public class AppSettings : Settings
+    public class AppSettings : ISettings
     {
         public Theme Theme
         {
             get;
             set;
         }
-
-
     }
 
     [Serializable]

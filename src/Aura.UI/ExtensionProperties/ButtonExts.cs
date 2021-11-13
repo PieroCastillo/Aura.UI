@@ -17,9 +17,15 @@ namespace Aura.UI.ExtensionProperties
         {
             UrlProperty.Changed.Subscribe(onNext: e =>
             {
-                if (e.Sender is Button btn && !string.IsNullOrEmpty(GetUrl(btn)))
+                if (e.Sender is Button btn)
                 {
-                    UrlUtils.OpenUrl(GetUrl(btn));
+                    btn.Click += (s, e) =>
+                    {
+                        if (!string.IsNullOrEmpty(GetUrl(btn)))
+                        {
+                            UrlUtils.OpenUrl(GetUrl(btn));
+                        }
+                    };
                 }
             });
         }

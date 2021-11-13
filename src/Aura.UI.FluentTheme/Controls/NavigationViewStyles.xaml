@@ -107,6 +107,11 @@
 									<RowDefinition Height="auto"/>
 									<RowDefinition Height="*"/>
 								</Grid.RowDefinitions>
+								<Grid.Styles>
+									<Style Selector="AuraContentPresenter > TextBlock">
+										<Setter Property="VerticalAlignment" Value="Bottom"/>
+									</Style>
+								</Grid.Styles>
 								<AuraContentPresenter Grid.Row="0"
 								                      IsVisible="{Binding !$parent[NavigationView].HideTitle}"
 								                      Name="PART_TitlePresenter"

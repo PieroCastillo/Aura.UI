@@ -9,3 +9,4 @@
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Presenters")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Painting")]
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.Controls.Windows")]
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "Aura.UI.ExtensionProperties")]

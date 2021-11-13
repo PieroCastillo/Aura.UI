@@ -12,10 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4768f5d-5d56-4362-acaa-745aed13edae" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Aura.UI/ExtensionProperties/ButtonExts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/version.props" beforeDir="false" afterPath="$PROJECT_DIR$/build/version.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/samples/MiniSample/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/MiniSample/Views/MainWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/ExtensionProperties/ButtonExts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/ExtensionProperties/ButtonExts.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/CustomWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://D:/My Projects/Aura.UI/samples/Aura.UI.Gallery/App.axaml.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -119,7 +125,7 @@
     <property name="settings.editor.selected.configurable" value="me.fornever.avaloniarider.idea.settings.AvaloniaSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.Aura.UI.Gallery">
+  <component name="RunManager" selected=".NET Project.MiniSample">
     <configuration name="Publish Aura.UI to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$USER_HOME$/OneDrive/Escritorio/Aura.UI bins" target_framework="netstandard2.1" uuid_high="1393117735389119030" uuid_low="-5517372887645688254" />
       <method v="2" />
@@ -257,6 +263,7 @@
       <workItem from="1636752174586" duration="1349000" />
       <workItem from="1636761840113" duration="212000" />
       <workItem from="1636774357823" duration="853000" />
+      <workItem from="1636776492482" duration="1387000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>

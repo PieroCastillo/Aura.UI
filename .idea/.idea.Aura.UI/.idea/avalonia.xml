@@ -3,6 +3,7 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="samples/MiniSample/Views/MainWindow.axaml" value="samples/MiniSample/MiniSample.csproj" />
         <entry key="src/Aura.UI.FluentTheme/AuraUI.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
         <entry key="src/Aura.UI.FluentTheme/AuraUIResources.Fluent.axaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
         <entry key="src/Aura.UI.FluentTheme/Controls/NavigationViewItemStyles.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
