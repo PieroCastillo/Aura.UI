@@ -17,6 +17,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Avalonia.VisualTree;
+using Avalonia.Threading;
 
 namespace Aura.UI.Controls.Navigation
 {
@@ -46,11 +47,11 @@ namespace Aura.UI.Controls.Navigation
             PseudoClasses.Add(":normal");
             this.GetObservable(BoundsProperty).Subscribe(async (bounds)=>
             {
-                OnBoundsChanged(bounds);
+                await Dispatcher.UIThread.InvokeAsync(() => OnBoundsChanged(bounds));
             });
         }
 
-        protected virtual async Task OnBoundsChanged(Rect rect)
+        protected virtual void OnBoundsChanged(Rect rect)
         {
             if (DynamicDisplayMode)
             {
@@ -62,7 +63,7 @@ namespace Aura.UI.Controls.Navigation
                     UpdatePseudoClasses(false);
                     DisplayMode = SplitViewDisplayMode.CompactInline;
                 }
-                else if(isLittle && !isVeryLittle)
+                else if (isLittle && !isVeryLittle)
                 {
                     UpdatePseudoClasses(false);
                     DisplayMode = SplitViewDisplayMode.CompactOverlay;
@@ -72,7 +73,7 @@ namespace Aura.UI.Controls.Navigation
                         navigationViewItemBase.IsExpanded = false;
                     }
                 }
-                else if(isLittle && isVeryLittle)
+                else if (isLittle && isVeryLittle)
                 {
                     UpdatePseudoClasses(true);
                     DisplayMode = SplitViewDisplayMode.Overlay;

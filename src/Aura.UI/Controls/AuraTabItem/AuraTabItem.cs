@@ -20,7 +20,6 @@ namespace Aura.UI.Controls
         public AuraTabItem()
         {
             Closing += OnClosing;
-            //EnableDragDrop();
         }
 
         static AuraTabItem()

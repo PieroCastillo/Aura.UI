@@ -1,6 +1,6 @@
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 	<PropertyGroup>
-		<PackageVersion>0.1.5.0-dev-02</PackageVersion>
+		<PackageVersion>0.1.5.0-dev-03</PackageVersion>
 		<AssemblyVersion>0.1.5.0</AssemblyVersion>
 		<Version>0.1.5.0</Version>
     <LangVersion>9.0</LangVersion>
