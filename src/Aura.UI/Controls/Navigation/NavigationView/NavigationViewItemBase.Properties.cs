@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Templates;
 using Avalonia.Media;
 
 namespace Aura.UI.Controls.Navigation
@@ -17,6 +18,31 @@ namespace Aura.UI.Controls.Navigation
                 nameof(Content),
                 o => o.Content,
                 (o, v) => o.Content = v);
+
+        public IDataTemplate ContentTemplate
+        {
+            get => GetValue(ContentTemplateProperty);
+            set => SetValue(ContentTemplateProperty, value);
+        }
+
+        public static readonly StyledProperty<IDataTemplate> ContentTemplateProperty =
+            AvaloniaProperty.Register<NavigationViewItemBase, IDataTemplate>(nameof(ContentTemplate));
+        public IDataTemplate HeaderTemplate
+        {
+            get => GetValue(HeaderTemplateProperty);
+            set => SetValue(HeaderTemplateProperty, value);
+        }
+
+        public static readonly StyledProperty<IDataTemplate> HeaderTemplateProperty =
+            AvaloniaProperty.Register<NavigationViewItemBase, IDataTemplate>(nameof(HeaderTemplate));
+        public IDataTemplate TitleTemplate
+        {
+            get => GetValue(TitleTemplateProperty);
+            set => SetValue(TitleTemplateProperty, value);
+        }
+
+        public static readonly StyledProperty<IDataTemplate> TitleTemplateProperty =
+            AvaloniaProperty.Register<NavigationViewItemBase, IDataTemplate>(nameof(TitleTemplate));
 
         private IImage _icon;
 
@@ -75,7 +101,7 @@ namespace Aura.UI.Controls.Navigation
 
         private int _NavigationViewDistance;
 
-        public new int NavigationViewDistance
+        public int NavigationViewDistance
         {
             get => _NavigationViewDistance;
             protected set => SetAndRaise(LevelProperty, ref _NavigationViewDistance, value);
