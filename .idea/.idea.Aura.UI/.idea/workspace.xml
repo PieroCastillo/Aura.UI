@@ -13,20 +13,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e4768f5d-5d56-4362-acaa-745aed13edae" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/App.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/NavigationViewMVVMSample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/NavigationViewMVVMSample.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/ViewModels/MainWindowViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/Views/MainWindow.axaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewItemStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewItemStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Data/INavigationVIewItemTemplate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Data/INavigationVIewItemTemplate.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,8 +42,12 @@
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/WindowButtons.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/CustomWindow.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -285,7 +280,8 @@
       <workItem from="1636761840113" duration="212000" />
       <workItem from="1636774357823" duration="853000" />
       <workItem from="1636776492482" duration="1387000" />
-      <workItem from="1637291102725" duration="2162000" />
+      <workItem from="1637291102725" duration="2903000" />
+      <workItem from="1637337352819" duration="3326000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>
@@ -441,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636737581260</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="NavigationView MVVM Support (WIP)">
+      <created>1637297880515</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1637297880515</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +484,8 @@
     <MESSAGE value="NavigationView Restyled" />
     <MESSAGE value="fix NavigationView Title Bug" />
     <MESSAGE value="delete legacy controls, change Arc -&gt; AuraArc" />
-    <option name="LAST_COMMIT_MESSAGE" value="delete legacy controls, change Arc -&gt; AuraArc" />
+    <MESSAGE value="NavigationView MVVM Support (WIP)" />
+    <option name="LAST_COMMIT_MESSAGE" value="NavigationView MVVM Support (WIP)" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

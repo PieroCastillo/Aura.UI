@@ -34,7 +34,6 @@ namespace Aura.UI.Controls.Generators
         {
             var navviewitem = (NavigationViewItem)base.CreateContainer(item);
             navviewitem.Bind(NavigationViewItem.IsOpenProperty, (Owner as NavigationView).GetObservable(NavigationView.IsOpenProperty), BindingPriority.LocalValue);
-                Debug.WriteLine("pased" + navviewitem.Header.ToString());
             //navviewitem.Bind(NavigationViewItem.HeaderProperty, navviewitem.GetBindingObservable(Header));
             //navviewitem.Bind(NavigationViewItem.ContentProperty, navviewitem.GetBindingObservable(Content));
             //navviewitem.Bind(NavigationViewItem.ItemsProperty, navviewitem.GetBindingObservable(Items));
