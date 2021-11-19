@@ -19,31 +19,6 @@ namespace Aura.UI.Controls.Navigation
                 o => o.Content,
                 (o, v) => o.Content = v);
 
-        public IDataTemplate ContentTemplate
-        {
-            get => GetValue(ContentTemplateProperty);
-            set => SetValue(ContentTemplateProperty, value);
-        }
-
-        public static readonly StyledProperty<IDataTemplate> ContentTemplateProperty =
-            AvaloniaProperty.Register<NavigationViewItemBase, IDataTemplate>(nameof(ContentTemplate));
-        public IDataTemplate HeaderTemplate
-        {
-            get => GetValue(HeaderTemplateProperty);
-            set => SetValue(HeaderTemplateProperty, value);
-        }
-
-        public static readonly StyledProperty<IDataTemplate> HeaderTemplateProperty =
-            AvaloniaProperty.Register<NavigationViewItemBase, IDataTemplate>(nameof(HeaderTemplate));
-        public IDataTemplate TitleTemplate
-        {
-            get => GetValue(TitleTemplateProperty);
-            set => SetValue(TitleTemplateProperty, value);
-        }
-
-        public static readonly StyledProperty<IDataTemplate> TitleTemplateProperty =
-            AvaloniaProperty.Register<NavigationViewItemBase, IDataTemplate>(nameof(TitleTemplate));
-
         private IImage _icon;
 
         public IImage Icon

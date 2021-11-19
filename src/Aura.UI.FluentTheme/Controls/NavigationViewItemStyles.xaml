@@ -103,6 +103,7 @@
 										</Border.Transitions>
 										<ContentPresenter Name="PART_ContentPresenter"
 										                  Content="{TemplateBinding Header}"
+                                                          ContentTemplate="{Binding $parent[NavigationView].HeaderTemplate}"
 										                  TextBlock.FontSize="14"
 										                  TextBlock.FontFamily="Segoe UI"
 										                  VerticalAlignment="Center" />
@@ -131,6 +132,7 @@
 						<Border Grid.Row="1" Grid.Column="1" Name="PART_BottomBorder">
 							<ItemsPresenter Name="PART_ItemsPresenter"
 							                Items="{TemplateBinding Items}"
+                                            ItemTemplate="{TemplateBinding ItemTemplate}"
 							                ItemsPanel="{TemplateBinding ItemsPanel}" />
 						</Border>
 					</Grid>

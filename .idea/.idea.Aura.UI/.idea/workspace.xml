@@ -6,6 +6,7 @@
     <projectFile>samples/MiniSample/MiniSample.csproj</projectFile>
     <projectFile>MVVMSamples/AuraTabViewMVVMSample/AuraTabViewMVVMSample.csproj</projectFile>
     <projectFile>MVVMSamples/NavigationViewMVVMSample/NavigationViewMVVMSample.csproj</projectFile>
+    <projectFile profileName="Aura.UI.Gallery">samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj</projectFile>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
@@ -14,13 +15,18 @@
     <list default="true" id="e4768f5d-5d56-4362-acaa-745aed13edae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/avalonia.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aura.UI/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/App.axaml.cs" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/App.axaml.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/App.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/App.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/NavigationViewMVVMSample.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/NavigationViewMVVMSample.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/ViewModels/MainWindowViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/ViewModels/MainWindowViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/MVVMSamples/NavigationViewMVVMSample/Views/MainWindow.axaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/MiniSample/Views/MainWindow.axaml" beforeDir="false" afterPath="$PROJECT_DIR$/samples/MiniSample/Views/MainWindow.axaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewItemStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewItemStyles.xaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI.FluentTheme/Controls/NavigationViewStyles.xaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Assembly.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Aura.UI.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Aura.UI/ExtensionProperties/ButtonExts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/ExtensionProperties/ButtonExts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.Properties.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Aura.UI/Data/INavigationVIewItemTemplate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/src/Aura.UI/Data/INavigationVIewItemTemplate.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,13 +46,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.Properties.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b36f54f09c834eb381acbd14051a41df43200/5C/DirectProperty.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/samples/Aura.UI.Gallery/Views/MainView.axaml" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/WindowButtons.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Primitives/CustomWindow.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Generators/NavigationViewContainerGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Aura.UI/Controls/Navigation/NavigationView/NavigationViewItemBase.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://D:/My Projects/Aura.UI/samples/Aura.UI.Gallery/App.axaml.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -125,7 +131,7 @@
     <property name="settings.editor.selected.configurable" value="me.fornever.avaloniarider.idea.settings.AvaloniaSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected=".NET Project.MiniSample">
+  <component name="RunManager" selected=".NET Project.NavigationViewMVVMSample">
     <configuration name="Publish Aura.UI to folder" type="DotNetFolderPublish" factoryName="Publish to folder">
       <riderPublish configuration="Release" platform="Any CPU" runtime="Portable" target_folder="$USER_HOME$/OneDrive/Escritorio/Aura.UI bins" target_framework="netstandard2.1" uuid_high="1393117735389119030" uuid_low="-5517372887645688254" />
       <method v="2" />
@@ -220,6 +226,21 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Aura.UI.Gallery" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
+      <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
+      <option name="LAUNCH_PROFILE_TFM" value="net5.0" />
+      <option name="LAUNCH_PROFILE_NAME" value="Aura.UI.Gallery" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SEND_DEBUG_REQUEST" value="1" />
+      <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -264,6 +285,7 @@
       <workItem from="1636761840113" duration="212000" />
       <workItem from="1636774357823" duration="853000" />
       <workItem from="1636776492482" duration="1387000" />
+      <workItem from="1637291102725" duration="2162000" />
     </task>
     <task id="LOCAL-00001" summary="...">
       <created>1618876134019</created>

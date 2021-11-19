@@ -111,7 +111,6 @@ namespace Aura.UI.Controls.Navigation
                     n.IsExpanded = true;
                 }
             }
-            // Debug.WriteLine($"{item_parents.Count()}");
 
             SelectedItem = item;
         }

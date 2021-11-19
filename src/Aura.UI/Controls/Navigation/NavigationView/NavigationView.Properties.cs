@@ -1,5 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Templates;
 using Avalonia.Media;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -27,10 +28,18 @@ namespace Aura.UI.Controls.Navigation
             AvaloniaProperty.RegisterDirect<NavigationView, object>(
                 nameof(Title),
                 o => o.Title);
+
         public readonly static DirectProperty<NavigationView, object> SelectedContentProperty =
             AvaloniaProperty.RegisterDirect<NavigationView, object>(
                 nameof(SelectedContent),
                 o => o.SelectedContent);
+
+        public readonly static StyledProperty<IDataTemplate> TitleTemplateProperty =
+            AvaloniaProperty.Register<NavigationView, IDataTemplate>(nameof(TitleTemplate));
+
+        public readonly static StyledProperty<IDataTemplate> SelectedContentTemplateProperty =
+            AvaloniaProperty.Register<NavigationView, IDataTemplate>(nameof(SelectedContentTemplate));
+
         public readonly static StyledProperty<double> CompactPaneLengthProperty =
             AvaloniaProperty.Register<NavigationView, double>(nameof(CompactPaneLength));
 
@@ -100,6 +109,19 @@ namespace Aura.UI.Controls.Navigation
         {
             get => _selectedcontent;
             private set => SetAndRaise(SelectedContentProperty, ref _selectedcontent, value);
+        }
+
+        public IDataTemplate TitleTemplate
+        {
+            get => GetValue(TitleTemplateProperty);
+            set => SetValue(TitleTemplateProperty, value);
+        }
+
+
+        public IDataTemplate SelectedContentTemplate
+        {
+            get => GetValue(SelectedContentTemplateProperty);
+            set => SetValue(SelectedContentTemplateProperty, value);
         }
 
 

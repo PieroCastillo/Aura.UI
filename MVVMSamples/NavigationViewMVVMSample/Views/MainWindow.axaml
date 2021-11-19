@@ -11,5 +11,17 @@
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
-
+    <NavigationView Items="{Binding Items}">
+        <NavigationView.ItemTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding Content}"/>
+            </DataTemplate>
+        </NavigationView.ItemTemplate>
+        <NavigationView.SelectedContentTemplate>
+            <DataTemplate>
+                <TextBlock Text="{Binding }"></TextBlock>
+            </DataTemplate>
+        </NavigationView.SelectedContentTemplate>
+        
+    </NavigationView>
 </Window>

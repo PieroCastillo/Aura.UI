@@ -3,6 +3,9 @@
   <component name="AvaloniaProject">
     <option name="projectPerEditor">
       <map>
+        <entry key="MVVMSamples/NavigationViewMVVMSample/App.axaml" value="MVVMSamples/NavigationViewMVVMSample/NavigationViewMVVMSample.csproj" />
+        <entry key="MVVMSamples/NavigationViewMVVMSample/Views/MainWindow.axaml" value="MVVMSamples/NavigationViewMVVMSample/NavigationViewMVVMSample.csproj" />
+        <entry key="samples/Aura.UI.Gallery/Pages/CardControlPage.axaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
         <entry key="samples/MiniSample/Views/MainWindow.axaml" value="samples/MiniSample/MiniSample.csproj" />
         <entry key="src/Aura.UI.FluentTheme/AuraUI.xaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />
         <entry key="src/Aura.UI.FluentTheme/AuraUIResources.Fluent.axaml" value="samples/Aura.UI.Gallery/Aura.UI.Gallery.csproj" />

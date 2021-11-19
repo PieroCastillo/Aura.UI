@@ -120,6 +120,7 @@
 								                      MinHeight="75"
 								                      VerticalAlignment="Bottom"
 								                      Content="{Binding $parent[NavigationView].Title}"
+                                                      ContentTemplate="{Binding $parent[NavigationView].TitleTemplate}"
 								                      TextBlock.FontWeight="UltraLight"
 								                      TextBlock.FontSize="25"/>
 								<ScrollViewer Grid.Row="1" HorizontalContentAlignment="Left"
@@ -128,7 +129,8 @@
 									<Grid RowDefinitions="auto,*">
 										<ContentPresenter Grid.Row="1"
 										                  Name="PART_SelectedContentPresenter"
-										                  Content="{Binding $parent[NavigationView].SelectedContent}" />
+										                  Content="{Binding $parent[NavigationView].SelectedContent}"
+										                  ContentTemplate="{Binding $parent[NavigationView].SelectedContentTemplate}" />
 									</Grid>
 								</ScrollViewer>
 							</Grid>
