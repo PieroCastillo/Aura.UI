@@ -66,7 +66,7 @@ For Fluent Theme add these Styles to App.xaml
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="YourApp.App">
    <Application.Styles>
-      <FluenTheme Mode="Light"/>
+      <FluentTheme Mode="Light"/>
       <StyleInclude Source="avares://Aura.UI.FluentTheme/AuraUI.xaml"/>
    </Application.Styles> 
 </Application>
