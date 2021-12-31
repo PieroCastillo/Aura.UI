@@ -25,6 +25,7 @@ namespace Aura.UI.Controls.Navigation
     public partial class NavigationView : TreeView, IItemsPresenterHost, IContentPresenterHost, IHeadered
     {
         private Button _headeritem;
+        private SplitView _splitVw;
         private const double LittleWidth = 1005;
         private const double VeryLittleWidth = 650;
 

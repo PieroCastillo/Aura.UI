@@ -1,7 +1,5 @@
 ﻿using Avalonia.Media;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Data
 {
@@ -12,6 +10,6 @@ namespace Aura.UI.Data
         public object Header { get; }
         public object Title { get; }
 
-        public IEnumerable<INavigationViewItemTemplate> Items { get; }
+        public IList<INavigationViewItemTemplate> Items { get; }
     }
 }
