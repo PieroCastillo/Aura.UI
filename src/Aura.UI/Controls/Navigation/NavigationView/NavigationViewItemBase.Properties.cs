@@ -101,7 +101,7 @@ namespace Aura.UI.Controls.Navigation
             AvaloniaProperty.Register<NavigationViewItemBase, double>(nameof(OpenPaneLength));
 
         private double _ExternalLength;
-        public double ExternalLength 
+        public double ExternalLength
         {
             get => _ExternalLength;
             private set => SetAndRaise(ExternalLengthProperty, ref _ExternalLength, value);

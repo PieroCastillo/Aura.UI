@@ -11,7 +11,7 @@ namespace Aura.UI.Gallery.ViewModels
         public ReactiveAuraTabViewPage()
         {
             var assetLoader = AvaloniaLocator.CurrentMutable.GetService<IAssetLoader>();
-            
+
             ItemsSource = new List<IAuraTabItemTemplate>()
             {
                 new AuraTabViewViewModel()
@@ -21,15 +21,15 @@ namespace Aura.UI.Gallery.ViewModels
                 },
                 new AuraTabViewViewModel()
                 {
-                    
+
                 },
                 new AuraTabViewViewModel()
                 {
-                    
+
                 },
                 new AuraTabViewViewModel()
                 {
-                    
+
                 }
             };
         }
@@ -40,10 +40,10 @@ namespace Aura.UI.Gallery.ViewModels
     {
         public object Content { get; set; }
 
-        public object Header  { get; set; }
+        public object Header { get; set; }
 
         public bool IsClosable { get; set; }
 
-        public IImage Icon  { get; set; }
+        public IImage Icon { get; set; }
     }
 }

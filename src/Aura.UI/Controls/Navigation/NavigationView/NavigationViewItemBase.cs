@@ -59,13 +59,13 @@ namespace Aura.UI.Controls.Navigation
 
         private static void OnIsOpenChanged(AvaloniaPropertyChangedEventArgs<bool> e)
         {
-            if (e.Sender is NavigationViewItem sender) 
-            { 
+            if (e.Sender is NavigationViewItem sender)
+            {
                 if (sender.IsSelected && sender.Parent is NavigationViewItem nw && nw.Parent is NavigationView nwp && nw.SelectOnClose)
                 {
                     nwp.SelectSingleItem(nw);
                 }
-                
+
                 switch (sender.IsOpen)
                 {
                     case true:
@@ -92,12 +92,12 @@ namespace Aura.UI.Controls.Navigation
 
         protected virtual void OnDeselected(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-           
+
         }
 
         protected virtual void OnSelected(object sender, AvaloniaPropertyChangedEventArgs e)
         {
-            
+
         }
 
         protected virtual void OnOpened(object sender, RoutedEventArgs e)

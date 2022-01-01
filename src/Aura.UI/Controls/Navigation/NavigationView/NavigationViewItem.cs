@@ -15,7 +15,7 @@ namespace Aura.UI.Controls.Navigation
     public class NavigationViewItem : NavigationViewItemBase, IStyleable
     {
         Type IStyleable.StyleKey => typeof(NavigationViewItemBase);
-        
+
         static NavigationViewItem()
         {
             SelectableMixin.Attach<NavigationViewItem>(IsSelectedProperty);

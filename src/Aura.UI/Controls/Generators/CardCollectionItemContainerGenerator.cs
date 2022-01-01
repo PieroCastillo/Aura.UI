@@ -9,11 +9,11 @@ namespace Aura.UI.Controls.Generators
     public class CardCollectionItemContainerGenerator<TCardControl> : ItemContainerGenerator<TCardControl> where TCardControl : CardControl, IControl, new()
     {
         public CardCollectionItemContainerGenerator(
-            IControl owner , 
+            IControl owner,
             AvaloniaProperty contentProperty,
             AvaloniaProperty contentTemplateProperty,
-            AvaloniaProperty headerProperty, 
-            AvaloniaProperty secondaryHeaderProperty, 
+            AvaloniaProperty headerProperty,
+            AvaloniaProperty secondaryHeaderProperty,
             AvaloniaProperty commandProperty,
             AvaloniaProperty commandParameterProperty)
             : base(owner, contentProperty, contentTemplateProperty)
@@ -29,12 +29,12 @@ namespace Aura.UI.Controls.Generators
         protected override IControl CreateContainer(object item)
         {
             var container = item as TCardControl;
-            
+
             if (container is not null)
             {
                 return container;
             }
-            else if(item is ICardControlTemplate temp)
+            else if (item is ICardControlTemplate temp)
             {
                 var result = new TCardControl();
 

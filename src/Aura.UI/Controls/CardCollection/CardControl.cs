@@ -18,7 +18,7 @@ namespace Aura.UI.Controls
     public partial class CardControl : HeaderedContentControl, ICommandSource
     {
         private bool _commandCanExecute = false;
-        
+
         static CardControl()
         {
             CommandProperty.Changed.Subscribe(CommandChanged);
@@ -28,14 +28,14 @@ namespace Aura.UI.Controls
 
         public CardControl()
         {
-            
+
         }
-        
+
         static void CommandChanged(AvaloniaPropertyChangedEventArgs e)
         {
             if (e.Sender is CardControl c)
             {
-                if (((ILogical) c).IsAttachedToLogicalTree)
+                if (((ILogical)c).IsAttachedToLogicalTree)
                 {
                     if (e.OldValue is ICommand oldCommand)
                     {
@@ -47,7 +47,7 @@ namespace Aura.UI.Controls
                         newCommand.CanExecuteChanged += c.CanExecuteChanged;
                     }
                 }
-                
+
                 c.CanExecuteChanged(c, EventArgs.Empty);
             }
         }
@@ -64,8 +64,8 @@ namespace Aura.UI.Controls
         {
             base.OnPointerPressed(e);
 
-            if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed && 
-                ClickMode == ClickMode.Press )
+            if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed &&
+                ClickMode == ClickMode.Press)
             {
                 OnClick();
             }
@@ -75,8 +75,8 @@ namespace Aura.UI.Controls
         {
             base.OnPointerReleased(e);
 
-            if (e.InitialPressMouseButton == MouseButton.Left && 
-                ClickMode == ClickMode.Release && 
+            if (e.InitialPressMouseButton == MouseButton.Left &&
+                ClickMode == ClickMode.Release &&
                 this.GetVisualsAt(e.GetPosition(this)).Any(c => this == c || this.IsVisualAncestorOf(c)))
             {
                 OnClick();

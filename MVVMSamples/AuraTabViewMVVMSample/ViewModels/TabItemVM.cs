@@ -16,6 +16,6 @@ namespace AuraTabViewMVVMSample.ViewModels
 
         public bool IsClosable { get; set; } = false;
 
-        public IImage Icon => null;
+        public IImage? Icon => null;
     }
 }

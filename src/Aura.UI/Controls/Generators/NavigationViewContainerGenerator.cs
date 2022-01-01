@@ -17,7 +17,7 @@ namespace Aura.UI.Controls.Generators
                                                 AvaloniaProperty itemsProperty,
                                                 AvaloniaProperty headerProperty,
                                                 AvaloniaProperty titleProperty,
-                                                AvaloniaProperty expandedProperty) : base(owner, contentProperty, null, itemsProperty,expandedProperty)
+                                                AvaloniaProperty expandedProperty) : base(owner, contentProperty, null, itemsProperty, expandedProperty)
         {
             Content = contentProperty;
             Items = itemsProperty;

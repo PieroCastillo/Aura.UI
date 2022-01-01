@@ -98,7 +98,7 @@ namespace Aura.UI.Helpers
             => Math.Sqrt(Math.Pow(AB, 2) + Math.Pow(BC, 2));
 
         public static double TriangleSideByRadius(double r)
-            => Math.Sqrt(4 * (Math.Pow(r, 2) - Math.Pow(r/2, 2)));
+            => Math.Sqrt(4 * (Math.Pow(r, 2) - Math.Pow(r / 2, 2)));
 
         public static double TriangleHeightBySide(double side)
             => Math.Sqrt(3) * side / 2;

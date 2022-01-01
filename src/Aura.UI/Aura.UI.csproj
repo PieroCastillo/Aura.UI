@@ -19,23 +19,15 @@
 	<Import Project="..\..\build\version.props" />
 	<ItemGroup>
 	  <PackageReference Include="AuraUtilities" Version="0.1.5.4" />
-	  <PackageReference Include="Avalonia" Version="0.10.10" />
-	  <PackageReference Include="Avalonia.Desktop" Version="0.10.10" />
-	  <PackageReference Include="Avalonia.Diagnostics" Version="0.10.10" />
-	  <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.10" />
-	  <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.10" />
-	  <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.10" />
-	  <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.10" />
+	  <PackageReference Include="Avalonia" Version="0.10.11" />
+	  <PackageReference Include="Avalonia.Desktop" Version="0.10.11" />
+	  <PackageReference Include="Avalonia.Diagnostics" Version="0.10.11" />
+	  <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.11" />
+	  <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.11" />
+	  <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.11" />
+	  <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.11" />
 	  <PackageReference Include="ReactiveUI" Version="16.3.5" />
-	  <PackageReference Include="SkiaSharp" Version="2.80.3" />
 	  <PackageReference Include="Avalonia" Version="0.10.11" />
 	  <PackageReference Include="System.Reactive" Version="5.0.0" />
-	</ItemGroup>
-	<ItemGroup>
-	  <UpToDateCheckInput Remove="Controls\Legacy\ToolWindow\ToolWindow.axaml" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Compile Remove="Controls\Primitives\CustomWindow.cs" />
-	  <Compile Remove="Controls\Primitives\WindowButtons.cs" />
 	</ItemGroup>
 </Project>

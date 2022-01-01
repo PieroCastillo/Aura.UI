@@ -20,7 +20,7 @@ namespace Aura.UI.Controls.Painting
 
         private void UpdateColor(double @object)
         {
-            SelectedColor = new HSV(Hue, Saturation, Value).ToColor(); 
+            SelectedColor = new HSV(Hue, Saturation, Value).ToColor();
             //await Task.Run(() =>
             //{
             //    
@@ -34,7 +34,7 @@ namespace Aura.UI.Controls.Painting
         }
 
         public static readonly StyledProperty<double> HueProperty =
-            AvaloniaProperty.Register<HSVViewer, double>(nameof(Hue),0);
+            AvaloniaProperty.Register<HSVViewer, double>(nameof(Hue), 0);
 
         public double Saturation
         {
@@ -43,7 +43,7 @@ namespace Aura.UI.Controls.Painting
         }
 
         public static readonly StyledProperty<double> SaturationProperty =
-            AvaloniaProperty.Register<HSVViewer, double>(nameof(Saturation),0);
+            AvaloniaProperty.Register<HSVViewer, double>(nameof(Saturation), 0);
 
         public double Value
         {
@@ -52,7 +52,7 @@ namespace Aura.UI.Controls.Painting
         }
 
         public static readonly StyledProperty<double> ValueProperty =
-            AvaloniaProperty.Register<HSVViewer, double>(nameof(Value),1);
+            AvaloniaProperty.Register<HSVViewer, double>(nameof(Value), 1);
 
 
         private Color _SelectedColor;

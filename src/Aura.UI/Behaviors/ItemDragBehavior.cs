@@ -22,7 +22,7 @@ namespace Aura.UI.Behaviors
         private ItemsControl? _itemsControl;
         private IControl? _draggedContainer;
 
-        public static readonly StyledProperty<Orientation> OrientationProperty = 
+        public static readonly StyledProperty<Orientation> OrientationProperty =
             AvaloniaProperty.Register<ItemDragBehavior, Orientation>(nameof(Orientation));
 
         public Orientation Orientation
@@ -42,7 +42,7 @@ namespace Aura.UI.Behaviors
                 AssociatedObject.AddHandler(InputElement.PointerMovedEvent, Moved, RoutingStrategies.Tunnel);
             }
         }
-        
+
         protected override void OnDetaching()
         {
             base.OnDetaching();
@@ -108,9 +108,9 @@ namespace Aura.UI.Behaviors
                 {
                     container.RenderTransform = new TranslateTransform();
                 }
-  
+
                 i++;
-            }  
+            }
         }
 
         private void RemoveTransforms(ItemsControl? itemsControl)
@@ -129,9 +129,9 @@ namespace Aura.UI.Behaviors
                 {
                     container.RenderTransform = null;
                 }
-  
+
                 i++;
-            }  
+            }
         }
 
         private void MoveDraggedItem(ItemsControl? itemsControl, int draggedIndex, int targetIndex)
@@ -164,11 +164,11 @@ namespace Aura.UI.Behaviors
 
             if (orientation == Orientation.Horizontal)
             {
-                ((TranslateTransform) _draggedContainer.RenderTransform).X = delta;
+                ((TranslateTransform)_draggedContainer.RenderTransform).X = delta;
             }
             else
             {
-                ((TranslateTransform) _draggedContainer.RenderTransform).Y = delta;
+                ((TranslateTransform)_draggedContainer.RenderTransform).Y = delta;
             }
 
             _draggedIndex = _itemsControl.ItemContainerGenerator.IndexFromContainer(_draggedContainer);
@@ -176,10 +176,10 @@ namespace Aura.UI.Behaviors
 
             var draggedBounds = _draggedContainer.Bounds;
 
-            var draggedStart = orientation == Orientation.Horizontal ? 
+            var draggedStart = orientation == Orientation.Horizontal ?
                 draggedBounds.X : draggedBounds.Y;
 
-            var draggedDeltaStart = orientation == Orientation.Horizontal ? 
+            var draggedDeltaStart = orientation == Orientation.Horizontal ?
                 draggedBounds.X + delta : draggedBounds.Y + delta;
 
             var draggedDeltaEnd = orientation == Orientation.Horizontal ?
@@ -198,10 +198,10 @@ namespace Aura.UI.Behaviors
 
                 var targetBounds = targetContainer.Bounds;
 
-                var targetStart = orientation == Orientation.Horizontal ? 
+                var targetStart = orientation == Orientation.Horizontal ?
                     targetBounds.X : targetBounds.Y;
 
-                var targetMid = orientation == Orientation.Horizontal ? 
+                var targetMid = orientation == Orientation.Horizontal ?
                     targetBounds.X + targetBounds.Width / 2 : targetBounds.Y + targetBounds.Height / 2;
 
                 var targetIndex = _itemsControl.ItemContainerGenerator.IndexFromContainer(targetContainer);
@@ -210,15 +210,15 @@ namespace Aura.UI.Behaviors
                 {
                     if (orientation == Orientation.Horizontal)
                     {
-                        ((TranslateTransform) targetContainer.RenderTransform).X = -draggedBounds.Width;
+                        ((TranslateTransform)targetContainer.RenderTransform).X = -draggedBounds.Width;
                     }
                     else
                     {
-                        ((TranslateTransform) targetContainer.RenderTransform).Y = -draggedBounds.Height;
+                        ((TranslateTransform)targetContainer.RenderTransform).Y = -draggedBounds.Height;
                     }
 
-                    _targetIndex = _targetIndex == -1 ? 
-                        targetIndex : 
+                    _targetIndex = _targetIndex == -1 ?
+                        targetIndex :
                         targetIndex > _targetIndex ? targetIndex : _targetIndex;
                     Debug.WriteLine($"Moved Right {_draggedIndex} -> {_targetIndex}");
                 }
@@ -226,15 +226,15 @@ namespace Aura.UI.Behaviors
                 {
                     if (orientation == Orientation.Horizontal)
                     {
-                        ((TranslateTransform) targetContainer.RenderTransform).X = draggedBounds.Width;
+                        ((TranslateTransform)targetContainer.RenderTransform).X = draggedBounds.Width;
                     }
                     else
                     {
-                        ((TranslateTransform) targetContainer.RenderTransform).Y = draggedBounds.Height;
+                        ((TranslateTransform)targetContainer.RenderTransform).Y = draggedBounds.Height;
                     }
 
-                    _targetIndex = _targetIndex == -1 ? 
-                        targetIndex : 
+                    _targetIndex = _targetIndex == -1 ?
+                        targetIndex :
                         targetIndex < _targetIndex ? targetIndex : _targetIndex;
                     Debug.WriteLine($"Moved Left {_draggedIndex} -> {_targetIndex}");
                 }
@@ -242,11 +242,11 @@ namespace Aura.UI.Behaviors
                 {
                     if (orientation == Orientation.Horizontal)
                     {
-                        ((TranslateTransform) targetContainer.RenderTransform).X = 0;
+                        ((TranslateTransform)targetContainer.RenderTransform).X = 0;
                     }
                     else
                     {
-                        ((TranslateTransform) targetContainer.RenderTransform).Y = 0;
+                        ((TranslateTransform)targetContainer.RenderTransform).Y = 0;
                     }
                 }
 

@@ -35,7 +35,7 @@ namespace Aura.UI.Controls
 
             switch (BadgePosition)
             {
-                case BadgePosition.Right: 
+                case BadgePosition.Right:
                     right = -badgePresenter.Bounds.Width / 2;
                     BadgeVerticalAlignment = VerticalAlignment.Center;
                     BadgeHorizontalAlignment = HorizontalAlignment.Right;

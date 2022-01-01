@@ -22,10 +22,10 @@ namespace Aura.UI.Controls
         protected override IItemContainerGenerator CreateItemContainerGenerator()
         {
             return new CardCollectionItemContainerGenerator<CardControl>(
-                this, 
+                this,
                 CardControl.ContentProperty,
-                CardControl.ContentTemplateProperty, 
-                CardControl.HeaderProperty, 
+                CardControl.ContentTemplateProperty,
+                CardControl.HeaderProperty,
                 CardControl.SecondaryHeaderProperty,
                 CardControl.CommandProperty,
                 CardControl.CommandParameterProperty);

@@ -37,12 +37,12 @@ namespace Aura.UI.Controls
         protected override IItemContainerGenerator CreateItemContainerGenerator()
             => new AuraTabItemContainerGenerator(
                 this,
-                AuraTabItem.ContentProperty, 
-                AuraTabItem.ContentTemplateProperty, 
-                AuraTabItem.HeaderProperty, 
+                AuraTabItem.ContentProperty,
+                AuraTabItem.ContentTemplateProperty,
+                AuraTabItem.HeaderProperty,
                 AuraTabItem.IconProperty,
                 AuraTabItem.IsClosableProperty);
-        
+
 
         protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
         {

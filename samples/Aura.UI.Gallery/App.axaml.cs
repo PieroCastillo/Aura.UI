@@ -21,7 +21,7 @@ namespace Aura.UI.Gallery
     {
         public override void Initialize()
         {
-            var settings_prov = new SettingsProvider(); 
+            var settings_prov = new SettingsProvider();
             Settings = settings_prov.Load<AppSettings>();
 
             switch (Settings.Theme)
@@ -42,18 +42,18 @@ namespace Aura.UI.Gallery
         {
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
-                
-                desktop.MainWindow = new MainWindow 
+
+                desktop.MainWindow = new MainWindow
                 {
                     DataContext = new MainWindowViewModel()
                 };
-                
+
                 desktop.Exit += (s, e) =>
                 {
                     new SettingsProvider().Save(Settings);
                 };
             }
-            else if(ApplicationLifetime is ISingleViewApplicationLifetime single)
+            else if (ApplicationLifetime is ISingleViewApplicationLifetime single)
             {
                 single.MainView = new MainView();
             }
@@ -87,7 +87,7 @@ namespace Aura.UI.Gallery
 
                 Settings.Theme = theme;
             }
-            catch(Exception e)
+            catch (Exception)
             {
                 Console.WriteLine($"some error has executed");
             }

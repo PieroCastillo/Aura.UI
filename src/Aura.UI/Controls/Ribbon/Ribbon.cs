@@ -133,7 +133,7 @@ namespace Aura.UI.Controls.Ribbon
 
         public static readonly StyledProperty<object> LeftContentProperty =
              AvaloniaProperty.Register<Ribbon, object>(nameof(LeftContent), "Left");
-        
+
         /// <summary>
         /// Gets or Sets if the Left content is visible.
         /// </summary>

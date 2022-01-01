@@ -63,7 +63,7 @@ namespace Aura.UI.Controls
 
         private static void UpdateRadius(AvaloniaPropertyChangedEventArgs e)
         {
-            if(e.Sender is RadialSlider r)
+            if (e.Sender is RadialSlider r)
             {
                 r.Radius = (r.Bounds.Width - (r.StrokeWidth * 2)) / 2;
                 Debug.WriteLine("radius updated");

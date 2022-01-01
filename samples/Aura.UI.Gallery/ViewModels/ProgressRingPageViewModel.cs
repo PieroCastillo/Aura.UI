@@ -31,7 +31,7 @@ namespace Aura.UI.Gallery.ViewModels
             set => this.RaiseAndSetIfChanged(ref _currentValue, value);
         }
 
-        public bool IsRunning 
+        public bool IsRunning
         {
             get => _running;
             set => this.RaiseAndSetIfChanged(ref _running, value);

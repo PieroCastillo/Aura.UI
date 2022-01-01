@@ -18,7 +18,7 @@ namespace Aura.UI.Services
             {
                 var layer = OverlayLayer.GetOverlayLayer(window);
                 dialog.Width = layer.Bounds.Width;
-                dialog.Height =  layer.Bounds.Height;
+                dialog.Height = layer.Bounds.Height;
                 window.PropertyChanged += (s, e) =>
                 {
                     dialog.Width = layer.Bounds.Width;

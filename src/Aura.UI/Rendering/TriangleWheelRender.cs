@@ -23,7 +23,7 @@ namespace Aura.UI.Rendering
             a = new(info.Width / 2, StrokeWidth);
             b = a.Rotate(center, 120);
             c = b.Rotate(center, 120);
-            r = SKMaths.DistanceBetweenTwoPoints(a,b) / 100;
+            r = SKMaths.DistanceBetweenTwoPoints(a, b) / 100;
         }
 
         public override bool HitTest(Point p) => SKMaths.TriangleContains(a, b, c, p.ToSKPoint());

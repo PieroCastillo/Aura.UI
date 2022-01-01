@@ -33,7 +33,7 @@ namespace Aura.UI.Controls
 
         void SourceChanged(object obj)
         {
-            if(Source is not null)
+            if (Source is not null)
             {
                 Source.Save(stream);
             }
@@ -74,7 +74,7 @@ namespace Aura.UI.Controls
 
             //    var interpolationMode = RenderOptions.GetBitmapInterpolationMode(this);
             context.Custom(new BlurImageRender(stream, dstRect, srcRect, BlurLevel, BlurLevel, null));
-               // Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
+            // Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
             //}
         }
 

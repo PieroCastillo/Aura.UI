@@ -14,7 +14,7 @@ namespace NavigationViewMVVMSample.ViewModels
 
 
 
-        public ObservableCollection<NavigationItemViewModel> NavigationItems 
+        public ObservableCollection<NavigationItemViewModel> NavigationItems
         {
             get => _navigationItems;
             set => this.RaiseAndSetIfChanged(ref _navigationItems, value);

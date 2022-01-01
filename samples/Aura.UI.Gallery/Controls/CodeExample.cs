@@ -41,7 +41,7 @@ namespace Aura.UI.Gallery.Controls
                 }
             }
         }
-        
+
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
@@ -101,7 +101,7 @@ namespace Aura.UI.Gallery.Controls
             get => GetValue(TitleProperty);
             set => SetValue(TitleProperty, value);
         }
-        public static readonly StyledProperty<string> TitleProperty = 
+        public static readonly StyledProperty<string> TitleProperty =
             AvaloniaProperty.Register<CodeExample, string>(nameof(Title));
         public string TitleTwo
         {
@@ -110,7 +110,7 @@ namespace Aura.UI.Gallery.Controls
         }
         public static readonly StyledProperty<string> TitleTwoProperty =
             AvaloniaProperty.Register<CodeExample, string>(nameof(TitleTwo));
-        
+
         IAvaloniaReadOnlyList<ILogical> ILogical.LogicalChildren => this.LogicalChildren;
     }
 }

@@ -93,7 +93,7 @@ namespace Aura.UI.Controls.Painting
 
         private void UpdatePositionsCore(double x, double y)
         {
-            if (Maths.TriangleContains(a,b,c, new Point(x, y)))
+            if (Maths.TriangleContains(a, b, c, new Point(x, y)))
             {
                 XPosition = x;
                 YPosition = y;

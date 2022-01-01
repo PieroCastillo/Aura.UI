@@ -10,7 +10,7 @@ namespace Aura.UI.Controls.Primitives
         protected override void OnPointerPressed(PointerPressedEventArgs e)
         {
             base.OnPointerPressed(e);
-            
+
             PseudoClasses.Add(":pressed");
         }
 

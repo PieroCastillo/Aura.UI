@@ -94,11 +94,11 @@ namespace Aura.UI.Controls.Generators
                     TabControl.ContentTemplateProperty));
             }
 
-            if(item is IAuraTabItemTemplate tab)
+            if (item is IAuraTabItemTemplate tab)
             {
-                if(tab.Icon is not null)
+                if (tab.Icon is not null)
                     tabItem.SetValue(IconProperty, tab.Icon, BindingPriority.Style);
-                
+
                 tabItem.SetValue(IsClosableProperty, tab.IsClosable, BindingPriority.Style);
             }
 

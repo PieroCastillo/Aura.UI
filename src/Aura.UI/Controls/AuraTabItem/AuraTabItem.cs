@@ -34,7 +34,7 @@ namespace Aura.UI.Controls
                 }
             });
         }
-        
+
         private void UpdatePseudoClass(AuraTabItem item, AvaloniaPropertyChangedEventArgs e)
         {
             if (item.IsSelected == false)
@@ -45,8 +45,8 @@ namespace Aura.UI.Controls
 
         internal bool CloseCore()
         {
-            if(Parent is TabControl x)
-            { 
+            if (Parent is TabControl x)
+            {
                 try
                 {
                     x.CloseTab(this);

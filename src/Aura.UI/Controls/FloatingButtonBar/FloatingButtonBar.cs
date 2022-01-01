@@ -55,8 +55,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public IDataTemplate IconTemplate
         {
-            get => GetValue(IconTemplateProperty); 
-            set => SetValue(IconTemplateProperty, value); 
+            get => GetValue(IconTemplateProperty);
+            set => SetValue(IconTemplateProperty, value);
         }
 
 
@@ -71,8 +71,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public HorizontalAlignment HorizontalIconAlignment
         {
-            get => GetValue(HorizontalIconAlignmentProperty); 
-            set => SetValue(HorizontalIconAlignmentProperty, value); 
+            get => GetValue(HorizontalIconAlignmentProperty);
+            set => SetValue(HorizontalIconAlignmentProperty, value);
         }
 
 
@@ -87,8 +87,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public VerticalAlignment VerticalIconAlignment
         {
-            get => GetValue(VerticalIconAlignmentProperty); 
-            set => SetValue(VerticalIconAlignmentProperty, value); 
+            get => GetValue(VerticalIconAlignmentProperty);
+            set => SetValue(VerticalIconAlignmentProperty, value);
         }
 
 
@@ -103,8 +103,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public Thickness IconMargin
         {
-            get => GetValue(IconMarginProperty); 
-            set => SetValue(IconMarginProperty, value); 
+            get => GetValue(IconMarginProperty);
+            set => SetValue(IconMarginProperty, value);
         }
 
         /// <summary>
@@ -118,8 +118,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public IBrush IconForeground
         {
-            get => GetValue(IconForegroundProperty); 
-            set => SetValue(IconForegroundProperty, value); 
+            get => GetValue(IconForegroundProperty);
+            set => SetValue(IconForegroundProperty, value);
         }
 
 
@@ -135,8 +135,8 @@ namespace Aura.UI.Controls
         /// </summary>
         public IBrush IconBackground
         {
-            get => GetValue(IconBackgroundProperty); 
-            set => SetValue(IconBackgroundProperty, value); 
+            get => GetValue(IconBackgroundProperty);
+            set => SetValue(IconBackgroundProperty, value);
         }
 
 

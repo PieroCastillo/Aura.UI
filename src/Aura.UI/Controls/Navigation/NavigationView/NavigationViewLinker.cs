@@ -10,7 +10,7 @@ namespace Aura.UI.Controls.Navigation
     [PseudoClasses(":pressed")]
     public partial class NavigationViewLinker : ContentControl
     {
-        private bool _pointerOver; 
+        private bool _pointerOver;
 
         public NavigationViewLinker()
         {

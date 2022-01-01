@@ -21,7 +21,7 @@ using Avalonia.Threading;
 
 namespace Aura.UI.Controls.Navigation
 {
-    [PseudoClasses(":normal",":compact")]
+    [PseudoClasses(":normal", ":compact")]
     public partial class NavigationView : TreeView, IItemsPresenterHost, IContentPresenterHost, IHeadered
     {
         private Button _headeritem;
@@ -37,7 +37,7 @@ namespace Aura.UI.Controls.Navigation
             IsOpenProperty.Changed.AddClassHandler<NavigationView>((x, e) => x.OnIsOpenChanged(x, e));
             IsFloatingHeaderProperty.Changed.Subscribe(x =>
             {
-                if(x.Sender is NavigationView nw)
+                if (x.Sender is NavigationView nw)
                     nw.UpdateHeaderVisibility();
             });
         }
@@ -45,7 +45,7 @@ namespace Aura.UI.Controls.Navigation
         public NavigationView()
         {
             PseudoClasses.Add(":normal");
-            this.GetObservable(BoundsProperty).Subscribe(async (bounds)=>
+            this.GetObservable(BoundsProperty).Subscribe(async (bounds) =>
             {
                 await Dispatcher.UIThread.InvokeAsync(() => OnBoundsChanged(bounds));
             });
@@ -94,7 +94,7 @@ namespace Aura.UI.Controls.Navigation
                 PseudoClasses.Add(":normal");
             }
 
-            if(SelectedItem is not null)
+            if (SelectedItem is not null)
                 (SelectedItem as ISelectable).IsSelected = false;
 
             (item as ISelectable).IsSelected = true;
@@ -120,7 +120,7 @@ namespace Aura.UI.Controls.Navigation
         }
 
         private void UpdateHeaderVisibility() => HeaderVisible = IsOpen | IsFloatingHeader;
-        
+
         protected void OnSelectedItemChanged(object sender, AvaloniaPropertyChangedEventArgs e)
         {
             UpdateTitleAndSelectedContent();
@@ -131,7 +131,7 @@ namespace Aura.UI.Controls.Navigation
             base.OnApplyTemplate(e);
 
             _headeritem = this.GetControl<Button>(e, "PART_HeaderItem");
-            _splitVw = this.GetControl<SplitView>(e,"split");
+            _splitVw = this.GetControl<SplitView>(e, "split");
 
             _headeritem.Click += delegate
             {
@@ -166,7 +166,7 @@ namespace Aura.UI.Controls.Navigation
             if (Items is IList l && l.Count >= 1 && l[0] is ISelectable s)
                 SelectSingleItem(s);
         }
-        
+
 
         ///<inheritdoc/>
         IAvaloniaList<ILogical> IContentPresenterHost.LogicalChildren => LogicalChildren;

@@ -19,7 +19,7 @@ namespace Aura.UI.Controls
         /// </summary>
         public static readonly StyledProperty<IImage> IconProperty =
             AvaloniaProperty.Register<AuraTabItem, IImage>(nameof(Icon));
-        
+
         /// <summary>
         /// This property sets if the AuraTabItem can be closed
         /// </summary>
@@ -55,7 +55,7 @@ namespace Aura.UI.Controls
         /// <summary>
         /// Gets or Sets the CornerRadius
         /// </summary>
-        public CornerRadius CornerRadius
+        public new CornerRadius CornerRadius
         {
             get => GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
@@ -64,7 +64,7 @@ namespace Aura.UI.Controls
         /// <summary>
         /// Defines the <see cref="CornerRadius"/> property.
         /// </summary>
-        public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
+        public static new readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<MaterialButton, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
 
         public bool CanBeDragged

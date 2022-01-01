@@ -91,7 +91,7 @@ namespace Aura.UI.Controls
         /// </summary>
         public VerticalAlignment VerticalContentAlignment
         {
-            get => GetValue(VerticalContentAlignmentProperty); 
+            get => GetValue(VerticalContentAlignmentProperty);
             set => SetValue(VerticalContentAlignmentProperty, value);
         }
 
@@ -135,10 +135,10 @@ namespace Aura.UI.Controls
         protected override void OnDragDelta(VectorEventArgs e)
         {
             //base.OnDragDelta(e);
-            
+
             double delta_v, delta_h;
 
-            switch(e.Vector.Y < Bounds.Height - MinHeight)
+            switch (e.Vector.Y < Bounds.Height - MinHeight)
             {
                 case true:
                     delta_v = e.Vector.Y;
@@ -147,7 +147,7 @@ namespace Aura.UI.Controls
                     delta_v = Bounds.Height - MinHeight;
                     break;
             }
-            switch(e.Vector.X < Bounds.Width + MinWidth)
+            switch (e.Vector.X < Bounds.Width + MinWidth)
             {
                 case true:
                     delta_h = e.Vector.X;
@@ -156,7 +156,7 @@ namespace Aura.UI.Controls
                     delta_h = Bounds.Width - MinWidth;
                     break;
             }
-            
+
             Canvas.SetTop(this, Canvas.GetTop(this) + delta_v);
             Canvas.SetLeft(this, Canvas.GetLeft(this) + delta_h);
         }

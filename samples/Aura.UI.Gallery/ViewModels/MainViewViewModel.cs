@@ -64,7 +64,7 @@ namespace Aura.UI.Gallery.ViewModels
         public string Badge => GetTitle();
         public string RadialSlider => GetTitle();
 
-        public string GetTitle([CallerMemberName]string title = "title") => title;
+        public string GetTitle([CallerMemberName] string title = "title") => title;
     }
 
     public class NavigationViewItemViewModel

@@ -12,13 +12,13 @@ namespace Aura.UI.Controls
         /// <summary>
         /// Defines the CornerRadious
         /// </summary>
-        public CornerRadius CornerRadius
+        public new CornerRadius CornerRadius
         {
             get => GetValue(CornerRadiusProperty);
             set => SetValue(CornerRadiusProperty, value);
         }
 
-        public static readonly StyledProperty<CornerRadius> CornerRadiusProperty =
+        public static new readonly StyledProperty<CornerRadius> CornerRadiusProperty =
             AvaloniaProperty.Register<GroupBox, CornerRadius>(nameof(CornerRadius), new CornerRadius(7));
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30413.136
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E0772EFF-1A2A-466C-83C7-A81D93213336}"
 EndProject
@@ -39,7 +39,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVVMSamples", "MVVMSamples"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuraTabViewMVVMSample", "MVVMSamples\AuraTabViewMVVMSample\AuraTabViewMVVMSample.csproj", "{256CA0FF-8EE2-4774-8222-F9C922D04A75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NavigationViewMVVMSample", "MVVMSamples\NavigationViewMVVMSample\NavigationViewMVVMSample.csproj", "{CBBB0D12-B6FF-4BBB-BCEF-25607041482B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NavigationViewMVVMSample", "MVVMSamples\NavigationViewMVVMSample\NavigationViewMVVMSample.csproj", "{CBBB0D12-B6FF-4BBB-BCEF-25607041482B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aura.UI.Gallery.Desktop", "Aura.UI.Gallery.Desktop\Aura.UI.Gallery.Desktop.csproj", "{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -225,6 +227,30 @@ Global
 		{CBBB0D12-B6FF-4BBB-BCEF-25607041482B}.Release|x64.Build.0 = Release|Any CPU
 		{CBBB0D12-B6FF-4BBB-BCEF-25607041482B}.Release|x86.ActiveCfg = Release|Any CPU
 		{CBBB0D12-B6FF-4BBB-BCEF-25607041482B}.Release|x86.Build.0 = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|ARM.Build.0 = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|x64.Build.0 = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Debug|x86.Build.0 = Debug|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|ARM.ActiveCfg = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|ARM.Build.0 = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|iPhone.Build.0 = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|x64.ActiveCfg = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|x64.Build.0 = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|x86.ActiveCfg = Release|Any CPU
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -237,6 +263,7 @@ Global
 		{CFE5CF74-CA5A-4DF0-ACC4-2F80F2F676A4} = {3AF1E581-2ACF-4F42-BC10-12BACF221499}
 		{256CA0FF-8EE2-4774-8222-F9C922D04A75} = {9B4AF7D2-605C-4E69-901C-CF706E417951}
 		{CBBB0D12-B6FF-4BBB-BCEF-25607041482B} = {9B4AF7D2-605C-4E69-901C-CF706E417951}
+		{E6899435-BE1C-4DC2-A487-BAAD7A5505DA} = {3AF1E581-2ACF-4F42-BC10-12BACF221499}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B04BDC4F-181C-461F-BB14-4E7516DB6B4A}

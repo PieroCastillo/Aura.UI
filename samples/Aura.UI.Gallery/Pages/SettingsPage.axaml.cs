@@ -12,24 +12,24 @@ namespace Aura.UI.Gallery.Pages
         {
             InitializeComponent();
 
-            if(Application.Current is App app)
+            if (Application.Current is App app)
             {
                 switch (app.GetTheme())
                 {
-                    case Theme.Light: 
+                    case Theme.Light:
                         PART_DarkOption.IsChecked = false;
                         PART_LightOption.IsChecked = true;
                         break;
                     case Theme.Dark:
                         PART_DarkOption.IsChecked = true;
-                        PART_LightOption.IsChecked =  false;
+                        PART_LightOption.IsChecked = false;
                         break;
                 }
             }
 
             PART_DarkOption.Checked += async (s, e) =>
             {
-                if(Application.Current is App app)
+                if (Application.Current is App app)
                 {
                     Debug.WriteLine("dark checked");
                     await app.SetTheme(Theme.Dark);
@@ -44,7 +44,7 @@ namespace Aura.UI.Gallery.Pages
                     await app.SetTheme(Theme.Light);
                 }
             };
-            
+
         }
     }
 }

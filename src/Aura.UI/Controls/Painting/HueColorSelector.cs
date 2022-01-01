@@ -26,7 +26,7 @@ namespace Aura.UI.Controls.Painting
         {
             this.GetObservable(ValueProperty).Subscribe((d) =>
             {
-                RawColor = new HSV(Value, 1,1).ToColor();
+                RawColor = new HSV(Value, 1, 1).ToColor();
             });
         }
 

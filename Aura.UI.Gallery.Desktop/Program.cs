@@ -3,7 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
 using System;
 
-namespace Aura.UI.Gallery
+namespace Aura.UI.Gallery.Desktop
 {
     class Program
     {
@@ -20,9 +20,9 @@ namespace Aura.UI.Gallery
                 .UsePlatformDetect()
                 .UseSkia()
                 .UseReactiveUI()
-                .With(new X11PlatformOptions() { UseDeferredRendering = true})
-                .With(new MacOSPlatformOptions() { ShowInDock = true})
-                .With(new Win32PlatformOptions() {  AllowEglInitialization = true, UseDeferredRendering = true })
+                .With(new X11PlatformOptions() { UseDeferredRendering = true })
+                .With(new MacOSPlatformOptions() { ShowInDock = true })
+                .With(new Win32PlatformOptions() { AllowEglInitialization = true, UseDeferredRendering = true })
                 .LogToTrace();
     }
 }

@@ -25,7 +25,7 @@ namespace Aura.UI.Controls
             AvaloniaProperty.RegisterDirect<Badge, HorizontalAlignment>(nameof(BadgeHorizontalAlignment), o => o.BadgeHorizontalAlignment);
         public static readonly DirectProperty<Badge, Thickness> BadgeThicknessProperty =
             AvaloniaProperty.RegisterDirect<Badge, Thickness>(nameof(BadgeThickness), o => o.BadgeThickness);
-        
+
         public object BadgeContent
         {
             get => GetValue(BadgeContentProperty);

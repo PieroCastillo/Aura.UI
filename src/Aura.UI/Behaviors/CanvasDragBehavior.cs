@@ -26,7 +26,7 @@ namespace Aura.UI.Behaviors
                 AssociatedObject.AddHandler(InputElement.PointerMovedEvent, Moved, RoutingStrategies.Tunnel);
             }
         }
-        
+
         protected override void OnDetaching()
         {
             base.OnDetaching();
@@ -52,7 +52,7 @@ namespace Aura.UI.Behaviors
                 [AdornerLayer.AdornedElementProperty] = control
             };
 
-            ((ISetLogicalParent) _adorner).SetParent(control);
+            ((ISetLogicalParent)_adorner).SetParent(control);
             layer.Children.Add(_adorner);
         }
 
@@ -65,7 +65,7 @@ namespace Aura.UI.Behaviors
             }
 
             layer.Children.Remove(_adorner);
-            ((ISetLogicalParent) _adorner).SetParent(null);
+            ((ISetLogicalParent)_adorner).SetParent(null);
             _adorner = null;
         }
 

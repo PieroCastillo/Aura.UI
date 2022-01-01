@@ -14,7 +14,7 @@ namespace Aura.UI.Behaviors
             {
                 return;
             }
- 
+
             var bounds = adornedElement.Bounds;
             var brush = new SolidColorBrush(Colors.White) { Opacity = 0.5 };
             var pen = new Pen(new SolidColorBrush(Colors.Black), 1.5);
