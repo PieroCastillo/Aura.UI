@@ -1,9 +1,8 @@
+﻿using System;
 using Avalonia;
-using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
-using System;
 
-namespace Aura.UI.Gallery.Desktop
+namespace Aura.UI.Gallery.NetCore
 {
     class Program
     {
@@ -18,11 +17,22 @@ namespace Aura.UI.Gallery.Desktop
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
-                .UseSkia()
-                .UseReactiveUI()
-                .With(new X11PlatformOptions() { UseDeferredRendering = true })
-                .With(new MacOSPlatformOptions() { ShowInDock = true })
-                .With(new Win32PlatformOptions() { AllowEglInitialization = true, UseDeferredRendering = true })
-                .LogToTrace();
+                .With(new Win32PlatformOptions 
+                {
+                    AllowEglInitialization = true, 
+                    UseDeferredRendering = true,
+                    OverlayPopups = true,
+                    UseWindowsUIComposition = true
+                })
+                .With(new X11PlatformOptions
+                {
+                    OverlayPopups = true
+                })
+                .With(new MacOSPlatformOptions
+                {
+                    ShowInDock = true
+                })
+                .LogToTrace()
+                .UseReactiveUI();
     }
 }

@@ -55,7 +55,10 @@ namespace Aura.UI.Gallery
             }
             else if (ApplicationLifetime is ISingleViewApplicationLifetime single)
             {
-                single.MainView = new MainView();
+                single.MainView = new MainView()
+                {
+                    DataContext = new MainWindowViewModel()
+                };
             }
 
             base.OnFrameworkInitializationCompleted();

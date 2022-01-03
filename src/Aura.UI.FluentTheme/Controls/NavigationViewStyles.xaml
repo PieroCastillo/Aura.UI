@@ -81,6 +81,7 @@
 							<Border Name="PART_ShadowBorder">
 								<ExperimentalAcrylicBorder Name="PART_AcrylicBorder"
 								                           Padding="0,0"
+                                           HorizontalAlignment="Stretch"
 								                           Material="{Binding $parent[NavigationView].PanelMaterial}">
 									<Grid RowDefinitions="auto,auto,auto,*">
 										<Border Grid.Row="1" 

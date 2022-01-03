@@ -56,20 +56,10 @@
 				<Border Name="PART_Border"
 				        BorderThickness="{TemplateBinding BorderThickness}">
 					<Grid RowDefinitions="*,auto">
-						<!-- <Grid.Styles> -->
-						<!-- 	<Style Selector="PressedGrid:pressed#PART_Grid"> -->
-						<!-- 		<Setter Property="RenderTransform" Value="scale(0.98)"/> -->
-						<!-- 	</Style> -->
-						<!-- </Grid.Styles> -->
 						<PressedGrid Grid.Row="0"
 						      ColumnDefinitions="auto,*"
 						      Name="PART_Grid" 
 						      Background="{TemplateBinding Background}">
-							<!-- <PressedGrid.Transitions> -->
-							<!-- 	<Transitions> -->
-							<!-- 		<TransformOperationsTransition Property="RenderTransform" Duration="0:0:.075" /> -->
-							<!-- 	</Transitions> -->
-							<!-- </PressedGrid.Transitions> -->
 							<Grid Name="PART_InternalGrid"
 								  Grid.Column="1"
 							      ColumnDefinitions="auto,*"
@@ -148,9 +138,6 @@
 		<Setter Property="Margin" Value="0"/>
 	</Style>
 	
-	<!-- <Style Selector="NavigationViewItemBase[IsOpen=false]"> -->
-	<!-- 	<Setter Property="ToolTip.Tip" Value="{Binding $self.Header}" /> -->
-	<!-- </Style> -->
 	
 	<Style Selector=":is(NavigationViewItemBase)[IsOpen=True] /template/ Grid#PART_ContainerGrid">
 		<Style.Animations>

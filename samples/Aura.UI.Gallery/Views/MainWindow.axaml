@@ -7,7 +7,7 @@
 				x:Name="win"
 				x:Class="Aura.UI.Gallery.Views.MainWindow"
 				TransparencyLevelHint="{Binding #combobox.SelectedItem.Content}"
-        Background="{x:Null}"
+        Background="Transparent"
 				WindowState="Maximized"
         WindowStartupLocation="CenterScreen"
         Icon="avares://Aura.UI.Gallery/Assets/AuraUILogo_icon.png"
@@ -15,10 +15,12 @@
 		    ExtendClientAreaToDecorationsHint="true"
         ExtendClientAreaChromeHints="PreferSystemChrome"
         ExtendClientAreaTitleBarHeightHint="-1"
-        Title="Aura.UI Gallery"
+        Title="Aura.UI Gallery" 
+        TransparencyBackgroundFallback="Transparent"
         Classes="us_c"> <!-- MinWidth="1171"  -->
   <Grid Margin="{Binding #win.OffScreenMargin}" >
     <vw:MainView/>
+  
     <Border Name="DragBorder"
             Background="Transparent" 
             VerticalAlignment="Top" 
@@ -36,6 +38,7 @@
         <ComboBoxItem>Transparent</ComboBoxItem>
         <ComboBoxItem>Blur</ComboBoxItem>
         <ComboBoxItem Name="s">AcrylicBlur</ComboBoxItem>
+        <ComboBoxItem>Mica</ComboBoxItem>
       </ComboBox>
     </StackPanel>
   </Grid>
