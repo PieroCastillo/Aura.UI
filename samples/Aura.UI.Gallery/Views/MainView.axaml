@@ -110,9 +110,7 @@
             <NavigationViewLinker Icon="{DynamicResource Material.CircleSlice}"
                         Title="{Binding Titles.RadialSlider}" LinkTo="{Binding #radialSlider}"
                         Content="{Binding Descriptions.RadialSlider}" TopContent="Updated"/>
-            <NavigationViewLinker Icon="{DynamicResource FluentIcons.badge_regular}"
-                        Title="{Binding Titles.Badge}" LinkTo="{Binding #badge}"
-                        Content="{Binding Descriptions.Badge}" TopContent="New"/>
+
           </flex:FlexPanel>
         </GroupBox>
       </NavigationViewItem.Content>
@@ -140,12 +138,6 @@
           <pg:RadialSliderPage/>
         </NavigationViewItem.Content>
       </NavigationViewItem>
-      <NavigationViewItem Name="badge" Header="{Binding Titles.Badge}" Title="{Binding Titles.Badge}"
-                          Icon="{DynamicResource FluentIcons.badge_regular}">
-        <NavigationViewItem.Content>
-          <pg:BadgePage/>
-        </NavigationViewItem.Content>
-      </NavigationViewItem>
     </NavigationViewItem>
     <NavigationViewItem Header="Layout" Title="Layout"
                  Icon="{DynamicResource BoxIcons.RegularLayout}">
@@ -164,7 +156,10 @@
                           Content="{Binding Descriptions.GroupBox}"/>
             <NavigationViewLinker Icon="{DynamicResource Material.CardsOutline}"
                         Title="{Binding Titles.CardCollection}" LinkTo="{Binding #cc}"
-                        Content="{Binding Descriptions.CardCollection}"/>
+                        Content="{Binding Descriptions.CardCollection}"/> 
+            <NavigationViewLinker Icon="{DynamicResource FluentIcons.badge_regular}"
+                        Title="{Binding Titles.Badge}" LinkTo="{Binding #badge}"
+                        Content="{Binding Descriptions.Badge}" TopContent="New"/>
           </flex:FlexPanel>
         </GroupBox>
       </NavigationViewItem.Content>
@@ -178,6 +173,12 @@
                    Icon="{DynamicResource Material.CardsOutline}">
         <NavigationViewItem.Content>
           <pg:CardControlPage/>
+        </NavigationViewItem.Content>
+      </NavigationViewItem>    
+      <NavigationViewItem Name="badge" Header="{Binding Titles.Badge}" Title="{Binding Titles.Badge}"
+                          Icon="{DynamicResource FluentIcons.badge_regular}">
+        <NavigationViewItem.Content>
+          <pg:BadgePage/>
         </NavigationViewItem.Content>
       </NavigationViewItem>
     </NavigationViewItem>
