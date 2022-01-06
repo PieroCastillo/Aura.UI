@@ -64,7 +64,7 @@
 		<!--NavigationViewItem Resources-->
 		<SolidColorBrush x:Key="NavigationViewItemSelectedBrush" Color="{DynamicResource SystemAccentColorLight1}"/>
 		<SolidColorBrush x:Key="NavigationViewItemForeground" Color="{DynamicResource SystemBaseHighColor}"/>
-		<SolidColorBrush x:Key="NavigationViewItemPointerOver" Color="{DynamicResource SystemAltLowColor}" Opacity="0.5"/>
+		<SolidColorBrush x:Key="NavigationViewItemPointerOver" Color="{DynamicResource SystemAltLowColor}" Opacity="0.8"/>
 		<!--NavigationViewLinker Resources-->
 		<SolidColorBrush x:Key="NavigationViewLinkerTitleForeground" Color="{DynamicResource SystemAccentColor}"/>
 		<SolidColorBrush x:Key="NavigationViewLinkerTitleForegroundLow" Color="{DynamicResource SystemBaseMediumLowColor}"/>

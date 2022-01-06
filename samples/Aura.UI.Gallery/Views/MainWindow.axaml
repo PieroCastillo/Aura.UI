@@ -37,8 +37,8 @@
         <ComboBoxItem>None</ComboBoxItem>
         <ComboBoxItem>Transparent</ComboBoxItem>
         <ComboBoxItem>Blur</ComboBoxItem>
-        <ComboBoxItem Name="s">AcrylicBlur</ComboBoxItem>
-        <ComboBoxItem>Mica</ComboBoxItem>
+        <ComboBoxItem>AcrylicBlur</ComboBoxItem>
+        <ComboBoxItem Name="s">Mica</ComboBoxItem>
       </ComboBox>
     </StackPanel>
   </Grid>

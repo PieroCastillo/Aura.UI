@@ -31,6 +31,8 @@
     <Thickness x:Key="NavigationViewHeaderMargin">20 10 0 0</Thickness>
 		<!--NavigationViewItem Resources-->
     <Thickness x:Key="NavigationViewItemIconMargin">12.5</Thickness>
+    <Thickness x:Key="NavigationViewItemIconPadding">2.5</Thickness>
+    <CornerRadius x:Key="NavigationViewItemCornerRadius">15</CornerRadius>
 		<!--NavigationViewLinker Resources-->
 		<CornerRadius x:Key="NavigationViewLinkerTitleCornerRadius">5</CornerRadius>
     <!--Page Resources-->
