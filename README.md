@@ -48,12 +48,12 @@ Aura.UI.
 
 Open the terminal on the root folder of your project and write <br/>
 ```cmd
-dotnet package Aura.UI --version 0.1.4.2
+dotnet add package Aura.UI --version 0.1.4.2
 ```
 
 And don't forget install the Styles
 ```cmd
-dotnet package Aura.UI.FluentTheme --version 0.1.4.2
+dotnet add package Aura.UI.FluentTheme --version 0.1.4.2
 ```
 
 
