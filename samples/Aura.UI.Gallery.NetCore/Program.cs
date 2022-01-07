@@ -20,9 +20,8 @@ namespace Aura.UI.Gallery.NetCore
                 .With(new Win32PlatformOptions 
                 {
                     AllowEglInitialization = true, 
-                    UseDeferredRendering = true,
+                    UseDeferredRendering = true, 
                     OverlayPopups = true,
-                    UseWindowsUIComposition = true
                 })
                 .With(new X11PlatformOptions
                 {

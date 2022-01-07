@@ -14,6 +14,12 @@ using System.Reactive;
 using System.Threading.Tasks;
 using Avalonia.Controls;
 using System.Threading;
+using Aura.UI.Controls.Navigation;
+using Avalonia.Controls.Presenters;
+using Avalonia.Animation;
+using Avalonia.Animation.Easings;
+using System.Text;
+using Avalonia.Media;
 
 namespace Aura.UI.Gallery
 {
@@ -40,6 +46,7 @@ namespace Aura.UI.Gallery
 
         public override void OnFrameworkInitializationCompleted()
         {
+           // NavigationViewStatic();
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
 
@@ -62,6 +69,48 @@ namespace Aura.UI.Gallery
             }
 
             base.OnFrameworkInitializationCompleted();
+        }
+
+        public void NavigationViewStatic()
+        {
+            var animation = new Animation()
+            {
+                Duration = new TimeSpan(0,0,0,3),
+                FillMode = FillMode.Forward,
+                Easing = new CubicEaseOut(),
+                Children =
+                {
+                    new KeyFrame()
+                    {
+                        Cue = new Cue(0),
+                        Setters =
+                        {
+                            new Setter(TranslateTransform.YProperty, 0),
+                            new Setter(Control.OpacityProperty, 1),
+                        }
+                    },
+                    new KeyFrame()
+                    {
+                        Cue = new Cue(1),
+                        Setters =
+                        {
+                            new Setter(TranslateTransform.YProperty, 0),
+                            new Setter(Control.OpacityProperty, 1),
+                        }
+                    }
+                }
+            };
+
+            var style = new Style(x => x.
+                OfType<NavigationView>()
+                .Class(":normal")
+                .Template()
+                .OfType<ContentPresenter>()
+                .Name("PART_SelectedContentPresenter"));
+            
+            style.Animations.Add(animation);
+
+            Styles.Add(style);
         }
 
         private AppSettings Settings
@@ -95,8 +144,6 @@ namespace Aura.UI.Gallery
                 Console.WriteLine($"some error has executed");
             }
         }
-
-
 
         public readonly static Styles FluentDark = new Styles
         {
