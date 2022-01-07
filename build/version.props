@@ -7,5 +7,6 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<RepositoryUrl>https://github.com/PieroCastillo/Aura.UI</RepositoryUrl>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageTags>auraui avalonia controls ui navigationview url</PackageTags>
 	</PropertyGroup>
 </Project>
