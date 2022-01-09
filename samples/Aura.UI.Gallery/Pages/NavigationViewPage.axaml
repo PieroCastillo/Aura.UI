@@ -27,7 +27,6 @@
         <NavigationViewItem Name="el"
                   IsSelected="True"
                   Icon="{DynamicResource Zondicons.Announcement}"/>
-        <Separator/>
         <NavigationViewItem Icon="{DynamicResource FontAwesome.CheckSquareRegular}">
           <NavigationViewItem Icon="{DynamicResource BoxIcons.RegularCodeAlt}"/>
           <NavigationViewItem Icon="{DynamicResource VSImageLib2019.Slider_16x}"/>

@@ -132,7 +132,7 @@ namespace Aura.UI.Controls.Navigation
         }
 
         public static readonly RoutedEvent<RoutedEventArgs> OpenedEvent =
-            RoutedEvent.Register<NavigationViewItemBase, RoutedEventArgs>(nameof(Opened), RoutingStrategies.Bubble);
+            RoutedEvent.Register<NavigationViewItemBase, RoutedEventArgs>(nameof(Opened), RoutingStrategies.Tunnel);
 
         public event EventHandler<RoutedEventArgs> Closed
         {
@@ -141,6 +141,6 @@ namespace Aura.UI.Controls.Navigation
         }
 
         public static readonly RoutedEvent<RoutedEventArgs> ClosedEvent =
-            RoutedEvent.Register<NavigationViewItemBase, RoutedEventArgs>(nameof(Closed), RoutingStrategies.Bubble);
+            RoutedEvent.Register<NavigationViewItemBase, RoutedEventArgs>(nameof(Closed), RoutingStrategies.Tunnel);
     }
 }

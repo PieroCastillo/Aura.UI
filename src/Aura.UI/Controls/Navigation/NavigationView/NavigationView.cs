@@ -102,15 +102,15 @@ namespace Aura.UI.Controls.Navigation
             SelectedItems.Clear();
             SelectedItems.Add(item);
 
-            var item_parents = (item as ILogical).GetLogicalAncestors().OfType<NavigationViewItem>();
+            //var item_parents = (item as ILogical).GetLogicalAncestors().OfType<NavigationViewItem>();
 
-            if (this.IsOpen)
-            {
-                foreach (NavigationViewItem n in item_parents)
-                {
-                    n.IsExpanded = true;
-                }
-            }
+            //if (this.IsOpen)
+            //{
+            //    foreach (NavigationViewItem n in item_parents)
+            //    {
+            //        n.IsExpanded = true;
+            //    }
+            //}
 
             SelectedItem = item;
         }
@@ -216,7 +216,7 @@ namespace Aura.UI.Controls.Navigation
                     PseudoClasses.Add(":compact");
                     break;
                 case false:
-                    PseudoClasses.Remove("compact");
+                    PseudoClasses.Remove(":compact");
                     break;
             }
         }

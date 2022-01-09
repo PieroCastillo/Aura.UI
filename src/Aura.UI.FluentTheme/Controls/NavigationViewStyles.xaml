@@ -180,10 +180,6 @@
 		</Style.Animations>
 	</Style>
 	
-	<Style Selector="NavigationView /template/ Border#PART_ShadowBorder">
-		<Setter Property="BoxShadow" Value="0 0 50 0 Black"/>
-	</Style>
-	
 	<!--<Style Selector="NavigationView[IsOpen=true] /template/ ExperimentalAcrylicBorder#PART_AcrylicBorder">
 		<Setter Property="Width" Value="{Binding $parent[NavigationView].OpenPaneLength}" />
 	</Style>
