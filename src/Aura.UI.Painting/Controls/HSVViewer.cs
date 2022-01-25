@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Aura.UI.Extensions;
 
-namespace Aura.UI.Controls.Painting
+namespace Aura.UI.Painting.Controls
 {
     public class HSVViewer : TemplatedControl
     {

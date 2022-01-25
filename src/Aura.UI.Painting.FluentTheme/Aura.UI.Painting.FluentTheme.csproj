@@ -1,12 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-		<TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <Description>Aura.UI's Fluent Theme</Description>
     <PackageIcon>AuraUILogo_full_icon.png</PackageIcon>
   </PropertyGroup>
   <ItemGroup>
-		<None Include="AuraUILogo_full_icon.png" Pack="true" PackagePath="\" />
-    <ProjectReference Include="..\Aura.UI\Aura.UI.csproj" />
+    <None Include="AuraUILogo_full_icon.png" Pack="true" PackagePath="\" />
+    <ProjectReference Include="..\Aura.UI.Painting\Aura.UI.Painting.csproj" />
     <AvaloniaResource Include="**\*.xaml">
       <SubType>Designer</SubType>
     </AvaloniaResource>
@@ -14,5 +14,10 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="0.10.11" />
   </ItemGroup>
-	<Import Project="..\..\build\version.props" />
+  <ItemGroup>
+    <None Update="AuraUIPainting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+  <Import Project="..\..\build\version.props" />
 </Project>

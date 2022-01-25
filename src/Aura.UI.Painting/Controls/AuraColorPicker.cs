@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Aura.UI.Controls.Painting
+namespace Aura.UI.Painting.Controls
 {
     public class AuraColorPicker : TemplatedControl
     {

@@ -1,20 +1,14 @@
 ﻿using Aura.UI.Extensions;
 using Aura.UI.Helpers;
 using Avalonia;
-using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
-using Avalonia.Rendering;
 using System;
-using System.Reactive;
-using System.Collections.Generic;
-using System.Text;
 using Avalonia.Media;
-using Aura.UI.Controls.Painting;
 using Avalonia.Markup.Xaml.Templates;
 using System.Diagnostics;
 
-namespace Aura.UI.Controls.Painting
+namespace Aura.UI.Painting.Controls
 {
     public class SaturationValueColorSelector : TemplatedControl
     {

@@ -4,7 +4,7 @@
 	<StyleInclude Source="/AuraUIFluent.xaml" />
 	<StyleInclude Source="/Controls/AuraTabItemStyles.xaml" />
 	<StyleInclude Source="/Controls/AuraTabViewStyles.xaml" />
-    <StyleInclude Source="/Controls/Badge.axaml"/>
+  <StyleInclude Source="/Controls/Badge.axaml"/>
 	<StyleInclude Source="/Controls/MaterialButtonStyles.xaml" />
 	<StyleInclude Source="/Controls/ShadowButtonStyles.xaml" />
 	<StyleInclude Source="/Controls/CardCollectionStyles.xaml" />
@@ -26,9 +26,4 @@
 	<StyleInclude Source="/Controls/FilledSliderStyles.xaml" />
 	<StyleInclude Source="/Controls/ModernSliderStyles.xaml" />
 	<StyleInclude Source="/Controls/RadialSlider.xaml"/>
-  
-  <StyleInclude Source="/Controls/HueColorSelector.axaml"/>
-  <StyleInclude Source="/Controls/SaturationValueColorSelector.axaml"/>
-  <StyleInclude Source="/Controls/AuraColorPicker.axaml"/>
-  <StyleInclude Source="/Controls/HSVViewer.axaml"/>
 </Styles>  

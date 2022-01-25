@@ -1,4 +1,5 @@
-﻿using Aura.UI.Extensions;
+﻿using Aura.UI.Controls;
+using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Animation;
 using Avalonia.Controls;
@@ -10,7 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Aura.UI.Controls.Painting
+namespace Aura.UI.Painting.Controls
 {
     public class HueColorSelector : RadialSlider
     {

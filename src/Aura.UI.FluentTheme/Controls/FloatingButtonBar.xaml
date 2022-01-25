@@ -8,7 +8,7 @@
 				</DrawingImage>
 			</Decorator.Resources>
 			<Grid>
-				<FloatingButtonBar IsExpanded="true" OpenLength="300" ExpandDirection="ToLeft">
+				<FloatingButtonBar OpenLength="300" ExpandDirection="ToLeft">
 					<FloatingButton>
 						<Image Stretch="Uniform" Source="{DynamicResource BoxIcons.RegularPencil}" />
 					</FloatingButton>
@@ -21,6 +21,7 @@
 	
 	<Style Selector="FloatingButtonBar">
 		<Setter Property="ExpandDirection" Value="ToRight" />
+    <Setter Property="IsExpanded" Value="False"/>
 		<Setter Property="Icon">
 			<Setter.Value>
 				<Template>
@@ -60,19 +61,19 @@
 									Name="PART_ItemsPresenter"
 									Items="{TemplateBinding Items}"
 									ItemsPanel="{TemplateBinding ItemsPanel}">
-						<!--<ItemsPresenter.Transitions>
+						<ItemsPresenter.Transitions>
 							<Transitions>
-								<DoubleTransition Property="Width" Easing="QuadraticEaseOut" />
+								<DoubleTransition Property="Width" Duration="0:0:.3" Easing="QuadraticEaseOut" />
 							</Transitions>
-						</ItemsPresenter.Transitions>-->
+						</ItemsPresenter.Transitions>
 					</ItemsPresenter>
 				</Grid>
 			</ControlTemplate>
 		</Setter>
 	</Style>
 	<Style Selector="FloatingButtonBar[ExpandDirection=ToRight][IsExpanded=true] /template/ ItemsPresenter#PART_ItemsPresenter">
-		<Style.Animations>
-			<Animation Duration="0:0:.3" FillMode="Forward" Easing="QuadraticEaseOut">
+		<!--<Style.Animations> 
+			<Animation Duration="0:0:.3" FillMode="Backward" Easing="QuadraticEaseOut">
 				<KeyFrame Cue="0%">
 					<Setter Property="Width" Value="0" />
 					<Setter Property="Opacity" Value="0" />
@@ -82,10 +83,12 @@
 					<Setter Property="Opacity" Value="1" />
 				</KeyFrame>
 			</Animation>
-		</Style.Animations>
+		</Style.Animations>-->
+    <Setter Property="Width" Value="{Binding $parent[FloatingButtonBar].OpenLength}" />
+    <Setter Property="Opacity" Value="1" />
 	</Style>
 	<Style Selector="FloatingButtonBar[ExpandDirection=ToRight][IsExpanded=false] /template/ ItemsPresenter#PART_ItemsPresenter">
-		<Style.Animations>
+		<!--<Style.Animations>
 			<Animation Duration="0:0:.2" FillMode="Forward" Easing="QuadraticEaseOut">
 				<KeyFrame Cue="0%">
 					<Setter Property="Width" Value="{Binding $parent[FloatingButtonBar].OpenLength}" />
@@ -96,7 +99,9 @@
 					<Setter Property="Opacity" Value="0" />
 				</KeyFrame>
 			</Animation>
-		</Style.Animations>
+		</Style.Animations>-->
+    <Setter Property="Width" Value="0" />
+    <Setter Property="Opacity" Value="0" />
 	</Style>
 
 	<Style Selector="FloatingButtonBar[ExpandDirection=ToLeft]">
