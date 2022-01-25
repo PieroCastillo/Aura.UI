@@ -1,11 +1,10 @@
-﻿using Avalonia.Data.Converters;
+﻿using Aura.UI.Extensions;
+using Avalonia;
+using Avalonia.Data.Converters;
 using Avalonia.Media;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
-using Aura.UI.Extensions;
-using Avalonia;
 
 namespace Aura.UI.Converters
 {

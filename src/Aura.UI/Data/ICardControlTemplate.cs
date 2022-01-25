@@ -1,5 +1,5 @@
-using System.Windows.Input;
 using JetBrains.Annotations;
+using System.Windows.Input;
 
 namespace Aura.UI.Data
 {

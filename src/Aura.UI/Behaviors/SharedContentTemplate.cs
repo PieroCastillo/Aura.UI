@@ -1,8 +1,8 @@
-﻿using System;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using Avalonia.Metadata;
 using Avalonia.Styling;
+using System;
 
 namespace Aura.UI.Behaviors
 {

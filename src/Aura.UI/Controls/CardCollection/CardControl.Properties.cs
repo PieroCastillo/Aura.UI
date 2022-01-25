@@ -1,8 +1,8 @@
-using System.Windows.Input;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Styling;
+using System.Windows.Input;
 
 namespace Aura.UI.Controls
 {

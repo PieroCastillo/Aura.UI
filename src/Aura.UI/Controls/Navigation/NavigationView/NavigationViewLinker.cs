@@ -1,9 +1,9 @@
 ﻿using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Controls.Metadata;
 using Avalonia.Input;
 using System;
-using Avalonia.Controls.Metadata;
 
 namespace Aura.UI.Controls.Navigation
 {

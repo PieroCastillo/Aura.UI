@@ -3,9 +3,9 @@ using Aura.UI.Helpers;
 using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
-using System;
-using Avalonia.Media;
 using Avalonia.Markup.Xaml.Templates;
+using Avalonia.Media;
+using System;
 using System.Diagnostics;
 
 namespace Aura.UI.Painting.Controls

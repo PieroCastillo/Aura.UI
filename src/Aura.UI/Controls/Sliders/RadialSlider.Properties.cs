@@ -2,9 +2,6 @@
 using Avalonia.Controls;
 using Avalonia.Media;
 using Avalonia.Metadata;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls
 {

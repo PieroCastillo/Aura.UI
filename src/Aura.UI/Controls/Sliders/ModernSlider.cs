@@ -1,6 +1,5 @@
 ﻿
 using Aura.UI.Controls.Primitives;
-using Avalonia.Controls;
 
 namespace Aura.UI.Controls
 {

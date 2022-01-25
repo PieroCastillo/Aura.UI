@@ -1,7 +1,7 @@
-﻿using Avalonia;
+﻿using Aura.UI.Helpers;
+using Avalonia;
 using Avalonia.Controls.Primitives;
 using System;
-using Aura.UI.Helpers;
 
 namespace Aura.UI.Controls
 {

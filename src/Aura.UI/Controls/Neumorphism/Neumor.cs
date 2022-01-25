@@ -1,11 +1,4 @@
-﻿using Aura.UI.Extensions;
-using Avalonia.Controls;
-using Avalonia.Media;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Aura.UI.Helpers;
-
+﻿
 /*
 namespace Aura.UI.Controls.Neumorphism
 {

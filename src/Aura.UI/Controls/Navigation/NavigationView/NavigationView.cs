@@ -1,5 +1,4 @@
-﻿using Aura.UI.Controls.Generators;
-using Aura.UI.Extensions;
+﻿using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Collections;
 using Avalonia.Controls;
@@ -8,16 +7,10 @@ using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Presenters;
 using Avalonia.Controls.Primitives;
 using Avalonia.LogicalTree;
-using DynamicData;
+using Avalonia.Threading;
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Linq;
-using System.Threading.Tasks;
-using Avalonia.VisualTree;
-using Avalonia.Threading;
 
 namespace Aura.UI.Controls.Navigation
 {

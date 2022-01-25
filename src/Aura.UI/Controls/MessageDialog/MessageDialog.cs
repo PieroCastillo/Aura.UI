@@ -4,8 +4,6 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
-using Avalonia.Threading;
-using System;
 using Avalonia.Media;
 
 namespace Aura.UI.Controls

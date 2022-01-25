@@ -1,8 +1,5 @@
 ﻿using Aura.UI.Helpers;
 using Avalonia;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Extensions
 {

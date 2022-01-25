@@ -1,11 +1,8 @@
-﻿using Avalonia;
+﻿using Aura.UI.Extensions;
+using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-using Aura.UI.Extensions;
 
 namespace Aura.UI.Painting.Controls
 {

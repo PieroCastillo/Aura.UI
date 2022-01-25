@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Linq;
-using Aura.UI.Extensions;
-using Avalonia.Collections;
+﻿using Aura.UI.Extensions;
 using Avalonia.Controls;
 using Avalonia.Controls.Mixins;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.LogicalTree;
 using Avalonia.Styling;
+using System;
 
 namespace Aura.UI.Controls.Navigation
 {

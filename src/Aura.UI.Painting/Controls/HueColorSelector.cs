@@ -1,15 +1,9 @@
 ﻿using Aura.UI.Controls;
 using Aura.UI.Extensions;
 using Avalonia;
-using Avalonia.Animation;
-using Avalonia.Controls;
-using Avalonia.Controls.Presenters;
-using Avalonia.Input;
 using Avalonia.Markup.Xaml.Templates;
 using Avalonia.Media;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Painting.Controls
 {

@@ -1,17 +1,13 @@
-﻿using System;
-using System.Data;
-using System.Linq;
-using System.Windows.Input;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Data;
 using Avalonia.Input;
 using Avalonia.LogicalTree;
-using Avalonia.Media;
-using Avalonia.Styling;
 using Avalonia.VisualTree;
-using JetBrains.Annotations;
+using System;
+using System.Linq;
+using System.Windows.Input;
 
 namespace Aura.UI.Controls
 {

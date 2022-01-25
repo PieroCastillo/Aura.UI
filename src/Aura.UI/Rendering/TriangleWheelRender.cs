@@ -1,13 +1,8 @@
-﻿using Aura.UI.Helpers;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Media;
 using Avalonia.Platform;
 using Avalonia.Skia;
 using SkiaSharp;
-using System;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Text;
 
 namespace Aura.UI.Rendering
 {

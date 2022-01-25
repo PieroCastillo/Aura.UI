@@ -1,9 +1,6 @@
 ﻿using Avalonia;
 using Avalonia.Controls.Templates;
 using Avalonia.Layout;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Controls
 {

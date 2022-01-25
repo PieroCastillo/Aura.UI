@@ -3,8 +3,6 @@ using Avalonia;
 using Avalonia.Controls.Primitives;
 using Avalonia.Media;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.UI.Painting.Controls
 {

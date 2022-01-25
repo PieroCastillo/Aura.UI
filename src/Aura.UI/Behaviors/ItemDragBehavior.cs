@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Aura.UI.Controls;
+﻿using Aura.UI.Controls;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
@@ -10,6 +7,8 @@ using Avalonia.Interactivity;
 using Avalonia.Layout;
 using Avalonia.Media;
 using Avalonia.Xaml.Interactivity;
+using System.Collections;
+using System.Diagnostics;
 
 namespace Aura.UI.Behaviors
 {

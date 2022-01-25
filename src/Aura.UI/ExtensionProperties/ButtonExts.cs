@@ -1,7 +1,7 @@
+using AuraUtilities;
 using Avalonia;
 using Avalonia.Controls;
 using System;
-using AuraUtilities;
 
 namespace Aura.UI.ExtensionProperties
 {

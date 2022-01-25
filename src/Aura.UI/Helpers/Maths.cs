@@ -1,5 +1,4 @@
 ﻿using Avalonia;
-using Avalonia.Media;
 using System;
 
 namespace Aura.UI.Helpers

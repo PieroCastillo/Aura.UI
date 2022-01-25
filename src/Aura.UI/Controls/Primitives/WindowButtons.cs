@@ -2,9 +2,6 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 #nullable enable
 
@@ -22,8 +19,8 @@ namespace Aura.UI.Controls.Primitives
             get => _hostwindow;
             set => SetAndRaise(HostWindowProperty, ref _hostwindow, value);
         }
-        public readonly static DirectProperty<WindowButtons, Window?> HostWindowProperty = 
-            AvaloniaProperty.RegisterDirect<WindowButtons, Window?>(nameof(HostWindow), o => o.HostWindow, (o,v) => o.HostWindow = v);
+        public readonly static DirectProperty<WindowButtons, Window?> HostWindowProperty =
+            AvaloniaProperty.RegisterDirect<WindowButtons, Window?>(nameof(HostWindow), o => o.HostWindow, (o, v) => o.HostWindow = v);
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
@@ -33,20 +30,20 @@ namespace Aura.UI.Controls.Primitives
             CenterButton = this.GetControl<Button>(e, "PART_CenterButton");
             RightButton = this.GetControl<Button>(e, "PART_RightButton");
 
-            LeftButton.PointerReleased += delegate 
+            LeftButton.PointerReleased += delegate
             {
-                if(HostWindow is not null)
+                if (HostWindow is not null)
                 {
                     HostWindow.WindowState = WindowState.Minimized;
                 }
-            }; 
+            };
             CenterButton.PointerReleased += delegate
             {
                 if (HostWindow is not null)
                 {
                     switch (HostWindow.WindowState)
                     {
-                        case WindowState.Maximized: 
+                        case WindowState.Maximized:
                             HostWindow.WindowState = WindowState.Normal;
                             break;
                         case WindowState.Normal:
@@ -57,7 +54,7 @@ namespace Aura.UI.Controls.Primitives
                             break;
                     }
                 }
-            }; 
+            };
             RightButton.PointerReleased += delegate
             {
                 if (HostWindow is not null)
@@ -70,6 +67,6 @@ namespace Aura.UI.Controls.Primitives
 
     public enum WindowButtonsAlignment
     {
-        Left,Right
+        Left, Right
     }
 }

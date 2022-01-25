@@ -1,9 +1,9 @@
 ﻿using Aura.UI.Controls;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using System;
 using Avalonia.Media;
 using JetBrains.Annotations;
+using System;
 
 namespace Aura.UI.Services
 {

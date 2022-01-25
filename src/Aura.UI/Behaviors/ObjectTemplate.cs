@@ -1,6 +1,6 @@
-﻿using System;
-using Avalonia.Metadata;
+﻿using Avalonia.Metadata;
 using Avalonia.Styling;
+using System;
 
 namespace Aura.UI.Behaviors
 {
