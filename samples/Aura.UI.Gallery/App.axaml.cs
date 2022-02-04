@@ -70,49 +70,6 @@ namespace Aura.UI.Gallery
 
             base.OnFrameworkInitializationCompleted();
         }
-
-        public void NavigationViewStatic()
-        {
-            var animation = new Animation()
-            {
-                Duration = new TimeSpan(0,0,0,3),
-                FillMode = FillMode.Forward,
-                Easing = new CubicEaseOut(),
-                Children =
-                {
-                    new KeyFrame()
-                    {
-                        Cue = new Cue(0),
-                        Setters =
-                        {
-                            new Setter(TranslateTransform.YProperty, 0),
-                            new Setter(Control.OpacityProperty, 1),
-                        }
-                    },
-                    new KeyFrame()
-                    {
-                        Cue = new Cue(1),
-                        Setters =
-                        {
-                            new Setter(TranslateTransform.YProperty, 0),
-                            new Setter(Control.OpacityProperty, 1),
-                        }
-                    }
-                }
-            };
-
-            var style = new Style(x => x.
-                OfType<NavigationView>()
-                .Class(":normal")
-                .Template()
-                .OfType<ContentPresenter>()
-                .Name("PART_SelectedContentPresenter"));
-            
-            style.Animations.Add(animation);
-
-            Styles.Add(style);
-        }
-
         private AppSettings Settings
         {
             get;

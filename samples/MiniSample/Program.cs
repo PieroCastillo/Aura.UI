@@ -1,3 +1,4 @@
+using Aura.UI.FluentTheme;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.ReactiveUI;
@@ -19,6 +20,7 @@ namespace MiniSample
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .LogToTrace()
+                .UseAuraUIFluentTheme()
                 .UseReactiveUI();
     }
 }

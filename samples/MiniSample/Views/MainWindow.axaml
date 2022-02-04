@@ -3,8 +3,9 @@
         xmlns:vm="using:MiniSample.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d"
         x:Class="MiniSample.Views.MainWindow"
+        Width="1000" Height="600"
         Icon="/Assets/avalonia-logo.ico"
         Title="MiniSample">
 
@@ -12,18 +13,8 @@
     <vm:MainWindowViewModel/>
   </Design.DataContext>
 
-  <StackPanel Margin="20">
-    <StackPanel.Styles>
-      <Style Selector="Button">
-        <Setter Property="ClickMode" Value="Release"/>
-      </Style>
-    </StackPanel.Styles>
-    <!-- <AuraColorPicker SelectedColor="Red" Name="cp" Width="300" Height="300" StrokeWidth="20"/> -->
-    <!-- <TextBlock Height="50" Foreground="Black" Text="{Binding #cp.SelectedColor}"/> -->
-    <Button Content="Youtube.com" ButtonExts.Url="https://youtube.com"/>
-    <Button Content="Google.com" ButtonExts.Url="https://Google.com"/>
-    <Button Content="Wikipedia.org" ButtonExts.Url="https://wikipedia.org"/>
-    <Button Content="StackOverflow.com" ButtonExts.Url="https://stackOverflow.com"/>
-    <Button Content="Avaloniaui.net" ButtonExts.Url="https://avaloniaui.net"/>
-  </StackPanel>
+  <Grid>
+    <AuraTabView/>
+  </Grid>
+
 </Window>

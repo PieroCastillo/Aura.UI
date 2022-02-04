@@ -1,5 +1,8 @@
 using Aura.UI.Helpers;
+using Aura.UI.Neumorphism.Controls;
 using Avalonia;
+using Avalonia.Media;
+using Avalonia.Skia;
 using System;
 using Xunit;
 using static Aura.UI.Helpers.Maths;
@@ -43,6 +46,20 @@ namespace MathsForUI.Test
             var size = new Size(width, height);
             var padding = new Thickness(p);
             var r = size.WithHeight(Maths.TriangleHeightBySide(size.Width)).Inflate(padding + new Thickness(strokeWidth));
+        }
+
+        [Theory]
+        [InlineData("#ffffff", 0.6, "#ffffff", "#666666")]
+        [InlineData("#ffffff", 0.08, "#ffffff", "#ebebeb")]
+        [InlineData("#a34d4d", 0.33, "#d96666", "#6d3434")]
+        public void ColorLuminanceTests(string baseColor, double intensity, string expectedLightColor, string expectedDarkColor)
+        {
+            var color = Color.Parse(baseColor).ToSKColor();
+
+            var light = Neumor.ChangeColorLuminosity(color, intensity);
+            var dark = Neumor.ChangeColorLuminosity(color, intensity * -1);
+
+            Assert.Equal(light.ToString(), Color.Parse(expectedLightColor).ToSKColor().ToString());
         }
     }
 }
