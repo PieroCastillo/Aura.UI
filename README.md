@@ -7,7 +7,7 @@
 ![Size](https://img.shields.io/github/repo-size/PieroCastillo/Aura.UI)
 
 <h1 align="center">
-<img src="DesignSources/AuraUILogo_full_icon.png" width="256"/> 
+<img src="https://raw.githubusercontent.com/PieroCastillo/Aura.UI-Sources/main/DesignSources/AuraUILogo_full_icon.png" width="256"/> 
 <br/><br/> 
 Aura.UI
 </h1>
