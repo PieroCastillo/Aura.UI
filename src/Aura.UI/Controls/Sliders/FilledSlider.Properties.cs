@@ -8,14 +8,14 @@ namespace Aura.UI.Controls
         /// <summary>
         /// Template for the Thumb of the <see cref="FilledSlider"/>
         /// </summary>
-        public IControlTemplate ThumbTemplate
+        public ControlTemplate ThumbTemplate
         {
             get => GetValue(ThumbTemplateProperty);
             set => SetValue(ThumbTemplateProperty, value);
         }
 
-        public static readonly StyledProperty<IControlTemplate> ThumbTemplateProperty =
-            AvaloniaProperty.Register<FilledSlider, IControlTemplate>(nameof(ThumbTemplate));
+        public static readonly StyledProperty<ControlTemplate> ThumbTemplateProperty =
+            AvaloniaProperty.Register<FilledSlider, ControlTemplate>(nameof(ThumbTemplate));
 
         /// <summary>
         /// Shows a content in the right

@@ -10,7 +10,7 @@ using System;
 
 namespace Aura.UI.Controls.Generators
 {
-    public class AuraTabItemContainerGenerator : ItemContainerGenerator<AuraTabItem>
+    public class AuraTabItemContainerGenerator : ItemContainerGenerator
     {
         public AuraTabItemContainerGenerator(AuraTabView owner,
             AvaloniaProperty contentProperty,
@@ -26,7 +26,7 @@ namespace Aura.UI.Controls.Generators
 
         private AvaloniaProperty HeaderProperty, IsClosableProperty, IconProperty;
 
-        private IControl CreateContainer<T>(object item) where T : class, IControl, new()
+        private Control CreateContainer<T>(object item) where T : Control, new()
         {
             var container = item as T;
 
@@ -45,7 +45,7 @@ namespace Aura.UI.Controls.Generators
 
                 result.SetValue(ContentProperty, item, BindingPriority.Style);
 
-                if (!(item is IControl))
+                if (!(item is Control))
                 {
                     result.DataContext = item;
                 }
@@ -54,7 +54,7 @@ namespace Aura.UI.Controls.Generators
             }
         }
 
-        protected override IControl CreateContainer(object item)
+        protected override Control CreateContainer(object item)
         {
             var container = item as AuraTabItem;
 
@@ -79,14 +79,14 @@ namespace Aura.UI.Controls.Generators
                 }
                 else
                 {
-                    if (!(tabItem.DataContext is IControl))
+                    if (!(tabItem.DataContext is Control))
                     {
                         tabItem.Header = tabItem.DataContext;
                     }
                 }
             }
 
-            if (!(tabItem.Content is IControl))
+            if (!(tabItem.Content is Control))
             {
                 tabItem.Bind(TabItem.ContentTemplateProperty, new OwnerBinding<IDataTemplate>(
                     tabItem,

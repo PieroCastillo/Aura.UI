@@ -28,7 +28,7 @@ namespace Aura.UI.Rendering
 
         public override void Render(IDrawingContextImpl drw_context)
         {
-            if (drw_context is ISkiaDrawingContextImpl context)
+            if (drw_context is I ISkiaDrawingContextImpl context)
             {
                 var canvas = context.SkCanvas;
 

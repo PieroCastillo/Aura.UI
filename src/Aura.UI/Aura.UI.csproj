@@ -19,15 +19,14 @@
 	<Import Project="..\..\build\version.props" />
 	<ItemGroup>
 	  <PackageReference Include="AuraUtilities" Version="0.1.5.5" />
-	  <PackageReference Include="Avalonia" Version="0.10.11" />
-	  <PackageReference Include="Avalonia.Desktop" Version="0.10.17" />
-	  <PackageReference Include="Avalonia.Diagnostics" Version="0.10.17" />
-	  <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="0.10.17" />
-	  <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.17" />
-	  <PackageReference Include="Avalonia.Xaml.Behaviors" Version="0.10.17" />
-	  <PackageReference Include="Avalonia.Xaml.Interactivity" Version="0.10.17" />
-	  <PackageReference Include="ReactiveUI" Version="18.3.1" />
-	  <PackageReference Include="Avalonia" Version="0.10.17" />
-	  <PackageReference Include="System.Reactive" Version="5.0.0" />
+	  <PackageReference Include="Avalonia" Version="11.0.7" />
+	  <PackageReference Include="Avalonia.Desktop" Version="11.0.7" />
+	  <PackageReference Include="Avalonia.Diagnostics" Version="11.0.7" />
+	  <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.0.7" />
+	  <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.7" />
+	  <PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.0.6" />
+	  <PackageReference Include="Avalonia.Xaml.Interactivity" Version="11.0.6" />
+	  <PackageReference Include="ReactiveUI" Version="19.5.39" />
+	  <PackageReference Include="System.Reactive" Version="6.0.0" />
 	</ItemGroup>
 </Project>

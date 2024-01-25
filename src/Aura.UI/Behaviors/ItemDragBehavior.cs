@@ -12,14 +12,14 @@ using System.Diagnostics;
 
 namespace Aura.UI.Behaviors
 {
-    public class ItemDragBehavior : Behavior<IControl>
+    public class ItemDragBehavior : Behavior<Control>
     {
         private bool _enableDrag;
         private Point _start;
         private int _draggedIndex;
         private int _targetIndex;
         private ItemsControl? _itemsControl;
-        private IControl? _draggedContainer;
+        private Control? _draggedContainer;
 
         public static readonly StyledProperty<Orientation> OrientationProperty =
             AvaloniaProperty.Register<ItemDragBehavior, Orientation>(nameof(Orientation));

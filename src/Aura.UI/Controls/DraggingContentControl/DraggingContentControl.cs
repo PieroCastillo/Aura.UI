@@ -70,7 +70,7 @@ namespace Aura.UI.Controls
         /// <summary>
         /// Gets the presenter from the control's template.
         /// </summary>
-        public IContentPresenter Presenter
+        public ContentPresenter Presenter
         {
             get;
             private set;
@@ -95,10 +95,10 @@ namespace Aura.UI.Controls
         }
 
         /// <inheritdoc/>
-        IAvaloniaList<ILogical> IContentPresenterHost.LogicalChildren => LogicalChildren;
+        IAvaloniaList<ILogical> ContentPresenterHost.LogicalChildren => LogicalChildren;
 
         /// <inheritdoc/>
-        bool IContentPresenterHost.RegisterContentPresenter(IContentPresenter presenter)
+        bool ContentPresenterHost.RegisterContentPresenter(ContentPresenter presenter)
         {
             return RegisterContentPresenter(presenter);
         }
@@ -107,7 +107,7 @@ namespace Aura.UI.Controls
         /// Called when an <see cref="IContentPresenter"/> is registered with the control.
         /// </summary>
         /// <param name="presenter">The presenter.</param>
-        protected virtual bool RegisterContentPresenter(IContentPresenter presenter)
+        protected virtual bool RegisterContentPresenter(ContentPresenter presenter)
         {
             if (presenter.Name == "PART_ContentPresenter")
             {

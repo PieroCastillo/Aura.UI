@@ -113,7 +113,7 @@ namespace Aura.UI.Controls
             set => SetValue(BlurLevelProperty, value);
         }
 
-        public IBitmap Source
+        public Bitmap Source
         {
             get => GetValue(SourceProperty);
             set => SetValue(SourceProperty, value);
@@ -131,8 +131,8 @@ namespace Aura.UI.Controls
             set => SetValue(StretchDirectionProperty, value);
         }
 
-        public readonly static StyledProperty<IBitmap> SourceProperty =
-            AvaloniaProperty.Register<BlurryImage, IBitmap>(nameof(Source));
+        public readonly static StyledProperty<Bitmap> SourceProperty =
+            AvaloniaProperty.Register<BlurryImage, Bitmap>(nameof(Source));
 
         public readonly static StyledProperty<Stretch> StretchProperty =
             Image.StretchProperty.AddOwner<BlurryImage>();

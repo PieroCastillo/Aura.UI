@@ -6,10 +6,10 @@ using Avalonia.Data;
 
 namespace Aura.UI.Controls.Generators
 {
-    public class CardCollectionItemContainerGenerator<TCardControl> : ItemContainerGenerator<TCardControl> where TCardControl : CardControl, IControl, new()
+    public class CardCollectionItemContainerGenerator<TCardControl> : ItemContainerGenerator<TCardControl> where TCardControl : CardControl, Control, new()
     {
         public CardCollectionItemContainerGenerator(
-            IControl owner,
+            Control owner,
             AvaloniaProperty contentProperty,
             AvaloniaProperty contentTemplateProperty,
             AvaloniaProperty headerProperty,
@@ -26,7 +26,7 @@ namespace Aura.UI.Controls.Generators
 
         protected AvaloniaProperty HeaderProperty, SecondaryHeaderProperty, CommandProperty, CommandParameterProperty;
 
-        protected override IControl CreateContainer(object item)
+        protected override Control CreateContainer(object item)
         {
             var container = item as TCardControl;
 

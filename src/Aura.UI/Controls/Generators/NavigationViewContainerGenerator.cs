@@ -26,7 +26,7 @@ namespace Aura.UI.Controls.Generators
         AvaloniaProperty Items { get; set; }
         AvaloniaProperty Title { get; set; }
 
-        protected override IControl CreateContainer(object item)
+        protected override Control CreateContainer(object item)
         {
             var navviewitem = (NavigationViewItem)base.CreateContainer(item);
             navviewitem.Bind(NavigationViewItem.IsOpenProperty, (Owner as NavigationView).GetObservable(NavigationView.IsOpenProperty), BindingPriority.LocalValue);

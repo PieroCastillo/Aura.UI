@@ -3,7 +3,7 @@ using Avalonia.Styling;
 
 namespace Aura.UI.Controls.Primitives
 {
-    public interface IFootered : IControl
+    public interface IFootered : Control
     {
         public object Footer { get; set; }
         public ITemplate FooterTemplate { get; set; }
