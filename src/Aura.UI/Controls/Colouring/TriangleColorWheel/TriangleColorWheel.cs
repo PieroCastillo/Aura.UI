@@ -14,7 +14,7 @@ namespace Aura.UI.Controls.Colouring
 
         public override void Render(DrawingContext context)
         {
-            context.Custom(new TriangleWheelRender(Bounds, Color, null, (float)StrokeWidth));
+            context.Custom(new TriangleWheelRender(Bounds, Color, (float)StrokeWidth));
             base.Render(context);
         }
 

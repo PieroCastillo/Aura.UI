@@ -11,7 +11,7 @@ namespace Aura.UI.Controls.Colouring
         {
             base.Render(context);
 
-            context.Custom(new ColorWheelRender(new Rect(Bounds.Size), null, StrokeWidth));
+            context.Custom(new ColorWheelRender(new Rect(Bounds.Size), StrokeWidth));
         }
 
         private float _strokewidth = 20;

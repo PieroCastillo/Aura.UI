@@ -8,7 +8,7 @@ namespace Aura.UI.Rendering
 {
     public class ColorSquareRender : AuraDrawOperationBase
     {
-        public ColorSquareRender(Rect bounds, IFormattedTextImpl noSkia, Color hueColor, Color strokeColor, int strokeWidth = 10) : base(bounds, noSkia)
+        public ColorSquareRender(Rect bounds, Color hueColor, Color strokeColor, int strokeWidth = 10) : base(bounds)
         {
             HueColor = hueColor;
             StrokeColor = strokeColor;
@@ -37,56 +37,53 @@ namespace Aura.UI.Rendering
 
         protected SKSurface Surface { get; set; }
 
-        public override void Render(IDrawingContextImpl context)
+        public override void Render(ImmediateDrawingContext drwContext)
         {
-            var canvas = (context as ISkiaDrawingContextImpl)?.SkCanvas;
-            var surface = (context as ISkiaDrawingContextImpl)?.SkSurface;
+            var leaseFeature = drwContext.TryGetFeature<ISkiaSharpApiLeaseFeature>();
+            if (leaseFeature == null)
+                return;
 
-            if (canvas == null | surface == null)
+            using var lease = leaseFeature.Lease();
+            var canvas = lease.SkCanvas;
+            var surface = lease.SkSurface;
+
+            Surface = surface;
+            var width = (int)Bounds.Width;
+            var height = (int)Bounds.Height;
+
+            var info = new SKImageInfo(width, height);
+
+            using (SKPaint paint = new SKPaint())
             {
-                context.Clear(Colors.White);
-                context.DrawText(new SolidColorBrush(Colors.Black), new Point(), NoSkia);
+                SKColor[] colors = { SKColors.White, HueColor.ToSKColor() };
+
+                SKPoint center = new SKPoint(info.Rect.MidX, info.Rect.MidY);
+
+                paint.Shader = SKShader.CreateLinearGradient(new SKPoint(0, 0), new SKPoint(width, 0), colors, SKShaderTileMode.Repeat);
+
+                var rect = SKRect.Create(width, height);
+                canvas.DrawRect(rect, paint);
             }
-            else
+
+            // Creates the black gradient effect (transparent to black)
+            using (SKPaint paint = new SKPaint())
             {
-                Surface = surface;
-                var width = (int)Bounds.Width;
-                var height = (int)Bounds.Height;
+                SKColor[] colors = { SKColors.Transparent, SKColors.Black };
 
-                var info = new SKImageInfo(width, height);
+                paint.Shader = SKShader.CreateLinearGradient(new SKPoint(0, 0), new SKPoint(0, height), colors, SKShaderTileMode.Repeat);
 
-                using (SKPaint paint = new SKPaint())
-                {
-                    SKColor[] colors = { SKColors.White, HueColor.ToSKColor() };
+                var rect = SKRect.Create(width, height);
 
-                    SKPoint center = new SKPoint(info.Rect.MidX, info.Rect.MidY);
+                canvas.DrawRect(rect, paint);
+            }
 
-                    paint.Shader = SKShader.CreateLinearGradient(new SKPoint(0, 0), new SKPoint(width, 0), colors, SKShaderTileMode.Repeat);
-
-                    var rect = SKRect.Create(width, height);
-                    canvas.DrawRect(rect, paint);
-                }
-
-                // Creates the black gradient effect (transparent to black)
-                using (SKPaint paint = new SKPaint())
-                {
-                    SKColor[] colors = { SKColors.Transparent, SKColors.Black };
-
-                    paint.Shader = SKShader.CreateLinearGradient(new SKPoint(0, 0), new SKPoint(0, height), colors, SKShaderTileMode.Repeat);
-
-                    var rect = SKRect.Create(width, height);
-
-                    canvas.DrawRect(rect, paint);
-                }
-
-                using (SKPaint paint = new SKPaint())
-                {
-                    paint.Shader = SKShader.CreateColor(StrokeColor.ToSKColor());
-                    var rect = SKRect.Create(width, height);
-                    paint.Style = SKPaintStyle.Stroke;
-                    paint.StrokeWidth = StrokeWidth;
-                    canvas.DrawRect(rect, paint);
-                }
+            using (SKPaint paint = new SKPaint())
+            {
+                paint.Shader = SKShader.CreateColor(StrokeColor.ToSKColor());
+                var rect = SKRect.Create(width, height);
+                paint.Style = SKPaintStyle.Stroke;
+                paint.StrokeWidth = StrokeWidth;
+                canvas.DrawRect(rect, paint);
             }
         }
     }

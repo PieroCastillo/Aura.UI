@@ -10,7 +10,7 @@ namespace Aura.UI.Controls.Colouring
     {
         public override void Render(DrawingContext context)
         {
-            var render = new ColorSquareRender(Bounds, null, ColorToRender, StrokeColor, StrokeWidth);
+            var render = new ColorSquareRender(Bounds, ColorToRender, StrokeColor, StrokeWidth);
             SquareRender = render;
             context.Custom(render);
         }

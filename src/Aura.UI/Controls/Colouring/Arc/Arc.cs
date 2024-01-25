@@ -55,7 +55,7 @@ namespace Aura.UI.Controls.Colouring
 
         public override void Render(DrawingContext context)
         {
-            context.Custom(new ArcRender(new Rect(0, 0, Bounds.Width, Bounds.Height), null, Stroke, (float)StartAngle, (float)SweepAngle, ArcColor));
+            context.Custom(new ArcRender(new Rect(0, 0, Bounds.Width, Bounds.Height), Stroke, (float)StartAngle, (float)SweepAngle, ArcColor));
             Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
         }
     }
