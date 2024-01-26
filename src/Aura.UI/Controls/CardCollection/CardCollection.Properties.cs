@@ -41,14 +41,5 @@ namespace Aura.UI.Controls
 
         public static readonly StyledProperty<int> ColumnsProperty =
             AvaloniaProperty.Register<CardCollection, int>(nameof(Columns));
-
-        public ItemVirtualizationMode VirtualizationMode
-        {
-            get => GetValue(VirtualizationModeProperty);
-            set => SetValue(VirtualizationModeProperty, value);
-        }
-
-        public static readonly StyledProperty<ItemVirtualizationMode> VirtualizationModeProperty =
-            ItemsPresenter.VirtualizationModeProperty.AddOwner<CardCollection>();
     }
 }

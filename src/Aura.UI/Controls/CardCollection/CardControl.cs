@@ -98,12 +98,13 @@ namespace Aura.UI.Controls
             }
         }
 
-        protected override void UpdateDataValidation<T>(AvaloniaProperty<T> property, BindingValue<T> value)
+        protected override void UpdateDataValidation(AvaloniaProperty property, BindingValueType state, Exception error)
         {
-            base.UpdateDataValidation(property, value);
+            base.UpdateDataValidation(property, state, error);
+
             if (property == CommandProperty)
             {
-                if (value.Type == BindingValueType.BindingError)
+                if (state == BindingValueType.BindingError)
                 {
                     if (_commandCanExecute)
                     {

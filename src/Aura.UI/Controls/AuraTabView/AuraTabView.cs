@@ -1,5 +1,4 @@
-﻿using Aura.UI.Controls.Generators;
-using Aura.UI.Controls.Primitives;
+﻿using Aura.UI.Controls.Primitives;
 using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Controls;
@@ -32,16 +31,6 @@ namespace Aura.UI.Controls
             RaiseEvent(e_);
             e_.Handled = true;
         }
-
-        /// <inheritdoc/>
-        protected override ItemContainerGenerator CreateItemContainerGenerator()
-            => new AuraTabItemContainerGenerator(
-                this,
-                AuraTabItem.ContentProperty,
-                AuraTabItem.ContentTemplateProperty,
-                AuraTabItem.HeaderProperty,
-                AuraTabItem.IconProperty,
-                AuraTabItem.IsClosableProperty);
 
         protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
         {

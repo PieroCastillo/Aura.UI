@@ -12,7 +12,7 @@ namespace Aura.UI.Controls.Ribbon
     /// This control use shows a Ribbon in the Top
     /// Use a <see cref="RibbonItem"/> to add Headers and Contents
     /// </summary>
-    public class Ribbon : TabViewBase, IHeadered
+    public class Ribbon : TabViewBase
     {
         public MaterialButton LeftButton;
         public MaterialButton RightButton;
@@ -94,11 +94,8 @@ namespace Aura.UI.Controls.Ribbon
             LeftButton = this.GetControl<MaterialButton>(e, "PART_LeftButton");
             RightButton = this.GetControl<MaterialButton>(e, "PART_RightButton");
             ToggleStateButton = this.GetControl<ToggleButton>(e, "PART_Toggle");
-            ToggleStateButton.Checked += (sender, e) =>
-            {
-                ToggleState();
-            };
-            ToggleStateButton.Unchecked += (sender, e) =>
+
+            ToggleStateButton.IsCheckedChanged+= (sender, e) =>
             {
                 ToggleState();
             };

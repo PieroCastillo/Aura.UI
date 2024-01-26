@@ -1,6 +1,7 @@
 ﻿using Aura.UI.Controls.Primitives;
 using Aura.UI.Extensions;
 using Avalonia.Controls;
+using Avalonia.Controls.Metadata;
 using Avalonia.Controls.Primitives;
 using Avalonia.Interactivity;
 

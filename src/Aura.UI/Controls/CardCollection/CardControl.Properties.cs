@@ -116,18 +116,14 @@ namespace Aura.UI.Controls
         public static readonly StyledProperty<Thickness> InternalPaddingProperty =
             AvaloniaProperty.Register<CardControl, Thickness>(nameof(InternalPadding));
 
-        private ICommand _command;
         public ICommand Command
         {
-            get => _command;
-            set => SetAndRaise(CommandProperty, ref _command, value);
+            get => GetValue(CommandProperty);
+            set => SetValue(CommandProperty, value);
         }
 
-        public static readonly DirectProperty<CardControl, ICommand> CommandProperty =
-            Button.CommandProperty.AddOwner<CardControl>(
-                o => o.Command,
-                (o, v) => o.Command = v,
-                enableDataValidation: true);
+        public static readonly StyledProperty<ICommand> CommandProperty =
+            Button.CommandProperty.AddOwner<CardControl>();
 
         public object CommandParameter
         {
