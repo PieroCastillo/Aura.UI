@@ -2,8 +2,9 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media;
-using JetBrains.Annotations;
 using System;
+
+#nullable enable
 
 namespace Aura.UI.Services
 {
@@ -12,30 +13,30 @@ namespace Aura.UI.Services
         public static void NewMessageDialog(this Control owner,
                                             object title,
                                             object content,
-                                            Action<object, RoutedEventArgs>? OnClosing, [CanBeNull] IImage icon = null) => NewMessageDialog<MessageDialog>(owner, title, content, OnClosing, icon);
+                                            Action<object, RoutedEventArgs>? OnClosing, IImage? icon = null) => NewMessageDialog<MessageDialog>(owner, title, content, OnClosing, icon);
 
         public static void NewMessageDialog<TMessageDialog>(this Control owner,
                                             object title,
                                             object content,
-                                            Action<object, RoutedEventArgs>? OnClosing, [CanBeNull] IImage icon = null)
+                                            Action<object, RoutedEventArgs>? OnClosing, IImage? icon = null)
             where TMessageDialog : MessageDialog, new()
-        {
-            var m = new TMessageDialog();
-            m.SetOwner(owner);
-
-            m.Content = content;
-            m.Title = title;
-            if (icon != null)
-                m.Icon = icon;
-
-            if (OnClosing != null)
             {
-                m.Closing += (s, e) =>
+                var m = new TMessageDialog();
+                m.SetOwner(owner);
+
+                m.Content = content;
+                m.Title = title;
+                if (icon != null)
+                    m.Icon = icon;
+
+                if (OnClosing != null)
                 {
-                    OnClosing.Invoke(s, e);
-                };
+                    m.Closing += (s, e) =>
+                    {
+                        OnClosing.Invoke(s, e);
+                    };
+                }
+                m.Show();
             }
-            m.Show();
-        }
     }
 }
