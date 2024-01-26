@@ -10,7 +10,6 @@
 	<StyleInclude Source="/Controls/CardCollectionStyles.xaml" />
 	<StyleInclude Source="/Controls/CardControlStyles.xaml" />
 	<StyleInclude Source="/Controls/ContentDialogStyles.xaml" />
-	<StyleInclude Source="/Controls/DraggingContentControl.xaml"/>
 	<StyleInclude Source="/Controls/FloatingButton.xaml" />
 	<StyleInclude Source="/Controls/FloatingButtonBar.xaml" />
 	<StyleInclude Source="/Controls/GroupBoxStyles.xaml" />
