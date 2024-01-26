@@ -13,9 +13,9 @@ namespace Aura.UI.Controls
             MinimumProperty.Changed.Subscribe(CalibrateAngles);
             ValueProperty.Changed.Subscribe(CalibrateAngles);
 
-            MaximumProperty.OverrideMetadata<ProgressRing>(new DirectPropertyMetadata<double>(100));
-            MinimumProperty.OverrideMetadata<ProgressRing>(new DirectPropertyMetadata<double>(0));
-            ValueProperty.OverrideMetadata<ProgressRing>(new DirectPropertyMetadata<double>(25));
+            MaximumProperty.OverrideMetadata<ProgressRing>(new StyledPropertyMetadata<double>(100));
+            MinimumProperty.OverrideMetadata<ProgressRing>(new StyledPropertyMetadata<double>(0));
+            ValueProperty.OverrideMetadata<ProgressRing>(new StyledPropertyMetadata<double>(25));
 
             AffectsRender<ProgressRing>(XAngleProperty, YAngleProperty);
         }

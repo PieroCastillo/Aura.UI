@@ -14,7 +14,7 @@ namespace Aura.UI.Controls
     /// <summary>
     /// A powered-up TabControl
     /// </summary>
-    public partial class AuraTabView : TabViewBase, IHeadered, IFootered
+    public partial class AuraTabView : TabViewBase, IFootered
     {
         private Button AdderButton;
         internal double lastselectindex = 0;
@@ -34,7 +34,7 @@ namespace Aura.UI.Controls
         }
 
         /// <inheritdoc/>
-        protected override IItemContainerGenerator CreateItemContainerGenerator()
+        protected override ItemContainerGenerator CreateItemContainerGenerator()
             => new AuraTabItemContainerGenerator(
                 this,
                 AuraTabItem.ContentProperty,
@@ -43,8 +43,7 @@ namespace Aura.UI.Controls
                 AuraTabItem.IconProperty,
                 AuraTabItem.IsClosableProperty);
 
-
-        protected override void OnPropertyChanged<T>(AvaloniaPropertyChangedEventArgs<T> change)
+        protected override void OnPropertyChanged(AvaloniaPropertyChangedEventArgs change)
         {
             base.OnPropertyChanged(change);
 

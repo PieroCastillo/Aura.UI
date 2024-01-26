@@ -71,7 +71,7 @@ namespace Aura.UI.Controls
             //        .CenterRect(new Rect(destRect.Size / scale));
 
             //    var interpolationMode = RenderOptions.GetBitmapInterpolationMode(this);
-            context.Custom(new BlurImageRender(stream, dstRect, srcRect, BlurLevel, BlurLevel, null));
+            context.Custom(new BlurImageRender(stream, dstRect, srcRect, BlurLevel, BlurLevel));
             // Dispatcher.UIThread.InvokeAsync(InvalidateVisual, DispatcherPriority.Background);
             //}
         }

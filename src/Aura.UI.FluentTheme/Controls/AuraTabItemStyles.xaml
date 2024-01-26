@@ -1,7 +1,7 @@
 ﻿<Styles  xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="using:Avalonia.Xaml.Interactivity"
-        xmlns:b="using:Aura.UI.Behaviors">        
+        xmlns:b="using:Avalonia.Xaml.Interactivity.Draggable">        
 	<Design.PreviewWith>
 		<AuraTabView TabStripPlacement="Right">
 			<AuraTabItem Header="Hello" 
@@ -49,13 +49,11 @@
 	<Style Selector="AuraTabItem[TabStripPlacement=Top]">
 		<Setter Property="CornerRadius" Value="7,7,0,0" />
 		<Setter Property="(i:Interaction.Behaviors)">
-			<b:SharedContentTemplate>
-				<b:SharedContent>
-					<i:BehaviorCollection>
-						<b:ItemDragBehavior Orientation="Horizontal"/>
-					</i:BehaviorCollection>
-				</b:SharedContent>
-			</b:SharedContentTemplate>
+      <i:BehaviorCollectionTemplate>
+        <i:BehaviorCollection>
+          <b:ItemDragBehavior Orientation="Horizontal" />
+        </i:BehaviorCollection>
+      </i:BehaviorCollectionTemplate>
 		</Setter> 
 		<Setter Property="Template">
 			<ControlTemplate>
