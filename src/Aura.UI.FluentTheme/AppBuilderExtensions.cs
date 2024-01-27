@@ -1,4 +1,5 @@
-﻿using Avalonia.Controls;
+﻿using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
 using System;
@@ -8,7 +9,7 @@ namespace Aura.UI.FluentTheme
 {
     public static class AppBuilderExtensions
     {
-        public static TAppBuilder UseAuraUIFluentTheme<TAppBuilder>(this TAppBuilder appBuilder) where TAppBuilder : AppBuilderBase<TAppBuilder>, new()
+        public static AppBuilder UseAuraUIFluentTheme(this AppBuilder appBuilder)
         {
             appBuilder.AfterSetup(x =>
             {

@@ -8,7 +8,7 @@ using System;
 namespace Aura.UI.Controls.Navigation
 {
     [PseudoClasses(":opened", ":closed", ":selected", ":compact")]
-    public partial class NavigationViewItemBase : TreeViewItem, IHeadered
+    public partial class NavigationViewItemBase : TreeViewItem
     {
         private object _content = "Content";
         static NavigationViewItemBase()

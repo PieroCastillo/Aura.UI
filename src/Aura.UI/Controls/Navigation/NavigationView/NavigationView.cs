@@ -15,7 +15,7 @@ using System.Linq;
 namespace Aura.UI.Controls.Navigation
 {
     [PseudoClasses(":normal", ":compact")]
-    public partial class NavigationView : TreeView, IItemsPresenterHost, IContentPresenterHost, IHeadered
+    public partial class NavigationView : TreeView
     {
         private Button _headeritem;
         private SplitView _splitVw;
@@ -95,16 +95,6 @@ namespace Aura.UI.Controls.Navigation
             SelectedItems.Clear();
             SelectedItems.Add(item);
 
-            //var item_parents = (item as ILogical).GetLogicalAncestors().OfType<NavigationViewItem>();
-
-            //if (this.IsOpen)
-            //{
-            //    foreach (NavigationViewItem n in item_parents)
-            //    {
-            //        n.IsExpanded = true;
-            //    }
-            //}
-
             SelectedItem = item;
         }
         internal void SelectSingleItem(object item)
@@ -158,42 +148,6 @@ namespace Aura.UI.Controls.Navigation
 
             if (Items is IList l && l.Count >= 1 && l[0] is ISelectable s)
                 SelectSingleItem(s);
-        }
-
-
-        ///<inheritdoc/>
-        IAvaloniaList<ILogical> IContentPresenterHost.LogicalChildren => LogicalChildren;
-
-        private IContentPresenter ContentPart { get; set; }
-
-        bool IContentPresenterHost.RegisterContentPresenter(IContentPresenter presenter)
-        {
-            return RegisterContentPresenter(presenter);
-        }
-
-        ///<inheritdoc/>
-        protected virtual bool RegisterContentPresenter(IContentPresenter presenter)
-        {
-            if (presenter.Name == "PART_SelectedContentPresenter")
-            {
-                ContentPart = presenter;
-                return true;
-            }
-            return false;
-        }
-
-        ///<inheritdoc/>
-        protected override void OnContainersMaterialized(ItemContainerEventArgs e)
-        {
-            base.OnContainersMaterialized(e);
-            UpdateTitleAndSelectedContent();
-        }
-
-        ///<inheritdoc/>
-        protected override void OnContainersDematerialized(ItemContainerEventArgs e)
-        {
-            base.OnContainersDematerialized(e);
-            UpdateTitleAndSelectedContent();
         }
 
         protected virtual void OnIsOpenChanged(object sender, AvaloniaPropertyChangedEventArgs e)

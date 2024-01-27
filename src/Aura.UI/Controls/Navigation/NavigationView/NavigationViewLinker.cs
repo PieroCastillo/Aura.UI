@@ -53,10 +53,9 @@ namespace Aura.UI.Controls.Navigation
             PseudoClasses.Add(":pressed");
         }
 
-        /// <inheritdoc/>
-        protected override void OnPointerLeave(PointerEventArgs e)
+        protected override void OnPointerExited(PointerEventArgs e)
         {
-            base.OnPointerLeave(e);
+            base.OnPointerExited(e);
             _pointerOver = false;
         }
     }

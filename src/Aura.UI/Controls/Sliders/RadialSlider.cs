@@ -22,9 +22,9 @@ namespace Aura.UI.Controls
             StrokeWidthProperty.Changed.Subscribe(UpdateRadius);
 
 
-            MaximumProperty.OverrideMetadata<RadialSlider>(new DirectPropertyMetadata<double>(100));
-            MinimumProperty.OverrideMetadata<RadialSlider>(new DirectPropertyMetadata<double>(0));
-            ValueProperty.OverrideMetadata<RadialSlider>(new DirectPropertyMetadata<double>(25));
+            MaximumProperty.OverrideMetadata<RadialSlider>(new StyledPropertyMetadata<double>(100));
+            MinimumProperty.OverrideMetadata<RadialSlider>(new StyledPropertyMetadata<double>(0));
+            ValueProperty.OverrideMetadata<RadialSlider>(new StyledPropertyMetadata<double>(25));
 
             AffectsRender<RadialSlider>(XAngleProperty, YAngleProperty);
         }
