@@ -52,7 +52,7 @@
     <PackageReference Include="Avalonia.Diagnostics" Version="11.0.7" />
     <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.0.7" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.7" />
-    <PackageReference Include="Avalonia.Svg" Version="11.0.0.10" />
+    <PackageReference Include="Avalonia.Svg" Version="11.0.0.12" />
     <PackageReference Include="jp2masa.Avalonia.Flexbox" Version="0.2.0" />
   </ItemGroup>
   <ItemGroup>
