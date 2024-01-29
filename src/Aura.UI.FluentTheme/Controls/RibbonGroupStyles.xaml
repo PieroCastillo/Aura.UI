@@ -35,12 +35,11 @@
 								<ColumnDefinition Width="Auto" />
 							</Grid.ColumnDefinitions>
 							<Border Padding="5" HorizontalAlignment="Center">
-								<ContentPresenter Content="{TemplateBinding Header}"
+								<ContentPresenter Name="PART_ContentPresenter"
+												Content="{TemplateBinding Header}"
 											  ContentTemplate="{TemplateBinding HeaderTemplate}"
 											  HorizontalAlignment="Stretch"
-											  HorizontalContentAlignment="Center"
-											  TextBlock.FontSize="12"
-											  VerticalAlignment="Center" />
+											  HorizontalContentAlignment="Center"/>
 							</Border>
 							<Button Grid.Column="1"
 											Name="PART_MiniButton" Padding="5"
@@ -56,6 +55,12 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
+
+  <Style Selector="CardCollection /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="FontSize" Value="12"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>											  
+  </Style>
+  
 	<Style Selector="RibbonGroup:disabled /template/ Grid#PART_Container">
 		<Setter Property="Opacity" Value="{DynamicResource RibbonGroupDisabledOpacity}" />
 	</Style>

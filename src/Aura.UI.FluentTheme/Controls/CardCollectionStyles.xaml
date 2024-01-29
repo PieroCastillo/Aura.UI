@@ -1,5 +1,9 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
 		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Style Selector="CardCollection /template/ ContentPresenter#PART_HeaderPresenter">
+    <Setter Property="FontSize" Value="15"/>
+    <Setter Property="FontWeight" Value="Bold"/>
+  </Style>
 	<Style Selector="CardCollection">
 		<Setter Property="Header" Value="CardCollection" />
 		<Setter Property="Padding" Value="{DynamicResource CardCollectionPadding}" />
@@ -8,17 +12,12 @@
 				<Border Padding="{TemplateBinding Padding}">
 					<Grid RowDefinitions="Auto,*">
 						<ContentPresenter Name="PART_HeaderPresenter"
-											Content="{TemplateBinding Header}"
-											TextBlock.FontWeight="Bold"
-											TextBlock.FontSize="18" />
+											Content="{TemplateBinding Header}" />
 						<ScrollViewer Grid.Row="1"
 										HorizontalScrollBarVisibility="Auto"
 									  VerticalScrollBarVisibility="Auto">
 							<ItemsPresenter
-										Items="{TemplateBinding Items}"
-										ItemsPanel="{TemplateBinding ItemsPanel}" 
-										ItemTemplate="{TemplateBinding ItemTemplate}"
-										VirtualizationMode="{TemplateBinding VirtualizationMode}"/>
+										ItemsPanel="{TemplateBinding ItemsPanel}" />
 						</ScrollViewer>
 					</Grid>
 				</Border>

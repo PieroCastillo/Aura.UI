@@ -95,12 +95,7 @@
 										</Border.Transitions>
 										<ContentPresenter Name="PART_ContentPresenter"
 										                  Content="{TemplateBinding Header}"
-                                      ContentTemplate="{Binding $parent[NavigationView].HeaderTemplate}"
-										                  TextBlock.FontSize="14"
-										                  TextBlock.FontFamily="Segoe UI"
-                                      HorizontalAlignment="Left"
-                                      ClipToBounds="True"
-										                  VerticalAlignment="Center" />
+                                      ContentTemplate="{Binding $parent[NavigationView].HeaderTemplate}"/>
 									</Border>
 								<ToggleButton Grid.Column="3"
 									              Grid.Row="1"
@@ -125,8 +120,6 @@
 						</Border>
             <Border Grid.Row="1" Name="PART_BottomBorder">
 							<ItemsPresenter Name="PART_ItemsPresenter"
-							                Items="{TemplateBinding Items}"
-                              ItemTemplate="{TemplateBinding ItemTemplate}"
 							                ItemsPanel="{TemplateBinding ItemsPanel}" />
 						</Border>
 					</Grid>
@@ -134,6 +127,15 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
+  
+  
+  <Style Selector="NavigationViewItemBase /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontFamily" Value="Segoe UI"/>
+    <Setter Property="HorizontalAlignment" Value="Left"/>
+    <Setter Property="ClipToBounds" Value="True"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+  </Style>
 
   <Style Selector=":is(NavigationViewItemBase) /template/ Border#PART_NavDecorator">
     <Setter Property="Padding" Value="{DynamicResource NavigationViewItemIconPadding}"/>

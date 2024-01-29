@@ -1,7 +1,7 @@
 ﻿<Styles  xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="using:Avalonia.Xaml.Interactivity"
-        xmlns:b="using:Avalonia.Xaml.Interactivity.Draggable">        
+        xmlns:id="using:Avalonia.Xaml.Interactions.Draggable">        
 	<Design.PreviewWith>
 		<AuraTabView TabStripPlacement="Right">
 			<AuraTabItem Header="Hello" 
@@ -51,7 +51,7 @@
 		<Setter Property="(i:Interaction.Behaviors)">
       <i:BehaviorCollectionTemplate>
         <i:BehaviorCollection>
-          <b:ItemDragBehavior Orientation="Horizontal" />
+          <id:ItemDragBehavior Orientation="Horizontal" />
         </i:BehaviorCollection>
       </i:BehaviorCollectionTemplate>
 		</Setter> 
@@ -112,13 +112,11 @@
 	<Style Selector="AuraTabItem[TabStripPlacement=Bottom]">
 		<Setter Property="CornerRadius" Value="0,0,7,7" />		
 		<Setter Property="(i:Interaction.Behaviors)">
-			<b:SharedContentTemplate>
-				<b:SharedContent>
-					<i:BehaviorCollection>
-						<b:ItemDragBehavior Orientation="Horizontal"/>
-					</i:BehaviorCollection>
-				</b:SharedContent>
-			</b:SharedContentTemplate>
+      <i:BehaviorCollectionTemplate>
+        <i:BehaviorCollection>
+          <id:ItemDragBehavior Orientation="Horizontal" />
+        </i:BehaviorCollection>
+      </i:BehaviorCollectionTemplate>
 		</Setter> 
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -169,13 +167,11 @@
 	<Style Selector="AuraTabItem[TabStripPlacement=Left]">
 		<Setter Property="CornerRadius" Value="7,0,0,7" />		
 		<Setter Property="(i:Interaction.Behaviors)">
-			<b:SharedContentTemplate>
-				<b:SharedContent>
-					<i:BehaviorCollection>
-						<b:ItemDragBehavior Orientation="Vertical"/>
-					</i:BehaviorCollection>
-				</b:SharedContent>
-			</b:SharedContentTemplate>
+      <i:BehaviorCollectionTemplate>
+        <i:BehaviorCollection>
+          <id:ItemDragBehavior Orientation="Vertical" />
+        </i:BehaviorCollection>
+      </i:BehaviorCollectionTemplate>
 		</Setter> 
 		<Setter Property="Template">
 			<ControlTemplate>
@@ -239,13 +235,11 @@
 	<Style Selector="AuraTabItem[TabStripPlacement=Right]">
 		<Setter Property="CornerRadius" Value="0,7,7,0" />	
 		<Setter Property="(i:Interaction.Behaviors)">
-			<b:SharedContentTemplate>
-				<b:SharedContent>
-					<i:BehaviorCollection>
-						<b:ItemDragBehavior Orientation="Vertical"/>
-					</i:BehaviorCollection>
-				</b:SharedContent>
-			</b:SharedContentTemplate>
+      <i:BehaviorCollectionTemplate>
+        <i:BehaviorCollection>
+          <id:ItemDragBehavior Orientation="Vertical" />
+        </i:BehaviorCollection>
+      </i:BehaviorCollectionTemplate>
 		</Setter> 
 		<Setter Property="Template">
 			<ControlTemplate>

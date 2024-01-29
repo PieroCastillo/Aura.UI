@@ -18,6 +18,7 @@
 			<GeometryDrawing  Brush="#FFCC00" Geometry="M8.44 1H7.56L1 13.26L1.44 14H14.54L14.98 13.26L8.44 1ZM2.28 13L8 2.28L13.7 13H2.28ZM7.5 6H8.5V10H7.5V6ZM7.5 11H8.5V12H7.5V11Z"   />
 		</DrawingImage>
 	</Styles.Resources>
+
 	<Style Selector="MessageDialog">
 		<Setter Property="Background" Value="{DynamicResource MessageDialogBackground}" />
 		<Setter Property="BorderBrush" Value="{DynamicResource MessageDialogBorderBrush}"/>
@@ -55,24 +56,21 @@
 									Grid.Column="1"
 									ColumnDefinitions="*,10,auto">
 									<ContentPresenter Name="PART_TitlePresenter"
-													  Content="{TemplateBinding Title}"
-													  TextBlock.FontSize="25"
-													  TextBlock.FontWeight="DemiBold" />
-									<Button Grid.Column="2" Padding="3"
-									Name="PART_ButtonClose"
-									VerticalAlignment="Top"
-									HorizontalAlignment="Right"
-									Margin="0"
-									Width="15" Height="15">
+													  Content="{TemplateBinding Title}" />
+												<Button Grid.Column="2" Padding="3"
+												Name="PART_ButtonClose"
+												VerticalAlignment="Top"
+												HorizontalAlignment="Right"
+												Margin="0"
+												Width="15" Height="15">
 										<Image Source="{DynamicResource EvaIcons.CloseOutline}" />
 									</Button>
 								</Grid>
 								<ContentPresenter Grid.Row="2"
 								                  Grid.Column="1"
-												  Name="PART_ContentPresenter"
-												  Content="{TemplateBinding Content}"
-												  ContentTemplate="{TemplateBinding ContentTemplate}"
-												  TextBlock.FontWeight="Medium" />
+																	Name="PART_ContentPresenter"
+																	Content="{TemplateBinding Content}"
+																	ContentTemplate="{TemplateBinding ContentTemplate}"/>
 							</Grid>
 						</Grid>
 					</Border>
@@ -80,7 +78,13 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
-
+  <Style Selector="MessageDialog /template/ ContentPresenter#PART_TitlePresenter">
+    <Setter Property="FontSize" Value="25"/>
+    <Setter Property="FontWeight" Value="DemiBold"/>
+  </Style>
+  <Style Selector="MessageDialog /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="FontWeight" Value="Medium"/>
+  </Style>
   <!--this animation is some strange...-->
 	<!--<Style Selector="MessageDialog /template/ Border#PART_Border">
 		<Style.Animations>

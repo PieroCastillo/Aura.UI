@@ -7,6 +7,12 @@
 			</CardControl>
 		</Border>
 	</Design.PreviewWith>
+  <Style Selector="CardControl /template/ ContentPresenter#PART_HeaderPresenter">
+    <Setter Property="FontSize" Value="18"/>
+  </Style>
+  <Style Selector="CardControl /template/ ContentPresenter#PART_SecondaryHeaderPresenter">
+    <Setter Property="Foreground" Value="{DynamicResource SystemControlBackgroundBaseMediumHighBrush}"/>
+  </Style>
 	<Style Selector="CardControl">
 		<Setter Property="Padding" Value="10" />
 		<Setter Property="Width" Value="200"/>
@@ -43,12 +49,11 @@
 									                  Grid.Row="1"
 									                  Name="PART_HeaderPresenter"
 									                  Content="{TemplateBinding Header}"
-									                  ContentTemplate="{TemplateBinding HeaderTemplate}"
-									                  TextBlock.FontSize="18" />
-									<ContentPresenter Grid.Column="1"
+									                  ContentTemplate="{TemplateBinding HeaderTemplate}"/>
+									<ContentPresenter Name="PART_SecondaryHeaderPresenter"
+																		Grid.Column="1"
 									                  Grid.Row="3"
-									                  Content="{TemplateBinding SecondaryHeader}"
-									                  TextBlock.Foreground="{DynamicResource SystemControlBackgroundBaseMediumHighBrush}" />
+									                  Content="{TemplateBinding SecondaryHeader}" />
 								</Grid>
 							</ExperimentalAcrylicBorder>
 						</Border>

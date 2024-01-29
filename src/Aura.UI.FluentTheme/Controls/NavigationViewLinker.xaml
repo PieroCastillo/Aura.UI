@@ -34,26 +34,14 @@
 						       VerticalAlignment="Top" />
 						<Grid Grid.Column="1"
 						      RowDefinitions="auto,*">
-							<ContentPresenter Content="{TemplateBinding Title}"
-							                  Padding="10,15,10,0"
-							                  TextBlock.FontSize="20"
-							                  TextBlock.FontWeight="Medium"
-							                  TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleForeground}" />
-							<ContentPresenter Content="{TemplateBinding Content}"
-							                  Grid.Row="1"
-							                  Padding="10"
-							                  TextBlock.FontSize="14"
-							                  TextBlock.FontWeight="Medium"
-							                  TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleForegroundLow}" />
+							<ContentPresenter Name="PART_TitlePresenter"
+																Content="{TemplateBinding Title}"/>
+							<ContentPresenter Name="PART_ContentPresenter"
+																Content="{TemplateBinding Content}"
+							                  Grid.Row="1"/>
 						</Grid>
 						<ContentPresenter Name="PART_TopContentPresenter"
 						                  Grid.Column="2"
-						                  CornerRadius="0,2.5,0,2.5"
-						                  Background="{DynamicResource NavigationViewLinkerTitleTopContentBackground}"
-						                  TextBlock.Foreground="{DynamicResource NavigationViewLinkerTitleTopContentForeground}"
-						                  Padding="5"
-						                  TextBlock.FontSize="14"
-						                  VerticalAlignment="Top"
 						                  Content="{TemplateBinding TopContent}"
                               IsVisible="{Binding $parent[NavigationViewLinker].TopContentVisible}"/>
 					</Grid>
@@ -62,14 +50,37 @@
 		</Setter>
 	</Style>
 
-	<Style Selector="NavigationViewLinker Border#PART_Border">
+  <Style Selector="NavigationViewLinker /template/ ContentPresenter#PART_TitlePresenter">
+    <Setter Property="Padding" Value="10,15,10,0"/>
+    <Setter Property="FontSize" Value="20"/>
+    <Setter Property="FontWeight" Value="Medium"/>
+    <Setter Property="Foreground" Value="{DynamicResource NavigationViewLinkerTitleForeground}"/>
+  </Style>
+
+  <Style Selector="NavigationViewLinker /template/ ContentPresenter#PART_ContentPresenter">
+    <Setter Property="Padding" Value="10"/>
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="FontWeight" Value="Medium"/>
+    <Setter Property="Foreground" Value="{DynamicResource NavigationViewLinkerTitleForegroundLow}"/>
+  </Style>
+
+  <Style Selector="NavigationViewLinker /template/ ContentPresenter#PART_TopContentPresenter">
+    <Setter Property="BoxShadow" Value="0 0 2.5 0 Black"/>
+    <Setter Property="CornerRadius" Value="0,2.5,0,2.5"/>
+    <Setter Property="Background" Value="{DynamicResource NavigationViewLinkerTitleTopContentBackground}"/>
+    <Setter Property="Foreground" Value="{DynamicResource NavigationViewLinkerTitleTopContentForeground}"/>
+    <Setter Property="Padding" Value="5"/>
+    <Setter Property="FontSize" Value="14"/>
+    <Setter Property="VerticalAlignment" Value="Top"/>
+  </Style>
+  
+	<Style Selector="NavigationViewLinker /template/ Border#PART_Border">
 	    <Setter Property="BoxShadow" Value="0 0 2.5 0 Black"/>
 	</Style>
 	<Style Selector="NavigationViewLinker:pressed /template/ Border#PART_Border">
 		<Setter Property="RenderTransform" Value="scale(0.98)"/>
 	</Style>
-	<Style Selector="NavigationViewLinker Border#PART_Border:pointerover">
-	    <Setter Property="BoxShadow" Value="0 0 2.5 0 Black"/>
+	<Style Selector="NavigationViewLinker /template/ Border#PART_Border:pointerover">
 	    <Setter Property="BoxShadow" Value="0 0 5 0 Black"/>
 	</Style>
 	<Style Selector="NavigationViewLinker:pointerover">

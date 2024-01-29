@@ -31,13 +31,19 @@
 		</DrawingImage>
 	</Styles.Resources>
 	<Style Selector="AuraTabView">
-	    <Setter Property="Background" Value="{DynamicResource AuraTabViewBackground}"/>
+	   <Setter Property="Background" Value="{DynamicResource AuraTabViewBackground}"/>
 		<Setter Property="SecondaryBackground" Value="Transparent"/>
 	</Style>
 	<Style Selector="AuraTabView /template/ ContentPresenter#PART_FallBackContent">
 		<Setter Property="IsVisible" Value="false"/>
 	</Style>
-	<Style Selector="AuraTabView:empty /template/ ContentPresenter#PART_FallBackContent">
+  <Style Selector="AuraTabView /template/ ContentPresenter#PART_HeaderPresenter">
+    <Setter Property="FontSize" Value="15"/>
+  </Style>
+  <Style Selector="AuraTabView /template/ ContentPresenter#PART_FooterPresenter">
+    <Setter Property="FontSize" Value="15"/>
+  </Style>
+  <Style Selector="AuraTabView:empty /template/ ContentPresenter#PART_FallBackContent">
 		<Setter Property="IsVisible" Value="True"/>
 	</Style>
 	<Style Selector="Border#PART_InternalBorder">
@@ -73,10 +79,10 @@
 							      Width="{TemplateBinding Width}"
 								  ColumnDefinitions="auto,auto,*,auto">
 								<!--Header-->
-								<ContentPresenter Grid.Column="0"
-												  Content="{TemplateBinding Header}"
+								<ContentPresenter Name="PART_HeaderPresenter"
+																	Grid.Column="0"
+																	Content="{TemplateBinding Header}"
 								                  ContentTemplate="{TemplateBinding HeaderTemplate}"
-								                  TextBlock.FontSize="15"
 								                  TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
 								                  VerticalContentAlignment="Center"
 								                  Margin="5, 0"
@@ -89,9 +95,7 @@
 									</Grid.ColumnDefinitions>
 										<ItemsPresenter Grid.Column="0"
 										                Name="PART_ItemsPresenter"
-										                Items="{TemplateBinding Items}"
 										                ItemsPanel="{TemplateBinding ItemsPanel}"
-										                ItemTemplate="{TemplateBinding ItemTemplate}"
 										                HorizontalAlignment="Left"
 										                MaxWidth="{TemplateBinding MaxWidthOfItemsPresenter}">
 											<ItemsPresenter.Transitions>
@@ -128,10 +132,10 @@
 									</Border>	
 							</Grid>
 								<!--Footer-->
-								<ContentPresenter Grid.Column="3"
-												  Content="{TemplateBinding Footer}"
+								<ContentPresenter Name="PART_FooterPresenter"
+																	Grid.Column="3"
+																	Content="{TemplateBinding Footer}"
 								                  ContentTemplate="{TemplateBinding FooterTemplate}"
-								                  TextBlock.FontSize="15"
 								                  TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
 								                  VerticalContentAlignment="Center"
 								                  Margin="5,0"
@@ -187,10 +191,10 @@
 								   Background="{TemplateBinding SecondaryBackground}"
 								   Width="{TemplateBinding Width}" ColumnDefinitions="auto,auto,*,auto">
 									<!--Header-->
-									<ContentPresenter Grid.Column="0"
-														Content="{TemplateBinding Header}"
+									<ContentPresenter Name="PART_HeaderPresenter"
+																		Grid.Column="0"
+																		Content="{TemplateBinding Header}"
 									                  ContentTemplate="{TemplateBinding HeaderTemplate}"
-									                  TextBlock.FontSize="15"
 									                  TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
 									                  VerticalContentAlignment="Center"
 									                  Margin="5, 0"
@@ -203,9 +207,7 @@
 										</Grid.ColumnDefinitions>
 										<ItemsPresenter Grid.Column="0"
 														Name="PART_ItemsPresenter"
-														Items="{TemplateBinding Items}"
 														ItemsPanel="{TemplateBinding ItemsPanel}"
-														ItemTemplate="{TemplateBinding ItemTemplate}"
 														HorizontalAlignment="Left"
 														MaxWidth="{TemplateBinding MaxWidthOfItemsPresenter}">
 											<ItemsPresenter.Transitions>
@@ -240,10 +242,10 @@
 									</Grid>
 								
 									<!--Footer-->
-									<ContentPresenter Grid.Column="3" 
+									<ContentPresenter Name="PART_FooterPresenter"
+																	Grid.Column="3" 
 													Content="{TemplateBinding Footer}"
 													  ContentTemplate="{TemplateBinding FooterTemplate}"
-													  TextBlock.FontSize="15"
 													  TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
 													  VerticalContentAlignment="Center"
 													  Margin="5,0"
@@ -300,9 +302,9 @@
 								   Name="PART_DockContainer"
 								Height="{Binding $parent[AuraTabView].Bounds.Height}">
 								<!--Header-->
-								<ContentPresenter Content="{TemplateBinding Header}"
+								<ContentPresenter Name="PART_HeaderPresenter"
+																	Content="{TemplateBinding Header}"
 								                  ContentTemplate="{TemplateBinding HeaderTemplate}"
-								                  TextBlock.FontSize="15"
 								                  TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
 								                  VerticalContentAlignment="Center"
 								                  Margin="5, 5"
@@ -313,9 +315,7 @@
 									  RowDefinitions="*,auto">
 									<ItemsPresenter Grid.Row="0"
 									                Name="PART_ItemsPresenter"
-									                Items="{TemplateBinding Items}"
 									                ItemsPanel="{TemplateBinding ItemsPanel}"
-									                ItemTemplate="{TemplateBinding ItemTemplate}"
 									                HorizontalAlignment="Left" VerticalAlignment="Top"
 									                MaxHeight="{TemplateBinding MaxWidthOfItemsPresenter}">
 										<ItemsPresenter.Transitions>
@@ -350,9 +350,9 @@
 								</Grid>
 							
 								<!--Footer-->
-								<ContentPresenter Grid.Row="3" Content="{TemplateBinding Footer}"
+								<ContentPresenter Name="PART_FooterPresenter"
+																	Grid.Row="3" Content="{TemplateBinding Footer}"
 												  ContentTemplate="{TemplateBinding FooterTemplate}"
-												  TextBlock.FontSize="15"
 												  TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
 												  VerticalContentAlignment="Center"
 												  Margin="5,5"
@@ -410,10 +410,10 @@
 								  Height="{TemplateBinding Height}" 
 								  RowDefinitions="auto,auto,*,auto"> 
 								<!--Header-->
-								<ContentPresenter Grid.Row="0"
-												  Content="{TemplateBinding Header}"
+								<ContentPresenter Name="PART_HeaderPresenter"
+																	Grid.Row="0"
+																	Content="{TemplateBinding Header}"
 								                  ContentTemplate="{TemplateBinding HeaderTemplate}"
-								                  TextBlock.FontSize="15"
 								                  TextBlock.Foreground="{DynamicResource ThemeForegroundBrush}"
 								                  VerticalContentAlignment="Center"
 								                  Margin="5, 5"
@@ -425,9 +425,7 @@
 										RowDefinitions="*,auto">
 									<ItemsPresenter Grid.Row="0"
 											 Name="PART_ItemsPresenter"
-											 Items="{TemplateBinding Items}"
 											 ItemsPanel="{TemplateBinding ItemsPanel}"
-											 ItemTemplate="{TemplateBinding ItemTemplate}"
 											 HorizontalAlignment="Left"
 											 MaxWidth="{TemplateBinding MaxWidthOfItemsPresenter}">
 										<ItemsPresenter.Transitions>
@@ -461,9 +459,9 @@
 									</Border>
 								</Grid>
 								<!--Footer-->
-								<ContentPresenter Grid.Row="3" Content="{TemplateBinding Footer}"
+								<ContentPresenter Name="PART_FooterPresenter"
+																	Grid.Row="3" Content="{TemplateBinding Footer}"
 												ContentTemplate="{TemplateBinding FooterTemplate}"
-												TextBlock.FontSize="15"
 												TextBlock.Foreground="{DynamicResource ThemeForegroundLowBrush}"
 												VerticalContentAlignment="Center"
 												Margin="5,5"

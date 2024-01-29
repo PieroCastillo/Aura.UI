@@ -59,7 +59,6 @@
 					</ToggleButton>
 					<ItemsPresenter Grid.Column="1"
 									Name="PART_ItemsPresenter"
-									Items="{TemplateBinding Items}"
 									ItemsPanel="{TemplateBinding ItemsPanel}">
 						<ItemsPresenter.Transitions>
 							<Transitions>
@@ -115,7 +114,6 @@
 			<ControlTemplate>
 				<Grid ColumnDefinitions="*,auto">
 					<ItemsPresenter Name="PART_ItemsPresenter"
-									Items="{TemplateBinding Items}"
 									ItemsPanel="{TemplateBinding ItemsPanel}"
 									HorizontalAlignment="Right">
 						<!--<ItemsPresenter.Transitions>
@@ -183,7 +181,6 @@
 			<ControlTemplate>
 				<Grid RowDefinitions="*,auto" ColumnDefinitions="auto">
 					<ItemsPresenter Name="PART_ItemsPresenter"
-									Items="{TemplateBinding Items}"
 									ItemsPanel="{TemplateBinding ItemsPanel}">
 						<!--<ItemsPresenter.Transitions>
 							<Transitions>
@@ -263,7 +260,6 @@
 						</ToggleButton.RenderTransform>
 					</ToggleButton>
 					<ItemsPresenter Grid.Row="1" Name="PART_ItemsPresenter"
-									Items="{TemplateBinding Items}"
 									ItemsPanel="{TemplateBinding ItemsPanel}">
 						<!--<ItemsPresenter.Transitions>
 							<Transitions>

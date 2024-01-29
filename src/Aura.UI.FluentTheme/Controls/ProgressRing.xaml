@@ -53,8 +53,7 @@
 
 	<Style Selector="ProgressRing[IsIndeterminate=True] /template/ AuraArc.rc">
 		<Style.Animations>
-			<Animation Duration="0:0:.75" FillMode="Both"
-					   RepeatCount="Infinite" Easing="SplineEasing"
+			<Animation Duration="0:0:.75" FillMode="Both" Easing="SplineEasing"
 					   IterationCount="Infinite">
 				<KeyFrame Cue="0%">
 					<Setter Property="StartAngle" Value="0" />

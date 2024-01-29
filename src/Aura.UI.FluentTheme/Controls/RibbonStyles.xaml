@@ -44,7 +44,13 @@
 		<DrawingImage x:Key="Octicons.TriangleDown">
 			<GeometryDrawing  Brush="{DynamicResource RibbonGroupForeground}" Geometry="M0 5l6 6 6-6H0z" />
 		</DrawingImage>
- 	</Styles.Resources>
+ 	</Styles.Resources>    
+  <Style Selector="Ribbon /template/ ContentPresenter#PART_HeaderPresenter">
+    <Setter Property="FontWeight" Value="Bold"/>
+    <Setter Property="HorizontalAlignment" Value="Center"/>
+    <Setter Property="VerticalAlignment" Value="Center"/>
+		<Setter Property="Padding" Value="10"/>
+  </Style>
 	<Style Selector="Ribbon">
 		<Setter Property="ExpansionState" Value="Total" />
 		<Setter Property="VerticalAlignment" Value="Top" />
@@ -71,25 +77,21 @@
 								<Grid.RowDefinitions>
 									<RowDefinition Height="*" />
 								</Grid.RowDefinitions>
-								<ContentPresenter Grid.Column="0"
-								                  Content="{TemplateBinding Header}"
-								                  HorizontalAlignment="Center"
-								                  VerticalAlignment="Center"
-												  TextBlock.FontWeight="Bold"
-								                  Padding="10" />
+								<ContentPresenter Name="PART_HeaderPresenter"
+																	Grid.Column="0"
+								                  Content="{TemplateBinding Header}"/>
 								<ShadowButton Grid.Column="1"
-								                Name="PART_LeftButton"
-								                Content="{TemplateBinding LeftContent}"
+								              Name="PART_LeftButton"
+								              Content="{TemplateBinding LeftContent}"
                               IsVisible="{TemplateBinding LeftContentVisible}"
-								                Classes="BorderButtons"
-								                CornerRadius="0" />
+								              Classes="BorderButtons"
+								              CornerRadius="0" />
 								<ScrollViewer Grid.Column="2" HorizontalScrollBarVisibility="Auto"
 								              VerticalAlignment="Stretch" BorderThickness="0"
 								              Padding="0" Margin="0">
 									<ItemsPresenter
 										VerticalAlignment="Stretch"
 										Name="PART_ItemsPresenter"
-										Items="{TemplateBinding Items}"
 										ItemsPanel="{TemplateBinding ItemsPanel}"
 										Classes="BorderButtons" />
 								</ScrollViewer>
@@ -140,6 +142,7 @@
 			</ControlTemplate>
 		</Setter>
 	</Style>
+  
 
 	<Style Selector="ExperimentalAcrylicBorder#PART_RibbonAcrylicBorder">
 		<Setter Property="Material" Value="{StaticResource RibbonMaterial}" />
