@@ -26,11 +26,11 @@
             VerticalAlignment="Top" 
             Height="19"/>
     <StackPanel HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
-      <StackPanel.Styles>
+      <!--<StackPanel.Styles>
         <Style Selector="ComboBox">
           <Setter Property="VirtualizationMode" Value="Simple"/>
         </Style>
-      </StackPanel.Styles>
+      </StackPanel.Styles>-->
       <ComboBox
             Name="combobox" PlaceholderText="Window Transparency Level"
             SelectedItem="{Binding #s}" >

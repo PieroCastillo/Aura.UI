@@ -1,11 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Reactive;
-using System.Runtime.CompilerServices;
-using Aura.UI.Data;
-using Aura.UI.Services;
-using Avalonia;
-using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
@@ -17,8 +12,7 @@ namespace Aura.UI.Gallery.ViewModels
     {
         public ReactiveCardCollectionPageViewModel()
         {
-            var aL = AvaloniaLocator.CurrentMutable.GetService<IAssetLoader>();
-            CardCollectionItems = new List<ICardControlTemplate>()
+            CardCollectionItems = new List<CardControlViewModel>()
             {
                 new CardControlViewModel()
                 {
@@ -28,7 +22,7 @@ namespace Aura.UI.Gallery.ViewModels
                     {
                         Child = new Image
                         {
-                            Source = new Bitmap(aL.Open(new Uri($"avares://Aura.UI.Gallery/Assets/20000.jpg")))
+                            Source = new Bitmap(AssetLoader.Open(new Uri($"avares://Aura.UI.Gallery/Assets/20000.jpg")))
                         }
                     },
                     Command = ReactiveCommand.Create<object,Unit>(Do),
@@ -42,7 +36,7 @@ namespace Aura.UI.Gallery.ViewModels
                     {
                         Child = new Image
                         {
-                            Source = new Bitmap(aL.Open(new Uri($"avares://Aura.UI.Gallery/Assets/summershesvip.jpg")))
+                            Source = new Bitmap(AssetLoader.Open(new Uri($"avares://Aura.UI.Gallery/Assets/summershesvip.jpg")))
                         }
                     },
                     Command = ReactiveCommand.Create<object,Unit>(Do),
@@ -56,7 +50,7 @@ namespace Aura.UI.Gallery.ViewModels
                     {
                         Child = new Image
                         {
-                            Source = new Bitmap(aL.Open(new Uri($"avares://Aura.UI.Gallery/Assets/virus.jpg")))
+                            Source = new Bitmap(AssetLoader.Open(new Uri($"avares://Aura.UI.Gallery/Assets/virus.jpg")))
                         }
                     },
                     Command = ReactiveCommand.Create<object,Unit>(Do),
@@ -70,7 +64,7 @@ namespace Aura.UI.Gallery.ViewModels
                     {
                         Child = new Image
                         {
-                            Source = new Bitmap(aL.Open(new Uri($"avares://Aura.UI.Gallery/Assets/greenlights.jpg")))
+                            Source = new Bitmap(AssetLoader.Open(new Uri($"avares://Aura.UI.Gallery/Assets/greenlights.jpg")))
                         }
                     },
                     Command = ReactiveCommand.Create<object,Unit>(Do),
@@ -84,9 +78,9 @@ namespace Aura.UI.Gallery.ViewModels
             return new Unit();
         }
 
-        private IList<ICardControlTemplate> _cardCollectionItems;
+        private IList<CardControlViewModel> _cardCollectionItems;
 
-        public IList<ICardControlTemplate> CardCollectionItems
+        public IList<CardControlViewModel> CardCollectionItems
         {
             get => _cardCollectionItems;
             set => this.RaiseAndSetIfChanged(ref _cardCollectionItems, value);

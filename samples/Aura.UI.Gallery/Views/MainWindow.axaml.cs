@@ -16,9 +16,6 @@ namespace Aura.UI.Gallery.Views
         public MainWindow()
         {
             InitializeComponent();
-#if DEBUG
-            this.AttachDevTools();
-#endif
             DragBorder.PointerPressed += (s, e) =>
             {
                 BeginMoveDrag(e);

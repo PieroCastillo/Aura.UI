@@ -16,32 +16,32 @@ namespace Aura.UI.Gallery.Pages
             {
                 switch (app.GetTheme())
                 {
-                    case Theme.Light:
+                    case Gallery.Theme.Light:
                         PART_DarkOption.IsChecked = false;
                         PART_LightOption.IsChecked = true;
                         break;
-                    case Theme.Dark:
+                    case Gallery.Theme.Dark:
                         PART_DarkOption.IsChecked = true;
                         PART_LightOption.IsChecked = false;
                         break;
                 }
             }
 
-            PART_DarkOption.Checked += async (s, e) =>
+            PART_DarkOption.IsCheckedChanged += async (s, e) =>
             {
-                if (Application.Current is App app)
+                if (PART_DarkOption.IsChecked == true && Application.Current is App app)
                 {
                     Debug.WriteLine("dark checked");
-                    await app.SetTheme(Theme.Dark);
+                    await app.SetTheme(Gallery.Theme.Dark);
                 }
             };
 
-            PART_LightOption.Checked += async (s, e) =>
+            PART_LightOption.IsCheckedChanged += async (s, e) =>
             {
-                if (Application.Current is App app)
+                if (PART_LightOption.IsChecked == true && Application.Current is App app)
                 {
                     Debug.WriteLine("light checked");
-                    await app.SetTheme(Theme.Light);
+                    await app.SetTheme(Gallery.Theme.Light);
                 }
             };
 

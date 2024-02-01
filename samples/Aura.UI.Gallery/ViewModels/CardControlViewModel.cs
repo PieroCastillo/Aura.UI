@@ -1,10 +1,9 @@
 using System.Windows.Input;
-using Aura.UI.Data;
 using ReactiveUI;
 
 namespace Aura.UI.Gallery.ViewModels
 {
-    public class CardControlViewModel : ViewModelBase, ICardControlTemplate
+    public class CardControlViewModel : ViewModelBase
     {
         private ICommand _command;
         private object _commandParameter;

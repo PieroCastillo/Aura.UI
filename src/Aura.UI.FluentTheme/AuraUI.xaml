@@ -1,6 +1,5 @@
 ﻿<Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-		x:Class="Aura.UI.AuraUITheme">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 	<StyleInclude Source="/AuraUIFluent.xaml" />
 	<StyleInclude Source="/Controls/AuraTabItemStyles.xaml" />
 	<StyleInclude Source="/Controls/AuraTabViewStyles.xaml" />

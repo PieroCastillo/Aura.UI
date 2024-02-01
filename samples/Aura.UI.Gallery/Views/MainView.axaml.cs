@@ -10,10 +10,5 @@ namespace Aura.UI.Gallery.Views
         {
             InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

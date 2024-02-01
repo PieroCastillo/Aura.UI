@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"				
              xmlns:converters="clr-namespace:Avalonia.Controls.Converters;assembly=Avalonia.Controls"
-				     xmlns:flex="clr-namespace:Avalonia.Flexbox;assembly=Avalonia.Flexbox"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
              xmlns:l="using:System.Collections"
@@ -32,16 +31,10 @@
               Title="What's new">
       <NavigationViewItem.Content>
         <GroupBox Margin="10" Grid.Row="1"
-              ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                 Header="Recently Added Samples"
-                TextBlock.FontSize="20">
-          <flex:FlexPanel Direction="Row"
-                  Wrap="Wrap"
-                  AlignContent="FlexStart"
-                  AlignItems="Center"
-                  JustifyContent="FlexStart"
-                  ColumnSpacing="10"
-                  RowSpacing="10">
+                FontSize="20">
+          <WrapPanel>
             <NavigationViewLinker Icon="{DynamicResource BoxIcons.RegularCodeAlt}"
                         Title="{Binding Titles.FloattingButtonBar}" LinkTo="{Binding #float_bar_btn}"
                         Content="{Binding Descriptions.FloattingButtonBar}" TopContent="Updated"/>
@@ -81,23 +74,17 @@
             <NavigationViewLinker Icon="{DynamicResource FluentIcons.badge_regular}"
                         Title="{Binding Titles.Badge}" LinkTo="{Binding #badge}"
                         Content="{Binding Descriptions.Badge}" TopContent="New"/>
-          </flex:FlexPanel>
+          </WrapPanel>
         </GroupBox>
       </NavigationViewItem.Content>
     </NavigationViewItem>
-    <!--<Separator/>-->
+    <Separator/>
     <NavigationViewItem Header="Basic Input" Title="Basic Input"
               Icon="{DynamicResource FontAwesome.CheckSquareRegular}">
       <NavigationViewItem.Content>
         <GroupBox Margin="10,0" Padding="0"
-            TextBlock.FontSize="20" Header="{x:Null}">
-          <flex:FlexPanel Direction="Row"
-                  Wrap="Wrap"
-                  AlignContent="FlexStart"
-                  AlignItems="Center"
-                  JustifyContent="FlexStart"
-                  ColumnSpacing="10"
-                  RowSpacing="10">
+                  FontSize="20" Header="{x:Null}">
+          <WrapPanel>
             <NavigationViewLinker Icon="{DynamicResource BoxIcons.RegularCodeAlt}"
                         Title="{Binding Titles.FloattingButtonBar}" LinkTo="{Binding #float_bar_btn}"
                         Content="{Binding Descriptions.FloattingButtonBar}"/>
@@ -111,7 +98,7 @@
                         Title="{Binding Titles.RadialSlider}" LinkTo="{Binding #radialSlider}"
                         Content="{Binding Descriptions.RadialSlider}" TopContent="Updated"/>
 
-          </flex:FlexPanel>
+          </WrapPanel>
         </GroupBox>
       </NavigationViewItem.Content>
       <NavigationViewItem Name="float_bar_btn" Header="{Binding Titles.FloattingButtonBar}" Title="Floating Button Bar"
@@ -143,14 +130,8 @@
                  Icon="{DynamicResource BoxIcons.RegularLayout}">
       <NavigationViewItem.Content>
         <GroupBox Margin="10,0" Padding="0"
-            TextBlock.FontSize="20" Header="{x:Null}">
-          <flex:FlexPanel Direction="Row"
-                  Wrap="Wrap"
-                  AlignContent="FlexStart"
-                  AlignItems="Center"
-                  JustifyContent="FlexStart"
-                  ColumnSpacing="10"
-                  RowSpacing="10">
+                  FontSize="20" Header="{x:Null}">
+          <WrapPanel>
             <NavigationViewLinker Icon="{DynamicResource VSImageLib.GroupBox_16x}"
                           Title="GroupBox" LinkTo="{Binding #gb}"
                           Content="{Binding Descriptions.GroupBox}"/>
@@ -160,7 +141,7 @@
             <NavigationViewLinker Icon="{DynamicResource FluentIcons.badge_regular}"
                         Title="{Binding Titles.Badge}" LinkTo="{Binding #badge}"
                         Content="{Binding Descriptions.Badge}" TopContent="New"/>
-          </flex:FlexPanel>
+          </WrapPanel>
         </GroupBox>
       </NavigationViewItem.Content>
       <NavigationViewItem Name="gb" Header="GroupBox" Title="GroupBox"
@@ -186,14 +167,8 @@
                  Icon="{DynamicResource FluentIcons.navigation_regular}">
       <NavigationViewItem.Content>
         <GroupBox Margin="10,0" Padding="0"
-            TextBlock.FontSize="20" Header="{x:Null}">
-          <flex:FlexPanel Direction="Row"
-                  Wrap="Wrap"
-                  AlignContent="FlexStart"
-                  AlignItems="Center"
-                  JustifyContent="FlexStart"
-                  ColumnSpacing="10"
-                  RowSpacing="10">
+            FontSize="20" Header="{x:Null}">
+          <WrapPanel>
             <NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.tab_desktop_new_page_filled}"
                         Title="{Binding Titles.AuraTabView}" LinkTo="{Binding #aw}"
                         Content="{Binding Descriptions.AuraTabView}"/>
@@ -203,7 +178,7 @@
             <NavigationViewLinker Icon="{DynamicResource VSImageLib.RibbonMenu_16x}"
                         Title="Ribbon" LinkTo="{Binding #rb}"
                         Content="{Binding Descriptions.Ribbon}"/>
-          </flex:FlexPanel>
+          </WrapPanel>
         </GroupBox>
       </NavigationViewItem.Content>
       <NavigationViewItem Name="aw" Header="{Binding Titles.AuraTabView}" Title="{Binding Titles.AuraTabView}"
@@ -229,21 +204,15 @@
                  Icon="{DynamicResource BoxIcons.RegularMessageAlt}">
       <NavigationViewItem.Content>
         <GroupBox Margin="10,0" Padding="0"
-            TextBlock.FontSize="20" Header="{x:Null}">
-          <flex:FlexPanel Direction="Row"
-                  Wrap="Wrap"
-                  AlignContent="FlexStart"
-                  AlignItems="Center"
-                  JustifyContent="FlexStart"
-                  ColumnSpacing="10"
-                  RowSpacing="10">
+            FontSize="20" Header="{x:Null}">
+          <WrapPanel>
             <NavigationViewLinker Icon="{DynamicResource BoxIcons.RegularMessageAltDots}"
                         Title="{Binding Titles.ContentDialog}" LinkTo="{Binding #ctndialog}"
                         Content="{Binding Descriptions.ContentDialog}"/>
             <NavigationViewLinker Icon="{DynamicResource BoxIcons.SolidMessageAltDots}"
                         Title="{Binding Titles.MessageDialog}" LinkTo="{Binding #msgbox}"
                         Content="{Binding Descriptions.MessageDialog}"/>
-          </flex:FlexPanel>
+          </WrapPanel>
         </GroupBox>
       </NavigationViewItem.Content>
       <NavigationViewItem Name="ctndialog" Header="ContentDialog" Title="{Binding Titles.ContentDialog}"
@@ -262,18 +231,12 @@
     <NavigationViewItem Header="Media" Title="Media" Icon="{DynamicResource VSImageLib.Media_16x}">
       <NavigationViewItem.Content>
         <GroupBox Margin="10,0" Padding="0"
-            TextBlock.FontSize="20" Header="{x:Null}">
-          <flex:FlexPanel Direction="Row"
-                  Wrap="Wrap"
-                  AlignContent="FlexStart"
-                  AlignItems="Center"
-                  JustifyContent="FlexStart"
-                  ColumnSpacing="10"
-                  RowSpacing="10">
+            FontSize="20" Header="{x:Null}">
+          <WrapPanel>
             <NavigationViewLinker Icon="{DynamicResource FluentIconsFilled.image_filled}"
                         Title="{Binding Titles.BlurryImage}" LinkTo="{Binding #blurryimg_pg}"
                         Content="{Binding Descriptions.BlurryImage}"/>
-          </flex:FlexPanel>
+          </WrapPanel>
         </GroupBox>
       </NavigationViewItem.Content>
       <NavigationViewItem Name="blurryimg_pg" Header="BlurryImage" Title="{Binding Titles.BlurryImage}"

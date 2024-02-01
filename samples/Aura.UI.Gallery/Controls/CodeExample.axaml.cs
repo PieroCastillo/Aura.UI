@@ -6,17 +6,12 @@ using AvaloniaEdit;
 using Aura.UI.Extensions;
 using AvaloniaEdit.Indentation.CSharp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Avalonia.Collections;
-using Avalonia.Layout;
 using Avalonia.LogicalTree;
 
 namespace Aura.UI.Gallery.Controls
 {
-    public class CodeExample : TemplatedControl, ILogical
+    public class CodeExample : TemplatedControl
     {
         static CodeExample()
         {
@@ -24,7 +19,6 @@ namespace Aura.UI.Gallery.Controls
         }
         private TextEditor xaml_edit;
         private TextEditor c_edit;
-        private IAvaloniaReadOnlyList<ILogical> _logicalChildren1;
 
         private static void ControlChildChanged(AvaloniaPropertyChangedEventArgs e)
         {
@@ -110,7 +104,5 @@ namespace Aura.UI.Gallery.Controls
         }
         public static readonly StyledProperty<string> TitleTwoProperty =
             AvaloniaProperty.Register<CodeExample, string>(nameof(TitleTwo));
-
-        IAvaloniaReadOnlyList<ILogical> ILogical.LogicalChildren => this.LogicalChildren;
     }
 }

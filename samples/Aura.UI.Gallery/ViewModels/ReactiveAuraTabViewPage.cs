@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Aura.UI.Data;
 using Avalonia;
 using Avalonia.Media;
 using Avalonia.Platform;
@@ -10,9 +9,7 @@ namespace Aura.UI.Gallery.ViewModels
     {
         public ReactiveAuraTabViewPage()
         {
-            var assetLoader = AvaloniaLocator.CurrentMutable.GetService<IAssetLoader>();
-
-            ItemsSource = new List<IAuraTabItemTemplate>()
+            ItemsSource = new List<AuraTabViewViewModel>()
             {
                 new AuraTabViewViewModel()
                 {
@@ -33,10 +30,10 @@ namespace Aura.UI.Gallery.ViewModels
                 }
             };
         }
-        public IList<IAuraTabItemTemplate> ItemsSource { get; }
+        public IList<AuraTabViewViewModel> ItemsSource { get; }
     }
 
-    public class AuraTabViewViewModel : IAuraTabItemTemplate
+    public class AuraTabViewViewModel
     {
         public object Content { get; set; }
 

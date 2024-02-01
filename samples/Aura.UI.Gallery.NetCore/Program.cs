@@ -16,21 +16,13 @@ namespace Aura.UI.Gallery.NetCore
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
             => AppBuilder.Configure<App>()
-                .UsePlatformDetect()
                 .With(new Win32PlatformOptions 
-                {
-                    AllowEglInitialization = true, 
-                    UseDeferredRendering = true, 
-                    OverlayPopups = true,
+                { 
+                    CompositionMode = new[] {  Win32CompositionMode.WinUIComposition },
+                    RenderingMode = new[] { Win32RenderingMode.Software },
                 })
-                .With(new X11PlatformOptions
-                {
-                    OverlayPopups = true
-                })
-                .With(new MacOSPlatformOptions
-                {
-                    ShowInDock = true
-                })
+                .UseSkia()
+                .UsePlatformDetect()
                 .LogToTrace()
                 .UseReactiveUI();
     }

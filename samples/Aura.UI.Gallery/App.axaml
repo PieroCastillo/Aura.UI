@@ -1,11 +1,12 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             RequestedThemeVariant="Light"
              x:Class="Aura.UI.Gallery.App">
   <Application.Styles>
-    <!--<StyleInclude Source="avares://Avalonia.Themes.Default/Accents/BaseLight.xaml"/>-->
-    <!--<FluentTheme Mode="Dark"/>-->
-    <StyleInclude Source="avares://AvaloniaEdit/AvaloniaEdit.xaml"/>
-    <StyleInclude Source="/Controls/CodeExample.xaml"/>
+    <FluentTheme/>
+    <StyleInclude Source="avares://Aura.UI.FluentTheme/AuraUI.xaml"/>
+    <StyleInclude Source="avares://AvaloniaEdit/Themes/Fluent/AvaloniaEdit.xaml" />
+    <StyleInclude Source="/Controls/CodeExample.axaml"/>
     <Style Selector="TextBlock">
       <Setter Property="TextWrapping" Value="Wrap"/>
     </Style>

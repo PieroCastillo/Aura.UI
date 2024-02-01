@@ -4,49 +4,37 @@ using AuraUtilities.Configuration;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
 using Avalonia.Threading;
-using ReactiveUI;
 using System;
-using System.Diagnostics;
-using System.Reactive;
 using System.Threading.Tasks;
-using Avalonia.Controls;
-using System.Threading;
-using Aura.UI.Controls.Navigation;
-using Avalonia.Controls.Presenters;
-using Avalonia.Animation;
-using Avalonia.Animation.Easings;
-using System.Text;
-using Avalonia.Media;
 
 namespace Aura.UI.Gallery
 {
-    public class App : Application
+    public partial class App : Application
     {
         public override void Initialize()
         {
+            AvaloniaXamlLoader.Load(this);
             var settings_prov = new SettingsProvider();
             Settings = settings_prov.Load<AppSettings>();
 
             switch (Settings.Theme)
             {
                 case Theme.Light:
-                    Styles.Insert(0, App.FluentLight);
+                    SetTheme(Theme.Light);
                     break;
 
                 case Theme.Dark:
-                    Styles.Insert(0, App.FluentDark);
+                    SetTheme(Theme.Dark);
                     break;
             }
-
-            AvaloniaXamlLoader.Load(this);
         }
+
 
         public override void OnFrameworkInitializationCompleted()
         {
-           // NavigationViewStatic();
+            // NavigationViewStatic();
             if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
             {
 
@@ -57,7 +45,7 @@ namespace Aura.UI.Gallery
 
                 desktop.Exit += (s, e) =>
                 {
-                    new SettingsProvider().Save(Settings);
+                    //new SettingsProvider().Save(Settings);
                 };
             }
             else if (ApplicationLifetime is ISingleViewApplicationLifetime single)
@@ -86,10 +74,10 @@ namespace Aura.UI.Gallery
                     switch (theme)
                     {
                         case Theme.Light:
-                            Application.Current.Styles[0] = App.FluentLight;
+                            RequestedThemeVariant = ThemeVariant.Light;
                             break;
                         case Theme.Dark:
-                            Application.Current.Styles[0] = App.FluentDark;
+                            RequestedThemeVariant = ThemeVariant.Dark;
                             break;
                     }
                 }, (DispatcherPriority)1);
@@ -101,30 +89,6 @@ namespace Aura.UI.Gallery
                 Console.WriteLine($"some error has executed");
             }
         }
-
-        public readonly static Styles FluentDark = new Styles
-        {
-            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
-            {
-                Source = new Uri("avares://Avalonia.Themes.Fluent/FluentDark.xaml")
-            },
-            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
-            {
-                Source = new Uri("avares://Aura.UI.FluentTheme/AuraUI.xaml")
-            }
-        };
-
-        public readonly static Styles FluentLight = new Styles
-        {
-            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
-            {
-                Source = new Uri("avares://Avalonia.Themes.Fluent/FluentLight.xaml")
-            },
-            new StyleInclude(new Uri("avares://Aura.UI.Gallery/Styles"))
-            {
-                Source = new Uri("avares://Aura.UI.FluentTheme/AuraUI.xaml")
-            }
-        };
     }
 
     [Serializable]

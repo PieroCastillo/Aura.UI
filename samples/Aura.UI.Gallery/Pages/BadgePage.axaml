@@ -95,7 +95,7 @@
               <Rectangle Width="20" Height="20" Fill="LightGreen" RenderTransform="rotate(45deg)"/>
               <ContentPresenter HorizontalAlignment="Center" 
                                 VerticalAlignment="Center"
-                                TextBlock.FontSize="10"
+                                FontSize="10"
                                 Content="{Binding $parent[Badge].BadgeContent}"/>
             </Panel>
           </DataTemplate>
@@ -110,7 +110,7 @@
         &lt;Rectangle Width="20" Height="20" Fill="LightGreen" RenderTransform="rotate(45deg)"/>
         &lt;ContentPresenter HorizontalAlignment="Center"
                           VerticalAlignment="Center"
-                          TextBlock.FontSize="10"
+                          FontSize="10"
                           Content="{Binding $parent[Badge].BadgeContent}"/>
       &lt;/Panel>
     &lt;/DataTemplate>
