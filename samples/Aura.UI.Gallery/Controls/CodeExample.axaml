@@ -42,13 +42,13 @@ using System;
 						                  BorderThickness="1" Padding="15"
 						                  Content="{TemplateBinding Control}"/>
 						<StackPanel Background="{DynamicResource SystemControlBackgroundBaseLowBrush}">
-							<ae:TextEditor Name="editor_xaml" SyntaxHighlighting="XML"
+							<ae:TextEditor Name="PART_editor_xaml" SyntaxHighlighting="XML"
 							               HorizontalScrollBarVisibility="Auto"
 							               Background="Transparent"
 							               IsVisible="{TemplateBinding XAMLVisible}"
 							               IsReadOnly="True"
 							               Padding="15"/>
-							<ae:TextEditor Name="editor_csharp" SyntaxHighlighting="C#"
+							<ae:TextEditor Name="PART_editor_csharp" SyntaxHighlighting="C#"
 							               HorizontalScrollBarVisibility="Auto"
 							               Background="Transparent"
 							               IsVisible="{TemplateBinding CSharpVisible}"

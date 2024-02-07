@@ -50,8 +50,8 @@
     <CodeExample Title="Badge" TitleTwo="RightTop" CSharpVisible="False">
       <Badge BadgePosition="RightTop" BadgeContent="9+">
         <Button Content="Messages"/>
-      </Badge>
-      <CodeExample.XAMLText>
+      </Badge> 
+      <CodeExample.XAMLText> 
 &lt;Badge BadgePosition="RightTop" BadgeContent="9+">
   &lt;Button Content="Messages"/>
 &lt;/Badge>

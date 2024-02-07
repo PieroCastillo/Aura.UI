@@ -78,7 +78,7 @@
         </GroupBox>
       </NavigationViewItem.Content>
     </NavigationViewItem>
-    <Separator/>
+    <!--<Separator/>-->
     <NavigationViewItem Header="Basic Input" Title="Basic Input"
               Icon="{DynamicResource FontAwesome.CheckSquareRegular}">
       <NavigationViewItem.Content>

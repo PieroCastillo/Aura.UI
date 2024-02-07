@@ -37,7 +37,7 @@
 											  x:Key="LevelConv" />
 		
 	</Styles.Resources>
-	<Style Selector="NavigationViewItemBase">
+	<Style Selector=":is(NavigationViewItemBase)">
 		<Setter Property="Padding" Value="0 5" />
 		<Setter Property="MinWidth" Value="0" />
 		<Setter Property="DockPanel.Dock" Value="Top" />
@@ -129,7 +129,7 @@
 	</Style>
   
   
-  <Style Selector="NavigationViewItemBase /template/ ContentPresenter#PART_ContentPresenter">
+  <Style Selector=":is(NavigationViewItemBase) /template/ ContentPresenter#PART_ContentPresenter">
     <Setter Property="FontSize" Value="14"/>
     <Setter Property="FontFamily" Value="Segoe UI"/>
     <Setter Property="HorizontalAlignment" Value="Left"/>
