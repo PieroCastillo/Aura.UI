@@ -9,9 +9,11 @@ using System;
 
 namespace Aura.UI.Controls.Navigation
 {
-    public class NavigationViewItem : NavigationViewItemBase, IStyleable
+    public class NavigationViewItem : NavigationViewItemBase
     {
-        Type IStyleable.StyleKey => typeof(NavigationViewItemBase);
+        //Type IStyleable.StyleKey => typeof(NavigationViewItemBase);
+        
+        protected override Type StyleKeyOverride => typeof(NavigationViewItemBase);
 
         static NavigationViewItem()
         {
