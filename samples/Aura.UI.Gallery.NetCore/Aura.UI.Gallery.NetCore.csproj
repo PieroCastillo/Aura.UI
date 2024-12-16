@@ -4,9 +4,12 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <RootNamespace>Aura.UI.Gallery.NetCore</RootNamespace>
+    <LangVersion>12</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Include="Avalonia" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.2.2" />
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.2" />
   </ItemGroup>
   <ItemGroup>
