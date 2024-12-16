@@ -10,7 +10,7 @@ namespace Aura.UI.Controls
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected virtual void OnClosing(object sender, RoutedEventArgs e)
+        protected virtual void OnClosing(object? sender, RoutedEventArgs e)
         {
             IsClosing = true;
         }

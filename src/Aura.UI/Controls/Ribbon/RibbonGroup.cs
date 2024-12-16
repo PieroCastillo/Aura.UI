@@ -16,8 +16,12 @@ namespace Aura.UI.Controls.Ribbon
         {
             base.OnApplyTemplate(e);
 
-            var MiniButton = this.GetControl<Button>(e, "PART_MiniButton");
-            MiniButton.Click += (s, _) =>
+            var miniButton = this.GetControl<Button>(e, "PART_MiniButton");
+            
+            if(miniButton is null)
+                throw new Exception("MiniButton not found");
+            
+            miniButton.Click += (s, _) =>
             {
                 var e = new RoutedEventArgs(MiniButtonClickEvent);
                 RaiseEvent(e);

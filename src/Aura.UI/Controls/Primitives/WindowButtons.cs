@@ -9,9 +9,9 @@ namespace Aura.UI.Controls.Primitives
 {
     public class WindowButtons : TemplatedControl
     {
-        public Button LeftButton { get; private set; }
-        public Button CenterButton { get; private set; }
-        public Button RightButton { get; private set; }
+        public Button? LeftButton { get; private set; }
+        public Button? CenterButton { get; private set; }
+        public Button? RightButton { get; private set; }
 
         private Window? _hostwindow;
         public Window? HostWindow
@@ -30,6 +30,11 @@ namespace Aura.UI.Controls.Primitives
             CenterButton = this.GetControl<Button>(e, "PART_CenterButton");
             RightButton = this.GetControl<Button>(e, "PART_RightButton");
 
+            if(LeftButton is null || CenterButton is null || RightButton is null)
+            {
+                throw new System.Exception("Not all buttons are found");
+            }
+            
             LeftButton.PointerReleased += delegate
             {
                 if (HostWindow is not null)

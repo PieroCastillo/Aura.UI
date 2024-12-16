@@ -1,4 +1,5 @@
-﻿using Avalonia;
+﻿using System;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 
@@ -14,7 +15,7 @@ namespace Aura.UI.Extensions
         /// <param name="e">The TemplateAppliedEventArgs</param>
         /// <param name="name">The Name of the Control to return</param>
         /// <returns>a control with the indicated params</returns>
-        public static T GetControl<T>(this TemplatedControl templatedControl,
+        public static T? GetControl<T>(this TemplatedControl templatedControl,
                                     TemplateAppliedEventArgs e,
                                     string name)
             where T : AvaloniaObject
@@ -33,6 +34,13 @@ namespace Aura.UI.Extensions
             TemplateAppliedEventArgs e,
             string name,
             out T avaloniaObj) where T : AvaloniaObject
-            => avaloniaObj = GetControl<T>(templatedControl, e, name);
+        {
+            var obj = GetControl<T>(templatedControl, e, name);
+            
+            if(obj is null)
+                throw new Exception($"Control with name {name} not found");
+
+            avaloniaObj = obj;
+        }
     }
 }

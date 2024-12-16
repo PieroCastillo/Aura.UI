@@ -78,6 +78,7 @@ namespace Aura.UI.Controls.Navigation
 
         public NavigationViewItemBase()
         {
+            
             NavigationViewDistance = 0;
         }
 

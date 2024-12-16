@@ -1,4 +1,5 @@
 ﻿
+using System;
 using Aura.UI.Controls.Primitives;
 using Aura.UI.Extensions;
 using Avalonia;
@@ -13,17 +14,20 @@ namespace Aura.UI.Controls.Ribbon
     /// </summary>
     public class RibbonItem : TabItem, IMaterial
     {
-        private Button btn_cont;
+        private Button? btn_cont;
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
 
-            btn_cont = this.GetControl<Button>(e, "PART_ButtonContainer");
+            var btn = this.GetControl<Button>(e, "PART_ButtonContainer");
+
+            btn_cont = btn ?? throw new Exception("ButtonContainer not found");
+            
             btn_cont.Click += Btn_cont_Click;
         }
 
-        private void Btn_cont_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void Btn_cont_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             if (IsSelected != false)
             {

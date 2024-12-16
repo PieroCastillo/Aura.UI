@@ -7,18 +7,29 @@ namespace Aura.UI.Extensions
         public static void OpenRibbonRoot(this RibbonItem ribbonItem)
         {
             var ribbonroot = ribbonItem.GetParentTOfLogical<Ribbon>();
+            
+            if(ribbonroot == null)
+                return;
+            
             ribbonroot.ExpansionState = ExpansionState.Total;
         }
 
         public static void CloseRibbonRoot(this RibbonItem ribbonItem)
         {
             var ribbonroot = ribbonItem.GetParentTOfLogical<Ribbon>();
+            if(ribbonroot == null)
+                return;
             ribbonroot.ExpansionState = ExpansionState.Hidden;
         }
 
         public static void ToggleRibbonRootState(this RibbonItem ribbonItem)
         {
-            var e_ = ribbonItem.GetParentTOfLogical<Ribbon>().ExpansionState;
+
+            var item = ribbonItem.GetParentTOfLogical<Ribbon>();
+            if (item == null)
+                return;
+            
+            var e_ = item.ExpansionState;
             switch (e_)
             {
                 case ExpansionState.Hidden:

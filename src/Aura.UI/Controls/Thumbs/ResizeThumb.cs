@@ -15,13 +15,20 @@ namespace Aura.UI.Controls.Thumbs
         {
             base.OnDragDelta(e);
 
-            Control item = DataContext as Control;
+            Control? item = DataContext as Control;
             if (item != null)
             {
                 double delta_v, delta_h;
 
                 Rect r1 = item.Bounds;
-                Rect cvr2 = item.GetParentTOfLogical<Canvas>().Bounds;
+                
+                var parent = item.GetParentTOfLogical<Canvas>();
+                if (parent == null)
+                {
+                    return;
+                }
+                
+                Rect cvr2 = parent.Bounds;
                 switch (VerticalAlignment)
                 {
                     case VerticalAlignment.Bottom:

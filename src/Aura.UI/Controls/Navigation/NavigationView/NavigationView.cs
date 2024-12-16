@@ -17,8 +17,8 @@ namespace Aura.UI.Controls.Navigation
     [PseudoClasses(":normal", ":compact")]
     public partial class NavigationView : TreeView
     {
-        private Button _headeritem;
-        private SplitView _splitVw;
+        private Button? _headeritem;
+        private SplitView? _splitVw;
         private const double LittleWidth = 1005;
         private const double VeryLittleWidth = 650;
 
@@ -37,6 +37,11 @@ namespace Aura.UI.Controls.Navigation
 
         public NavigationView()
         {
+            _title = "";
+            _selectedcontent = "";
+            _itemsasstrings = new AvaloniaList<string>();
+            _autoCompleteBox = new AutoCompleteBox();
+            
             PseudoClasses.Add(":normal");
             this.GetObservable(BoundsProperty).Subscribe(async (bounds) =>
             {
@@ -79,7 +84,7 @@ namespace Aura.UI.Controls.Navigation
             }
         }
 
-        internal void SelectSingleItemCore(object item)
+        internal void SelectSingleItemCore(object? item)
         {
             if (SelectedItem != item)
             {
@@ -88,16 +93,18 @@ namespace Aura.UI.Controls.Navigation
             }
 
             if (SelectedItem is not null)
-                (SelectedItem as ISelectable).IsSelected = false;
+                ((SelectedItem as ISelectable)!).IsSelected = false;
 
-            (item as ISelectable).IsSelected = true;
+            if (item is not null) ((item as ISelectable)!).IsSelected = true;
 
+            if (SelectedItem is null || item is null) return;
+            
             SelectedItems.Clear();
             SelectedItems.Add(item);
 
             SelectedItem = item;
         }
-        internal void SelectSingleItem(object item)
+        internal void SelectSingleItem(object? item)
         {
             SelectSingleItemCore(item);
         }
@@ -113,7 +120,11 @@ namespace Aura.UI.Controls.Navigation
         {
             base.OnApplyTemplate(e);
 
-            _headeritem = this.GetControl<Button>(e, "PART_HeaderItem");
+            var btn = this.GetControl<Button>(e, "PART_HeaderItem");
+            
+            if(btn is null) return;
+            
+            _headeritem = btn;
             _splitVw = this.GetControl<SplitView>(e, "split");
 
             _headeritem.Click += delegate

@@ -15,7 +15,7 @@ namespace Aura.UI.Controls.Colouring
             context.Custom(render);
         }
 
-        public ColorSquareRender SquareRender { get; private set; }
+        public ColorSquareRender? SquareRender { get; private set; } 
 
         private Color _lastcolor = Colors.White;
 
@@ -26,6 +26,9 @@ namespace Aura.UI.Controls.Colouring
             base.OnPointerPressed(e);
 
             e.GetCurrentPoint(this).Position.Deconstruct(out double x, out double y);
+            
+            if(SquareRender is null) return;
+            
             Color c = SquareRender.HitOn(new Avalonia.PixelPoint((int)x, (int)y));
             Debug.WriteLine($"The hit color is: \"{c}\" ");
         }

@@ -12,15 +12,15 @@ namespace Aura.UI.Converters
     public class BoundsToCornerRadiusConverter : IValueConverter
     {
         // a static Instance makes it possible to use this converter without the need of defining a StaticResource
-        private static BoundsToCornerRadiusConverter _Instance;
+        private static BoundsToCornerRadiusConverter _instance = new ();
 
         /// <summary>
         /// A static instance of the <see cref="BoundsToCornerRadiusConverter"/>
         /// </summary>
-        public static BoundsToCornerRadiusConverter Instance => _Instance ??= new BoundsToCornerRadiusConverter();
+        public static BoundsToCornerRadiusConverter Instance => _instance ??= new BoundsToCornerRadiusConverter();
 
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             if (value is Rect bounds)
             {
@@ -30,7 +30,7 @@ namespace Aura.UI.Converters
             return new CornerRadius(0);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             throw new NotSupportedException();
         }

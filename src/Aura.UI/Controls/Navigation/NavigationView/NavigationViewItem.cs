@@ -26,7 +26,8 @@ namespace Aura.UI.Controls.Navigation
 
             if (SelectOnClose)
             {
-                this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
+                var parent = this.GetParentTOfLogical<NavigationView>();
+                if(parent != null) parent.SelectSingleItem(this);
             }
         }
 
@@ -62,7 +63,9 @@ namespace Aura.UI.Controls.Navigation
         {
             if (!IsSelected)
             {
-                this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
+                var parent = this.GetParentTOfLogical<NavigationView>();
+                if (parent != null) parent.SelectSingleItem(this);
+                //this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
             }
         }
     }

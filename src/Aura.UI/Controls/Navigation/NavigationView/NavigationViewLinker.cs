@@ -17,7 +17,7 @@ namespace Aura.UI.Controls.Navigation
             TopContentProperty.Changed.Subscribe(SetTopContentIsNull);
         }
 
-        private void SetTopContentIsNull(AvaloniaPropertyChangedEventArgs<object> e)
+        private void SetTopContentIsNull(AvaloniaPropertyChangedEventArgs<object?> e)
         {
             if (TopContent is null)
             {
@@ -39,7 +39,7 @@ namespace Aura.UI.Controls.Navigation
 
                 if (parent != null & this.PointerEffectivelyOver(e))
                 {
-                    parent.SelectSingleItem(LinkTo);
+                    parent!.SelectSingleItem(LinkTo);
                 }
             }
 

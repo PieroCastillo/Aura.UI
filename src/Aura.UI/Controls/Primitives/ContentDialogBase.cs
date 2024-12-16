@@ -19,6 +19,11 @@ namespace Aura.UI.Controls.Primitives
 
         public void Show()
         {
+            if(Owner == null)
+            {
+                throw new InvalidOperationException("The Owner can't be null.");
+            }
+            
             ContentDialogService.ShowDialogOn(Owner, this);
             var e = new RoutedEventArgs(ShowingEvent);
             RaiseEvent(e);
@@ -27,6 +32,11 @@ namespace Aura.UI.Controls.Primitives
 
         public virtual void Close()
         {
+            if(Owner == null)
+            {
+                throw new InvalidOperationException("The Owner can't be null.");
+            }
+            
             var e = new RoutedEventArgs(ClosingEvent);
             RaiseEvent(e);
             e.Handled = true;
@@ -51,7 +61,7 @@ namespace Aura.UI.Controls.Primitives
         public static readonly RoutedEvent<RoutedEventArgs> ClosingEvent =
             RoutedEvent.Register<ContentDialogBase, RoutedEventArgs>(nameof(Closing), RoutingStrategies.Bubble);
 
-        private Control Owner
+        private Control? Owner
         {
             get;
             set;
