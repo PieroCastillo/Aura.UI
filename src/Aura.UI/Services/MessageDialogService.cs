@@ -33,7 +33,7 @@ namespace Aura.UI.Services
                 {
                     m.Closing += (s, e) =>
                     {
-                        OnClosing.Invoke(s, e);
+                        if(s is not null ) OnClosing.Invoke(s, e);
                     };
                 }
                 m.Show();

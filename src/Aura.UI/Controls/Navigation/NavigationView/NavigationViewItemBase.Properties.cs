@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
+using Avalonia.Media.Imaging;
 
 namespace Aura.UI.Controls.Navigation
 {
@@ -18,18 +19,25 @@ namespace Aura.UI.Controls.Navigation
                 o => o.Content,
                 (o, v) => o.Content = v);
 
-        private IImage _icon;
+        private IImage? _icon;
 
-        public IImage Icon
+        public IImage? Icon
         {
             get => _icon;
-            set => SetAndRaise(IconProperty, ref _icon, value);
+            set => SetAndRaise(IconProperty!, ref _icon, value);
         }
 
         public readonly static DirectProperty<NavigationViewItemBase, IImage> IconProperty =
             AvaloniaProperty.RegisterDirect<NavigationViewItemBase, IImage>(
                 nameof(Icon),
-                o => o.Icon,
+                o =>
+                {
+                    if (o.Icon is null)
+                    {
+                        return new Bitmap("avares://Aura.UI/Assets/noise.png");
+                    }
+                    return o.Icon;
+                },
                 (o, v) => o.Icon = v);
 
         private object _title = "Title";

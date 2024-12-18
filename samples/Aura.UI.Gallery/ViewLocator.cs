@@ -24,7 +24,7 @@ namespace Aura.UI.Gallery
             }
         }
 
-        public bool Match(object data)
+        public bool Match(object? data)
         {
             return data is ViewModelBase;
         }

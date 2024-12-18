@@ -11,7 +11,7 @@ namespace Aura.UI.Extensions
         /// </summary>
         /// <param name="Logical">The window to get its parent</param>
         /// <returns>the window of the control</returns>
-        public static Window GetParentWindowOfLogical(this ILogical Logical)
+        public static Window? GetParentWindowOfLogical(this ILogical Logical)
         {
             return Logical.GetParentTOfLogical<Window>();
         }
@@ -19,14 +19,14 @@ namespace Aura.UI.Extensions
         /// <summary>
         /// Return a parent of the ILogical indicated
         /// </summary>
-        /// <param name="Logical">The control to get its parent</param>
+        /// <param name="logical">The control to get its parent</param>
         /// <returns>the parent of the control</returns>
-        public static T GetParentTOfLogical<T>(this ILogical logical) where T : class
+        public static T? GetParentTOfLogical<T>(this ILogical logical) where T : class
         {
             return logical.GetSelfAndLogicalAncestors().OfType<T>().FirstOrDefault<T>();
         }
 
-        internal static int CalculateDistanceFromLogicalParent<T>(ILogical logical, int @default = -1) where T : class, ILogical
+        internal static int CalculateDistanceFromLogicalParent<T>(ILogical? logical, int @default = -1) where T : class, ILogical
         {
             var result = 0;
 

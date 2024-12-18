@@ -1,4 +1,5 @@
-﻿using Aura.UI.Controls.Primitives;
+﻿using System;
+using Aura.UI.Controls.Primitives;
 using Aura.UI.Extensions;
 using Avalonia;
 using Avalonia.Controls;
@@ -11,13 +12,17 @@ namespace Aura.UI.Controls
     [PseudoClasses(":closing")]
     public partial class MessageDialog : ContentDialogBase
     {
-        private Button _closebutton;
+        private Button? _closebutton;
 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
-
+            
             _closebutton = this.GetControl<Button>(e, "PART_ButtonClose");
+            
+            if(_closebutton is null)
+                throw new Exception("CloseButton not found");
+            
             _closebutton.Click += (s, e) =>
             {
                 Close();

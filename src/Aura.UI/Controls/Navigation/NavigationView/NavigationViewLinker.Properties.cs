@@ -32,17 +32,17 @@ namespace Aura.UI.Controls.Navigation
         public readonly static StyledProperty<object?> TopContentProperty =
             AvaloniaProperty.Register<NavigationViewLinker, object?>(nameof(TopContent), null);
 
-        private NavigationViewItemBase _linkto;
+        private NavigationViewItemBase? _linkto;
 
-        public NavigationViewItemBase LinkTo
+        public NavigationViewItemBase? LinkTo
         {
             get => _linkto;
-            set => SetAndRaise(LinkToProperty, ref _linkto, value);
+            set => SetAndRaise(LinkToProperty!, ref _linkto, value);
         }
 
         public readonly static DirectProperty<NavigationViewLinker, NavigationViewItemBase> LinkToProperty =
             AvaloniaProperty.RegisterDirect<NavigationViewLinker, NavigationViewItemBase>(nameof(LinkTo),
-                                                                                          o => o.LinkTo,
+                                                                                          o => o.LinkTo!,
                                                                                           (o, v) => o.LinkTo = v);
 
         private bool _topcontentVisible;

@@ -6,7 +6,7 @@ namespace Aura.UI.Extensions
 {
     public static class VisualExtensions
     {
-        public static T GetParentTOfVisual<T>(this Visual visual) where T : class
+        public static T? GetParentTOfVisual<T>(this Visual visual) where T : class
         {
             return visual.GetSelfAndVisualAncestors().OfType<T>().FirstOrDefault<T>();
         }

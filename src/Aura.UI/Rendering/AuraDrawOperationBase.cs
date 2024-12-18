@@ -20,7 +20,7 @@ namespace Aura.UI.Rendering
             // do nothing
         }
 
-        public virtual bool Equals(ICustomDrawOperation other) => false;
+        public virtual bool Equals(ICustomDrawOperation? other) => false;
         public virtual bool HitTest(Point p) => true;
 
         public virtual void Render(ImmediateDrawingContext context)

@@ -45,7 +45,7 @@ namespace Aura.UI.Controls
         /// Defines the <see cref="IconTemplate"/> property.
         /// </summary>
         public static readonly StyledProperty<IDataTemplate> IconTemplateProperty =
-            AvaloniaProperty.Register<FloatingButtonBar, IDataTemplate>(nameof(IconTemplate), null);
+            AvaloniaProperty.Register<FloatingButtonBar, IDataTemplate>(nameof(IconTemplate));
 
         /// <summary>
         /// The <see cref="IDataTemplate"/> to display the <see cref="Icon"/>
@@ -108,7 +108,7 @@ namespace Aura.UI.Controls
         /// Defines the <see cref="IconForeground"/> property.
         /// </summary>
         public static readonly StyledProperty<IBrush> IconForegroundProperty =
-            AvaloniaProperty.Register<FloatingButtonBar, IBrush>(nameof(IconForeground), null);
+            AvaloniaProperty.Register<FloatingButtonBar, IBrush>(nameof(IconForeground));
 
         /// <summary>
         /// Gets or Sets the Foreground of the Icon
@@ -125,7 +125,7 @@ namespace Aura.UI.Controls
         /// Defines the <see cref="IconBackground"/> property.
         /// </summary>
         public static readonly StyledProperty<IBrush> IconBackgroundProperty =
-            AvaloniaProperty.Register<FloatingButtonBar, IBrush>(nameof(IconBackground), null);
+            AvaloniaProperty.Register<FloatingButtonBar, IBrush>(nameof(IconBackground));
 
         /// <summary>
         /// Gets or Sets the Background of the Icon

@@ -7,13 +7,15 @@ namespace Aura.UI.Converters
 {
     public class IntToColumnDefinitionWidthConverter : IValueConverter
     {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            var v = double.Parse(value.ToString());
+            if(value == null) throw new ArgumentException("value cannot be null");
+                
+            var v = double.Parse(value.ToString() ?? string.Empty);
             return new GridLength(v, GridUnitType.Pixel);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

@@ -48,7 +48,7 @@ namespace Aura.UI.Controls
             }
         }
 
-        static void CommandParameterChanged(AvaloniaPropertyChangedEventArgs<object> e)
+        static void CommandParameterChanged(AvaloniaPropertyChangedEventArgs<object?> e)
         {
             if (e.Sender is CardControl c)
             {
@@ -79,7 +79,7 @@ namespace Aura.UI.Controls
             }
         }
 
-        void CanExecuteChanged(object sender, EventArgs e)
+        void CanExecuteChanged(object? sender, EventArgs e)
         {
             var canExecute = Command == null || Command.CanExecute(CommandParameter);
 
@@ -98,7 +98,7 @@ namespace Aura.UI.Controls
             }
         }
 
-        protected override void UpdateDataValidation(AvaloniaProperty property, BindingValueType state, Exception error)
+        protected override void UpdateDataValidation(AvaloniaProperty property, BindingValueType state, Exception? error)
         {
             base.UpdateDataValidation(property, state, error);
 

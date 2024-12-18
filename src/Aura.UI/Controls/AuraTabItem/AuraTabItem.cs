@@ -15,7 +15,7 @@ namespace Aura.UI.Controls
     [PseudoClasses(":dragging", ":lockdrag")]
     public partial class AuraTabItem : TabItem, ICustomCornerRadius
     {
-        private Button CloseButton;
+        private Button? CloseButton;
 
         public AuraTabItem()
         {
@@ -85,8 +85,11 @@ namespace Aura.UI.Controls
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             base.OnApplyTemplate(e);
+            
+            var closeButton = this.GetControl<Button>(e, "PART_CloseButton");
 
-            CloseButton = this.GetControl<Button>(e, "PART_CloseButton");
+            CloseButton = closeButton ?? throw new Exception("CloseButton not found");
+            
             if (IsClosable != false)
             {
                 CloseButton.Click += CloseButton_Click;
@@ -97,7 +100,7 @@ namespace Aura.UI.Controls
             }
         }
 
-        private void CloseButton_Click(object sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void CloseButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             RaiseEvent(new RoutedEventArgs(CloseButtonClickEvent));
             Close();

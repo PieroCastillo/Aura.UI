@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <LangVersion>10.0</LangVersion>
+    <LangVersion>12</LangVersion>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -10,14 +10,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AuraUtilities" Version="0.1.5.5" />
-    <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.0.6" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.0.7" />
-    <PackageReference Include="Avalonia.Diagnostics" Version="11.0.7" />
-    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.0.7" />
-    <PackageReference Include="Avalonia.ReactiveUI" Version="11.0.7" />
-    <PackageReference Include="Avalonia.Svg" Version="11.0.0.12" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.7" />
-    <PackageReference Include="AvaloniaEdit.TextMate" Version="11.0.6" />
+    <PackageReference Include="Avalonia.AvaloniaEdit" Version="11.1.0" />
+    <PackageReference Include="Avalonia.Diagnostics" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Markup.Xaml.Loader" Version="11.2.2" />
+    <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Svg" Version="11.2.0.2" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.2" />
+    <PackageReference Include="AvaloniaEdit.TextMate" Version="11.1.0" />
     <PackageReference Include="jp2masa.Avalonia.Flexbox" Version="0.2.0" />
   </ItemGroup>
   <ItemGroup>

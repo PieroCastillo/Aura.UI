@@ -75,13 +75,13 @@ namespace Aura.UI.Controls
             AvaloniaProperty.Register<RadialSlider, int>(nameof(RoundDigits), 0);
 
 
-        private Control _Child;
+        private Control _child = new();
 
         [Content]
         public Control Child
         {
-            get => _Child;
-            set => SetAndRaise(ChildProperty, ref _Child, value);
+            get => _child;
+            set => SetAndRaise(ChildProperty, ref _child, value);
         }
 
         public static readonly DirectProperty<RadialSlider, Control> ChildProperty =

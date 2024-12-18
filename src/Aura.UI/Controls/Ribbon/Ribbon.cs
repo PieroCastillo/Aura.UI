@@ -14,9 +14,9 @@ namespace Aura.UI.Controls.Ribbon
     /// </summary>
     public class Ribbon : TabViewBase
     {
-        public MaterialButton LeftButton;
-        public MaterialButton RightButton;
-        private ToggleButton ToggleStateButton;
+        public MaterialButton? LeftButton;
+        public MaterialButton? RightButton;
+        private ToggleButton? ToggleStateButton;
 
         public Ribbon()
         {
@@ -94,6 +94,8 @@ namespace Aura.UI.Controls.Ribbon
             LeftButton = this.GetControl<MaterialButton>(e, "PART_LeftButton");
             RightButton = this.GetControl<MaterialButton>(e, "PART_RightButton");
             ToggleStateButton = this.GetControl<ToggleButton>(e, "PART_Toggle");
+            
+            if(ToggleStateButton is null) throw new Exception("The Ribbon must have a ToggleButton with the name PART_Toggle");
 
             ToggleStateButton.IsCheckedChanged+= (sender, e) =>
             {

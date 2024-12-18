@@ -17,6 +17,10 @@ namespace Aura.UI.Services
             Dispatcher.UIThread.Post(() =>
             {
                 var layer = OverlayLayer.GetOverlayLayer(window);
+                if(layer is null)
+                {
+                    throw new Exception("The window must have an OverlayLayer");
+                }
                 dialog.Width = layer.Bounds.Width;
                 dialog.Height = layer.Bounds.Height;
                 window.PropertyChanged += (s, e) =>
@@ -33,6 +37,7 @@ namespace Aura.UI.Services
             Dispatcher.UIThread.Post(() =>
             {
                 var layer = OverlayLayer.GetOverlayLayer(window);
+                if(layer is null) return;
                 if (layer.Children.Contains(dialog))
                 {
                     layer.Children.Remove(dialog);
@@ -85,7 +90,7 @@ namespace Aura.UI.Services
             {
                 if (OnOKButtonClick != null)
                 {
-                    OnOKButtonClick.Invoke(s, e);
+                    if(s != null) OnOKButtonClick.Invoke(s, e);
                 }
                 dialog.Close();
             };
@@ -93,7 +98,7 @@ namespace Aura.UI.Services
             {
                 if (OnCancelButtonClick != null)
                 {
-                    OnCancelButtonClick.Invoke(s, e);
+                    if(s != null) OnCancelButtonClick.Invoke(s, e);
                 }
                 dialog.Close();
             };
@@ -114,7 +119,7 @@ namespace Aura.UI.Services
             {
                 c.Showing += (s, e) =>
                 {
-                    OnShowing.Invoke(s, e);
+                    if(s != null) OnShowing.Invoke(s, e);
                 };
             }
 
@@ -122,7 +127,7 @@ namespace Aura.UI.Services
             {
                 c.Closing += (s, e) =>
                 {
-                    OnClosing.Invoke(s, e);
+                    if(s != null) OnClosing.Invoke(s, e);
                 };
             }
 

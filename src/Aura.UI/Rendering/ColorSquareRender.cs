@@ -35,7 +35,7 @@ namespace Aura.UI.Rendering
         public Color StrokeColor { get; }
         public int StrokeWidth { get; }
 
-        protected SKSurface Surface { get; set; }
+        protected SKSurface? Surface { get; set; } 
 
         public override void Render(ImmediateDrawingContext drwContext)
         {

@@ -10,14 +10,14 @@ namespace Aura.UI.Controls.Navigation
     [PseudoClasses(":pressed")]
     public partial class NavigationViewLinker : ContentControl
     {
-        private bool _pointerOver;
+        //private bool _pointerOver;
 
         public NavigationViewLinker()
         {
             TopContentProperty.Changed.Subscribe(SetTopContentIsNull);
         }
 
-        private void SetTopContentIsNull(AvaloniaPropertyChangedEventArgs<object> e)
+        private void SetTopContentIsNull(AvaloniaPropertyChangedEventArgs<object?> e)
         {
             if (TopContent is null)
             {
@@ -39,7 +39,7 @@ namespace Aura.UI.Controls.Navigation
 
                 if (parent != null & this.PointerEffectivelyOver(e))
                 {
-                    parent.SelectSingleItem(LinkTo);
+                    parent!.SelectSingleItem(LinkTo);
                 }
             }
 
@@ -56,7 +56,7 @@ namespace Aura.UI.Controls.Navigation
         protected override void OnPointerExited(PointerEventArgs e)
         {
             base.OnPointerExited(e);
-            _pointerOver = false;
+            //_pointerOver = false;
         }
     }
 }

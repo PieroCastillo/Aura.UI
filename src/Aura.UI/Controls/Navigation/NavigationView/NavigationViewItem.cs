@@ -9,9 +9,11 @@ using System;
 
 namespace Aura.UI.Controls.Navigation
 {
-    public class NavigationViewItem : NavigationViewItemBase, IStyleable
+    public class NavigationViewItem : NavigationViewItemBase
     {
-        Type IStyleable.StyleKey => typeof(NavigationViewItemBase);
+        //Type IStyleable.StyleKey => typeof(NavigationViewItemBase);
+        
+        protected override Type StyleKeyOverride => typeof(NavigationViewItemBase);
 
         static NavigationViewItem()
         {
@@ -26,7 +28,8 @@ namespace Aura.UI.Controls.Navigation
 
             if (SelectOnClose)
             {
-                this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
+                var parent = this.GetParentTOfLogical<NavigationView>();
+                if(parent != null) parent.SelectSingleItem(this);
             }
         }
 
@@ -62,7 +65,9 @@ namespace Aura.UI.Controls.Navigation
         {
             if (!IsSelected)
             {
-                this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
+                var parent = this.GetParentTOfLogical<NavigationView>();
+                if (parent != null) parent.SelectSingleItem(this);
+                //this.GetParentTOfLogical<NavigationView>().SelectSingleItem(this);
             }
         }
     }
